@@ -80,9 +80,10 @@ class MasterEncryptor:
             app_salt = self.config['app_salt'].encode('utf-8')
             master_seed = f"{self.config['app_identifier']}:{self.config['version']}"
 
-            key1 = self.generate_deterministic_key(master_seed, app_salt, "layer1")
-            key2 = self.generate_deterministic_key(master_seed, app_salt, "layer2")
-            hmac_key = self.generate_deterministic_key(master_seed, app_salt, "hmac")
+           # Add a "master_" prefix to generate a unique set of keys
+            key1 = self.generate_deterministic_key(master_seed, app_salt, "master_layer1")
+            key2 = self.generate_deterministic_key(master_seed, app_salt, "master_layer2")
+            hmac_key = self.generate_deterministic_key(master_seed, app_salt, "master_hmac")
 
             iv = secrets.token_bytes(16)
             timestamp = struct.pack('<Q', int(time.time()))
