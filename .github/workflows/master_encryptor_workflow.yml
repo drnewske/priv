@@ -1,0 +1,49 @@
+# A descriptive name for your workflow
+name: Encrypt and Deploy MASTER Config
+
+# --- TRIGGERS ---
+on:
+  # Allows you to run this workflow manually from the Actions tab in GitHub.
+  workflow_dispatch:
+
+  # This schedule is set for a day that doesn't exist (Feb 31st),
+  # so it will never run automatically.
+  schedule:
+    - cron: '0 5 31 2 *'
+
+# --- JOBS ---
+jobs:
+  build-and-encrypt-master:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      # Step 1: Check out your repository's code
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      # Step 2: Set up the Python environment
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      # Step 3: Install Python dependencies
+      - name: Install dependencies
+        run: pip install requests
+
+      # Step 4: Run the new master encryptor script
+      # IMPORTANT: Make sure this filename matches the name of your new python script.
+      - name: Run Master Encryptor Service
+        run: python encrypt_master.py
+
+      # Step 5: Commit the new encrypted master file to the repository
+      - name: Commit encrypted master file
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "feat: Update encrypted master config"
+          # This specifically targets the new fixed filename.
+          file_pattern: "master_config.json"
+          commit_user_name: "GitHub Actions Bot"
+          commit_user_email: "github-actions[bot]@users.noreply.github.com"
