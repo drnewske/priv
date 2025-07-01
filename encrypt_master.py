@@ -130,7 +130,7 @@ def main():
         "our_site_url": "https://site.com/",
         "telegram_link": "https://t.me/+37u6NHt-LN8wMjlk",
         "whatsapp_link": "https://www.whatsapp.com/channel/0029Va1fS95EAKWGIf0u5O1W",
-        "events_card_json_link": "https://raw.githubusercontent.com/drnewske/GDDNvsndjhqwh353dmjje-nnnswwwwwwwwwwwwwwwww5rwtqsmmvb/main/encrypted_live_data.json",
+        "events_card_json_link": "https://raw.githubusercontent.com/drnewske/GDDNvsndjhqwh353dmjje-nnnswwwwwwwwwwwwwwwww5rwtqsmmvb/refs/heads/main/67d18f5b263505d3be8283897bb383f149a39dd35bf9563d43.json",
         "full_matches_replay_json_link": "https://cdn.jsdelivr.net/gh/drnewske/reAepo1no3489repo34xserdQrtmmfbhdaej/matches.json",
         "important_messages": {
           "urgent": {
