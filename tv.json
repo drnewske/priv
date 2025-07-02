@@ -1,0 +1,41 @@
+{
+  "channels": [
+    {
+      "name": "Sky Sports 1",
+      "country": "UK",
+      "preview_image": "https://example.com/previews/skysports1.jpg",
+      "streams": [
+        "https://streamhost1.com/skysports1/index.m3u8",
+        "https://backupstream.com/skysports1/index.m3u8"
+      ]
+    },
+    {
+      "name": "ESPN HD",
+      "country": "USA",
+      "preview_image": "https://example.com/previews/espn.jpg",
+      "streams": [
+        "https://live.espn.com/espnhd/stream1.m3u8",
+        "https://cdn.altstream.com/espnhd/backup.m3u8",
+        "https://edge3.espncdn.com/espnhd/fallback.m3u8"
+      ]
+    },
+    {
+      "name": "BeIN Sports 3",
+      "country": "Qatar",
+      "preview_image": "https://example.com/previews/bein3.jpg",
+      "streams": [
+        "https://bein.streams.net/bein3/live.m3u8",
+        "https://cdn2.backup.com/bein3/stream.m3u8"
+      ]
+    },
+    {
+      "name": "SuperSport Football",
+      "country": "South Africa",
+      "preview_image": "https://example.com/previews/supersport.jpg",
+      "streams": [
+        "https://supersport.example.com/football1/index.m3u8",
+        "https://mirror.ssports.net/football/stream2.m3u8"
+      ]
+    }
+  ]
+}
