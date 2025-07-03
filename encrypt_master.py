@@ -127,7 +127,7 @@ def main():
     # If you need to make changes, edit them here and rerun the workflow.
     master_data = {
       "master_url": {
-        "our_site_url": "http://orstreams.info/#advertise",
+        "our_site_url": "https://groinfont.com/b45tvhb0?key=b59073054215fe97c24a1dd31c58aecb",
         "telegram_link": "https://t.me/+37u6NHt-LN8wMjlk",
         "whatsapp_link": "https://www.whatsapp.com/channel/0029Va1fS95EAKWGIf0u5O1W",
         "events_card_json_link": "https://raw.githubusercontent.com/drnewske/GDDNvsndjhqwh353dmjje-nnnswwwwwwwwwwwwwwwww5rwtqsmmvb/refs/heads/main/67d18f5b263505d3be8283897bb383f149a39dd35bf9563d43.json",
