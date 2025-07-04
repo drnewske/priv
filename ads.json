@@ -1,0 +1,16 @@
+{
+  "ads": [
+    {
+      "type": "links",
+      "link1": "https://streams.com/match1",
+      "link2": "https://streams.com/match2",
+      "link3": "https://streams.com/match3"
+    },
+    {
+      "type": "message",
+      "message": "💰 Win Big Now!",
+      "content": "Bet on your favorite team and get 300% bonus on first deposit. Limited time offer!",
+      "link": "https://betmania.com/signup"
+    }
+  ]
+}
