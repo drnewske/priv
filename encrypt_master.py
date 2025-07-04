@@ -136,6 +136,7 @@ def main():
             "predictions": "https://raw.githubusercontent.com/drnewske/tyhdsjax-nfhbqsm/refs/heads/main/today_matches.json",
             "league_tables": "https://raw.githubusercontent.com/drnewske/tyhdsjax-nfhbqsm/refs/heads/main/league_tables.json",
             "live_scores": "https://raw.githubusercontent.com/drnewske/tyhdsjax-nfhbqsm/refs/heads/main/live_scores.json",
+            "tv_chnnels_back_up": "https://raw.githubusercontent.com/drnewske/priv/refs/heads/main/ads.json",
             "important_messages": {
                 "urgent": {
                     "tag": "null",
