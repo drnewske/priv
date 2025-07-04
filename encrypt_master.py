@@ -126,29 +126,29 @@ def main():
     # --- HARDCODED MASTER JSON DATA ---
     # If you need to make changes, edit them here and rerun the workflow.
     master_data = {
-      "master_url": {
-        "our_site_url": "https://groinfont.com/b45tvhb0?key=b59073054215fe97c24a1dd31c58aecb",
-        "telegram_link": "https://t.me/+37u6NHt-LN8wMjlk",
-        "whatsapp_link": "https://www.whatsapp.com/channel/0029Va1fS95EAKWGIf0u5O1W",
-        "events_card_json_link": "https://raw.githubusercontent.com/drnewske/GDDNvsndjhqwh353dmjje-nnnswwwwwwwwwwwwwwwww5rwtqsmmvb/refs/heads/main/67d18f5b263505d3be8283897bb383f149a39dd35bf9563d43.json",
-        "full_matches_replay_json_link": "https://cdn.jsdelivr.net/gh/drnewske/reAepo1no3489repo34xserdQrtmmfbhdaej/matches.json",
-        "tv_channels": "https://raw.githubusercontent.com/drnewske/priv/refs/heads/main/tv.json",
-        "predictions": "https://raw.githubusercontent.com/drnewske/tyhdsjax-nfhbqsm/refs/heads/main/today_matches.json",
-        "league_tables": "https://raw.githubusercontent.com/drnewske/tyhdsjax-nfhbqsm/refs/heads/main/league_tables.json"
-        "live_scores": "https://raw.githubusercontent.com/drnewske/tyhdsjax-nfhbqsm/refs/heads/main/live_scores.json" 
-        "important_messages": {
-          "urgent": {
-            "tag": "null",
-            "message": "null",
-            "update_link": "null"
-          },
-          "temporary": {
-            "id": "promo_july2025",
-            "message": "THE APP WORKS FINE, PERFECTO!!. This is where is you will advertise your products! for free?...get serious comrade",
-            "dismissible": False
-          }
+        "master_url": {
+            "our_site_url": "https://groinfont.com/b45tvhb0?key=b59073054215fe97c24a1dd31c58aecb",
+            "telegram_link": "https://t.me/+37u6NHt-LN8wMjlk",
+            "whatsapp_link": "https://www.whatsapp.com/channel/0029Va1fS95EAKWGIf0u5O1W",
+            "events_card_json_link": "https://raw.githubusercontent.com/drnewske/GDDNvsndjhqwh353dmjje-nnnswwwwwwwwwwwwwwwww5rwtqsmmvb/refs/heads/main/67d18f5b263505d3be8283897bb383f149a39dd35bf9563d43.json",
+            "full_matches_replay_json_link": "https://cdn.jsdelivr.net/gh/drnewske/reAepo1no3489repo34xserdQrtmmfbhdaej/matches.json",
+            "tv_channels": "https://raw.githubusercontent.com/drnewske/priv/refs/heads/main/tv.json",
+            "predictions": "https://raw.githubusercontent.com/drnewske/tyhdsjax-nfhbqsm/refs/heads/main/today_matches.json",
+            "league_tables": "https://raw.githubusercontent.com/drnewske/tyhdsjax-nfhbqsm/refs/heads/main/league_tables.json",
+            "live_scores": "https://raw.githubusercontent.com/drnewske/tyhdsjax-nfhbqsm/refs/heads/main/live_scores.json",
+            "important_messages": {
+                "urgent": {
+                    "tag": "null",
+                    "message": "null",
+                    "update_link": "null"
+                },
+                "temporary": {
+                    "id": "promo_july2025",
+                    "message": "THE APP WORKS FINE, PERFECTO!!. This is where is you will advertise your products! for free?...get serious comrade",
+                    "dismissible": False
+                }
+            }
         }
-      }
     }
 
     encryptor = MasterEncryptor()
