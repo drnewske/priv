@@ -133,6 +133,9 @@ def main():
         "events_card_json_link": "https://raw.githubusercontent.com/drnewske/GDDNvsndjhqwh353dmjje-nnnswwwwwwwwwwwwwwwww5rwtqsmmvb/refs/heads/main/67d18f5b263505d3be8283897bb383f149a39dd35bf9563d43.json",
         "full_matches_replay_json_link": "https://cdn.jsdelivr.net/gh/drnewske/reAepo1no3489repo34xserdQrtmmfbhdaej/matches.json",
         "tv_channels": "https://raw.githubusercontent.com/drnewske/priv/refs/heads/main/tv.json",
+        "predictions": "https://raw.githubusercontent.com/drnewske/tyhdsjax-nfhbqsm/refs/heads/main/today_matches.json",
+        "league_tables": "https://raw.githubusercontent.com/drnewske/tyhdsjax-nfhbqsm/refs/heads/main/league_tables.json"
+        "live_scores": "https://raw.githubusercontent.com/drnewske/tyhdsjax-nfhbqsm/refs/heads/main/live_scores.json" 
         "important_messages": {
           "urgent": {
             "tag": "null",
