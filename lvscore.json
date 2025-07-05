@@ -1,0 +1,14 @@
+{
+  "widgets": [
+    {
+      "type": "live",
+      "status": "live",
+      "embed_code": "<script charset=\"utf8\" src=\"https://azscore.com/football/widget/en/all/games?type=live\" type=\"text/javascript\"></script><a id=\"link\" href=\"https://azscore.com\">livescores</a>"
+    },
+    {
+      "type": "results",
+      "status": "finished",
+      "embed_code": "<script charset=\"utf8\" src=\"https://azscore.com/football/widget/en/all/games?type=results\" type=\"text/javascript\"></script><a id=\"link\" href=\"https://azscore.com\">livescore</a>"
+    }
+  ]
+}
