@@ -137,7 +137,18 @@ def main():
             "league_tables": "https://raw.githubusercontent.com/drnewske/priv/refs/heads/main/standings.json",
             "live_scores": "https://raw.githubusercontent.com/drnewske/priv/refs/heads/main/lvscore.json",
             "tv_chnnels_back_up": "https://raw.githubusercontent.com/drnewske/priv/refs/heads/main/ads.json",
-            
+            "important_messages": {
+                "urgent": {
+                    "tag": "null",
+                    "message": "null",
+                    "update_link": "null"
+                },
+                "temporary": {
+                    "id": "promo_july2025",
+                    "message": "THE APP WORKS FINE, PERFECTO!!. This is where is you will advertise your products! for free?...get serious comrade",
+                    "dismissible": False
+                }
+            }
         }
     }
 
