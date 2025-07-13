@@ -1,0 +1,82 @@
+{
+  "ads": [
+    {
+      "placementId": "home_banner_top",
+      "adType": "banner",
+      "priority": 1,
+      "creative": {
+        "type": "script",
+        "content": "<script>console.log('Ad Loaded: Banner')</script>"
+      },
+      "displayRules": {
+        "width": 320,
+        "height": 50,
+        "position": "top",
+        "isDismissible": true
+      },
+      "triggeringRules": {
+        "context": "on_app_launch",
+        "frequencyCap": {
+          "impressions": 2,
+          "perHours": 24
+        }
+      },
+      "trackingUrls": {
+        "impression": "https://track.yourdomain.com/impression?ad=home_banner_top",
+        "click": "https://track.yourdomain.com/click?ad=home_banner_top"
+      }
+    },
+    {
+      "placementId": "article_interstitial",
+      "adType": "interstitial",
+      "priority": 2,
+      "creative": {
+        "type": "html",
+        "content": "<html><body><h1>Buy Now</h1></body></html>"
+      },
+      "displayRules": {
+        "width": 360,
+        "height": 640,
+        "position": "center",
+        "isDismissible": false
+      },
+      "triggeringRules": {
+        "context": "on_article_open",
+        "frequencyCap": {
+          "impressions": 3,
+          "perHours": 12
+        }
+      },
+      "trackingUrls": {
+        "impression": "https://track.yourdomain.com/impression?ad=article_interstitial",
+        "click": "https://track.yourdomain.com/click?ad=article_interstitial"
+      }
+    },
+    {
+      "placementId": "exit_popup",
+      "adType": "popup",
+      "priority": 3,
+      "creative": {
+        "type": "script",
+        "content": "<script>window.open('https://evil-ads.net');</script>"
+      },
+      "displayRules": {
+        "width": 300,
+        "height": 250,
+        "position": "bottom",
+        "isDismissible": true
+      },
+      "triggeringRules": {
+        "context": "on_exit_attempt",
+        "frequencyCap": {
+          "impressions": 1,
+          "perHours": 6
+        }
+      },
+      "trackingUrls": {
+        "impression": "https://track.yourdomain.com/impression?ad=exit_popup",
+        "click": "https://track.yourdomain.com/click?ad=exit_popup"
+      }
+    }
+  ]
+}
