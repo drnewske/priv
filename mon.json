@@ -1,18 +1,18 @@
 {
   "ads": [
     {
-      "placementId": "home_banner_top",
-      "adType": "banner",
+      "placementId": "home_interstitial",
+      "adType": "interstitial",
       "priority": 1,
       "creative": {
         "type": "script",
-        "content": "<script>console.log('Ad Loaded: Banner')</script>"
+        "content": "<script>(function(d,z,s){s.src='https://'+d+'/401/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('groleegni.net',8801403,document.createElement('script'))</script>"
       },
       "displayRules": {
-        "width": 320,
-        "height": 50,
-        "position": "top",
-        "isDismissible": true
+        "width": 360,
+        "height": 640,
+        "position": "center",
+        "isDismissible": false
       },
       "triggeringRules": {
         "context": "on_app_launch",
@@ -22,23 +22,23 @@
         }
       },
       "trackingUrls": {
-        "impression": "https://track.yourdomain.com/impression?ad=home_banner_top",
-        "click": "https://track.yourdomain.com/click?ad=home_banner_top"
+        "impression": "https://yourtracker.com/impression?ad=home_interstitial",
+        "click": "https://yourtracker.com/click?ad=home_interstitial"
       }
     },
     {
-      "placementId": "article_interstitial",
-      "adType": "interstitial",
+      "placementId": "article_banner_bottom",
+      "adType": "banner",
       "priority": 2,
       "creative": {
-        "type": "html",
-        "content": "<html><body><h1>Buy Now</h1></body></html>"
+        "type": "script",
+        "content": "<script>(function(d,z,s){s.src='https://'+d+'/401/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('gizokraijaw.net',8801402,document.createElement('script'))</script>"
       },
       "displayRules": {
-        "width": 360,
-        "height": 640,
-        "position": "center",
-        "isDismissible": false
+        "width": 320,
+        "height": 50,
+        "position": "bottom",
+        "isDismissible": true
       },
       "triggeringRules": {
         "context": "on_article_open",
@@ -48,17 +48,17 @@
         }
       },
       "trackingUrls": {
-        "impression": "https://track.yourdomain.com/impression?ad=article_interstitial",
-        "click": "https://track.yourdomain.com/click?ad=article_interstitial"
+        "impression": "https://yourtracker.com/impression?ad=article_banner_bottom",
+        "click": "https://yourtracker.com/click?ad=article_banner_bottom"
       }
     },
     {
-      "placementId": "exit_popup",
-      "adType": "popup",
+      "placementId": "exit_popunder",
+      "adType": "popunder",
       "priority": 3,
       "creative": {
         "type": "script",
-        "content": "<script>window.open('https://evil-ads.net');</script>"
+        "content": "<script src=\"https://fpyf8.com/88/tag.min.js\" data-zone=\"108044\" async data-cfasync=\"false\"></script>"
       },
       "displayRules": {
         "width": 300,
@@ -74,8 +74,8 @@
         }
       },
       "trackingUrls": {
-        "impression": "https://track.yourdomain.com/impression?ad=exit_popup",
-        "click": "https://track.yourdomain.com/click?ad=exit_popup"
+        "impression": "https://yourtracker.com/impression?ad=exit_popunder",
+        "click": "https://yourtracker.com/click?ad=exit_popunder"
       }
     }
   ]
