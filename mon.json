@@ -6,7 +6,7 @@
       "priority": 1,
       "creative": {
         "type": "script",
-        "content": "<script>(function(d,z,s){s.src='https://'+d+'/401/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('groleegni.net',8801403,document.createElement('script'))</script>"
+        "content": "(function(d,z,s){s.src='https://'+d+'/401/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('groleegni.net',8801403,document.createElement('script'))"
       },
       "displayRules": {
         "width": 360,
@@ -32,7 +32,7 @@
       "priority": 2,
       "creative": {
         "type": "script",
-        "content": "<script>(function(d,z,s){s.src='https://'+d+'/401/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('gizokraijaw.net',8801402,document.createElement('script'))</script>"
+        "content": "(function(d,z,s){s.src='https://'+d+'/401/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('gizokraijaw.net',8801402,document.createElement('script'))"
       },
       "displayRules": {
         "width": 320,
