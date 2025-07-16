@@ -140,14 +140,14 @@ def main():
             "mostrosity": "https://raw.githubusercontent.com/drnewske/priv/refs/heads/main/mon.json",
             "important_messages": {
                 "urgent": {
-                    "tag": null,
-                    "message": null,
-                    "update_link": null
+                    "tag": "null",
+                    "message": "null",
+                    "update_link": "null"
                 },
                 "temporary": {
-                    "id": null,
-                    "message": null,
-                    "dismissible": null
+                    "id": "null",
+                    "message": "null",
+                    "dismissible": "null"
                 }
             }
         }
