@@ -32,6 +32,7 @@
             "country": "Russia",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/239671rnk.jpg",
             "streams": [
+  
                 "https://www.livehdtv.com/yayin/?kanal=366&yayin=1&guvenlik=$2y$10$YadnqOrVfFL5d9TFMbrLLubcmotksAMAsfTDqliQLVyk89q05V0nu",
                 "https://www.livehdtv.com/yayin/?kanal=366&yayin=1&guvenlik=$2y$10$D0LHeDPm7/2mL5XwKlcuK.Cqo.EcVIiOOpGgS8bVWIXIQSWEVb8Z.",
                 "https://www.livehdtv.com/yayin/?kanal=366&yayin=1&guvenlik=$2y$10$KZxeR8QQSnvHzm4s4/k4CutnxuB09ZxTFPw/3r3UsgD99RcHwF7kS"
@@ -47,7 +48,7 @@
             ]
         },
         {
-            "name": "24 Horasfrom Spain",
+            "name": "24 Horas",
             "country": "Spain",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/2593124 horas.png",
             "streams": [
@@ -84,7 +85,7 @@
             ]
         },
         {
-            "name": "30A TV from USA",
+            "name": "30A TV",
             "country": "USA",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/2429630atvlogo.png",
             "streams": [
@@ -114,7 +115,7 @@
             ]
         },
         {
-            "name": "3ABN Français from USA",
+            "name": "3ABN Français",
             "country": "USA",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/216633abn-francais-logo.png",
             "streams": [
@@ -134,7 +135,7 @@
             ]
         },
         {
-            "name": "3ABN Latino from USA",
+            "name": "3ABN Latino",
             "country": "USA",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/266423abn-latino.jpg",
             "streams": [
@@ -154,7 +155,7 @@
             ]
         },
         {
-            "name": "3ABN from USA",
+            "name": "3ABN",
             "country": "USA",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/299653abn-logo.png",
             "streams": [
@@ -231,7 +232,7 @@
             ]
         },
         {
-            "name": "6ter from France",
+            "name": "6ter",
             "country": "France",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/231576ter.png",
             "streams": [
@@ -251,7 +252,7 @@
             ]
         },
         {
-            "name": "7News Boston WHDH from USA",
+            "name": "7News Boston WHDH",
             "country": "USA",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/21085WHDH_7_logo.png",
             "streams": [
@@ -260,7 +261,7 @@
             ]
         },
         {
-            "name": "7x Music from India",
+            "name": "7x Music",
             "country": "India",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/260817xmusic.jpg",
             "streams": [
@@ -287,7 +288,7 @@
             ]
         },
         {
-            "name": "A24 from Argentina",
+            "name": "A24",
             "country": "Argentina",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/29752A 24.png",
             "streams": [
@@ -327,7 +328,7 @@
             ]
         },
         {
-            "name": "ADN 40 from Mexico",
+            "name": "ADN 40",
             "country": "Mexico",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/21158ADN 40.png",
             "streams": [
@@ -347,7 +348,7 @@
             ]
         },
         {
-            "name": "AFV from USA",
+            "name": "AFV",
             "country": "USA",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/28655AFV.png",
             "streams": [
@@ -355,7 +356,7 @@
             ]
         },
         {
-            "name": "AL Horreya TV from USA",
+            "name": "AL Horreya TV",
             "country": "USA",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/20975alhorreya-logo (1).png",
             "streams": [
@@ -382,7 +383,7 @@
             ]
         },
         {
-            "name": "AMG TV from USA",
+            "name": "AMG TV",
             "country": "USA",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/24144AMG TV.jpg",
             "streams": [
@@ -392,7 +393,7 @@
             ]
         },
         {
-            "name": "ARD from Germany",
+            "name": "ARD",
             "country": "Germany",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/24643ard.png",
             "streams": [
@@ -402,7 +403,7 @@
             ]
         },
         {
-            "name": "AT5 from Netherlands",
+            "name": "AT5",
             "country": "Netherlands",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/20215AT5_Logo.png",
             "streams": [
@@ -460,7 +461,7 @@
             ]
         },
         {
-            "name": "Akaku 53 from Hawaii",
+            "name": "Akaku 53",
             "country": "USA",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/22268Akaku 53.png",
             "streams": [
@@ -470,7 +471,7 @@
             ]
         },
         {
-            "name": "Akaku 54 from Hawaii",
+            "name": "Akaku 54",
             "country": "USA",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/21101Akaku 54.png",
             "streams": [
@@ -480,7 +481,7 @@
             ]
         },
         {
-            "name": "Akaku 55 from Hawaii",
+            "name": "Akaku 55",
             "country": "USA",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/27110Akaku 55.png",
             "streams": [
@@ -520,7 +521,7 @@
             ]
         },
         {
-            "name": "Al Jazeerafrom Qatar",
+            "name": "Al Jazeera",
             "country": "Qatar",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/2058122960aljazeraa.png",
             "streams": [
@@ -540,7 +541,7 @@
             ]
         },
         {
-            "name": "Al-Mahdi TV from USA",
+            "name": "Al-Mahdi TV",
             "country": "USA",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/20923Al mahdi tv.jpg",
             "streams": [
@@ -550,7 +551,7 @@
             ]
         },
         {
-            "name": "Alex Berlin from Germany",
+            "name": "Alex Berlin",
             "country": "GERMANY",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/25242Alex Berlin.png",
             "streams": [
@@ -560,7 +561,7 @@
             ]
         },
         {
-            "name": "Aliento Vision from USA",
+            "name": "Aliento Vision",
             "country": "USA",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/23378Aliento Vision.png",
             "streams": [
@@ -588,7 +589,7 @@
             ]
         },
         {
-            "name": "Amazing Facts TV from USA",
+            "name": "Amazing Facts TV",
             "country": "USA",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/20490amazing-facts-tv-logo.png",
             "streams": [
@@ -627,7 +628,7 @@
             ]
         },
         {
-            "name": "Antena 3 from Romania",
+            "name": "Antena 3,
             "country": "Romania",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/20648Antena 3.png",
             "streams": [
@@ -725,7 +726,7 @@
             ]
         },
         {
-            "name": "Atlanta Channel from USA",
+            "name": "Atlanta Channel",
             "country": "USA",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/31570Atlanta Channel.png",
             "streams": [
@@ -765,7 +766,7 @@
             ]
         },
         {
-            "name": "AzTV from Azerbaijan",
+            "name": "AzTV",
             "country": "Azerbaijan",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/25491aztv.png",
             "streams": [
@@ -785,7 +786,7 @@
             ]
         },
         {
-            "name": "Azteca 7 from Mexico",
+            "name": "Azteca 7",
             "country": "Mexico",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/22321azteca 7 logo.png",
             "streams": [
@@ -895,7 +896,7 @@
             ]
         },
         {
-            "name": "BFM TV from France",
+            "name": "BFM TV ",
             "country": "France",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/30280BFM TV.png",
             "streams": [
@@ -924,7 +925,7 @@
             ]
         },
         {
-            "name": "BVN from Netherlands",
+            "name": "BVN ",
             "country": "Netherlands",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/31848bvn logo.png",
             "streams": [
@@ -952,7 +953,7 @@
             ]
         },
         {
-            "name": "BalkanWeb News 24 from Albania",
+            "name": "BalkanWeb News 24 ",
             "country": "Albania",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/22649News 24.jpg",
             "streams": [
@@ -962,7 +963,7 @@
             ]
         },
         {
-            "name": "Beach TV from USA",
+            "name": "Beach TV  ",
             "country": "USA",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/20445Beach TV.png",
             "streams": [
@@ -972,7 +973,7 @@
             ]
         },
         {
-            "name": "Beauty IQ from USA",
+            "name": "Beauty IQ  ",
             "country": "USA",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/29439Beauty IQ logo.jpg",
             "streams": [
@@ -982,7 +983,7 @@
             ]
         },
         {
-            "name": "Bek Sports from USA",
+            "name": "Bek Sports  ",
             "country": "USA",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/31637Bek Sports East.jpg",
             "streams": [
@@ -1062,7 +1063,7 @@
             ]
         },
         {
-            "name": "Bowie TV from USA",
+            "name": "Bowie TV  ",
             "country": "USA",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/26805Bowie TV.png",
             "streams": [
@@ -1121,7 +1122,7 @@
             ]
         },
         {
-            "name": "C8 from France",
+            "name": "C8 ",
             "country": "France",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/30723c8.png",
             "streams": [
@@ -1179,7 +1180,7 @@
             ]
         },
         {
-            "name": "CBS News from USA",
+            "name": "CBS News  ",
             "country": "USA",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/30347cbs news logo.png",
             "streams": [
@@ -1198,7 +1199,7 @@
             ]
         },
         {
-            "name": "CDN 37 from Dominican Republic",
+            "name": "CDN 37",
             "country": "Dominican Republic",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/27634cdn 37 logo.png",
             "streams": [
@@ -1248,7 +1249,7 @@
             ]
         },
         {
-            "name": "CNBC from USA",
+            "name": "CNBC  ",
             "country": "USA",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/30300cnbc.jpg",
             "streams": [
@@ -1287,7 +1288,7 @@
             ]
         },
         {
-            "name": "CORTV from Mexico",
+            "name": "CORTV  ",
             "country": "Mexico",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/29384CORTV.png",
             "streams": [
@@ -1296,7 +1297,7 @@
             ]
         },
         {
-            "name": "CStar from France",
+            "name": "CStar ",
             "country": "France",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/23275cstar.png",
             "streams": [
@@ -1345,7 +1346,7 @@
             ]
         },
         {
-            "name": "Canal 10 Cordoba from Argentina",
+            "name": "Canal 10 Cordoba ",
             "country": "Argentina",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/29793Canal 10 Cordoba.png",
             "streams": [
@@ -1355,7 +1356,7 @@
             ]
         },
         {
-            "name": "Canal 14 from Mexico",
+            "name": "Canal 14  ",
             "country": "Mexico",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/29468canal catorce.png",
             "streams": [
@@ -1384,7 +1385,7 @@
             ]
         },
         {
-            "name": "Canal 8from Argentina",
+            "name": "Canal 8",
             "country": "Argentina",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/26192Canal 8.png",
             "streams": [
@@ -1393,7 +1394,7 @@
             ]
         },
         {
-            "name": "Canal 9 Litoral from Argentina",
+            "name": "Canal 9 Litoral ",
             "country": "Argentina",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/30396Canal 9 Litoral.jpg",
             "streams": [
@@ -1402,7 +1403,7 @@
             ]
         },
         {
-            "name": "Canal C from Argentina",
+            "name": "Canal C ",
             "country": "Argentina",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/28249Canal C.jpg",
             "streams": [
@@ -1411,7 +1412,7 @@
             ]
         },
         {
-            "name": "Canal Luz from Argentina",
+            "name": "Canal Luz ",
             "country": "Argentina",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/27810Canal Luz.png",
             "streams": [
@@ -1420,7 +1421,7 @@
             ]
         },
         {
-            "name": "Canal Once from Mexico",
+            "name": "Canal Once  ",
             "country": "Mexico",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/24891canal once logo.png",
             "streams": [
@@ -1449,7 +1450,7 @@
             ]
         },
         {
-            "name": "Channel 10from Israel",
+            "name": "Channel 10",
             "country": "Israel",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/29029arutz 10.jpg",
             "streams": [
@@ -1459,7 +1460,7 @@
             ]
         },
         {
-            "name": "Channel 13 from Israel",
+            "name": "Channel 13 ",
             "country": "Israel",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/25480channel 13  logo.jpg",
             "streams": [
@@ -1469,7 +1470,7 @@
             ]
         },
         {
-            "name": "Channel 14from Israel",
+            "name": "Channel 14",
             "country": "Israel",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/29397channel14isreal.png",
             "streams": [
@@ -1479,7 +1480,7 @@
             ]
         },
         {
-            "name": "Channel 24from Israel",
+            "name": "Channel 24",
             "country": "Israel",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/25149Music 24.png",
             "streams": [
@@ -1548,7 +1549,7 @@
             ]
         },
         {
-            "name": "Chérie 25 from France",
+            "name": "Chérie 25 ",
             "country": "France",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/30688Chérie 25.png",
             "streams": [
@@ -1636,7 +1637,7 @@
             ]
         },
         {
-            "name": "DWfrom Germany",
+            "name": "DW",
             "country": "Germany",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/295753001629752dw.jpg",
             "streams": [
@@ -1666,7 +1667,7 @@
             ]
         },
         {
-            "name": "Deluxe Music from Germany",
+            "name": "Deluxe Music ",
             "country": "GERMANY",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/20553deluxe music logo.png",
             "streams": [
@@ -1736,7 +1737,7 @@
             ]
         },
         {
-            "name": "Dubai TV from Saudi Arabia",
+            "name": "Dubai TV ",
             "country": "Saudi Arabia",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/23838dubai tv logo.png",
             "streams": [
@@ -1815,7 +1816,7 @@
             ]
         },
         {
-            "name": "ERT World from Greece",
+            "name": "ERT World ",
             "country": "Greece",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/28163ERT World.jpg",
             "streams": [
@@ -1855,7 +1856,7 @@
             ]
         },
         {
-            "name": "El Trece from Argentina",
+            "name": "El Trece ",
             "country": "Argentina",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/26878el trece.png",
             "streams": [
@@ -1931,7 +1932,7 @@
             ]
         },
         {
-            "name": "FS1 from Austria",
+            "name": "FS1 ",
             "country": "Austria",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/20490fs1 logo austria.png",
             "streams": [
@@ -1951,7 +1952,7 @@
             ]
         },
         {
-            "name": "Fashion TV Live from France",
+            "name": "Fashion TV Live ",
             "country": "France",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/30072Fashion tv logo.png",
             "streams": [
@@ -2157,7 +2158,7 @@
             ]
         },
         {
-            "name": "France 3 from France",
+            "name": "France 3 ",
             "country": "France",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/30068France 3.png",
             "streams": [
@@ -2167,7 +2168,7 @@
             ]
         },
         {
-            "name": "France 4 from France",
+            "name": "France 4 ",
             "country": "France",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/28726France 4.png",
             "streams": [
@@ -2177,7 +2178,7 @@
             ]
         },
         {
-            "name": "France 5 from France",
+            "name": "France 5 ",
             "country": "France",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/21963france 5.png",
             "streams": [
@@ -2187,7 +2188,7 @@
             ]
         },
         {
-            "name": "Franceinfo from France",
+            "name": "Franceinfo ",
             "country": "France",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/29328franceinfo.png",
             "streams": [
@@ -2262,7 +2263,7 @@
             ]
         },
         {
-            "name": "Gulli from France",
+            "name": "Gulli ",
             "country": "France",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/23205gullilogo.jpg",
             "streams": [
@@ -2291,7 +2292,7 @@
             ]
         },
         {
-            "name": "HLN from USA",
+            "name": "HLN  ",
             "country": "USA",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/2325325495hln-2.jpg",
             "streams": [
@@ -2301,7 +2302,7 @@
             ]
         },
         {
-            "name": "HSN from USA",
+            "name": "HSN  ",
             "country": "USA",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/2797123095DE4nVEfu.jpg",
             "streams": [
@@ -2350,7 +2351,7 @@
             ]
         },
         {
-            "name": "ICTV from Ukraine",
+            "name": "ICTV ",
             "country": "Ukraine",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/26701ictv ukraine live.png",
             "streams": [
@@ -2438,7 +2439,7 @@
             ]
         },
         {
-            "name": "Imedi TV from Georgia",
+            "name": "Imedi TV ",
             "country": "Georgia",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/25065imedi tv logo.jpg",
             "streams": [
@@ -2486,7 +2487,7 @@
             ]
         },
         {
-            "name": "JOJ Plus from Slovakia",
+            "name": "JOJ Plus ",
             "country": "Slovakia",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/27051joj plus logo.png",
             "streams": [
@@ -2495,7 +2496,7 @@
             ]
         },
         {
-            "name": "JOJ WAU from Slovakia",
+            "name": "JOJ WAU ",
             "country": "Slovakia",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/20648joj wau logo.png",
             "streams": [
@@ -2560,7 +2561,7 @@
             ]
         },
         {
-            "name": "KTOO 360TV from USA",
+            "name": "KTOO 360TV  ",
             "country": "USA",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/21568ktoo360.jpg",
             "streams": [
@@ -2619,7 +2620,7 @@
             ]
         },
         {
-            "name": "Keshet 12 from Israel",
+            "name": "Keshet 12 ",
             "country": "Israel",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/20194keshet 12.png",
             "streams": [
@@ -2629,7 +2630,7 @@
             ]
         },
         {
-            "name": "Ketnet Junior from Belgium",
+            "name": "Ketnet Junior ",
             "country": "Belgium",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/24007ketnet jr.png",
             "streams": [
@@ -2659,7 +2660,7 @@
             ]
         },
         {
-            "name": "L'Équipe 21 from France",
+            "name": "L'Équipe 21 ",
             "country": "France",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/22406L'Équipe 21.jpg",
             "streams": [
@@ -2688,7 +2689,7 @@
             ]
         },
         {
-            "name": "La 1 from Spain",
+            "name": "La 1 ",
             "country": "Spain",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/22417La 1.png",
             "streams": [
@@ -2698,7 +2699,7 @@
             ]
         },
         {
-            "name": "La 2 from Spain",
+            "name": "La 2 ",
             "country": "Spain",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/22055la 2 logo.png",
             "streams": [
@@ -2767,7 +2768,7 @@
             ]
         },
         {
-            "name": "M6 from France",
+            "name": "M6 ",
             "country": "France",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/20636m6.png",
             "streams": [
@@ -2777,7 +2778,7 @@
             ]
         },
         {
-            "name": "MBC 1 from Saudi Arabia",
+            "name": "MBC 1 ",
             "country": "Saudi Arabia",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/27231MBC 1.png",
             "streams": [
@@ -2797,7 +2798,7 @@
             ]
         },
         {
-            "name": "MDR Fernsehen from Germany",
+            "name": "MDR Fernsehen ",
             "country": "Germany",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/29108MDR Fernsehen.png",
             "streams": [
@@ -2854,7 +2855,7 @@
             ]
         },
         {
-            "name": "MTV3 from Finland",
+            "name": "MTV3 ",
             "country": "Finland",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/29019mtv3 logo.png",
             "streams": [
@@ -2962,7 +2963,7 @@
             ]
         },
         {
-            "name": "Mtavari Arkhi from Georgia",
+            "name": "Mtavari Arkhi ",
             "country": "Georgia",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/24194Mtavari Arkhi logo.jpg",
             "streams": [
@@ -2991,7 +2992,7 @@
             ]
         },
         {
-            "name": "NASA TV from USA",
+            "name": "NASA TV  ",
             "country": "USA",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/28731nasatvlogo (1).png",
             "streams": [
@@ -3001,7 +3002,7 @@
             ]
         },
         {
-            "name": "NBC 2 from USA",
+            "name": "NBC 2  ",
             "country": "USA",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/29199nbc2.jpg",
             "streams": [
@@ -3040,7 +3041,7 @@
             ]
         },
         {
-            "name": "NPO 1 from Netherlands",
+            "name": "NPO 1 ",
             "country": "Netherlands",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/22913npo1.png",
             "streams": [
@@ -3050,7 +3051,7 @@
             ]
         },
         {
-            "name": "NPO 2 from Netherlands",
+            "name": "NPO 2 ",
             "country": "Netherlands",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/28687npo2logo.png",
             "streams": [
@@ -3060,7 +3061,7 @@
             ]
         },
         {
-            "name": "NPO 3 from Netherlands",
+            "name": "NPO 3 ",
             "country": "Netherlands",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/29346npo3logo.png",
             "streams": [
@@ -3070,7 +3071,7 @@
             ]
         },
         {
-            "name": "NPO Zappelin from Netherlands",
+            "name": "NPO Zappelin ",
             "country": "Netherlands",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/21198266px-Npo_zappelin_logo_2018.jpg",
             "streams": [
@@ -3080,7 +3081,7 @@
             ]
         },
         {
-            "name": "NRJ 12 from France",
+            "name": "NRJ 12 ",
             "country": "France",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/21280NRJ12.png",
             "streams": [
@@ -3179,7 +3180,7 @@
             ]
         },
         {
-            "name": "Notélé from Belgium",
+            "name": "Notélé ",
             "country": "Belgium",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/24854notele logo.jpg",
             "streams": [
@@ -3247,7 +3248,7 @@
             ]
         },
         {
-            "name": "Ora News from Albania",
+            "name": "Ora News ",
             "country": "Albania",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/23378Ora News.png",
             "streams": [
@@ -3325,7 +3326,7 @@
             ]
         },
         {
-            "name": "PTV Home from Pakistan",
+            "name": "PTV Home ",
             "country": "Pakistan",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/24493PTV Home logo.png",
             "streams": [
@@ -3374,7 +3375,7 @@
             ]
         },
         {
-            "name": "Pro TV from Romania",
+            "name": "Pro TV ",
             "country": "Romania",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/28698pro tv.png",
             "streams": [
@@ -3530,7 +3531,7 @@
             ]
         },
         {
-            "name": "RTK 2 from Kosovo",
+            "name": "RTK 2 ",
             "country": "Kosovo",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/29456rtk 2 logo.png",
             "streams": [
@@ -3589,7 +3590,7 @@
             ]
         },
         {
-            "name": "RTP1 from Portugal",
+            "name": "RTP1 ",
             "country": "Portugal",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/27707rtp1 logo.png",
             "streams": [
@@ -3637,7 +3638,7 @@
             ]
         },
         {
-            "name": "Rai 1 from Italy",
+            "name": "Rai 1 ",
             "country": "Italy",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/29076rai1logo.png",
             "streams": [
@@ -3675,7 +3676,7 @@
             ]
         },
         {
-            "name": "Realitatea TV from Romania",
+            "name": "Realitatea TV ",
             "country": "Romania",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/21920Realitatea TV logo.png",
             "streams": [
@@ -3752,7 +3753,7 @@
             ]
         },
         {
-            "name": "Rustavi 2 from Georgia",
+            "name": "Rustavi 2 ",
             "country": "Georgia",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/27578Rustavi2 logo.png",
             "streams": [
@@ -3771,7 +3772,7 @@
             ]
         },
         {
-            "name": "SIC from Portugal",
+            "name": "SIC ",
             "country": "Portugal",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/25203sic logo.png",
             "streams": [
@@ -3791,7 +3792,7 @@
             ]
         },
         {
-            "name": "SRF 1 from Switzerland",
+            "name": "SRF 1 ",
             "country": "Switzerland",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/31659srf1 logo.png",
             "streams": [
@@ -3801,7 +3802,7 @@
             ]
         },
         {
-            "name": "SWR Fernsehen from Germany",
+            "name": "SWR Fernsehen ",
             "country": "Germany",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/24058SWR Fernsehen.png",
             "streams": [
@@ -3868,7 +3869,7 @@
             ]
         },
         {
-            "name": "Shabake 2 from Iran",
+            "name": "Shabake 2 ",
             "country": "Iran",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/21800irib2.png",
             "streams": [
@@ -3987,7 +3988,7 @@
             ]
         },
         {
-            "name": "Star TV from Turkey",
+            "name": "Star TV ",
             "country": "Turkey",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/30388startv-turkey.png",
             "streams": [
@@ -4097,7 +4098,7 @@
             ]
         },
         {
-            "name": "TPA 1 from Angola",
+            "name": "TPA 1 ",
             "country": "Angola",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/26677tpa-1-logo.png",
             "streams": [
@@ -4106,7 +4107,7 @@
             ]
         },
         {
-            "name": "TPA from Angola",
+            "name": "TPA ",
             "country": "Angola",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/28994tpa.png",
             "streams": [
@@ -4145,7 +4146,7 @@
             ]
         },
         {
-            "name": "TRT World from Turkey",
+            "name": "TRT World ",
             "country": "Turkey",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/23011trtworld.jpg",
             "streams": [
@@ -4263,7 +4264,7 @@
             ]
         },
         {
-            "name": "Tele Antillas from Dominican Republic",
+            "name": "Tele Antillas ",
             "country": "Dominican Republic",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/20925tele antillas logo.jpg",
             "streams": [
@@ -4293,7 +4294,7 @@
             ]
         },
         {
-            "name": "Tennis Channel from USA",
+            "name": "Tennis Channel  ",
             "country": "USA",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/27026tennis channel.png",
             "streams": [
@@ -4303,7 +4304,7 @@
             ]
         },
         {
-            "name": "The Weather Channel from USA",
+            "name": "The Weather Channel  ",
             "country": "USA",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/23239274921200px-The_Weather_Channel_logo_2005-present.svg.png",
             "streams": [
@@ -4323,7 +4324,7 @@
             ]
         },
         {
-            "name": "Tirol TV from Austria",
+            "name": "Tirol TV ",
             "country": "Austria",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/26034tirol tv logo.png",
             "streams": [
@@ -4343,7 +4344,7 @@
             ]
         },
         {
-            "name": "Top News from Albania",
+            "name": "Top News ",
             "country": "Albania",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/29268topnews.png",
             "streams": [
@@ -4440,7 +4441,7 @@
             ]
         },
         {
-            "name": "W9 from France",
+            "name": "W9 ",
             "country": "France",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/23866w9.png",
             "streams": [
@@ -4526,7 +4527,7 @@
             ]
         },
         {
-            "name": "WSB-TV from USA",
+            "name": "WSB-TV  ",
             "country": "USA",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/24279WSB-TV.png",
             "streams": [
@@ -4624,7 +4625,7 @@
             ]
         },
         {
-            "name": "a Haber from Turkey",
+            "name": "a Haber ",
             "country": "Turkey",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/22042ahaberlogo.png",
             "streams": [
@@ -4662,7 +4663,7 @@
             ]
         },
         {
-            "name": "Інтерfrom Ukraine",
+            "name": "Інтер",
             "country": "Ukraine",
             "preview_image": "https://www.livehdtv.com/uploads/kanal/20395Інтер.png",
             "streams": [
