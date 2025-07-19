@@ -17,8 +17,8 @@
       "triggeringRules": {
         "context": "on_app_launch",
         "frequencyCap": {
-          "impressions": 2,
-          "perHours": 24
+          "impressions": 20,
+          "perHours": 2.4
         }
       },
       "trackingUrls": {
@@ -43,8 +43,8 @@
       "triggeringRules": {
         "context": "on_article_open",
         "frequencyCap": {
-          "impressions": 3,
-          "perHours": 12
+          "impressions": 30,
+          "perHours": 1.2
         }
       },
       "trackingUrls": {
@@ -69,8 +69,8 @@
       "triggeringRules": {
         "context": "on_exit_attempt",
         "frequencyCap": {
-          "impressions": 1,
-          "perHours": 6
+          "impressions": 10,
+          "perHours": 0.6
         }
       },
       "trackingUrls": {
