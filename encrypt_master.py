@@ -132,12 +132,12 @@ def main():
             "whatsapp_link": "https://www.whatsapp.com/channel/0029Va1fS95EAKWGIf0u5O1W",
             "events_card_json_link": "https://gddnvsndjhqwh353dmjje-nnnswwwwwwwwwwwwwwwww5rwtqsmmvb.pages.dev/live_events.json",
             "full_matches_replay_json_link": "https://cdn.jsdelivr.net/gh/drnewske/reAepo1no3489repo34xserdQrtmmfbhdaej/matches.json",
-            "tv_channels": "https://raw.githubusercontent.com/drnewske/priv/refs/heads/main/tv.json",
-            "predictions": "https://raw.githubusercontent.com/drnewske/tyhdsjax-nfhbqsm/refs/heads/main/today_matches.json",
-            "league_tables": "https://raw.githubusercontent.com/drnewske/priv/refs/heads/main/standings.json",
-            "live_scores": "https://raw.githubusercontent.com/drnewske/priv/refs/heads/main/lvscore.json",
-            "tv_chnnels_back_up": "https://raw.githubusercontent.com/drnewske/priv/refs/heads/main/ads.json",
-            "mostrosity": "https://raw.githubusercontent.com/drnewske/priv/refs/heads/main/mon.json",
+            "tv_channels": "https://cdn.jsdelivr.net/gh/drnewske/priv@main/tv.json",
+            "predictions": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/today_matches.json",
+            "league_tables": "https://cdn.jsdelivr.net/gh/drnewske/priv@main/standings.json",
+            "live_scores": "https://cdn.jsdelivr.net/gh/drnewske/priv@main/lvscore.json",
+            "tv_chnnels_back_up": "https://cdn.jsdelivr.net/gh/drnewske/priv@main/ads.json",
+            "mostrosity": "https://cdn.jsdelivr.net/gh/drnewske/priv@main/ads.json",
             "important_messages": {
                 "urgent": {
                     "tag": "null",
