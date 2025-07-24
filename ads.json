@@ -1,16 +1,134 @@
 {
   "ads": [
     {
-      "type": "links",
-      "link1": "https://iswashiscourtsh.com?tid=1078680",
-      "link2": "https://groinfont.com/b45tvhb0?key=b59073054215fe97c24a1dd31c58aecb",
-      "link3": "https://otieu.com/4/9528460"
+      "placementId": "home_interstitial_banner",
+      "adType": "banner",
+      "priority": 1,
+      "creative": {
+        "type": "script",
+        "content": "<script type=\"text/javascript\"> \n\tatOptions = { \n\t\t'key' : 'fec6d9a179622bdb556cfae24cc84b7a', \n\t\t'format' : 'iframe', \n\t\t'height' : 250, \n\t\t'width' : 300, \n\t\t'params' : {} \n\t}; \n</script> \n<script type=\"text/javascript\" src=\"//boobbounds.com/fec6d9a179622bdb556cfae24cc84b7a/invoke.js\"></script>"
+      },
+      "displayRules": {
+        "width": 300,
+        "height": 250,
+        "position": "center",
+        "isDismissible": true
+      },
+      "triggeringRules": {
+        "context": "on_app_launch",
+        "frequencyCap": {
+          "impressions": 100,
+          "perHours": 0.1
+        }
+      },
+      "trackingUrls": {
+        "impression": "https://yourtracker.com/impression?ad=home_interstitial_banner",
+        "click": "https://yourtracker.com/click?ad=home_interstitial_banner"
+      }
     },
     {
-      "type": "message",
-      "message": "💰 Win Big Now!",
-      "content": "Bet on your favorite team and get 300% bonus on first deposit. Limited time offer!",
-      "link": "https://betmania.com/signup"
+      "placementId": "article_banner_bottom",
+      "adType": "banner",
+      "priority": 2,
+      "creative": {
+        "type": "script",
+        "content": "<script type=\"text/javascript\"> \n\tatOptions = { \n\t\t'key' : 'eb26d51ec64d51210e6b119d87991e43', \n\t\t'format' : 'iframe', \n\t\t'height' : 60, \n\t\t'width' : 468, \n\t\t'params' : {} \n\t}; \n</script> \n<script type=\"text/javascript\" src=\"//boobbounds.com/eb26d51ec64d51210e6b119d87991e43/invoke.js\"></script>"
+      },
+      "displayRules": {
+        "width": 468,
+        "height": 60,
+        "position": "bottom",
+        "isDismissible": true
+      },
+      "triggeringRules": {
+        "context": "on_article_open",
+        "frequencyCap": {
+          "impressions": 100,
+          "perHours": 0.1
+        }
+      },
+      "trackingUrls": {
+        "impression": "https://yourtracker.com/impression?ad=article_banner_bottom",
+        "click": "https://yourtracker.com/click?ad=article_banner_bottom"
+      }
+    },
+    {
+      "placementId": "exit_popunder",
+      "adType": "popunder",
+      "priority": 3,
+      "creative": {
+        "type": "script",
+        "content": "<script type='text/javascript' src='//boobbounds.com/0d/ca/7f/0dca7f601a67ff92089884743fd0299c.js'></script>"
+      },
+      "displayRules": {
+        "width": 300,
+        "height": 250,
+        "position": "bottom",
+        "isDismissible": true
+      },
+      "triggeringRules": {
+        "context": "on_app_launch",
+        "frequencyCap": {
+          "impressions": 100,
+          "perHours": 0.1
+        }
+      },
+      "trackingUrls": {
+        "impression": "https://yourtracker.com/impression?ad=exit_popunder",
+        "click": "https://yourtracker.com/click?ad=exit_popunder"
+      }
+    },
+    {
+      "placementId": "video_preroll_banner",
+      "adType": "banner",
+      "priority": 1,
+      "creative": {
+        "type": "script",
+        "content": "<script async=\"async\" data-cfasync=\"false\" src=\"//boobbounds.com/3bb41a1805f65a54ac7ccc1a99f1c129/invoke.js\"></script><div id=\"container-3bb41a1805f65a54ac7ccc1a99f1c129\"></div>"
+      },
+      "displayRules": {
+        "width": 320,
+        "height": 50,
+        "position": "center",
+        "isDismissible": true
+      },
+      "triggeringRules": {
+        "context": "on_video_play",
+        "frequencyCap": {
+          "impressions": 100,
+          "perHours": 0.05
+        }
+      },
+      "trackingUrls": {
+        "impression": "https://yourtracker.com/impression?ad=video_preroll_banner",
+        "click": "https://yourtracker.com/click?ad=video_preroll_banner"
+      }
+    },
+    {
+      "placementId": "in_content_popunder",
+      "adType": "popunder",
+      "priority": 4,
+      "creative": {
+        "type": "script",
+        "content": "<script type='text/javascript' src='//boobbounds.com/0d/ca/7f/0dca7f601a67ff92089884743fd0299c.js'></script>"
+      },
+      "displayRules": {
+        "width": 300,
+        "height": 250,
+        "position": "middle",
+        "isDismissible": true
+      },
+      "triggeringRules": {
+        "context": "on_scroll",
+        "frequencyCap": {
+          "impressions": 100,
+          "perHours": 0.2
+        }
+      },
+      "trackingUrls": {
+        "impression": "https://yourtracker.com/impression?ad=in_content_popunder",
+        "click": "https://yourtracker.com/click?ad=in_content_popunder"
+      }
     }
   ]
 }
