@@ -1,29 +1,29 @@
 {
   "ads": [
     {
-      "placementId": "home_interstitial",
-      "adType": "interstitial",
+      "placementId": "home_interstitial_banner",
+      "adType": "banner",
       "priority": 1,
       "creative": {
         "type": "script",
-        "content": "(function(d,z,s){s.src='https://'+d+'/401/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('groleegni.net',8801403,document.createElement('script'))"
+        "content": "<script type=\"text/javascript\"> \n\tatOptions = { \n\t\t'key' : 'fec6d9a179622bdb556cfae24cc84b7a', \n\t\t'format' : 'iframe', \n\t\t'height' : 250, \n\t\t'width' : 300, \n\t\t'params' : {} \n\t}; \n</script> \n<script type=\"text/javascript\" src=\"//boobbounds.com/fec6d9a179622bdb556cfae24cc84b7a/invoke.js\"></script>"
       },
       "displayRules": {
-        "width": 360,
-        "height": 640,
+        "width": 300,
+        "height": 250,
         "position": "center",
-        "isDismissible": false
+        "isDismissible": true
       },
       "triggeringRules": {
         "context": "on_app_launch",
         "frequencyCap": {
-          "impressions": 20,
-          "perHours": 2.4
+          "impressions": 100,
+          "perHours": 0.1
         }
       },
       "trackingUrls": {
-        "impression": "https://yourtracker.com/impression?ad=home_interstitial",
-        "click": "https://yourtracker.com/click?ad=home_interstitial"
+        "impression": "https://yourtracker.com/impression?ad=home_interstitial_banner",
+        "click": "https://yourtracker.com/click?ad=home_interstitial_banner"
       }
     },
     {
@@ -32,19 +32,19 @@
       "priority": 2,
       "creative": {
         "type": "script",
-        "content": "(function(d,z,s){s.src='https://'+d+'/401/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('gizokraijaw.net',8801402,document.createElement('script'))"
+        "content": "<script type=\"text/javascript\"> \n\tatOptions = { \n\t\t'key' : 'eb26d51ec64d51210e6b119d87991e43', \n\t\t'format' : 'iframe', \n\t\t'height' : 60, \n\t\t'width' : 468, \n\t\t'params' : {} \n\t}; \n</script> \n<script type=\"text/javascript\" src=\"//boobbounds.com/eb26d51ec64d51210e6b119d87991e43/invoke.js\"></script>"
       },
       "displayRules": {
-        "width": 320,
-        "height": 50,
+        "width": 468,
+        "height": 60,
         "position": "bottom",
         "isDismissible": true
       },
       "triggeringRules": {
         "context": "on_article_open",
         "frequencyCap": {
-          "impressions": 30,
-          "perHours": 1.2
+          "impressions": 100,
+          "perHours": 0.1
         }
       },
       "trackingUrls": {
@@ -58,7 +58,7 @@
       "priority": 3,
       "creative": {
         "type": "script",
-        "content": "<script src=\"https://fpyf8.com/88/tag.min.js\" data-zone=\"108044\" async data-cfasync=\"false\"></script>"
+        "content": "<script type='text/javascript' src='//boobbounds.com/0d/ca/7f/0dca7f601a67ff92089884743fd0299c.js'></script>"
       },
       "displayRules": {
         "width": 300,
@@ -67,15 +67,67 @@
         "isDismissible": true
       },
       "triggeringRules": {
-        "context": "on_exit_attempt",
+        "context": "on_app_launch",
         "frequencyCap": {
-          "impressions": 10,
-          "perHours": 0.6
+          "impressions": 100,
+          "perHours": 0.1
         }
       },
       "trackingUrls": {
         "impression": "https://yourtracker.com/impression?ad=exit_popunder",
         "click": "https://yourtracker.com/click?ad=exit_popunder"
+      }
+    },
+    {
+      "placementId": "video_preroll_banner",
+      "adType": "banner",
+      "priority": 1,
+      "creative": {
+        "type": "script",
+        "content": "<script async=\"async\" data-cfasync=\"false\" src=\"//boobbounds.com/3bb41a1805f65a54ac7ccc1a99f1c129/invoke.js\"></script><div id=\"container-3bb41a1805f65a54ac7ccc1a99f1c129\"></div>"
+      },
+      "displayRules": {
+        "width": 320,
+        "height": 50,
+        "position": "center",
+        "isDismissible": true
+      },
+      "triggeringRules": {
+        "context": "on_video_play",
+        "frequencyCap": {
+          "impressions": 100,
+          "perHours": 0.05
+        }
+      },
+      "trackingUrls": {
+        "impression": "https://yourtracker.com/impression?ad=video_preroll_banner",
+        "click": "https://yourtracker.com/click?ad=video_preroll_banner"
+      }
+    },
+    {
+      "placementId": "in_content_popunder",
+      "adType": "popunder",
+      "priority": 4,
+      "creative": {
+        "type": "script",
+        "content": "<script type='text/javascript' src='//boobbounds.com/0d/ca/7f/0dca7f601a67ff92089884743fd0299c.js'></script>"
+      },
+      "displayRules": {
+        "width": 300,
+        "height": 250,
+        "position": "middle",
+        "isDismissible": true
+      },
+      "triggeringRules": {
+        "context": "on_scroll",
+        "frequencyCap": {
+          "impressions": 100,
+          "perHours": 0.2
+        }
+      },
+      "trackingUrls": {
+        "impression": "https://yourtracker.com/impression?ad=in_content_popunder",
+        "click": "https://yourtracker.com/click?ad=in_content_popunder"
       }
     }
   ]
