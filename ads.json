@@ -20,10 +20,6 @@
           "impressions": 100,
           "perHours": 0.1
         }
-      },
-      "trackingUrls": {
-        "impression": "https://yourtracker.com/impression?ad=home_interstitial_banner",
-        "click": "https://yourtracker.com/click?ad=home_interstitial_banner"
       }
     },
     {
@@ -46,10 +42,6 @@
           "impressions": 100,
           "perHours": 0.1
         }
-      },
-      "trackingUrls": {
-        "impression": "https://yourtracker.com/impression?ad=article_banner_bottom",
-        "click": "https://yourtracker.com/click?ad=article_banner_bottom"
       }
     },
     {
@@ -72,10 +64,6 @@
           "impressions": 100,
           "perHours": 0.1
         }
-      },
-      "trackingUrls": {
-        "impression": "https://yourtracker.com/impression?ad=exit_popunder",
-        "click": "https://yourtracker.com/click?ad=exit_popunder"
       }
     },
     {
@@ -98,10 +86,6 @@
           "impressions": 100,
           "perHours": 0.05
         }
-      },
-      "trackingUrls": {
-        "impression": "https://yourtracker.com/impression?ad=video_preroll_banner",
-        "click": "https://yourtracker.com/click?ad=video_preroll_banner"
       }
     },
     {
@@ -124,10 +108,28 @@
           "impressions": 100,
           "perHours": 0.2
         }
+      }
+    },
+    {
+      "placementId": "interaction_banner_ad",
+      "adType": "banner",
+      "priority": 10,
+      "creative": {
+        "type": "script",
+        "content": "<script data-cfasync=\"false\" src=\"//dcbbwymp1bhlf.cloudfront.net/?wbbcd=1174747\"></script>"
       },
-      "trackingUrls": {
-        "impression": "https://yourtracker.com/impression?ad=in_content_popunder",
-        "click": "https://yourtracker.com/click?ad=in_content_popunder"
+      "displayRules": {
+        "width": 300,
+        "height": 250,
+        "position": "center",
+        "isDismissible": true
+      },
+      "triggeringRules": {
+        "context": "on_interaction",
+        "frequencyCap": {
+          "impressions": 1,
+          "perHours": 1.0
+        }
       }
     }
   ]
