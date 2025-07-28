@@ -22,5 +22,15 @@
   "general_commander": {
     "share_app_text": "Check out O.R Streams for the best live sports action! Download here: [App Link]",
     "btc_address": "bc1q8f0gsc5cfhcv5x95m3nue9tf9z3rysf5tqd9gd"
-  }
+  },
+  "blocked_urls": [
+    "doubleclick.net",
+    "adservice.google.com",
+    "googlesyndication.com",
+    "googletagservices.com",
+    "analytics.google.com",
+    "ad.yieldmanager.com",
+    "ads.pubmatic.com",
+    "connect.facebook.net"
+  ]
 }
