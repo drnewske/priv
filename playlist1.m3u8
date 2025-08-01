@@ -1,3 +1,4 @@
+#EXTM3U
 #EXTM3U url-tvg="https://epgshare01.online/epgshare01/epg_ripper_ALL_SOURCES1.xml.gz"
 #EXTINF:-1 group-title="Argentina" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Televisi%C3%B3n_Federal_Logo.svg/2880px-Televisi%C3%B3n_Federal_Logo.svg.png",Telefe
 http://177.53.154.70:9981/stream/channelid/1580738470?profile=pass
