@@ -1,0 +1,28 @@
+{
+  "featured_content": [
+    {
+      "id": "featured_m3u_01",
+      "name": "General Entertainment",
+      "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm/logos/default.png",
+      "type": "m3u",
+      "url": "https://raw.githubusercontent.com/drnewske/priv/refs/heads/main/movies.m3u",
+      "server_url": null
+    },
+    {
+      "id": "featured_m3u_02",
+      "name": "Premium Sports TV",
+      "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm/logos/default.png",
+      "type": "m3u",
+      "url": "https://raw.githubusercontent.com/drnewske/priv/refs/heads/main/switch.m3u"
+      "server_url": null
+    },
+    {
+      "id": "featured_m3u_03",
+      "name": "World News",
+      "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm/logos/default.png",
+      "type": "m3u",
+      "url": "https://raw.githubusercontent.com/drnewske/priv/refs/heads/main/playlist1.m3u8",
+      "server_url": null
+    }
+  ]
+}
