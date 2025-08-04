@@ -1,168 +1,83 @@
 import json
 import base64
-import hashlib
-import secrets
-import hmac
-import struct
-import time
-import logging
+from Crypto.Cipher import AES
+from Crypto.Random import get_random_bytes
 import os
-from typing import Dict, Any, Optional
-import requests
 
 # --- CONFIGURATION ---
-# This MUST point to the same remote config.json Gist that your other script uses.
-# It's needed to get the salt, app_identifier, etc., to ensure keys match.
-CONFIG_URL = "https://gist.githubusercontent.com/drnewske/6070fc714b3e86e493e3d9fc87738459/raw/fe61be1780db177817ba8412fb7490bc28a95123/config.json"
 
-# The permanent, fixed filename for the output.
-OUTPUT_FILENAME = "master_config.json"
-LOG_FILE = "master_encryptor.log"
+# THIS IS THE ONE AND ONLY KEY. IT MUST MATCH EXACTLY THE ONE IN YOUR WORKER'S SECRET.
+# Key: 5H6nSgP+nARaK4a434s8J7+AYYp7Unz9jV4A+A7d8vA=
+# This is the Base64 representation. We will decode it for use.
+DECRYPTION_KEY_B64 = "5H6nSgP+nARaK4a434s8J7+AYYp7Unz9jV4A+A7d8vA="
 
-# --- LOGGING SETUP ---
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler(LOG_FILE, encoding='utf-8'),
-        logging.StreamHandler()
-    ]
-)
-logger = logging.getLogger(__name__)
+# --- IMPORTANT: DEFINE YOUR MASTER CONFIG DATA HERE ---
+# Add your decryption_worker_url which points to your Cloudflare worker.
+master_config_data = {
+  "master_url": {
+    "our_site_url": "https://orstreams.info",
+    "telegram_link": "https://t.me/+37u6NHt-LN8wMjlk",
+    "whatsapp_link": "https://www.whatsapp.com/channel/0029Va1fS95EAKWGIf0u5O1W",
+    "events_card_json_link": "https://gddnvsndjhqwh353dmjje-nnnswwwwwwwwwwwwwwwww5rwtqsmmvb.pages.dev/live_events.json",
+    # This URL is NOT for decryption anymore. It's for fetching the KEY.
+    "key_server_url": "https://or-streams-decryptor.ashamedke.workers.dev/",
+    "full_matches_replay_json_link": "https://cdn.jsdelivr.net/gh/drnewske/reAepo1no3489repo34xserdQrtmmfbhdaej/matches.json",
+    "tv_channels": "https://cdn.jsdelivr.net/gh/drnewske/priv@main/tv.json",
+    "predictions": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/today_matches.json",
+    "league_tables": "https://cdn.jsdelivr.net/gh/drnewske/priv@main/standings.json",
+    "live_scores": "https://cdn.jsdelivr.net/gh/drnewske/priv@main/lvscore.json",
+    "tv_chnnels_back_up": "https://cdn.jsdelivr.net/gh/drnewske/priv@main/ads.json",
+    "mostrosity": "https://cdn.jsdelivr.net/gh/drnewske/priv@main/ads.json",
+    "important_messages": {
+        "urgent": {"tag": "null", "message": "null", "update_link": "null"},
+        "temporary": {"id": "null", "message": "null", "dismissible": "null"}
+    },
+    "blocked_urls": []
+  }
+}
 
-# --- CORE ENCRYPTOR CLASS (Identical to the other script for key consistency) ---
-
-class MasterEncryptor:
-    def __init__(self):
-        """Initializes the encryptor."""
-        self.config: Optional[Dict[str, Any]] = None
-        self.output_file = OUTPUT_FILENAME
-
-    def fetch_remote_config(self) -> bool:
-        """Fetches the remote configuration to get salt and other crypto parameters."""
-        logger.info(f"Fetching remote configuration from {CONFIG_URL} to ensure key consistency...")
-        try:
-            response = requests.get(CONFIG_URL, timeout=15)
-            response.raise_for_status()
-            self.config = response.json()
-            logger.info("✅ Remote configuration loaded successfully.")
-            return True
-        except Exception as e:
-            logger.error(f"❌ FAILED to fetch remote config: {e}", exc_info=True)
-            return False
-
-    def generate_deterministic_key(self, seed: str, salt: bytes, purpose: str) -> bytes:
-        """Generates a deterministic key using PBKDF2-HMAC-SHA256."""
-        combined = f"{seed}:{self.config['app_identifier']}:{self.config['version']}:{purpose}".encode('utf-8')
-        dk = hashlib.pbkdf2_hmac('sha256', combined, salt, self.config['key_iterations'])
-        return dk[:32]
-
-    def stream_encrypt(self, data: bytes, key: bytes, iv: bytes) -> bytes:
-        """Encrypts data using a stream cipher approach."""
-        result = bytearray()
-        key_hash = hashlib.sha256(key + iv).digest()
-        for i, byte in enumerate(data):
-            pos_key = hashlib.sha256(key_hash + struct.pack('<I', i)).digest()[0]
-            result.append(byte ^ pos_key)
-        return bytes(result)
-
-    def create_hmac(self, data: bytes, key: bytes) -> bytes:
-        """Creates an HMAC-SHA256 tag for authentication."""
-        return hmac.new(key, data, hashlib.sha256).digest()
-
-    def encrypt_payload(self, data: Dict[Any, Any]) -> Optional[Dict[str, Any]]:
-        """Encrypts the given data payload using the loaded configuration."""
-        logger.info("Starting encryption process for Master JSON...")
-        try:
-            json_str = json.dumps(data, separators=(',', ':'))
-            json_bytes = json_str.encode('utf-8')
-
-            app_salt = self.config['app_salt'].encode('utf-8')
-            master_seed = f"{self.config['app_identifier']}:{self.config['version']}"
-
-           # Add a "master_" prefix to generate a unique set of keys
-            key1 = self.generate_deterministic_key(master_seed, app_salt, "master_layer1")
-            key2 = self.generate_deterministic_key(master_seed, app_salt, "master_layer2")
-            hmac_key = self.generate_deterministic_key(master_seed, app_salt, "master_hmac")
-
-            iv = secrets.token_bytes(16)
-            timestamp = struct.pack('<Q', int(time.time()))
-            data_with_timestamp = timestamp + json_bytes
-
-            encrypted_layer1 = self.stream_encrypt(data_with_timestamp, key1, iv)
-            encrypted_layer2 = self.stream_encrypt(encrypted_layer1, key2, iv)
-
-            message_to_auth = iv + encrypted_layer2
-            auth_tag = self.create_hmac(message_to_auth, hmac_key)
-
-            final_payload = iv + encrypted_layer2 + auth_tag
-            encrypted_string = base64.b64encode(final_payload).decode('ascii')
-
-            logger.info("✅ Master JSON encryption successful.")
-            return {
-                "encrypted_data": encrypted_string,
-                "timestamp": int(time.time()),
-                "status": "success",
-            }
-        except Exception as e:
-            logger.error(f"❌ FAILED during encryption: {e}", exc_info=True)
-            return None
-
-    def save_encrypted_data(self, encrypted_result: Dict[str, Any]):
-        """Saves the final encrypted blob to the output file."""
-        logger.info(f"Saving encrypted data to '{self.output_file}'...")
-        try:
-            with open(self.output_file, 'w', encoding='utf-8') as f:
-                json.dump(encrypted_result, f, indent=2)
-            logger.info(f"✅ Data saved successfully.")
-        except Exception as e:
-            logger.error(f"❌ FAILED to save encrypted data: {e}", exc_info=True)
+def encrypt_data(data_to_encrypt: dict, key: bytes) -> str:
+    """Encrypts a dictionary using AES-GCM and returns a Base64 string."""
+    
+    # Convert the dictionary to a JSON string, then to bytes
+    plaintext_bytes = json.dumps(data_to_encrypt).encode('utf-8')
+    
+    # Set up the AES-GCM cipher
+    cipher = AES.new(key, AES.MODE_GCM)
+    
+    # Encrypt the data
+    ciphertext, tag = cipher.encrypt_and_digest(plaintext_bytes)
+    
+    # The nonce, tag, and ciphertext must be combined to be decrypted.
+    # The structure will be: [12-byte nonce][16-byte tag][ciphertext]
+    # This is a standard and secure way to package the data.
+    payload_to_encode = cipher.nonce + tag + ciphertext
+    
+    # Return the result as a Base64 encoded string
+    return base64.b64encode(payload_to_encode).decode('utf-8')
 
 def main():
-    """Main function to run the master encryption service."""
-    logger.info("🚀 Starting Master JSON Encryption Run")
-    logger.info("="*60)
+    """Main function to encrypt the master config and wrap it."""
+    print("🚀 Starting secure encryption run...")
+    
+    # Decode the Base64 key to get the raw bytes for encryption
+    key_bytes = base64.b64decode(DECRYPTION_KEY_B64)
 
-    # --- HARDCODED MASTER JSON DATA ---
-    # If you need to make changes, edit them here and rerun the workflow.
-    master_data = {
-        "master_url": {
-            "our_site_url": "https://orstreams.info",
-            "telegram_link": "https://t.me/+37u6NHt-LN8wMjlk",
-            "whatsapp_link": "https://www.whatsapp.com/channel/0029Va1fS95EAKWGIf0u5O1W",
-            "events_card_json_link": "https://gddnvsndjhqwh353dmjje-nnnswwwwwwwwwwwwwwwww5rwtqsmmvb.pages.dev/live_events.json",
-            "full_matches_replay_json_link": "https://cdn.jsdelivr.net/gh/drnewske/reAepo1no3489repo34xserdQrtmmfbhdaej/matches.json",
-            "tv_channels": "https://cdn.jsdelivr.net/gh/drnewske/priv@main/tv.json",
-            "predictions": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/today_matches.json",
-            "league_tables": "https://cdn.jsdelivr.net/gh/drnewske/priv@main/standings.json",
-            "live_scores": "https://cdn.jsdelivr.net/gh/drnewske/priv@main/lvscore.json",
-            "tv_chnnels_back_up": "https://cdn.jsdelivr.net/gh/drnewske/priv@main/ads.json",
-            "mostrosity": "https://cdn.jsdelivr.net/gh/drnewske/priv@main/ads.json",
-            "important_messages": {
-                "urgent": {
-                    "tag": "null",
-                    "message": "null",
-                    "update_link": "null"
-                },
-                "temporary": {
-                    "id": "null",
-                    "message": "null",
-                    "dismissible": "null"
-                }
-            }
-        }
+    # Encrypt the master configuration data
+    encrypted_master_config = encrypt_data(master_config_data, key_bytes)
+    
+    # The final output file should contain ONLY the encrypted data blob,
+    # just like your previous setup.
+    output_blob = {
+        "encrypted_data": encrypted_master_config
     }
-
-    encryptor = MasterEncryptor()
-
-    # The process: Fetch config -> Encrypt hardcoded data -> Save file
-    if encryptor.fetch_remote_config():
-        encrypted_result = encryptor.encrypt_payload(master_data)
-        if encrypted_result:
-            encryptor.save_encrypted_data(encrypted_result)
-
-    logger.info("🏁 Master JSON Encryption Run Finished")
-    logger.info("="*60 + "\n")
+    
+    output_filename = "master_config.json"
+    with open(output_filename, 'w', encoding='utf-8') as f:
+        json.dump(output_blob, f, indent=2)
+        
+    print(f"✅ Successfully encrypted and saved to '{output_filename}'")
+    print("🏁 Encryption run finished.")
 
 if __name__ == "__main__":
     main()
