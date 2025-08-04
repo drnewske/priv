@@ -24,6 +24,7 @@ jobs:
       # Step 3: Install Python dependencies
       - name: Install dependencies
         run: pip install requests
+        run: pip install requests
       # Step 4: Run the new master encryptor script
       # IMPORTANT: Make sure this filename matches the name of your new python script.
       - name: Run Master Encryptor Service
