@@ -18,7 +18,7 @@ master_config_data = {
     "our_site_url": "https://orstreams.info",
     "telegram_link": "https://t.me/+37u6NHt-LN8wMjlk",
     "whatsapp_link": "https://www.whatsapp.com/channel/0029Va1fS95EAKWGIf0u5O1W",
-    "events_card_json_link": "https://gddnvsndjhqwh353dmjje-nnnswwwwwwwwwwwwwwwww5rwtqsmmvb.pages.dev/live_events.json",
+    "events_card_json_link": "https://gddnvsndjhqwh353dmjje-nnnswwwwwwwwwwwwwwwww5rwtqsmmvbjumaj.pages.dev/live_events.json",
     # This URL is NOT for decryption anymore. It's for fetching the KEY.
     "key_server_url": "https://or-streams-decryptor.ashamedke.workers.dev/",
     "full_matches_replay_json_link": "https://cdn.jsdelivr.net/gh/drnewske/reAepo1no3489repo34xserdQrtmmfbhdaej/matches.json",
