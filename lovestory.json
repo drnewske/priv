@@ -2,26 +2,26 @@
   "featured_content": [
     {
       "id": "featured_m3u_01",
-      "name": "General Entertainment",
+      "name": "100% Not Pirated",
       "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm/logos/default.png",
       "type": "m3u",
-      "url": "https://raw.githubusercontent.com/drnewske/priv/refs/heads/main/movies.m3u",
+      "url": "http://priv-bc7.pages.dev/comprehensive.m3u",
       "server_url": null
     },
     {
       "id": "featured_m3u_02",
-      "name": "Premium Sports TV",
+      "name": "Where is The Remote?",
       "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm/logos/default.png",
       "type": "m3u",
-      "url": "https://raw.githubusercontent.com/drnewske/priv/refs/heads/main/switch.m3u",
+      "url": "https://iptv-org.github.io/iptv/index.m3u",
       "server_url": null
     },
     {
       "id": "featured_m3u_03",
-      "name": "World News",
+      "name": "Disney Minus",
       "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm/logos/default.png",
       "type": "m3u",
-      "url": "https://raw.githubusercontent.com/drnewske/priv/refs/heads/main/playlist1.m3u8",
+      "url": "https://raw.githubusercontent.com/drnewske/jakstaposisoudelafosisudeografuckingnobutixtadeparii/refs/heads/main/movies.m3u?token=GHSAT0AAAAAADHPP67RVVUVWYMQUWJDMLQG2EXKTHA",
       "server_url": null
     }
   ]
