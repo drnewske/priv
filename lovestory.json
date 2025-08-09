@@ -16,9 +16,17 @@
       "url": "https://iptv-org.github.io/iptv/index.m3u",
       "server_url": null
     },
+      {
+      "id": "featured_m3u_02",
+      "name": "Don't Trust Grandma",
+      "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm/logos/default.png",
+      "type": "m3u",
+      "url": "http://priv-bc7.pages.dev/trust.m3u8",
+      "server_url": null
+    },
     {
       "id": "featured_m3u_03",
-      "name": "Disney Minus",
+      "name": "MOVIES",
       "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm/logos/default.png",
       "type": "m3u",
       "url": "https://raw.githubusercontent.com/drnewske/jakstaposisoudelafosisudeografuckingnobutixtadeparii/refs/heads/main/movies.m3u?token=GHSAT0AAAAAADHPP67RVVUVWYMQUWJDMLQG2EXKTHA",
