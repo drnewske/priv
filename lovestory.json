@@ -16,6 +16,14 @@
       "url": "https://iptv-org.github.io/iptv/index.m3u",
       "server_url": null
     },
+     {
+      "id": "featured_m3u_02",
+      "name": "FREE LUNCH",
+      "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm/logos/default.png",
+      "type": "m3u",
+      "url": "https://raw.githubusercontent.com/ipstreet312/freeiptv/refs/heads/master/all.m3u",
+      "server_url": null
+    },
       {
       "id": "featured_m3u_02",
       "name": "Don't Trust Grandma 101",
