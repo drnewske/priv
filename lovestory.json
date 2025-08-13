@@ -2,7 +2,7 @@
   "featured_content": [
     {
       "id": "featured_m3u_01",
-      "name": "LIVE GAMES",
+      "name": "LIVE GAMES (use when available)",
       "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm/logos/default.png",
       "type": "m3u",
       "url": "https://priv-bc7.pages.dev/thegame.m3u",
