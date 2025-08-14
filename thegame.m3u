@@ -1,7 +1,7 @@
 #EXTM3U
-# Generated on 2025-08-14 21:20:46
+# Generated on 2025-08-15 01:05:22
 # Total channels: 1
 
-#EXTINF:-1 tvg-logo="https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm/logos/default.png",TESTING VS TESTING
-https://rr.strmd.top/secure/AduWkSIOcz/bravo/stream/1755194400000-drita-fcsb/1/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm/logos/default.png",testing
+http://178.217.72.66:8080/Match_Futbol_1_HD/video.m3u8
 
