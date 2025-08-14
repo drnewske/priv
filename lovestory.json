@@ -2,50 +2,10 @@
   "featured_content": [
     {
       "id": "featured_m3u_01",
-      "name": "LIVE GAMES (use when available)",
-      "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm/logos/default.png",
-      "type": "m3u",
-      "url": "https://priv-bc7.pages.dev/thegame.m3u",
-      "server_url": null
-    },
-     {
-      "id": "featured_m3u_02",
-      "name": "SPORTS CHANNELS",
+      "name": "BIRD OMEN",
       "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm/logos/default.png",
       "type": "m3u",
       "url": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/a1x.m3u",
-      "server_url": null
-    },
-    {
-      "id": "featured_m3u_03",
-      "name": "Where is The Remote?",
-      "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm/logos/default.png",
-      "type": "m3u",
-      "url": "https://m3u.prigoana.com/all.m3u",
-      "server_url": null
-    },
-     {
-      "id": "featured_m3u_04",
-      "name": "FREE LUNCH",
-      "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm/logos/default.png",
-      "type": "m3u",
-      "url": "https://raw.githubusercontent.com/ipstreet312/freeiptv/refs/heads/master/all.m3u",
-      "server_url": null
-    },
-      {
-      "id": "featured_m3u_05",
-      "name": "Don't Trust Grandma 101",
-      "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm/logos/default.png",
-      "type": "m3u",
-      "url": "http://play.searchtv.biz",
-      "server_url": null
-    },
-    {
-      "id": "featured_m3u_06",
-      "name": "MOVIES",
-      "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm/logos/default.png",
-      "type": "m3u",
-      "url": "https://raw.githubusercontent.com/drnewske/jakstaposisoudelafosisudeografuckingnobutixtadeparii/refs/heads/main/movies.m3u?token=GHSAT0AAAAAADHPP67RVVUVWYMQUWJDMLQG2EXKTHA",
       "server_url": null
     }
   ]
