@@ -7,6 +7,14 @@
       "type": "m3u",
       "url": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/a1x.m3u",
       "server_url": null
+    },
+     {
+      "id": "featured_m3u_02",
+      "name": "SPORTS STREAMING",
+      "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm/logos/default.png",
+      "type": "m3u",
+      "url": "https://priv-bc7.pages.dev/thegame.m3u",
+      "server_url": null
     }
   ]
 }
