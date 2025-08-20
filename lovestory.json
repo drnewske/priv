@@ -7,6 +7,14 @@
       "type": "m3u",
       "url": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/a1x.m3u",
       "server_url": null
+    },
+     {
+      "id": "featured_m3u_02",
+      "name": "PREMIUM CHANNELS 2",
+      "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm/logos/default.png",
+      "type": "m3u",
+      "url": "http://opplex.tv/get.php?username=2647125&password=7585125&type=m3u_plus&output=ts",
+      "server_url": null
     }
   ]
 }
