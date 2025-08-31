@@ -13,6 +13,7 @@ M3U_FILENAME = "hththbddnmndvhjhhjhhjek.m3u"
 JSON_FILENAME = "lovestory.json"
 LOG_FILENAME = "update_log.txt"
 STATE_FILENAME = "match_state.json"
+# Base URL for the M3U file, without protocol
 M3U_URL_BASE = "priv-bc7.pages.dev"
 LOGO_URL = "https://i.dailymail.co.uk/1s/2025/08/30/17/101692313-0-image-a-97_1756570796730.jpg"
 
@@ -80,9 +81,12 @@ def save_state(state):
         json.dump(state, f, indent=2)
 
 def update_lovestory_json():
-    """Updates the lovestory.json file once per day."""
+    """Updates the lovestory.json file, ensuring only one entry exists."""
     today_str = datetime.now().strftime('%d.%m.%Y')
-    target_url = f"{M3U_URL_BASE}/{M3U_FILENAME}"
+    # Define the canonical URL path for comparison, without protocol
+    target_path = f"{M3U_URL_BASE}/{M3U_FILENAME}"
+    # Define the full URL to be written, with protocol
+    target_url_with_protocol = f"https://{target_path}"
 
     try:
         with open(JSON_FILENAME, 'r', encoding='utf-8') as f:
@@ -92,35 +96,54 @@ def update_lovestory_json():
 
     featured_content = data.get("featured_content", [])
     entry_index = -1
+    
+    # Find the first entry that matches our target path, regardless of protocol
     for i, item in enumerate(featured_content):
-        if item.get('url') == target_url:
+        item_url = item.get('url', '')
+        # Normalize by stripping protocol for a robust comparison
+        clean_item_url = item_url.replace("https://", "").replace("http://", "")
+        if clean_item_url == target_path:
             entry_index = i
             break
             
     if entry_index != -1:
-        # Entry exists, check if the name needs updating
-        if featured_content[entry_index].get('name') != today_str:
-            log_update(f"Updating date in {JSON_FILENAME} to {today_str}.")
-            featured_content[entry_index]['name'] = today_str
-        else:
-            log_update(f"{JSON_FILENAME} is already up-to-date for today.")
-            return # No changes needed
+        # Entry exists. Update its name and ensure its URL is the correct, full version.
+        entry = featured_content[entry_index]
+        if entry.get('name') != today_str or entry.get('url') != target_url_with_protocol:
+            log_update(f"Updating existing entry in {JSON_FILENAME}. Name: -> {today_str}, URL -> {target_url_with_protocol}")
+            entry['name'] = today_str
+            entry['url'] = target_url_with_protocol # Ensure protocol is present
     else:
-        # Entry doesn't exist, prepend it and re-index others
+        # Entry doesn't exist, create a new one.
         log_update(f"Adding new M3U entry to {JSON_FILENAME} for the first time.")
         new_entry = {
             "name": today_str,
             "logo_url": LOGO_URL,
             "type": "m3u",
-            "url": target_url,
+            "url": target_url_with_protocol,
             "server_url": None
         }
         featured_content.insert(0, new_entry)
-        # Re-index all entries
-        for i, item in enumerate(featured_content):
-            item['id'] = f"featured_m3u_{i+1:02}"
+        
+    # Clean up any potential duplicates that might have been created by the old logic
+    # Keep only the FIRST match found for our M3U url
+    final_content = []
+    found_once = False
+    for item in featured_content:
+        item_url = item.get('url', '')
+        clean_item_url = item_url.replace("https://", "").replace("http://", "")
+        if clean_item_url == target_path:
+            if not found_once:
+                final_content.append(item)
+                found_once = True
+        else:
+            final_content.append(item)
+
+    # Re-index all entries to ensure IDs are sequential and correct
+    for i, item in enumerate(final_content):
+        item['id'] = f"featured_m3u_{i+1:02}"
             
-    data['featured_content'] = featured_content
+    data['featured_content'] = final_content
     with open(JSON_FILENAME, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=2)
 
@@ -189,3 +212,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
