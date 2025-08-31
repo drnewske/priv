@@ -4,20 +4,12 @@
       "name": "31.08.2025",
       "logo_url": "https://i.dailymail.co.uk/1s/2025/08/30/17/101692313-0-image-a-97_1756570796730.jpg",
       "type": "m3u",
-      "url": "priv-bc7.pages.dev/hththbddnmndvhjhhjhhjek.m3u",
+      "url": "https://priv-bc7.pages.dev/hththbddnmndvhjhhjhhjek.m3u",
       "server_url": null,
       "id": "featured_m3u_01"
     },
     {
-      "name": "31.08.2025",
-      "logo_url": "https://i.dailymail.co.uk/1s/2025/08/30/17/101692313-0-image-a-97_1756570796730.jpg",
-      "type": "m3u",
-      "url": "https://priv-bc7.pages.dev/hththbddnmndvhjhhjhhjek.m3u",
-      "server_url": null,
-      "id": "featured_m3u_02"
-    },
-    {
-      "id": "featured_m3u_03",
+      "id": "featured_m3u_02",
       "name": "PREMIUM CHANNELS",
       "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm/logos/default.png",
       "type": "m3u",
@@ -25,7 +17,7 @@
       "server_url": null
     },
     {
-      "id": "featured_m3u_04",
+      "id": "featured_m3u_03",
       "name": "PREMIUM CHANNELS 2",
       "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm/logos/default.png",
       "type": "m3u",
@@ -33,7 +25,7 @@
       "server_url": null
     },
     {
-      "id": "featured_m3u_05",
+      "id": "featured_m3u_04",
       "name": "50k+ channels",
       "logo_url": "https://lastfm.freetls.fastly.net/i/u/avatar170s/8c039e010f9dd0d61f6e001d49819dc1",
       "type": "m3u",
@@ -41,7 +33,7 @@
       "server_url": null
     },
     {
-      "id": "featured_m3u_06",
+      "id": "featured_m3u_05",
       "name": "100k+ channels",
       "logo_url": "https://lastfm.freetls.fastly.net/i/u/avatar170s/9c1d4e3ebe6fca1fbb9885219774c259",
       "type": "m3u",
