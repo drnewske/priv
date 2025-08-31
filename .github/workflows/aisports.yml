@@ -6,6 +6,10 @@ on:
     - cron: '0 * * * *'
   workflow_dispatch: # Allows manual triggering
 
+# Add this permissions block to grant write access
+permissions:
+  contents: write
+
 jobs:
   update-data:
     runs-on: ubuntu-latest
@@ -39,3 +43,4 @@ jobs:
           else
             echo "No changes to commit."
           fi
+
