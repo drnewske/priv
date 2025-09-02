@@ -1,6 +1,6 @@
 import requests
 import json
-from datetime import datetime, time, timezone
+from datetime import datetime, time, timezone, timedelta
 import os
 import urllib3
 
@@ -13,11 +13,28 @@ M3U_FILENAME = "hththbddnmndvhjhhjhhjek.m3u"
 JSON_FILENAME = "lovestory.json"
 LOG_FILENAME = "update_log.txt"
 STATE_FILENAME = "match_state.json"
-# Base URL for the M3U file, without protocol
 M3U_URL_BASE = "priv-bc7.pages.dev"
 LOGO_URL = "https://i.dailymail.co.uk/1s/2025/08/30/17/101692313-0-image-a-97_1756570796730.jpg"
 
 # --- HELPER FUNCTIONS ---
+
+def get_utc_timestamps_for_day(target_date):
+    """
+    Calculates the startTime and endTime for the API call, defining a "day"
+    as the 24-hour period from 21:00 UTC on the previous day.
+    """
+    previous_day = target_date - timedelta(days=1)
+    
+    # Start time is 21:00:00 UTC on the day before the target date.
+    start_dt = datetime.combine(previous_day, time(21, 0), tzinfo=timezone.utc)
+    
+    # End time is 20:59:59.999 UTC on the target date.
+    end_dt = datetime.combine(target_date, time(20, 59, 59, 999999), tzinfo=timezone.utc)
+    
+    start_timestamp_ms = int(start_dt.timestamp() * 1000)
+    end_timestamp_ms = int(end_dt.timestamp() * 1000)
+    
+    return start_timestamp_ms, end_timestamp_ms
 
 def get_api_data(url, params):
     """Generic function to fetch data from the API."""
@@ -34,13 +51,19 @@ def get_api_data(url, params):
         return None
 
 def get_match_list_for_day(sport_type="football", target_date=None):
-    """Fetches a list of all matches for a specific day and sport."""
+    """Fetches a list of all matches for a specific day and sport using the correct timestamp logic."""
     if target_date is None:
-        target_date = datetime.now().date()
-    start_of_day = int(datetime.combine(target_date, time.min).timestamp() * 1000)
-    end_of_day = int(datetime.combine(target_date, time.max).timestamp() * 1000)
+        target_date = datetime.now(timezone.utc).date()
+        
+    start_timestamp, end_timestamp = get_utc_timestamps_for_day(target_date)
+
     api_url = f"{BASE_URL}/wefeed-h5-bff/live/match-list-v3"
-    params = {'status': 0, 'matchType': sport_type, 'startTime': start_of_day, 'endTime': end_of_day}
+    params = {
+        'status': 0,
+        'matchType': sport_type,
+        'startTime': start_timestamp,
+        'endTime': end_timestamp
+    }
     
     data = get_api_data(api_url, params)
     if data and data.get('code') == 0:
@@ -79,13 +102,17 @@ def save_state(state):
     """Saves the current state of matches to a JSON file."""
     with open(STATE_FILENAME, 'w', encoding='utf-8') as f:
         json.dump(state, f, indent=2)
+        
+def normalize_url_path(url):
+    """Strips protocol and ensures consistent path for comparison."""
+    if not url:
+        return ""
+    return url.replace("https://", "").replace("http://", "")
 
 def update_lovestory_json():
     """Updates the lovestory.json file, ensuring only one entry exists."""
-    today_str = datetime.now().strftime('%d.%m.%Y')
-    # Define the canonical URL path for comparison, without protocol
+    today_str = datetime.now(timezone.utc).strftime('%d.%m.%Y')
     target_path = f"{M3U_URL_BASE}/{M3U_FILENAME}"
-    # Define the full URL to be written, with protocol
     target_url_with_protocol = f"https://{target_path}"
 
     try:
@@ -97,24 +124,18 @@ def update_lovestory_json():
     featured_content = data.get("featured_content", [])
     entry_index = -1
     
-    # Find the first entry that matches our target path, regardless of protocol
     for i, item in enumerate(featured_content):
-        item_url = item.get('url', '')
-        # Normalize by stripping protocol for a robust comparison
-        clean_item_url = item_url.replace("https://", "").replace("http://", "")
-        if clean_item_url == target_path:
+        if normalize_url_path(item.get('url', '')) == target_path:
             entry_index = i
             break
             
     if entry_index != -1:
-        # Entry exists. Update its name and ensure its URL is the correct, full version.
         entry = featured_content[entry_index]
         if entry.get('name') != today_str or entry.get('url') != target_url_with_protocol:
             log_update(f"Updating existing entry in {JSON_FILENAME}. Name: -> {today_str}, URL -> {target_url_with_protocol}")
             entry['name'] = today_str
-            entry['url'] = target_url_with_protocol # Ensure protocol is present
+            entry['url'] = target_url_with_protocol
     else:
-        # Entry doesn't exist, create a new one.
         log_update(f"Adding new M3U entry to {JSON_FILENAME} for the first time.")
         new_entry = {
             "name": today_str,
@@ -125,21 +146,16 @@ def update_lovestory_json():
         }
         featured_content.insert(0, new_entry)
         
-    # Clean up any potential duplicates that might have been created by the old logic
-    # Keep only the FIRST match found for our M3U url
     final_content = []
     found_once = False
     for item in featured_content:
-        item_url = item.get('url', '')
-        clean_item_url = item_url.replace("https://", "").replace("http://", "")
-        if clean_item_url == target_path:
+        if normalize_url_path(item.get('url', '')) == target_path:
             if not found_once:
                 final_content.append(item)
                 found_once = True
         else:
             final_content.append(item)
 
-    # Re-index all entries to ensure IDs are sequential and correct
     for i, item in enumerate(final_content):
         item['id'] = f"featured_m3u_{i+1:02}"
             
@@ -148,63 +164,90 @@ def update_lovestory_json():
         json.dump(data, f, indent=2)
 
 # --- MAIN WORKFLOW ---
-
 def main():
     """Main function to run the ETL process."""
     log_update("Workflow started.")
     
     old_state = load_state()
     new_state = {}
-    processed_matches_for_m3u = []
+    m3u_entries = []
+    processed_ids = set()
 
-    today_date = datetime.now().date()
+    target_date = datetime.now(timezone.utc).date()
+    log_update(f"Scanning for matches in the 24-hour window ending on {target_date.strftime('%Y-%m-%d')} at 21:00 UTC.")
     
     for sport in ["football", "cricket", "basketball"]:
-        match_list = get_match_list_for_day(sport, today_date)
+        match_list = get_match_list_for_day(sport, target_date)
         if not match_list:
+            log_update(f"Found 0 matches for {sport.capitalize()}.")
             continue
+        
+        log_update(f"Found {len(match_list)} matches for {sport.capitalize()}.")
 
         for match_summary in match_list:
             match_id = match_summary.get('id')
-            if not match_id:
+            if not match_id or match_id in processed_ids:
                 continue
 
             details = get_match_details(match_id)
             if not details:
                 continue
             
-            stream_url = details.get('playPath')
+            processed_ids.add(match_id)
             
-            # --- Logging Logic ---
-            old_stream_url = old_state.get(match_id, {}).get('stream')
-            if not old_stream_url and stream_url:
-                log_update(f"STREAM ADDED: Match ID {match_id} ({details.get('team1', {}).get('name')} vs {details.get('team2', {}).get('name')}) now has a stream URL.")
-            
-            # --- State and M3U Data Preparation ---
-            new_state[match_id] = {'stream': stream_url}
-            
-            if stream_url and stream_url.startswith('http'):
-                processed_matches_for_m3u.append({
-                    "match": f"{details.get('team1', {}).get('name', 'N/A')} vs {details.get('team2', {}).get('name', 'N/A')}",
-                    "logo": details.get('team1', {}).get('avatar', ''),
-                    "group": sport.capitalize(),
-                    "stream": stream_url,
-                    "startTime": int(details.get('startTime', 0))
-                })
+            team1_name = details.get('team1', {}).get('name', 'N/A')
+            team2_name = details.get('team2', {}).get('name', 'N/A')
+            logo = details.get('team1', {}).get('avatar', '')
+            group = sport.capitalize()
+            start_time = int(details.get('startTime', 0))
 
-    # --- Generate and Write M3U Playlist ---
+            all_streams = []
+            primary_stream = details.get('playPath')
+            if primary_stream and primary_stream.startswith('http'):
+                all_streams.append({'title': 'Primary', 'path': primary_stream})
+            
+            alternative_streams = details.get('playSource', [])
+            if alternative_streams:
+                all_streams.extend(alternative_streams)
+            
+            old_streams = old_state.get(match_id, {}).get('streams', [])
+            if not old_streams and all_streams:
+                log_update(f"STREAM ADDED: Match ID {match_id} ({team1_name} vs {team2_name}) now has streams.")
+
+            new_state[match_id] = {'streams': [s['path'] for s in all_streams]}
+
+            if all_streams:
+                # Convert start time to the required UTC format "HHMMHRS UTC"
+                utc_dt = datetime.fromtimestamp(start_time / 1000, tz=timezone.utc)
+                time_str = utc_dt.strftime('%H%M')
+                
+                base_match_name = f"{team1_name} vs {team2_name} ({time_str}HRS UTC)"
+
+                for i, stream in enumerate(all_streams):
+                    match_name = base_match_name
+                    if len(all_streams) > 1:
+                        match_name += f" - Signal {i+1}"
+
+                    m3u_entries.append({
+                        "match": match_name,
+                        "logo": logo,
+                        "group": group,
+                        "stream": stream['path'],
+                        "startTime": start_time
+                    })
+
+    m3u_entries.sort(key=lambda x: x['startTime'])
+    
     playlist_lines = ["#EXTM3U"]
-    processed_matches_for_m3u.sort(key=lambda x: x['startTime'])
-    for match in processed_matches_for_m3u:
-        extinf = f'#EXTINF:-1 tvg-logo="{match["logo"]}" group-title="{match["group"]}",{match["match"]}'
+    for entry in m3u_entries:
+        extinf = f'#EXTINF:-1 tvg-logo="{entry["logo"]}" group-title="{entry["group"]}",{entry["match"]}'
         playlist_lines.append(extinf)
-        playlist_lines.append(match["stream"])
+        playlist_lines.append(entry["stream"])
         
     with open(M3U_FILENAME, 'w', encoding='utf-8') as f:
         f.write("\n".join(playlist_lines))
-    log_update(f"Generated {M3U_FILENAME} with {len(processed_matches_for_m3u)} streamable matches.")
+    log_update(f"Generated {M3U_FILENAME} with {len(m3u_entries)} total streams.")
 
-    # --- Update State and JSON File ---
     save_state(new_state)
     update_lovestory_json()
     
@@ -212,4 +255,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
