@@ -17,8 +17,6 @@ M3U_URL_BASE = "priv-bc7.pages.dev"
 LOGO_URL = "https://i.dailymail.co.uk/1s/2025/08/30/17/101692313-0-image-a-97_1756570796730.jpg"
 
 # --- HEADERS ---
-# These headers mimic a real browser request to bypass server-side checks.
-# They were captured from a successful request in the browser's developer tools.
 HEADERS = {
     'accept': '*/*',
     'accept-language': 'en-US,en;q=0.9',
@@ -46,30 +44,28 @@ def get_utc_timestamps_for_day(target_date):
     as the 24-hour period from 21:00 UTC on the previous day.
     """
     previous_day = target_date - timedelta(days=1)
-    
-    # Start time is 21:00:00 UTC on the day before the target date.
     start_dt = datetime.combine(previous_day, time(21, 0), tzinfo=timezone.utc)
-    
-    # End time is 20:59:59.999 UTC on the target date.
     end_dt = datetime.combine(target_date, time(20, 59, 59, 999999), tzinfo=timezone.utc)
-    
     start_timestamp_ms = int(start_dt.timestamp() * 1000)
     end_timestamp_ms = int(end_dt.timestamp() * 1000)
-    
     return start_timestamp_ms, end_timestamp_ms
 
 def get_api_data(url, params):
     """Generic function to fetch data from the API using the correct headers."""
     try:
+        # Construct the full URL with parameters for logging
+        full_url = f"{url}?{urllib3.request.urlencode(params)}"
+        log_update(f"  [API Call] Requesting URL: {full_url}")
+        
         response = requests.get(url, params=params, headers=HEADERS, verify=False, timeout=20)
         response.raise_for_status()
         return response.json()
     except requests.exceptions.RequestException as err:
-        log_update(f"API request failed for {url} with params {params}: {err}")
+        log_update(f"  [API Call FAILED] URL: {url}, Params: {params}, Error: {err}")
         return None
 
 def get_match_list_for_day(sport_type="football", target_date=None):
-    """Fetches a list of all matches for a specific day and sport using the correct timestamp logic."""
+    """Fetches a list of all matches for a specific day and sport."""
     if target_date is None:
         target_date = datetime.now(timezone.utc).date()
         
@@ -185,7 +181,7 @@ def update_lovestory_json():
 # --- MAIN WORKFLOW ---
 def main():
     """Main function to run the ETL process."""
-    log_update("Workflow started.")
+    log_update("--- WORKFLOW STARTED ---")
     
     old_state = load_state()
     new_state = {}
@@ -196,31 +192,37 @@ def main():
     log_update(f"Scanning for matches in the 24-hour window ending on {target_date.strftime('%Y-%m-%d')} at 21:00 UTC.")
     
     for sport in ["football", "cricket", "basketball"]:
+        log_update(f"\n--- Fetching {sport.capitalize()} ---")
         match_list = get_match_list_for_day(sport, target_date)
+        
         if not match_list:
             log_update(f"Found 0 matches for {sport.capitalize()}.")
             continue
         
-        log_update(f"Found {len(match_list)} matches for {sport.capitalize()}.")
-
+        log_update(f"Found {len(match_list)} total matches for {sport.capitalize()}.")
+        
+        streamable_matches_count = 0
         for match_summary in match_list:
             match_id = match_summary.get('id')
             if not match_id or match_id in processed_ids:
                 continue
 
-            # Only get full details if the match is live or finished
-            match_status = match_summary.get('status')
-            if match_status not in ["MatchIng", "MatchEnded"]:
-                continue
-                
-            details = get_match_details(match_id)
-            if not details:
-                continue
-            
             processed_ids.add(match_id)
             
-            team1_name = details.get('team1', {}).get('name', 'N/A')
-            team2_name = details.get('team2', {}).get('name', 'N/A')
+            match_status = match_summary.get('status')
+            team1_name = match_summary.get('team1', {}).get('name', 'N/A')
+            team2_name = match_summary.get('team2', {}).get('name', 'N/A')
+
+            if match_status not in ["MatchIng", "MatchEnded"]:
+                log_update(f"  -> Skipping '{team1_name} vs {team2_name}' (ID: {match_id}). Status is '{match_status}'.")
+                continue
+                
+            log_update(f"  -> Processing '{team1_name} vs {team2_name}' (ID: {match_id}). Status is '{match_status}'. Fetching details...")
+            details = get_match_details(match_id)
+            if not details:
+                log_update(f"  [FAIL] Could not fetch details for match ID {match_id}.")
+                continue
+            
             logo = details.get('team1', {}).get('avatar', '')
             group = sport.capitalize()
             start_time = int(details.get('startTime', 0))
@@ -234,31 +236,36 @@ def main():
             if alternative_streams:
                 all_streams.extend(alternative_streams)
             
+            if not all_streams:
+                log_update(f"  [INFO] No stream URLs found for match ID {match_id}.")
+                continue
+
+            streamable_matches_count += 1
+            log_update(f"  [SUCCESS] Found {len(all_streams)} stream(s) for match ID {match_id}.")
+
             old_streams = old_state.get(match_id, {}).get('streams', [])
-            if not old_streams and all_streams:
-                log_update(f"STREAM ADDED: Match ID {match_id} ({team1_name} vs {team2_name}) now has streams.")
+            if not old_streams:
+                log_update(f"  [LOG] STREAM ADDED: Match ID {match_id} ({team1_name} vs {team2_name}) now has streams.")
 
             new_state[match_id] = {'streams': [s['path'] for s in all_streams]}
 
-            if all_streams:
-                # Convert start time to the required UTC format "HHMMHRS UTC"
-                utc_dt = datetime.fromtimestamp(start_time / 1000, tz=timezone.utc)
-                time_str = utc_dt.strftime('%H%M')
-                
-                base_match_name = f"{team1_name} vs {team2_name} ({time_str}HRS UTC)"
+            utc_dt = datetime.fromtimestamp(start_time / 1000, tz=timezone.utc)
+            time_str = utc_dt.strftime('%H%M')
+            base_match_name = f"{team1_name} vs {team2_name} ({time_str}HRS UTC)"
 
-                for i, stream in enumerate(all_streams):
-                    match_name = base_match_name
-                    if len(all_streams) > 1:
-                        match_name += f" - Signal {i+1}"
+            for i, stream in enumerate(all_streams):
+                match_name = base_match_name
+                if len(all_streams) > 1:
+                    match_name += f" - Signal {i+1}"
 
-                    m3u_entries.append({
-                        "match": match_name,
-                        "logo": logo,
-                        "group": group,
-                        "stream": stream['path'],
-                        "startTime": start_time
-                    })
+                m3u_entries.append({
+                    "match": match_name,
+                    "logo": logo,
+                    "group": group,
+                    "stream": stream['path'],
+                    "startTime": start_time
+                })
+        log_update(f"Finished processing for {sport.capitalize()}. Found {streamable_matches_count} streamable matches.")
 
     m3u_entries.sort(key=lambda x: x['startTime'])
     
@@ -270,12 +277,12 @@ def main():
         
     with open(M3U_FILENAME, 'w', encoding='utf-8') as f:
         f.write("\n".join(playlist_lines))
-    log_update(f"Generated {M3U_FILENAME} with {len(m3u_entries)} total streams.")
+    log_update(f"\nGenerated {M3U_FILENAME} with {len(m3u_entries)} total streams.")
 
     save_state(new_state)
     update_lovestory_json()
     
-    log_update("Workflow finished successfully.")
+    log_update("--- WORKFLOW FINISHED SUCCESSFULLY ---")
 
 if __name__ == "__main__":
     main()
