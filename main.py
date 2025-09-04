@@ -16,6 +16,28 @@ STATE_FILENAME = "match_state.json"
 M3U_URL_BASE = "priv-bc7.pages.dev"
 LOGO_URL = "https://i.dailymail.co.uk/1s/2025/08/30/17/101692313-0-image-a-97_1756570796730.jpg"
 
+# --- HEADERS ---
+# These headers mimic a real browser request to bypass server-side checks.
+# They were captured from a successful request in the browser's developer tools.
+HEADERS = {
+    'accept': '*/*',
+    'accept-language': 'en-US,en;q=0.9',
+    'cache-control': 'no-cache',
+    'origin': 'https://aisports.cc',
+    'pragma': 'no-cache',
+    'priority': 'u=1, i',
+    'referer': 'https://aisports.cc/',
+    'sec-ch-ua': '"Not;A=Brand";v="99", "Brave";v="139", "Chromium";v="139"',
+    'sec-ch-ua-mobile': '?1',
+    'sec-ch-ua-platform': '"Android"',
+    'sec-fetch-dest': 'empty',
+    'sec-fetch-mode': 'cors',
+    'sec-fetch-site': 'cross-site',
+    'sec-gpc': '1',
+    'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Mobile Safari/537.36',
+}
+
+
 # --- HELPER FUNCTIONS ---
 
 def get_utc_timestamps_for_day(target_date):
@@ -37,13 +59,9 @@ def get_utc_timestamps_for_day(target_date):
     return start_timestamp_ms, end_timestamp_ms
 
 def get_api_data(url, params):
-    """Generic function to fetch data from the API."""
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-        'Referer': 'https://aisports.cc/'
-    }
+    """Generic function to fetch data from the API using the correct headers."""
     try:
-        response = requests.get(url, params=params, headers=headers, verify=False, timeout=15)
+        response = requests.get(url, params=params, headers=HEADERS, verify=False, timeout=20)
         response.raise_for_status()
         return response.json()
     except requests.exceptions.RequestException as err:
@@ -69,9 +87,10 @@ def get_match_list_for_day(sport_type="football", target_date=None):
     if data and data.get('code') == 0:
         match_groups = data.get('data', {}).get('list', [])
         all_matches = []
-        for group in match_groups:
-            if group and 'matchList' in group:
-                all_matches.extend(group['matchList'])
+        if match_groups:
+            for group in match_groups:
+                if group and 'matchList' in group:
+                    all_matches.extend(group['matchList'])
         return all_matches
     return []
 
@@ -189,6 +208,11 @@ def main():
             if not match_id or match_id in processed_ids:
                 continue
 
+            # Only get full details if the match is live or finished
+            match_status = match_summary.get('status')
+            if match_status not in ["MatchIng", "MatchEnded"]:
+                continue
+                
             details = get_match_details(match_id)
             if not details:
                 continue
@@ -255,5 +279,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 
