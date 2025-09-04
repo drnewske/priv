@@ -615,3 +615,43 @@ Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
 [2025-09-04 14:13:20 UTC] 
 Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
 [2025-09-04 14:13:20 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
+[2025-09-04 15:13:31 UTC] --- WORKFLOW STARTED ---
+[2025-09-04 15:13:31 UTC] Scanning for matches in the 24-hour window ending on 2025-09-04 at 21:00 UTC.
+[2025-09-04 15:13:31 UTC] 
+--- Fetching Football ---
+[2025-09-04 15:13:31 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=football&startTime=1756933200000&endTime=1757019599999
+[2025-09-04 15:13:31 UTC] Found 18 total matches for Football.
+[2025-09-04 15:13:31 UTC]   -> Processing 'Chad vs Ghana' (ID: 5872309734099897392). Status is 'MatchEnded'. Fetching details...
+[2025-09-04 15:13:31 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=5872309734099897392
+[2025-09-04 15:13:32 UTC]   [INFO] No stream URLs found for match ID 5872309734099897392.
+[2025-09-04 15:13:32 UTC]   -> Skipping 'Guinea-Bissau vs Sierra Leone' (ID: 2546401409286684880). Status is 'MatchNotStart'.
+[2025-09-04 15:13:32 UTC]   -> Skipping 'Angola vs Libya' (ID: 5462482168009081040). Status is 'MatchNotStart'.
+[2025-09-04 15:13:32 UTC]   -> Skipping 'Sao Tome and Principe vs Equatorial Guinea' (ID: 7007216840196112592). Status is 'MatchNotStart'.
+[2025-09-04 15:13:32 UTC]   -> Skipping 'Madagascar vs Central African Republic' (ID: 7566507618921234640). Status is 'MatchNotStart'.
+[2025-09-04 15:13:32 UTC]   -> Skipping 'Mauritius vs Cape Verde' (ID: 7813361173496581168). Status is 'MatchNotStart'.
+[2025-09-04 15:13:32 UTC]   -> Skipping 'Algeria vs Botswana' (ID: 1035443734303984688). Status is 'MatchNotStart'.
+[2025-09-04 15:13:32 UTC]   -> Skipping 'Cameroon vs Eswatini' (ID: 2170350840400724176). Status is 'MatchNotStart'.
+[2025-09-04 15:13:32 UTC]   -> Skipping 'Mali vs Comoros' (ID: 3261066375155040464). Status is 'MatchNotStart'.
+[2025-09-04 15:13:32 UTC]   -> Skipping 'Tunisia vs Liberia' (ID: 3854697101037915184). Status is 'MatchNotStart'.
+[2025-09-04 15:13:32 UTC]   -> Processing 'Kazakhstan vs Wales' (ID: 1369836006635195440). Status is 'MatchIng'. Fetching details...
+[2025-09-04 15:13:32 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=1369836006635195440
+[2025-09-04 15:13:32 UTC]   [INFO] No stream URLs found for match ID 1369836006635195440.
+[2025-09-04 15:13:32 UTC]   -> Skipping 'Georgia vs Turkiye' (ID: 205092553006399696). Status is 'MatchNotStart'.
+[2025-09-04 15:13:32 UTC]   -> Skipping 'Lithuania vs Malta' (ID: 5196206840040901680). Status is 'MatchNotStart'.
+[2025-09-04 15:13:32 UTC]   -> Skipping 'Luxembourg vs Northern Ireland' (ID: 2020043202836810800). Status is 'MatchNotStart'.
+[2025-09-04 15:13:32 UTC]   -> Skipping 'Bulgaria vs Spain' (ID: 5222102537897233456). Status is 'MatchNotStart'.
+[2025-09-04 15:13:32 UTC]   -> Skipping 'Liechtenstein vs Belgium' (ID: 5459104468288654384). Status is 'MatchNotStart'.
+[2025-09-04 15:13:32 UTC]   -> Skipping 'Netherlands vs Poland' (ID: 5826710787872669904). Status is 'MatchNotStart'.
+[2025-09-04 15:13:32 UTC]   -> Skipping 'Slovakia vs Germany' (ID: 741020908663589936). Status is 'MatchNotStart'.
+[2025-09-04 15:13:32 UTC] Finished processing for Football. Found 0 streamable matches.
+[2025-09-04 15:13:32 UTC] 
+--- Fetching Cricket ---
+[2025-09-04 15:13:32 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=cricket&startTime=1756933200000&endTime=1757019599999
+[2025-09-04 15:13:32 UTC] Found 0 matches for Cricket.
+[2025-09-04 15:13:32 UTC] 
+--- Fetching Basketball ---
+[2025-09-04 15:13:32 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=basketball&startTime=1756933200000&endTime=1757019599999
+[2025-09-04 15:13:33 UTC] Found 0 matches for Basketball.
+[2025-09-04 15:13:33 UTC] 
+Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
+[2025-09-04 15:13:33 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
