@@ -3,6 +3,7 @@ import json
 from datetime import datetime, time, timezone, timedelta
 import os
 import urllib3
+from urllib.parse import urlencode # <--- ADDED: Import the correct function
 
 # Suppress only the InsecureRequestWarning from urllib3 needed for verify=False
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -54,7 +55,7 @@ def get_api_data(url, params):
     """Generic function to fetch data from the API using the correct headers."""
     try:
         # Construct the full URL with parameters for logging
-        full_url = f"{url}?{urllib3.request.urlencode(params)}"
+        full_url = f"{url}?{urlencode(params)}" # <--- FIXED: Use the correct urlencode function
         log_update(f"  [API Call] Requesting URL: {full_url}")
         
         response = requests.get(url, params=params, headers=HEADERS, verify=False, timeout=20)
