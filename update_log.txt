@@ -2617,3 +2617,28 @@ Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
 [2025-09-06 06:17:13 UTC] 
 Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
 [2025-09-06 06:17:13 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
+[2025-09-06 07:11:00 UTC] --- WORKFLOW STARTED ---
+[2025-09-06 07:11:00 UTC] Scanning for matches in the 24-hour window ending on 2025-09-06 at 21:00 UTC.
+[2025-09-06 07:11:00 UTC] 
+--- Fetching Football ---
+[2025-09-06 07:11:00 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=football&startTime=1757106000000&endTime=1757192399999
+[2025-09-06 07:11:01 UTC] Found 7 total matches for Football.
+[2025-09-06 07:11:01 UTC]   -> Skipping 'Latvia vs Serbia' (ID: 3297376647150816304). Status is 'MatchNotStart'.
+[2025-09-06 07:11:01 UTC]   -> Skipping 'Armenia vs Portugal' (ID: 2862216333155516624). Status is 'MatchNotStart'.
+[2025-09-06 07:11:01 UTC]   -> Skipping 'England vs Andorra' (ID: 4279161365917483216). Status is 'MatchNotStart'.
+[2025-09-06 07:11:01 UTC]   -> Skipping 'Ireland vs Hungary' (ID: 1586571738702400560). Status is 'MatchNotStart'.
+[2025-09-06 07:11:01 UTC]   -> Skipping 'San Marino vs Bosnia and Herzegovina' (ID: 6322106746883424464). Status is 'MatchNotStart'.
+[2025-09-06 07:11:01 UTC]   -> Skipping 'Austria vs Cyprus' (ID: 8600928158332371152). Status is 'MatchNotStart'.
+[2025-09-06 07:11:01 UTC]   -> Skipping 'Nigeria vs Rwanda' (ID: 3057559966993337392). Status is 'MatchNotStart'.
+[2025-09-06 07:11:01 UTC] Finished processing for Football. Found 0 streamable matches.
+[2025-09-06 07:11:01 UTC] 
+--- Fetching Cricket ---
+[2025-09-06 07:11:01 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=cricket&startTime=1757106000000&endTime=1757192399999
+[2025-09-06 07:11:01 UTC] Found 0 matches for Cricket.
+[2025-09-06 07:11:01 UTC] 
+--- Fetching Basketball ---
+[2025-09-06 07:11:01 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=basketball&startTime=1757106000000&endTime=1757192399999
+[2025-09-06 07:11:02 UTC] Found 0 matches for Basketball.
+[2025-09-06 07:11:02 UTC] 
+Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
+[2025-09-06 07:11:02 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
