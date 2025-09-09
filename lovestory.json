@@ -39,6 +39,14 @@
       "type": "m3u",
       "url": "https://play.searchtv.biz/",
       "server_url": null
+    },
+     {
+      "id": "featured_m3u_06",
+      "name": "100k+ channels",
+      "logo_url": "https://www.washingtonpost.com/blogs/style-blog/files/2016/06/6add39821849853a542af7ddd92f7f518deb60d311a271dbbaf454c3670daa50848fca51983823aefe401a9c2500e4e9.jpeg",
+      "type": "m3u",
+      "url": "http://b1g.ooo/get.php?username=Richard1&password=Richard123&type=m3u_plus",
+      "server_url": null
     }
   ]
 }
