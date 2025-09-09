@@ -5972,3 +5972,95 @@ Generated hththbddnmndvhjhhjhhjek.m3u with 1 total streams.
 [2025-09-09 20:14:06 UTC] 
 Generated hththbddnmndvhjhhjhhjek.m3u with 1 total streams.
 [2025-09-09 20:14:06 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
+[2025-09-09 21:11:25 UTC] --- WORKFLOW STARTED ---
+[2025-09-09 21:11:25 UTC] Scanning for matches in the 24-hour window ending on 2025-09-09 at 21:00 UTC.
+[2025-09-09 21:11:25 UTC] 
+--- Fetching Football ---
+[2025-09-09 21:11:25 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=football&startTime=1757365200000&endTime=1757451599999
+[2025-09-09 21:11:26 UTC] Found 24 total matches for Football.
+[2025-09-09 21:11:26 UTC]   -> Processing 'Kenya vs Seychelles' (ID: 3998812289113771056). Status is 'MatchEnded'. Fetching details...
+[2025-09-09 21:11:26 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=3998812289113771056
+[2025-09-09 21:11:26 UTC]   [INFO] No stream URLs found for match ID 3998812289113771056.
+[2025-09-09 21:11:26 UTC]   -> Processing 'Namibia vs Sao Tome and Principe' (ID: 4760765051069415632). Status is 'MatchEnded'. Fetching details...
+[2025-09-09 21:11:26 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=4760765051069415632
+[2025-09-09 21:11:27 UTC]   [INFO] No stream URLs found for match ID 4760765051069415632.
+[2025-09-09 21:11:27 UTC]   -> Processing 'Sierra Leone vs Ethiopia' (ID: 7795346774986997968). Status is 'MatchEnded'. Fetching details...
+[2025-09-09 21:11:27 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=7795346774986997968
+[2025-09-09 21:11:27 UTC]   [INFO] No stream URLs found for match ID 7795346774986997968.
+[2025-09-09 21:11:27 UTC]   -> Processing 'Tanzania vs Niger' (ID: 8182656342940437552). Status is 'MatchEnded'. Fetching details...
+[2025-09-09 21:11:27 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=8182656342940437552
+[2025-09-09 21:11:28 UTC]   [INFO] No stream URLs found for match ID 8182656342940437552.
+[2025-09-09 21:11:28 UTC]   -> Processing 'Zimbabwe vs Rwanda' (ID: 8727591897852690640). Status is 'MatchEnded'. Fetching details...
+[2025-09-09 21:11:28 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=8727591897852690640
+[2025-09-09 21:11:28 UTC]   [INFO] No stream URLs found for match ID 8727591897852690640.
+[2025-09-09 21:11:28 UTC]   -> Processing 'Burkina Faso vs Egypt' (ID: 4138423877561732144). Status is 'MatchEnded'. Fetching details...
+[2025-09-09 21:11:28 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=4138423877561732144
+[2025-09-09 21:11:29 UTC]   [INFO] No stream URLs found for match ID 4138423877561732144.
+[2025-09-09 21:11:29 UTC]   -> Processing 'Togo vs Sudan' (ID: 4404136255576067120). Status is 'MatchEnded'. Fetching details...
+[2025-09-09 21:11:29 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=4404136255576067120
+[2025-09-09 21:11:29 UTC]   [INFO] No stream URLs found for match ID 4404136255576067120.
+[2025-09-09 21:11:29 UTC]   -> Processing 'Cape Verde vs Cameroon' (ID: 53659015537216560). Status is 'MatchEnded'. Fetching details...
+[2025-09-09 21:11:29 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=53659015537216560
+[2025-09-09 21:11:30 UTC]   [INFO] No stream URLs found for match ID 53659015537216560.
+[2025-09-09 21:11:30 UTC]   -> Processing 'South Africa vs Nigeria' (ID: 8025030355982994480). Status is 'MatchEnded'. Fetching details...
+[2025-09-09 21:11:30 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=8025030355982994480
+[2025-09-09 21:11:30 UTC]   [SUCCESS] Found 1 stream(s) for match ID 8025030355982994480.
+[2025-09-09 21:11:30 UTC]   -> Processing 'DR Congo vs Senegal' (ID: 9110397866179284016). Status is 'MatchEnded'. Fetching details...
+[2025-09-09 21:11:30 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=9110397866179284016
+[2025-09-09 21:11:31 UTC]   [INFO] No stream URLs found for match ID 9110397866179284016.
+[2025-09-09 21:11:31 UTC]   -> Processing 'Angola vs Mauritius' (ID: 1224594918653545520). Status is 'MatchEnded'. Fetching details...
+[2025-09-09 21:11:31 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=1224594918653545520
+[2025-09-09 21:11:31 UTC]   [INFO] No stream URLs found for match ID 1224594918653545520.
+[2025-09-09 21:11:31 UTC]   -> Processing 'Gambia vs Burundi' (ID: 1783885697376993488). Status is 'MatchIng'. Fetching details...
+[2025-09-09 21:11:31 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=1783885697376993488
+[2025-09-09 21:11:32 UTC]   [INFO] No stream URLs found for match ID 1783885697376993488.
+[2025-09-09 21:11:32 UTC]   -> Processing 'Mauritania vs South Sudan' (ID: 2944969976308973776). Status is 'MatchEnded'. Fetching details...
+[2025-09-09 21:11:32 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=2944969976308973776
+[2025-09-09 21:11:32 UTC]   [INFO] No stream URLs found for match ID 2944969976308973776.
+[2025-09-09 21:11:32 UTC]   -> Processing 'Benin vs Lesotho' (ID: 341889391688928304). Status is 'MatchIng'. Fetching details...
+[2025-09-09 21:11:32 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=341889391688928304
+[2025-09-09 21:11:33 UTC]   [INFO] No stream URLs found for match ID 341889391688928304.
+[2025-09-09 21:11:33 UTC]   -> Processing 'Gabon vs Ivory Coast' (ID: 36489041957765328). Status is 'MatchEnded'. Fetching details...
+[2025-09-09 21:11:33 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=36489041957765328
+[2025-09-09 21:11:33 UTC]   [INFO] No stream URLs found for match ID 36489041957765328.
+[2025-09-09 21:11:33 UTC]   -> Processing 'Armenia vs Ireland' (ID: 3406025988161028304). Status is 'MatchEnded'. Fetching details...
+[2025-09-09 21:11:33 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=3406025988161028304
+[2025-09-09 21:11:34 UTC]   [INFO] No stream URLs found for match ID 3406025988161028304.
+[2025-09-09 21:11:34 UTC]   -> Processing 'Azerbaijan vs Ukraine' (ID: 3780950657139097808). Status is 'MatchEnded'. Fetching details...
+[2025-09-09 21:11:34 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=3780950657139097808
+[2025-09-09 21:11:34 UTC]   [INFO] No stream URLs found for match ID 3780950657139097808.
+[2025-09-09 21:11:34 UTC]   -> Processing 'Cyprus vs Romania' (ID: 1739131176080523472). Status is 'MatchEnded'. Fetching details...
+[2025-09-09 21:11:34 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=1739131176080523472
+[2025-09-09 21:11:35 UTC]   [INFO] No stream URLs found for match ID 1739131176080523472.
+[2025-09-09 21:11:35 UTC]   -> Processing 'Hungary vs Portugal' (ID: 2136010893242649648). Status is 'MatchEnded'. Fetching details...
+[2025-09-09 21:11:35 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=2136010893242649648
+[2025-09-09 21:11:35 UTC]   [INFO] No stream URLs found for match ID 2136010893242649648.
+[2025-09-09 21:11:35 UTC]   -> Processing 'Albania vs Latvia' (ID: 6364327993390022864). Status is 'MatchEnded'. Fetching details...
+[2025-09-09 21:11:35 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=6364327993390022864
+[2025-09-09 21:11:36 UTC]   [INFO] No stream URLs found for match ID 6364327993390022864.
+[2025-09-09 21:11:36 UTC]   -> Processing 'Serbia vs England' (ID: 6463407185192173776). Status is 'MatchEnded'. Fetching details...
+[2025-09-09 21:11:36 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=6463407185192173776
+[2025-09-09 21:11:36 UTC]   [INFO] No stream URLs found for match ID 6463407185192173776.
+[2025-09-09 21:11:36 UTC]   -> Processing 'Bosnia and Herzegovina vs Austria' (ID: 6954299544575659056). Status is 'MatchEnded'. Fetching details...
+[2025-09-09 21:11:36 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=6954299544575659056
+[2025-09-09 21:11:37 UTC]   [INFO] No stream URLs found for match ID 6954299544575659056.
+[2025-09-09 21:11:37 UTC]   -> Processing 'France vs Iceland' (ID: 8432043172306501840). Status is 'MatchEnded'. Fetching details...
+[2025-09-09 21:11:37 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=8432043172306501840
+[2025-09-09 21:11:37 UTC]   [INFO] No stream URLs found for match ID 8432043172306501840.
+[2025-09-09 21:11:37 UTC]   -> Processing 'Norway vs Moldova' (ID: 8710703399250152496). Status is 'MatchEnded'. Fetching details...
+[2025-09-09 21:11:37 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=8710703399250152496
+[2025-09-09 21:11:38 UTC]   [INFO] No stream URLs found for match ID 8710703399250152496.
+[2025-09-09 21:11:38 UTC] Finished processing for Football. Found 1 streamable matches.
+[2025-09-09 21:11:38 UTC] 
+--- Fetching Cricket ---
+[2025-09-09 21:11:38 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=cricket&startTime=1757365200000&endTime=1757451599999
+[2025-09-09 21:11:38 UTC] Found 1 total matches for Cricket.
+[2025-09-09 21:11:38 UTC]   -> Skipping 'Afghanistan vs Hong Kong' (ID: 1404881445122376504). Status is 'MatchNotStart'.
+[2025-09-09 21:11:38 UTC] Finished processing for Cricket. Found 0 streamable matches.
+[2025-09-09 21:11:38 UTC] 
+--- Fetching Basketball ---
+[2025-09-09 21:11:38 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=basketball&startTime=1757365200000&endTime=1757451599999
+[2025-09-09 21:11:39 UTC] Found 0 matches for Basketball.
+[2025-09-09 21:11:39 UTC] 
+Generated hththbddnmndvhjhhjhhjek.m3u with 1 total streams.
+[2025-09-09 21:11:39 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
