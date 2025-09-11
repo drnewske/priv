@@ -7128,3 +7128,24 @@ Generated hththbddnmndvhjhhjhhjek.m3u with 1 total streams.
 [2025-09-11 22:12:43 UTC] 
 Generated hththbddnmndvhjhhjhhjek.m3u with 1 total streams.
 [2025-09-11 22:12:43 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
+[2025-09-11 23:12:16 UTC] --- WORKFLOW STARTED ---
+[2025-09-11 23:12:16 UTC] Scanning for matches in the 24-hour window ending on 2025-09-11 at 21:00 UTC.
+[2025-09-11 23:12:16 UTC] 
+--- Fetching Football ---
+[2025-09-11 23:12:16 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=football&startTime=1757538000000&endTime=1757624399999
+[2025-09-11 23:12:17 UTC] Found 0 matches for Football.
+[2025-09-11 23:12:17 UTC] 
+--- Fetching Cricket ---
+[2025-09-11 23:12:17 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=cricket&startTime=1757538000000&endTime=1757624399999
+[2025-09-11 23:12:17 UTC] Found 1 total matches for Cricket.
+[2025-09-11 23:12:17 UTC]   -> Processing 'Bangladesh vs Hong Kong' (ID: 8610640848915251584). Status is 'MatchEnded'. Fetching details...
+[2025-09-11 23:12:17 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=8610640848915251584
+[2025-09-11 23:12:18 UTC]   [SUCCESS] Found 1 stream(s) for match ID 8610640848915251584.
+[2025-09-11 23:12:18 UTC] Finished processing for Cricket. Found 1 streamable matches.
+[2025-09-11 23:12:18 UTC] 
+--- Fetching Basketball ---
+[2025-09-11 23:12:18 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=basketball&startTime=1757538000000&endTime=1757624399999
+[2025-09-11 23:12:18 UTC] Found 0 matches for Basketball.
+[2025-09-11 23:12:18 UTC] 
+Generated hththbddnmndvhjhhjhhjek.m3u with 1 total streams.
+[2025-09-11 23:12:18 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
