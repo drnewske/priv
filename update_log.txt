@@ -6692,3 +6692,23 @@ Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
 [2025-09-10 23:11:45 UTC] 
 Generated hththbddnmndvhjhhjhhjek.m3u with 1 total streams.
 [2025-09-10 23:11:45 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
+[2025-09-11 01:01:16 UTC] --- WORKFLOW STARTED ---
+[2025-09-11 01:01:16 UTC] Scanning for matches in the 24-hour window ending on 2025-09-11 at 21:00 UTC.
+[2025-09-11 01:01:16 UTC] 
+--- Fetching Football ---
+[2025-09-11 01:01:16 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=football&startTime=1757538000000&endTime=1757624399999
+[2025-09-11 01:01:17 UTC] Found 0 matches for Football.
+[2025-09-11 01:01:17 UTC] 
+--- Fetching Cricket ---
+[2025-09-11 01:01:17 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=cricket&startTime=1757538000000&endTime=1757624399999
+[2025-09-11 01:01:18 UTC] Found 1 total matches for Cricket.
+[2025-09-11 01:01:18 UTC]   -> Skipping 'Bangladesh vs Hong Kong' (ID: 8610640848915251584). Status is 'MatchNotStart'.
+[2025-09-11 01:01:18 UTC] Finished processing for Cricket. Found 0 streamable matches.
+[2025-09-11 01:01:18 UTC] 
+--- Fetching Basketball ---
+[2025-09-11 01:01:18 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=basketball&startTime=1757538000000&endTime=1757624399999
+[2025-09-11 01:01:18 UTC] Found 0 matches for Basketball.
+[2025-09-11 01:01:18 UTC] 
+Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
+[2025-09-11 01:01:18 UTC] Updating existing entry in lovestory.json. Name: -> 11.09.2025, URL -> https://priv-bc7.pages.dev/hththbddnmndvhjhhjhhjek.m3u
+[2025-09-11 01:01:18 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
