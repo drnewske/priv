@@ -2,11 +2,11 @@
 #EXTINF:-1 tvg-logo="" group-title="Cricket",Pakistan vs Oman (1430HRS UTC)
 https://live-en.aisports.cc/moviebox/device02/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/a3ae8d964e8106869b5ed4356eceab95.jpg" group-title="Football",Bayer Leverkusen vs Eintracht Frankfurt (1830HRS UTC) - Signal 1
-http://play.sportsteam368.com/play/gm.php?id=958050902&id2=958050902
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/a3ae8d964e8106869b5ed4356eceab95.jpg" group-title="Football",Bayer Leverkusen vs Eintracht Frankfurt (1830HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/pao.php?id=43473741&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/a3ae8d964e8106869b5ed4356eceab95.jpg" group-title="Football",Bayer Leverkusen vs Eintracht Frankfurt (1830HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/kbs.html?id=958050902&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/a3ae8d964e8106869b5ed4356eceab95.jpg" group-title="Football",Bayer Leverkusen vs Eintracht Frankfurt (1830HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/gm.php?id=958050902&id2=958050902
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/a3ae8d964e8106869b5ed4356eceab95.jpg" group-title="Football",Bayer Leverkusen vs Eintracht Frankfurt (1830HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/pao.php?id=43473741&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/9e1d809547b78f610f9995f0a8a51768.jpg" group-title="Football",Marseille vs Lorient (1845HRS UTC) - Signal 1
 http://play.sportsteam368.com/play/gm.php?id=958050553&id2=958050553
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/9e1d809547b78f610f9995f0a8a51768.jpg" group-title="Football",Marseille vs Lorient (1845HRS UTC) - Signal 2
