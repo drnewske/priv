@@ -1,3 +1,5 @@
 #EXTM3U
 #EXTINF:-1 tvg-logo="" group-title="Cricket",United Arab Emirates vs Oman (1200HRS UTC)
 https://live-en.aisports.cc/moviebox/device01/playlist.m3u8
+#EXTINF:-1 tvg-logo="" group-title="Cricket",Sri Lanka vs Hong Kong (1430HRS UTC)
+https://live-en.aisports.cc/moviebox/device02/playlist.m3u8
