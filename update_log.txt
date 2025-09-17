@@ -15615,3 +15615,30 @@ Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
 [2025-09-17 06:20:28 UTC] 
 Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
 [2025-09-17 06:20:28 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
+[2025-09-17 07:12:56 UTC] --- WORKFLOW STARTED ---
+[2025-09-17 07:12:56 UTC] Scanning for matches in the 24-hour window ending on 2025-09-17 at 21:00 UTC.
+[2025-09-17 07:12:56 UTC] 
+--- Fetching Football ---
+[2025-09-17 07:12:56 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=football&startTime=1758056400000&endTime=1758142799999
+[2025-09-17 07:12:57 UTC] Found 7 total matches for Football.
+[2025-09-17 07:12:57 UTC]   -> Skipping 'Paris Saint-Germain vs Atalanta' (ID: 2959820049072146872). Status is 'MatchNotStart'.
+[2025-09-17 07:12:57 UTC]   -> Skipping 'Liverpool vs Atletico Madrid' (ID: 8220587363795356088). Status is 'MatchNotStart'.
+[2025-09-17 07:12:57 UTC]   -> Skipping 'Bayern Munich vs Chelsea' (ID: 3834362801712776456). Status is 'MatchNotStart'.
+[2025-09-17 07:12:57 UTC]   -> Skipping 'Slavia Prague vs Bodoe/Glimt' (ID: 1448862374090394040). Status is 'MatchNotStart'.
+[2025-09-17 07:12:57 UTC]   -> Skipping 'Olympiacos vs Pafos FC' (ID: 2989656396604524984). Status is 'MatchNotStart'.
+[2025-09-17 07:12:57 UTC]   -> Skipping 'Woodford Town vs Bury Town' (ID: 5437131930997771824). Status is 'MatchNotStart'.
+[2025-09-17 07:12:57 UTC]   -> Skipping 'Frome Town vs Shaftesbury Town' (ID: 7184528586418048560). Status is 'MatchNotStart'.
+[2025-09-17 07:12:57 UTC] Finished processing for Football. Found 0 streamable matches.
+[2025-09-17 07:12:57 UTC] 
+--- Fetching Cricket ---
+[2025-09-17 07:12:57 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=cricket&startTime=1758056400000&endTime=1758142799999
+[2025-09-17 07:12:57 UTC] Found 1 total matches for Cricket.
+[2025-09-17 07:12:57 UTC]   -> Skipping 'Pakistan vs United Arab Emirates' (ID: 7566227947830886784). Status is 'MatchNotStart'.
+[2025-09-17 07:12:57 UTC] Finished processing for Cricket. Found 0 streamable matches.
+[2025-09-17 07:12:57 UTC] 
+--- Fetching Basketball ---
+[2025-09-17 07:12:57 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=basketball&startTime=1758056400000&endTime=1758142799999
+[2025-09-17 07:12:58 UTC] Found 0 matches for Basketball.
+[2025-09-17 07:12:58 UTC] 
+Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
+[2025-09-17 07:12:58 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
