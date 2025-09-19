@@ -16983,3 +16983,27 @@ Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
 [2025-09-19 07:13:10 UTC] 
 Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
 [2025-09-19 07:13:10 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
+[2025-09-19 08:17:54 UTC] --- WORKFLOW STARTED ---
+[2025-09-19 08:17:54 UTC] Scanning for matches in the 24-hour window ending on 2025-09-19 at 21:00 UTC.
+[2025-09-19 08:17:54 UTC] 
+--- Fetching Football ---
+[2025-09-19 08:17:54 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=football&startTime=1758229200000&endTime=1758315599999
+[2025-09-19 08:17:55 UTC] Found 4 total matches for Football.
+[2025-09-19 08:17:55 UTC]   -> Skipping 'Real Betis vs Real Sociedad' (ID: 7716239103801938304). Status is 'MatchNotStart'.
+[2025-09-19 08:17:55 UTC]   -> Skipping 'Lecce vs Cagliari' (ID: 7130207497915188688). Status is 'MatchNotStart'.
+[2025-09-19 08:17:55 UTC]   -> Skipping 'VfB Stuttgart vs St. Pauli' (ID: 1773505817985055192). Status is 'MatchNotStart'.
+[2025-09-19 08:17:55 UTC]   -> Skipping 'Lyon vs Angers' (ID: 2364199198554225112). Status is 'MatchNotStart'.
+[2025-09-19 08:17:55 UTC] Finished processing for Football. Found 0 streamable matches.
+[2025-09-19 08:17:55 UTC] 
+--- Fetching Cricket ---
+[2025-09-19 08:17:55 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=cricket&startTime=1758229200000&endTime=1758315599999
+[2025-09-19 08:17:55 UTC] Found 1 total matches for Cricket.
+[2025-09-19 08:17:55 UTC]   -> Skipping 'India vs Oman' (ID: 4395693810161976120). Status is 'MatchNotStart'.
+[2025-09-19 08:17:55 UTC] Finished processing for Cricket. Found 0 streamable matches.
+[2025-09-19 08:17:55 UTC] 
+--- Fetching Basketball ---
+[2025-09-19 08:17:55 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=basketball&startTime=1758229200000&endTime=1758315599999
+[2025-09-19 08:17:55 UTC] Found 0 matches for Basketball.
+[2025-09-19 08:17:55 UTC] 
+Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
+[2025-09-19 08:17:55 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
