@@ -17327,3 +17327,37 @@ Generated hththbddnmndvhjhhjhhjek.m3u with 13 total streams.
 [2025-09-19 20:14:01 UTC] 
 Generated hththbddnmndvhjhhjhhjek.m3u with 13 total streams.
 [2025-09-19 20:14:01 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
+[2025-09-19 21:11:24 UTC] --- WORKFLOW STARTED ---
+[2025-09-19 21:11:24 UTC] Scanning for matches in the 24-hour window ending on 2025-09-19 at 21:00 UTC.
+[2025-09-19 21:11:24 UTC] 
+--- Fetching Football ---
+[2025-09-19 21:11:24 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=football&startTime=1758229200000&endTime=1758315599999
+[2025-09-19 21:11:25 UTC] Found 4 total matches for Football.
+[2025-09-19 21:11:25 UTC]   -> Processing 'Real Betis vs Real Sociedad' (ID: 7716239103801938304). Status is 'MatchEnded'. Fetching details...
+[2025-09-19 21:11:25 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=7716239103801938304
+[2025-09-19 21:11:25 UTC]   [SUCCESS] Found 4 stream(s) for match ID 7716239103801938304.
+[2025-09-19 21:11:25 UTC]   -> Processing 'Lecce vs Cagliari' (ID: 7130207497915188688). Status is 'MatchEnded'. Fetching details...
+[2025-09-19 21:11:25 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=7130207497915188688
+[2025-09-19 21:11:26 UTC]   [INFO] No stream URLs found for match ID 7130207497915188688.
+[2025-09-19 21:11:26 UTC]   -> Processing 'VfB Stuttgart vs St. Pauli' (ID: 1773505817985055192). Status is 'MatchEnded'. Fetching details...
+[2025-09-19 21:11:26 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=1773505817985055192
+[2025-09-19 21:11:26 UTC]   [SUCCESS] Found 4 stream(s) for match ID 1773505817985055192.
+[2025-09-19 21:11:26 UTC]   -> Processing 'Lyon vs Angers' (ID: 2364199198554225112). Status is 'MatchEnded'. Fetching details...
+[2025-09-19 21:11:26 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=2364199198554225112
+[2025-09-19 21:11:27 UTC]   [SUCCESS] Found 4 stream(s) for match ID 2364199198554225112.
+[2025-09-19 21:11:27 UTC] Finished processing for Football. Found 3 streamable matches.
+[2025-09-19 21:11:27 UTC] 
+--- Fetching Cricket ---
+[2025-09-19 21:11:27 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=cricket&startTime=1758229200000&endTime=1758315599999
+[2025-09-19 21:11:27 UTC] Found 1 total matches for Cricket.
+[2025-09-19 21:11:27 UTC]   -> Processing 'India vs Oman' (ID: 4395693810161976120). Status is 'MatchEnded'. Fetching details...
+[2025-09-19 21:11:27 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=4395693810161976120
+[2025-09-19 21:11:28 UTC]   [SUCCESS] Found 1 stream(s) for match ID 4395693810161976120.
+[2025-09-19 21:11:28 UTC] Finished processing for Cricket. Found 1 streamable matches.
+[2025-09-19 21:11:28 UTC] 
+--- Fetching Basketball ---
+[2025-09-19 21:11:28 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=basketball&startTime=1758229200000&endTime=1758315599999
+[2025-09-19 21:11:28 UTC] Found 0 matches for Basketball.
+[2025-09-19 21:11:28 UTC] 
+Generated hththbddnmndvhjhhjhhjek.m3u with 13 total streams.
+[2025-09-19 21:11:28 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
