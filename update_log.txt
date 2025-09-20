@@ -17429,3 +17429,47 @@ Generated hththbddnmndvhjhhjhhjek.m3u with 13 total streams.
 [2025-09-19 23:11:37 UTC] 
 Generated hththbddnmndvhjhhjhhjek.m3u with 13 total streams.
 [2025-09-19 23:11:37 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
+[2025-09-20 00:58:47 UTC] --- WORKFLOW STARTED ---
+[2025-09-20 00:58:47 UTC] Scanning for matches in the 24-hour window ending on 2025-09-20 at 21:00 UTC.
+[2025-09-20 00:58:47 UTC] 
+--- Fetching Football ---
+[2025-09-20 00:58:47 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=football&startTime=1758315600000&endTime=1758401999999
+[2025-09-20 00:58:48 UTC] Found 23 total matches for Football.
+[2025-09-20 00:58:48 UTC]   -> Skipping 'Liverpool vs Everton' (ID: 3793296806919521376). Status is 'MatchNotStart'.
+[2025-09-20 00:58:48 UTC]   -> Skipping 'Manchester United vs Chelsea' (ID: 5432607071282905376). Status is 'MatchNotStart'.
+[2025-09-20 00:58:48 UTC]   -> Skipping 'Fulham vs Brentford' (ID: 3297900847909291104). Status is 'MatchNotStart'.
+[2025-09-20 00:58:48 UTC]   -> Skipping 'West Ham United vs Crystal Palace' (ID: 7175500127075287328). Status is 'MatchNotStart'.
+[2025-09-20 00:58:48 UTC]   -> Skipping 'Wolves vs Leeds United' (ID: 3806807605802156320). Status is 'MatchNotStart'.
+[2025-09-20 00:58:48 UTC]   -> Skipping 'Brighton vs Tottenham Hotspur' (ID: 217438702787871840). Status is 'MatchNotStart'.
+[2025-09-20 00:58:48 UTC]   -> Skipping 'Burnley vs Nottingham Forest' (ID: 2036892952245552224). Status is 'MatchNotStart'.
+[2025-09-20 00:58:48 UTC]   -> Skipping 'Real Madrid vs Espanyol' (ID: 7085735155970068864). Status is 'MatchNotStart'.
+[2025-09-20 00:58:48 UTC]   -> Skipping 'Deportivo Alaves vs Sevilla' (ID: 5946324450245330824). Status is 'MatchNotStart'.
+[2025-09-20 00:58:48 UTC]   -> Skipping 'Valencia vs Athletic Club' (ID: 3879172221281224584). Status is 'MatchNotStart'.
+[2025-09-20 00:58:48 UTC]   -> Skipping 'Villarreal vs Osasuna' (ID: 2933416299534471552). Status is 'MatchNotStart'.
+[2025-09-20 00:58:48 UTC]   -> Skipping 'Girona vs Levante' (ID: 7360454733239669120). Status is 'MatchNotStart'.
+[2025-09-20 00:58:48 UTC]   -> Skipping 'Hellas Verona vs Juventus' (ID: 7373401877793719760). Status is 'MatchNotStart'.
+[2025-09-20 00:58:48 UTC]   -> Skipping 'Udinese vs AC Milan' (ID: 417592253319988688). Status is 'MatchNotStart'.
+[2025-09-20 00:58:48 UTC]   -> Skipping 'Bologna vs Genoa' (ID: 3865097768071579088). Status is 'MatchNotStart'.
+[2025-09-20 00:58:48 UTC]   -> Skipping 'Hoffenheim vs Bayern Munich' (ID: 3489377276013214168). Status is 'MatchNotStart'.
+[2025-09-20 00:58:48 UTC]   -> Skipping 'RB Leipzig vs FC Cologne' (ID: 4173924419373529560). Status is 'MatchNotStart'.
+[2025-09-20 00:58:48 UTC]   -> Skipping 'Werder Bremen vs Freiburg' (ID: 7303926160396024280). Status is 'MatchNotStart'.
+[2025-09-20 00:58:48 UTC]   -> Skipping 'Hamburger SV vs FC Heidenheim' (ID: 6425724233058865536). Status is 'MatchNotStart'.
+[2025-09-20 00:58:48 UTC]   -> Skipping 'Augsburg vs Mainz 05' (ID: 3131341105637259736). Status is 'MatchNotStart'.
+[2025-09-20 00:58:48 UTC]   -> Skipping 'Lens vs Lille' (ID: 7894619540964757888). Status is 'MatchNotStart'.
+[2025-09-20 00:58:48 UTC]   -> Skipping 'Brest vs Nice' (ID: 6698913839897366912). Status is 'MatchNotStart'.
+[2025-09-20 00:58:48 UTC]   -> Skipping 'Nantes vs Rennes' (ID: 4733092602551106008). Status is 'MatchNotStart'.
+[2025-09-20 00:58:48 UTC] Finished processing for Football. Found 0 streamable matches.
+[2025-09-20 00:58:48 UTC] 
+--- Fetching Cricket ---
+[2025-09-20 00:58:48 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=cricket&startTime=1758315600000&endTime=1758401999999
+[2025-09-20 00:58:48 UTC] Found 1 total matches for Cricket.
+[2025-09-20 00:58:48 UTC]   -> Skipping 'Sri Lanka vs Bangladesh' (ID: 8286803888209641856). Status is 'MatchNotStart'.
+[2025-09-20 00:58:48 UTC] Finished processing for Cricket. Found 0 streamable matches.
+[2025-09-20 00:58:48 UTC] 
+--- Fetching Basketball ---
+[2025-09-20 00:58:48 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=basketball&startTime=1758315600000&endTime=1758401999999
+[2025-09-20 00:58:49 UTC] Found 0 matches for Basketball.
+[2025-09-20 00:58:49 UTC] 
+Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
+[2025-09-20 00:58:49 UTC] Updating existing entry in lovestory.json. Name: -> 20.09.2025, URL -> https://priv-bc7.pages.dev/hththbddnmndvhjhhjhhjek.m3u
+[2025-09-20 00:58:49 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
