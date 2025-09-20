@@ -3,24 +3,40 @@
     "streams": [
       "https://live-en.aisports.cc/moviebox/device02/playlist.m3u8",
       "http://play.sportsteam368.com/play/gm.php?id=958257537&id2=958257537",
-      "http://play.sportsteam368.com/play/kbs.html?id=958257537&id2=",
-      "http://play.sportsteam368.com/play/pao.php?id=43431771&id2="
+      "http://play.sportsteam368.com/play/pao.php?id=43431771&id2=",
+      "http://play.sportsteam368.com/play/kbs.html?id=958257537&id2="
+    ]
+  },
+  "2036892952245552224": {
+    "streams": [
+      "https://live-en.aisports.cc/moviebox/bsy_019/playlist.m3u8",
+      "http://play.sportsteam368.com/play/pao.php?id=43431701&id2=",
+      "http://play.sportsteam368.com/play/kbs.html?id=958257741&id2=",
+      "http://play.sportsteam368.com/play/gm.php?id=958257741&id2=958257741"
     ]
   },
   "7360454733239669120": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_004/playlist.m3u8",
       "http://play.sportsteam368.com/play/kbs.html?id=958258291&id2=",
-      "http://play.sportsteam368.com/play/gm.php?id=958258291&id2=958258291",
-      "http://play.sportsteam368.com/play/pao.php?id=43583021&id2="
+      "http://play.sportsteam368.com/play/pao.php?id=43583021&id2=",
+      "http://play.sportsteam368.com/play/gm.php?id=958258291&id2=958258291"
     ]
   },
   "3865097768071579088": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_016/playlist.m3u8",
-      "http://play.sportsteam368.com/play/pao.php?id=43394791&id2=",
       "http://play.sportsteam368.com/play/kbs.html?id=958257730&id2=",
-      "http://play.sportsteam368.com/play/gm.php?id=958257730&id2=958257730"
+      "http://play.sportsteam368.com/play/gm.php?id=958257730&id2=958257730",
+      "http://play.sportsteam368.com/play/pao.php?id=43394791&id2="
+    ]
+  },
+  "3489377276013214168": {
+    "streams": [
+      "https://live-en.aisports.cc/moviebox/bsy_017/playlist.m3u8",
+      "http://play.sportsteam368.com/play/kbs.html?id=958257952&id2=",
+      "http://play.sportsteam368.com/play/gm.php?id=958257952&id2=958257952",
+      "http://play.sportsteam368.com/play/pao.php?id=43473881&id2="
     ]
   }
 }
