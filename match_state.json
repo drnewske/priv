@@ -3,8 +3,8 @@
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_010/playlist.m3u8",
       "http://play.sportsteam368.com/play/kbs.html?id=958258690&id2=",
-      "http://play.sportsteam368.com/play/pao.php?id=43431821&id2=",
-      "http://play.sportsteam368.com/play/gm.php?id=958258690&id2=958258690"
+      "http://play.sportsteam368.com/play/gm.php?id=958258690&id2=958258690",
+      "http://play.sportsteam368.com/play/pao.php?id=43431821&id2="
     ]
   },
   "214061003066294560": {
@@ -15,12 +15,20 @@
       "http://play.sportsteam368.com/play/kbs.html?id=958258653&id2="
     ]
   },
+  "5162698115082867072": {
+    "streams": [
+      "https://live-en.aisports.cc/moviebox/bsy_028/playlist.m3u8",
+      "http://tv.cctv.com/live/cctv5/",
+      "http://sports.cctv.com/H5/CCTV5/index.shtml",
+      "https://www.yangshipin.cn/tv/home?pid=600001818"
+    ]
+  },
   "5022522872305274960": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_010/playlist.m3u8",
-      "http://play.sportsteam368.com/play/kbs.html?id=958236033&id2=",
       "http://play.sportsteam368.com/play/gm.php?id=958236033&id2=958236033",
-      "http://play.sportsteam368.com/play/pao.php?id=43394831&id2="
+      "http://play.sportsteam368.com/play/pao.php?id=43394831&id2=",
+      "http://play.sportsteam368.com/play/kbs.html?id=958236033&id2="
     ]
   },
   "6650574137600755152": {
@@ -42,9 +50,14 @@
   "1400428878296938968": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_017/playlist.m3u8",
-      "http://play.sportsteam368.com/play/gm.php?id=958258140&id2=958258140",
+      "http://play.sportsteam368.com/play/kbs.html?id=958258140&id2=",
       "http://play.sportsteam368.com/play/pao.php?id=43477141&id2=",
-      "http://play.sportsteam368.com/play/kbs.html?id=958258140&id2="
+      "http://play.sportsteam368.com/play/gm.php?id=958258140&id2=958258140"
+    ]
+  },
+  "5116269750540288384": {
+    "streams": [
+      "https://live-en.aisports.cc/moviebox/device02/playlist.m3u8"
     ]
   }
 }
