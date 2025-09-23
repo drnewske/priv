@@ -1,3 +1,19 @@
 #EXTM3U
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/09/18/7e445efbcb4554f3b9a200cd23e315dc.png" group-title="Cricket",Pakistan vs Sri Lanka (1430HRS UTC)
 https://live-en.aisports.cc/moviebox/football001/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/6529247040a081ff16a32fb2ddb80e52.jpg" group-title="Football",Athletic Club vs Girona (1700HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_011/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/6529247040a081ff16a32fb2ddb80e52.jpg" group-title="Football",Athletic Club vs Girona (1700HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/kbs.html?id=958257510&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/6529247040a081ff16a32fb2ddb80e52.jpg" group-title="Football",Athletic Club vs Girona (1700HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/gm.php?id=958257510&id2=958257510
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/6529247040a081ff16a32fb2ddb80e52.jpg" group-title="Football",Athletic Club vs Girona (1700HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/pao.php?id=43583131&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/ebc37d37bd840176fac1e4f8dd44a528.jpg" group-title="Football",Espanyol vs Valencia (1700HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_027/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/ebc37d37bd840176fac1e4f8dd44a528.jpg" group-title="Football",Espanyol vs Valencia (1700HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/kbs.html?id=958257561&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/ebc37d37bd840176fac1e4f8dd44a528.jpg" group-title="Football",Espanyol vs Valencia (1700HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/gm.php?id=958257561&id2=958257561
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/ebc37d37bd840176fac1e4f8dd44a528.jpg" group-title="Football",Espanyol vs Valencia (1700HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/pao.php?id=43583211&id2=
