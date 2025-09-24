@@ -4,11 +4,11 @@ https://live-en.aisports.cc/moviebox/device01/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/f9a3286a03d16f7e5fb353ccffcef7e4.jpg" group-title="Football",FC Midtjylland vs Sturm Graz (1645HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_009/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/f9a3286a03d16f7e5fb353ccffcef7e4.jpg" group-title="Football",FC Midtjylland vs Sturm Graz (1645HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/pao.php?id=44157351&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/f9a3286a03d16f7e5fb353ccffcef7e4.jpg" group-title="Football",FC Midtjylland vs Sturm Graz (1645HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/kk.php?id=abb71cbfa2ac1cd18639736b9358fbfbe07759c5ee4639976524f36b3074636f&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/f9a3286a03d16f7e5fb353ccffcef7e4.jpg" group-title="Football",FC Midtjylland vs Sturm Graz (1645HRS UTC) - Signal 4
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/f9a3286a03d16f7e5fb353ccffcef7e4.jpg" group-title="Football",FC Midtjylland vs Sturm Graz (1645HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/wlive.php?id=0fe35cf26051f3bbfbc3605a4a51c02c&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/f9a3286a03d16f7e5fb353ccffcef7e4.jpg" group-title="Football",FC Midtjylland vs Sturm Graz (1645HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/pao.php?id=44157351&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/b9f09cf48dd03df1fded0ec8da540c88.jpg" group-title="Football",PAOK FC vs Maccabi Tel Aviv (1645HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_010/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/b9f09cf48dd03df1fded0ec8da540c88.jpg" group-title="Football",PAOK FC vs Maccabi Tel Aviv (1645HRS UTC) - Signal 2
@@ -22,6 +22,22 @@ https://live-en.aisports.cc/moviebox/bsy_001/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/3db3fb47dd605c70a99c575ab6a6c90d.jpg" group-title="Football",Getafe vs Deportivo Alaves (1700HRS UTC) - Signal 2
 http://play.sportsteam368.com/play/kbs.html?id=958257900&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/3db3fb47dd605c70a99c575ab6a6c90d.jpg" group-title="Football",Getafe vs Deportivo Alaves (1700HRS UTC) - Signal 3
-http://play.sportsteam368.com/play/pao.php?id=43583251&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/3db3fb47dd605c70a99c575ab6a6c90d.jpg" group-title="Football",Getafe vs Deportivo Alaves (1700HRS UTC) - Signal 4
 http://play.sportsteam368.com/play/gm.php?id=958257900&id2=958257900
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/3db3fb47dd605c70a99c575ab6a6c90d.jpg" group-title="Football",Getafe vs Deportivo Alaves (1700HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/pao.php?id=43583251&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/c226139c81d36c7858f2985730b5c460.jpg" group-title="Football",Real Betis vs Nottingham Forest (1900HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_011/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/c226139c81d36c7858f2985730b5c460.jpg" group-title="Football",Real Betis vs Nottingham Forest (1900HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/kk.php?id=ac99d14bbd11355a09c0b839b072c94d8e8aed18ae4c5220451d96de93124065&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/c226139c81d36c7858f2985730b5c460.jpg" group-title="Football",Real Betis vs Nottingham Forest (1900HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/wlive.php?id=1bf2b8d9f1570c3a518c5ff14886b703&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/c226139c81d36c7858f2985730b5c460.jpg" group-title="Football",Real Betis vs Nottingham Forest (1900HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/pao.php?id=44157241&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/36e8d5379682f408b584aef982492456.jpg" group-title="Football",Freiburg vs Basel (1900HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_006/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/36e8d5379682f408b584aef982492456.jpg" group-title="Football",Freiburg vs Basel (1900HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/wlive.php?id=3d15af073d4e35f729ceae014c784f60&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/36e8d5379682f408b584aef982492456.jpg" group-title="Football",Freiburg vs Basel (1900HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/pao.php?id=44157001&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/36e8d5379682f408b584aef982492456.jpg" group-title="Football",Freiburg vs Basel (1900HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/kk.php?id=a8d1ac0ff8062c35566591d433b793ae09c7447ecdfb007fea3662429f750f20&id2=
