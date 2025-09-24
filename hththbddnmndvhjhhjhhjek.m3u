@@ -1,3 +1,27 @@
 #EXTM3U
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/09/18/a94c2bbc54522e9f3e3116dc1bd0d497.png" group-title="Cricket",India vs Bangladesh (1430HRS UTC)
 https://live-en.aisports.cc/moviebox/device01/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/f9a3286a03d16f7e5fb353ccffcef7e4.jpg" group-title="Football",FC Midtjylland vs Sturm Graz (1645HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_009/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/f9a3286a03d16f7e5fb353ccffcef7e4.jpg" group-title="Football",FC Midtjylland vs Sturm Graz (1645HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/pao.php?id=44157351&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/f9a3286a03d16f7e5fb353ccffcef7e4.jpg" group-title="Football",FC Midtjylland vs Sturm Graz (1645HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/kk.php?id=abb71cbfa2ac1cd18639736b9358fbfbe07759c5ee4639976524f36b3074636f&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/f9a3286a03d16f7e5fb353ccffcef7e4.jpg" group-title="Football",FC Midtjylland vs Sturm Graz (1645HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/wlive.php?id=0fe35cf26051f3bbfbc3605a4a51c02c&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/b9f09cf48dd03df1fded0ec8da540c88.jpg" group-title="Football",PAOK FC vs Maccabi Tel Aviv (1645HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_010/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/b9f09cf48dd03df1fded0ec8da540c88.jpg" group-title="Football",PAOK FC vs Maccabi Tel Aviv (1645HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/pao.php?id=44157571&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/b9f09cf48dd03df1fded0ec8da540c88.jpg" group-title="Football",PAOK FC vs Maccabi Tel Aviv (1645HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/kk.php?id=abcbc6643bf38f911c1728f8a0562438751be61ca26d7756ddf5e3f39cb2814b&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/b9f09cf48dd03df1fded0ec8da540c88.jpg" group-title="Football",PAOK FC vs Maccabi Tel Aviv (1645HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/wlive.php?id=9b5363c89e2f7984c76cbbbfaf389772&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/3db3fb47dd605c70a99c575ab6a6c90d.jpg" group-title="Football",Getafe vs Deportivo Alaves (1700HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_001/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/3db3fb47dd605c70a99c575ab6a6c90d.jpg" group-title="Football",Getafe vs Deportivo Alaves (1700HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/kbs.html?id=958257900&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/3db3fb47dd605c70a99c575ab6a6c90d.jpg" group-title="Football",Getafe vs Deportivo Alaves (1700HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/gm.php?id=958257900&id2=958257900
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/3db3fb47dd605c70a99c575ab6a6c90d.jpg" group-title="Football",Getafe vs Deportivo Alaves (1700HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/pao.php?id=43583251&id2=
