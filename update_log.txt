@@ -22653,3 +22653,36 @@ Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
 [2025-09-25 11:12:14 UTC] 
 Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
 [2025-09-25 11:12:14 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
+[2025-09-25 12:28:22 UTC] --- WORKFLOW STARTED ---
+[2025-09-25 12:28:22 UTC] Scanning for matches in the 24-hour window ending on 2025-09-25 at 21:00 UTC.
+[2025-09-25 12:28:22 UTC] 
+--- Fetching Football ---
+[2025-09-25 12:28:22 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=football&startTime=1758747600000&endTime=1758833999999
+[2025-09-25 12:28:22 UTC] Found 13 total matches for Football.
+[2025-09-25 12:28:22 UTC]   -> Skipping 'FC Utrecht vs Lyon' (ID: 2420774199994237136). Status is 'MatchNotStart'.
+[2025-09-25 12:28:22 UTC]   -> Skipping 'Ferencvaros vs Viktoria Plzen' (ID: 8743828076822413520). Status is 'MatchNotStart'.
+[2025-09-25 12:28:22 UTC]   -> Skipping 'RB Salzburg vs FC Porto' (ID: 7068489015440589008). Status is 'MatchNotStart'.
+[2025-09-25 12:28:22 UTC]   -> Skipping 'VfB Stuttgart vs Celta Vigo' (ID: 5780459522012102864). Status is 'MatchNotStart'.
+[2025-09-25 12:28:22 UTC]   -> Skipping 'Rangers vs Genk' (ID: 5104919577907153968). Status is 'MatchNotStart'.
+[2025-09-25 12:28:22 UTC]   -> Skipping 'Aston Villa vs Bologna' (ID: 4965307989458567376). Status is 'MatchNotStart'.
+[2025-09-25 12:28:22 UTC]   -> Skipping 'Young Boys vs Panathinaikos' (ID: 232024781092176080). Status is 'MatchNotStart'.
+[2025-09-25 12:28:22 UTC]   -> Skipping 'Go Ahead Eagles vs FCSB' (ID: 9018547654091590704). Status is 'MatchNotStart'.
+[2025-09-25 12:28:22 UTC]   -> Skipping 'Lille vs Brann' (ID: 8045770134579986640). Status is 'MatchNotStart'.
+[2025-09-25 12:28:22 UTC]   -> Skipping 'Real Oviedo vs Barcelona' (ID: 1035149056597807488). Status is 'MatchNotStart'.
+[2025-09-25 12:28:22 UTC]   -> Skipping 'Osasuna vs Elche' (ID: 1197278643183145344). Status is 'MatchNotStart'.
+[2025-09-25 12:28:22 UTC]   -> Skipping 'Torino vs Pisa' (ID: 6483021063882424528). Status is 'MatchNotStart'.
+[2025-09-25 12:28:22 UTC]   -> Skipping 'Genoa vs Empoli' (ID: 2375738203720532176). Status is 'MatchNotStart'.
+[2025-09-25 12:28:22 UTC] Finished processing for Football. Found 0 streamable matches.
+[2025-09-25 12:28:22 UTC] 
+--- Fetching Cricket ---
+[2025-09-25 12:28:22 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=cricket&startTime=1758747600000&endTime=1758833999999
+[2025-09-25 12:28:23 UTC] Found 1 total matches for Cricket.
+[2025-09-25 12:28:23 UTC]   -> Skipping 'Pakistan vs Bangladesh' (ID: 7530199150811922816). Status is 'MatchNotStart'.
+[2025-09-25 12:28:23 UTC] Finished processing for Cricket. Found 0 streamable matches.
+[2025-09-25 12:28:23 UTC] 
+--- Fetching Basketball ---
+[2025-09-25 12:28:23 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=basketball&startTime=1758747600000&endTime=1758833999999
+[2025-09-25 12:28:23 UTC] Found 0 matches for Basketball.
+[2025-09-25 12:28:23 UTC] 
+Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
+[2025-09-25 12:28:23 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
