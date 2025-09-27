@@ -18,17 +18,17 @@
   "4119807779904405792": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_001/playlist.m3u8",
-      "http://play.sportsteam368.com/play/pao.php?id=43432021&id2=",
       "http://play.sportsteam368.com/play/kbs.html?id=958482523&id2=",
-      "http://play.sportsteam368.com/play/gm.php?id=958482523&id2=958482523"
+      "http://play.sportsteam368.com/play/gm.php?id=958482523&id2=958482523",
+      "http://play.sportsteam368.com/play/pao.php?id=43432021&id2="
     ]
   },
   "7995155259256718432": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/device01/playlist.m3u8",
-      "http://play.sportsteam368.com/play/kbs.html?id=958482046&id2=",
       "http://play.sportsteam368.com/play/gm.php?id=958482046&id2=958482046",
-      "http://play.sportsteam368.com/play/pao.php?id=43431961&id2="
+      "http://play.sportsteam368.com/play/pao.php?id=43431961&id2=",
+      "http://play.sportsteam368.com/play/kbs.html?id=958482046&id2="
     ]
   },
   "3237102252939789408": {
@@ -74,17 +74,17 @@
   "5385392719136192984": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_024/playlist.m3u8",
-      "http://play.sportsteam368.com/play/gm.php?id=958482505&id2=958482505",
       "http://play.sportsteam368.com/play/kbs.html?id=958482505&id2=",
-      "http://play.sportsteam368.com/play/wlive.php?id=8b977a8eb300dec0a32080a1ddc1c81f&id2="
+      "http://play.sportsteam368.com/play/wlive.php?id=8b977a8eb300dec0a32080a1ddc1c81f&id2=",
+      "http://play.sportsteam368.com/play/gm.php?id=958482505&id2=958482505"
     ]
   },
   "7692379770198675840": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_013/playlist.m3u8",
+      "http://play.sportsteam368.com/play/kbs.html?id=958482603&id2=",
       "http://play.sportsteam368.com/play/gm.php?id=958482603&id2=958482603",
-      "http://play.sportsteam368.com/play/pao.php?id=43477231&id2=",
-      "http://play.sportsteam368.com/play/kbs.html?id=958482603&id2="
+      "http://play.sportsteam368.com/play/pao.php?id=43477231&id2="
     ]
   },
   "7016417613627947480": {
