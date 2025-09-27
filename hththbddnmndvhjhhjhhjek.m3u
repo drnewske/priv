@@ -7,3 +7,15 @@ http://play.sportsteam368.com/play/gm.php?id=958482181&id2=958482181
 http://play.sportsteam368.com/play/pao.php?id=43431951&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/3084cf6c6de91dc34fb7a7c0d5bfe5f0.jpg" group-title="Football",Brentford vs Manchester United (1130HRS UTC) - Signal 4
 http://play.sportsteam368.com/play/kbs.html?id=958482181&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/8711dc5b26c6366ed7d7c06fd814ed20.jpg" group-title="Football",Mainz 05 vs Borussia Dortmund (1330HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_005/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/8711dc5b26c6366ed7d7c06fd814ed20.jpg" group-title="Football",Mainz 05 vs Borussia Dortmund (1330HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/kbs.html?id=958482338&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/8711dc5b26c6366ed7d7c06fd814ed20.jpg" group-title="Football",Mainz 05 vs Borussia Dortmund (1330HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/gm.php?id=958482338&id2=958482338
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/8711dc5b26c6366ed7d7c06fd814ed20.jpg" group-title="Football",Mainz 05 vs Borussia Dortmund (1330HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/pao.php?id=43473971&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/358b74b9ce962c878673c6fa69f20e25.jpg" group-title="Football",Crystal Palace vs Liverpool (1400HRS UTC)
+https://live-en.aisports.cc/moviebox/football001/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/6bb9dbeaa866f27373c5c88a58dc0e0e.jpg" group-title="Football",Chelsea vs Brighton (1400HRS UTC)
+https://live-en.aisports.cc/moviebox/device01/playlist.m3u8
