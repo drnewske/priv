@@ -34,11 +34,11 @@ http://play.sportsteam368.com/play/pao.php?id=43432021&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/6bb9dbeaa866f27373c5c88a58dc0e0e.jpg" group-title="Football",Chelsea vs Brighton (1400HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/device01/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/6bb9dbeaa866f27373c5c88a58dc0e0e.jpg" group-title="Football",Chelsea vs Brighton (1400HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/kbs.html?id=958482046&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/6bb9dbeaa866f27373c5c88a58dc0e0e.jpg" group-title="Football",Chelsea vs Brighton (1400HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/gm.php?id=958482046&id2=958482046
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/6bb9dbeaa866f27373c5c88a58dc0e0e.jpg" group-title="Football",Chelsea vs Brighton (1400HRS UTC) - Signal 4
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/6bb9dbeaa866f27373c5c88a58dc0e0e.jpg" group-title="Football",Chelsea vs Brighton (1400HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/pao.php?id=43431961&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/6bb9dbeaa866f27373c5c88a58dc0e0e.jpg" group-title="Football",Chelsea vs Brighton (1400HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/kbs.html?id=958482046&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/09/dd4ec91feab8542877dd0549a9f37116.jpg" group-title="Football",Leeds United vs Bournemouth (1400HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_020/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/09/dd4ec91feab8542877dd0549a9f37116.jpg" group-title="Football",Leeds United vs Bournemouth (1400HRS UTC) - Signal 2
@@ -47,3 +47,11 @@ http://play.sportsteam368.com/play/kbs.html?id=958482558&id2=
 http://play.sportsteam368.com/play/gm.php?id=958482558&id2=958482558
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/09/dd4ec91feab8542877dd0549a9f37116.jpg" group-title="Football",Leeds United vs Bournemouth (1400HRS UTC) - Signal 4
 http://play.sportsteam368.com/play/pao.php?id=43432001&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/553c9d4dc2edb9d3ca02e9c457268d6b.jpg" group-title="Football",Lorient vs AS Monaco (1500HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_025/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/553c9d4dc2edb9d3ca02e9c457268d6b.jpg" group-title="Football",Lorient vs AS Monaco (1500HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/kbs.html?id=958482543&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/553c9d4dc2edb9d3ca02e9c457268d6b.jpg" group-title="Football",Lorient vs AS Monaco (1500HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/gm.php?id=958482543&id2=958482543
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/553c9d4dc2edb9d3ca02e9c457268d6b.jpg" group-title="Football",Lorient vs AS Monaco (1500HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/pao.php?id=43477171&id2=
