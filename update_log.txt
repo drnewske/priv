@@ -27511,3 +27511,91 @@ Generated hththbddnmndvhjhhjhhjek.m3u with 21 total streams.
 [2025-09-28 18:16:36 UTC] 
 Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
 [2025-09-28 18:16:36 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
+[2025-09-28 19:09:28 UTC] --- WORKFLOW STARTED ---
+[2025-09-28 19:09:28 UTC] Scanning for matches in the 24-hour window ending on 2025-09-28 at 21:00 UTC.
+[2025-09-28 19:09:28 UTC] 
+--- Fetching Football ---
+[2025-09-28 19:09:28 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=football&startTime=1759006800000&endTime=1759093199999
+[2025-09-28 19:09:29 UTC] Found 19 total matches for Football.
+[2025-09-28 19:09:29 UTC]   -> Processing 'Newcastle United vs Arsenal' (ID: 8623407407274901792). Status is 'MatchEnded'. Fetching details...
+[2025-09-28 19:09:29 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=8623407407274901792
+[2025-09-28 19:09:29 UTC]   [SUCCESS] Found 4 stream(s) for match ID 8623407407274901792.
+[2025-09-28 19:09:29 UTC]   [LOG] STREAM ADDED: Match ID 8623407407274901792 (Newcastle United vs Arsenal) now has streams.
+[2025-09-28 19:09:29 UTC]   -> Processing 'Aston Villa vs Fulham' (ID: 6139672212780074080). Status is 'MatchEnded'. Fetching details...
+[2025-09-28 19:09:29 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=6139672212780074080
+[2025-09-28 19:09:29 UTC]   [INFO] No stream URLs found for match ID 6139672212780074080.
+[2025-09-28 19:09:29 UTC]   -> Processing 'Barcelona vs Real Sociedad' (ID: 431666706529112448). Status is 'MatchEnded'. Fetching details...
+[2025-09-28 19:09:29 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=431666706529112448
+[2025-09-28 19:09:30 UTC]   [SUCCESS] Found 4 stream(s) for match ID 431666706529112448.
+[2025-09-28 19:09:30 UTC]   [LOG] STREAM ADDED: Match ID 431666706529112448 (Barcelona vs Real Sociedad) now has streams.
+[2025-09-28 19:09:30 UTC]   -> Processing 'Rayo Vallecano vs Sevilla' (ID: 7810251746023294856). Status is 'MatchEnded'. Fetching details...
+[2025-09-28 19:09:30 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=7810251746023294856
+[2025-09-28 19:09:30 UTC]   [INFO] No stream URLs found for match ID 7810251746023294856.
+[2025-09-28 19:09:30 UTC]   -> Processing 'Real Betis vs Osasuna' (ID: 2225788208083882368). Status is 'MatchIng'. Fetching details...
+[2025-09-28 19:09:30 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=2225788208083882368
+[2025-09-28 19:09:30 UTC]   [INFO] No stream URLs found for match ID 2225788208083882368.
+[2025-09-28 19:09:30 UTC]   -> Processing 'Elche vs Celta Vigo' (ID: 3964177664248893824). Status is 'MatchEnded'. Fetching details...
+[2025-09-28 19:09:30 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=3964177664248893824
+[2025-09-28 19:09:31 UTC]   [INFO] No stream URLs found for match ID 3964177664248893824.
+[2025-09-28 19:09:31 UTC]   -> Processing 'AC Milan vs Napoli' (ID: 2354140093089304656). Status is 'MatchIng'. Fetching details...
+[2025-09-28 19:09:31 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=2354140093089304656
+[2025-09-28 19:09:31 UTC]   [SUCCESS] Found 4 stream(s) for match ID 2354140093089304656.
+[2025-09-28 19:09:31 UTC]   [LOG] STREAM ADDED: Match ID 2354140093089304656 (AC Milan vs Napoli) now has streams.
+[2025-09-28 19:09:31 UTC]   -> Processing 'AS Roma vs Hellas Verona' (ID: 3344932011109765200). Status is 'MatchEnded'. Fetching details...
+[2025-09-28 19:09:31 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=3344932011109765200
+[2025-09-28 19:09:31 UTC]   [INFO] No stream URLs found for match ID 3344932011109765200.
+[2025-09-28 19:09:31 UTC]   -> Processing 'Lecce vs Bologna' (ID: 5313005048271720528). Status is 'MatchEnded'. Fetching details...
+[2025-09-28 19:09:31 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=5313005048271720528
+[2025-09-28 19:09:32 UTC]   [INFO] No stream URLs found for match ID 5313005048271720528.
+[2025-09-28 19:09:32 UTC]   -> Processing 'Pisa vs Fiorentina' (ID: 5622627522652917840). Status is 'MatchEnded'. Fetching details...
+[2025-09-28 19:09:32 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=5622627522652917840
+[2025-09-28 19:09:32 UTC]   [INFO] No stream URLs found for match ID 5622627522652917840.
+[2025-09-28 19:09:32 UTC]   -> Processing 'Sassuolo vs Udinese' (ID: 7406052975092158544). Status is 'MatchEnded'. Fetching details...
+[2025-09-28 19:09:32 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=7406052975092158544
+[2025-09-28 19:09:32 UTC]   [INFO] No stream URLs found for match ID 7406052975092158544.
+[2025-09-28 19:09:32 UTC]   -> Processing 'Union Berlin vs Hamburger SV' (ID: 1919309855921175000). Status is 'MatchIng'. Fetching details...
+[2025-09-28 19:09:32 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=1919309855921175000
+[2025-09-28 19:09:32 UTC]   [SUCCESS] Found 4 stream(s) for match ID 1919309855921175000.
+[2025-09-28 19:09:32 UTC]   [LOG] STREAM ADDED: Match ID 1919309855921175000 (Union Berlin vs Hamburger SV) now has streams.
+[2025-09-28 19:09:32 UTC]   -> Processing 'FC Cologne vs VfB Stuttgart' (ID: 8754085240409323992). Status is 'MatchEnded'. Fetching details...
+[2025-09-28 19:09:32 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=8754085240409323992
+[2025-09-28 19:09:33 UTC]   [INFO] No stream URLs found for match ID 8754085240409323992.
+[2025-09-28 19:09:33 UTC]   -> Processing 'Freiburg vs Hoffenheim' (ID: 469150775907351000). Status is 'MatchEnded'. Fetching details...
+[2025-09-28 19:09:33 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=469150775907351000
+[2025-09-28 19:09:33 UTC]   [INFO] No stream URLs found for match ID 469150775907351000.
+[2025-09-28 19:09:33 UTC]   -> Processing 'Lille vs Lyon' (ID: 8835871863085627864). Status is 'MatchEnded'. Fetching details...
+[2025-09-28 19:09:33 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=8835871863085627864
+[2025-09-28 19:09:33 UTC]   [SUCCESS] Found 4 stream(s) for match ID 8835871863085627864.
+[2025-09-28 19:09:33 UTC]   [LOG] STREAM ADDED: Match ID 8835871863085627864 (Lille vs Lyon) now has streams.
+[2025-09-28 19:09:33 UTC]   -> Processing 'Rennes vs Lens' (ID: 3386938526432481664). Status is 'MatchIng'. Fetching details...
+[2025-09-28 19:09:33 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=3386938526432481664
+[2025-09-28 19:09:34 UTC]   [SUCCESS] Found 4 stream(s) for match ID 3386938526432481664.
+[2025-09-28 19:09:34 UTC]   [LOG] STREAM ADDED: Match ID 3386938526432481664 (Rennes vs Lens) now has streams.
+[2025-09-28 19:09:34 UTC]   -> Processing 'Angers vs Brest' (ID: 6349884868777114072). Status is 'MatchEnded'. Fetching details...
+[2025-09-28 19:09:34 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=6349884868777114072
+[2025-09-28 19:09:34 UTC]   [SUCCESS] Found 4 stream(s) for match ID 6349884868777114072.
+[2025-09-28 19:09:34 UTC]   [LOG] STREAM ADDED: Match ID 6349884868777114072 (Angers vs Brest) now has streams.
+[2025-09-28 19:09:34 UTC]   -> Processing 'Metz vs Le Havre' (ID: 2728990768371235288). Status is 'MatchEnded'. Fetching details...
+[2025-09-28 19:09:34 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=2728990768371235288
+[2025-09-28 19:09:34 UTC]   [SUCCESS] Found 4 stream(s) for match ID 2728990768371235288.
+[2025-09-28 19:09:34 UTC]   [LOG] STREAM ADDED: Match ID 2728990768371235288 (Metz vs Le Havre) now has streams.
+[2025-09-28 19:09:34 UTC]   -> Processing 'Nice vs Paris FC' (ID: 9025023047435188696). Status is 'MatchEnded'. Fetching details...
+[2025-09-28 19:09:34 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=9025023047435188696
+[2025-09-28 19:09:35 UTC]   [INFO] No stream URLs found for match ID 9025023047435188696.
+[2025-09-28 19:09:35 UTC] Finished processing for Football. Found 8 streamable matches.
+[2025-09-28 19:09:35 UTC] 
+--- Fetching Cricket ---
+[2025-09-28 19:09:35 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=cricket&startTime=1759006800000&endTime=1759093199999
+[2025-09-28 19:09:35 UTC] Found 1 total matches for Cricket.
+[2025-09-28 19:09:35 UTC]   -> Processing 'India vs Pakistan' (ID: 890613767032160464). Status is 'MatchEnded'. Fetching details...
+[2025-09-28 19:09:35 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=890613767032160464
+[2025-09-28 19:09:35 UTC]   [SUCCESS] Found 1 stream(s) for match ID 890613767032160464.
+[2025-09-28 19:09:35 UTC]   [LOG] STREAM ADDED: Match ID 890613767032160464 (India vs Pakistan) now has streams.
+[2025-09-28 19:09:35 UTC] Finished processing for Cricket. Found 1 streamable matches.
+[2025-09-28 19:09:35 UTC] 
+--- Fetching Basketball ---
+[2025-09-28 19:09:35 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=basketball&startTime=1759006800000&endTime=1759093199999
+[2025-09-28 19:09:36 UTC] Found 0 matches for Basketball.
+[2025-09-28 19:09:36 UTC] 
+Generated hththbddnmndvhjhhjhhjek.m3u with 33 total streams.
+[2025-09-28 19:09:36 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
