@@ -27491,3 +27491,23 @@ Generated hththbddnmndvhjhhjhhjek.m3u with 14 total streams.
 [2025-09-28 17:10:10 UTC] 
 Generated hththbddnmndvhjhhjhhjek.m3u with 21 total streams.
 [2025-09-28 17:10:10 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
+[2025-09-28 18:16:35 UTC] --- WORKFLOW STARTED ---
+[2025-09-28 18:16:35 UTC] Scanning for matches in the 24-hour window ending on 2025-09-28 at 21:00 UTC.
+[2025-09-28 18:16:35 UTC] 
+--- Fetching Football ---
+[2025-09-28 18:16:35 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=football&startTime=1759006800000&endTime=1759093199999
+[2025-09-28 18:16:35 UTC]   [API Call FAILED] URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3, Params: {'status': 0, 'matchType': 'football', 'startTime': 1759006800000, 'endTime': 1759093199999}, Error: HTTPSConnectionPool(host='h5.aoneroom.com', port=443): Max retries exceeded with url: /wefeed-h5-bff/live/match-list-v3?status=0&matchType=football&startTime=1759006800000&endTime=1759093199999 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1017)')))
+[2025-09-28 18:16:35 UTC] Found 0 matches for Football.
+[2025-09-28 18:16:35 UTC] 
+--- Fetching Cricket ---
+[2025-09-28 18:16:35 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=cricket&startTime=1759006800000&endTime=1759093199999
+[2025-09-28 18:16:36 UTC]   [API Call FAILED] URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3, Params: {'status': 0, 'matchType': 'cricket', 'startTime': 1759006800000, 'endTime': 1759093199999}, Error: HTTPSConnectionPool(host='h5.aoneroom.com', port=443): Max retries exceeded with url: /wefeed-h5-bff/live/match-list-v3?status=0&matchType=cricket&startTime=1759006800000&endTime=1759093199999 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1017)')))
+[2025-09-28 18:16:36 UTC] Found 0 matches for Cricket.
+[2025-09-28 18:16:36 UTC] 
+--- Fetching Basketball ---
+[2025-09-28 18:16:36 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=basketball&startTime=1759006800000&endTime=1759093199999
+[2025-09-28 18:16:36 UTC]   [API Call FAILED] URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3, Params: {'status': 0, 'matchType': 'basketball', 'startTime': 1759006800000, 'endTime': 1759093199999}, Error: HTTPSConnectionPool(host='h5.aoneroom.com', port=443): Max retries exceeded with url: /wefeed-h5-bff/live/match-list-v3?status=0&matchType=basketball&startTime=1759006800000&endTime=1759093199999 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1017)')))
+[2025-09-28 18:16:36 UTC] Found 0 matches for Basketball.
+[2025-09-28 18:16:36 UTC] 
+Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
+[2025-09-28 18:16:36 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
