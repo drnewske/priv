@@ -28261,3 +28261,25 @@ Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
 [2025-09-29 15:13:47 UTC] 
 Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
 [2025-09-29 15:13:47 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
+[2025-09-29 16:13:53 UTC] --- WORKFLOW STARTED ---
+[2025-09-29 16:13:53 UTC] Scanning for matches in the 24-hour window ending on 2025-09-29 at 21:00 UTC.
+[2025-09-29 16:13:53 UTC] 
+--- Fetching Football ---
+[2025-09-29 16:13:53 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=football&startTime=1759093200000&endTime=1759179599999
+[2025-09-29 16:13:53 UTC] Found 4 total matches for Football.
+[2025-09-29 16:13:53 UTC]   -> Skipping 'Everton vs West Ham United' (ID: 8037939455715689568). Status is 'MatchNotStart'.
+[2025-09-29 16:13:53 UTC]   -> Skipping 'Genoa vs Lazio' (ID: 5574213826659206608). Status is 'MatchNotStart'.
+[2025-09-29 16:13:53 UTC]   -> Skipping 'Parma vs Torino' (ID: 4682501100439851088). Status is 'MatchNotStart'.
+[2025-09-29 16:13:53 UTC]   -> Skipping 'Aveley vs Halesowen' (ID: 7940219704814485712). Status is 'MatchNotStart'.
+[2025-09-29 16:13:53 UTC] Finished processing for Football. Found 0 streamable matches.
+[2025-09-29 16:13:53 UTC] 
+--- Fetching Cricket ---
+[2025-09-29 16:13:53 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=cricket&startTime=1759093200000&endTime=1759179599999
+[2025-09-29 16:13:54 UTC] Found 0 matches for Cricket.
+[2025-09-29 16:13:54 UTC] 
+--- Fetching Basketball ---
+[2025-09-29 16:13:54 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=basketball&startTime=1759093200000&endTime=1759179599999
+[2025-09-29 16:13:54 UTC] Found 0 matches for Basketball.
+[2025-09-29 16:13:54 UTC] 
+Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
+[2025-09-29 16:13:54 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
