@@ -1,1 +1,5 @@
 #EXTM3U
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/191f5c2e20b5f46407422dcccb07ecb1.jpg" group-title="Football",Galatasaray vs Liverpool (1900HRS UTC)
+https://live-en.aisports.cc/moviebox/football001/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/6bb9dbeaa866f27373c5c88a58dc0e0e.jpg" group-title="Football",Chelsea vs Benfica (1900HRS UTC)
+https://live-en.aisports.cc/moviebox/device02/playlist.m3u8

@@ -1,1 +1,12 @@
-{}
+{
+  "1592414612212828600": {
+    "streams": [
+      "https://live-en.aisports.cc/moviebox/football001/playlist.m3u8"
+    ]
+  },
+  "802032877609403656": {
+    "streams": [
+      "https://live-en.aisports.cc/moviebox/device02/playlist.m3u8"
+    ]
+  }
+}
