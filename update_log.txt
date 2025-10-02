@@ -30778,3 +30778,56 @@ Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
 [2025-10-02 12:25:43 UTC] 
 Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
 [2025-10-02 12:25:43 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
+[2025-10-02 13:22:23 UTC] --- WORKFLOW STARTED ---
+[2025-10-02 13:22:23 UTC] Scanning for matches in the 24-hour window ending on 2025-10-02 at 21:00 UTC.
+[2025-10-02 13:22:23 UTC] 
+--- Fetching Football ---
+[2025-10-02 13:22:23 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=football&startTime=1759352400000&endTime=1759438799999
+[2025-10-02 13:22:24 UTC] Found 35 total matches for Football.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'AS Roma vs Lille' (ID: 6526839144869938440). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'Lyon vs RB Salzburg' (ID: 5560817024799491336). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'Maccabi Tel Aviv vs Dinamo Zagreb' (ID: 4083636347021444360). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'Brann vs FC Utrecht' (ID: 7481602265872483592). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'Sturm Graz vs Rangers' (ID: 8623264771410904328). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'Basel vs VfB Stuttgart' (ID: 3768384373105509640). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'Genk vs Ferencvaros' (ID: 156497471953323272). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'Feyenoord vs Aston Villa' (ID: 1426512566872851720). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'Nottingham Forest vs FC Midtjylland' (ID: 120468674935407880). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'FC Porto vs FK Crvena Zvezda' (ID: 5101449862807176456). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'Celtic vs SC Braga' (ID: 6968191908351198472). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'Panathinaikos vs Go Ahead Eagles' (ID: 6956932909283820808). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'Celta Vigo vs PAOK FC' (ID: 814023017550464264). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'Bologna vs Freiburg' (ID: 6148536776170816776). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'FCSB vs Young Boys' (ID: 5653140817159537928). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'Fenerbahce vs Nice' (ID: 5400939238027314440). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'Viktoria Plzen vs Malmo FF' (ID: 399691851832378632). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'Ludogorets Razgrad vs Real Betis' (ID: 1300411777306576112). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'NK Celje vs AEK Athens' (ID: 8330530795631822088). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'Legia Warszawa vs Samsunspor' (ID: 8186415607555966216). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'AEK Larnaca vs AZ Alkmaar' (ID: 6781292523816371464). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'Rakow Czestochowa vs CS Universitatea Craiova' (ID: 602353835063002376). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'Aberdeen vs Shakhtar Donetsk' (ID: 512281842516641032). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'Slovan Bratislava vs Strasbourg' (ID: 3700830378694952200). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'Fiorentina vs SK Sigma Olomouc' (ID: 2493865678559659272). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'Shelbourne vs BK Haecken' (ID: 2187620903898465544). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'Sparta Prague vs Shamrock Rovers' (ID: 1791304136689960176). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'Zrinjski Mostar vs Lincoln Red Imps FC' (ID: 8943020344953685256). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'KuPS vs Drita' (ID: 823030216804680968). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'Rayo Vallecano vs KF Shkendija' (ID: 8064818417616962824). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'Lausanne vs Breidablik' (ID: 6407493754744096008). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'Jagiellonia Bialystok vs Hamrun Spartans' (ID: 5867061799460160776). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'Omonia Nicosia vs Mainz 05' (ID: 3309017211113719048). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'Lech Poznan vs Rapid Wien' (ID: 2804614052848223496). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC]   -> Skipping 'FC Noah vs Rijeka' (ID: 174511870464902408). Status is 'MatchNotStart'.
+[2025-10-02 13:22:24 UTC] Finished processing for Football. Found 0 streamable matches.
+[2025-10-02 13:22:24 UTC] 
+--- Fetching Cricket ---
+[2025-10-02 13:22:24 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=cricket&startTime=1759352400000&endTime=1759438799999
+[2025-10-02 13:22:24 UTC] Found 0 matches for Cricket.
+[2025-10-02 13:22:24 UTC] 
+--- Fetching Basketball ---
+[2025-10-02 13:22:24 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=basketball&startTime=1759352400000&endTime=1759438799999
+[2025-10-02 13:22:25 UTC] Found 0 matches for Basketball.
+[2025-10-02 13:22:25 UTC] 
+Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
+[2025-10-02 13:22:25 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
