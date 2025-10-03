@@ -32387,3 +32387,40 @@ Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
 [2025-10-03 21:10:52 UTC] 
 Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
 [2025-10-03 21:10:52 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
+[2025-10-03 22:11:36 UTC] --- WORKFLOW STARTED ---
+[2025-10-03 22:11:36 UTC] Scanning for matches in the 24-hour window ending on 2025-10-03 at 21:00 UTC.
+[2025-10-03 22:11:36 UTC] 
+--- Fetching Football ---
+[2025-10-03 22:11:36 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=football&startTime=1759438800000&endTime=1759525199999
+[2025-10-03 22:11:37 UTC] Found 5 total matches for Football.
+[2025-10-03 22:11:37 UTC]   -> Processing 'Bournemouth vs Fulham' (ID: 2106698746469794912). Status is 'MatchEnded'. Fetching details...
+[2025-10-03 22:11:37 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=2106698746469794912
+[2025-10-03 22:11:37 UTC]   [INFO] No stream URLs found for match ID 2106698746469794912.
+[2025-10-03 22:11:37 UTC]   -> Processing 'Osasuna vs Getafe' (ID: 7893568339129651584). Status is 'MatchEnded'. Fetching details...
+[2025-10-03 22:11:37 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=7893568339129651584
+[2025-10-03 22:11:37 UTC]   [INFO] No stream URLs found for match ID 7893568339129651584.
+[2025-10-03 22:11:37 UTC]   -> Processing 'Hellas Verona vs Sassuolo' (ID: 1051473900872386000). Status is 'MatchEnded'. Fetching details...
+[2025-10-03 22:11:37 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=1051473900872386000
+[2025-10-03 22:11:38 UTC]   [INFO] No stream URLs found for match ID 1051473900872386000.
+[2025-10-03 22:11:38 UTC]   -> Processing 'Hoffenheim vs FC Cologne' (ID: 1077136725602892248). Status is 'MatchEnded'. Fetching details...
+[2025-10-03 22:11:38 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=1077136725602892248
+[2025-10-03 22:11:38 UTC]   [INFO] No stream URLs found for match ID 1077136725602892248.
+[2025-10-03 22:11:38 UTC]   -> Processing 'Paris FC vs Lorient' (ID: 7579789779514325464). Status is 'MatchEnded'. Fetching details...
+[2025-10-03 22:11:38 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=7579789779514325464
+[2025-10-03 22:11:39 UTC]   [INFO] No stream URLs found for match ID 7579789779514325464.
+[2025-10-03 22:11:39 UTC] Finished processing for Football. Found 0 streamable matches.
+[2025-10-03 22:11:39 UTC] 
+--- Fetching Cricket ---
+[2025-10-03 22:11:39 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=cricket&startTime=1759438800000&endTime=1759525199999
+[2025-10-03 22:11:39 UTC] Found 0 matches for Cricket.
+[2025-10-03 22:11:39 UTC] 
+--- Fetching Basketball ---
+[2025-10-03 22:11:39 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=basketball&startTime=1759438800000&endTime=1759525199999
+[2025-10-03 22:11:39 UTC] Found 1 total matches for Basketball.
+[2025-10-03 22:11:39 UTC]   -> Processing 'New Orleans Pelicans vs Melbourne United' (ID: 8630255953818566864). Status is 'MatchEnded'. Fetching details...
+[2025-10-03 22:11:39 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=8630255953818566864
+[2025-10-03 22:11:40 UTC]   [INFO] No stream URLs found for match ID 8630255953818566864.
+[2025-10-03 22:11:40 UTC] Finished processing for Basketball. Found 0 streamable matches.
+[2025-10-03 22:11:40 UTC] 
+Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
+[2025-10-03 22:11:40 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
