@@ -31833,3 +31833,28 @@ Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
 Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
 [2025-10-03 00:59:49 UTC] Updating existing entry in lovestory.json. Name: -> 03.10.2025, URL -> https://priv-bc7.pages.dev/hththbddnmndvhjhhjhhjek.m3u
 [2025-10-03 00:59:49 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
+[2025-10-03 02:21:14 UTC] --- WORKFLOW STARTED ---
+[2025-10-03 02:21:14 UTC] Scanning for matches in the 24-hour window ending on 2025-10-03 at 21:00 UTC.
+[2025-10-03 02:21:14 UTC] 
+--- Fetching Football ---
+[2025-10-03 02:21:14 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=football&startTime=1759438800000&endTime=1759525199999
+[2025-10-03 02:21:14 UTC] Found 5 total matches for Football.
+[2025-10-03 02:21:14 UTC]   -> Skipping 'Bournemouth vs Fulham' (ID: 2106698746469794912). Status is 'MatchNotStart'.
+[2025-10-03 02:21:14 UTC]   -> Skipping 'Osasuna vs Getafe' (ID: 7893568339129651584). Status is 'MatchNotStart'.
+[2025-10-03 02:21:14 UTC]   -> Skipping 'Hellas Verona vs Sassuolo' (ID: 1051473900872386000). Status is 'MatchNotStart'.
+[2025-10-03 02:21:14 UTC]   -> Skipping 'Hoffenheim vs FC Cologne' (ID: 1077136725602892248). Status is 'MatchNotStart'.
+[2025-10-03 02:21:14 UTC]   -> Skipping 'Paris FC vs Lorient' (ID: 7579789779514325464). Status is 'MatchNotStart'.
+[2025-10-03 02:21:14 UTC] Finished processing for Football. Found 0 streamable matches.
+[2025-10-03 02:21:14 UTC] 
+--- Fetching Cricket ---
+[2025-10-03 02:21:14 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=cricket&startTime=1759438800000&endTime=1759525199999
+[2025-10-03 02:21:15 UTC] Found 0 matches for Cricket.
+[2025-10-03 02:21:15 UTC] 
+--- Fetching Basketball ---
+[2025-10-03 02:21:15 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=basketball&startTime=1759438800000&endTime=1759525199999
+[2025-10-03 02:21:15 UTC] Found 1 total matches for Basketball.
+[2025-10-03 02:21:15 UTC]   -> Skipping 'Melbourne United vs New Orleans Pelicans' (ID: 8630255953818566864). Status is 'MatchNotStart'.
+[2025-10-03 02:21:15 UTC] Finished processing for Basketball. Found 0 streamable matches.
+[2025-10-03 02:21:15 UTC] 
+Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
+[2025-10-03 02:21:15 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
