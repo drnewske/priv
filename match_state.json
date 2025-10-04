@@ -7,6 +7,14 @@
       "http://play.sportsteam368.com/play/pao.php?id=43432261&id2="
     ]
   },
+  "3673951416794726688": {
+    "streams": [
+      "https://live-en.aisports.cc/moviebox/device02/playlist.m3u8",
+      "http://play.sportsteam368.com/play/gm.php?id=958914340&id2=958914340",
+      "http://play.sportsteam368.com/play/kbs.html?id=958914340&id2=",
+      "http://play.sportsteam368.com/play/wlive.php?id=d8401b9282fbbda6179dacd0c21b0ff1&id2="
+    ]
+  },
   "5214182489355436320": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/device01/playlist.m3u8",
@@ -34,25 +42,25 @@
   "6392743058933796944": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_018/playlist.m3u8",
+      "http://play.sportsteam368.com/play/kbs.html?id=958918239&id2=",
       "http://play.sportsteam368.com/play/gm.php?id=958918239&id2=958918239",
-      "http://play.sportsteam368.com/play/pao.php?id=43395051&id2=",
-      "http://play.sportsteam368.com/play/kbs.html?id=958918239&id2="
+      "http://play.sportsteam368.com/play/pao.php?id=43395051&id2="
     ]
   },
   "4176972042266988624": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_001/playlist.m3u8",
-      "http://play.sportsteam368.com/play/gm.php?id=958918272&id2=958918272",
       "http://play.sportsteam368.com/play/pao.php?id=43395071&id2=",
-      "http://play.sportsteam368.com/play/kbs.html?id=958918272&id2="
+      "http://play.sportsteam368.com/play/kbs.html?id=958918272&id2=",
+      "http://play.sportsteam368.com/play/gm.php?id=958918272&id2=958918272"
     ]
   },
   "3265886144504953304": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_011/playlist.m3u8",
-      "http://play.sportsteam368.com/play/kbs.html?id=958919329&id2=",
       "http://play.sportsteam368.com/play/gm.php?id=958919329&id2=958919329",
-      "http://play.sportsteam368.com/play/pao.php?id=43474041&id2="
+      "http://play.sportsteam368.com/play/pao.php?id=43474041&id2=",
+      "http://play.sportsteam368.com/play/kbs.html?id=958919329&id2="
     ]
   },
   "1067584718336588248": {
