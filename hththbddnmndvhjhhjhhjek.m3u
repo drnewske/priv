@@ -18,11 +18,11 @@ http://play.sportsteam368.com/play/kbs.html?id=958918239&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/c87669876cb999873c734bbafeaf3642.jpg" group-title="Football",Parma vs Lecce (1300HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_001/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/c87669876cb999873c734bbafeaf3642.jpg" group-title="Football",Parma vs Lecce (1300HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/kbs.html?id=958918272&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/c87669876cb999873c734bbafeaf3642.jpg" group-title="Football",Parma vs Lecce (1300HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/gm.php?id=958918272&id2=958918272
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/c87669876cb999873c734bbafeaf3642.jpg" group-title="Football",Parma vs Lecce (1300HRS UTC) - Signal 4
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/c87669876cb999873c734bbafeaf3642.jpg" group-title="Football",Parma vs Lecce (1300HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/pao.php?id=43395071&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/c87669876cb999873c734bbafeaf3642.jpg" group-title="Football",Parma vs Lecce (1300HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/kbs.html?id=958918272&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/bae296c73e03725497d59d958ae94b15.jpg" group-title="Football",Borussia Dortmund vs RB Leipzig (1330HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_011/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/bae296c73e03725497d59d958ae94b15.jpg" group-title="Football",Borussia Dortmund vs RB Leipzig (1330HRS UTC) - Signal 2
@@ -31,5 +31,27 @@ http://play.sportsteam368.com/play/pao.php?id=43474041&id2=
 http://play.sportsteam368.com/play/kbs.html?id=958919329&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/bae296c73e03725497d59d958ae94b15.jpg" group-title="Football",Borussia Dortmund vs RB Leipzig (1330HRS UTC) - Signal 4
 http://play.sportsteam368.com/play/gm.php?id=958919329&id2=958919329
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/4c5c946162d3b811beedf4203d9c0ca7.jpg" group-title="Football",Arsenal vs West Ham United (1400HRS UTC)
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/63eba0d48bad5073adf9e89d659741ba.jpg" group-title="Football",Manchester United vs Sunderland (1400HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_020/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/63eba0d48bad5073adf9e89d659741ba.jpg" group-title="Football",Manchester United vs Sunderland (1400HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/gm.php?id=958984775&id2=958984775
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/63eba0d48bad5073adf9e89d659741ba.jpg" group-title="Football",Manchester United vs Sunderland (1400HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/pao.php?id=43432261&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/63eba0d48bad5073adf9e89d659741ba.jpg" group-title="Football",Manchester United vs Sunderland (1400HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/kbs.html?id=958984775&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/4c5c946162d3b811beedf4203d9c0ca7.jpg" group-title="Football",Arsenal vs West Ham United (1400HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/device01/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/4c5c946162d3b811beedf4203d9c0ca7.jpg" group-title="Football",Arsenal vs West Ham United (1400HRS UTC) - Signal 2
+http://tv.cctv.com/live/cctv5/
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/4c5c946162d3b811beedf4203d9c0ca7.jpg" group-title="Football",Arsenal vs West Ham United (1400HRS UTC) - Signal 3
+https://www.yangshipin.cn/tv/home?pid=600001818
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/4c5c946162d3b811beedf4203d9c0ca7.jpg" group-title="Football",Arsenal vs West Ham United (1400HRS UTC) - Signal 4
+http://sports.cctv.com/H5/CCTV5/index.shtml
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/cc27b3b066faf3f4e275510176694dc9.jpg" group-title="Football",Girona vs Valencia (1415HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_007/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/cc27b3b066faf3f4e275510176694dc9.jpg" group-title="Football",Girona vs Valencia (1415HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/gm.php?id=958914794&id2=958914794
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/cc27b3b066faf3f4e275510176694dc9.jpg" group-title="Football",Girona vs Valencia (1415HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/pao.php?id=43583661&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/cc27b3b066faf3f4e275510176694dc9.jpg" group-title="Football",Girona vs Valencia (1415HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/kbs.html?id=958914794&id2=
