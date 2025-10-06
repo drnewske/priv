@@ -35640,3 +35640,27 @@ Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
 [2025-10-06 11:11:35 UTC] 
 Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
 [2025-10-06 11:11:35 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
+[2025-10-06 12:27:39 UTC] --- WORKFLOW STARTED ---
+[2025-10-06 12:27:39 UTC] Scanning for matches in the 24-hour window ending on 2025-10-06 at 21:00 UTC.
+[2025-10-06 12:27:39 UTC] 
+--- Fetching Football ---
+[2025-10-06 12:27:39 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=football&startTime=1759698000000&endTime=1759784399999
+[2025-10-06 12:27:39 UTC] Found 0 matches for Football.
+[2025-10-06 12:27:39 UTC] 
+--- Fetching Cricket ---
+[2025-10-06 12:27:39 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=cricket&startTime=1759698000000&endTime=1759784399999
+[2025-10-06 12:27:39 UTC] Found 0 matches for Cricket.
+[2025-10-06 12:27:39 UTC] 
+--- Fetching Basketball ---
+[2025-10-06 12:27:39 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=basketball&startTime=1759698000000&endTime=1759784399999
+[2025-10-06 12:27:40 UTC] Found 2 total matches for Basketball.
+[2025-10-06 12:27:40 UTC]   -> Processing 'Golden State Warriors vs LA Lakers' (ID: 7270009162289267784). Status is 'MatchEnded'. Fetching details...
+[2025-10-06 12:27:40 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=7270009162289267784
+[2025-10-06 12:27:40 UTC]   [INFO] No stream URLs found for match ID 7270009162289267784.
+[2025-10-06 12:27:40 UTC]   -> Processing 'Charlotte Hornets vs Oklahoma City Thunder' (ID: 8603074651990510056). Status is 'MatchEnded'. Fetching details...
+[2025-10-06 12:27:40 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=8603074651990510056
+[2025-10-06 12:27:41 UTC]   [INFO] No stream URLs found for match ID 8603074651990510056.
+[2025-10-06 12:27:41 UTC] Finished processing for Basketball. Found 0 streamable matches.
+[2025-10-06 12:27:41 UTC] 
+Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
+[2025-10-06 12:27:41 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
