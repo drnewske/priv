@@ -39366,3 +39366,57 @@ Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
 [2025-10-10 05:13:45 UTC] 
 Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
 [2025-10-10 05:13:45 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
+[2025-10-10 06:20:27 UTC] --- WORKFLOW STARTED ---
+[2025-10-10 06:20:27 UTC] Scanning for matches in the 24-hour window ending on 2025-10-10 at 21:00 UTC.
+[2025-10-10 06:20:27 UTC] 
+--- Fetching Football ---
+[2025-10-10 06:20:27 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=football&startTime=1760043600000&endTime=1760129999999
+[2025-10-10 06:20:28 UTC] Found 17 total matches for Football.
+[2025-10-10 06:20:28 UTC]   -> Skipping 'Lesotho vs Nigeria' (ID: 7853893570142915632). Status is 'MatchNotStart'.
+[2025-10-10 06:20:28 UTC]   -> Skipping 'Zimbabwe vs South Africa' (ID: 486849004694290640). Status is 'MatchNotStart'.
+[2025-10-10 06:20:28 UTC]   -> Skipping 'Sao Tome and Principe vs Tunisia' (ID: 2139670067939786960). Status is 'MatchNotStart'.
+[2025-10-10 06:20:28 UTC]   -> Skipping 'Rwanda vs Benin' (ID: 2054101675019747536). Status is 'MatchNotStart'.
+[2025-10-10 06:20:28 UTC]   -> Skipping 'Seychelles vs Ivory Coast' (ID: 8165486369361510608). Status is 'MatchNotStart'.
+[2025-10-10 06:20:28 UTC]   -> Skipping 'South Sudan vs Senegal' (ID: 7115303231254053072). Status is 'MatchNotStart'.
+[2025-10-10 06:20:28 UTC]   -> Skipping 'Togo vs DR Congo' (ID: 6521672505371279568). Status is 'MatchNotStart'.
+[2025-10-10 06:20:28 UTC]   -> Skipping 'Gambia vs Gabon' (ID: 3535785952424116432). Status is 'MatchNotStart'.
+[2025-10-10 06:20:28 UTC]   -> Skipping 'Sudan vs Mauritania' (ID: 3098092363639671856). Status is 'MatchNotStart'.
+[2025-10-10 06:20:28 UTC]   -> Skipping 'Iceland vs Ukraine' (ID: 9197655108959587376). Status is 'MatchNotStart'.
+[2025-10-10 06:20:28 UTC]   -> Skipping 'Sweden vs Switzerland' (ID: 8536751863641918512). Status is 'MatchNotStart'.
+[2025-10-10 06:20:28 UTC]   -> Skipping 'Kosovo vs Slovenia' (ID: 8491715867369262128). Status is 'MatchNotStart'.
+[2025-10-10 06:20:28 UTC]   -> Skipping 'Germany vs Luxembourg' (ID: 7969298310594183376). Status is 'MatchNotStart'.
+[2025-10-10 06:20:28 UTC]   -> Skipping 'Northern Ireland vs Slovakia' (ID: 3735914660866018352). Status is 'MatchNotStart'.
+[2025-10-10 06:20:28 UTC]   -> Skipping 'Belgium vs North Macedonia' (ID: 3497786830568702160). Status is 'MatchNotStart'.
+[2025-10-10 06:20:28 UTC]   -> Skipping 'France vs Azerbaijan' (ID: 3225882003065684176). Status is 'MatchNotStart'.
+[2025-10-10 06:20:28 UTC]   -> Skipping 'Kazakhstan vs Liechtenstein' (ID: 2139951542916598832). Status is 'MatchNotStart'.
+[2025-10-10 06:20:28 UTC] Finished processing for Football. Found 0 streamable matches.
+[2025-10-10 06:20:28 UTC] 
+--- Fetching Cricket ---
+[2025-10-10 06:20:28 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=cricket&startTime=1760043600000&endTime=1760129999999
+[2025-10-10 06:20:29 UTC] Found 1 total matches for Cricket.
+[2025-10-10 06:20:29 UTC]   -> Skipping 'New Zealand W vs Bangladesh W' (ID: 3621743956860485840). Status is 'MatchNotStart'.
+[2025-10-10 06:20:29 UTC] Finished processing for Cricket. Found 0 streamable matches.
+[2025-10-10 06:20:29 UTC] 
+--- Fetching Basketball ---
+[2025-10-10 06:20:29 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=basketball&startTime=1760043600000&endTime=1760129999999
+[2025-10-10 06:20:29 UTC] Found 6 total matches for Basketball.
+[2025-10-10 06:20:29 UTC]   -> Skipping 'Phoenix Suns vs Brooklyn Nets' (ID: 1376701741639024848). Status is 'MatchNotStart'.
+[2025-10-10 06:20:29 UTC]   -> Processing 'LA Clippers vs Guangzhou Loong Lions' (ID: 9086864303696789712). Status is 'MatchEnded'. Fetching details...
+[2025-10-10 06:20:29 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=9086864303696789712
+[2025-10-10 06:20:30 UTC]   [INFO] No stream URLs found for match ID 9086864303696789712.
+[2025-10-10 06:20:30 UTC]   -> Processing 'Milwaukee Bucks vs Detroit Pistons' (ID: 8654518739470270672). Status is 'MatchEnded'. Fetching details...
+[2025-10-10 06:20:30 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=8654518739470270672
+[2025-10-10 06:20:30 UTC]   [INFO] No stream URLs found for match ID 8654518739470270672.
+[2025-10-10 06:20:30 UTC]   -> Processing 'Oklahoma City Thunder vs Charlotte Hornets' (ID: 3610487156816363728). Status is 'MatchEnded'. Fetching details...
+[2025-10-10 06:20:30 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=3610487156816363728
+[2025-10-10 06:20:31 UTC]   [INFO] No stream URLs found for match ID 3610487156816363728.
+[2025-10-10 06:20:31 UTC]   -> Processing 'Chicago Bulls vs Cleveland Cavaliers' (ID: 2588170041402212560). Status is 'MatchEnded'. Fetching details...
+[2025-10-10 06:20:31 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=2588170041402212560
+[2025-10-10 06:20:31 UTC]   [INFO] No stream URLs found for match ID 2588170041402212560.
+[2025-10-10 06:20:31 UTC]   -> Processing 'New York Knicks vs Minnesota Timberwolves' (ID: 5326358614842949840). Status is 'MatchEnded'. Fetching details...
+[2025-10-10 06:20:31 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=5326358614842949840
+[2025-10-10 06:20:32 UTC]   [INFO] No stream URLs found for match ID 5326358614842949840.
+[2025-10-10 06:20:32 UTC] Finished processing for Basketball. Found 0 streamable matches.
+[2025-10-10 06:20:32 UTC] 
+Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
+[2025-10-10 06:20:32 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
