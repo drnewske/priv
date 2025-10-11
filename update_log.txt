@@ -40855,3 +40855,70 @@ Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
 [2025-10-11 03:21:54 UTC] 
 Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
 [2025-10-11 03:21:54 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
+[2025-10-11 04:14:54 UTC] --- WORKFLOW STARTED ---
+[2025-10-11 04:14:54 UTC] Scanning for matches in the 24-hour window ending on 2025-10-11 at 21:00 UTC.
+[2025-10-11 04:14:54 UTC] 
+--- Fetching Football ---
+[2025-10-11 04:14:54 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=football&startTime=1760130000000&endTime=1760216399999
+[2025-10-11 04:14:55 UTC] Found 37 total matches for Football.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Tonbridge Angels vs Chatham Town' (ID: 8968264863492489424). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Chelmsford vs Chippenham Town' (ID: 8823836589480200680). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Runcorn Linnets vs Buxton' (ID: 8806135276907151568). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Spennymoor Town vs Billericay' (ID: 8625991291812331728). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Braintree Town vs Farnborough' (ID: 8265390235686158544). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'South Shields vs Spalding United' (ID: 7983915258975502544). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Hemel Hempstead vs Yeovil Town' (ID: 7518105783478141136). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Tamworth vs Hyde United' (ID: 7362418510398374096). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Gainsborough vs Hartlepool United' (ID: 6914291106020999376). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Wealdstone vs Whitstable Town' (ID: 6569784975981166800). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Dorking Wanderers vs Aldershot Town' (ID: 6477774269556605136). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Slough Town vs Enfield Town' (ID: 634040667106328784). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Rochdale vs York City' (ID: 6074389016969887952). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Morecambe vs Chester FC' (ID: 5588000257214398672). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Aveley vs Gateshead FC' (ID: 5422129032559214800). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Eastbourne Borough vs Boreham Wood' (ID: 537213275117863120). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Darlington vs AFC Telford United' (ID: 5027615189542881768). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Altrincham vs Harborough Town FC' (ID: 4842654518884581584). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Woking vs Brackley Town' (ID: 4444085951861768400). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Hampton & Richmond vs Eastleigh' (ID: 4254934767512207568). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Carlisle United vs Boston United' (ID: 3725761811296698576). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Ebbsfleet United vs Solihull Moors' (ID: 3599661021729800400). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Weston Super Mare vs Needham Market' (ID: 3074991665142286824). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Maldon & Tiptree vs Flackwell Heath' (ID: 2365987809766918632). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Southport vs FC Halifax Town' (ID: 2291365329978671312). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Macclesfield FC vs Stamford AFC' (ID: 219690259934857704). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Scunthorpe United vs King's Lynn Town' (ID: 1822990968732764648). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'AFC Totton vs Truro City' (ID: 158910906418741456). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Farnham Town vs Sutton United' (ID: 2309379728489201872). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Portugal vs Ireland' (ID: 6427941338126732336). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Estonia vs Italy' (ID: 554684474082184240). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Bulgaria vs Turkiye' (ID: 4297738714380386512). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Serbia vs Albania' (ID: 4119283579145830608). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Spain vs Georgia' (ID: 3428543986297880784). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Norway vs Israel' (ID: 6508443181465979952). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Hungary vs Armenia' (ID: 1410931353235999792). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC]   -> Skipping 'Latvia vs Andorra' (ID: 3966161191814810672). Status is 'MatchNotStart'.
+[2025-10-11 04:14:55 UTC] Finished processing for Football. Found 0 streamable matches.
+[2025-10-11 04:14:55 UTC] 
+--- Fetching Cricket ---
+[2025-10-11 04:14:55 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=cricket&startTime=1760130000000&endTime=1760216399999
+[2025-10-11 04:14:56 UTC] Found 1 total matches for Cricket.
+[2025-10-11 04:14:56 UTC]   -> Skipping 'England W vs Sri Lanka W' (ID: 8809890727591297232). Status is 'MatchNotStart'.
+[2025-10-11 04:14:56 UTC] Finished processing for Cricket. Found 0 streamable matches.
+[2025-10-11 04:14:56 UTC] 
+--- Fetching Basketball ---
+[2025-10-11 04:14:56 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-list-v3?status=0&matchType=basketball&startTime=1760130000000&endTime=1760216399999
+[2025-10-11 04:14:56 UTC] Found 3 total matches for Basketball.
+[2025-10-11 04:14:56 UTC]   -> Processing 'Portland Trail Blazers vs Sacramento Kings' (ID: 1999903935830573264). Status is 'MatchIng'. Fetching details...
+[2025-10-11 04:14:56 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=1999903935830573264
+[2025-10-11 04:14:56 UTC]   [INFO] No stream URLs found for match ID 1999903935830573264.
+[2025-10-11 04:14:56 UTC]   -> Processing 'San Antonio Spurs vs Utah Jazz' (ID: 8485087399244087504). Status is 'MatchEnded'. Fetching details...
+[2025-10-11 04:14:56 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=8485087399244087504
+[2025-10-11 04:14:57 UTC]   [INFO] No stream URLs found for match ID 8485087399244087504.
+[2025-10-11 04:14:57 UTC]   -> Processing 'Toronto Raptors vs Boston Celtics' (ID: 9133605745584390352). Status is 'MatchEnded'. Fetching details...
+[2025-10-11 04:14:57 UTC]   [API Call] Requesting URL: https://h5.aoneroom.com/wefeed-h5-bff/live/match-detail?id=9133605745584390352
+[2025-10-11 04:14:57 UTC]   [INFO] No stream URLs found for match ID 9133605745584390352.
+[2025-10-11 04:14:57 UTC] Finished processing for Basketball. Found 0 streamable matches.
+[2025-10-11 04:14:57 UTC] 
+Generated hththbddnmndvhjhhjhhjek.m3u with 0 total streams.
+[2025-10-11 04:14:57 UTC] --- WORKFLOW FINISHED SUCCESSFULLY ---
