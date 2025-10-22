@@ -1,3 +1,19 @@
 #EXTM3U
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/10/10/d920f4704d60a4a7ab183321f6059715.png" group-title="Cricket",Australia W vs England W (0930HRS UTC)
 https://live-en.aisports.cc/moviebox/device01/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/191f5c2e20b5f46407422dcccb07ecb1.jpg" group-title="Football",Galatasaray vs Bodoe/Glimt (1645HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_005/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/191f5c2e20b5f46407422dcccb07ecb1.jpg" group-title="Football",Galatasaray vs Bodoe/Glimt (1645HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/pao.php?id=44153551&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/191f5c2e20b5f46407422dcccb07ecb1.jpg" group-title="Football",Galatasaray vs Bodoe/Glimt (1645HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/wen.php?id=07f0a1b2bb00c5b70a84b50d57f1176c&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/191f5c2e20b5f46407422dcccb07ecb1.jpg" group-title="Football",Galatasaray vs Bodoe/Glimt (1645HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/wlive.php?id=5e0a6e180ab86d89ba8e27232958076f&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/6529247040a081ff16a32fb2ddb80e52.jpg" group-title="Football",Athletic Club vs Qarabag FK (1645HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_021/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/6529247040a081ff16a32fb2ddb80e52.jpg" group-title="Football",Athletic Club vs Qarabag FK (1645HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/pao.php?id=44153041&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/6529247040a081ff16a32fb2ddb80e52.jpg" group-title="Football",Athletic Club vs Qarabag FK (1645HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/wen.php?id=5094181b27f8265e3c6295e73f4630de&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/6529247040a081ff16a32fb2ddb80e52.jpg" group-title="Football",Athletic Club vs Qarabag FK (1645HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/wlive.php?id=f0d835f3ee40d4b37a87efa05ae0e99e&id2=
