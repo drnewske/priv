@@ -10,11 +10,11 @@ http://play.sportsteam368.com/play/pao.php?id=22500007&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/05/5b18ba26ae25e1dccb7ed5774e5d80a0.jpg" group-title="Basketball",San Antonio Spurs vs Toronto Raptors (0000HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_006/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/05/5b18ba26ae25e1dccb7ed5774e5d80a0.jpg" group-title="Basketball",San Antonio Spurs vs Toronto Raptors (0000HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/kbs.html?id=10022500118&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/05/5b18ba26ae25e1dccb7ed5774e5d80a0.jpg" group-title="Basketball",San Antonio Spurs vs Toronto Raptors (0000HRS UTC) - Signal 3
-http://play.sportsteam368.com/play/pao.php?id=22500118&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/05/5b18ba26ae25e1dccb7ed5774e5d80a0.jpg" group-title="Basketball",San Antonio Spurs vs Toronto Raptors (0000HRS UTC) - Signal 4
 http://play.sportsteam368.com/play/mgxl.php?id=959658309&id2=38666522
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/05/5b18ba26ae25e1dccb7ed5774e5d80a0.jpg" group-title="Basketball",San Antonio Spurs vs Toronto Raptors (0000HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/kbs.html?id=10022500118&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/05/5b18ba26ae25e1dccb7ed5774e5d80a0.jpg" group-title="Basketball",San Antonio Spurs vs Toronto Raptors (0000HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/pao.php?id=22500118&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/59a17e8c9b3fba8828afac280548d09a.jpg" group-title="Basketball",Chicago Bulls vs Atlanta Hawks (0000HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_026/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/59a17e8c9b3fba8828afac280548d09a.jpg" group-title="Basketball",Chicago Bulls vs Atlanta Hawks (0000HRS UTC) - Signal 2
@@ -74,8 +74,8 @@ http://play.sportsteam368.com/play/pao.php?id=22500121&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/9ad9a400c0971b9ecbf8e15b9c749a1e.jpg" group-title="Basketball",LA Lakers vs Portland Trail Blazers (0230HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_011/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/9ad9a400c0971b9ecbf8e15b9c749a1e.jpg" group-title="Basketball",LA Lakers vs Portland Trail Blazers (0230HRS UTC) - Signal 2
-http://tv.cctv.com/live/cctv5/
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/9ad9a400c0971b9ecbf8e15b9c749a1e.jpg" group-title="Basketball",LA Lakers vs Portland Trail Blazers (0230HRS UTC) - Signal 3
 https://www.yangshipin.cn/tv/home?pid=600001818
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/9ad9a400c0971b9ecbf8e15b9c749a1e.jpg" group-title="Basketball",LA Lakers vs Portland Trail Blazers (0230HRS UTC) - Signal 4
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/9ad9a400c0971b9ecbf8e15b9c749a1e.jpg" group-title="Basketball",LA Lakers vs Portland Trail Blazers (0230HRS UTC) - Signal 3
 http://sports.cctv.com/H5/CCTV5/index.shtml
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/9ad9a400c0971b9ecbf8e15b9c749a1e.jpg" group-title="Basketball",LA Lakers vs Portland Trail Blazers (0230HRS UTC) - Signal 4
+http://tv.cctv.com/live/cctv5/
