@@ -70,11 +70,11 @@ http://play.sportsteam368.com/play/kbs.html?id=959529762&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/287185293c19c0cceb607d43b0541c1e.jpg" group-title="Football",Le Havre vs Brest (1800HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_020/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/287185293c19c0cceb607d43b0541c1e.jpg" group-title="Football",Le Havre vs Brest (1800HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/pao.php?id=43477581&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/287185293c19c0cceb607d43b0541c1e.jpg" group-title="Football",Le Havre vs Brest (1800HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/kbs.html?id=959529811&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/287185293c19c0cceb607d43b0541c1e.jpg" group-title="Football",Le Havre vs Brest (1800HRS UTC) - Signal 4
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/287185293c19c0cceb607d43b0541c1e.jpg" group-title="Football",Le Havre vs Brest (1800HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/gm.php?id=959529811&id2=959529811
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/287185293c19c0cceb607d43b0541c1e.jpg" group-title="Football",Le Havre vs Brest (1800HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/pao.php?id=43477581&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/90277626fdd0652ba163397c2b0f0fdd.jpg" group-title="Football",Metz vs Lens (1800HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_023/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/90277626fdd0652ba163397c2b0f0fdd.jpg" group-title="Football",Metz vs Lens (1800HRS UTC) - Signal 2
@@ -86,8 +86,64 @@ http://play.sportsteam368.com/play/pao.php?id=43477611&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/284a282acded0ba8ff39fc1807c95b0e.jpg" group-title="Football",Nice vs Lille (1800HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_024/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/284a282acded0ba8ff39fc1807c95b0e.jpg" group-title="Football",Nice vs Lille (1800HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/pao.php?id=43477631&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/284a282acded0ba8ff39fc1807c95b0e.jpg" group-title="Football",Nice vs Lille (1800HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/kbs.html?id=959529879&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/284a282acded0ba8ff39fc1807c95b0e.jpg" group-title="Football",Nice vs Lille (1800HRS UTC) - Signal 4
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/284a282acded0ba8ff39fc1807c95b0e.jpg" group-title="Football",Nice vs Lille (1800HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/gm.php?id=959529879&id2=959529879
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/284a282acded0ba8ff39fc1807c95b0e.jpg" group-title="Football",Nice vs Lille (1800HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/pao.php?id=43477631&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/791d0f0548682c3de6cd2e1500c069d5.jpg" group-title="Football",Bologna vs Torino (1945HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_019/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/791d0f0548682c3de6cd2e1500c069d5.jpg" group-title="Football",Bologna vs Torino (1945HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/gm.php?id=959544197&id2=959544197
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/791d0f0548682c3de6cd2e1500c069d5.jpg" group-title="Football",Bologna vs Torino (1945HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/pao.php?id=43395411&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/791d0f0548682c3de6cd2e1500c069d5.jpg" group-title="Football",Bologna vs Torino (1945HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/kbs.html?id=959544197&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/8de4ac6c3083c5f34fce9d7a2a5ebc21.jpg" group-title="Football",Inter vs Fiorentina (1945HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_022/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/8de4ac6c3083c5f34fce9d7a2a5ebc21.jpg" group-title="Football",Inter vs Fiorentina (1945HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/pao.php?id=43395451&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/8de4ac6c3083c5f34fce9d7a2a5ebc21.jpg" group-title="Football",Inter vs Fiorentina (1945HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/gm.php?id=959543999&id2=959543999
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/8de4ac6c3083c5f34fce9d7a2a5ebc21.jpg" group-title="Football",Inter vs Fiorentina (1945HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/kbs.html?id=959543999&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/9e1d809547b78f610f9995f0a8a51768.jpg" group-title="Football",Marseille vs Angers (2005HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_018/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/9e1d809547b78f610f9995f0a8a51768.jpg" group-title="Football",Marseille vs Angers (2005HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/gm.php?id=959529922&id2=959529922
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/9e1d809547b78f610f9995f0a8a51768.jpg" group-title="Football",Marseille vs Angers (2005HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/pao.php?id=43477601&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/9e1d809547b78f610f9995f0a8a51768.jpg" group-title="Football",Marseille vs Angers (2005HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/kbs.html?id=959529922&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/6cfc86c3cacecb6ef7dd9dfa3855fccd.jpg" group-title="Football",Paris FC vs Lyon (2005HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_009/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/6cfc86c3cacecb6ef7dd9dfa3855fccd.jpg" group-title="Football",Paris FC vs Lyon (2005HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/kbs.html?id=959530003&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/6cfc86c3cacecb6ef7dd9dfa3855fccd.jpg" group-title="Football",Paris FC vs Lyon (2005HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/gm.php?id=959530003&id2=959530003
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/6cfc86c3cacecb6ef7dd9dfa3855fccd.jpg" group-title="Football",Paris FC vs Lyon (2005HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/pao.php?id=43477641&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/49a40dcaa2fc699ed6a9bb43d76b7913.jpg" group-title="Football",Strasbourg vs Auxerre (2005HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_014/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/49a40dcaa2fc699ed6a9bb43d76b7913.jpg" group-title="Football",Strasbourg vs Auxerre (2005HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/kbs.html?id=959529969&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/49a40dcaa2fc699ed6a9bb43d76b7913.jpg" group-title="Football",Strasbourg vs Auxerre (2005HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/gm.php?id=959529969&id2=959529969
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/49a40dcaa2fc699ed6a9bb43d76b7913.jpg" group-title="Football",Strasbourg vs Auxerre (2005HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/pao.php?id=43477651&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/7fcb82dccc6d73e3778c3ba93cec22c6.jpg" group-title="Football",Toulouse vs Rennes (2005HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_016/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/7fcb82dccc6d73e3778c3ba93cec22c6.jpg" group-title="Football",Toulouse vs Rennes (2005HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/kbs.html?id=959530030&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/7fcb82dccc6d73e3778c3ba93cec22c6.jpg" group-title="Football",Toulouse vs Rennes (2005HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/gm.php?id=959530030&id2=959530030
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/7fcb82dccc6d73e3778c3ba93cec22c6.jpg" group-title="Football",Toulouse vs Rennes (2005HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/pao.php?id=43477661&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/c7b9cc27ad1a7d74c899fd1ed2f0d4f4.jpg" group-title="Football",Nantes vs AS Monaco (2005HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_006/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/c7b9cc27ad1a7d74c899fd1ed2f0d4f4.jpg" group-title="Football",Nantes vs AS Monaco (2005HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/kbs.html?id=959529937&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/c7b9cc27ad1a7d74c899fd1ed2f0d4f4.jpg" group-title="Football",Nantes vs AS Monaco (2005HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/gm.php?id=959529937&id2=959529937
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/c7b9cc27ad1a7d74c899fd1ed2f0d4f4.jpg" group-title="Football",Nantes vs AS Monaco (2005HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/pao.php?id=43477621&id2=
