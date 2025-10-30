@@ -1,4 +1,9 @@
 {
+  "2693051940178644064": {
+    "streams": [
+      "https://live-en.aisports.cc/moviebox/device02/playlist.m3u8"
+    ]
+  },
   "8327124755568641296": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_017/playlist.m3u8",
@@ -34,9 +39,9 @@
   "6381569716544487632": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_024/playlist.m3u8",
+      "http://play.sportsteam368.com/play/pao.php?id=22500133&id2=",
       "http://play.sportsteam368.com/play/mgxl.php?id=959654962&id2=38661402",
-      "http://play.sportsteam368.com/play/kbs.html?id=10022500133&id2=",
-      "http://play.sportsteam368.com/play/pao.php?id=22500133&id2="
+      "http://play.sportsteam368.com/play/kbs.html?id=10022500133&id2="
     ]
   },
   "5474094391630381264": {
@@ -50,25 +55,25 @@
   "4807561646779647248": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_017/playlist.m3u8",
-      "http://play.sportsteam368.com/play/kbs.html?id=10022500130&id2=",
       "http://play.sportsteam368.com/play/pao.php?id=22500130&id2=",
-      "http://play.sportsteam368.com/play/mgxl.php?id=959656564&id2=38668522"
+      "http://play.sportsteam368.com/play/mgxl.php?id=959656564&id2=38668522",
+      "http://play.sportsteam368.com/play/kbs.html?id=10022500130&id2="
     ]
   },
   "3762726533229692264": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_025/playlist.m3u8",
-      "http://play.sportsteam368.com/play/pao.php?id=22500128&id2=",
       "http://play.sportsteam368.com/play/kbs.html?id=10022500128&id2=",
-      "http://play.sportsteam368.com/play/mgxl.php?id=959655913&id2=38666332"
+      "http://play.sportsteam368.com/play/mgxl.php?id=959655913&id2=38666332",
+      "http://play.sportsteam368.com/play/pao.php?id=22500128&id2="
     ]
   },
   "5654238376725300584": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_009/playlist.m3u8",
+      "http://play.sportsteam368.com/play/mgxl.php?id=959656841&id2=38667422",
       "http://play.sportsteam368.com/play/pao.php?id=22500131&id2=",
-      "http://play.sportsteam368.com/play/kbs.html?id=10022500131&id2=",
-      "http://play.sportsteam368.com/play/mgxl.php?id=959656841&id2=38667422"
+      "http://play.sportsteam368.com/play/kbs.html?id=10022500131&id2="
     ]
   }
 }
