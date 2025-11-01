@@ -2,9 +2,9 @@
   "5361112427197874464": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/device01/playlist.m3u8",
-      "http://tv.cctv.com/live/cctv5/",
       "https://www.yangshipin.cn/tv/home?pid=600001818",
-      "http://sports.cctv.com/H5/CCTV5/index.shtml"
+      "http://sports.cctv.com/H5/CCTV5/index.shtml",
+      "http://tv.cctv.com/live/cctv5/"
     ]
   },
   "4595500490545415264": {
@@ -58,9 +58,9 @@
   "1864374337987397512": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_016/playlist.m3u8",
-      "http://play.sportsteam368.com/play/pao.php?id=43584241&id2=",
       "http://play.sportsteam368.com/play/kbs.html?id=959777722&id2=",
-      "http://play.sportsteam368.com/play/gm.php?id=959777722&id2=959777722"
+      "http://play.sportsteam368.com/play/gm.php?id=959777722&id2=959777722",
+      "http://play.sportsteam368.com/play/pao.php?id=43584241&id2="
     ]
   },
   "8200939013696639360": {
@@ -82,9 +82,9 @@
   "432229656483579784": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_023/playlist.m3u8",
-      "http://play.sportsteam368.com/play/pao.php?id=43584281&id2=",
       "http://play.sportsteam368.com/play/kbs.html?id=959777435&id2=",
-      "http://play.sportsteam368.com/play/gm.php?id=959777435&id2=959777435"
+      "http://play.sportsteam368.com/play/gm.php?id=959777435&id2=959777435",
+      "http://play.sportsteam368.com/play/pao.php?id=43584281&id2="
     ]
   },
   "7639325362041112016": {
@@ -114,17 +114,17 @@
   "5834063832012978648": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_009/playlist.m3u8",
+      "http://play.sportsteam368.com/play/pao.php?id=43474331&id2=",
       "http://play.sportsteam368.com/play/kbs.html?id=959778849&id2=",
-      "http://play.sportsteam368.com/play/gm.php?id=959778849&id2=959778849",
-      "http://play.sportsteam368.com/play/pao.php?id=43474331&id2="
+      "http://play.sportsteam368.com/play/gm.php?id=959778849&id2=959778849"
     ]
   },
   "808046647867505112": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_026/playlist.m3u8",
+      "http://play.sportsteam368.com/play/gm.php?id=959778779&id2=959778779",
       "http://play.sportsteam368.com/play/kbs.html?id=959778779&id2=",
-      "http://play.sportsteam368.com/play/pao.php?id=43474311&id2=",
-      "http://play.sportsteam368.com/play/gm.php?id=959778779&id2=959778779"
+      "http://play.sportsteam368.com/play/pao.php?id=43474311&id2="
     ]
   },
   "7498143894326376920": {
@@ -162,17 +162,17 @@
   "1012415622901387648": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_021/playlist.m3u8",
+      "http://play.sportsteam368.com/play/gm.php?id=959778767&id2=959778767",
       "http://play.sportsteam368.com/play/pao.php?id=43477671&id2=",
-      "http://play.sportsteam368.com/play/kbs.html?id=959778767&id2=",
-      "http://play.sportsteam368.com/play/gm.php?id=959778767&id2=959778767"
+      "http://play.sportsteam368.com/play/kbs.html?id=959778767&id2="
     ]
   },
   "6409979776304839128": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_023/playlist.m3u8",
+      "http://play.sportsteam368.com/play/gm.php?id=959778712&id2=959778712",
       "http://play.sportsteam368.com/play/pao.php?id=43477711&id2=",
-      "http://play.sportsteam368.com/play/kbs.html?id=959778712&id2=",
-      "http://play.sportsteam368.com/play/gm.php?id=959778712&id2=959778712"
+      "http://play.sportsteam368.com/play/kbs.html?id=959778712&id2="
     ]
   },
   "9065715094458351824": {
@@ -194,9 +194,9 @@
   "7120160055434397032": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_016/playlist.m3u8",
-      "http://play.sportsteam368.com/play/mgxl.php?id=959719492&id2=38666512",
       "http://play.sportsteam368.com/play/pao.php?id=22500024&id2=",
-      "http://play.sportsteam368.com/play/kbs.html?id=10022500024&id2="
+      "http://play.sportsteam368.com/play/kbs.html?id=10022500024&id2=",
+      "http://play.sportsteam368.com/play/mgxl.php?id=959719492&id2=38666512"
     ]
   },
   "5534892986598834384": {
