@@ -26,11 +26,11 @@ http://play.sportsteam368.com/play/mgxl.php?id=959720357&id2=38662032
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/da58bbcb29cda07f12048877a99fa875.jpg" group-title="Basketball",Boston Celtics vs Houston Rockets (0000HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_011/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/da58bbcb29cda07f12048877a99fa875.jpg" group-title="Basketball",Boston Celtics vs Houston Rockets (0000HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/pao.php?id=22500146&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/da58bbcb29cda07f12048877a99fa875.jpg" group-title="Basketball",Boston Celtics vs Houston Rockets (0000HRS UTC) - Signal 3
-http://play.sportsteam368.com/play/i11.html?id=10022500146&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/da58bbcb29cda07f12048877a99fa875.jpg" group-title="Basketball",Boston Celtics vs Houston Rockets (0000HRS UTC) - Signal 4
 http://nba.toutiaozb.com/qq/qq-kbs.html?matchliveid=1391058200
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/da58bbcb29cda07f12048877a99fa875.jpg" group-title="Basketball",Boston Celtics vs Houston Rockets (0000HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/pao.php?id=22500146&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/da58bbcb29cda07f12048877a99fa875.jpg" group-title="Basketball",Boston Celtics vs Houston Rockets (0000HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/i11.html?id=10022500146&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/b248075d2235194fb41fff4c71b8fa56.jpg" group-title="Basketball",Detroit Pistons vs Dallas Mavericks (0200HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_028/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/b248075d2235194fb41fff4c71b8fa56.jpg" group-title="Basketball",Detroit Pistons vs Dallas Mavericks (0200HRS UTC) - Signal 2
@@ -46,8 +46,16 @@ https://live-en.aisports.cc/moviebox/device02/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/bb10a751f09abfea3e43d45266cf5ebf.jpg" group-title="Football",Hellas Verona vs Inter (1130HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_018/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/bb10a751f09abfea3e43d45266cf5ebf.jpg" group-title="Football",Hellas Verona vs Inter (1130HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/kbs.html?id=959777845&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/bb10a751f09abfea3e43d45266cf5ebf.jpg" group-title="Football",Hellas Verona vs Inter (1130HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/pao.php?id=43395581&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/bb10a751f09abfea3e43d45266cf5ebf.jpg" group-title="Football",Hellas Verona vs Inter (1130HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/kbs.html?id=959777845&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/bb10a751f09abfea3e43d45266cf5ebf.jpg" group-title="Football",Hellas Verona vs Inter (1130HRS UTC) - Signal 4
 http://play.sportsteam368.com/play/gm.php?id=959777845&id2=959777845
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/02/4bb5079c21632a5867d5dcbf77c9a6e0.jpg" group-title="Football",Levante vs Celta Vigo (1300HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_022/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/02/4bb5079c21632a5867d5dcbf77c9a6e0.jpg" group-title="Football",Levante vs Celta Vigo (1300HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/kbs.html?id=959777810&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/02/4bb5079c21632a5867d5dcbf77c9a6e0.jpg" group-title="Football",Levante vs Celta Vigo (1300HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/gm.php?id=959777810&id2=959777810
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/02/4bb5079c21632a5867d5dcbf77c9a6e0.jpg" group-title="Football",Levante vs Celta Vigo (1300HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/pao.php?id=43584261&id2=
