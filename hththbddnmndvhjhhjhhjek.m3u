@@ -2,11 +2,11 @@
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/3d81ba3ca1ce0e5190919dd7389aa43d.jpg" group-title="Basketball",Milwaukee Bucks vs Sacramento Kings (2100HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_020/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/3d81ba3ca1ce0e5190919dd7389aa43d.jpg" group-title="Basketball",Milwaukee Bucks vs Sacramento Kings (2100HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/mgxl.php?id=959719431&id2=38670892
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/3d81ba3ca1ce0e5190919dd7389aa43d.jpg" group-title="Basketball",Milwaukee Bucks vs Sacramento Kings (2100HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/pao.php?id=22500142&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/3d81ba3ca1ce0e5190919dd7389aa43d.jpg" group-title="Basketball",Milwaukee Bucks vs Sacramento Kings (2100HRS UTC) - Signal 4
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/3d81ba3ca1ce0e5190919dd7389aa43d.jpg" group-title="Basketball",Milwaukee Bucks vs Sacramento Kings (2100HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/kbs.html?id=10022500142&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/3d81ba3ca1ce0e5190919dd7389aa43d.jpg" group-title="Basketball",Milwaukee Bucks vs Sacramento Kings (2100HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/mgxl.php?id=959719431&id2=38670892
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/11/23f474ce3de87e12320e87161c0fb2de.jpg" group-title="Basketball",Charlotte Hornets vs Minnesota Timberwolves (2200HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_017/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/11/23f474ce3de87e12320e87161c0fb2de.jpg" group-title="Basketball",Charlotte Hornets vs Minnesota Timberwolves (2200HRS UTC) - Signal 2
@@ -41,3 +41,5 @@ https://www.yangshipin.cn/tv/home?pid=600001818
 http://sports.cctv.com/H5/CCTV5/index.shtml
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/10/14/58e740986f82637508e8c08fce6a041d.png" group-title="Cricket",Australia vs India (0815HRS UTC)
 https://live-en.aisports.cc/moviebox/football001/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/09/18/a94c2bbc54522e9f3e3116dc1bd0d497.png" group-title="Cricket",India W vs South Africa W (0930HRS UTC)
+https://live-en.aisports.cc/moviebox/device02/playlist.m3u8
