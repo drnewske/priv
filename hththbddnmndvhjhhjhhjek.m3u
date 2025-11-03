@@ -34,11 +34,11 @@ http://play.sportsteam368.com/play/kbs.html?id=10022500150&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/ad072ba484d02766b45fee8456c24a4d.jpg" group-title="Basketball",New York Knicks vs Chicago Bulls (0000HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_028/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/ad072ba484d02766b45fee8456c24a4d.jpg" group-title="Basketball",New York Knicks vs Chicago Bulls (0000HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/pao.php?id=22500153&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/ad072ba484d02766b45fee8456c24a4d.jpg" group-title="Basketball",New York Knicks vs Chicago Bulls (0000HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/i11.html?id=10022500153&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/ad072ba484d02766b45fee8456c24a4d.jpg" group-title="Basketball",New York Knicks vs Chicago Bulls (0000HRS UTC) - Signal 4
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/ad072ba484d02766b45fee8456c24a4d.jpg" group-title="Basketball",New York Knicks vs Chicago Bulls (0000HRS UTC) - Signal 3
 http://nba.toutiaozb.com/qq/qq-kbs.html?matchliveid=1391172900
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/ad072ba484d02766b45fee8456c24a4d.jpg" group-title="Basketball",New York Knicks vs Chicago Bulls (0000HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/pao.php?id=22500153&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/11/dc6d98b03e2c7ac0773a7d5bbe90247c.jpg" group-title="Basketball",Phoenix Suns vs San Antonio Spurs (0100HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_011/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/11/dc6d98b03e2c7ac0773a7d5bbe90247c.jpg" group-title="Basketball",Phoenix Suns vs San Antonio Spurs (0100HRS UTC) - Signal 2
@@ -63,3 +63,27 @@ http://play.sportsteam368.com/play/kbs.html?id=959777413&id2=
 http://play.sportsteam368.com/play/gm.php?id=959777413&id2=959777413
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/06/07/a6e618a38b1503a3c249dae163516af8.jpg" group-title="Football",Sassuolo vs Genoa (1730HRS UTC) - Signal 4
 http://play.sportsteam368.com/play/pao.php?id=43395551&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/f68155b786a908a3b1d44512702d38f4.jpg" group-title="Football",Lazio vs Cagliari (1945HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_016/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/f68155b786a908a3b1d44512702d38f4.jpg" group-title="Football",Lazio vs Cagliari (1945HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/kbs.html?id=959777389&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/f68155b786a908a3b1d44512702d38f4.jpg" group-title="Football",Lazio vs Cagliari (1945HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/gm.php?id=959777389&id2=959777389
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/f68155b786a908a3b1d44512702d38f4.jpg" group-title="Football",Lazio vs Cagliari (1945HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/pao.php?id=43395521&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/09/7dc684ef7c4e3b00cb200852c2ec5abe.jpg" group-title="Football",Sunderland vs Everton (2000HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_010/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/09/7dc684ef7c4e3b00cb200852c2ec5abe.jpg" group-title="Football",Sunderland vs Everton (2000HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/kbs.html?id=959778281&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/09/7dc684ef7c4e3b00cb200852c2ec5abe.jpg" group-title="Football",Sunderland vs Everton (2000HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/gm.php?id=959778281&id2=959778281
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/09/7dc684ef7c4e3b00cb200852c2ec5abe.jpg" group-title="Football",Sunderland vs Everton (2000HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/pao.php?id=43432911&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/02/ced4b8632654b3a438945c7389db2ec6.jpg" group-title="Football",Real Oviedo vs Osasuna (2000HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_020/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/02/ced4b8632654b3a438945c7389db2ec6.jpg" group-title="Football",Real Oviedo vs Osasuna (2000HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/gm.php?id=959777947&id2=959777947
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/02/ced4b8632654b3a438945c7389db2ec6.jpg" group-title="Football",Real Oviedo vs Osasuna (2000HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/pao.php?id=43584271&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/02/ced4b8632654b3a438945c7389db2ec6.jpg" group-title="Football",Real Oviedo vs Osasuna (2000HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/kbs.html?id=959777947&id2=
