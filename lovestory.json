@@ -10,10 +10,10 @@
     },
     {
       "id": "featured_m3u_02",
-      "name": "PREMIUM CHANNELS",
+      "name": "IPTV-ORG",
       "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm/logos/default.png",
       "type": "m3u",
-      "url": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/a1x.m3u",
+      "url": "https://iptv-org.github.io/iptv/index.m3u",
       "server_url": null
     },
     {
