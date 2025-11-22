@@ -76,11 +76,11 @@ https://live-en.aisports.cc/moviebox/device01/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/09/82751dd9b7baece34a1b56cf59329b43.jpg" group-title="Football",Burnley vs Chelsea (1230HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/device02/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/09/82751dd9b7baece34a1b56cf59329b43.jpg" group-title="Football",Burnley vs Chelsea (1230HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/gm.php?id=960486426&id2=960486426
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/09/82751dd9b7baece34a1b56cf59329b43.jpg" group-title="Football",Burnley vs Chelsea (1230HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/pao.php?id=43433291&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/09/82751dd9b7baece34a1b56cf59329b43.jpg" group-title="Football",Burnley vs Chelsea (1230HRS UTC) - Signal 4
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/09/82751dd9b7baece34a1b56cf59329b43.jpg" group-title="Football",Burnley vs Chelsea (1230HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/kbs.html?id=960486426&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/09/82751dd9b7baece34a1b56cf59329b43.jpg" group-title="Football",Burnley vs Chelsea (1230HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/gm.php?id=960486426&id2=960486426
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/63c22f7e788c7b560ea31b7cb7f85bc3.jpg" group-title="Football",Deportivo Alaves vs Celta Vigo (1300HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_009/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/63c22f7e788c7b560ea31b7cb7f85bc3.jpg" group-title="Football",Deportivo Alaves vs Celta Vigo (1300HRS UTC) - Signal 2
@@ -97,3 +97,87 @@ http://play.sportsteam368.com/play/pao.php?id=43395711&id2=
 http://play.sportsteam368.com/play/kbs.html?id=960483899&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/69253aa633753e99d86c051a6cf2e5c3.jpg" group-title="Football",Cagliari vs Genoa (1400HRS UTC) - Signal 4
 http://play.sportsteam368.com/play/gm.php?id=960483899&id2=960483899
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/06b9c5425bfd06fa6df0ee7ae74e9598.jpg" group-title="Football",Udinese vs Bologna (1400HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_019/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/06b9c5425bfd06fa6df0ee7ae74e9598.jpg" group-title="Football",Udinese vs Bologna (1400HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/gm.php?id=960483937&id2=960483937
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/06b9c5425bfd06fa6df0ee7ae74e9598.jpg" group-title="Football",Udinese vs Bologna (1400HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/pao.php?id=43395791&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/06b9c5425bfd06fa6df0ee7ae74e9598.jpg" group-title="Football",Udinese vs Bologna (1400HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/kbs.html?id=960483937&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/ffa1d99413b724f13576e532e9e3de02.jpg" group-title="Football",Bayern Munich vs Freiburg (1430HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_006/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/ffa1d99413b724f13576e532e9e3de02.jpg" group-title="Football",Bayern Munich vs Freiburg (1430HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/kbs.html?id=960484093&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/ffa1d99413b724f13576e532e9e3de02.jpg" group-title="Football",Bayern Munich vs Freiburg (1430HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/gm.php?id=960484093&id2=960484093
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/ffa1d99413b724f13576e532e9e3de02.jpg" group-title="Football",Bayern Munich vs Freiburg (1430HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/pao.php?id=43474471&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/bae296c73e03725497d59d958ae94b15.jpg" group-title="Football",Borussia Dortmund vs VfB Stuttgart (1430HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_014/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/bae296c73e03725497d59d958ae94b15.jpg" group-title="Football",Borussia Dortmund vs VfB Stuttgart (1430HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/pao.php?id=43474481&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/bae296c73e03725497d59d958ae94b15.jpg" group-title="Football",Borussia Dortmund vs VfB Stuttgart (1430HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/gm.php?id=960484197&id2=960484197
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/bae296c73e03725497d59d958ae94b15.jpg" group-title="Football",Borussia Dortmund vs VfB Stuttgart (1430HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/kbs.html?id=960484197&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/f6234c7965d02ea43b7a6f8f9fbe10a3.jpg" group-title="Football",Wolfsburg vs Bayer Leverkusen (1430HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_021/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/f6234c7965d02ea43b7a6f8f9fbe10a3.jpg" group-title="Football",Wolfsburg vs Bayer Leverkusen (1430HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/kbs.html?id=960484309&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/f6234c7965d02ea43b7a6f8f9fbe10a3.jpg" group-title="Football",Wolfsburg vs Bayer Leverkusen (1430HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/gm.php?id=960484309&id2=960484309
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/f6234c7965d02ea43b7a6f8f9fbe10a3.jpg" group-title="Football",Wolfsburg vs Bayer Leverkusen (1430HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/pao.php?id=43474541&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/82426c236189789d6e8db4e5ec573839.jpg" group-title="Football",Augsburg vs Hamburger SV (1430HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_022/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/82426c236189789d6e8db4e5ec573839.jpg" group-title="Football",Augsburg vs Hamburger SV (1430HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/pao.php?id=43474461&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/82426c236189789d6e8db4e5ec573839.jpg" group-title="Football",Augsburg vs Hamburger SV (1430HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/gm.php?id=960484044&id2=960484044
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/82426c236189789d6e8db4e5ec573839.jpg" group-title="Football",Augsburg vs Hamburger SV (1430HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/kbs.html?id=960484044&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/e6e10de4052adb61ab820f224d42e638.jpg" group-title="Football",FC Heidenheim vs Borussia M'gladbach (1430HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_015/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/e6e10de4052adb61ab820f224d42e638.jpg" group-title="Football",FC Heidenheim vs Borussia M'gladbach (1430HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/gm.php?id=960484250&id2=960484250
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/e6e10de4052adb61ab820f224d42e638.jpg" group-title="Football",FC Heidenheim vs Borussia M'gladbach (1430HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/pao.php?id=43474501&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/e6e10de4052adb61ab820f224d42e638.jpg" group-title="Football",FC Heidenheim vs Borussia M'gladbach (1430HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/kbs.html?id=960484250&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/40141d9166d1fcb4a0b69d702e106f5a.jpg" group-title="Football",Liverpool vs Nottingham Forest (1500HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/football001/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/40141d9166d1fcb4a0b69d702e106f5a.jpg" group-title="Football",Liverpool vs Nottingham Forest (1500HRS UTC) - Signal 2
+http://play.88player.top/m3u8.html?url=http%3A%2F%2Ftvpull.careryun.com%2Flive%2F2fe3f8cc14c276a4d713fd6b9842e787.m3u8%3FtxSecret%3Dba267a42b6b8937bbebfd2172982e3eb%26txTime%3D6921cbe8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/40141d9166d1fcb4a0b69d702e106f5a.jpg" group-title="Football",Liverpool vs Nottingham Forest (1500HRS UTC) - Signal 3
+http://play.88player.top/m3u8.html?url=http%3A%2F%2Flive.qfngx.com%2Fsport%2F202_4311405_1.m3u8%3FtxSecret%3D356ea4d402132b8769e0217962a23a89%26txTime%3D1763823589
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/40141d9166d1fcb4a0b69d702e106f5a.jpg" group-title="Football",Liverpool vs Nottingham Forest (1500HRS UTC) - Signal 4
+http://play.88player.top/m3u8.html?url=http%3A%2F%2Fplay1nm.hnyongshun.cn%2Flive%2F91c5f0af75a72db5e7e26974fb22d2e8.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/fb2106282b9366f1bf2ef81dfc62977d.jpg" group-title="Football",Fulham vs Sunderland (1500HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_028/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/fb2106282b9366f1bf2ef81dfc62977d.jpg" group-title="Football",Fulham vs Sunderland (1500HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/kbs.html?id=960487319&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/fb2106282b9366f1bf2ef81dfc62977d.jpg" group-title="Football",Fulham vs Sunderland (1500HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/gm.php?id=960487319&id2=960487319
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/fb2106282b9366f1bf2ef81dfc62977d.jpg" group-title="Football",Fulham vs Sunderland (1500HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/pao.php?id=43433321&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/6571f6b8e9ca45a235f1fec683a2fce4.jpg" group-title="Football",Wolves vs Crystal Palace (1500HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_023/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/6571f6b8e9ca45a235f1fec683a2fce4.jpg" group-title="Football",Wolves vs Crystal Palace (1500HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/gm.php?id=960483747&id2=960483747
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/6571f6b8e9ca45a235f1fec683a2fce4.jpg" group-title="Football",Wolves vs Crystal Palace (1500HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/pao.php?id=43433441&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/6571f6b8e9ca45a235f1fec683a2fce4.jpg" group-title="Football",Wolves vs Crystal Palace (1500HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/kbs.html?id=960483747&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/beb7bfe0ae3c400b585161b9e333d154.jpg" group-title="Football",Brighton vs Brentford (1500HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_013/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/beb7bfe0ae3c400b585161b9e333d154.jpg" group-title="Football",Brighton vs Brentford (1500HRS UTC) - Signal 2
+http://play.88player.top/m3u8.html?url=http%3A%2F%2Flive.qfngx.com%2Fsport%2F202_4311408_1.m3u8%3FtxSecret%3D8e3f80a63bac9a295a6541e9473b7a46%26txTime%3D1763823900
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/beb7bfe0ae3c400b585161b9e333d154.jpg" group-title="Football",Brighton vs Brentford (1500HRS UTC) - Signal 3
+http://play.88player.top/m3u8.html?url=http%3A%2F%2Fplay1nm.hnyongshun.cn%2Flive%2F813e177f0e8d1aaa295ebdfc4b90fee3.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/776bfb96a59707a676565f52f3ae87a2.jpg" group-title="Football",Bournemouth vs West Ham United (1500HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_025/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/776bfb96a59707a676565f52f3ae87a2.jpg" group-title="Football",Bournemouth vs West Ham United (1500HRS UTC) - Signal 2
+http://play.88player.top/m3u8.html?url=http%3A%2F%2Flive.qfngx.com%2Fsport%2F202_4311410_1.m3u8%3FtxSecret%3Dc5f50a49dca01c4083f54b50440282c2%26txTime%3D1763824034
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/776bfb96a59707a676565f52f3ae87a2.jpg" group-title="Football",Bournemouth vs West Ham United (1500HRS UTC) - Signal 3
+http://play.88player.top/m3u8.html?url=http%3A%2F%2Fplay1nm.hnyongshun.cn%2Flive%2Fba5a222ee9d98013dbab75c1437e7295.m3u8
