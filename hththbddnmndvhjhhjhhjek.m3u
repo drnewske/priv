@@ -18,11 +18,11 @@ http://play.sportsteam368.com/play/wlive.php?id=f185bcf86cd789bee8ee5233eb2e10ff
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/59a17e8c9b3fba8828afac280548d09a.jpg" group-title="Basketball",Chicago Bulls vs Washington Wizards (0100HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_024/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/59a17e8c9b3fba8828afac280548d09a.jpg" group-title="Basketball",Chicago Bulls vs Washington Wizards (0100HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/j.php?id=22500271&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/59a17e8c9b3fba8828afac280548d09a.jpg" group-title="Basketball",Chicago Bulls vs Washington Wizards (0100HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/kbs.html?id=10022500271&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/59a17e8c9b3fba8828afac280548d09a.jpg" group-title="Basketball",Chicago Bulls vs Washington Wizards (0100HRS UTC) - Signal 4
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/59a17e8c9b3fba8828afac280548d09a.jpg" group-title="Basketball",Chicago Bulls vs Washington Wizards (0100HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/wlive.php?id=c5e99f65326d795634c61937af274a99&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/59a17e8c9b3fba8828afac280548d09a.jpg" group-title="Basketball",Chicago Bulls vs Washington Wizards (0100HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/j.php?id=22500271&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/ed3a6d7e46a9ae002e9922a92fadad91.jpg" group-title="Basketball",Dallas Mavericks vs Memphis Grizzlies (0130HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_023/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/ed3a6d7e46a9ae002e9922a92fadad91.jpg" group-title="Basketball",Dallas Mavericks vs Memphis Grizzlies (0130HRS UTC) - Signal 2
@@ -34,8 +34,8 @@ http://play.sportsteam368.com/play/j.php?id=22500273&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/530b1e2d1fbd7c206621c8edb7d15f68.jpg" group-title="Basketball",Denver Nuggets vs Sacramento Kings (0300HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_028/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/530b1e2d1fbd7c206621c8edb7d15f68.jpg" group-title="Basketball",Denver Nuggets vs Sacramento Kings (0300HRS UTC) - Signal 2
-http://sports.cctv.com/H5/CCTV5/index.shtml
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/530b1e2d1fbd7c206621c8edb7d15f68.jpg" group-title="Basketball",Denver Nuggets vs Sacramento Kings (0300HRS UTC) - Signal 3
-http://tv.cctv.com/live/cctv5/
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/530b1e2d1fbd7c206621c8edb7d15f68.jpg" group-title="Basketball",Denver Nuggets vs Sacramento Kings (0300HRS UTC) - Signal 4
 https://www.yangshipin.cn/tv/home?pid=600001818
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/530b1e2d1fbd7c206621c8edb7d15f68.jpg" group-title="Basketball",Denver Nuggets vs Sacramento Kings (0300HRS UTC) - Signal 3
+http://sports.cctv.com/H5/CCTV5/index.shtml
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/530b1e2d1fbd7c206621c8edb7d15f68.jpg" group-title="Basketball",Denver Nuggets vs Sacramento Kings (0300HRS UTC) - Signal 4
+http://tv.cctv.com/live/cctv5/
