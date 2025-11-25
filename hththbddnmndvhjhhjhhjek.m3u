@@ -1,81 +1,57 @@
 #EXTM3U
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/11/8bb48bdd8172919940ecf05b9c968c94.jpg" group-title="Basketball",Toronto Raptors vs Brooklyn Nets (2300HRS UTC) - Signal 1
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/1ad5a70eba4b27dbd61eba60743de1ea.jpg" group-title="Basketball",Indiana Pacers vs Detroit Pistons (0000HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_014/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/11/8bb48bdd8172919940ecf05b9c968c94.jpg" group-title="Basketball",Toronto Raptors vs Brooklyn Nets (2300HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/j.php?id=22500279&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/11/8bb48bdd8172919940ecf05b9c968c94.jpg" group-title="Basketball",Toronto Raptors vs Brooklyn Nets (2300HRS UTC) - Signal 3
-http://play.sportsteam368.com/play/mgxl.php?id=960516716&id2=959a0fad5832b4a56767b56cde61b599
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/11/8bb48bdd8172919940ecf05b9c968c94.jpg" group-title="Basketball",Toronto Raptors vs Brooklyn Nets (2300HRS UTC) - Signal 4
-http://play.sportsteam368.com/play/kbs.html?id=10022500279&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/f88ffad626376b19150916bdd3abdca9.jpg" group-title="Basketball",Cleveland Cavaliers vs LA Clippers (2300HRS UTC) - Signal 1
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/1ad5a70eba4b27dbd61eba60743de1ea.jpg" group-title="Basketball",Indiana Pacers vs Detroit Pistons (0000HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/kbs.html?id=10022500283&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/1ad5a70eba4b27dbd61eba60743de1ea.jpg" group-title="Basketball",Indiana Pacers vs Detroit Pistons (0000HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/j.php?id=22500283&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/1ad5a70eba4b27dbd61eba60743de1ea.jpg" group-title="Basketball",Indiana Pacers vs Detroit Pistons (0000HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/mgxl.php?id=960514678&id2=5316942efa529d66bbb8671b60749346
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/11/8bb48bdd8172919940ecf05b9c968c94.jpg" group-title="Basketball",Toronto Raptors vs Cleveland Cavaliers (0000HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_019/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/11/8bb48bdd8172919940ecf05b9c968c94.jpg" group-title="Basketball",Toronto Raptors vs Cleveland Cavaliers (0000HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/kbs.html?id=10022500284&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/11/8bb48bdd8172919940ecf05b9c968c94.jpg" group-title="Basketball",Toronto Raptors vs Cleveland Cavaliers (0000HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/mgxl.php?id=960514924&id2=d005dacf1e13653e28eef3df81987c67
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/11/8bb48bdd8172919940ecf05b9c968c94.jpg" group-title="Basketball",Toronto Raptors vs Cleveland Cavaliers (0000HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/j.php?id=22500284&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/10/6b69b615d381fce8c36f034634df271c.jpg" group-title="Basketball",Brooklyn Nets vs New York Knicks (0030HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_024/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/10/6b69b615d381fce8c36f034634df271c.jpg" group-title="Basketball",Brooklyn Nets vs New York Knicks (0030HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/i11.html?id=10022500285&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/10/6b69b615d381fce8c36f034634df271c.jpg" group-title="Basketball",Brooklyn Nets vs New York Knicks (0030HRS UTC) - Signal 3
+http://nba.toutiaozb.com/qq/qq-kbs.html?matchliveid=1391777600
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/10/6b69b615d381fce8c36f034634df271c.jpg" group-title="Basketball",Brooklyn Nets vs New York Knicks (0030HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/j.php?id=22500285&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/86f04c4be3a620388b7eaf094fd7532f.jpg" group-title="Basketball",Miami Heat vs Dallas Mavericks (0030HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_028/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/86f04c4be3a620388b7eaf094fd7532f.jpg" group-title="Basketball",Miami Heat vs Dallas Mavericks (0030HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/mgxl.php?id=960516483&id2=f185bcf86cd789bee8ee5233eb2e10ff
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/86f04c4be3a620388b7eaf094fd7532f.jpg" group-title="Basketball",Miami Heat vs Dallas Mavericks (0030HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/kbs.html?id=10022500286&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/86f04c4be3a620388b7eaf094fd7532f.jpg" group-title="Basketball",Miami Heat vs Dallas Mavericks (0030HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/j.php?id=22500286&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/a62a77bc60a72fb6b4c812a430a5e2d5.jpg" group-title="Basketball",Memphis Grizzlies vs Denver Nuggets (0100HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_001/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/a62a77bc60a72fb6b4c812a430a5e2d5.jpg" group-title="Basketball",Memphis Grizzlies vs Denver Nuggets (0100HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/j.php?id=22500287&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/a62a77bc60a72fb6b4c812a430a5e2d5.jpg" group-title="Basketball",Memphis Grizzlies vs Denver Nuggets (0100HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/mgxl.php?id=960516824&id2=8e8c55d8eaa365381089d08815668641
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/a62a77bc60a72fb6b4c812a430a5e2d5.jpg" group-title="Basketball",Memphis Grizzlies vs Denver Nuggets (0100HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/kbs.html?id=10022500287&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/10/a5346f8e89dafdf6c88962f83e12d3d6.jpg" group-title="Basketball",New Orleans Pelicans vs Chicago Bulls (0100HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_010/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/f88ffad626376b19150916bdd3abdca9.jpg" group-title="Basketball",Cleveland Cavaliers vs LA Clippers (2300HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/j.php?id=22500278&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/f88ffad626376b19150916bdd3abdca9.jpg" group-title="Basketball",Cleveland Cavaliers vs LA Clippers (2300HRS UTC) - Signal 3
-http://play.sportsteam368.com/play/mgxl.php?id=960516429&id2=d005dacf1e13653e28eef3df81987c67
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/f88ffad626376b19150916bdd3abdca9.jpg" group-title="Basketball",Cleveland Cavaliers vs LA Clippers (2300HRS UTC) - Signal 4
-http://play.sportsteam368.com/play/kbs.html?id=10022500278&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/b8b461891b682930791b31b852430e04.jpg" group-title="Basketball",Atlanta Hawks vs Charlotte Hornets (2300HRS UTC) - Signal 1
-https://live-en.aisports.cc/moviebox/bsy_006/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/b8b461891b682930791b31b852430e04.jpg" group-title="Basketball",Atlanta Hawks vs Charlotte Hornets (2300HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/mgxl.php?id=960515611&id2=f185bcf86cd789bee8ee5233eb2e10ff
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/b8b461891b682930791b31b852430e04.jpg" group-title="Basketball",Atlanta Hawks vs Charlotte Hornets (2300HRS UTC) - Signal 3
-http://play.sportsteam368.com/play/kbs.html?id=10022500276&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/b8b461891b682930791b31b852430e04.jpg" group-title="Basketball",Atlanta Hawks vs Charlotte Hornets (2300HRS UTC) - Signal 4
-http://play.sportsteam368.com/play/j.php?id=22500276&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/436aa9a0fcae220c73838a390ec1d320.jpg" group-title="Basketball",Oklahoma City Thunder vs Portland Trail Blazers (0000HRS UTC) - Signal 1
-https://live-en.aisports.cc/moviebox/bsy_015/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/436aa9a0fcae220c73838a390ec1d320.jpg" group-title="Basketball",Oklahoma City Thunder vs Portland Trail Blazers (0000HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/j.php?id=22500280&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/436aa9a0fcae220c73838a390ec1d320.jpg" group-title="Basketball",Oklahoma City Thunder vs Portland Trail Blazers (0000HRS UTC) - Signal 3
-http://play.sportsteam368.com/play/kbs.html?id=10022500280&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/436aa9a0fcae220c73838a390ec1d320.jpg" group-title="Basketball",Oklahoma City Thunder vs Portland Trail Blazers (0000HRS UTC) - Signal 4
-http://play.sportsteam368.com/play/mgxl.php?id=960517181&id2=8e8c55d8eaa365381089d08815668641
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/05/0bcdcb0109598444b15d9179fdaf555b.jpg" group-title="Basketball",Utah Jazz vs LA Lakers (0100HRS UTC) - Signal 1
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/10/a5346f8e89dafdf6c88962f83e12d3d6.jpg" group-title="Basketball",New Orleans Pelicans vs Chicago Bulls (0100HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/j.php?id=22500289&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/10/a5346f8e89dafdf6c88962f83e12d3d6.jpg" group-title="Basketball",New Orleans Pelicans vs Chicago Bulls (0100HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/mgxl.php?id=960517604&id2=c5e99f65326d795634c61937af274a99
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/10/a5346f8e89dafdf6c88962f83e12d3d6.jpg" group-title="Basketball",New Orleans Pelicans vs Chicago Bulls (0100HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/kbs.html?id=10022500289&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/3d81ba3ca1ce0e5190919dd7389aa43d.jpg" group-title="Basketball",Milwaukee Bucks vs Portland Trail Blazers (0100HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_017/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/05/0bcdcb0109598444b15d9179fdaf555b.jpg" group-title="Basketball",Utah Jazz vs LA Lakers (0100HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/j.php?id=22500282&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/05/0bcdcb0109598444b15d9179fdaf555b.jpg" group-title="Basketball",Utah Jazz vs LA Lakers (0100HRS UTC) - Signal 3
-http://play.sportsteam368.com/play/kbs.html?id=vl&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/05/0bcdcb0109598444b15d9179fdaf555b.jpg" group-title="Basketball",Utah Jazz vs LA Lakers (0100HRS UTC) - Signal 4
-http://play.sportsteam368.com/play/kbs.html?id=10022500282&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/11/dc6d98b03e2c7ac0773a7d5bbe90247c.jpg" group-title="Basketball",Phoenix Suns vs San Antonio Spurs (0100HRS UTC) - Signal 1
-https://live-en.aisports.cc/moviebox/bsy_022/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/11/dc6d98b03e2c7ac0773a7d5bbe90247c.jpg" group-title="Basketball",Phoenix Suns vs San Antonio Spurs (0100HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/j.php?id=22500281&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/11/dc6d98b03e2c7ac0773a7d5bbe90247c.jpg" group-title="Basketball",Phoenix Suns vs San Antonio Spurs (0100HRS UTC) - Signal 3
-http://play.sportsteam368.com/play/i11.html?id=10022500281&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/11/dc6d98b03e2c7ac0773a7d5bbe90247c.jpg" group-title="Basketball",Phoenix Suns vs San Antonio Spurs (0100HRS UTC) - Signal 4
-http://nba.toutiaozb.com/qq/qq-kbs.html?matchliveid=1776385300
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/64e863048505b9b1cf67000624013932.jpg" group-title="Football",Torino vs Como 1907 (1730HRS UTC) - Signal 1
-https://live-en.aisports.cc/moviebox/bsy_014/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/64e863048505b9b1cf67000624013932.jpg" group-title="Football",Torino vs Como 1907 (1730HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/kbs.html?id=960484392&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/64e863048505b9b1cf67000624013932.jpg" group-title="Football",Torino vs Como 1907 (1730HRS UTC) - Signal 3
-http://play.sportsteam368.com/play/gm.php?id=960484392&id2=960484392
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/64e863048505b9b1cf67000624013932.jpg" group-title="Football",Torino vs Como 1907 (1730HRS UTC) - Signal 4
-http://play.sportsteam368.com/play/wlive.php?id=95a872df47e10f1513a90720cc5a92e8&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/06/07/a6e618a38b1503a3c249dae163516af8.jpg" group-title="Football",Sassuolo vs Pisa (1945HRS UTC) - Signal 1
-https://live-en.aisports.cc/moviebox/bsy_025/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/06/07/a6e618a38b1503a3c249dae163516af8.jpg" group-title="Football",Sassuolo vs Pisa (1945HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/gm.php?id=960484436&id2=960484436
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/06/07/a6e618a38b1503a3c249dae163516af8.jpg" group-title="Football",Sassuolo vs Pisa (1945HRS UTC) - Signal 3
-http://play.sportsteam368.com/play/wlive.php?id=7bc6360e3a553dd1144597a1d435a902&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/06/07/a6e618a38b1503a3c249dae163516af8.jpg" group-title="Football",Sassuolo vs Pisa (1945HRS UTC) - Signal 4
-http://play.sportsteam368.com/play/kbs.html?id=960484436&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/63eba0d48bad5073adf9e89d659741ba.jpg" group-title="Football",Manchester United vs Everton (2000HRS UTC) - Signal 1
-https://live-en.aisports.cc/moviebox/device02/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/63eba0d48bad5073adf9e89d659741ba.jpg" group-title="Football",Manchester United vs Everton (2000HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/kbs.html?id=960484741&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/63eba0d48bad5073adf9e89d659741ba.jpg" group-title="Football",Manchester United vs Everton (2000HRS UTC) - Signal 3
-http://play.sportsteam368.com/play/gm.php?id=960484741&id2=960484741
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/63eba0d48bad5073adf9e89d659741ba.jpg" group-title="Football",Manchester United vs Everton (2000HRS UTC) - Signal 4
-http://play.sportsteam368.com/play/wlive.php?id=f97d4facba7ac22ebd5d4f7fd8dcf25d&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/ebc37d37bd840176fac1e4f8dd44a528.jpg" group-title="Football",Espanyol vs Sevilla (2000HRS UTC) - Signal 1
-https://live-en.aisports.cc/moviebox/bsy_018/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/ebc37d37bd840176fac1e4f8dd44a528.jpg" group-title="Football",Espanyol vs Sevilla (2000HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/kbs.html?id=960484038&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/ebc37d37bd840176fac1e4f8dd44a528.jpg" group-title="Football",Espanyol vs Sevilla (2000HRS UTC) - Signal 3
-http://play.sportsteam368.com/play/gm.php?id=960484038&id2=960484038
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/ebc37d37bd840176fac1e4f8dd44a528.jpg" group-title="Football",Espanyol vs Sevilla (2000HRS UTC) - Signal 4
-http://play.sportsteam368.com/play/wlive.php?id=d6bcc479f691a2edd7f14f34db0af717&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/3d81ba3ca1ce0e5190919dd7389aa43d.jpg" group-title="Basketball",Milwaukee Bucks vs Portland Trail Blazers (0100HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/j.php?id=22500288&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/3d81ba3ca1ce0e5190919dd7389aa43d.jpg" group-title="Basketball",Milwaukee Bucks vs Portland Trail Blazers (0100HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/i11.html?id=10022500288&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/3d81ba3ca1ce0e5190919dd7389aa43d.jpg" group-title="Basketball",Milwaukee Bucks vs Portland Trail Blazers (0100HRS UTC) - Signal 4
+http://nba.toutiaozb.com/qq/qq-kbs.html?matchliveid=1776413900
