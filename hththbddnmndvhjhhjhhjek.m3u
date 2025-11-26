@@ -2,11 +2,11 @@
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/11/a5b7bb2e98b5e82f4805724822937249.jpg" group-title="Basketball",Washington Wizards vs Atlanta Hawks (0000HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_011/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/11/a5b7bb2e98b5e82f4805724822937249.jpg" group-title="Basketball",Washington Wizards vs Atlanta Hawks (0000HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/j.php?id=22500057&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/11/a5b7bb2e98b5e82f4805724822937249.jpg" group-title="Basketball",Washington Wizards vs Atlanta Hawks (0000HRS UTC) - Signal 3
-http://play.sportsteam368.com/play/kbs.html?id=10022500057&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/11/a5b7bb2e98b5e82f4805724822937249.jpg" group-title="Basketball",Washington Wizards vs Atlanta Hawks (0000HRS UTC) - Signal 4
 http://play.sportsteam368.com/play/mgxl.php?id=960514417&id2=5316942efa529d66bbb8671b60749346
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/11/a5b7bb2e98b5e82f4805724822937249.jpg" group-title="Basketball",Washington Wizards vs Atlanta Hawks (0000HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/j.php?id=22500057&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/11/a5b7bb2e98b5e82f4805724822937249.jpg" group-title="Basketball",Washington Wizards vs Atlanta Hawks (0000HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/kbs.html?id=10022500057&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/9ad9a400c0971b9ecbf8e15b9c749a1e.jpg" group-title="Basketball",LA Lakers vs LA Clippers (0400HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_016/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/9ad9a400c0971b9ecbf8e15b9c749a1e.jpg" group-title="Basketball",LA Lakers vs LA Clippers (0400HRS UTC) - Signal 2
@@ -15,3 +15,51 @@ http://tv.cctv.com/live/cctv5/
 https://www.yangshipin.cn/tv/home?pid=600001818
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/9ad9a400c0971b9ecbf8e15b9c749a1e.jpg" group-title="Basketball",LA Lakers vs LA Clippers (0400HRS UTC) - Signal 4
 http://sports.cctv.com/H5/CCTV5/index.shtml
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/0c1037448a991e5b2ba86bc34d990ff0.jpg" group-title="Football",Olympiacos vs Real Madrid (2000HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_025/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/0c1037448a991e5b2ba86bc34d990ff0.jpg" group-title="Football",Olympiacos vs Real Madrid (2000HRS UTC) - Signal 2
+http://play.88player.top/m3u8.html?url=http%3A%2F%2Fplay1nm.hnyongshun.cn%2Flive%2F8fa33f38b4c429a4c7bde69f696c35ea.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/0c1037448a991e5b2ba86bc34d990ff0.jpg" group-title="Football",Olympiacos vs Real Madrid (2000HRS UTC) - Signal 3
+http://play.88player.top/m3u8.html?url=http%3A%2F%2Fplay1nm.hnyongshun.cn%2Flive%2F6adaf8bf8530045e603c7533f1a06680.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/0c1037448a991e5b2ba86bc34d990ff0.jpg" group-title="Football",Olympiacos vs Real Madrid (2000HRS UTC) - Signal 4
+http://play.88player.top/m3u8.html?url=http%3A%2F%2Flive.qfngx.com%2Fsport%2F202_3960716_1.m3u8%3FtxSecret%3D16fdf2d580392f3007b09e73f0f51eb8%26txTime%3D1764187332
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/25a49cb2734a322976907157d8defc17.jpg" group-title="Football",Paris Saint-Germain vs Tottenham Hotspur (2000HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/device01/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/25a49cb2734a322976907157d8defc17.jpg" group-title="Football",Paris Saint-Germain vs Tottenham Hotspur (2000HRS UTC) - Signal 2
+http://play.88player.top/m3u8.html?url=http%3A%2F%2Flive.qfngx.com%2Fsport%2F202_3960707_1.m3u8%3FtxSecret%3D0aee26db7cde905a94644d4c39de82bc%26txTime%3D1764187259
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/25a49cb2734a322976907157d8defc17.jpg" group-title="Football",Paris Saint-Germain vs Tottenham Hotspur (2000HRS UTC) - Signal 3
+http://play.88player.top/m3u8.html?url=http%3A%2F%2Fplay1nm.hnyongshun.cn%2Flive%2F6c6907cf0ced783f26c72993f6a8be09.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/25a49cb2734a322976907157d8defc17.jpg" group-title="Football",Paris Saint-Germain vs Tottenham Hotspur (2000HRS UTC) - Signal 4
+http://play.88player.top/m3u8.html?url=http%3A%2F%2Fplay1nm.hnyongshun.cn%2Flive%2F3e79d4e6b7a949853289db3f6d680dee.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/4c5c946162d3b811beedf4203d9c0ca7.jpg" group-title="Football",Arsenal vs Bayern Munich (2000HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/device02/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/4c5c946162d3b811beedf4203d9c0ca7.jpg" group-title="Football",Arsenal vs Bayern Munich (2000HRS UTC) - Signal 2
+http://play.88player.top/m3u8.html?url=http%3A%2F%2Fplay1nm.hnyongshun.cn%2Flive%2F03871c4f939d1f70fd4a5ba7783f4347.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/4c5c946162d3b811beedf4203d9c0ca7.jpg" group-title="Football",Arsenal vs Bayern Munich (2000HRS UTC) - Signal 3
+http://play.88player.top/m3u8.html?url=http%3A%2F%2Flive.qfngx.com%2Fsport%2F202_3960816_1.m3u8%3FtxSecret%3D22fa3eb01543a4b9ec56781421ffb981%26txTime%3D1764187186
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/4c5c946162d3b811beedf4203d9c0ca7.jpg" group-title="Football",Arsenal vs Bayern Munich (2000HRS UTC) - Signal 4
+http://play.88player.top/m3u8.html?url=http%3A%2F%2Fplay1nm.hnyongshun.cn%2Flive%2F3f51a3be2f6824eb8de125ca85824899.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/40141d9166d1fcb4a0b69d702e106f5a.jpg" group-title="Football",Liverpool vs PSV Eindhoven (2000HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_017/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/40141d9166d1fcb4a0b69d702e106f5a.jpg" group-title="Football",Liverpool vs PSV Eindhoven (2000HRS UTC) - Signal 2
+http://play.88player.top/m3u8.html?url=http%3A%2F%2Fplay1nm.hnyongshun.cn%2Flive%2Ffe4a89875ffe2b2e79675306d1e12f41.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/40141d9166d1fcb4a0b69d702e106f5a.jpg" group-title="Football",Liverpool vs PSV Eindhoven (2000HRS UTC) - Signal 3
+http://play.88player.top/m3u8.html?url=http%3A%2F%2Flive.qfngx.com%2Fsport%2F202_3960739_1.m3u8%3FtxSecret%3D351a898b431b56cbae58a1bfc8f9802f%26txTime%3D1764187442
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/40141d9166d1fcb4a0b69d702e106f5a.jpg" group-title="Football",Liverpool vs PSV Eindhoven (2000HRS UTC) - Signal 4
+http://play.88player.top/m3u8.html?url=http%3A%2F%2Fplay1nm.hnyongshun.cn%2Flive%2F0d0956dcf7e03a70632b9265dd4b2b28.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/f400aef66aef784551698e35dea4fe68.jpg" group-title="Football",Atletico Madrid vs Inter (2000HRS UTC)
+https://live-en.aisports.cc/moviebox/football001/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/446dcaff69c8660b384f6e338604f950.jpg" group-title="Football",Sporting CP vs Club Brugge (2000HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_024/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/446dcaff69c8660b384f6e338604f950.jpg" group-title="Football",Sporting CP vs Club Brugge (2000HRS UTC) - Signal 2
+http://play.88player.top/m3u8.html?url=http%3A%2F%2Flive.qfngx.com%2Fsport%2F202_3960686_1.m3u8%3FtxSecret%3D3e05ced67e855566f9a74dae51fe9dde%26txTime%3D1764187132
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/446dcaff69c8660b384f6e338604f950.jpg" group-title="Football",Sporting CP vs Club Brugge (2000HRS UTC) - Signal 3
+http://play.88player.top/m3u8.html?url=http%3A%2F%2Fplay1nm.hnyongshun.cn%2Flive%2Ffad58c789d9a23a717dd96f99125b071.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/446dcaff69c8660b384f6e338604f950.jpg" group-title="Football",Sporting CP vs Club Brugge (2000HRS UTC) - Signal 4
+http://play.88player.top/m3u8.html?url=http%3A%2F%2Fplay1nm.hnyongshun.cn%2Flive%2Fab66165ab344875f660e172290a81694.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/aeb99dff294b489076cc91a3e6486c52.jpg" group-title="Football",Eintracht Frankfurt vs Atalanta (2000HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_009/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/aeb99dff294b489076cc91a3e6486c52.jpg" group-title="Football",Eintracht Frankfurt vs Atalanta (2000HRS UTC) - Signal 2
+http://play.88player.top/m3u8.html?url=http%3A%2F%2Flive.qfngx.com%2Fsport%2F202_3960768_1.m3u8%3FtxSecret%3D88eac8f1a77fa93bf353d5e2f40abc0c%26txTime%3D1764187516
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/aeb99dff294b489076cc91a3e6486c52.jpg" group-title="Football",Eintracht Frankfurt vs Atalanta (2000HRS UTC) - Signal 3
+http://play.88player.top/m3u8.html?url=http%3A%2F%2Fplay1nm.hnyongshun.cn%2Flive%2F59403bc5b731ca5eda6dd8870af02452.m3u8
