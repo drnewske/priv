@@ -26,9 +26,9 @@
   "439122784788299984": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_009/playlist.m3u8",
-      "http://play.sportsteam368.com/play/kbs.html?id=10022500077&id2=",
       "http://play.sportsteam368.com/play/mgxl.php?id=960518185&id2=ee2d8d3ec35cbb0aeac7f06a52eaa040",
-      "http://play.sportsteam368.com/play/pao.php?id=38665432&id2="
+      "http://play.sportsteam368.com/play/pao.php?id=38665432&id2=",
+      "http://play.sportsteam368.com/play/kbs.html?id=10022500077&id2="
     ]
   },
   "3177311358229660944": {
@@ -42,9 +42,9 @@
   "6622565073167990992": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_022/playlist.m3u8",
+      "http://sports.cctv.com/H5/CCTV5/index.shtml",
       "http://tv.cctv.com/live/cctv5/",
-      "https://www.yangshipin.cn/tv/home?pid=600001818",
-      "http://sports.cctv.com/H5/CCTV5/index.shtml"
+      "https://www.yangshipin.cn/tv/home?pid=600001818"
     ]
   },
   "5613758756637099368": {
@@ -58,25 +58,25 @@
   "5253470786447360208": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_018/playlist.m3u8",
+      "http://play.sportsteam368.com/play/kbs.html?id=10022500070&id2=",
       "http://play.sportsteam368.com/play/mgxl.php?id=960515445&id2=d005dacf1e13653e28eef3df81987c67",
-      "http://play.sportsteam368.com/play/wlive.php?id=d005dacf1e13653e28eef3df81987c67&id2=",
-      "http://play.sportsteam368.com/play/kbs.html?id=10022500070&id2="
+      "http://play.sportsteam368.com/play/wlive.php?id=d005dacf1e13653e28eef3df81987c67&id2="
     ]
   },
   "5145384395389519208": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_026/playlist.m3u8",
+      "http://play.sportsteam368.com/play/i11.html?id=10022500069&id2=",
       "http://play.sportsteam368.com/play/mgxl.php?id=960515189&id2=8e8c55d8eaa365381089d08815668641",
-      "http://nba.toutiaozb.com/qq/qq-kbs.html?matchliveid=1391748500",
-      "http://play.sportsteam368.com/play/i11.html?id=10022500069&id2="
+      "http://nba.toutiaozb.com/qq/qq-kbs.html?matchliveid=1391748500"
     ]
   },
   "3091742965309621608": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_016/playlist.m3u8",
+      "http://play.sportsteam368.com/play/mgxl.php?id=960516174&id2=5316942efa529d66bbb8671b60749346",
       "http://play.sportsteam368.com/play/wlive.php?id=5316942efa529d66bbb8671b60749346&id2=",
-      "http://play.sportsteam368.com/play/kbs.html?id=10022500071&id2=",
-      "http://play.sportsteam368.com/play/mgxl.php?id=960516174&id2=5316942efa529d66bbb8671b60749346"
+      "http://play.sportsteam368.com/play/kbs.html?id=10022500071&id2="
     ]
   }
 }
