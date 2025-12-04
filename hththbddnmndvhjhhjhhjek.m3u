@@ -34,11 +34,11 @@ http://play.sportsteam368.com/play/mgxl.php?id=960762615&id2=38667202
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/59a17e8c9b3fba8828afac280548d09a.jpg" group-title="Basketball",Chicago Bulls vs Brooklyn Nets (0100HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_023/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/59a17e8c9b3fba8828afac280548d09a.jpg" group-title="Basketball",Chicago Bulls vs Brooklyn Nets (0100HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/j.php?id=22500329&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/59a17e8c9b3fba8828afac280548d09a.jpg" group-title="Basketball",Chicago Bulls vs Brooklyn Nets (0100HRS UTC) - Signal 3
-http://play.sportsteam368.com/play/mgxl.php?id=960762626&id2=38662532
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/59a17e8c9b3fba8828afac280548d09a.jpg" group-title="Basketball",Chicago Bulls vs Brooklyn Nets (0100HRS UTC) - Signal 4
 http://play.sportsteam368.com/play/kbs.html?id=10022500329&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/59a17e8c9b3fba8828afac280548d09a.jpg" group-title="Basketball",Chicago Bulls vs Brooklyn Nets (0100HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/j.php?id=22500329&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/59a17e8c9b3fba8828afac280548d09a.jpg" group-title="Basketball",Chicago Bulls vs Brooklyn Nets (0100HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/mgxl.php?id=960762626&id2=38662532
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/7c0607c7dcfc3d3749b75e2c5ff02f91.jpg" group-title="Basketball",Houston Rockets vs Sacramento Kings (0100HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_017/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/7c0607c7dcfc3d3749b75e2c5ff02f91.jpg" group-title="Basketball",Houston Rockets vs Sacramento Kings (0100HRS UTC) - Signal 2
@@ -58,10 +58,18 @@ http://play.sportsteam368.com/play/kbs.html?id=vl&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/ed3a6d7e46a9ae002e9922a92fadad91.jpg" group-title="Basketball",Dallas Mavericks vs Miami Heat (0130HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_006/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/ed3a6d7e46a9ae002e9922a92fadad91.jpg" group-title="Basketball",Dallas Mavericks vs Miami Heat (0130HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/kbs.html?id=10022500332&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/ed3a6d7e46a9ae002e9922a92fadad91.jpg" group-title="Basketball",Dallas Mavericks vs Miami Heat (0130HRS UTC) - Signal 3
-http://play.sportsteam368.com/play/mgxl.php?id=960762822&id2=38667902
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/ed3a6d7e46a9ae002e9922a92fadad91.jpg" group-title="Basketball",Dallas Mavericks vs Miami Heat (0130HRS UTC) - Signal 4
 http://play.sportsteam368.com/play/j.php?id=22500332&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/ed3a6d7e46a9ae002e9922a92fadad91.jpg" group-title="Basketball",Dallas Mavericks vs Miami Heat (0130HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/kbs.html?id=10022500332&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/ed3a6d7e46a9ae002e9922a92fadad91.jpg" group-title="Basketball",Dallas Mavericks vs Miami Heat (0130HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/mgxl.php?id=960762822&id2=38667902
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/11/28/f2aacccc8408caa94ea2178b9b681ab5.png" group-title="Cricket",Australia vs England (0400HRS UTC)
 https://live-en.aisports.cc/moviebox/device01/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/63eba0d48bad5073adf9e89d659741ba.jpg" group-title="Football",Manchester United vs West Ham United (2000HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/device02/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/63eba0d48bad5073adf9e89d659741ba.jpg" group-title="Football",Manchester United vs West Ham United (2000HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/wen.php?id=6be249578e1602a2b03931915a6c46c2&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/63eba0d48bad5073adf9e89d659741ba.jpg" group-title="Football",Manchester United vs West Ham United (2000HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/gm.php?id=960928263&id2=960928263
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/63eba0d48bad5073adf9e89d659741ba.jpg" group-title="Football",Manchester United vs West Ham United (2000HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/kbs.html?id=960928263&id2=
