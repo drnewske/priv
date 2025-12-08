@@ -34,9 +34,9 @@
   "1883652365266338000": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_009/playlist.m3u8",
-      "http://play.sportsteam368.com/play/kbs.html?id=10022500360&id2=",
       "http://play.sportsteam368.com/play/j.php?id=22500360&id2=",
-      "http://play.sportsteam368.com/play/mgxl.php?id=961000059&id2=38662082"
+      "http://play.sportsteam368.com/play/mgxl.php?id=961000059&id2=38662082",
+      "http://play.sportsteam368.com/play/kbs.html?id=10022500360&id2="
     ]
   }
 }
