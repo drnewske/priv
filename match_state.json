@@ -2,9 +2,9 @@
   "5596379981075170768": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_006/playlist.m3u8",
-      "http://play.sportsteam368.com/play/kbs.html?id=960930703&id2=",
       "http://play.sportsteam368.com/play/wlive.php?id=5f17fed4e9a297013fbd001449e3aeef&id2=",
-      "http://play.sportsteam368.com/play/gm.php?id=960930703&id2=960930703"
+      "http://play.sportsteam368.com/play/gm.php?id=960930703&id2=960930703",
+      "http://play.sportsteam368.com/play/kbs.html?id=960930703&id2="
     ]
   },
   "3108631463912260968": {
@@ -26,25 +26,25 @@
   "4477725750632792272": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_015/playlist.m3u8",
-      "http://play.sportsteam368.com/play/j.php?id=22500361&id2=",
       "http://play.sportsteam368.com/play/mgxl.php?id=961000148&id2=38661002",
-      "http://play.sportsteam368.com/play/kbs.html?id=10022500361&id2="
+      "http://play.sportsteam368.com/play/kbs.html?id=10022500361&id2=",
+      "http://play.sportsteam368.com/play/j.php?id=22500361&id2="
     ]
   },
   "7215914324074153320": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_017/playlist.m3u8",
-      "http://nba.toutiaozb.com/qq/qq-kbs.html?matchliveid=1392130700",
       "http://play.sportsteam368.com/play/j.php?id=22500359&id2=",
-      "http://play.sportsteam368.com/play/i11.html?id=10022500359&id2="
+      "http://play.sportsteam368.com/play/i11.html?id=10022500359&id2=",
+      "http://nba.toutiaozb.com/qq/qq-kbs.html?matchliveid=1392130700"
     ]
   },
   "1883652365266338000": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_009/playlist.m3u8",
+      "http://play.sportsteam368.com/play/j.php?id=22500360&id2=",
       "http://play.sportsteam368.com/play/mgxl.php?id=961000059&id2=38662082",
-      "http://play.sportsteam368.com/play/kbs.html?id=10022500360&id2=",
-      "http://play.sportsteam368.com/play/j.php?id=22500360&id2="
+      "http://play.sportsteam368.com/play/kbs.html?id=10022500360&id2="
     ]
   }
 }
