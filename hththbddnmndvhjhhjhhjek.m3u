@@ -2,11 +2,11 @@
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/436aa9a0fcae220c73838a390ec1d320.jpg" group-title="Basketball",Oklahoma City Thunder vs Phoenix Suns (0030HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_020/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/436aa9a0fcae220c73838a390ec1d320.jpg" group-title="Basketball",Oklahoma City Thunder vs Phoenix Suns (0030HRS UTC) - Signal 2
-http://nba.toutiaozb.com/qq/qq-kbs.html?matchliveid=1776736900
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/436aa9a0fcae220c73838a390ec1d320.jpg" group-title="Basketball",Oklahoma City Thunder vs Phoenix Suns (0030HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/j.php?id=22501203&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/436aa9a0fcae220c73838a390ec1d320.jpg" group-title="Basketball",Oklahoma City Thunder vs Phoenix Suns (0030HRS UTC) - Signal 4
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/436aa9a0fcae220c73838a390ec1d320.jpg" group-title="Basketball",Oklahoma City Thunder vs Phoenix Suns (0030HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/i11.html?id=10022501203&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/436aa9a0fcae220c73838a390ec1d320.jpg" group-title="Basketball",Oklahoma City Thunder vs Phoenix Suns (0030HRS UTC) - Signal 4
+http://nba.toutiaozb.com/qq/qq-kbs.html?matchliveid=1776736900
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/9ad9a400c0971b9ecbf8e15b9c749a1e.jpg" group-title="Basketball",LA Lakers vs San Antonio Spurs (0300HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_028/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/9ad9a400c0971b9ecbf8e15b9c749a1e.jpg" group-title="Basketball",LA Lakers vs San Antonio Spurs (0300HRS UTC) - Signal 2
@@ -84,11 +84,11 @@ http://play.88player.top/m3u8.html?url=http%3A%2F%2Fplay1nm.hnyongshun.cn%2Flive
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/ae0d82f54a0d4e357afdd2df860c0a19.jpg" group-title="Football",VfB Stuttgart vs Maccabi Tel Aviv (1745HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_020/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/ae0d82f54a0d4e357afdd2df860c0a19.jpg" group-title="Football",VfB Stuttgart vs Maccabi Tel Aviv (1745HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/pao.php?id=44157531&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/ae0d82f54a0d4e357afdd2df860c0a19.jpg" group-title="Football",VfB Stuttgart vs Maccabi Tel Aviv (1745HRS UTC) - Signal 3
 http://play.88player.top/m3u8.html?url=https%3A%2F%2Fplay7ba.peodlc.com%2Flive%2F202_3964072_1.m3u8
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/ae0d82f54a0d4e357afdd2df860c0a19.jpg" group-title="Football",VfB Stuttgart vs Maccabi Tel Aviv (1745HRS UTC) - Signal 4
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/ae0d82f54a0d4e357afdd2df860c0a19.jpg" group-title="Football",VfB Stuttgart vs Maccabi Tel Aviv (1745HRS UTC) - Signal 3
 http://play.88player.top/m3u8.html?url=http%3A%2F%2Fplay1nm.hnyongshun.cn%2Flive%2F83f39c34a099597858eb4a13e0760d83.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/ae0d82f54a0d4e357afdd2df860c0a19.jpg" group-title="Football",VfB Stuttgart vs Maccabi Tel Aviv (1745HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/pao.php?id=44157531&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/066724f7a61a584e611de62f7119ab21.jpg" group-title="Football",Lyon vs Go Ahead Eagles (2000HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_001/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/066724f7a61a584e611de62f7119ab21.jpg" group-title="Football",Lyon vs Go Ahead Eagles (2000HRS UTC) - Signal 2
@@ -106,18 +106,24 @@ http://play.sportsteam368.com/play/pao.php?id=44157501&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/e2ad773db3a26b3f86b87f6e4926c59d.jpg" group-title="Football",FC Porto vs Malmo FF (2000HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_022/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/e2ad773db3a26b3f86b87f6e4926c59d.jpg" group-title="Football",FC Porto vs Malmo FF (2000HRS UTC) - Signal 2
-http://play.88player.top/m3u8.html?url=https%3A%2F%2Fplay7ba.peodlc.com%2Flive%2F202_3964065_1.m3u8
+http://play.88player.top/m3u8.html?url=http%3A%2F%2Fplay7ba.peodlc.com%2F202_3964065_1.m3u8%3FtxSecret%3Dce62869327e9acc418910c5ec3fbeac6%26txTime%3D1765484799
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/e2ad773db3a26b3f86b87f6e4926c59d.jpg" group-title="Football",FC Porto vs Malmo FF (2000HRS UTC) - Signal 3
+http://play.88player.top/m3u8.html?url=https%3A%2F%2Fplay7ba.peodlc.com%2Flive%2F202_3964065_1.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/e2ad773db3a26b3f86b87f6e4926c59d.jpg" group-title="Football",FC Porto vs Malmo FF (2000HRS UTC) - Signal 4
 http://play.sportsteam368.com/play/pao.php?id=44157581&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/08/13/eb8ce84645ff60aab06ef360aeae4ffe.jpg" group-title="Football",Basel vs Aston Villa (2000HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_014/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/08/13/eb8ce84645ff60aab06ef360aeae4ffe.jpg" group-title="Football",Basel vs Aston Villa (2000HRS UTC) - Signal 2
-http://play.88player.top/m3u8.html?url=https%3A%2F%2Fplay7ba.peodlc.com%2Flive%2F202_3964017_1.m3u8
+http://play.88player.top/m3u8.html?url=http%3A%2F%2Fplay7ba.peodlc.com%2F202_3964017_1.m3u8%3FtxSecret%3Da276d3cf76ac06d86239c9ea6bc4134b%26txTime%3D1765484705
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/08/13/eb8ce84645ff60aab06ef360aeae4ffe.jpg" group-title="Football",Basel vs Aston Villa (2000HRS UTC) - Signal 3
+http://play.88player.top/m3u8.html?url=https%3A%2F%2Fplay7ba.peodlc.com%2Flive%2F202_3964017_1.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/08/13/eb8ce84645ff60aab06ef360aeae4ffe.jpg" group-title="Football",Basel vs Aston Villa (2000HRS UTC) - Signal 4
 http://play.sportsteam368.com/play/pao.php?id=44158081&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/08/6ef2607b148c27193e26be2081126337.jpg" group-title="Football",Panathinaikos vs Viktoria Plzen (2000HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_028/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/08/6ef2607b148c27193e26be2081126337.jpg" group-title="Football",Panathinaikos vs Viktoria Plzen (2000HRS UTC) - Signal 2
-http://play.88player.top/m3u8.html?url=http%3A%2F%2Fplay1nm.hnyongshun.cn%2Flive%2F4adc83a172875aaa3366c5e500c82e95.m3u8
+http://play.88player.top/m3u8.html?url=http%3A%2F%2Flive.qfngx.com%2F202_3964095_1.m3u8%3FtxSecret%3D9c77d82c8bb17c93a55110cbb3a48650%26txTime%3D1765484954
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/08/6ef2607b148c27193e26be2081126337.jpg" group-title="Football",Panathinaikos vs Viktoria Plzen (2000HRS UTC) - Signal 3
 http://play.88player.top/m3u8.html?url=https%3A%2F%2Fplay7ba.peodlc.com%2Flive%2F202_3964095_1.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/08/6ef2607b148c27193e26be2081126337.jpg" group-title="Football",Panathinaikos vs Viktoria Plzen (2000HRS UTC) - Signal 4
+http://play.88player.top/m3u8.html?url=http%3A%2F%2Fplay1nm.hnyongshun.cn%2Flive%2F4adc83a172875aaa3366c5e500c82e95.m3u8
