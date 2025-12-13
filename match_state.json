@@ -1,10 +1,26 @@
 {
+  "8193861652770604792": {
+    "streams": [
+      "https://live-en.aisports.cc/moviebox/bsy_027/playlist.m3u8",
+      "http://play.sportsteam368.com/play/kbs.html?id=10022501215&id2=",
+      "http://play.sportsteam368.com/play/j.php?id=22501215&id2=",
+      "http://play.sportsteam368.com/play/kbs.html?id=vl&id2="
+    ]
+  },
+  "5671845861443127032": {
+    "streams": [
+      "https://live-en.aisports.cc/moviebox/bsy_006/playlist.m3u8",
+      "http://play.sportsteam368.com/play/j.php?id=22501214&id2=",
+      "http://play.sportsteam368.com/play/kbs.html?id=10022501214&id2=",
+      "http://play.sportsteam368.com/play/pao.php?id=38666552&id2="
+    ]
+  },
   "7833573682581062536": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_001/playlist.m3u8",
+      "http://nba.toutiaozb.com/qq/qq-kbs.html?matchliveid=1776730300",
       "http://play.sportsteam368.com/play/j.php?id=22501213&id2=",
-      "http://play.sportsteam368.com/play/i11.html?id=10022501213&id2=",
-      "http://nba.toutiaozb.com/qq/qq-kbs.html?matchliveid=1776730300"
+      "http://play.sportsteam368.com/play/i11.html?id=10022501213&id2="
     ]
   },
   "6860796163068937976": {
@@ -18,9 +34,9 @@
   "375612699654472584": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_021/playlist.m3u8",
+      "http://play.sportsteam368.com/play/kbs.html?id=10022501211&id2=",
       "http://play.sportsteam368.com/play/j.php?id=22501211&id2=",
-      "http://play.sportsteam368.com/play/pao.php?id=38667522&id2=",
-      "http://play.sportsteam368.com/play/kbs.html?id=10022501211&id2="
+      "http://play.sportsteam368.com/play/pao.php?id=38667522&id2="
     ]
   },
   "303555105617495800": {
@@ -28,7 +44,7 @@
       "https://live-en.aisports.cc/moviebox/bsy_011/playlist.m3u8",
       "http://play.sportsteam368.com/play/j.php?id=22501210&id2=",
       "http://play.sportsteam368.com/play/kbs.html?id=10022501210&id2=",
-      "http://play.sportsteam368.com/play/kbs.html?id=vl&id2="
+      "http://play.sportsteam368.com/play/pao.php?id=38689172&id2="
     ]
   },
   "1573570200535975672": {
