@@ -9,3 +9,5 @@ http://tv.cctv.com/live/cctv5/
 https://www.yangshipin.cn/tv/home?pid=600001818
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/ad072ba484d02766b45fee8456c24a4d.jpg" group-title="Basketball",New York Knicks vs San Antonio Spurs (0130HRS UTC) - Signal 4
 http://sports.cctv.com/H5/CCTV5/index.shtml
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/09/18/a94c2bbc54522e9f3e3116dc1bd0d497.png" group-title="Cricket",India vs South Africa (1330HRS UTC)
+https://live-en.aisports.cc/moviebox/device01/playlist.m3u8
