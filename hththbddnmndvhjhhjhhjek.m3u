@@ -10,11 +10,11 @@ http://play.sportsteam368.com/play/pao.php?id=38660612&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/ad072ba484d02766b45fee8456c24a4d.jpg" group-title="Basketball",New York Knicks vs Philadelphia 76ers (0000HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_028/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/ad072ba484d02766b45fee8456c24a4d.jpg" group-title="Basketball",New York Knicks vs Philadelphia 76ers (0000HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/kbs.html?id=10022500382&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/ad072ba484d02766b45fee8456c24a4d.jpg" group-title="Basketball",New York Knicks vs Philadelphia 76ers (0000HRS UTC) - Signal 3
-http://play.sportsteam368.com/play/pao.php?id=38663822&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/ad072ba484d02766b45fee8456c24a4d.jpg" group-title="Basketball",New York Knicks vs Philadelphia 76ers (0000HRS UTC) - Signal 4
 http://play.sportsteam368.com/play/j.php?id=22500382&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/ad072ba484d02766b45fee8456c24a4d.jpg" group-title="Basketball",New York Knicks vs Philadelphia 76ers (0000HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/kbs.html?id=10022500382&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/ad072ba484d02766b45fee8456c24a4d.jpg" group-title="Basketball",New York Knicks vs Philadelphia 76ers (0000HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/pao.php?id=38663822&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/b8b461891b682930791b31b852430e04.jpg" group-title="Basketball",Atlanta Hawks vs San Antonio Spurs (0030HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_014/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/b8b461891b682930791b31b852430e04.jpg" group-title="Basketball",Atlanta Hawks vs San Antonio Spurs (0030HRS UTC) - Signal 2
@@ -39,3 +39,19 @@ http://tv.cctv.com/live/cctv5/
 http://sports.cctv.com/H5/CCTV5/index.shtml
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/6e756aa59698c4d73205879e38669b96.jpg" group-title="Basketball",Minnesota Timberwolves vs Oklahoma City Thunder (0230HRS UTC) - Signal 4
 http://play.sportsteam368.com/play/kbs.html?id=vl&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/720bfed17787c60885d68d44bfbacc9d.jpg" group-title="Football",Newcastle United vs Chelsea (1230HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/device02/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/720bfed17787c60885d68d44bfbacc9d.jpg" group-title="Football",Newcastle United vs Chelsea (1230HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/pao.php?id=43434261&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/720bfed17787c60885d68d44bfbacc9d.jpg" group-title="Football",Newcastle United vs Chelsea (1230HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/kbs.html?id=961252125&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/720bfed17787c60885d68d44bfbacc9d.jpg" group-title="Football",Newcastle United vs Chelsea (1230HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/wen.php?id=27fa2a293ff23f30d50128024823f8cb&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/02/ced4b8632654b3a438945c7389db2ec6.jpg" group-title="Football",Real Oviedo vs Celta Vigo (1300HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_014/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/02/ced4b8632654b3a438945c7389db2ec6.jpg" group-title="Football",Real Oviedo vs Celta Vigo (1300HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/gm.php?id=961252400&id2=961252400
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/02/ced4b8632654b3a438945c7389db2ec6.jpg" group-title="Football",Real Oviedo vs Celta Vigo (1300HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/kbs.html?id=961252400&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/02/ced4b8632654b3a438945c7389db2ec6.jpg" group-title="Football",Real Oviedo vs Celta Vigo (1300HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/wen.php?id=3a806c2b447f840798631fdae5fd5b57&id2=
