@@ -25,9 +25,9 @@
   "4698402132373946576": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_020/playlist.m3u8",
-      "http://tv.cctv.com/live/cctv5/",
       "https://www.yangshipin.cn/tv/home?pid=600001818",
-      "http://sports.cctv.com/H5/CCTV5/index.shtml"
+      "http://sports.cctv.com/H5/CCTV5/index.shtml",
+      "http://tv.cctv.com/live/cctv5/"
     ]
   },
   "4193998974107501928": {
