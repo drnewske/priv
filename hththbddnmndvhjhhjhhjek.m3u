@@ -2,11 +2,11 @@
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/6af8b55866d8d519e8ca4f8c53351018.jpg" group-title="Basketball",Golden State Warriors vs Dallas Mavericks (2217HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_027/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/6af8b55866d8d519e8ca4f8c53351018.jpg" group-title="Basketball",Golden State Warriors vs Dallas Mavericks (2217HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/pao.php?id=38650852&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/6af8b55866d8d519e8ca4f8c53351018.jpg" group-title="Basketball",Golden State Warriors vs Dallas Mavericks (2217HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/kbs.html?id=10022500011&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/6af8b55866d8d519e8ca4f8c53351018.jpg" group-title="Basketball",Golden State Warriors vs Dallas Mavericks (2217HRS UTC) - Signal 4
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/6af8b55866d8d519e8ca4f8c53351018.jpg" group-title="Basketball",Golden State Warriors vs Dallas Mavericks (2217HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/j.php?id=22500011&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/6af8b55866d8d519e8ca4f8c53351018.jpg" group-title="Basketball",Golden State Warriors vs Dallas Mavericks (2217HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/pao.php?id=38650852&id2=
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/11/28/f2aacccc8408caa94ea2178b9b681ab5.png" group-title="Cricket",Australia vs England (2330HRS UTC)
 https://live-en.aisports.cc/moviebox/device01/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/9ad9a400c0971b9ecbf8e15b9c749a1e.jpg" group-title="Basketball",LA Lakers vs Houston Rockets (0100HRS UTC) - Signal 1
@@ -31,3 +31,13 @@ https://live-en.aisports.cc/moviebox/device01/playlist.m3u8
 https://live-en.aisports.cc/moviebox/device02/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/3e6454618b58d43d7d7db30059ca5995.jpg" group-title="Football",Zambia vs Comoros (1730HRS UTC)
 https://live-en.aisports.cc/moviebox/football001/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/afc7fb4260b805809ad206272f7a5ea7.jpg" group-title="Football",Morocco vs Mali (2000HRS UTC)
+https://live-en.aisports.cc/moviebox/football001/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/63eba0d48bad5073adf9e89d659741ba.jpg" group-title="Football",Manchester United vs Newcastle United (2000HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_020/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/63eba0d48bad5073adf9e89d659741ba.jpg" group-title="Football",Manchester United vs Newcastle United (2000HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/kbs.html?id=961449376&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/63eba0d48bad5073adf9e89d659741ba.jpg" group-title="Football",Manchester United vs Newcastle United (2000HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/wlive.php?id=7d518b5cb460f7d0c1552b55cafd590d&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/63eba0d48bad5073adf9e89d659741ba.jpg" group-title="Football",Manchester United vs Newcastle United (2000HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/wlive.php?id=9b5363c89e2f7984c76cbbbfaf389772&id2=
