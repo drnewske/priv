@@ -10,11 +10,11 @@ http://play.sportsteam368.com/play/j.php?id=22500423&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/1ad5a70eba4b27dbd61eba60743de1ea.jpg" group-title="Basketball",Indiana Pacers vs Boston Celtics (0000HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_016/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/1ad5a70eba4b27dbd61eba60743de1ea.jpg" group-title="Basketball",Indiana Pacers vs Boston Celtics (0000HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/j.php?id=22500426&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/1ad5a70eba4b27dbd61eba60743de1ea.jpg" group-title="Basketball",Indiana Pacers vs Boston Celtics (0000HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/kbs.html?id=10022500426&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/1ad5a70eba4b27dbd61eba60743de1ea.jpg" group-title="Basketball",Indiana Pacers vs Boston Celtics (0000HRS UTC) - Signal 4
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/1ad5a70eba4b27dbd61eba60743de1ea.jpg" group-title="Basketball",Indiana Pacers vs Boston Celtics (0000HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/pao.php?id=38667282&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/1ad5a70eba4b27dbd61eba60743de1ea.jpg" group-title="Basketball",Indiana Pacers vs Boston Celtics (0000HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/j.php?id=22500426&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/11/a5b7bb2e98b5e82f4805724822937249.jpg" group-title="Basketball",Washington Wizards vs Toronto Raptors (0000HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_022/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/11/a5b7bb2e98b5e82f4805724822937249.jpg" group-title="Basketball",Washington Wizards vs Toronto Raptors (0000HRS UTC) - Signal 2
@@ -118,11 +118,11 @@ http://play.sportsteam368.com/play/wlive.php?id=7bc6360e3a553dd1144597a1d435a902
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/88ccbcd25b9f2b9a290ea522b78d0409.jpg" group-title="Football",West Ham United vs Fulham (1500HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_020/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/88ccbcd25b9f2b9a290ea522b78d0409.jpg" group-title="Football",West Ham United vs Fulham (1500HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/gm.php?id=961449844&id2=961449844
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/88ccbcd25b9f2b9a290ea522b78d0409.jpg" group-title="Football",West Ham United vs Fulham (1500HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/wlive.php?id=797d148d5ed5e1f03a9fd06a962f6d1a&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/88ccbcd25b9f2b9a290ea522b78d0409.jpg" group-title="Football",West Ham United vs Fulham (1500HRS UTC) - Signal 4
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/88ccbcd25b9f2b9a290ea522b78d0409.jpg" group-title="Football",West Ham United vs Fulham (1500HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/kbs.html?id=961449844&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/88ccbcd25b9f2b9a290ea522b78d0409.jpg" group-title="Football",West Ham United vs Fulham (1500HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/gm.php?id=961449844&id2=961449844
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/3084cf6c6de91dc34fb7a7c0d5bfe5f0.jpg" group-title="Football",Brentford vs Bournemouth (1500HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_022/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/3084cf6c6de91dc34fb7a7c0d5bfe5f0.jpg" group-title="Football",Brentford vs Bournemouth (1500HRS UTC) - Signal 2
@@ -149,3 +149,11 @@ http://play.sportsteam368.com/play/kbs.html?id=961449317&id2=
 http://play.sportsteam368.com/play/pao.php?id=43396431&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/09/02/b376e9987a018b07540a508e6e1f6476.jpg" group-title="Football",Uganda vs Tanzania (1730HRS UTC)
 https://live-en.aisports.cc/moviebox/football001/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/6bb9dbeaa866f27373c5c88a58dc0e0e.jpg" group-title="Football",Chelsea vs Aston Villa (1730HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_023/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/6bb9dbeaa866f27373c5c88a58dc0e0e.jpg" group-title="Football",Chelsea vs Aston Villa (1730HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/kbs.html?id=961449676&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/6bb9dbeaa866f27373c5c88a58dc0e0e.jpg" group-title="Football",Chelsea vs Aston Villa (1730HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/wlive.php?id=1bf2b8d9f1570c3a518c5ff14886b703&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/6bb9dbeaa866f27373c5c88a58dc0e0e.jpg" group-title="Football",Chelsea vs Aston Villa (1730HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/wlive.php?id=9bdd05274eb9f77aa3a17ec29d78bf6c&id2=
