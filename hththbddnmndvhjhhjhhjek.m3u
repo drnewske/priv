@@ -34,11 +34,11 @@ http://play.sportsteam368.com/play/kbs.html?id=10022500427&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/a62a77bc60a72fb6b4c812a430a5e2d5.jpg" group-title="Basketball",Memphis Grizzlies vs Milwaukee Bucks (0100HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_023/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/a62a77bc60a72fb6b4c812a430a5e2d5.jpg" group-title="Basketball",Memphis Grizzlies vs Milwaukee Bucks (0100HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/j.php?id=22500428&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/a62a77bc60a72fb6b4c812a430a5e2d5.jpg" group-title="Basketball",Memphis Grizzlies vs Milwaukee Bucks (0100HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/pao.php?id=38669482&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/a62a77bc60a72fb6b4c812a430a5e2d5.jpg" group-title="Basketball",Memphis Grizzlies vs Milwaukee Bucks (0100HRS UTC) - Signal 4
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/a62a77bc60a72fb6b4c812a430a5e2d5.jpg" group-title="Basketball",Memphis Grizzlies vs Milwaukee Bucks (0100HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/kbs.html?id=10022500428&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/05/21/a62a77bc60a72fb6b4c812a430a5e2d5.jpg" group-title="Basketball",Memphis Grizzlies vs Milwaukee Bucks (0100HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/j.php?id=22500428&id2=
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/10/a5346f8e89dafdf6c88962f83e12d3d6.jpg" group-title="Basketball",New Orleans Pelicans vs Phoenix Suns (0100HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_019/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/07/10/a5346f8e89dafdf6c88962f83e12d3d6.jpg" group-title="Basketball",New Orleans Pelicans vs Phoenix Suns (0100HRS UTC) - Signal 2
@@ -76,8 +76,24 @@ https://live-en.aisports.cc/moviebox/device01/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/8a37913c06fbab45902c2a92f99ebb23.jpg" group-title="Football",Nottingham Forest vs Manchester City (1230HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_016/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/8a37913c06fbab45902c2a92f99ebb23.jpg" group-title="Football",Nottingham Forest vs Manchester City (1230HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/kbs.html?id=961449707&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/8a37913c06fbab45902c2a92f99ebb23.jpg" group-title="Football",Nottingham Forest vs Manchester City (1230HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/wlive.php?id=9b5363c89e2f7984c76cbbbfaf389772&id2=
-#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/8a37913c06fbab45902c2a92f99ebb23.jpg" group-title="Football",Nottingham Forest vs Manchester City (1230HRS UTC) - Signal 4
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/8a37913c06fbab45902c2a92f99ebb23.jpg" group-title="Football",Nottingham Forest vs Manchester City (1230HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/wlive.php?id=0fe35cf26051f3bbfbc3605a4a51c02c&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/03/13/8a37913c06fbab45902c2a92f99ebb23.jpg" group-title="Football",Nottingham Forest vs Manchester City (1230HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/kbs.html?id=961449707&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/64e863048505b9b1cf67000624013932.jpg" group-title="Football",Torino vs Cagliari (1400HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_023/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/64e863048505b9b1cf67000624013932.jpg" group-title="Football",Torino vs Cagliari (1400HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/wlive.php?id=386ad40abcb07e5094eadab217222ce5&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/64e863048505b9b1cf67000624013932.jpg" group-title="Football",Torino vs Cagliari (1400HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/kbs.html?id=961449299&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/64e863048505b9b1cf67000624013932.jpg" group-title="Football",Torino vs Cagliari (1400HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/gm.php?id=961449299&id2=961449299
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/31ff2dc58a0e2e7bc50c67ddf265ddc8.jpg" group-title="Football",Lecce vs Como 1907 (1400HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_011/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/31ff2dc58a0e2e7bc50c67ddf265ddc8.jpg" group-title="Football",Lecce vs Como 1907 (1400HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/kbs.html?id=961449281&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/31ff2dc58a0e2e7bc50c67ddf265ddc8.jpg" group-title="Football",Lecce vs Como 1907 (1400HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/gm.php?id=961449281&id2=961449281
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/04/08/31ff2dc58a0e2e7bc50c67ddf265ddc8.jpg" group-title="Football",Lecce vs Como 1907 (1400HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/wlive.php?id=819c387dac2a7f04721ade0832979b93&id2=
