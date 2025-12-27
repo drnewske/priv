@@ -1,4 +1,17 @@
 {
+  "8775340301265290000": {
+    "streams": [
+      "https://live-en.aisports.cc/moviebox/device01/playlist.m3u8"
+    ]
+  },
+  "1117877153285260384": {
+    "streams": [
+      "https://live-en.aisports.cc/moviebox/bsy_016/playlist.m3u8",
+      "http://play.sportsteam368.com/play/kbs.html?id=961449707&id2=",
+      "http://play.sportsteam368.com/play/wlive.php?id=9b5363c89e2f7984c76cbbbfaf389772&id2=",
+      "http://play.sportsteam368.com/play/wlive.php?id=0fe35cf26051f3bbfbc3605a4a51c02c&id2="
+    ]
+  },
   "8727507622004508112": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_014/playlist.m3u8",
@@ -10,9 +23,9 @@
   "7965763662031241424": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_011/playlist.m3u8",
+      "http://tv.cctv.com/live/cctv5/",
       "https://www.yangshipin.cn/tv/home?pid=600001818",
-      "http://sports.cctv.com/H5/CCTV5/index.shtml",
-      "http://tv.cctv.com/live/cctv5/"
+      "http://sports.cctv.com/H5/CCTV5/index.shtml"
     ]
   },
   "5948151028969259216": {
@@ -50,9 +63,9 @@
   "8362080429238796496": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_027/playlist.m3u8",
-      "http://play.sportsteam368.com/play/pao.php?id=38664912&id2=",
       "http://play.sportsteam368.com/play/j.php?id=22500423&id2=",
-      "http://play.sportsteam368.com/play/kbs.html?id=10022500423&id2="
+      "http://play.sportsteam368.com/play/kbs.html?id=10022500423&id2=",
+      "http://play.sportsteam368.com/play/pao.php?id=38664912&id2="
     ]
   },
   "651917867181555920": {
@@ -66,9 +79,9 @@
   "2741588094280417488": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_022/playlist.m3u8",
+      "http://play.sportsteam368.com/play/i11.html?id=10022500425&id2=",
       "http://play.sportsteam368.com/play/pao.php?id=38664042&id2=",
-      "http://nba.toutiaozb.com/qq/qq-kbs.html?matchliveid=1776995200",
-      "http://play.sportsteam368.com/play/i11.html?id=10022500425&id2="
+      "http://nba.toutiaozb.com/qq/qq-kbs.html?matchliveid=1776995200"
     ]
   }
 }
