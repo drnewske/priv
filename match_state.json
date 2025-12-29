@@ -19,6 +19,14 @@
       "https://live-en.aisports.cc/moviebox/device01/playlist.m3u8"
     ]
   },
+  "3228612476984610896": {
+    "streams": [
+      "https://live-en.aisports.cc/moviebox/bsy_027/playlist.m3u8",
+      "http://play.sportsteam368.com/play/gm.php?id=961450100&id2=961450100",
+      "http://play.sportsteam368.com/play/wlive.php?id=7d518b5cb460f7d0c1552b55cafd590d&id2=",
+      "http://play.sportsteam368.com/play/kbs.html?id=961450100&id2="
+    ]
+  },
   "9064641971109642448": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_011/playlist.m3u8",

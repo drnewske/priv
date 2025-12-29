@@ -39,3 +39,11 @@ https://live-en.aisports.cc/moviebox/device01/playlist.m3u8
 https://live-en.aisports.cc/moviebox/device02/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/3e6454618b58d43d7d7db30059ca5995.jpg" group-title="Football",Zambia vs Morocco (1900HRS UTC)
 https://live-en.aisports.cc/moviebox/device01/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/0c0e9b42c84d430d985d4fb1d9cd853f.jpg" group-title="Football",AS Roma vs Genoa (1945HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_027/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/0c0e9b42c84d430d985d4fb1d9cd853f.jpg" group-title="Football",AS Roma vs Genoa (1945HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/gm.php?id=961450100&id2=961450100
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/0c0e9b42c84d430d985d4fb1d9cd853f.jpg" group-title="Football",AS Roma vs Genoa (1945HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/wlive.php?id=7d518b5cb460f7d0c1552b55cafd590d&id2=
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/0c0e9b42c84d430d985d4fb1d9cd853f.jpg" group-title="Football",AS Roma vs Genoa (1945HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/kbs.html?id=961450100&id2=
