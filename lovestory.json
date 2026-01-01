@@ -8,8 +8,16 @@
       "server_url": null,
       "id": "featured_m3u_01"
     },
-    {
+      {
       "id": "featured_m3u_02",
+      "name": "HAPPY NEW YEAR",
+      "logo_url": "https://media.cnn.com/api/v1/images/stellar/prod/2026-01-01t001810z-601298660-rc20siaikef8-rtrmadp-3-new-year-belgrade-fireworks.jpg?q=w_1576,c_fill",
+      "type": "m3u",
+      "url": "http://starshare.cx:80/get.php?username=98741258&password=32145874&type=m3u",
+      "server_url": null
+    },
+    {
+      "id": "featured_m3u_03",
       "name": "IPTV-ORG",
       "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm/logos/default.png",
       "type": "m3u",
@@ -17,7 +25,7 @@
       "server_url": null
     },
     {
-      "id": "featured_m3u_03",
+      "id": "featured_m3u_04",
       "name": "WINTERFELL",
       "logo_url": "https://www.hollywoodreporter.com/wp-content/uploads/2016/09/winterfell.jpg?w=1296&h=730&crop=1",
       "type": "m3u",
@@ -25,7 +33,7 @@
       "server_url": null
     },
     {
-      "id": "featured_m3u_04",
+      "id": "featured_m3u_05",
       "name": "GHOST",
       "logo_url": "https://i.cbc.ca/ais/1.3078255,1431974097000/full/max/0/default.jpg?im=Crop%2Crect%3D%280%2C91%2C400%2C225%29%3BResize%3D860",
       "type": "m3u",
@@ -33,7 +41,7 @@
       "server_url": null
     },
     {
-      "id": "featured_m3u_05",
+      "id": "featured_m3u_06",
       "name": "ADELE",
       "logo_url": "https://lastfm.freetls.fastly.net/i/u/avatar170s/9c1d4e3ebe6fca1fbb9885219774c259",
       "type": "m3u",
@@ -41,7 +49,7 @@
       "server_url": null
     },
     {
-      "id": "featured_m3u_06",
+      "id": "featured_m3u_07",
       "name": "RAMSAY",
       "logo_url": "https://www.washingtonpost.com/blogs/style-blog/files/2016/06/6add39821849853a542af7ddd92f7f518deb60d311a271dbbaf454c3670daa50848fca51983823aefe401a9c2500e4e9.jpeg",
       "type": "m3u",
@@ -49,7 +57,7 @@
       "server_url": null
     },
     {
-      "id": "featured_m3u_07",
+      "id": "featured_m3u_08",
       "name": "DROGON",
       "logo_url": "https://cdn.mos.cms.futurecdn.net/srLNY8RKdWZ7SKXvwMceu-970-80.jpg.webp",
       "type": "m3u",
