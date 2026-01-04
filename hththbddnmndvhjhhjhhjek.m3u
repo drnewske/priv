@@ -12,11 +12,11 @@ https://live-en.aisports.cc/moviebox/device01/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/07/11/8bb48bdd8172919940ecf05b9c968c94.jpg" group-title="Basketball",Toronto Raptors vs Atlanta Hawks (0030HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_020/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/07/11/8bb48bdd8172919940ecf05b9c968c94.jpg" group-title="Basketball",Toronto Raptors vs Atlanta Hawks (0030HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/kbs.html?id=10022500488&id2=
-#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/07/11/8bb48bdd8172919940ecf05b9c968c94.jpg" group-title="Basketball",Toronto Raptors vs Atlanta Hawks (0030HRS UTC) - Signal 3
-http://play.sportsteam368.com/play/j.php?id=22500488&id2=
-#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/07/11/8bb48bdd8172919940ecf05b9c968c94.jpg" group-title="Basketball",Toronto Raptors vs Atlanta Hawks (0030HRS UTC) - Signal 4
 http://play.sportsteam368.com/play/pao.php?id=38667022&id2=
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/07/11/8bb48bdd8172919940ecf05b9c968c94.jpg" group-title="Basketball",Toronto Raptors vs Atlanta Hawks (0030HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/kbs.html?id=10022500488&id2=
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/07/11/8bb48bdd8172919940ecf05b9c968c94.jpg" group-title="Basketball",Toronto Raptors vs Atlanta Hawks (0030HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/j.php?id=22500488&id2=
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/ad072ba484d02766b45fee8456c24a4d.jpg" group-title="Basketball",New York Knicks vs Philadelphia 76ers (0030HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_011/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/ad072ba484d02766b45fee8456c24a4d.jpg" group-title="Basketball",New York Knicks vs Philadelphia 76ers (0030HRS UTC) - Signal 2
@@ -60,32 +60,40 @@ http://play.sportsteam368.com/play/kbs.html?id=vl&id2=
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/9137a4010c1778aa15dd16af2754fee4.jpg" group-title="Basketball",LA Clippers vs Boston Celtics (0330HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_022/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/9137a4010c1778aa15dd16af2754fee4.jpg" group-title="Basketball",LA Clippers vs Boston Celtics (0330HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/pao.php?id=38670302&id2=
-#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/9137a4010c1778aa15dd16af2754fee4.jpg" group-title="Basketball",LA Clippers vs Boston Celtics (0330HRS UTC) - Signal 3
-http://play.sportsteam368.com/play/i11.html?id=10022500493&id2=
-#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/9137a4010c1778aa15dd16af2754fee4.jpg" group-title="Basketball",LA Clippers vs Boston Celtics (0330HRS UTC) - Signal 4
 http://nba.toutiaozb.com/qq/qq-kbs.html?matchliveid=1392481900
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/9137a4010c1778aa15dd16af2754fee4.jpg" group-title="Basketball",LA Clippers vs Boston Celtics (0330HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/pao.php?id=38670302&id2=
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/9137a4010c1778aa15dd16af2754fee4.jpg" group-title="Basketball",LA Clippers vs Boston Celtics (0330HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/i11.html?id=10022500493&id2=
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/f68155b786a908a3b1d44512702d38f4.jpg" group-title="Football",Lazio vs Napoli (1130HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_023/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/f68155b786a908a3b1d44512702d38f4.jpg" group-title="Football",Lazio vs Napoli (1130HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/wlive.php?id=7d518b5cb460f7d0c1552b55cafd590d&id2=
-#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/f68155b786a908a3b1d44512702d38f4.jpg" group-title="Football",Lazio vs Napoli (1130HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/kbs.html?id=962098871&id2=
-#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/f68155b786a908a3b1d44512702d38f4.jpg" group-title="Football",Lazio vs Napoli (1130HRS UTC) - Signal 4
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/f68155b786a908a3b1d44512702d38f4.jpg" group-title="Football",Lazio vs Napoli (1130HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/pao.php?id=43396591&id2=
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/f68155b786a908a3b1d44512702d38f4.jpg" group-title="Football",Lazio vs Napoli (1130HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/wlive.php?id=7d518b5cb460f7d0c1552b55cafd590d&id2=
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/09/dd4ec91feab8542877dd0549a9f37116.jpg" group-title="Football",Leeds United vs Manchester United (1230HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_020/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/09/dd4ec91feab8542877dd0549a9f37116.jpg" group-title="Football",Leeds United vs Manchester United (1230HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/wlive.php?id=0fe35cf26051f3bbfbc3605a4a51c02c&id2=
-#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/09/dd4ec91feab8542877dd0549a9f37116.jpg" group-title="Football",Leeds United vs Manchester United (1230HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/wlive.php?id=9b5363c89e2f7984c76cbbbfaf389772&id2=
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/09/dd4ec91feab8542877dd0549a9f37116.jpg" group-title="Football",Leeds United vs Manchester United (1230HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/wlive.php?id=0fe35cf26051f3bbfbc3605a4a51c02c&id2=
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/09/dd4ec91feab8542877dd0549a9f37116.jpg" group-title="Football",Leeds United vs Manchester United (1230HRS UTC) - Signal 4
 http://play.sportsteam368.com/play/kbs.html?id=962098900&id2=
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/5f8cdaa20efa4e9c33ae66823a28e873.jpg" group-title="Football",Sevilla vs Levante (1300HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_014/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/5f8cdaa20efa4e9c33ae66823a28e873.jpg" group-title="Football",Sevilla vs Levante (1300HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/pao.php?id=43585401&id2=
-#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/5f8cdaa20efa4e9c33ae66823a28e873.jpg" group-title="Football",Sevilla vs Levante (1300HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/kbs.html?id=962098965&id2=
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/5f8cdaa20efa4e9c33ae66823a28e873.jpg" group-title="Football",Sevilla vs Levante (1300HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/pao.php?id=43585401&id2=
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/5f8cdaa20efa4e9c33ae66823a28e873.jpg" group-title="Football",Sevilla vs Levante (1300HRS UTC) - Signal 4
 http://play.sportsteam368.com/play/wlive.php?id=386ad40abcb07e5094eadab217222ce5&id2=
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/9e1d809547b78f610f9995f0a8a51768.jpg" group-title="Football",Marseille vs Nantes (1400HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_016/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/9e1d809547b78f610f9995f0a8a51768.jpg" group-title="Football",Marseille vs Nantes (1400HRS UTC) - Signal 2
+http://tv.cctv.com/live/cctv5plus/
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/9e1d809547b78f610f9995f0a8a51768.jpg" group-title="Football",Marseille vs Nantes (1400HRS UTC) - Signal 3
+https://www.yangshipin.cn/tv/home?pid=600001817
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/9e1d809547b78f610f9995f0a8a51768.jpg" group-title="Football",Marseille vs Nantes (1400HRS UTC) - Signal 4
+http://sports.cctv.com/H5/CCTV5plus/index.shtml
