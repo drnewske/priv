@@ -34,19 +34,19 @@ http://sports.cctv.com/H5/CCTV5/index.shtml
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/436aa9a0fcae220c73838a390ec1d320.jpg" group-title="Basketball",Oklahoma City Thunder vs Charlotte Hornets (0100HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_014/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/436aa9a0fcae220c73838a390ec1d320.jpg" group-title="Basketball",Oklahoma City Thunder vs Charlotte Hornets (0100HRS UTC) - Signal 2
-http://nba.toutiaozb.com/qq/qq-kbs.html?matchliveid=1777210300
-#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/436aa9a0fcae220c73838a390ec1d320.jpg" group-title="Basketball",Oklahoma City Thunder vs Charlotte Hornets (0100HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/i11.html?id=10022500506&id2=
-#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/436aa9a0fcae220c73838a390ec1d320.jpg" group-title="Basketball",Oklahoma City Thunder vs Charlotte Hornets (0100HRS UTC) - Signal 4
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/436aa9a0fcae220c73838a390ec1d320.jpg" group-title="Basketball",Oklahoma City Thunder vs Charlotte Hornets (0100HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/pao.php?id=38664392&id2=
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/436aa9a0fcae220c73838a390ec1d320.jpg" group-title="Basketball",Oklahoma City Thunder vs Charlotte Hornets (0100HRS UTC) - Signal 4
+http://nba.toutiaozb.com/qq/qq-kbs.html?matchliveid=1777210300
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/07/05/62d36f0d4a32a3f1777aea498a246fb6.jpg" group-title="Basketball",Philadelphia 76ers vs Denver Nuggets (0130HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_011/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/07/05/62d36f0d4a32a3f1777aea498a246fb6.jpg" group-title="Basketball",Philadelphia 76ers vs Denver Nuggets (0130HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/pao.php?id=38663332&id2=
-#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/07/05/62d36f0d4a32a3f1777aea498a246fb6.jpg" group-title="Basketball",Philadelphia 76ers vs Denver Nuggets (0130HRS UTC) - Signal 3
-http://play.sportsteam368.com/play/kbs.html?id=10022500507&id2=
-#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/07/05/62d36f0d4a32a3f1777aea498a246fb6.jpg" group-title="Basketball",Philadelphia 76ers vs Denver Nuggets (0130HRS UTC) - Signal 4
 http://play.sportsteam368.com/play/j.php?id=22500507&id2=
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/07/05/62d36f0d4a32a3f1777aea498a246fb6.jpg" group-title="Basketball",Philadelphia 76ers vs Denver Nuggets (0130HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/pao.php?id=38663332&id2=
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/07/05/62d36f0d4a32a3f1777aea498a246fb6.jpg" group-title="Basketball",Philadelphia 76ers vs Denver Nuggets (0130HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/kbs.html?id=10022500507&id2=
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/07/11/f3b1f689ec21d7e2add83c042350f913.jpg" group-title="Basketball",Portland Trail Blazers vs Utah Jazz (0300HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_022/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/07/11/f3b1f689ec21d7e2add83c042350f913.jpg" group-title="Basketball",Portland Trail Blazers vs Utah Jazz (0300HRS UTC) - Signal 2
@@ -73,3 +73,11 @@ http://play.sportsteam368.com/play/gm.php?id=962108234&id2=962108234
 http://play.sportsteam368.com/play/wlive.php?id=9b5363c89e2f7984c76cbbbfaf389772&id2=
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/09/02/aab9dbe4f77fcd3b697603d986ba83c2.jpg" group-title="Football",Algeria vs DR Congo (1600HRS UTC)
 https://live-en.aisports.cc/moviebox/device01/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/31ff2dc58a0e2e7bc50c67ddf265ddc8.jpg" group-title="Football",Lecce vs AS Roma (1700HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_020/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/31ff2dc58a0e2e7bc50c67ddf265ddc8.jpg" group-title="Football",Lecce vs AS Roma (1700HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/pao.php?id=43396761&id2=
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/31ff2dc58a0e2e7bc50c67ddf265ddc8.jpg" group-title="Football",Lecce vs AS Roma (1700HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/wlive.php?id=386ad40abcb07e5094eadab217222ce5&id2=
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/31ff2dc58a0e2e7bc50c67ddf265ddc8.jpg" group-title="Football",Lecce vs AS Roma (1700HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/kbs.html?id=962108261&id2=
