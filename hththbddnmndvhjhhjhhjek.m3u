@@ -26,11 +26,11 @@ http://play.sportsteam368.com/play/kbs.html?id=vl&id2=
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/59a17e8c9b3fba8828afac280548d09a.jpg" group-title="Basketball",Chicago Bulls vs Dallas Mavericks (0100HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_019/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/59a17e8c9b3fba8828afac280548d09a.jpg" group-title="Basketball",Chicago Bulls vs Dallas Mavericks (0100HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/kbs.html?id=10022500546&id2=
-#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/59a17e8c9b3fba8828afac280548d09a.jpg" group-title="Basketball",Chicago Bulls vs Dallas Mavericks (0100HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/pao.php?id=38666562&id2=
-#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/59a17e8c9b3fba8828afac280548d09a.jpg" group-title="Basketball",Chicago Bulls vs Dallas Mavericks (0100HRS UTC) - Signal 4
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/59a17e8c9b3fba8828afac280548d09a.jpg" group-title="Basketball",Chicago Bulls vs Dallas Mavericks (0100HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/j.php?id=22500546&id2=
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/59a17e8c9b3fba8828afac280548d09a.jpg" group-title="Basketball",Chicago Bulls vs Dallas Mavericks (0100HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/kbs.html?id=10022500546&id2=
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/07/05/0bcdcb0109598444b15d9179fdaf555b.jpg" group-title="Basketball",Utah Jazz vs Charlotte Hornets (0230HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_020/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/07/05/0bcdcb0109598444b15d9179fdaf555b.jpg" group-title="Basketball",Utah Jazz vs Charlotte Hornets (0230HRS UTC) - Signal 2
@@ -59,3 +59,11 @@ http://play.sportsteam368.com/play/wlive.php?id=386ad40abcb07e5094eadab217222ce5
 http://play.sportsteam368.com/play/kbs.html?id=962266388&id2=
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/09/19/a64b09f48180009fa4b9bdffa3b760b8.png" group-title="Cricket",Sri Lanka vs Pakistan (1330HRS UTC)
 https://live-en.aisports.cc/moviebox/football001/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/0b1a2aba997722da1239f25d04d9d088.jpg" group-title="Football",Fiorentina vs AC Milan (1400HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_027/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/0b1a2aba997722da1239f25d04d9d088.jpg" group-title="Football",Fiorentina vs AC Milan (1400HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/wlive.php?id=797d148d5ed5e1f03a9fd06a962f6d1a&id2=
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/0b1a2aba997722da1239f25d04d9d088.jpg" group-title="Football",Fiorentina vs AC Milan (1400HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/kbs.html?id=962264256&id2=
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/0b1a2aba997722da1239f25d04d9d088.jpg" group-title="Football",Fiorentina vs AC Milan (1400HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/wlive.php?id=7bc6360e3a553dd1144597a1d435a902&id2=
