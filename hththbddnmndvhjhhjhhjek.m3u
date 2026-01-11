@@ -44,11 +44,11 @@ https://live-en.aisports.cc/moviebox/device01/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/31ff2dc58a0e2e7bc50c67ddf265ddc8.jpg" group-title="Football",Lecce vs Parma (1130HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_022/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/31ff2dc58a0e2e7bc50c67ddf265ddc8.jpg" group-title="Football",Lecce vs Parma (1130HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/gm.php?id=962264116&id2=962264116
-#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/31ff2dc58a0e2e7bc50c67ddf265ddc8.jpg" group-title="Football",Lecce vs Parma (1130HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/wlive.php?id=7d518b5cb460f7d0c1552b55cafd590d&id2=
-#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/31ff2dc58a0e2e7bc50c67ddf265ddc8.jpg" group-title="Football",Lecce vs Parma (1130HRS UTC) - Signal 4
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/31ff2dc58a0e2e7bc50c67ddf265ddc8.jpg" group-title="Football",Lecce vs Parma (1130HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/kbs.html?id=962264116&id2=
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/31ff2dc58a0e2e7bc50c67ddf265ddc8.jpg" group-title="Football",Lecce vs Parma (1130HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/gm.php?id=962264116&id2=962264116
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/fdab97f36e5ab15b9bf58f42eab77271.jpg" group-title="Football",Rayo Vallecano vs Mallorca (1300HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_023/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/fdab97f36e5ab15b9bf58f42eab77271.jpg" group-title="Football",Rayo Vallecano vs Mallorca (1300HRS UTC) - Signal 2
@@ -62,11 +62,11 @@ https://live-en.aisports.cc/moviebox/football001/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/0b1a2aba997722da1239f25d04d9d088.jpg" group-title="Football",Fiorentina vs AC Milan (1400HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_027/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/0b1a2aba997722da1239f25d04d9d088.jpg" group-title="Football",Fiorentina vs AC Milan (1400HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/wlive.php?id=797d148d5ed5e1f03a9fd06a962f6d1a&id2=
-#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/0b1a2aba997722da1239f25d04d9d088.jpg" group-title="Football",Fiorentina vs AC Milan (1400HRS UTC) - Signal 3
-http://play.sportsteam368.com/play/wlive.php?id=7bc6360e3a553dd1144597a1d435a902&id2=
-#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/0b1a2aba997722da1239f25d04d9d088.jpg" group-title="Football",Fiorentina vs AC Milan (1400HRS UTC) - Signal 4
 http://play.sportsteam368.com/play/kbs.html?id=962264256&id2=
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/0b1a2aba997722da1239f25d04d9d088.jpg" group-title="Football",Fiorentina vs AC Milan (1400HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/wlive.php?id=797d148d5ed5e1f03a9fd06a962f6d1a&id2=
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/0b1a2aba997722da1239f25d04d9d088.jpg" group-title="Football",Fiorentina vs AC Milan (1400HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/wlive.php?id=7bc6360e3a553dd1144597a1d435a902&id2=
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/08129954254217b9def84f92073a60b7.jpg" group-title="Football",Borussia M'gladbach vs Augsburg (1430HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_014/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/08129954254217b9def84f92073a60b7.jpg" group-title="Football",Borussia M'gladbach vs Augsburg (1430HRS UTC) - Signal 2
@@ -86,11 +86,11 @@ http://play.sportsteam368.com/play/kbs.html?id=962266302&id2=
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/03/13/ffa1d99413b724f13576e532e9e3de02.jpg" group-title="Football",Bayern Munich vs Wolfsburg (1630HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_023/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/03/13/ffa1d99413b724f13576e532e9e3de02.jpg" group-title="Football",Bayern Munich vs Wolfsburg (1630HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/kbs.html?id=962265136&id2=
-#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/03/13/ffa1d99413b724f13576e532e9e3de02.jpg" group-title="Football",Bayern Munich vs Wolfsburg (1630HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/gm.php?id=962265136&id2=962265136
-#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/03/13/ffa1d99413b724f13576e532e9e3de02.jpg" group-title="Football",Bayern Munich vs Wolfsburg (1630HRS UTC) - Signal 4
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/03/13/ffa1d99413b724f13576e532e9e3de02.jpg" group-title="Football",Bayern Munich vs Wolfsburg (1630HRS UTC) - Signal 3
 http://play.sportsteam368.com/play/wlive.php?id=9bdd05274eb9f77aa3a17ec29d78bf6c&id2=
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/03/13/ffa1d99413b724f13576e532e9e3de02.jpg" group-title="Football",Bayern Munich vs Wolfsburg (1630HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/kbs.html?id=962265136&id2=
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/03/13/63eba0d48bad5073adf9e89d659741ba.jpg" group-title="Football",Manchester United vs Brighton (1630HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_020/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/03/13/63eba0d48bad5073adf9e89d659741ba.jpg" group-title="Football",Manchester United vs Brighton (1630HRS UTC) - Signal 2
@@ -105,3 +105,11 @@ http://play.sportsteam368.com/play/gm.php?id=962265065&id2=962265065
 http://play.sportsteam368.com/play/wlive.php?id=3d15af073d4e35f729ceae014c784f60&id2=
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/bb10a751f09abfea3e43d45266cf5ebf.jpg" group-title="Football",Hellas Verona vs Lazio (1700HRS UTC) - Signal 4
 http://play.sportsteam368.com/play/kbs.html?id=962265065&id2=
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/03/13/8de4ac6c3083c5f34fce9d7a2a5ebc21.jpg" group-title="Football",Inter vs Napoli (1945HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_011/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/03/13/8de4ac6c3083c5f34fce9d7a2a5ebc21.jpg" group-title="Football",Inter vs Napoli (1945HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/kbs.html?id=962265162&id2=
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/03/13/8de4ac6c3083c5f34fce9d7a2a5ebc21.jpg" group-title="Football",Inter vs Napoli (1945HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/wlive.php?id=6ffb12c0fdafe1e426fc045fcda6002d&id2=
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/03/13/8de4ac6c3083c5f34fce9d7a2a5ebc21.jpg" group-title="Football",Inter vs Napoli (1945HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/wlive.php?id=5f17fed4e9a297013fbd001449e3aeef&id2=
