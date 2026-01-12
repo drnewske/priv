@@ -3,16 +3,16 @@
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_011/playlist.m3u8",
       "http://play.sportsteam368.com/play/kbs.html?id=962266145&id2=",
-      "http://play.sportsteam368.com/play/wlive.php?id=f97d4facba7ac22ebd5d4f7fd8dcf25d&id2=",
-      "http://play.sportsteam368.com/play/gm.php?id=962266145&id2=962266145"
+      "http://play.sportsteam368.com/play/gm.php?id=962266145&id2=962266145",
+      "http://play.sportsteam368.com/play/wlive.php?id=f97d4facba7ac22ebd5d4f7fd8dcf25d&id2="
     ]
   },
   "4677364182114881616": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_019/playlist.m3u8",
+      "http://play.sportsteam368.com/play/wlive.php?id=0fe35cf26051f3bbfbc3605a4a51c02c&id2=",
       "http://play.sportsteam368.com/play/kbs.html?id=962265510&id2=",
-      "http://play.sportsteam368.com/play/gm.php?id=962265510&id2=962265510",
-      "http://play.sportsteam368.com/play/wlive.php?id=0fe35cf26051f3bbfbc3605a4a51c02c&id2="
+      "http://play.sportsteam368.com/play/gm.php?id=962265510&id2=962265510"
     ]
   },
   "4963551560435384528": {
@@ -42,17 +42,17 @@
   "1396700655557951696": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_016/playlist.m3u8",
+      "http://play.sportsteam368.com/play/kbs.html?id=10022500555&id2=",
       "http://play.sportsteam368.com/play/j.php?id=22500555&id2=",
-      "http://play.sportsteam368.com/play/pao.php?id=38671132&id2=",
-      "http://play.sportsteam368.com/play/kbs.html?id=10022500555&id2="
+      "http://play.sportsteam368.com/play/pao.php?id=38671132&id2="
     ]
   },
   "99663962875248848": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_019/playlist.m3u8",
-      "http://play.sportsteam368.com/play/j.php?id=22500553&id2=",
       "http://play.sportsteam368.com/play/pao.php?id=38668972&id2=",
-      "http://play.sportsteam368.com/play/kbs.html?id=10022500553&id2="
+      "http://play.sportsteam368.com/play/kbs.html?id=10022500553&id2=",
+      "http://play.sportsteam368.com/play/j.php?id=22500553&id2="
     ]
   },
   "1901103813823546728": {
