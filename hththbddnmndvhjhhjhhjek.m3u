@@ -2,11 +2,11 @@
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/1ad5a70eba4b27dbd61eba60743de1ea.jpg" group-title="Basketball",Indiana Pacers vs New Orleans Pelicans (0000HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_020/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/1ad5a70eba4b27dbd61eba60743de1ea.jpg" group-title="Basketball",Indiana Pacers vs New Orleans Pelicans (0000HRS UTC) - Signal 2
-http://play.sportsteam368.com/play/j.php?id=22500588&id2=
-#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/1ad5a70eba4b27dbd61eba60743de1ea.jpg" group-title="Basketball",Indiana Pacers vs New Orleans Pelicans (0000HRS UTC) - Signal 3
-http://play.sportsteam368.com/play/kbs.html?id=10022500588&id2=
-#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/1ad5a70eba4b27dbd61eba60743de1ea.jpg" group-title="Basketball",Indiana Pacers vs New Orleans Pelicans (0000HRS UTC) - Signal 4
 http://play.sportsteam368.com/play/pao.php?id=38669042&id2=
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/1ad5a70eba4b27dbd61eba60743de1ea.jpg" group-title="Basketball",Indiana Pacers vs New Orleans Pelicans (0000HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/j.php?id=22500588&id2=
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/1ad5a70eba4b27dbd61eba60743de1ea.jpg" group-title="Basketball",Indiana Pacers vs New Orleans Pelicans (0000HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/kbs.html?id=10022500588&id2=
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/07/05/62d36f0d4a32a3f1777aea498a246fb6.jpg" group-title="Basketball",Philadelphia 76ers vs Cleveland Cavaliers (0000HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_016/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/07/05/62d36f0d4a32a3f1777aea498a246fb6.jpg" group-title="Basketball",Philadelphia 76ers vs Cleveland Cavaliers (0000HRS UTC) - Signal 2
@@ -34,11 +34,11 @@ http://play.sportsteam368.com/play/kbs.html?id=10022500590&id2=
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/7c0607c7dcfc3d3749b75e2c5ff02f91.jpg" group-title="Basketball",Houston Rockets vs Minnesota Timberwolves (0230HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_019/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/7c0607c7dcfc3d3749b75e2c5ff02f91.jpg" group-title="Basketball",Houston Rockets vs Minnesota Timberwolves (0230HRS UTC) - Signal 2
-https://www.yangshipin.cn/tv/home?pid=600001818
-#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/7c0607c7dcfc3d3749b75e2c5ff02f91.jpg" group-title="Basketball",Houston Rockets vs Minnesota Timberwolves (0230HRS UTC) - Signal 3
 http://sports.cctv.com/H5/CCTV5/index.shtml
-#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/7c0607c7dcfc3d3749b75e2c5ff02f91.jpg" group-title="Basketball",Houston Rockets vs Minnesota Timberwolves (0230HRS UTC) - Signal 4
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/7c0607c7dcfc3d3749b75e2c5ff02f91.jpg" group-title="Basketball",Houston Rockets vs Minnesota Timberwolves (0230HRS UTC) - Signal 3
 http://tv.cctv.com/live/cctv5/
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/7c0607c7dcfc3d3749b75e2c5ff02f91.jpg" group-title="Basketball",Houston Rockets vs Minnesota Timberwolves (0230HRS UTC) - Signal 4
+https://www.yangshipin.cn/tv/home?pid=600001818
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/a15f7cf0acb7d08990880dc4396115d3.jpg" group-title="Basketball",Sacramento Kings vs Washington Wizards (0300HRS UTC) - Signal 1
 https://live-en.aisports.cc/moviebox/bsy_016/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/a15f7cf0acb7d08990880dc4396115d3.jpg" group-title="Basketball",Sacramento Kings vs Washington Wizards (0300HRS UTC) - Signal 2
@@ -47,3 +47,5 @@ http://play.sportsteam368.com/play/pao.php?id=38662342&id2=
 http://play.sportsteam368.com/play/mgxl.php?id=962279888&id2=
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/05/21/a15f7cf0acb7d08990880dc4396115d3.jpg" group-title="Basketball",Sacramento Kings vs Washington Wizards (0300HRS UTC) - Signal 4
 http://play.sportsteam368.com/play/i11.html?id=10022500592&id2=
+#EXTINF:-1 tvg-logo="https://pacdn.aoneroom.com/image/2025/10/14/58e740986f82637508e8c08fce6a041d.png" group-title="Cricket",UP Warriorz vs Mumbai Indians W (0930HRS UTC)
+https://live-en.aisports.cc/moviebox/device01/playlist.m3u8

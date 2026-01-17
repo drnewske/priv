@@ -1,4 +1,9 @@
 {
+  "4878198353966811000": {
+    "streams": [
+      "https://live-en.aisports.cc/moviebox/device01/playlist.m3u8"
+    ]
+  },
   "4265493618193057040": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_016/playlist.m3u8",
@@ -10,9 +15,9 @@
   "8444834072392777936": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_019/playlist.m3u8",
-      "https://www.yangshipin.cn/tv/home?pid=600001818",
       "http://sports.cctv.com/H5/CCTV5/index.shtml",
-      "http://tv.cctv.com/live/cctv5/"
+      "http://tv.cctv.com/live/cctv5/",
+      "https://www.yangshipin.cn/tv/home?pid=600001818"
     ]
   },
   "590556322258632912": {
@@ -34,9 +39,9 @@
   "7796315726051426512": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_020/playlist.m3u8",
+      "http://play.sportsteam368.com/play/pao.php?id=38669042&id2=",
       "http://play.sportsteam368.com/play/j.php?id=22500588&id2=",
-      "http://play.sportsteam368.com/play/kbs.html?id=10022500588&id2=",
-      "http://play.sportsteam368.com/play/pao.php?id=38669042&id2="
+      "http://play.sportsteam368.com/play/kbs.html?id=10022500588&id2="
     ]
   },
   "446441134182876520": {
