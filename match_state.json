@@ -2,8 +2,8 @@
   "8001229509096784080": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_016/playlist.m3u8",
-      "http://play.sportsteam368.com/play/j.php?id=22500612&id2=",
       "http://play.sportsteam368.com/play/kbs.html?id=10022500612&id2=",
+      "http://play.sportsteam368.com/play/j.php?id=22500612&id2=",
       "http://play.sportsteam368.com/play/kbs.html?id=vl&id2="
     ]
   },
@@ -34,17 +34,17 @@
   "795470105304089960": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_011/playlist.m3u8",
+      "http://nba.toutiaozb.com/qq/qq-kbs.html?matchliveid=1392815200",
       "http://play.sportsteam368.com/play/pao.php?id=38669712&id2=",
-      "http://play.sportsteam368.com/play/i11.html?id=10022500611&id2=",
-      "http://nba.toutiaozb.com/qq/qq-kbs.html?matchliveid=1392815200"
+      "http://play.sportsteam368.com/play/i11.html?id=10022500611&id2="
     ]
   },
   "3461601084707324112": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_027/playlist.m3u8",
-      "http://play.sportsteam368.com/play/j.php?id=22500016&id2=",
       "http://play.sportsteam368.com/play/kbs.html?id=10022500016&id2=",
-      "http://play.sportsteam368.com/play/pao.php?id=38655092&id2="
+      "http://play.sportsteam368.com/play/pao.php?id=38655092&id2=",
+      "http://play.sportsteam368.com/play/j.php?id=22500016&id2="
     ]
   }
 }
