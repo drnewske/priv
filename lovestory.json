@@ -63,6 +63,46 @@
       "type": "m3u",
       "url": "http://fastream.xyz:8080/get.php?username=92077750&password=fyvg4651&type=m3u_plus",
       "server_url": null
+    },
+     {
+      "id": "featured_m3u_09",
+      "name": "OR001",
+      "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/myicon.png",
+      "type": "m3u",
+      "url": "http://linkapprota1.store:8080/get.php?username=muniqueiribeiibpt1&password=41a7nyvk&type=m3u_plus",
+      "server_url": null
+    },
+     {
+      "id": "featured_m3u_10",
+      "name": "OR002",
+      "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/myicon.png",
+      "type": "m3u",
+      "url": "http://linkapprota1.store:8080/get.php?username=M1A2R3I4A5H&password=@M03A09L14a&type=m3u_plus",
+      "server_url": null
+    },
+     {
+      "id": "featured_m3u_11",
+      "name": "OR003",
+      "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/myicon.png",
+      "type": "m3u",
+      "url": "http://47465-inkjet.cdn-o2.me:80/get.php?username=dbcc635487&password=077c94e752f4&type=m3u_plus",
+      "server_url": null
+    },
+    {
+      "id": "featured_m3u_12",
+      "name": "OR004",
+      "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/myicon.png",
+      "type": "m3u",
+      "url": "http://sansuygtv.site:80/get.php?username=Manuzinho1&password=Ma134%40&type=m3u_plus&output=m3u8",
+      "server_url": null
+    },
+    {
+      "id": "featured_m3u_13",
+      "name": "OR005",
+      "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/myicon.png",
+      "type": "m3u",
+      "url": "http://danger48352.cdn-akm.me:80/get.php?username=a86a98919675&password=e5243e7c2b&type=m3u_plus&output=m3u8",
+      "server_url": null
     }
   ]
 }
