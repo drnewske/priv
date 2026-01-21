@@ -57,3 +57,11 @@ https://www.yangshipin.cn/tv/home?pid=600001818
 http://sports.cctv.com/H5/CCTV5/index.shtml
 #EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/09/18/a94c2bbc54522e9f3e3116dc1bd0d497.png" group-title="Cricket",India vs New Zealand (1330HRS UTC)
 https://live-en.aisports.cc/moviebox/device01/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/191f5c2e20b5f46407422dcccb07ecb1.jpg" group-title="Football",Galatasaray vs Atletico Madrid (1745HRS UTC) - Signal 1
+https://live-en.aisports.cc/moviebox/bsy_019/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/191f5c2e20b5f46407422dcccb07ecb1.jpg" group-title="Football",Galatasaray vs Atletico Madrid (1745HRS UTC) - Signal 2
+http://play.sportsteam368.com/play/wlive.php?id=9b5363c89e2f7984c76cbbbfaf389772&id2=
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/191f5c2e20b5f46407422dcccb07ecb1.jpg" group-title="Football",Galatasaray vs Atletico Madrid (1745HRS UTC) - Signal 3
+http://play.sportsteam368.com/play/wlive.php?id=7d518b5cb460f7d0c1552b55cafd590d&id2=
+#EXTINF:-1 tvg-logo="https://pbcdn.aoneroom.com/image/2025/04/08/191f5c2e20b5f46407422dcccb07ecb1.jpg" group-title="Football",Galatasaray vs Atletico Madrid (1745HRS UTC) - Signal 4
+http://play.sportsteam368.com/play/pao.php?id=44153541&id2=
