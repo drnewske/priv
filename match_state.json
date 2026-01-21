@@ -1,4 +1,28 @@
 {
+  "3191385107065193744": {
+    "streams": [
+      "https://live-en.aisports.cc/moviebox/bsy_019/playlist.m3u8",
+      "http://play.sportsteam368.com/play/j.php?id=22500619&id2=",
+      "http://play.sportsteam368.com/play/kbs.html?id=10022500619&id2=",
+      "http://play.sportsteam368.com/play/pao.php?id=38664272&id2="
+    ]
+  },
+  "2849111535384936656": {
+    "streams": [
+      "https://live-en.aisports.cc/moviebox/bsy_022/playlist.m3u8",
+      "http://tv.cctv.com/live/cctv5/",
+      "http://sports.cctv.com/H5/CCTV5/index.shtml",
+      "https://www.yangshipin.cn/tv/home?pid=600001818"
+    ]
+  },
+  "5010839356522874216": {
+    "streams": [
+      "https://live-en.aisports.cc/moviebox/bsy_014/playlist.m3u8",
+      "http://play.sportsteam368.com/play/kbs.html?id=10022500616&id2=",
+      "http://play.sportsteam368.com/play/pao.php?id=38663202&id2=",
+      "http://play.sportsteam368.com/play/j.php?id=22500616&id2="
+    ]
+  },
   "7965200712077820112": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_016/playlist.m3u8",
@@ -10,17 +34,17 @@
   "5371127326712414416": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_020/playlist.m3u8",
-      "http://play.sportsteam368.com/play/j.php?id=22500614&id2=",
       "http://play.sportsteam368.com/play/pao.php?id=38664082&id2=",
-      "http://play.sportsteam368.com/play/kbs.html?id=10022500614&id2="
+      "http://play.sportsteam368.com/play/kbs.html?id=10022500614&id2=",
+      "http://play.sportsteam368.com/play/j.php?id=22500614&id2="
     ]
   },
   "4938781762484846800": {
     "streams": [
       "https://live-en.aisports.cc/moviebox/bsy_027/playlist.m3u8",
+      "http://play.sportsteam368.com/play/j.php?id=22500613&id2=",
       "http://play.sportsteam368.com/play/pao.php?id=38660862&id2=",
-      "http://play.sportsteam368.com/play/kbs.html?id=10022500613&id2=",
-      "http://play.sportsteam368.com/play/j.php?id=22500613&id2="
+      "http://play.sportsteam368.com/play/kbs.html?id=10022500613&id2="
     ]
   }
 }
