@@ -1,8 +1,8 @@
 {
   "featured_content": [
     {
-      "name": "22.01.2026",
-      "logo_url": "https://i.dailymail.co.uk/1s/2025/08/30/17/101692313-0-image-a-97_1756570796730.jpg",
+      "name": "O.R 001",
+      "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/myicon.png",
       "type": "m3u",
       "url": "https://priv-bc7.pages.dev/hththbddnmndvhjhhjhhjek.m3u",
       "server_url": null,
@@ -10,99 +10,107 @@
     },
     {
       "id": "featured_m3u_02",
-      "name": "2026(+nsfw)",
-      "logo_url": "https://media.cnn.com/api/v1/images/stellar/prod/2026-01-01t001810z-601298660-rc20siaikef8-rtrmadp-3-new-year-belgrade-fireworks.jpg?q=w_1576,c_fill",
-      "type": "m3u",
-      "url": "http://s1.dnspass.xyz/get.php?username=gzitmdrs&password=n63dp7Yq7C&type=m3u_plus&output=ts",
-      "server_url": null
-    },
-    {
-      "id": "featured_m3u_03",
-      "name": "IPTV-ORG",
-      "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm/logos/default.png",
+      "name": "O.R 002",
+      "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/myicon.png",
       "type": "m3u",
       "url": "https://iptv-org.github.io/iptv/index.m3u",
       "server_url": null
     },
     {
-      "id": "featured_m3u_04",
-      "name": "WINTERFELL",
-      "logo_url": "https://www.hollywoodreporter.com/wp-content/uploads/2016/09/winterfell.jpg?w=1296&h=730&crop=1",
+      "id": "featured_m3u_03",
+      "name": "O.R 003",
+      "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/myicon.png",
       "type": "m3u",
       "url": "http://supersonictv.live:8080/get.php?username=Sonya123&password=Sonya123&type=m3u_plus",
       "server_url": null
     },
     {
-      "id": "featured_m3u_05",
-      "name": "GHOST",
-      "logo_url": "https://i.cbc.ca/ais/1.3078255,1431974097000/full/max/0/default.jpg?im=Crop%2Crect%3D%280%2C91%2C400%2C225%29%3BResize%3D860",
+      "id": "featured_m3u_04",
+      "name": "O.R 004",
+      "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/myicon.png",
       "type": "m3u",
       "url": "https://m3u.prigoana.com/all.m3u",
       "server_url": null
     },
     {
-      "id": "featured_m3u_06",
-      "name": "ADELE",
-      "logo_url": "https://lastfm.freetls.fastly.net/i/u/avatar170s/9c1d4e3ebe6fca1fbb9885219774c259",
-      "type": "m3u",
-      "url": "https://play.searchtv.biz/",
-      "server_url": null
-    },
-    {
-      "id": "featured_m3u_07",
-      "name": "RAMSAY",
-      "logo_url": "https://www.washingtonpost.com/blogs/style-blog/files/2016/06/6add39821849853a542af7ddd92f7f518deb60d311a271dbbaf454c3670daa50848fca51983823aefe401a9c2500e4e9.jpeg",
-      "type": "m3u",
-      "url": "http://line.dream-4k.cc/get.php?username=81D299&password=33F742&type=m3u_plus",
-      "server_url": null
-    },
-    {
-      "id": "featured_m3u_08",
-      "name": "DROGON",
-      "logo_url": "https://cdn.mos.cms.futurecdn.net/srLNY8RKdWZ7SKXvwMceu-970-80.jpg.webp",
+      "id": "featured_m3u_05",
+      "name": "O.R 005",
+      "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/myicon.png",
       "type": "m3u",
       "url": "http://fastream.xyz:8080/get.php?username=92077750&password=fyvg4651&type=m3u_plus",
       "server_url": null
     },
     {
-      "id": "featured_m3u_09",
-      "name": "OR001",
+      "id": "featured_m3u_06",
+      "name": "O.R 006",
       "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/myicon.png",
       "type": "m3u",
       "url": "http://linkapprota1.store:8080/get.php?username=muniqueiribeiibpt1&password=41a7nyvk&type=m3u_plus",
       "server_url": null
     },
     {
-      "id": "featured_m3u_10",
-      "name": "OR002",
+      "name": "O.R 007",
       "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/myicon.png",
       "type": "m3u",
-      "url": "http://linkapprota1.store:8080/get.php?username=M1A2R3I4A5H&password=@M03A09L14a&type=m3u_plus",
-      "server_url": null
+      "url": "http://cinefull.space/get.php?username=649599711&password=178963868&type=m3u_plus",
+      "server_url": null,
+      "id": "featured_m3u_07"
     },
     {
-      "id": "featured_m3u_11",
-      "name": "OR003",
+      "name": "O.R 008",
       "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/myicon.png",
       "type": "m3u",
-      "url": "http://47465-inkjet.cdn-o2.me:80/get.php?username=dbcc635487&password=077c94e752f4&type=m3u_plus",
-      "server_url": null
+      "url": "http://canal-pro.xyz:8080/get.php?username=92mera45ku92sa46&password=72maxe529weda74&type=m3u",
+      "server_url": null,
+      "id": "featured_m3u_08"
     },
     {
-      "id": "featured_m3u_12",
-      "name": "OR004",
+      "name": "O.R 009",
       "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/myicon.png",
       "type": "m3u",
-      "url": "http://sansuygtv.site:80/get.php?username=Manuzinho1&password=Ma134%40&type=m3u_plus&output=m3u8",
-      "server_url": null
+      "url": "http://couchguy.club:80/get.php?username=Joshua754&password=Vk8KJG6VqFN3&type=m3u_plus&output=ts",
+      "server_url": null,
+      "id": "featured_m3u_09"
     },
     {
-      "id": "featured_m3u_13",
-      "name": "OR005",
+      "name": "O.R 010",
       "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/myicon.png",
       "type": "m3u",
-      "url": "http://danger48352.cdn-akm.me:80/get.php?username=a86a98919675&password=e5243e7c2b&type=m3u_plus&output=m3u8",
-      "server_url": null
+      "url": "http://s1.u-on.to:2095/get.php?username=kXW5bvkTcQ&password=CP7FMculpY&type=m3u_plus",
+      "server_url": null,
+      "id": "featured_m3u_10"
+    },
+    {
+      "name": "O.R 011",
+      "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/myicon.png",
+      "type": "m3u",
+      "url": "http://zafertv85.shop:8080/get.php?username=Nuko6423&password=hMtTb4hwmS&type=m3u_plus&output=m3u8",
+      "server_url": null,
+      "id": "featured_m3u_11"
+    },
+    {
+      "name": "O.R 012",
+      "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/myicon.png",
+      "type": "m3u",
+      "url": "http://ip.xtremetv.eu:8000/get.php?username=aGS2wdpW3F&password=QVpRzjJXIx&type=m3u_plus",
+      "server_url": null,
+      "id": "featured_m3u_12"
+    },
+    {
+      "name": "O.R 013",
+      "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/myicon.png",
+      "type": "m3u",
+      "url": "http://p6.iptvprivateserver.tv/get.php?username=V95278T9437C&password=2itljjFT53&type=m3u",
+      "server_url": null,
+      "id": "featured_m3u_13"
+    },
+    {
+      "name": "O.R 014",
+      "logo_url": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/myicon.png",
+      "type": "m3u",
+      "url": "http://cord-cutter.net:8080/get.php?username=fXc1eK&password=584976&type=m3u",
+      "server_url": null,
+      "id": "featured_m3u_14"
     }
   ]
 }
