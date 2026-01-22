@@ -4,7 +4,6 @@ import datetime
 import re
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse
-from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # --- CONFIGURATION ---
 JSON_FILE = "lovestory.json"
@@ -16,6 +15,8 @@ MAX_PROFILES = 100
 # Validation settings
 MIN_PLAYLIST_SIZE = 100  # Minimum bytes for valid playlist
 PLAYLIST_TIMEOUT = 12    # Seconds to wait for playlist download
+DAYS_TO_SCRAPE = 7       # Scrape articles from last 7 days
+MAX_ARTICLES = 10        # Maximum articles to scrape
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
@@ -58,7 +59,7 @@ def validate_playlist(url):
         print(f"  → Fetching playlist from {url[:60]}...")
         
         # Download the playlist (lightweight - just text content)
-        response = requests.get(url, headers=HEADERS, timeout=12, allow_redirects=True)
+        response = requests.get(url, headers=HEADERS, timeout=PLAYLIST_TIMEOUT, allow_redirects=True)
         
         # Check HTTP status
         if response.status_code >= 400:
@@ -104,34 +105,110 @@ def validate_playlist(url):
 def get_domain(url):
     return urlparse(url).netloc
 
+def extract_date_from_title(title):
+    """
+    Extract date from article titles like:
+    'Latest Free M3U IPTV Playlists | Updated Daily – 21-01-2026 | V2'
+    Returns datetime object or None
+    """
+    # Match patterns like: 21-01-2026, 19-01-2026, etc.
+    date_pattern = r'(\d{2})-(\d{2})-(\d{4})'
+    match = re.search(date_pattern, title)
+    
+    if match:
+        day, month, year = match.groups()
+        try:
+            return datetime.datetime(int(year), int(month), int(day))
+        except ValueError:
+            return None
+    return None
+
 def scrape_nino():
-    """Finds the latest article and extracts all unique links."""
+    """
+    Enhanced scraper that:
+    1. Finds articles from the last 7 days
+    2. Scrapes both regular and V2 versions
+    3. Extracts all unique playlist links
+    """
     print(f"\n--- STEP 1: ACCESSING {BASE_URL} ---")
+    all_links = []
+    
     try:
         r = requests.get(BASE_URL, headers=HEADERS, timeout=15)
         r.raise_for_status()
         soup = BeautifulSoup(r.text, 'html.parser')
         
-        latest_article_tag = soup.find('h2', class_='entry-title')
-        if not latest_article_tag:
-            print("FAILED: Could not find any articles on homepage.")
+        # Get current date
+        now = datetime.datetime.now()
+        cutoff_date = now - datetime.timedelta(days=DAYS_TO_SCRAPE)
+        
+        print(f"Looking for articles from {cutoff_date.strftime('%d-%m-%Y')} to {now.strftime('%d-%m-%Y')}")
+        
+        # Find all article titles
+        articles = soup.find_all('h2', class_='entry-title')
+        recent_articles = []
+        
+        for article_tag in articles[:MAX_ARTICLES]:
+            title_link = article_tag.find('a')
+            if not title_link:
+                continue
+                
+            title = title_link.get_text(strip=True)
+            url = title_link['href']
+            
+            # Extract date from title
+            article_date = extract_date_from_title(title)
+            
+            if article_date and article_date >= cutoff_date:
+                recent_articles.append({
+                    'title': title,
+                    'url': url,
+                    'date': article_date
+                })
+                print(f"  ✓ Found: {title}")
+        
+        if not recent_articles:
+            print("⚠ No recent articles found within date range")
             return []
         
-        article_url = latest_article_tag.find('a')['href']
-        print(f"Latest article identified: {article_url}")
+        print(f"\nFound {len(recent_articles)} recent articles to scrape")
         
-        r_art = requests.get(article_url, headers=HEADERS, timeout=15)
-        soup_art = BeautifulSoup(r_art.text, 'html.parser')
+        # Scrape each article for playlist links
+        for idx, article in enumerate(recent_articles, 1):
+            print(f"\n--- Scraping Article {idx}/{len(recent_articles)} ---")
+            print(f"Title: {article['title']}")
+            print(f"URL: {article['url']}")
+            
+            try:
+                r_art = requests.get(article['url'], headers=HEADERS, timeout=15)
+                soup_art = BeautifulSoup(r_art.text, 'html.parser')
+                
+                # Find all links in the article
+                article_links = []
+                for a in soup_art.find_all('a', href=True):
+                    href = a['href']
+                    # Only target actual playlist links
+                    if "get.php?username=" in href:
+                        article_links.append(href)
+                
+                # Remove duplicates within this article
+                unique_article_links = list(dict.fromkeys(article_links))
+                all_links.extend(unique_article_links)
+                
+                print(f"  → Extracted {len(unique_article_links)} playlist links")
+                
+            except Exception as e:
+                print(f"  ✗ Error scraping article: {e}")
+                continue
         
-        found_links = []
-        for a in soup_art.find_all('a', href=True):
-            href = a['href']
-            if "get.php?username=" in href:
-                found_links.append(href)
+        # Remove duplicates across all articles
+        unique_all_links = list(dict.fromkeys(all_links))
         
-        unique_scraped = list(dict.fromkeys(found_links))
-        print(f"Scraped {len(unique_scraped)} unique playlist links")
-        return unique_scraped
+        print(f"\n{'─' * 50}")
+        print(f"Total unique playlist links scraped: {len(unique_all_links)}")
+        print(f"{'─' * 50}")
+        
+        return unique_all_links
 
     except Exception as e:
         print(f"CRITICAL ERROR during scrape: {e}")
@@ -237,7 +314,7 @@ def main():
     with open(JSON_FILE, 'w') as f:
         json.dump(data, f, indent=2)
     
-    summary_msg = f"Sync Complete. Valid Profiles: {len(alive_list)} | Removed: {removed_count} | Validated with stream testing"
+    summary_msg = f"Sync Complete. Valid Profiles: {len(alive_list)} | Removed: {removed_count} | Validated with M3U testing"
     log_to_file(summary_msg)
     
     print(f"\n{'═' * 50}")
