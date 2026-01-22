@@ -183,14 +183,24 @@ def main():
         print(f"\n--- STEP 3: SEARCHING FOR NEW CONTENT ---")
         new_potential_links = scrape_nino()
         
+        # Track which domains we've successfully added from new scrape
+        validated_domains = set()
+        
         for idx, link in enumerate(new_potential_links, 1):
             if len(alive_list) >= MAX_PROFILES:
                 print("\n⚠ REACHED LIMIT: Stopping additions at 100.")
                 break
             
             domain = get_domain(link)
+            
+            # Skip if we already have a VALID playlist from this domain
             if domain in seen_domains:
-                print(f"\n[New {idx}/{len(new_potential_links)}] Skipping (domain exists): {link[:50]}...")
+                print(f"\n[New {idx}/{len(new_potential_links)}] Skipping (valid domain exists): {link[:50]}...")
+                continue
+            
+            # Skip if we already validated and added this domain in THIS scrape session
+            if domain in validated_domains:
+                print(f"\n[New {idx}/{len(new_potential_links)}] Skipping (already added from this domain): {link[:50]}...")
                 continue
             
             print(f"\n[New {idx}/{len(new_potential_links)}] Validating new playlist...")
@@ -207,6 +217,9 @@ def main():
                     "id": ""
                 })
                 seen_domains.add(domain)
+                validated_domains.add(domain)  # Mark this domain as successfully added
+            else:
+                print(f"  ✗ REJECTED: {reason} - will test other links from this domain")
 
     print(f"\n--- STEP 4: RE-INDEXING NAMES AND IDs ---")
     for i, item in enumerate(alive_list, start=1):
