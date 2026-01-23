@@ -1,35 +1,36 @@
 name: Daily IPTV Content Sync
-
 on:
   schedule:
-    - cron: '0 0 * * *'  # Runs at midnight UTC
-  workflow_dispatch:      # Manual trigger button in GitHub Actions tab
+    # Run at 6 AM UTC (adjust to your preferred time)
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+  push:  # Add this to test immediately
+    branches: [ main ]  # Replace 'main' with your default branch if different
 
 jobs:
   update-content:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Essential for the bot to push changes
+      contents: write
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-
+        
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
-
+          
       - name: Install Dependencies
         run: pip install requests beautifulsoup4
-
+        
       - name: Run Scraper and Cleaner
         run: python update_iptv.py
-
+        
       - name: Commit and Push Changes
         run: |
           git config --global user.name "O.R-Bot"
           git config --global user.email "bot@github.com"
           git add lovestory.json log.txt
-          # Only commit if there are actually changes to avoid workflow errors
-          git diff-index --quiet HEAD || git commit -m "O.R: Daily sync - $(date +'%Y-%m-%d')"
+          git diff-index --quiet HEAD || git commit -m "O.R: Daily sync - $(date +'%Y-%m-%d %H:%M:%S UTC')"
           git push
