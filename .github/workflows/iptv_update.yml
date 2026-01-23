@@ -2,7 +2,7 @@ name: Daily IPTV Content Sync
 on:
   schedule:
     # Run at 6 AM UTC (adjust to your preferred time)
-    - cron: '0 6 * * *'
+    - cron: '20 15 * * *'
   workflow_dispatch:
   push:  # Add this to test immediately
     branches: [ main ]  # Replace 'main' with your default branch if different
