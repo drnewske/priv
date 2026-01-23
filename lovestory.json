@@ -4,42 +4,42 @@
       "slot_id": 0,
       "name": "Westeros",
       "domain": "couchguy.club:80",
-      "channel_count": 256609,
+      "channel_count": 256632,
       "logo_url": "https://static.digitecgalaxus.ch/im/Files/2/1/1/3/9/7/9/6/game_of_thrones_intro_map_westeros_elastic21.jpeg?impolicy=teaser&resizeWidth=1000&resizeHeight=500",
       "type": "m3u",
       "url": "http://couchguy.club:80/get.php?username=Joshua754&password=Vk8KJG6VqFN3&type=m3u_plus&output=ts",
       "server_url": null,
       "id": "got_slot_01",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: couchguy.club:80"
     },
     {
       "slot_id": 1,
       "name": "Essos",
       "domain": "cinefull.space",
-      "channel_count": 265067,
+      "channel_count": 265221,
       "logo_url": "https://imgix.bustle.com/uploads/image/2017/7/12/4e391a2f-8663-4cdd-91eb-9102c5f731d7-52be1751932bb099d5d5650593df5807b50fc3fbbee7da6a556bd5d1d339f39a.jpg?w=800&h=532&fit=crop&crop=faces",
       "type": "m3u",
       "url": "http://cinefull.space/get.php?username=tainara2024&password=tainara2024&type=m3u_plus",
       "server_url": null,
       "id": "got_slot_02",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: cinefull.space"
     },
     {
       "slot_id": 2,
       "name": "Beyond the Wall",
       "domain": "zafertv85.shop:8080",
-      "channel_count": 64540,
+      "channel_count": 64634,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/2/27/706_Tormund_Beric_Sandor_Jon_Jorah_Gendry.jpg/revision/latest/scale-to-width-down/1000?cb=20170821092659",
       "type": "m3u",
       "url": "http://zafertv85.shop:8080/get.php?username=rkn5567&password=rkn.n30&type=m3u_plus&output=m3u8",
       "server_url": null,
       "id": "got_slot_03",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: zafertv85.shop:8080"
     },
     {
@@ -53,7 +53,7 @@
       "server_url": null,
       "id": "got_slot_04",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: canal-pro.xyz:8080"
     },
     {
@@ -67,7 +67,7 @@
       "server_url": null,
       "id": "got_slot_05",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: cord-cutter.net:8080"
     },
     {
@@ -81,21 +81,21 @@
       "server_url": null,
       "id": "got_slot_06",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: localiptv.site:85"
     },
     {
       "slot_id": 6,
       "name": "Castle Black",
       "domain": "qatarsky.live:8080",
-      "channel_count": 167837,
+      "channel_count": 167921,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/7/7b/Castle_Black.jpg/revision/latest/scale-to-width-down/1000?cb=20110920111941",
       "type": "m3u",
       "url": "http://qatarsky.live:8080/get.php?username=Niranjan3302&password=Niranjan5363&type=m3u_plus",
       "server_url": null,
       "id": "got_slot_07",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: qatarsky.live:8080"
     },
     {
@@ -109,7 +109,7 @@
       "server_url": null,
       "id": "got_slot_08",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: birdkick.xyz:83"
     },
     {
@@ -123,21 +123,21 @@
       "server_url": null,
       "id": "got_slot_09",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: Supersonictv.live:8080"
     },
     {
       "slot_id": 9,
       "name": "Casterly Rock",
       "domain": "server.iptvxxx.net:80",
-      "channel_count": 16791,
+      "channel_count": 16816,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/a/a8/Casterly-rock.png/revision/latest/scale-to-width-down/1000?cb=20170731025431",
       "type": "m3u",
       "url": "http://server.iptvxxx.net:80/get.php?username=010920&password=885112&type=m3u_plus",
       "server_url": null,
       "id": "got_slot_10",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: server.iptvxxx.net:80"
     },
     {
@@ -151,245 +151,245 @@
       "server_url": null,
       "id": "got_slot_11",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: supersonictv.live:8080"
     },
     {
       "slot_id": 11,
       "name": "Dorne",
       "domain": "porn-hub.streamtv.to:8080",
-      "channel_count": 25021,
+      "channel_count": 25022,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/f/f5/Dorne.png/revision/latest/scale-to-width-down/1000?cb=20120719190909",
       "type": "m3u",
       "url": "http://porn-hub.streamtv.to:8080/get.php?username=Wolfgang&password=5he6ERunyN&type=m3u_plus",
       "server_url": null,
       "id": "got_slot_12",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: porn-hub.streamtv.to:8080"
     },
     {
       "slot_id": 12,
       "name": "Braavos",
       "domain": "linkapprota1.store:8080",
-      "channel_count": 184063,
+      "channel_count": 184064,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/7/7b/Titan_of_Braavos.jpg/revision/latest/scale-to-width-down/1000?cb=20150504024857",
       "type": "m3u",
       "url": "http://linkapprota1.store:8080/get.php?username=muniqueiribeiibpt1&password=41a7nyvk&type=m3u_plus",
       "server_url": null,
       "id": "got_slot_13",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: linkapprota1.store:8080"
     },
     {
       "slot_id": 13,
       "name": "Meereen",
       "domain": "dnssp.site:80",
-      "channel_count": 259760,
+      "channel_count": 259769,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/8/89/Meereen.png/revision/latest/scale-to-width-down/1000?cb=20150328211743",
       "type": "m3u",
       "url": "http://dnssp.site:80/get.php?username=Fumang2122&password=Fsa54828287&type=m3u_plus&output=m3u8",
       "server_url": null,
       "id": "got_slot_14",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: dnssp.site:80"
     },
     {
       "slot_id": 14,
       "name": "Valyria",
       "domain": "dnssp.site:8080",
-      "channel_count": 259760,
+      "channel_count": 259769,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/1/19/Valyria_5x05_%284%29.png/revision/latest/scale-to-width-down/1000?cb=20150511133123",
       "type": "m3u",
       "url": "http://dnssp.site:8080/get.php?username=Fumang2122&password=Fsa54828287&type=m3u_plus&output=m3u8",
       "server_url": null,
       "id": "got_slot_15",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: dnssp.site:8080"
     },
     {
       "slot_id": 15,
       "name": "White Harbor",
       "domain": "x2caverinhas.store:80",
-      "channel_count": 257515,
+      "channel_count": 257524,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/1/1a/WhiteHarbor.jpg/revision/latest/scale-to-width-down/1000?cb=20140218212230",
       "type": "m3u",
       "url": "http://x2caverinhas.store:80/get.php?username=fred4291x2&password=asdjh097dc67&type=m3u_plus&output=m3u8",
       "server_url": null,
       "id": "got_slot_16",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: x2caverinhas.store:80"
     },
     {
       "slot_id": 16,
       "name": "Red Keep",
       "domain": "x2caverinhas.store:8080",
-      "channel_count": 257515,
+      "channel_count": 257524,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/7/71/S8_Red_Keep.jpg/revision/latest?cb=20190305171013",
       "type": "m3u",
       "url": "http://x2caverinhas.store:8080/get.php?username=fred4291x2&password=asdjh097dc67&type=m3u_plus&output=m3u8",
       "server_url": null,
       "id": "got_slot_17",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: x2caverinhas.store:8080"
     },
     {
       "slot_id": 17,
       "name": "Riverrun",
       "domain": "sansuygtv.site:80",
-      "channel_count": 259760,
+      "channel_count": 259769,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/6/66/Riverrun._battlements.png/revision/latest/scale-to-width-down/1000?cb=20160606102912",
       "type": "m3u",
       "url": "http://sansuygtv.site:80/get.php?username=Manuzinho1&password=Ma134%40&type=m3u_plus&output=m3u8",
       "server_url": null,
       "id": "got_slot_18",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: sansuygtv.site:80"
     },
     {
       "slot_id": 18,
       "name": "Harrenhal",
       "domain": "sansuygtv.site:8080",
-      "channel_count": 259760,
+      "channel_count": 259769,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/9/9b/Harrenhal.jpg/revision/latest/scale-to-width-down/1000?cb=20150328214605",
       "type": "m3u",
       "url": "http://sansuygtv.site:8080/get.php?username=Manuzinho1&password=Ma134%40&type=m3u_plus&output=m3u8",
       "server_url": null,
       "id": "got_slot_19",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: sansuygtv.site:8080"
     },
     {
       "slot_id": 19,
       "name": "Storm's End",
       "domain": "plus.newdns.world:8080",
-      "channel_count": 98066,
+      "channel_count": 98079,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/2/25/Storm%27s_End_Official_Guide.jpg/revision/latest?cb=20221024024717",
       "type": "m3u",
       "url": "http://plus.newdns.world:8080/get.php?username=OduLarge&password=UtKalQ6Vc7&type=m3u_plus&output=m3u8",
       "server_url": null,
       "id": "got_slot_20",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: plus.newdns.world:8080"
     },
     {
       "slot_id": 20,
       "name": "Oldtown",
       "domain": "protv65.shop:8080",
-      "channel_count": 49311,
+      "channel_count": 49405,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/0/01/BtD_AIH_Oldtown.png/revision/latest/scale-to-width-down/1000?cb=20220805155230",
       "type": "m3u",
       "url": "http://protv65.shop:8080/get.php?username=muhammed2134&password=Zafer145321&type=m3u_plus&output=m3u8",
       "server_url": null,
       "id": "got_slot_21",
       "last_changed": "2026-01-23 03:58:56",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Changed from protv65.shop:8080 to protv65.shop:8080"
     },
     {
       "slot_id": 21,
       "name": "The Citadel",
       "domain": "smartvtcl.site:80",
-      "channel_count": 257203,
+      "channel_count": 257212,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/4/4e/S06E10_-_The_Citadel.png/revision/latest?cb=20160627153650",
       "type": "m3u",
       "url": "http://smartvtcl.site:80/get.php?username=pitgir8&password=18981731705&type=m3u_plus&output=m3u8",
       "server_url": null,
       "id": "got_slot_22",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: smartvtcl.site:80"
     },
     {
       "slot_id": 22,
       "name": "The Iron Islands",
       "domain": "smartvtcl.site:8080",
-      "channel_count": 257203,
+      "channel_count": 257212,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/e/eb/Iron_Islands.png/revision/latest?cb=20120719194710",
       "type": "m3u",
       "url": "http://smartvtcl.site:8080/get.php?username=pitgir8&password=18981731705&type=m3u_plus&output=m3u8",
       "server_url": null,
       "id": "got_slot_23",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: smartvtcl.site:8080"
     },
     {
       "slot_id": 23,
       "name": "Pyke",
       "domain": "dns.empscf.com.br:80",
-      "channel_count": 257515,
+      "channel_count": 257524,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/9/9d/Pyke.jpg/revision/latest?cb=20120402161004",
       "type": "m3u",
       "url": "http://dns.empscf.com.br:80/get.php?username=Izaque&password=tv866965590&type=m3u_plus&output=m3u8",
       "server_url": null,
       "id": "got_slot_24",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: dns.empscf.com.br:80"
     },
     {
       "slot_id": 24,
       "name": "The Reach",
       "domain": "dns.empscf.com.br:8080",
-      "channel_count": 257515,
+      "channel_count": 257524,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/8/89/The_Reach.png/revision/latest/scale-to-width-down/1000?cb=20120719200419",
       "type": "m3u",
       "url": "http://dns.empscf.com.br:8080/get.php?username=Izaque&password=tv866965590&type=m3u_plus&output=m3u8",
       "server_url": null,
       "id": "got_slot_25",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: dns.empscf.com.br:8080"
     },
     {
       "slot_id": 25,
       "name": "The North",
       "domain": "vapnhaja.online:80",
-      "channel_count": 259760,
+      "channel_count": 259769,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/2/2b/Distant_Winterfell.jpg/revision/latest/scale-to-width-down/1000?cb=20220201081605",
       "type": "m3u",
       "url": "http://vapnhaja.online:80/get.php?username=19998728046&password=eli19734848&type=m3u_plus&output=m3u8",
       "server_url": null,
       "id": "got_slot_26",
       "last_changed": "2026-01-23 10:53:41",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Changed from vapnhaja.online:80 to vapnhaja.online:80"
     },
     {
       "slot_id": 26,
       "name": "The Iron Throne",
       "domain": "vapnhaja.online:8080",
-      "channel_count": 259760,
+      "channel_count": 259769,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/c/c8/Iron_throne.jpg/revision/latest/scale-to-width-down/1000?cb=20131005175755",
       "type": "m3u",
       "url": "http://vapnhaja.online:8080/get.php?username=19998728046&password=eli19734848&type=m3u_plus&output=m3u8",
       "server_url": null,
       "id": "got_slot_27",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: vapnhaja.online:8080"
     },
     {
       "slot_id": 27,
       "name": "The Red Woman",
       "domain": "zzt9k.xyz:8080",
-      "channel_count": 39203,
+      "channel_count": 39208,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/0/0d/The_night_is_dark_and_full_of_terrors.jpg/revision/latest/scale-to-width-down/1000?cb=20160802075640",
       "type": "m3u",
       "url": "http://zzt9k.xyz:8080/get.php?username=meltemkoray&password=9gm8CaAvCxonWx&type=m3u_plus&output=m3u8",
       "server_url": null,
       "id": "got_slot_28",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: zzt9k.xyz:8080"
     },
     {
@@ -403,7 +403,7 @@
       "server_url": null,
       "id": "got_slot_29",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: kazan-tv.com:8091"
     },
     {
@@ -417,7 +417,7 @@
       "server_url": null,
       "id": "got_slot_30",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: planettvweb.com:8091"
     },
     {
@@ -431,35 +431,35 @@
       "server_url": null,
       "id": "got_slot_31",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: esgtabertapi.top:8080"
     },
     {
       "slot_id": 31,
       "name": "The Free Cities",
       "domain": "ctcs.lol:443",
-      "channel_count": 8183,
+      "channel_count": 8181,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/3/38/Longbridge.png/revision/latest/scale-to-width-down/1000?cb=20150328214200",
       "type": "m3u",
       "url": "https://ctcs.lol:443/get.php?username=dagoombas&password=p4qPjEyYgDEj&type=m3u",
       "server_url": null,
       "id": "got_slot_32",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: ctcs.lol:443"
     },
     {
       "slot_id": 32,
       "name": "The Narrow Sea",
       "domain": "okstar.okfnm.xyz:443",
-      "channel_count": 17364,
+      "channel_count": 17992,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/6/6c/S04E10_-_Arya_%28on_the_ship%29.png/revision/latest/scale-to-width-down/1000?cb=20140618063538",
       "type": "m3u",
       "url": "https://okstar.okfnm.xyz:443/get.php?username=tee21483&password=R9weGnykq6w&type=m3u",
       "server_url": null,
       "id": "got_slot_33",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: okstar.okfnm.xyz:443"
     },
     {
@@ -473,7 +473,7 @@
       "server_url": null,
       "id": "got_slot_34",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: tvhomesmart.xyz:8080"
     },
     {
@@ -487,21 +487,21 @@
       "server_url": null,
       "id": "got_slot_35",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: tvpromas.com:2082"
     },
     {
       "slot_id": 35,
       "name": "Sunspear",
       "domain": "xc.tvset.top:80",
-      "channel_count": 180915,
+      "channel_count": 180906,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/b/b6/Sunspear-0.png/revision/latest?cb=20170918150538",
       "type": "m3u",
       "url": "http://xc.tvset.top:80/get.php?username=JosefAbela&password=6Wr8Cy3Q&type=m3u_plus",
       "server_url": null,
       "id": "got_slot_36",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: xc.tvset.top:80"
     },
     {
@@ -515,35 +515,35 @@
       "server_url": null,
       "id": "got_slot_37",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: 185.134.22.131:8080"
     },
     {
       "slot_id": 37,
       "name": "Balerion The Black Dread",
       "domain": "fivetv.org:25461",
-      "channel_count": 99943,
+      "channel_count": 99967,
       "logo_url": "https://staticg.sportskeeda.com/editor/2022/12/62cdf-16722910130058-1920.jpg",
       "type": "m3u",
       "url": "http://fivetv.org:25461/get.php?username=ANGEL21&password=mangel6543MA&type=m3u_plus&output=ts",
       "server_url": null,
       "id": "got_slot_38",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: fivetv.org:25461"
     },
     {
       "slot_id": 38,
       "name": "Qarth",
       "domain": "ip96.uk:8080",
-      "channel_count": 410378,
+      "channel_count": 410380,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/6/60/Qarth2.jpg/revision/latest/scale-to-width-down/1000?cb=20140422045311",
       "type": "m3u",
       "url": "http://ip96.uk:8080/get.php?username=H645668DH&password=7565848DHY&type=m3u_plus",
       "server_url": null,
       "id": "got_slot_39",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: ip96.uk:8080"
     },
     {
@@ -557,7 +557,7 @@
       "server_url": null,
       "id": "got_slot_40",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: vipwoaf.top:8080"
     },
     {
@@ -571,7 +571,7 @@
       "server_url": null,
       "id": "got_slot_41",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: esproutubb.top:8080"
     },
     {
@@ -585,7 +585,7 @@
       "server_url": null,
       "id": "got_slot_42",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: asterix-iptv.club:25461"
     },
     {
@@ -599,7 +599,7 @@
       "server_url": null,
       "id": "got_slot_43",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: caffe.link:25461"
     },
     {
@@ -613,7 +613,7 @@
       "server_url": null,
       "id": "got_slot_44",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: cms-portals.com"
     },
     {
@@ -627,7 +627,7 @@
       "server_url": null,
       "id": "got_slot_45",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: roi-tv.net:9000"
     },
     {
@@ -641,7 +641,7 @@
       "server_url": null,
       "id": "got_slot_46",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: sansatplus.net:88"
     },
     {
@@ -655,7 +655,7 @@
       "server_url": null,
       "id": "got_slot_47",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: iptvch.com:2082"
     },
     {
@@ -669,21 +669,21 @@
       "server_url": null,
       "id": "got_slot_48",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: world-service.us:8080"
     },
     {
       "slot_id": 48,
       "name": "The Lord of Light",
       "domain": "fastopen.live:8080",
-      "channel_count": 9872,
+      "channel_count": 9873,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/0/0e/Black_and_White_Lord_of_Light.jpg/revision/latest/scale-to-width-down/1000?cb=20150608200849",
       "type": "m3u",
       "url": "http://fastopen.live:8080/get.php?username=yvSZuHjGRN&password=ys94jaTGkK&type=m3u",
       "server_url": null,
       "id": "got_slot_49",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: fastopen.live:8080"
     },
     {
@@ -697,21 +697,21 @@
       "server_url": null,
       "id": "got_slot_50",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: iptv1.kavkom.tv:8000"
     },
     {
       "slot_id": 50,
       "name": "The Long Night",
       "domain": "xworld-blue.com:25461",
-      "channel_count": 22810,
+      "channel_count": 22823,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/7/75/Grey_Worm_S8_Ep3.jpg/revision/latest/scale-to-width-down/1000?cb=20190429030211",
       "type": "m3u",
       "url": "http://xworld-blue.com:25461/get.php?username=4220Maximo&password=4220&type=m3u",
       "server_url": null,
       "id": "got_slot_51",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: xworld-blue.com:25461"
     },
     {
@@ -725,7 +725,7 @@
       "server_url": null,
       "id": "got_slot_52",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: apx-me.com:8880"
     },
     {
@@ -739,7 +739,7 @@
       "server_url": null,
       "id": "got_slot_53",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: best4u.biz:80"
     },
     {
@@ -753,7 +753,7 @@
       "server_url": null,
       "id": "got_slot_54",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: tv.zapping.life:8080"
     },
     {
@@ -767,7 +767,7 @@
       "server_url": null,
       "id": "got_slot_55",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: tv70.icu:8080"
     },
     {
@@ -781,7 +781,7 @@
       "server_url": null,
       "id": "got_slot_56",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: protzpwcf1.top:8080"
     },
     {
@@ -795,7 +795,7 @@
       "server_url": null,
       "id": "got_slot_57",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: abtvab@cms.weltiptv.com:8000"
     },
     {
@@ -809,7 +809,7 @@
       "server_url": null,
       "id": "got_slot_58",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: abtvab@xplatinmedia.com:8080"
     },
     {
@@ -823,7 +823,7 @@
       "server_url": null,
       "id": "got_slot_59",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: abtvab@starshare.net:80"
     },
     {
@@ -837,7 +837,7 @@
       "server_url": null,
       "id": "got_slot_60",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: abtvab@cord-cutter.net:8080"
     },
     {
@@ -851,7 +851,7 @@
       "server_url": null,
       "id": "got_slot_61",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-23 10:53:41",
+      "last_validated": "2026-01-23 15:19:34",
       "change_log": "Initial assignment: abtvab@starshare.st:80"
     }
   ]
