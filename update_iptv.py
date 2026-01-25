@@ -9,25 +9,22 @@ from urllib.parse import urlparse
 JSON_FILE = "lovestory.json"
 LOG_FILE = "log.txt"
 FALLBACK_ICON = "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/myicon.png"
-BASE_URL = "https://ninoiptv.com/"
-MAX_PROFILES = 100
+NINO_URL = "https://ninoiptv.com/"
+IPTVCODES_URL = "https://www.iptvcodes.online/"
+M3UMAX_URL = "https://m3umax.blogspot.com/"
 
 # Validation settings
 MIN_PLAYLIST_SIZE = 100
 PLAYLIST_TIMEOUT = 12
-DAYS_TO_SCRAPE = 7
-MAX_ARTICLES = 10
+MAX_ARTICLES_TO_CHECK = 1
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     "Accept-Language": "en-US,en;q=0.9",
-    "Referer": "https://www.google.com/",
-    "Connection": "keep-alive"
 }
 
-# Game of Thrones themed slot names with custom logo URLs
-# Format: {"name": "Slot Name", "logo": "URL or None"}
+# Shortened GOT_SLOTS (remove duplicates)
 GOT_SLOTS = [
     {"name": "Westeros", "logo": "https://static.digitecgalaxus.ch/im/Files/2/1/1/3/9/7/9/6/game_of_thrones_intro_map_westeros_elastic21.jpeg?impolicy=teaser&resizeWidth=1000&resizeHeight=500"},
     {"name": "Essos", "logo": "https://imgix.bustle.com/uploads/image/2017/7/12/4e391a2f-8663-4cdd-91eb-9102c5f731d7-52be1751932bb099d5d5650593df5807b50fc3fbbee7da6a556bd5d1d339f39a.jpg?w=800&h=532&fit=crop&crop=faces"},
@@ -130,6 +127,7 @@ GOT_SLOTS = [
     {"name": "Janabi", "logo": "https://www.insideke.online/wp-content/uploads/2025/11/IMG_0713.jpeg"}
 ]
 
+
 def log_to_file(message):
     """Saves a summary to the permanent log.txt file."""
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -150,10 +148,7 @@ def parse_m3u_streams(content):
     return streams
 
 def validate_playlist(url):
-    """
-    Validates playlist and returns detailed info.
-    Returns (is_valid, reason, stream_count)
-    """
+    """Validates playlist and returns detailed info."""
     try:
         response = requests.get(url, headers=HEADERS, timeout=PLAYLIST_TIMEOUT, allow_redirects=True)
         
@@ -182,97 +177,59 @@ def validate_playlist(url):
         
     except requests.exceptions.Timeout:
         return False, "timeout", 0
+    except requests.exceptions.ConnectionError:
+        return False, "connection error", 0
     except Exception as e:
-        return False, "error", 0
-
-def test_logo_url(logo_url):
-    """Test if logo URL is reachable. Returns True if accessible."""
-    if not logo_url:
-        return False
-    try:
-        response = requests.head(logo_url, headers=HEADERS, timeout=5, allow_redirects=True)
-        return response.status_code < 400
-    except:
-        return False
+        return False, f"error: {str(e)[:50]}", 0
 
 def get_logo_for_slot(slot_id):
-    """Get logo URL for slot, with fallback to default icon."""
-    slot_data = GOT_SLOTS[slot_id]
-    logo_url = slot_data.get("logo")
-    
-    # If no custom logo or unreachable, use fallback
-    if not logo_url or not test_logo_url(logo_url):
-        return FALLBACK_ICON
-    
-    return logo_url
+    """Get logo URL for slot, with fallback."""
+    if slot_id < len(GOT_SLOTS):
+        logo_url = GOT_SLOTS[slot_id].get("logo")
+        if logo_url:
+            return logo_url
+    return FALLBACK_ICON
+
+def get_name_for_slot(slot_id, domain):
+    """Get name for a slot."""
+    if slot_id < len(GOT_SLOTS):
+        return GOT_SLOTS[slot_id]["name"]
+    return f"IPTV Stream #{slot_id + 1}"
 
 def get_domain(url):
     """Extract clean domain name from URL."""
-    domain = urlparse(url).netloc
-    domain = domain.replace('www.', '')
-    return domain
-
-def extract_date_from_title(title):
-    """Extract date from article titles."""
-    date_pattern = r'(\d{2})-(\d{2})-(\d{4})'
-    match = re.search(date_pattern, title)
-    
-    if match:
-        day, month, year = match.groups()
-        try:
-            return datetime.datetime(int(year), int(month), int(day))
-        except ValueError:
-            return None
-    return None
+    try:
+        domain = urlparse(url).netloc
+        domain = domain.replace('www.', '')
+        return domain
+    except:
+        return url
 
 def scrape_nino():
-    """Enhanced scraper for recent articles."""
-    print(f"\n--- STEP 1: ACCESSING {BASE_URL} ---")
+    """Scraper for Nino IPTV - only most recent post."""
+    print(f"\n--- SCRAPING NINO IPTV ({NINO_URL}) ---")
     all_links = []
     
     try:
-        r = requests.get(BASE_URL, headers=HEADERS, timeout=15)
+        r = requests.get(NINO_URL, headers=HEADERS, timeout=15)
         r.raise_for_status()
         soup = BeautifulSoup(r.text, 'html.parser')
         
-        now = datetime.datetime.now()
-        cutoff_date = now - datetime.timedelta(days=DAYS_TO_SCRAPE)
-        
-        print(f"Looking for articles from {cutoff_date.strftime('%d-%m-%Y')} to {now.strftime('%d-%m-%Y')}")
-        
         articles = soup.find_all('h2', class_='entry-title')
-        recent_articles = []
+        if not articles:
+            print("No articles found on Nino.")
+            return []
+            
+        article_tag = articles[0]
+        title_link = article_tag.find('a')
         
-        for article_tag in articles[:MAX_ARTICLES]:
-            title_link = article_tag.find('a')
-            if not title_link:
-                continue
-                
+        if title_link:
             title = title_link.get_text(strip=True)
             url = title_link['href']
-            
-            article_date = extract_date_from_title(title)
-            
-            if article_date and article_date >= cutoff_date:
-                recent_articles.append({
-                    'title': title,
-                    'url': url,
-                    'date': article_date
-                })
-                print(f"  ✓ Found: {title}")
-        
-        if not recent_articles:
-            print("⚠ No recent articles found within date range")
-            return []
-        
-        print(f"\nFound {len(recent_articles)} recent articles to scrape")
-        
-        for idx, article in enumerate(recent_articles, 1):
-            print(f"\n--- Scraping Article {idx}/{len(recent_articles)} ---")
-            print(f"Title: {article['title'][:60]}...")
+            print(f"  > Found: {title[:60]}...")
             
             try:
-                r_art = requests.get(article['url'], headers=HEADERS, timeout=15)
+                r_art = requests.get(url, headers=HEADERS, timeout=15)
                 soup_art = BeautifulSoup(r_art.text, 'html.parser')
                 
                 article_links = []
@@ -281,31 +238,126 @@ def scrape_nino():
                     if "get.php?username=" in href:
                         article_links.append(href)
                 
-                unique_article_links = list(dict.fromkeys(article_links))
-                all_links.extend(unique_article_links)
-                
-                print(f"  → Extracted {len(unique_article_links)} playlist links")
+                unique = list(set(article_links))
+                print(f"  → Found {len(unique)} links")
+                all_links.extend(unique)
                 
             except Exception as e:
-                print(f"  ✗ Error scraping article: {e}")
-                continue
-        
-        unique_all_links = list(dict.fromkeys(all_links))
-        
-        print(f"\n{'─' * 50}")
-        print(f"Total unique playlist links scraped: {len(unique_all_links)}")
-        print(f"{'─' * 50}")
-        
-        return unique_all_links
-
+                print(f"  ✗ Error reading article: {e}")
     except Exception as e:
-        print(f"CRITICAL ERROR during scrape: {e}")
-        return []
+        print(f"Error scraping Nino: {e}")
+        
+    return all_links
+
+def scrape_iptvcodes():
+    """Scraper for iptvcodes.online - handles both URL/User/Pass and complete URLs."""
+    print(f"\n--- SCRAPING IPTV CODES ({IPTVCODES_URL}) ---")
+    all_links = []
+    
+    try:
+        r = requests.get(IPTVCODES_URL, headers=HEADERS, timeout=15)
+        r.raise_for_status()
+        soup = BeautifulSoup(r.text, 'html.parser')
+        
+        articles = soup.find_all('h2', class_='post-title entry-title')
+        if not articles:
+            print("No articles found on IPTVCodes.")
+            return []
+            
+        article_tag = articles[0]
+        title_link = article_tag.find('a')
+        
+        if title_link:
+            title = title_link.get_text(strip=True)
+            url = title_link['href']
+            print(f"  > Found: {title[:60]}...")
+            
+            try:
+                r_art = requests.get(url, headers=HEADERS, timeout=15)
+                soup_art = BeautifulSoup(r_art.text, 'html.parser')
+                
+                # Strategy 1: Find already-complete M3U URLs
+                for a in soup_art.find_all('a', href=True):
+                    href = a['href']
+                    if "get.php?" in href and "username=" in href and "password=" in href:
+                        all_links.append(href)
+                
+                # Strategy 2: Parse URL/User/Pass patterns and construct URLs
+                text_content = soup_art.get_text()
+                
+                # Find all Xtream Code blocks
+                xtream_pattern = r'URL\s*[➤>:]+\s*(https?://[^\s<]+)\s+.*?User\s*[➤>:]+\s*([^\s<]+)\s+.*?Pass\s*[➤>:]+\s*([^\s<]+)'
+                matches = re.finditer(xtream_pattern, text_content, re.DOTALL | re.IGNORECASE)
+                
+                for match in matches:
+                    base_url = match.group(1).strip().rstrip('/')
+                    username = match.group(2).strip()
+                    password = match.group(3).strip()
+                    
+                    # Construct the M3U URL
+                    constructed_url = f"{base_url}/get.php?username={username}&password={password}&type=m3u_plus"
+                    all_links.append(constructed_url)
+                
+                unique = list(set(all_links))
+                print(f"  → Found {len(unique)} links")
+                
+            except Exception as e:
+                print(f"  ✗ Error reading article: {e}")
+                
+    except Exception as e:
+        print(f"Error scraping IPTVCodes: {e}")
+        
+    return all_links
+
+def scrape_m3umax():
+    """Scraper for m3umax.blogspot.com - only most recent post."""
+    print(f"\n--- SCRAPING M3UMAX ({M3UMAX_URL}) ---")
+    all_links = []
+    
+    try:
+        r = requests.get(M3UMAX_URL, headers=HEADERS, timeout=15)
+        r.raise_for_status()
+        soup = BeautifulSoup(r.text, 'html.parser')
+        
+        # Find first article
+        articles = soup.find_all('h3', class_='pTtl')
+        if not articles:
+            print("No articles found on M3UMax.")
+            return []
+            
+        article_tag = articles[0]
+        title_link = article_tag.find('a')
+        
+        if title_link:
+            title = title_link.get_text(strip=True)
+            url = title_link['href']
+            print(f"  > Found: {title[:60]}...")
+            
+            try:
+                r_art = requests.get(url, headers=HEADERS, timeout=15)
+                soup_art = BeautifulSoup(r_art.text, 'html.parser')
+                
+                article_links = []
+                for a in soup_art.find_all('a', href=True):
+                    href = a['href']
+                    if "get.php?username=" in href:
+                        article_links.append(href)
+                
+                unique = list(set(article_links))
+                print(f"  → Found {len(unique)} links")
+                all_links.extend(unique)
+                
+            except Exception as e:
+                print(f"  ✗ Error reading article: {e}")
+    except Exception as e:
+        print(f"Error scraping M3UMax: {e}")
+        
+    return all_links
 
 def main():
-    print("═══════════════════════════════════════════════════")
-    print("   O.R CONTENT MANAGER - GAME OF THRONES EDITION")
-    print("═══════════════════════════════════════════════════\n")
+    print("=" * 50)
+    print("   O.R CONTENT MANAGER - UNLIMITED EDITION")
+    print("=" * 50 + "\n")
     
     # Load existing data
     try:
@@ -316,130 +368,107 @@ def main():
     
     existing_slots = data.get("featured_content", [])
     
-    # Create slot mapping (preserve existing slot assignments)
-    slot_registry = {}  # slot_id -> slot_data
-    
-    # Load existing slot assignments
-    for item in existing_slots:
-        slot_id = item.get("slot_id")
-        if slot_id is not None and slot_id < len(GOT_SLOTS):
-            slot_registry[slot_id] = item
-    
-    print(f"\n--- STEP 2: VALIDATING EXISTING {len(existing_slots)} SLOTS ---")
-    
-    timestamp_now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    slot_registry = {}
     validated_domains = set()
     
-    # Validate existing slots
-    for slot_id, item in list(slot_registry.items()):
+    print(f"\n--- STEP 1: VALIDATING EXISTING CONTENT ---")
+    timestamp_now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    
+    for item in existing_slots:
+        slot_id = item.get("slot_id")
         url = item.get("url")
-        old_domain = item.get("domain", get_domain(url))
-        got_name = GOT_SLOTS[slot_id]["name"]
+        domain = get_domain(url)
+        name = item.get("name")
         
-        print(f"\n[Slot {slot_id + 1:03d}] {got_name}")
-        print(f"  Current: {old_domain}")
-        print(f"  → Testing playlist...")
-        
+        if domain in validated_domains:
+            print(f"Removing duplicate domain: {domain}")
+            continue
+            
+        print(f"Testing [{name}] ({domain})...")
         is_valid, reason, stream_count = validate_playlist(url)
         
         if is_valid:
-            # Update slot with current info
-            item["slot_id"] = slot_id
-            item["name"] = got_name
             item["channel_count"] = stream_count
-            item["domain"] = old_domain
-            item["logo_url"] = get_logo_for_slot(slot_id)
             item["last_validated"] = timestamp_now
-            validated_domains.add(old_domain)
-            print(f"  ✓ ALIVE ({stream_count} channels)")
+            item["logo_url"] = get_logo_for_slot(slot_id)
+            
+            slot_registry[slot_id] = item
+            validated_domains.add(domain)
+            print(f"  [OK] Valid ({stream_count})")
         else:
-            print(f"  ✗ DEAD ({reason}) - slot will be reassigned")
-            del slot_registry[slot_id]
+            print(f"  [X] Dead ({reason})")
     
-    # Find empty slots
-    empty_slots = [i for i in range(MAX_PROFILES) if i not in slot_registry]
+    print(f"\n--- STEP 2: SCRAPING NEW CONTENT ---")
     
-    print(f"\n{'─' * 50}")
-    print(f"Active slots: {len(slot_registry)}")
-    print(f"Empty slots: {len(empty_slots)}")
-    print(f"{'─' * 50}")
+    new_links = []
+    new_links.extend(scrape_nino())
+    new_links.extend(scrape_iptvcodes())
+    new_links.extend(scrape_m3umax())
     
-    # Scrape for new content to fill empty slots
-    if empty_slots:
-        print(f"\n--- STEP 3: FILLING {len(empty_slots)} EMPTY SLOTS ---")
-        new_potential_links = scrape_nino()
+    new_links = list(dict.fromkeys(new_links))
+    
+    print(f"\nTotal potential new links found: {len(new_links)}")
+    print(f"Checking against {len(validated_domains)} existing domains...")
+    
+    added_count = 0
+    
+    for link in new_links:
+        domain = get_domain(link)
         
-        newly_validated_domains = set()
+        if domain in validated_domains:
+            continue
         
-        for idx, link in enumerate(new_potential_links, 1):
-            if not empty_slots:
-                print("\n✓ All slots filled!")
-                break
+        print(f"\nTesting new: {domain}...")
+        is_valid, reason, stream_count = validate_playlist(link)
+        
+        if is_valid:
+            # Find available slot
+            target_id = -1
+            for i in range(len(GOT_SLOTS)):
+                if i not in slot_registry:
+                    target_id = i
+                    break
             
-            domain = get_domain(link)
+            if target_id == -1:
+                max_id = max(slot_registry.keys()) if slot_registry else -1
+                target_id = max_id + 1
             
-            # Skip if we already have this domain
-            if domain in validated_domains or domain in newly_validated_domains:
-                print(f"\n[Link {idx}/{len(new_potential_links)}] Skipping {domain[:40]} (already in use)")
-                continue
+            name = get_name_for_slot(target_id, domain)
+            logo = get_logo_for_slot(target_id)
             
-            print(f"\n[Link {idx}/{len(new_potential_links)}] Testing {domain[:40]}...")
-            is_valid, reason, stream_count = validate_playlist(link)
+            print(f"  [OK] SUCCESS! Adding to Slot {target_id} as '{name}'")
             
-            if is_valid:
-                # Assign to next available slot
-                slot_id = empty_slots.pop(0)
-                got_name = GOT_SLOTS[slot_id]["name"]
-                
-                # Check if this slot had a previous assignment
-                old_slot_data = existing_slots[slot_id] if slot_id < len(existing_slots) else None
-                old_domain = old_slot_data.get("domain", "None") if old_slot_data else "None"
-                
-                print(f"  ✓ ASSIGNED to Slot {slot_id + 1:03d} ({got_name})")
-                print(f"    {stream_count} channels from {domain}")
-                
-                # Create change log entry
-                change_log = f"Changed from {old_domain} to {domain}" if old_domain != "None" else f"Initial assignment: {domain}"
-                
-                slot_registry[slot_id] = {
-                    "slot_id": slot_id,
-                    "name": got_name,
-                    "domain": domain,
-                    "channel_count": stream_count,
-                    "logo_url": get_logo_for_slot(slot_id),
-                    "type": "m3u",
-                    "url": link,
-                    "server_url": None,
-                    "id": f"got_slot_{str(slot_id + 1).zfill(2)}",
-                    "last_changed": timestamp_now,
-                    "last_validated": timestamp_now,
-                    "change_log": change_log
-                }
-                
-                validated_domains.add(domain)
-                newly_validated_domains.add(domain)
-            else:
-                print(f"  ✗ REJECTED: {reason}")
-    
-    # Build final sorted list
-    final_list = []
-    for slot_id in range(MAX_PROFILES):
-        if slot_id in slot_registry:
-            final_list.append(slot_registry[slot_id])
-    
+            new_entry = {
+                "slot_id": target_id,
+                "name": name,
+                "domain": domain,
+                "channel_count": stream_count,
+                "logo_url": logo,
+                "type": "m3u",
+                "url": link,
+                "server_url": None,
+                "id": f"slot_{str(target_id).zfill(3)}",
+                "last_changed": timestamp_now,
+                "last_validated": timestamp_now,
+                "change_log": f"Added via scraper on {timestamp_now}"
+            }
+            
+            slot_registry[target_id] = new_entry
+            validated_domains.add(domain)
+            added_count += 1
+        else:
+            print(f"  [X] Failed ({reason})")
+
     # Save
+    final_list = [slot_registry[sid] for sid in sorted(slot_registry.keys())]
     data["featured_content"] = final_list
+    
     with open(JSON_FILE, 'w') as f:
         json.dump(data, f, indent=2)
-    
-    # Summary
-    total_channels = sum(item.get("channel_count", 0) for item in final_list)
-    summary_msg = f"Sync Complete. Active Slots: {len(final_list)}/{MAX_PROFILES} | Total Channels: {total_channels}"
-    log_to_file(summary_msg)
-    
-    print(f"\n{'═' * 50}")
-    print(f"✓ FINISHED: {summary_msg}")
-    print(f"{'═' * 50}\n")
+        
+    summary = f"Update Complete. Active: {len(final_list)} | Added: {added_count} | Total Channels: {sum(x['channel_count'] for x in final_list)}"
+    log_to_file(summary)
+    print(f"\n{summary}")
 
 if __name__ == "__main__":
     main()
