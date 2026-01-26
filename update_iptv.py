@@ -113,18 +113,18 @@ GOT_SLOTS = [
     {"name": "DRACARYS", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/7/7f/Dragons_destroy_ships_in_Meereen.jpg/revision/latest/scale-to-width-down/1000?cb=20160621014157"},
     {"name": "BATTLE OF THE BASTARDS", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/d/df/Knights_of_the_Vale_S6E09_5.PNG/revision/latest/scale-to-width-down/1000?cb=20160826132900"},
     {"name": "The Hound", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/b/b5/SandorConfrontsGregor.PNG/revision/latest?cb=20210722093812"},
-    {"name": "tHeOn (sorry) REEK", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/8/84/Theon-fealty.png/revision/latest?cb=20160812055322"},
-    {"name": "Janabi", "logo": "https://www.insideke.online/wp-content/uploads/2025/11/IMG_0713.jpeg"},
-    {"name": "Janabi", "logo": "https://www.insideke.online/wp-content/uploads/2025/11/IMG_0713.jpeg"},
-    {"name": "Janabi", "logo": "https://www.insideke.online/wp-content/uploads/2025/11/IMG_0713.jpeg"},
-    {"name": "Janabi", "logo": "https://www.insideke.online/wp-content/uploads/2025/11/IMG_0713.jpeg"},
-    {"name": "Janabi", "logo": "https://www.insideke.online/wp-content/uploads/2025/11/IMG_0713.jpeg"},
-    {"name": "Janabi", "logo": "https://www.insideke.online/wp-content/uploads/2025/11/IMG_0713.jpeg"},
-    {"name": "Janabi", "logo": "https://www.insideke.online/wp-content/uploads/2025/11/IMG_0713.jpeg"},
-    {"name": "Janabi", "logo": "https://www.insideke.online/wp-content/uploads/2025/11/IMG_0713.jpeg"},
-    {"name": "Janabi", "logo": "https://www.insideke.online/wp-content/uploads/2025/11/IMG_0713.jpeg"},
-    {"name": "Janabi", "logo": "https://www.insideke.online/wp-content/uploads/2025/11/IMG_0713.jpeg"},
-    {"name": "Janabi", "logo": "https://www.insideke.online/wp-content/uploads/2025/11/IMG_0713.jpeg"}
+    {"name": "theon (sorry) REEK", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/8/84/Theon-fealty.png/revision/latest?cb=20160812055322"},
+    {"name": "Levels, Jerry, Levels", "logo": "https://pbs.twimg.com/media/B_rFi9ZWYAEowmo?format=png&name=small"},
+    {"name": "ART VANDALEY", "logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/orstreams11.webp"},
+    {"name": "VANDALEY INDUSTRIES", "logo": "https://static.wikia.nocookie.net/seinfeld/images/9/9c/The_Seinfeld_Chronicles.jpg/revision/latest?cb=20080801224556"},
+    {"name": "SAGMAN", "logo": "https://static.wikia.nocookie.net/seinfeld/images/9/97/The_Stake_Out_00010.jpg/revision/latest?cb=20111216223006"},
+    {"name": "BENNETT", "logo": "https://static.wikia.nocookie.net/seinfeld/images/9/97/The_Stake_Out_00010.jpg/revision/latest?cb=20111216223006"},
+    {"name": "ROBBINS", "logo": "https://static.wikia.nocookie.net/seinfeld/images/9/97/The_Stake_Out_00010.jpg/revision/latest?cb=20111216223006"},
+    {"name": "OPPENHEIM", "logo": "https://static.wikia.nocookie.net/seinfeld/images/9/97/The_Stake_Out_00010.jpg/revision/latest?cb=20111216223006"},
+    {"name": "TAFT", "logo": "https://static.wikia.nocookie.net/seinfeld/images/9/97/The_Stake_Out_00010.jpg/revision/latest?cb=20111216223006"},
+    {"name": "Del Boca Vista", "logo": "https://static.wikia.nocookie.net/seinfeld/images/9/9d/The_puerto_rican_day.jpg/revision/latest?cb=20120917024357"},
+    {"name": "THE DREAM CAFE", "logo": "https://static.wikia.nocookie.net/seinfeld/images/9/94/DreamCafe.jpg/revision/latest?cb=20120312180840"},
+    {"name": "THE PIGMAN", "logo": "https://i0.wp.com/the-avocado.org/wp-content/uploads/2024/12/daa-1.jpg?w=1000&ssl=1"}
 ]
 
 
