@@ -17,9 +17,9 @@ IPTVCODES_URL = "https://www.iptvcodes.online/"
 M3UMAX_URL = "https://m3umax.blogspot.com/"
 
 # Validation settings
-MIN_PLAYLIST_SIZE = 500  # Increased to ensure meaningful content
-MIN_STREAM_COUNT = 10  # Minimum streams to be considered valid
-PLAYLIST_TIMEOUT = 20  # Increased timeout
+MIN_PLAYLIST_SIZE = 500
+MIN_STREAM_COUNT = 10
+PLAYLIST_TIMEOUT = 20
 MAX_RETRIES = 3
 RETRY_DELAY = 2
 MAX_ARTICLES_TO_CHECK = 1
@@ -33,7 +33,6 @@ HEADERS = {
     "Upgrade-Insecure-Requests": "1"
 }
 
-# GOT_SLOTS - paste your full list here
 GOT_SLOTS = [
     {"name": "Westeros", "logo": "https://static.digitecgalaxus.ch/im/Files/2/1/1/3/9/7/9/6/game_of_thrones_intro_map_westeros_elastic21.jpeg?impolicy=teaser&resizeWidth=1000&resizeHeight=500"},
     {"name": "Essos", "logo": "https://imgix.bustle.com/uploads/image/2017/7/12/4e391a2f-8663-4cdd-91eb-9102c5f731d7-52be1751932bb099d5d5650593df5807b50fc3fbbee7da6a556bd5d1d339f39a.jpg?w=800&h=532&fit=crop&crop=faces"},
@@ -200,7 +199,7 @@ def validate_playlist(url, session, verbose=True):
                 headers=HEADERS, 
                 timeout=PLAYLIST_TIMEOUT, 
                 allow_redirects=True,
-                stream=True  # Stream to handle large files better
+                stream=True
             )
             
             # Check HTTP status
@@ -304,17 +303,13 @@ def get_domain(url):
     try:
         parsed = urlparse(url)
         domain = parsed.netloc
-        
-        # Remove www. prefix
         domain = domain.replace('www.', '')
-        
-        # If there's a port, keep it for uniqueness
         return domain
     except:
         return url
 
 
-def scrape_nino(session):
+def scrape_nino():
     """Scraper for Nino IPTV - only most recent post."""
     print(f"\n{'='*60}")
     print(f"  SCRAPING: NINO IPTV ({NINO_URL})")
@@ -322,7 +317,7 @@ def scrape_nino(session):
     all_links = []
     
     try:
-        r = session.get(NINO_URL, headers=HEADERS, timeout=15)
+        r = requests.get(NINO_URL, headers=HEADERS, timeout=15)
         r.raise_for_status()
         soup = BeautifulSoup(r.text, 'html.parser')
         
@@ -340,7 +335,7 @@ def scrape_nino(session):
             print(f"  → Article: {title[:70]}...")
             
             try:
-                r_art = session.get(url, headers=HEADERS, timeout=15)
+                r_art = requests.get(url, headers=HEADERS, timeout=15)
                 soup_art = BeautifulSoup(r_art.text, 'html.parser')
                 
                 article_links = []
@@ -361,7 +356,7 @@ def scrape_nino(session):
     return all_links
 
 
-def scrape_iptvcodes(session):
+def scrape_iptvcodes():
     """Scraper for iptvcodes.online - handles both direct URLs and Xtream codes."""
     print(f"\n{'='*60}")
     print(f"  SCRAPING: IPTV CODES ({IPTVCODES_URL})")
@@ -369,7 +364,7 @@ def scrape_iptvcodes(session):
     all_links = []
     
     try:
-        r = session.get(IPTVCODES_URL, headers=HEADERS, timeout=15)
+        r = requests.get(IPTVCODES_URL, headers=HEADERS, timeout=15)
         r.raise_for_status()
         soup = BeautifulSoup(r.text, 'html.parser')
         
@@ -387,18 +382,19 @@ def scrape_iptvcodes(session):
             print(f"  → Article: {title[:70]}...")
             
             try:
-                r_art = session.get(url, headers=HEADERS, timeout=15)
+                r_art = requests.get(url, headers=HEADERS, timeout=15)
                 soup_art = BeautifulSoup(r_art.text, 'html.parser')
                 
-                # Strategy 1: Direct M3U links
+                # Strategy 1: Find already-complete M3U URLs
                 for a in soup_art.find_all('a', href=True):
                     href = a['href']
                     if "get.php?" in href and "username=" in href and "password=" in href:
                         all_links.append(href)
                 
-                # Strategy 2: Parse Xtream code patterns
+                # Strategy 2: Parse URL/User/Pass patterns and construct URLs
                 text_content = soup_art.get_text()
                 
+                # Find all Xtream Code blocks
                 xtream_pattern = r'URL\s*[➤>:]+\s*(https?://[^\s<]+)\s+.*?User\s*[➤>:]+\s*([^\s<]+)\s+.*?Pass\s*[➤>:]+\s*([^\s<]+)'
                 matches = re.finditer(xtream_pattern, text_content, re.DOTALL | re.IGNORECASE)
                 
@@ -407,6 +403,7 @@ def scrape_iptvcodes(session):
                     username = match.group(2).strip()
                     password = match.group(3).strip()
                     
+                    # Construct the M3U URL
                     constructed_url = f"{base_url}/get.php?username={username}&password={password}&type=m3u_plus"
                     all_links.append(constructed_url)
                 
@@ -422,7 +419,7 @@ def scrape_iptvcodes(session):
     return all_links
 
 
-def scrape_m3umax(session):
+def scrape_m3umax():
     """Scraper for m3umax.blogspot.com - only most recent post."""
     print(f"\n{'='*60}")
     print(f"  SCRAPING: M3UMAX ({M3UMAX_URL})")
@@ -430,10 +427,11 @@ def scrape_m3umax(session):
     all_links = []
     
     try:
-        r = session.get(M3UMAX_URL, headers=HEADERS, timeout=15)
+        r = requests.get(M3UMAX_URL, headers=HEADERS, timeout=15)
         r.raise_for_status()
         soup = BeautifulSoup(r.text, 'html.parser')
         
+        # Find first article
         articles = soup.find_all('h3', class_='pTtl')
         if not articles:
             print("  ✗ No articles found")
@@ -448,7 +446,7 @@ def scrape_m3umax(session):
             print(f"  → Article: {title[:70]}...")
             
             try:
-                r_art = session.get(url, headers=HEADERS, timeout=15)
+                r_art = requests.get(url, headers=HEADERS, timeout=15)
                 soup_art = BeautifulSoup(r_art.text, 'html.parser')
                 
                 article_links = []
@@ -505,7 +503,7 @@ def main():
         
         # Skip duplicates
         if domain in validated_domains:
-            print(f"[{idx}/{len(existing_slots)}] SKIP: {name} - Duplicate domain: {domain}")
+            print(f"[{idx}/{len(existing_slots)}] SKIP: {name} - Duplicate domain")
             invalid_count += 1
             continue
         
@@ -537,11 +535,11 @@ def main():
     print(f"{'='*70}")
     
     new_links = []
-    new_links.extend(scrape_nino(session))
-    new_links.extend(scrape_iptvcodes(session))
-    new_links.extend(scrape_m3umax(session))
+    new_links.extend(scrape_nino())
+    new_links.extend(scrape_iptvcodes())
+    new_links.extend(scrape_m3umax())
     
-    new_links = list(dict.fromkeys(new_links))  # Remove duplicates
+    new_links = list(dict.fromkeys(new_links))
     
     print(f"\n{'='*70}")
     print(f"  DISCOVERY SUMMARY")
