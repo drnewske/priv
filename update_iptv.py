@@ -32,7 +32,7 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
     "Accept-Language": "en-US,en;q=0.9",
-    "Accept-Encoding": "gzip, deflate, br",
+    "Accept-Encoding": "gzip, deflate",
     "Connection": "keep-alive",
     "Upgrade-Insecure-Requests": "1"
 }
@@ -289,21 +289,34 @@ def extract_m3u_links(html_content):
 
 
 def extract_date_from_title(title):
-    """Extract date from article title (e.g., '26-01-2026')"""
-    # Pattern: DD-MM-YYYY
-    match = re.search(r'(\d{2})-(\d{2})-(\d{4})', title)
-    if match:
-        day, month, year = match.groups()
-        try:
-            return dt.strptime(f"{year}-{month}-{day}", "%Y-%m-%d")
-        except:
-            pass
+    """Extract date from article title or URL (e.g., '26-01-2026')"""
+    # Common date patterns
+    patterns = [
+        r'(\d{2})[-/.](\d{2})[-/.](\d{4})',  # DD-MM-YYYY
+        r'(\d{4})[-/.](\d{2})[-/.](\d{2})',  # YYYY-MM-DD
+    ]
+    
+    for pattern in patterns:
+        match = re.search(pattern, title)
+        if match:
+            try:
+                g1, g2, g3 = match.groups()
+                # Determine basic format based on year position (4 digits)
+                if len(g1) == 4:
+                    # YYYY-MM-DD
+                    return dt.strptime(f"{g1}-{g2}-{g3}", "%Y-%m-%d")
+                else:
+                    # DD-MM-YYYY
+                    return dt.strptime(f"{g3}-{g2}-{g1}", "%Y-%m-%d")
+            except:
+                continue
+                
     return None
 
 
 def extract_version_from_title(title):
     """Extract version (V1, V2, etc.) from article title"""
-    match = re.search(r'\bV(\d+)\b', title, re.IGNORECASE)
+    match = re.search(r'V(\d+)', title, re.IGNORECASE)
     if match:
         return int(match.group(1))
     return 1  # Default to V1 if no version specified
@@ -477,7 +490,11 @@ def scrape_ninoiptv(session, log_data):
                     
                     print(f"  DEBUG Article {idx+1}: {title[:80]}")
                     
+                    # Try extracting date from title first, then URL
                     article_date = extract_date_from_title(title)
+                    if not article_date:
+                        article_date = extract_date_from_title(url)
+                    
                     version = extract_version_from_title(title)
                     
                     if article_date:
@@ -489,7 +506,7 @@ def scrape_ninoiptv(session, log_data):
                         })
                         print(f"    → Date: {article_date.strftime('%Y-%m-%d')}, Version: V{version}")
                     else:
-                        print(f"    → No date found in title")
+                        print(f"    → No date found in title or URL")
                 else:
                     print(f"  DEBUG Article {idx+1}: No link found in title")
             else:
