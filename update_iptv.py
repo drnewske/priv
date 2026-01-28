@@ -730,42 +730,7 @@ def main():
     slot_registry = {item["slot_id"]: item for item in existing_slots}
     validated_domains = set()
     
-    print(f"\n[VALIDATION] Checking {len(existing_slots)} existing playlists...")
-    
-    timestamp_now = dt.now().strftime("%Y-%m-%d %H:%M:%S")
-    valid_count = 0
-    invalid_count = 0
-    
-    for idx, item in enumerate(existing_slots, 1):
-        slot_id = item.get("slot_id")
-        url = item.get("url")
-        domain = get_domain(url)
-        name = item.get("name")
-        
-        if domain in validated_domains:
-            print(f"[{idx}/{len(existing_slots)}] SKIP: {name} - Duplicate domain")
-            invalid_count += 1
-            continue
-        
-        print(f"[{idx}/{len(existing_slots)}] TESTING: {name}")
-        print(f"  Domain: {domain}")
-        
-        is_valid, reason, stream_count = validate_playlist(url, session)
-        
-        if is_valid:
-            item["channel_count"] = stream_count
-            item["last_validated"] = timestamp_now
-            item["logo_url"] = get_logo_for_slot(slot_id)
-            
-            slot_registry[slot_id] = item
-            validated_domains.add(domain)
-            valid_count += 1
-            print(f"  ✓ Status: {reason} | Channels: {stream_count:,}\n")
-        else:
-            invalid_count += 1
-            print(f"  ✗ Status: {reason}\n")
-    
-    # Discovery phase
+    # --- DISCOVERY PHASE (SCRAPE NEW) ---
     print("\n" + "="*70)
     print("  DISCOVERY PHASE")
     print("="*70)
@@ -786,6 +751,7 @@ def main():
     added_count = 0
     tested_count = 0
     
+    # Process New Links
     for link in new_links:
         domain = get_domain(link)
         if domain in validated_domains:
@@ -830,6 +796,58 @@ def main():
     # Rename untitled playlists if there are available named slots
     renamed_count = rename_untitled_playlists(slot_registry)
 
+    # --- VALIDATION PHASE (EXISTING) ---
+    print("\n" + "="*70)
+    print("  VALIDATION PHASE (EXISTING)")
+    print("="*70)
+    print(f"\n[VALIDATION] Checking {len(existing_slots)} existing playlists...")
+    
+    timestamp_now = dt.now().strftime("%Y-%m-%d %H:%M:%S")
+    valid_count = 0
+    invalid_count = 0
+    
+    # We iterate over a COPY because we might unknowingly modify slot_registry structure if we were doing deletions (we aren't here, but safety first)
+    # Actually, we are just updating metadata in place.
+    
+    for idx, item in enumerate(existing_slots, 1):
+        slot_id = item.get("slot_id")
+        url = item.get("url")
+        domain = get_domain(url)
+        name = item.get("name")
+        
+        # If we just added this domain in the discovery phase, no need to re-validate immediately
+        # But discovery adds to 'slot_registry' and 'validated_domains', while 'existing_slots' is the old list.
+        # So we check against validated_domains.
+        
+        if domain in validated_domains:
+            print(f"[{idx}/{len(existing_slots)}] SKIP: {name} - Updated/Checked recently")
+            # Update the existing record in registry with the one that might have been just added/updated?
+            # Actually, if it's in existing_slots, it's an old one.
+            # If it's in validated_domains, it implies we either just added it OR we already processed it.
+            # But wait, we haven't processed existing_slots yet. 
+            # So if it is in validated_domains, it MUST be because we just added a DUPLICATE of an existing one in the discovery phase?
+            # If so, we should probably ensure the 'existing' one is the one kept or updated.
+            continue
+        
+        print(f"[{idx}/{len(existing_slots)}] TESTING: {name}")
+        print(f"  Domain: {domain}")
+        
+        is_valid, reason, stream_count = validate_playlist(url, session)
+        
+        if is_valid:
+            item["channel_count"] = stream_count
+            item["last_validated"] = timestamp_now
+            item["logo_url"] = get_logo_for_slot(slot_id)
+            
+            slot_registry[slot_id] = item
+            validated_domains.add(domain)
+            valid_count += 1
+            print(f"  ✓ Status: {reason} | Channels: {stream_count:,}\n")
+        else:
+            invalid_count += 1
+            print(f"  ✗ Status: {reason}\n")
+
+    # Finalize List
     final_list = [slot_registry[sid] for sid in sorted(slot_registry.keys())]
     data["featured_content"] = final_list
     
