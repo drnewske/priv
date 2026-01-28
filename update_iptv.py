@@ -350,10 +350,12 @@ def save_scraper_log(log_data):
 
 
 def get_name_for_slot(slot_id, domain):
-    """Get name for slot from GOT_SLOTS or generate from domain"""
+    """Get name for slot from GOT_SLOTS or generate Untitled name"""
     if slot_id < len(GOT_SLOTS):
         return GOT_SLOTS[slot_id]["name"]
-    return domain.split('.')[0].title()
+    # For slots beyond GOT_SLOTS, use Untitled
+    untitled_number = slot_id - len(GOT_SLOTS) + 1
+    return f"Untitled {untitled_number}"
 
 
 def get_logo_for_slot(slot_id):
@@ -361,6 +363,78 @@ def get_logo_for_slot(slot_id):
     if slot_id < len(GOT_SLOTS):
         return GOT_SLOTS[slot_id]["logo"]
     return FALLBACK_ICON
+
+
+def find_available_slot(slot_registry):
+    """
+    Find an available slot ID, prioritizing:
+    1. Empty slots within GOT_SLOTS range (for named slots)
+    2. Next available slot after all existing slots
+    """
+    # First, try to find an empty slot within GOT_SLOTS range
+    for i in range(len(GOT_SLOTS)):
+        if i not in slot_registry:
+            return i, "named"
+    
+    # If all GOT_SLOTS are taken, find the next available slot
+    max_id = max(slot_registry.keys()) if slot_registry else -1
+    return max_id + 1, "untitled"
+
+
+def rename_untitled_playlists(slot_registry):
+    """
+    Find Untitled playlists and move them to available named slots if possible
+    Returns the number of playlists renamed
+    """
+    renamed_count = 0
+    
+    # Find all untitled playlists
+    untitled_playlists = []
+    for slot_id, item in slot_registry.items():
+        if item.get("name", "").startswith("Untitled "):
+            untitled_playlists.append((slot_id, item))
+    
+    if not untitled_playlists:
+        return 0
+    
+    # Find available named slots
+    available_named_slots = []
+    for i in range(len(GOT_SLOTS)):
+        if i not in slot_registry:
+            available_named_slots.append(i)
+    
+    if not available_named_slots:
+        return 0
+    
+    print(f"\n[RENAMING] Found {len(untitled_playlists)} Untitled playlists and {len(available_named_slots)} available named slots")
+    
+    # Move untitled playlists to named slots
+    for i, (old_slot_id, item) in enumerate(untitled_playlists):
+        if i >= len(available_named_slots):
+            break
+        
+        new_slot_id = available_named_slots[i]
+        
+        # Update the item
+        old_name = item["name"]
+        new_name = GOT_SLOTS[new_slot_id]["name"]
+        new_logo = GOT_SLOTS[new_slot_id]["logo"]
+        
+        item["slot_id"] = new_slot_id
+        item["name"] = new_name
+        item["logo_url"] = new_logo
+        item["id"] = f"slot_{str(new_slot_id).zfill(3)}"
+        item["last_changed"] = dt.now().strftime("%Y-%m-%d %H:%M:%S")
+        item["change_log"] = f"Renamed from '{old_name}' to '{new_name}' on {item['last_changed']}"
+        
+        # Move in registry
+        del slot_registry[old_slot_id]
+        slot_registry[new_slot_id] = item
+        
+        renamed_count += 1
+        print(f"  ✓ Renamed: '{old_name}' → '{new_name}' (Slot {old_slot_id} → {new_slot_id})")
+    
+    return renamed_count
 
 
 # --- SCRAPER FUNCTIONS ---
@@ -417,7 +491,8 @@ def scrape_ninoiptv(session, log_data):
         latest_articles = [a for a in articles if a['date'] == latest_date]
         
         print(f"  Latest date: {latest_date_str}")
-        print(f"  Versions available: {', '.join([f'V{a["version"]}' for a in latest_articles])}")
+        versions_str = ', '.join([f'V{a["version"]}' for a in latest_articles])
+        print(f"  Versions available: {versions_str}")
         
         all_links = []
         
@@ -479,9 +554,9 @@ def scrape_iptvcodes(session, log_data):
         response = session.get(SOURCES["iptvcodes"], headers=HEADERS, timeout=15)
         soup = BeautifulSoup(response.content, 'html.parser')
         
-        # Find article links
+        # Find article links - only latest ones
         article_links = []
-        for article in soup.find_all('article')[:5]:  # Check first 5 articles
+        for article in soup.find_all('article')[:10]:  # Check first 10 articles (latest)
             link_elem = article.find('a', href=True)
             if link_elem:
                 url = link_elem['href']
@@ -541,9 +616,9 @@ def scrape_m3umax(session, log_data):
         response = session.get(SOURCES["m3umax"], headers=HEADERS, timeout=15)
         soup = BeautifulSoup(response.content, 'html.parser')
         
-        # Find article links
+        # Find article links - only latest ones
         article_links = []
-        for article in soup.find_all('h3', class_='post-title')[:5]:
+        for article in soup.find_all('h3', class_='post-title')[:10]:  # Check first 10 articles (latest)
             link_elem = article.find('a', href=True)
             if link_elem:
                 url = link_elem['href']
@@ -682,15 +757,8 @@ def main():
         is_valid, reason, stream_count = validate_playlist(link, session)
         
         if is_valid:
-            target_id = -1
-            for i in range(len(GOT_SLOTS)):
-                if i not in slot_registry:
-                    target_id = i
-                    break
-            
-            if target_id == -1:
-                max_id = max(slot_registry.keys()) if slot_registry else -1
-                target_id = max_id + 1
+            # Find available slot (prioritizes named slots)
+            target_id, slot_type = find_available_slot(slot_registry)
             
             name = get_name_for_slot(target_id, domain)
             logo = get_logo_for_slot(target_id)
@@ -713,9 +781,14 @@ def main():
             slot_registry[target_id] = new_entry
             validated_domains.add(domain)
             added_count += 1
-            print(f"  ✓✓✓ SUCCESS! Added to Slot {target_id} | Channels: {stream_count:,}\n")
+            
+            slot_info = f"Slot {target_id} ({slot_type})"
+            print(f"  ✓✓✓ SUCCESS! Added to {slot_info} | Channels: {stream_count:,}\n")
         else:
             print(f"  ✗ Failed: {reason}\n")
+    
+    # Rename untitled playlists if there are available named slots
+    renamed_count = rename_untitled_playlists(slot_registry)
 
     final_list = [slot_registry[sid] for sid in sorted(slot_registry.keys())]
     data["featured_content"] = final_list
@@ -730,6 +803,8 @@ def main():
     print("="*70)
     print(f"  Active Playlists: {len(final_list)}")
     print(f"  Newly Added: {added_count}")
+    if renamed_count > 0:
+        print(f"  Renamed (Untitled → Named): {renamed_count}")
     print(f"  Total Channels: {total_channels:,}")
     print(f"  Updated: {timestamp_now}")
     print("="*70)
