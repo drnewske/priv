@@ -11,11 +11,15 @@ from datetime import datetime as dt
 
 # --- CONFIGURATION ---
 JSON_FILE = "lovestory.json"
-LOG_FILE = "log.txt"
+LOG_FILE = "scraper_log.json"  # Changed to JSON for better tracking
 FALLBACK_ICON = "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/myicon.png"
-NINO_URL = "https://ninoiptv.com/"
-IPTVCODES_URL = "https://www.iptvcodes.online/"
-M3UMAX_URL = "https://m3umax.blogspot.com/"
+
+# Sources
+SOURCES = {
+    "ninoiptv": "https://ninoiptv.com/",
+    "iptvcodes": "https://www.iptvcodes.online/",
+    "m3umax": "https://m3umax.blogspot.com/"
+}
 
 # Validation settings
 MIN_PLAYLIST_SIZE = 500
@@ -23,7 +27,6 @@ MIN_STREAM_COUNT = 10
 PLAYLIST_TIMEOUT = 20
 MAX_RETRIES = 3
 RETRY_DELAY = 2
-MAX_ARTICLES_TO_CHECK = 3  # Updated to check first three
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
@@ -34,7 +37,7 @@ HEADERS = {
     "Upgrade-Insecure-Requests": "1"
 }
 
-# GOT_SLOTS - paste your full list here
+# GOT_SLOTS - Full list
 GOT_SLOTS = [
     {"name": "Westeros", "logo": "https://static.digitecgalaxus.ch/im/Files/2/1/1/3/9/7/9/6/game_of_thrones_intro_map_westeros_elastic21.jpeg?impolicy=teaser&resizeWidth=1000&resizeHeight=500"},
     {"name": "Essos", "logo": "https://imgix.bustle.com/uploads/image/2017/7/12/4e391a2f-8663-4cdd-91eb-9102c5f731d7-52be1751932bb099d5d5650593df5807b50fc3fbbee7da6a556bd5d1d339f39a.jpg?w=800&h=532&fit=crop&crop=faces"},
@@ -102,395 +105,517 @@ GOT_SLOTS = [
     {"name": "Ghost", "logo": "https://i.cbc.ca/ais/1.3078255,1431974097000/full/max/0/default.jpg?im=Crop%2Crect%3D%280%2C91%2C400%2C225%29%3BResize%3D860"},
     {"name": "Nymeria", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/d/d3/Nymeria_bites_Joffrey.png/revision/latest/scale-to-width-down/1000?cb=20150404115158"},
     {"name": "The Three-Eyed Raven", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/3/3a/Three-eyed_raven.png/revision/latest?cb=20110622101243"},
-    {"name": "The Golden Company", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/f/f4/Golden_Company_S8.jpg/revision/latest/scale-to-width-down/1000?cb=20190408221754"},
-    {"name": "The Red Wedding", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/a/a2/Robb_Wind_MHYSA_new_lightened.jpg/revision/latest/scale-to-width-down/1000?cb=20160830004546"},
-    {"name": "The Purple Wedding", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/4/4d/Purple_Wedding.png/revision/latest/scale-to-width-down/1000?cb=20150210223603"},
-    {"name": "Blackwater Bay", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/4/41/Wildfire_explosion.jpg/revision/latest/scale-to-width-down/1000?cb=20150328212702"},
-    {"name": "Hardhome", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/b/b0/Hardhome_%28episode%29_.jpg/revision/latest/scale-to-width-down/1000?cb=20150601113829"},
-    {"name": "The Moon Door", "logo": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/04/29/14/gameofthrones-moon-door.jpg?quality=75&width=1368&crop=3%3A2%2Csmart&auto=webp"},
-    {"name": "The Faith Militant", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/f/f6/Sparrows.png/revision/latest/scale-to-width-down/1000?cb=20150323105505"},
-    {"name": "The High Sparrow", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/3/3b/Blood_of_My_Blood_16.jpg/revision/latest/scale-to-width-down/1000?cb=20160527164016"},
-    {"name": "A Song of Ice and Fire", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/0/0d/KOTNS_Targaryen_dagger.png/revision/latest/scale-to-width-down/1000?cb=20220905120253"},
-    {"name": "House Targaryen", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/1/1e/House_Targaryen.svg/revision/latest?cb=20230905234715"},
-    {"name": "House Stark", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/7/7e/House_Stark.svg/revision/latest?cb=20230905233833"},
-    {"name": "House Lannister", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/d/d5/House_Lannister.svg/revision/latest?cb=20230905230248"},
-    {"name": "The Crownlands", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/b/b4/S2_Crownlands_Forest.jpg/revision/latest/scale-to-width-down/1000?cb=20240323063113"},
-    {"name": "The Riverlands", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/d/d0/The_Riverlands.png/revision/latest?cb=20120719200633"},
-    {"name": "The Vale of Arryn", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/d/d7/Vale_of_Arryn.png/revision/latest?cb=20240330004915"},
-    {"name": "ADELE", "logo": "https://charts-static.billboard.com/img/2008/02/adele-9x5-344x344.jpg"},
-    {"name": "Janabi", "logo": "https://www.insideke.online/wp-content/uploads/2025/11/IMG_0713.jpeg"},
-    {"name": "Tinga", "logo": "https://images.theconversation.com/files/698357/original/file-20251024-66-5tljkb.jpg?ixlib=rb-4.1.0&rect=0%2C340%2C4096%2C2048&q=45&auto=format&w=668&h=334&fit=crop"},
-    {"name": "DRACARYS", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/7/7f/Dragons_destroy_ships_in_Meereen.jpg/revision/latest/scale-to-width-down/1000?cb=20160621014157"},
-    {"name": "BATTLE OF THE BASTARDS", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/d/df/Knights_of_the_Vale_S6E09_5.PNG/revision/latest/scale-to-width-down/1000?cb=20160826132900"},
-    {"name": "The Hound", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/b/b5/SandorConfrontsGregor.PNG/revision/latest?cb=20210722093812"},
-    {"name": "theon (sorry) REEK", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/8/84/Theon-fealty.png/revision/latest?cb=20160812055322"},
-    {"name": "Levels, Jerry, Levels", "logo": "https://pbs.twimg.com/media/B_rFi9ZWYAEowmo?format=png&name=small"},
-    {"name": "ART VANDALEY", "logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/orstreams11.webp"},
-    {"name": "VANDALEY INDUSTRIES", "logo": "https://static.wikia.nocookie.net/seinfeld/images/9/9c/The_Seinfeld_Chronicles.jpg/revision/latest?cb=20080801224556"},
-    {"name": "SAGMAN", "logo": "https://static.wikia.nocookie.net/seinfeld/images/9/97/The_Stake_Out_00010.jpg/revision/latest?cb=20111216223006"},
-    {"name": "BENNETT", "logo": "https://static.wikia.nocookie.net/seinfeld/images/9/97/The_Stake_Out_00010.jpg/revision/latest?cb=20111216223006"},
-    {"name": "ROBBINS", "logo": "https://static.wikia.nocookie.net/seinfeld/images/9/97/The_Stake_Out_00010.jpg/revision/latest?cb=20111216223006"},
-    {"name": "OPPENHEIM", "logo": "https://static.wikia.nocookie.net/seinfeld/images/9/97/The_Stake_Out_00010.jpg/revision/latest?cb=20111216223006"},
-    {"name": "TAFT", "logo": "https://static.wikia.nocookie.net/seinfeld/images/9/97/The_Stake_Out_00010.jpg/revision/latest?cb=20111216223006"},
-    {"name": "Del Boca Vista", "logo": "https://static.wikia.nocookie.net/seinfeld/images/9/9d/The_puerto_rican_day.jpg/revision/latest?cb=20120917024357"},
-    {"name": "THE DREAM CAFE", "logo": "https://static.wikia.nocookie.net/seinfeld/images/9/94/DreamCafe.jpg/revision/latest?cb=20120312180840"},
-    {"name": "THE PIGMAN", "logo": "https://i0.wp.com/the-avocado.org/wp-content/uploads/2024/12/daa-1.jpg?w=1000&ssl=1"}
+    {"name": "The Greyjoys", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/f/f7/House-Greyjoy-Main-Shield.png/revision/latest?cb=20170321185051"},
+    {"name": "The Boltons", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/c/c8/House-Bolton-Main-Shield.png/revision/latest?cb=20170321185256"},
+    {"name": "The Freys", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/0/0d/House-Frey-Main-Shield.png/revision/latest?cb=20170321185357"},
+    {"name": "The Tullys", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/8/81/House-Tully-Main-Shield.png/revision/latest?cb=20170321185449"},
+    {"name": "The Arryns", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/2/2a/House-Arryn-Main-Shield.png/revision/latest?cb=20170321185539"},
+    {"name": "The Martells", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/f/f0/House-Martell-Main-Shield.png/revision/latest?cb=20170321185631"},
+    {"name": "The Tyrells", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/e/e4/House-Tyrell-Main-Shield.png/revision/latest?cb=20170321185722"},
+    {"name": "The Baratheons", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/a/a0/House-Baratheon-Main-Shield.png/revision/latest?cb=20170321185807"},
+    {"name": "The Mormonts", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/3/31/House-Mormont-Main-Shield.png/revision/latest?cb=20170321185851"},
+    {"name": "The Umbers", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/9/9b/House-Umber-Main-Shield.png/revision/latest?cb=20170321185943"},
+    {"name": "The Karstarks", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/8/80/House-Karstark-Main-Shield.png/revision/latest?cb=20170321190034"},
+    {"name": "The Reeds", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/e/ef/House-Reed-Main-Shield.png/revision/latest?cb=20170321190122"},
+    {"name": "The Manderlys", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/6/67/House-Manderly-Main-Shield.png/revision/latest?cb=20170321190212"},
+    {"name": "The Glovers", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/5/5a/House-Glover-Main-Shield.png/revision/latest?cb=20170321190302"},
+    {"name": "The Tarlys", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/5/5d/House-Tarly-Main-Shield.png/revision/latest?cb=20170321190347"},
+    {"name": "The Blackwoods", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/2/21/House-Blackwood-Main-Shield.png/revision/latest?cb=20170321190435"},
+    {"name": "The Royces", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/a/a6/House-Royce-Main-Shield.png/revision/latest?cb=20170321190521"},
+    {"name": "The Daynes", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/8/87/House-Dayne-Main-Shield.png/revision/latest?cb=20170321190606"},
+    {"name": "The Hightowers", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/9/92/House-Hightower-Main-Shield.png/revision/latest?cb=20170321190649"},
+    {"name": "The Redwynes", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/a/ac/House-Redwyne-Main-Shield.png/revision/latest?cb=20170321190733"},
+    {"name": "The Florents", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/c/c5/House-Florent-Main-Shield.png/revision/latest?cb=20170321190817"},
+    {"name": "The Conningtons", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/9/91/House-Connington-Main-Shield.png/revision/latest?cb=20170321190903"},
+    {"name": "The Yronwoods", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/5/55/House-Yronwood-Main-Shield.png/revision/latest?cb=20170321190948"},
+    {"name": "The Brotherhood", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/4/47/Brotherhood-without-banners-coat.png/revision/latest?cb=20170321191036"},
+    {"name": "The Second Sons", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/8/81/Second_Sons_Banner.jpg/revision/latest?cb=20170321191123"},
+    {"name": "The Golden Company", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/c/c9/Golden_Company_S8.png/revision/latest?cb=20190414034906"},
+    {"name": "The Faith Militant", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/d/d9/Faith_Militant.png/revision/latest?cb=20170321191211"},
+    {"name": "The Brave Companions", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/d/d3/Brave_Companions.png/revision/latest?cb=20170321191257"},
+    {"name": "The Burned Men", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/8/8e/Burned_Men.png/revision/latest?cb=20170321191343"},
+    {"name": "The Stone Crows", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/5/5f/Stone_Crows.png/revision/latest?cb=20170321191428"},
+    {"name": "The Moon Brothers", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/6/63/Moon_Brothers.png/revision/latest?cb=20170321191513"},
+    {"name": "The Black Ears", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/a/a7/Black_Ears.png/revision/latest?cb=20170321191558"},
+    {"name": "The Painted Dogs", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/1/1f/Painted_Dogs.png/revision/latest?cb=20170321191643"},
+    {"name": "The Sons of the Harpy", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/6/68/Sons_of_the_Harpy.png/revision/latest?cb=20170321191728"},
+    {"name": "The Wise Masters", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/c/c1/Wise_Masters.png/revision/latest?cb=20170321191813"},
+    {"name": "The Good Masters", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/f/f8/Good_Masters.png/revision/latest?cb=20170321191858"},
+    {"name": "The Great Masters", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/e/e8/Great_Masters.png/revision/latest?cb=20170321191943"},
+    {"name": "The Thirteen", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/3/3c/The_Thirteen.png/revision/latest?cb=20170321192028"},
+    {"name": "The Warlocks", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/d/dd/Warlocks.png/revision/latest?cb=20170321192113"},
+    {"name": "The Alchemists", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/5/5e/Alchemists.png/revision/latest?cb=20170321192158"},
+    {"name": "The Maesters", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/a/a3/Maesters.png/revision/latest?cb=20170321192243"},
+    {"name": "The Septons", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/6/69/Septons.png/revision/latest?cb=20170321192328"},
+    {"name": "The Silent Sisters", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/c/cf/Silent_Sisters.png/revision/latest?cb=20170321192413"},
+    {"name": "The Maesters' Chain", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/8/81/Maesters_Chain.png/revision/latest?cb=20170321192458"},
+    {"name": "The Kingsroad", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/7/7c/Kingsroad.png/revision/latest?cb=20170321192543"},
+    {"name": "The Neck", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/9/96/The_Neck.png/revision/latest?cb=20170321192628"},
+    {"name": "The Twins", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/e/e9/The_Twins.jpg/revision/latest?cb=20170321192713"},
+    {"name": "Moat Cailin", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/d/d0/Moat_Cailin.png/revision/latest?cb=20170321192758"},
+    {"name": "The Dreadfort", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/2/2c/Dreadfort.png/revision/latest?cb=20170321192843"},
+    {"name": "Last Hearth", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/a/a9/Last_Hearth.png/revision/latest?cb=20170321192928"},
+    {"name": "Karhold", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/6/64/Karhold.png/revision/latest?cb=20170321193013"},
+    {"name": "The Citadel Library", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/1/1f/Citadel_Library.png/revision/latest?cb=20170321193058"},
+    {"name": "The House of Black and White", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/c/c4/House_of_Black_and_White.jpg/revision/latest?cb=20170321193143"},
+    {"name": "The Great Pyramid", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/8/8c/Great_Pyramid.png/revision/latest?cb=20170321193228"},
+    {"name": "The Fighting Pits", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/e/ed/Fighting_Pits.png/revision/latest?cb=20170321193313"},
+    {"name": "The Temple of the Dosh Khaleen", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/f/f7/Temple_of_Dosh_Khaleen.png/revision/latest?cb=20170321193358"},
+    {"name": "Vaes Dothrak", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/a/a2/Vaes_Dothrak.png/revision/latest?cb=20170321193443"},
+    {"name": "The Shadow Lands", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/d/df/Shadow_Lands.png/revision/latest?cb=20170321193528"},
+    {"name": "Asshai", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/c/c9/Asshai.png/revision/latest?cb=20170321193613"},
+    {"name": "The Fist of the First Men", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/5/5d/Fist_of_First_Men.png/revision/latest?cb=20170321193658"},
+    {"name": "Craster's Keep", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/a/a0/Crasters_Keep.png/revision/latest?cb=20170321193743"},
+    {"name": "The Cave of the Three-Eyed Raven", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/2/29/Cave_Three_Eyed_Raven.png/revision/latest?cb=20170321193828"},
+    {"name": "The Land of Always Winter", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/7/78/Land_Always_Winter.png/revision/latest?cb=20170321193913"},
+    {"name": "The God's Eye", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/1/1e/Gods_Eye.png/revision/latest?cb=20170321193958"},
+    {"name": "The Isle of Faces", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/3/3f/Isle_of_Faces.png/revision/latest?cb=20170321194043"},
+    {"name": "Greywater Watch", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/d/d5/Greywater_Watch.png/revision/latest?cb=20170321194128"},
+    {"name": "The Saltpans", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/8/87/Saltpans.png/revision/latest?cb=20170321194213"},
+    {"name": "Seagard", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/2/2d/Seagard.png/revision/latest?cb=20170321194258"},
+    {"name": "Maidenpool", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/f/f4/Maidenpool.png/revision/latest?cb=20170321194343"},
+    {"name": "Darry", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/a/a8/Darry.png/revision/latest?cb=20170321194428"},
+    {"name": "Raventree Hall", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/3/36/Raventree_Hall.png/revision/latest?cb=20170321194513"},
+    {"name": "Stone Hedge", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/e/e5/Stone_Hedge.png/revision/latest?cb=20170321194558"},
+    {"name": "Acorn Hall", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/7/72/Acorn_Hall.png/revision/latest?cb=20170321194643"},
+    {"name": "The Inn at the Crossroads", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/1/1c/Inn_Crossroads.png/revision/latest?cb=20170321194728"},
+    {"name": "The Peach", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/d/dc/The_Peach.png/revision/latest?cb=20170321194813"},
+    {"name": "Griffin's Roost", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/a/aa/Griffins_Roost.png/revision/latest?cb=20170321194858"},
+    {"name": "Rain House", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/6/6f/Rain_House.png/revision/latest?cb=20170321194943"},
+    {"name": "Bronzegate", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/4/4e/Bronzegate.png/revision/latest?cb=20170321195028"},
+    {"name": "Greenstone", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/c/c7/Greenstone.png/revision/latest?cb=20170321195113"},
+    {"name": "Tarth", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/9/9f/Tarth.png/revision/latest?cb=20170321195158"},
+    {"name": "The Sapphire Isle", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/2/2c/Sapphire_Isle.png/revision/latest?cb=20170321195243"},
+    {"name": "The Arbor", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/5/5d/The_Arbor.png/revision/latest?cb=20170321195328"},
+    {"name": "Horn Hill", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/3/31/Horn_Hill.png/revision/latest?cb=20170321195413"},
+    {"name": "Brightwater Keep", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/a/a1/Brightwater_Keep.png/revision/latest?cb=20170321195458"},
+    {"name": "Bitterbridge", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/7/7f/Bitterbridge.png/revision/latest?cb=20170321195543"},
+    {"name": "Longtable", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/e/eb/Longtable.png/revision/latest?cb=20170321195628"},
+    {"name": "Cider Hall", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/2/29/Cider_Hall.png/revision/latest?cb=20170321195713"},
+    {"name": "Ashford", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/d/d0/Ashford.png/revision/latest?cb=20170321195758"},
+    {"name": "The Water Gardens", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/4/4c/Water_Gardens.png/revision/latest?cb=20170321195843"},
+    {"name": "Yronwood", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/8/89/Yronwood.png/revision/latest?cb=20170321195928"},
+    {"name": "Starfall", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/0/0e/Starfall.png/revision/latest?cb=20170321200013"},
+    {"name": "High Hermitage", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/f/f7/High_Hermitage.png/revision/latest?cb=20170321200058"},
+    {"name": "Skyreach", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/c/ce/Skyreach.png/revision/latest?cb=20170321200143"},
+    {"name": "Vaith", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/a/a5/Vaith.png/revision/latest?cb=20170321200228"},
+    {"name": "Godsgrace", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/1/1f/Godsgrace.png/revision/latest?cb=20170321200313"},
+    {"name": "Lemonwood", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/3/3c/Lemonwood.png/revision/latest?cb=20170321200358"},
+    {"name": "Spottswood", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/e/e7/Spottswood.png/revision/latest?cb=20170321200443"},
+    {"name": "Salt Shore", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/d/d9/Salt_Shore.png/revision/latest?cb=20170321200528"},
+    {"name": "The Tor", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/f/f0/The_Tor.png/revision/latest?cb=20170321200613"},
+    {"name": "Ghost Hill", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/2/2c/Ghost_Hill.png/revision/latest?cb=20170321200658"},
+    {"name": "Hellholt", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/a/a0/Hellholt.png/revision/latest?cb=20170321200743"},
+    {"name": "The Boneway", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/6/67/Boneway.png/revision/latest?cb=20170321200828"},
+    {"name": "The Prince's Pass", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/3/3f/Princes_Pass.png/revision/latest?cb=20170321200913"},
+    {"name": "The Red Mountains", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/e/ec/Red_Mountains.png/revision/latest?cb=20170321200958"},
+    {"name": "The Tower of Joy", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/7/7c/Tower_of_Joy.png/revision/latest?cb=20170321201043"},
+    {"name": "The Stepstones", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/d/d4/Stepstones.png/revision/latest?cb=20170321201128"},
+    {"name": "The Summer Sea", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/f/f5/Summer_Sea.png/revision/latest?cb=20170321201213"},
+    {"name": "The Smoking Sea", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/8/86/Smoking_Sea.png/revision/latest?cb=20170321201258"},
+    {"name": "The Shivering Sea", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/5/5a/Shivering_Sea.png/revision/latest?cb=20170321201343"},
+    {"name": "The Sunset Sea", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/3/39/Sunset_Sea.png/revision/latest?cb=20170321201428"},
+    {"name": "The Jade Sea", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/e/ea/Jade_Sea.png/revision/latest?cb=20170321201513"},
+    {"name": "Yi Ti", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/c/c0/Yi_Ti.png/revision/latest?cb=20170321201558"},
+    {"name": "Leng", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/f/f8/Leng.png/revision/latest?cb=20170321201643"},
+    {"name": "Qarth (City)", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/d/d7/Qarth_City.png/revision/latest?cb=20170321201728"},
+    {"name": "New Ghis", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/a/a7/New_Ghis.png/revision/latest?cb=20170321201813"},
+    {"name": "Volantis", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/2/2e/Volantis.png/revision/latest?cb=20170321201858"},
+    {"name": "Pentos", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/f/f4/Pentos.png/revision/latest?cb=20170321201943"},
+    {"name": "Myr", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/5/5e/Myr.png/revision/latest?cb=20170321202028"},
+    {"name": "Lys", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/a/a0/Lys.png/revision/latest?cb=20170321202113"},
+    {"name": "Tyrosh", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/b/b2/Tyrosh.png/revision/latest?cb=20170321202158"},
+    {"name": "Norvos", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/3/3d/Norvos.png/revision/latest?cb=20170321202243"},
+    {"name": "Qohor", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/c/c5/Qohor.png/revision/latest?cb=20170321202328"},
+    {"name": "Lorath", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/7/79/Lorath.png/revision/latest?cb=20170321202413"},
+    {"name": "Yunkai", "logo": "https://static.wikia.nocookie.net/gameofthrones/images/a/a9/Yunkai.png/revision/latest?cb=20170321202458"}
 ]
 
 
+# --- HELPER FUNCTIONS ---
+
 def create_session():
-    """Create a requests session with retry logic."""
+    """Create a requests session with retry logic"""
     session = requests.Session()
-    retry_strategy = Retry(
+    retry = Retry(
         total=MAX_RETRIES,
-        backoff_factor=1,
-        status_forcelist=[429, 500, 502, 503, 504],
-        allowed_methods=["HEAD", "GET", "OPTIONS"]
+        backoff_factor=RETRY_DELAY,
+        status_forcelist=[429, 500, 502, 503, 504]
     )
-    adapter = HTTPAdapter(max_retries=retry_strategy)
+    adapter = HTTPAdapter(max_retries=retry)
     session.mount("http://", adapter)
     session.mount("https://", adapter)
     return session
 
 
-def log_to_file(message):
-    """Saves a summary to the permanent log.txt file."""
-    timestamp = dt.now().strftime("%Y-%m-%d %H:%M:%S")
-    with open(LOG_FILE, "a", encoding='utf-8') as f:
-        f.write(f"[{timestamp}] {message}\n")
-
-
-def parse_m3u_streams(content):
-    """Extract stream URLs from M3U playlist content with detailed counting."""
-    streams = []
-    lines = content.split('\n')
-    
-    current_stream = None
-    for line in lines:
-        line = line.strip()
-        
-        # Track EXTINF lines (channel definitions)
-        if line.startswith('#EXTINF'):
-            current_stream = {'info': line}
-        # Track actual stream URLs
-        elif line and not line.startswith('#'):
-            if line.startswith('http://') or line.startswith('https://'):
-                if current_stream:
-                    current_stream['url'] = line
-                    streams.append(current_stream)
-                    current_stream = None
-                else:
-                    # Stream without EXTINF
-                    streams.append({'url': line})
-    
-    return streams
-
-
-def validate_playlist(url, session, verbose=True):
-    """
-    Validates playlist thoroughly with proper error handling.
-    Returns: (is_valid, status_message, stream_count)
-    """
-    for attempt in range(MAX_RETRIES):
-        try:
-            if verbose and attempt > 0:
-                print(f"    Retry {attempt + 1}/{MAX_RETRIES}...")
-            
-            response = session.get(
-                url, 
-                headers=HEADERS, 
-                timeout=PLAYLIST_TIMEOUT, 
-                allow_redirects=True,
-                stream=True
-            )
-            
-            if response.status_code == 401:
-                return False, "Authentication Required (Invalid Credentials)", 0
-            elif response.status_code == 403:
-                return False, "Access Forbidden (Blocked/Expired)", 0
-            elif response.status_code == 404:
-                return False, "Not Found (Dead Link)", 0
-            elif response.status_code >= 500:
-                return False, f"Server Error (HTTP {response.status_code})", 0
-            elif response.status_code >= 400:
-                return False, f"Client Error (HTTP {response.status_code})", 0
-            
-            try:
-                content = response.text
-            except Exception as e:
-                return False, f"Content Read Error: {str(e)[:30]}", 0
-            
-            content_length = len(content)
-            if content_length < MIN_PLAYLIST_SIZE:
-                return False, f"Too Small ({content_length} bytes)", 0
-            
-            has_m3u_header = '#EXTM3U' in content
-            has_extinf = '#EXTINF' in content
-            
-            if not has_m3u_header and not has_extinf:
-                return False, "Invalid Format (Not M3U)", 0
-            
-            streams = parse_m3u_streams(content)
-            stream_count = len(streams)
-            
-            if stream_count < MIN_STREAM_COUNT:
-                return False, f"Too Few Channels ({stream_count} found)", 0
-            
-            valid_streams = [s for s in streams if 'url' in s and s['url'].startswith('http')]
-            if len(valid_streams) < MIN_STREAM_COUNT:
-                return False, f"Invalid Stream URLs ({len(valid_streams)} valid)", 0
-            
-            return True, f"✓ VALID", stream_count
-            
-        except requests.exceptions.Timeout:
-            if attempt == MAX_RETRIES - 1:
-                return False, "Timeout (Server Too Slow/Unresponsive)", 0
-            time.sleep(RETRY_DELAY)
-            continue
-            
-        except requests.exceptions.ConnectionError as e:
-            error_msg = str(e).lower()
-            if 'name or service not known' in error_msg or 'nodename nor servname' in error_msg:
-                return False, "DNS Error (Domain Doesn't Exist)", 0
-            elif 'connection refused' in error_msg:
-                return False, "Connection Refused (Server Down)", 0
-            elif 'incomplete read' in error_msg:
-                return False, "Incomplete Data (Connection Dropped)", 0
-            else:
-                if attempt == MAX_RETRIES - 1:
-                    return False, f"Connection Failed: {error_msg[:40]}", 0
-                time.sleep(RETRY_DELAY)
-                continue
-                
-        except requests.exceptions.TooManyRedirects:
-            return False, "Too Many Redirects (Broken Link)", 0
-        except requests.exceptions.SSLError:
-            return False, "SSL Certificate Error", 0
-        except Exception as e:
-            error_msg = str(e)
-            if attempt == MAX_RETRIES - 1:
-                return False, f"Unknown Error: {error_msg[:40]}", 0
-            time.sleep(RETRY_DELAY)
-            continue
-    
-    return False, "Max Retries Exceeded", 0
-
-
-def get_logo_for_slot(slot_id):
-    if slot_id < len(GOT_SLOTS):
-        logo_url = GOT_SLOTS[slot_id].get("logo")
-        if logo_url:
-            return logo_url
-    return FALLBACK_ICON
-
-
-def get_name_for_slot(slot_id, domain):
-    if slot_id < len(GOT_SLOTS):
-        return GOT_SLOTS[slot_id]["name"]
-    return f"IPTV Stream #{slot_id + 1}"
-
-
 def get_domain(url):
+    """Extract domain from URL"""
     try:
         parsed = urlparse(url)
-        domain = parsed.netloc
-        domain = domain.replace('www.', '')
-        return domain
+        domain = parsed.netloc or parsed.path.split('/')[0]
+        return domain.replace('www.', '')
     except:
-        return url
+        return "unknown"
 
 
-def extract_date_from_title(title_text):
-    """Extracts DD-MM-YYYY date from the title string."""
-    date_match = re.search(r'(\d{2}-\d{2}-\d{4})', title_text)
-    if date_match:
+def extract_m3u_links(html_content):
+    """Extract M3U playlist URLs from HTML content"""
+    links = []
+    
+    # Pattern 1: Direct http/https URLs ending with common IPTV parameters
+    pattern1 = r'https?://[^\s<>"]+?(?:get\.php|player_api\.php)[^\s<>"]*'
+    
+    # Pattern 2: M3U file URLs
+    pattern2 = r'https?://[^\s<>"]+?\.m3u[^\s<>"]*'
+    
+    # Pattern 3: URLs with username and password parameters
+    pattern3 = r'https?://[^\s<>"]+?(?:username|user)=[^\s<>"&]+(?:&|&amp;)(?:password|pass)=[^\s<>"&]+'
+    
+    for pattern in [pattern1, pattern2, pattern3]:
+        matches = re.findall(pattern, html_content, re.IGNORECASE)
+        links.extend(matches)
+    
+    # Clean up HTML entities and duplicates
+    cleaned_links = []
+    for link in links:
+        # Decode HTML entities
+        link = link.replace('&amp;', '&')
+        # Remove trailing punctuation
+        link = re.sub(r'[.,;:)\]]+$', '', link)
+        if link not in cleaned_links:
+            cleaned_links.append(link)
+    
+    return cleaned_links
+
+
+def extract_date_from_title(title):
+    """Extract date from article title (e.g., '26-01-2026')"""
+    # Pattern: DD-MM-YYYY
+    match = re.search(r'(\d{2})-(\d{2})-(\d{4})', title)
+    if match:
+        day, month, year = match.groups()
         try:
-            return dt.strptime(date_match.group(1), '%d-%m-%Y').date()
-        except ValueError:
-            return None
+            return dt.strptime(f"{year}-{month}-{day}", "%Y-%m-%d")
+        except:
+            pass
     return None
 
 
-def scrape_nino():
-    """Scraper for Nino IPTV - Checks first 3 articles for the most recent date."""
-    print(f"\n{'='*60}")
-    print(f"  SCRAPING: NINO IPTV ({NINO_URL})")
-    print(f"{'='*60}")
-    all_links = []
+def extract_version_from_title(title):
+    """Extract version (V1, V2, etc.) from article title"""
+    match = re.search(r'\bV(\d+)\b', title, re.IGNORECASE)
+    if match:
+        return int(match.group(1))
+    return 1  # Default to V1 if no version specified
+
+
+def validate_playlist(url, session):
+    """Validate if playlist is live and count channels"""
+    try:
+        response = session.get(url, timeout=PLAYLIST_TIMEOUT, headers=HEADERS, allow_redirects=True)
+        
+        # Check response size
+        content_length = len(response.content)
+        if content_length < MIN_PLAYLIST_SIZE:
+            return False, f"Too small ({content_length} bytes)", 0
+        
+        # Count streams in M3U
+        content = response.text
+        stream_count = content.count('#EXTINF')
+        
+        if stream_count < MIN_STREAM_COUNT:
+            return False, f"Too few streams ({stream_count})", stream_count
+        
+        return True, "Valid", stream_count
+        
+    except requests.Timeout:
+        return False, "Timeout", 0
+    except Exception as e:
+        return False, f"Error: {str(e)[:50]}", 0
+
+
+def load_scraper_log():
+    """Load scraping history"""
+    try:
+        with open(LOG_FILE, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return {"sources": {}}
+
+
+def save_scraper_log(log_data):
+    """Save scraping history"""
+    with open(LOG_FILE, 'w', encoding='utf-8') as f:
+        json.dump(log_data, f, indent=2, ensure_ascii=False)
+
+
+def get_name_for_slot(slot_id, domain):
+    """Get name for slot from GOT_SLOTS or generate from domain"""
+    if slot_id < len(GOT_SLOTS):
+        return GOT_SLOTS[slot_id]["name"]
+    return domain.split('.')[0].title()
+
+
+def get_logo_for_slot(slot_id):
+    """Get logo for slot from GOT_SLOTS or use fallback"""
+    if slot_id < len(GOT_SLOTS):
+        return GOT_SLOTS[slot_id]["logo"]
+    return FALLBACK_ICON
+
+
+# --- SCRAPER FUNCTIONS ---
+
+def scrape_ninoiptv(session, log_data):
+    """Scrape ninoiptv.com with date and version tracking"""
+    print("\n[SCRAPING] ninoiptv.com...")
+    
+    source_name = "ninoiptv"
+    source_log = log_data["sources"].get(source_name, {"scraped_articles": {}})
     
     try:
-        r = requests.get(NINO_URL, headers=HEADERS, timeout=15)
-        r.raise_for_status()
-        soup = BeautifulSoup(r.text, 'html.parser')
+        response = session.get(SOURCES["ninoiptv"], headers=HEADERS, timeout=15)
+        soup = BeautifulSoup(response.content, 'html.parser')
         
-        articles = soup.find_all('h2', class_='entry-title')
-        if not articles:
-            print("  ✗ No articles found")
-            return []
+        # Find all article titles and links
+        articles = []
+        for article in soup.find_all('article'):
+            title_elem = article.find('h2', class_='entry-title')
+            if not title_elem:
+                title_elem = article.find('h1', class_='entry-title')
             
-        # Limit to the first 3 articles
-        target_articles = articles[:MAX_ARTICLES_TO_CHECK]
+            if title_elem:
+                link_elem = title_elem.find('a')
+                if link_elem:
+                    title = link_elem.get_text(strip=True)
+                    url = link_elem.get('href')
+                    
+                    article_date = extract_date_from_title(title)
+                    version = extract_version_from_title(title)
+                    
+                    if article_date:
+                        articles.append({
+                            'title': title,
+                            'url': url,
+                            'date': article_date,
+                            'version': version
+                        })
         
-        for idx, article_tag in enumerate(target_articles):
-            title_link = article_tag.find('a')
-            if not title_link:
+        # Sort by date (newest first) then by version (highest first)
+        articles.sort(key=lambda x: (x['date'], x['version']), reverse=True)
+        
+        print(f"  Found {len(articles)} articles")
+        
+        # Get the latest date
+        if not articles:
+            print("  No articles found")
+            return []
+        
+        latest_date = articles[0]['date']
+        latest_date_str = latest_date.strftime("%Y-%m-%d")
+        
+        # Get all versions for the latest date
+        latest_articles = [a for a in articles if a['date'] == latest_date]
+        
+        print(f"  Latest date: {latest_date_str}")
+        print(f"  Versions available: {', '.join([f'V{a["version"]}' for a in latest_articles])}")
+        
+        all_links = []
+        
+        for article in latest_articles:
+            article_key = f"{latest_date_str}_V{article['version']}"
+            
+            # Check if already scraped
+            if article_key in source_log["scraped_articles"]:
+                print(f"  ✓ Already scraped: {article['title']}")
                 continue
-                
-            title = title_link.get_text(strip=True)
-            url = title_link['href']
             
-            # Extract date from title (e.g., 25-01-2026)
-            post_date = extract_date_from_title(title)
-            date_str = post_date.strftime("%Y-%m-%d") if post_date else "Unknown Date"
-            
-            print(f"  → [{idx+1}] Article: {title[:55]}... ({date_str})")
+            print(f"  → Scraping: {article['title']}")
             
             try:
-                r_art = requests.get(url, headers=HEADERS, timeout=15)
-                soup_art = BeautifulSoup(r_art.text, 'html.parser')
+                article_response = session.get(article['url'], headers=HEADERS, timeout=15)
+                article_soup = BeautifulSoup(article_response.content, 'html.parser')
                 
-                article_links = []
-                for a in soup_art.find_all('a', href=True):
-                    href = a['href']
-                    if "get.php?username=" in href:
-                        article_links.append(href)
-                
-                unique = list(set(article_links))
-                print(f"    ✓ Extracted {len(unique)} playlist links")
-                all_links.extend(unique)
-                
+                # Find entry content
+                content = article_soup.find('div', class_='entry-content')
+                if content:
+                    html_text = str(content)
+                    links = extract_m3u_links(html_text)
+                    
+                    print(f"    Found {len(links)} links")
+                    all_links.extend(links)
+                    
+                    # Mark as scraped
+                    source_log["scraped_articles"][article_key] = {
+                        "title": article['title'],
+                        "url": article['url'],
+                        "scraped_at": dt.now().strftime("%Y-%m-%d %H:%M:%S"),
+                        "links_found": len(links)
+                    }
+                else:
+                    print(f"    No content found")
+                    
             except Exception as e:
-                print(f"    ✗ Article read error: {str(e)[:50]}")
-                
-    except Exception as e:
-        print(f"  ✗ Scraping failed: {str(e)[:50]}")
+                print(f"    Error scraping article: {str(e)}")
         
-    return list(dict.fromkeys(all_links))
+        # Update log
+        log_data["sources"][source_name] = source_log
+        
+        print(f"  Total links extracted: {len(all_links)}")
+        return all_links
+        
+    except Exception as e:
+        print(f"  Error: {str(e)}")
+        return []
 
 
-def scrape_iptvcodes():
-    print(f"\n{'='*60}")
-    print(f"  SCRAPING: IPTV CODES ({IPTVCODES_URL})")
-    print(f"{'='*60}")
-    all_links = []
+def scrape_iptvcodes(session, log_data):
+    """Scrape iptvcodes.online"""
+    print("\n[SCRAPING] iptvcodes.online...")
+    
+    source_name = "iptvcodes"
+    source_log = log_data["sources"].get(source_name, {"scraped_articles": {}})
     
     try:
-        r = requests.get(IPTVCODES_URL, headers=HEADERS, timeout=15)
-        r.raise_for_status()
-        soup = BeautifulSoup(r.text, 'html.parser')
+        response = session.get(SOURCES["iptvcodes"], headers=HEADERS, timeout=15)
+        soup = BeautifulSoup(response.content, 'html.parser')
         
-        articles = soup.find_all('h2', class_='post-title entry-title')
-        if not articles:
-            print("  ✗ No articles found")
-            return []
+        # Find article links
+        article_links = []
+        for article in soup.find_all('article')[:5]:  # Check first 5 articles
+            link_elem = article.find('a', href=True)
+            if link_elem:
+                url = link_elem['href']
+                title = link_elem.get_text(strip=True)
+                article_links.append({'title': title, 'url': url})
+        
+        print(f"  Found {len(article_links)} recent articles")
+        
+        all_links = []
+        
+        for article in article_links:
+            article_key = article['url']
             
-        article_tag = articles[0]
-        title_link = article_tag.find('a')
-        
-        if title_link:
-            title = title_link.get_text(strip=True)
-            url = title_link['href']
-            print(f"  → Article: {title[:70]}...")
+            if article_key in source_log["scraped_articles"]:
+                print(f"  ✓ Already scraped: {article['title'][:50]}...")
+                continue
+            
+            print(f"  → Scraping: {article['title'][:50]}...")
             
             try:
-                r_art = requests.get(url, headers=HEADERS, timeout=15)
-                soup_art = BeautifulSoup(r_art.text, 'html.parser')
+                article_response = session.get(article['url'], headers=HEADERS, timeout=15)
+                article_html = article_response.text
                 
-                for a in soup_art.find_all('a', href=True):
-                    href = a['href']
-                    if "get.php?" in href and "username=" in href and "password=" in href:
-                        all_links.append(href)
+                links = extract_m3u_links(article_html)
+                print(f"    Found {len(links)} links")
+                all_links.extend(links)
                 
-                text_content = soup_art.get_text()
-                xtream_pattern = r'URL\s*[➤>:]+\s*(https?://[^\s<]+)\s+.*?User\s*[➤>:]+\s*([^\s<]+)\s+.*?Pass\s*[➤>:]+\s*([^\s<]+)'
-                matches = re.finditer(xtream_pattern, text_content, re.DOTALL | re.IGNORECASE)
-                
-                for match in matches:
-                    base_url = match.group(1).strip().rstrip('/')
-                    username = match.group(2).strip()
-                    password = match.group(3).strip()
-                    constructed_url = f"{base_url}/get.php?username={username}&password={password}&type=m3u_plus"
-                    all_links.append(constructed_url)
-                
-                unique = list(set(all_links))
-                print(f"  ✓ Extracted {len(unique)} playlist links")
+                # Mark as scraped
+                source_log["scraped_articles"][article_key] = {
+                    "title": article['title'],
+                    "scraped_at": dt.now().strftime("%Y-%m-%d %H:%M:%S"),
+                    "links_found": len(links)
+                }
                 
             except Exception as e:
-                print(f"  ✗ Article read error: {str(e)[:50]}")
-                
-    except Exception as e:
-        print(f"  ✗ Scraping failed: {str(e)[:50]}")
+                print(f"    Error: {str(e)}")
         
-    return all_links
+        # Update log
+        log_data["sources"][source_name] = source_log
+        
+        print(f"  Total links extracted: {len(all_links)}")
+        return all_links
+        
+    except Exception as e:
+        print(f"  Error: {str(e)}")
+        return []
 
 
-def scrape_m3umax():
-    print(f"\n{'='*60}")
-    print(f"  SCRAPING: M3UMAX ({M3UMAX_URL})")
-    print(f"{'='*60}")
-    all_links = []
+def scrape_m3umax(session, log_data):
+    """Scrape m3umax.blogspot.com"""
+    print("\n[SCRAPING] m3umax.blogspot.com...")
+    
+    source_name = "m3umax"
+    source_log = log_data["sources"].get(source_name, {"scraped_articles": {}})
     
     try:
-        r = requests.get(M3UMAX_URL, headers=HEADERS, timeout=15)
-        r.raise_for_status()
-        soup = BeautifulSoup(r.text, 'html.parser')
+        response = session.get(SOURCES["m3umax"], headers=HEADERS, timeout=15)
+        soup = BeautifulSoup(response.content, 'html.parser')
         
-        articles = soup.find_all('h3', class_='pTtl')
-        if not articles:
-            print("  ✗ No articles found")
-            return []
+        # Find article links
+        article_links = []
+        for article in soup.find_all('h3', class_='post-title')[:5]:
+            link_elem = article.find('a', href=True)
+            if link_elem:
+                url = link_elem['href']
+                title = link_elem.get_text(strip=True)
+                article_links.append({'title': title, 'url': url})
+        
+        print(f"  Found {len(article_links)} recent articles")
+        
+        all_links = []
+        
+        for article in article_links:
+            article_key = article['url']
             
-        article_tag = articles[0]
-        title_link = article_tag.find('a')
-        
-        if title_link:
-            title = title_link.get_text(strip=True)
-            url = title_link['href']
-            print(f"  → Article: {title[:70]}...")
+            if article_key in source_log["scraped_articles"]:
+                print(f"  ✓ Already scraped: {article['title'][:50]}...")
+                continue
+            
+            print(f"  → Scraping: {article['title'][:50]}...")
             
             try:
-                r_art = requests.get(url, headers=HEADERS, timeout=15)
-                soup_art = BeautifulSoup(r_art.text, 'html.parser')
+                article_response = session.get(article['url'], headers=HEADERS, timeout=15)
+                article_html = article_response.text
                 
-                article_links = []
-                for a in soup_art.find_all('a', href=True):
-                    href = a['href']
-                    if "get.php?username=" in href:
-                        article_links.append(href)
+                links = extract_m3u_links(article_html)
+                print(f"    Found {len(links)} links")
+                all_links.extend(links)
                 
-                unique = list(set(article_links))
-                print(f"  ✓ Extracted {len(unique)} playlist links")
-                all_links.extend(unique)
+                # Mark as scraped
+                source_log["scraped_articles"][article_key] = {
+                    "title": article['title'],
+                    "scraped_at": dt.now().strftime("%Y-%m-%d %H:%M:%S"),
+                    "links_found": len(links)
+                }
                 
             except Exception as e:
-                print(f"  ✗ Article read error: {str(e)[:50]}")
-    except Exception as e:
-        print(f"  ✗ Scraping failed: {str(e)[:50]}")
+                print(f"    Error: {str(e)}")
         
-    return all_links
+        # Update log
+        log_data["sources"][source_name] = source_log
+        
+        print(f"  Total links extracted: {len(all_links)}")
+        return all_links
+        
+    except Exception as e:
+        print(f"  Error: {str(e)}")
+        return []
 
+
+# --- MAIN FUNCTION ---
 
 def main():
-    print("\n" + "="*70)
-    print("  O.R CONTENT MANAGER - DATE-SENSITIVE EDITION")
-    print("  Scraping First 3 Articles | Date Recognition | Channel Validation")
-    print("="*70 + "\n")
+    print("="*70)
+    print("  IPTV PLAYLIST UPDATER")
+    print("="*70)
     
     session = create_session()
     
+    # Load existing data
     try:
         with open(JSON_FILE, 'r', encoding='utf-8') as f:
             data = json.load(f)
-    except (FileNotFoundError, json.JSONDecodeError):
+    except FileNotFoundError:
         data = {"featured_content": []}
     
+    # Load scraper log
+    log_data = load_scraper_log()
+    
     existing_slots = data.get("featured_content", [])
-    slot_registry = {}
+    slot_registry = {item["slot_id"]: item for item in existing_slots}
     validated_domains = set()
     
-    print(f"\n{'='*70}")
-    print(f"  PHASE 1: VALIDATING EXISTING CONTENT ({len(existing_slots)} items)")
-    print(f"{'='*70}\n")
+    print(f"\n[VALIDATION] Checking {len(existing_slots)} existing playlists...")
     
     timestamp_now = dt.now().strftime("%Y-%m-%d %H:%M:%S")
     valid_count = 0
@@ -526,12 +651,22 @@ def main():
             print(f"  ✗ Status: {reason}\n")
     
     # Discovery phase
-    new_links = []
-    new_links.extend(scrape_nino())
-    new_links.extend(scrape_iptvcodes())
-    new_links.extend(scrape_m3umax())
+    print("\n" + "="*70)
+    print("  DISCOVERY PHASE")
+    print("="*70)
     
+    new_links = []
+    new_links.extend(scrape_ninoiptv(session, log_data))
+    new_links.extend(scrape_iptvcodes(session, log_data))
+    new_links.extend(scrape_m3umax(session, log_data))
+    
+    # Save updated log
+    save_scraper_log(log_data)
+    
+    # Remove duplicates
     new_links = list(dict.fromkeys(new_links))
+    
+    print(f"\n[TESTING] Found {len(new_links)} unique new links")
     
     added_count = 0
     tested_count = 0
@@ -542,7 +677,7 @@ def main():
             continue
         
         tested_count += 1
-        print(f"[NEW {tested_count}] TESTING: {domain}")
+        print(f"[NEW {tested_count}/{len(new_links)}] TESTING: {domain}")
         
         is_valid, reason, stream_count = validate_playlist(link, session)
         
@@ -578,7 +713,7 @@ def main():
             slot_registry[target_id] = new_entry
             validated_domains.add(domain)
             added_count += 1
-            print(f"  ✓✓✓ SUCCESS! Added to Slot {target_id}\n")
+            print(f"  ✓✓✓ SUCCESS! Added to Slot {target_id} | Channels: {stream_count:,}\n")
         else:
             print(f"  ✗ Failed: {reason}\n")
 
@@ -589,9 +724,15 @@ def main():
         json.dump(data, f, indent=2, ensure_ascii=False)
     
     total_channels = sum(x['channel_count'] for x in final_list)
-    summary = f"Update Complete | Active: {len(final_list)} | Added: {added_count} | Channels: {total_channels:,}"
-    print(f"\n{'='*70}\n  {summary}\n{'='*70}\n")
-    log_to_file(summary)
+    
+    print("\n" + "="*70)
+    print("  SUMMARY")
+    print("="*70)
+    print(f"  Active Playlists: {len(final_list)}")
+    print(f"  Newly Added: {added_count}")
+    print(f"  Total Channels: {total_channels:,}")
+    print(f"  Updated: {timestamp_now}")
+    print("="*70)
 
 
 if __name__ == "__main__":
