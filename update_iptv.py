@@ -448,20 +448,34 @@ def scrape_ninoiptv(session, log_data):
     
     try:
         response = session.get(SOURCES["ninoiptv"], headers=HEADERS, timeout=15)
+        print(f"  Response status: {response.status_code}")
+        
         soup = BeautifulSoup(response.content, 'html.parser')
+        
+        # Debug: Check what we're finding
+        all_articles = soup.find_all('article')
+        print(f"  DEBUG: Found {len(all_articles)} <article> tags")
         
         # Find all article titles and links
         articles = []
-        for article in soup.find_all('article'):
+        for idx, article in enumerate(all_articles):
+            # Try multiple ways to find the title
             title_elem = article.find('h2', class_='entry-title')
             if not title_elem:
                 title_elem = article.find('h1', class_='entry-title')
+            if not title_elem:
+                # Try without class
+                title_elem = article.find('h2')
+            if not title_elem:
+                title_elem = article.find('h1')
             
             if title_elem:
                 link_elem = title_elem.find('a')
                 if link_elem:
                     title = link_elem.get_text(strip=True)
                     url = link_elem.get('href')
+                    
+                    print(f"  DEBUG Article {idx+1}: {title[:80]}")
                     
                     article_date = extract_date_from_title(title)
                     version = extract_version_from_title(title)
@@ -473,15 +487,22 @@ def scrape_ninoiptv(session, log_data):
                             'date': article_date,
                             'version': version
                         })
+                        print(f"    → Date: {article_date.strftime('%Y-%m-%d')}, Version: V{version}")
+                    else:
+                        print(f"    → No date found in title")
+                else:
+                    print(f"  DEBUG Article {idx+1}: No link found in title")
+            else:
+                print(f"  DEBUG Article {idx+1}: No title element found")
         
         # Sort by date (newest first) then by version (highest first)
         articles.sort(key=lambda x: (x['date'], x['version']), reverse=True)
         
-        print(f"  Found {len(articles)} articles")
+        print(f"\n  Found {len(articles)} dated articles")
         
         # Get the latest date
         if not articles:
-            print("  No articles found")
+            print("  ERROR: No articles with dates found!")
             return []
         
         latest_date = articles[0]['date']
@@ -527,10 +548,10 @@ def scrape_ninoiptv(session, log_data):
                         "links_found": len(links)
                     }
                 else:
-                    print(f"    No content found")
+                    print(f"    ERROR: No entry-content div found")
                     
             except Exception as e:
-                print(f"    Error scraping article: {str(e)}")
+                print(f"    ERROR scraping article: {type(e).__name__}: {str(e)}")
         
         # Update log
         log_data["sources"][source_name] = source_log
@@ -539,7 +560,9 @@ def scrape_ninoiptv(session, log_data):
         return all_links
         
     except Exception as e:
-        print(f"  Error: {str(e)}")
+        print(f"  ERROR: {type(e).__name__}: {str(e)}")
+        import traceback
+        traceback.print_exc()
         return []
 
 
@@ -554,9 +577,9 @@ def scrape_iptvcodes(session, log_data):
         response = session.get(SOURCES["iptvcodes"], headers=HEADERS, timeout=15)
         soup = BeautifulSoup(response.content, 'html.parser')
         
-        # Find article links - only latest ones
+        # Find article links - only latest 1
         article_links = []
-        for article in soup.find_all('article')[:10]:  # Check first 10 articles (latest)
+        for article in soup.find_all('article')[:1]:  # Only first/latest article
             link_elem = article.find('a', href=True)
             if link_elem:
                 url = link_elem['href']
@@ -616,9 +639,9 @@ def scrape_m3umax(session, log_data):
         response = session.get(SOURCES["m3umax"], headers=HEADERS, timeout=15)
         soup = BeautifulSoup(response.content, 'html.parser')
         
-        # Find article links - only latest ones
+        # Find article links - only latest 1
         article_links = []
-        for article in soup.find_all('h3', class_='post-title')[:10]:  # Check first 10 articles (latest)
+        for article in soup.find_all('h3', class_='post-title')[:1]:  # Only first/latest article
             link_elem = article.find('a', href=True)
             if link_elem:
                 url = link_elem['href']
