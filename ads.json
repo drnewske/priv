@@ -1,45 +1,6 @@
 {
-  "ads": [
-    {
-      "type": "links",
-      "link1": "https://sanynouncem.org?7H3fi=1206000",
-      "link2": "https://boobbounds.com/b45tvhb0?key=b59073054215fe97c24a1dd31c58aecb",
-      "link3": "https://sanynouncem.org?7H3fi=1206000",
-      "link4": "https://boobbounds.com/evfrqdud3b?key=1f59840a6c22f92f1f3a7a827ebda674"
-    }
-  ],
-  "stream_page": {
-    "ads": [
-      {
-        "type": "stream_link",
-        "link": "https://sanynouncem.org?7H3fi=1206000"
-      },
-      {
-        "type": "stream_link",
-        "link": "https://sanynouncem.org?7H3fi=1206000"
-      },
-       {
-        "type": "stream_link",
-        "link": "https://boobbounds.com/b45tvhb0?key=b59073054215fe97c24a1dd31c58aecb"
-      },
-      {
-        "type": "stream_link",
-        "link": "https://boobbounds.com/b45tvhb0?key=b59073054215fe97c24a1dd31c58aecb"
-      }
-    ]
-  },
-  "general_commander": {
-    "share_app_text": "Check out O.R Streams for the best live sports action! Download here: [https://orstreams.info/#download]",
-    "btc_address": "bc1q8f0gsc5cfhcv5x95m3nue9tf9z3rysf5tqd9gd"
-  },
-  "blocked_urls": [
-    "doubleclick.net",
-    "adservice.google.com",
-    "googlesyndication.com",
-    "googletagservices.com",
-    "analytics.google.com",
-    "ad.yieldmanager.com",
-    "ads.pubmatic.com",
-    "connect.facebook.net"
-  ]
+  "type": "links",
+  "link1": "https://sanynouncem.org?7H3fi=1206000",
+  "link2": "https://boobbounds.com/b45tvhb0?key=b59073054215fe97c24a1dd31c58aecb",
+  "link3": "https://boobbounds.com/evfrqdud3b?key=1f59840a6c22f92f1f3a7a827ebda674"
 }
