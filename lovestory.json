@@ -11,7 +11,7 @@
       "server_url": null,
       "id": "got_slot_01",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Initial assignment: couchguy.club:80"
     },
     {
@@ -25,7 +25,7 @@
       "server_url": null,
       "id": "got_slot_02",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Initial assignment: cinefull.space"
     },
     {
@@ -39,7 +39,7 @@
       "server_url": null,
       "id": "slot_002",
       "last_changed": "2026-01-26 15:22:25",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-26 15:22:25"
     },
     {
@@ -53,7 +53,7 @@
       "server_url": null,
       "id": "slot_003",
       "last_changed": "2026-01-27 05:22:08",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-27 05:22:08"
     },
     {
@@ -67,7 +67,7 @@
       "server_url": null,
       "id": "got_slot_05",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Initial assignment: cord-cutter.net:8080"
     },
     {
@@ -81,7 +81,7 @@
       "server_url": null,
       "id": "got_slot_06",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Initial assignment: localiptv.site:85"
     },
     {
@@ -95,7 +95,7 @@
       "server_url": null,
       "id": "got_slot_07",
       "last_changed": "2026-01-24 21:46:53",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Changed from tv.proyectox.vip:8080 to tv.proyectox.vip:8080"
     },
     {
@@ -109,7 +109,7 @@
       "server_url": null,
       "id": "got_slot_08",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-29 06:54:07",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Initial assignment: birdkick.xyz:83"
     },
     {
@@ -123,7 +123,7 @@
       "server_url": null,
       "id": "got_slot_09",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Initial assignment: Supersonictv.live:8080"
     },
     {
@@ -137,7 +137,7 @@
       "server_url": null,
       "id": "slot_009",
       "last_changed": "2026-01-27 05:22:08",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-27 05:22:08"
     },
     {
@@ -151,7 +151,7 @@
       "server_url": null,
       "id": "got_slot_11",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Initial assignment: supersonictv.live:8080"
     },
     {
@@ -165,21 +165,21 @@
       "server_url": null,
       "id": "got_slot_12",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Initial assignment: porn-hub.streamtv.to:8080"
     },
     {
       "slot_id": 12,
       "name": "Braavos",
       "domain": "tv.nova-iptv.com:80",
-      "channel_count": 4176,
+      "channel_count": 4179,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/7/7b/Titan_of_Braavos.jpg/revision/latest/scale-to-width-down/1000?cb=20150504024857",
       "type": "m3u",
       "url": "http://tv.nova-iptv.com:80/get.php?username=ivo789&password=mwwMuCgjLa&type=m3u_plus",
       "server_url": null,
       "id": "got_slot_13",
       "last_changed": "2026-01-24 17:36:03",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Changed from linkapprota1.store:8080 to tv.nova-iptv.com:80"
     },
     {
@@ -193,7 +193,7 @@
       "server_url": null,
       "id": "got_slot_14",
       "last_changed": "2026-01-24 17:36:03",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Changed from dnssp.site:80 to tanzanyanuh.xyz:8080"
     },
     {
@@ -207,7 +207,7 @@
       "server_url": null,
       "id": "slot_014",
       "last_changed": "2026-01-28 06:41:25",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-28 06:41:25"
     },
     {
@@ -221,21 +221,21 @@
       "server_url": null,
       "id": "slot_015",
       "last_changed": "2026-01-28 06:41:25",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-28 06:41:25"
     },
     {
       "slot_id": 16,
       "name": "Red Keep",
       "domain": "canal-pro.xyz:8080",
-      "channel_count": 67329,
+      "channel_count": 67334,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/7/71/S8_Red_Keep.jpg/revision/latest?cb=20190305171013",
       "type": "m3u",
       "url": "http://canal-pro.xyz:8080/get.php?username=962251034tv&password=7t48ipxw&type=m3u_plus",
       "server_url": null,
       "id": "slot_016",
       "last_changed": "2026-01-27 05:22:08",
-      "last_validated": "2026-01-29 06:54:07",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-27 05:22:08"
     },
     {
@@ -249,7 +249,7 @@
       "server_url": null,
       "id": "got_slot_18",
       "last_changed": "2026-01-24 17:36:03",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Changed from sansuygtv.site:80 to 117.55.202.58:8080"
     },
     {
@@ -263,7 +263,7 @@
       "server_url": null,
       "id": "got_slot_19",
       "last_changed": "2026-01-24 17:36:03",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Changed from sansuygtv.site:8080 to desktopfibra.org:8080"
     },
     {
@@ -277,21 +277,21 @@
       "server_url": null,
       "id": "got_slot_20",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Initial assignment: plus.newdns.world:8080"
     },
     {
       "slot_id": 20,
       "name": "Oldtown",
       "domain": "vip.europaiptv.vip:2086",
-      "channel_count": 101296,
+      "channel_count": 101295,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/0/01/BtD_AIH_Oldtown.png/revision/latest/scale-to-width-down/1000?cb=20220805155230",
       "type": "m3u",
       "url": "http://vip.europaiptv.vip:2086/get.php?username=Ahmetamcasi&password=MKv8cEijdQ&type=m3u_plus",
       "server_url": null,
       "id": "got_slot_21",
       "last_changed": "2026-01-24 17:36:03",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Changed from protv65.shop:8080 to vip.europaiptv.vip:2086"
     },
     {
@@ -305,7 +305,7 @@
       "server_url": null,
       "id": "got_slot_22",
       "last_changed": "2026-01-24 17:36:03",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Changed from smartvtcl.site:80 to favoritv65.xyz:8080"
     },
     {
@@ -319,7 +319,7 @@
       "server_url": null,
       "id": "got_slot_23",
       "last_changed": "2026-01-24 20:19:18",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Changed from firetvset.net:88 to 185.134.22.131:8080"
     },
     {
@@ -333,7 +333,7 @@
       "server_url": null,
       "id": "slot_023",
       "last_changed": "2026-01-28 06:41:25",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-28 06:41:25"
     },
     {
@@ -347,7 +347,7 @@
       "server_url": null,
       "id": "slot_024",
       "last_changed": "2026-01-25 07:40:29",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-25 07:40:29"
     },
     {
@@ -361,7 +361,7 @@
       "server_url": null,
       "id": "slot_025",
       "last_changed": "2026-01-25 07:40:29",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-25 07:40:29"
     },
     {
@@ -375,7 +375,7 @@
       "server_url": null,
       "id": "slot_026",
       "last_changed": "2026-01-28 06:41:25",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-28 06:41:25"
     },
     {
@@ -389,35 +389,35 @@
       "server_url": null,
       "id": "got_slot_28",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Initial assignment: zzt9k.xyz:8080"
     },
     {
       "slot_id": 28,
       "name": "The Great Sept of Baelor",
       "domain": "nuhproxtv.shop:8080",
-      "channel_count": 67137,
+      "channel_count": 67560,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/d/d9/GreatSeptS3.jpg/revision/latest/scale-to-width-down/1000?cb=20150412170141",
       "type": "m3u",
       "url": "http://nuhproxtv.shop:8080/get.php?username=zkn1887&password=cn.1908&type=m3u_plus",
       "server_url": null,
       "id": "slot_028",
       "last_changed": "2026-01-28 06:41:25",
-      "last_validated": "2026-01-30 06:55:47",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-28 06:41:25"
     },
     {
       "slot_id": 29,
       "name": "Night's Watch",
       "domain": "proxpanel.pro",
-      "channel_count": 355984,
+      "channel_count": 355986,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/2/25/Jon%2C_Sam_and_Pyp.jpg/revision/latest/scale-to-width-down/1000?cb=20101128160538",
       "type": "m3u",
       "url": "http://proxpanel.pro/get.php?username=Lana15&password=tjLUeQxVL4LE&type=m3u_plus",
       "server_url": null,
       "id": "slot_029",
       "last_changed": "2026-01-28 12:37:15",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-28 12:37:15"
     },
     {
@@ -431,35 +431,21 @@
       "server_url": null,
       "id": "slot_030",
       "last_changed": "2026-01-25 07:40:29",
-      "last_validated": "2026-01-31 06:44:44",
-      "change_log": "Added via scraper on 2026-01-25 07:40:29"
-    },
-    {
-      "slot_id": 31,
-      "name": "The Free Cities",
-      "domain": "abtvab@starshare.net:8080",
-      "channel_count": 603487,
-      "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/3/38/Longbridge.png/revision/latest/scale-to-width-down/1000?cb=20150328214200",
-      "type": "m3u",
-      "url": "http://abtvab@starshare.net:8080/get.php?username=abidhussain112&password=abidhussain1167&type=m3u&output=mpegts",
-      "server_url": null,
-      "id": "slot_031",
-      "last_changed": "2026-01-25 07:40:29",
-      "last_validated": "2026-01-29 06:54:07",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-25 07:40:29"
     },
     {
       "slot_id": 32,
       "name": "The Narrow Sea",
       "domain": "okstar.okfnm.xyz:443",
-      "channel_count": 18160,
+      "channel_count": 18034,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/6/6c/S04E10_-_Arya_%28on_the_ship%29.png/revision/latest/scale-to-width-down/1000?cb=20140618063538",
       "type": "m3u",
       "url": "https://okstar.okfnm.xyz:443/get.php?username=tee21483&password=R9weGnykq6w&type=m3u",
       "server_url": null,
       "id": "got_slot_33",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Initial assignment: okstar.okfnm.xyz:443"
     },
     {
@@ -473,7 +459,7 @@
       "server_url": null,
       "id": "slot_033",
       "last_changed": "2026-01-28 12:37:15",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-28 12:37:15"
     },
     {
@@ -487,7 +473,7 @@
       "server_url": null,
       "id": "slot_034",
       "last_changed": "2026-01-28 12:37:15",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-28 12:37:15"
     },
     {
@@ -501,35 +487,21 @@
       "server_url": null,
       "id": "got_slot_36",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Initial assignment: xc.tvset.top:80"
-    },
-    {
-      "slot_id": 36,
-      "name": "Astapor",
-      "domain": "starshare.st",
-      "channel_count": 604159,
-      "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/c/ca/Astapor_city_view.jpg/revision/latest/scale-to-width-down/1000?cb=20150328211103",
-      "type": "m3u",
-      "url": "http://starshare.st/get.php?username=amolstr01&password=constant2election&type=m3u_plus",
-      "server_url": null,
-      "id": "slot_036",
-      "last_changed": "2026-01-25 07:40:29",
-      "last_validated": "2026-01-29 06:54:07",
-      "change_log": "Added via scraper on 2026-01-25 07:40:29"
     },
     {
       "slot_id": 37,
       "name": "Balerion The Black Dread",
       "domain": "fivetv.org:25461",
-      "channel_count": 100130,
+      "channel_count": 100132,
       "logo_url": "https://staticg.sportskeeda.com/editor/2022/12/62cdf-16722910130058-1920.jpg",
       "type": "m3u",
       "url": "http://fivetv.org:25461/get.php?username=ANGEL21&password=mangel6543MA&type=m3u_plus&output=ts",
       "server_url": null,
       "id": "got_slot_38",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-30 06:55:47",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Initial assignment: fivetv.org:25461"
     },
     {
@@ -543,22 +515,8 @@
       "server_url": null,
       "id": "got_slot_39",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Initial assignment: ip96.uk:8080"
-    },
-    {
-      "slot_id": 39,
-      "name": "Daenerys",
-      "domain": "vipwoaf.top:8080",
-      "channel_count": 23531,
-      "logo_url": "https://www.thepopverse.com/_next/image?url=https%3A%2F%2Fmedia.thepopverse.com%2Fmedia%2Femilia-clarke-game-of-thrones-dothraki-language-i2yd4ljq4zpfvikmv0onmgmvy2.png&w=1280&q=75",
-      "type": "m3u",
-      "url": "http://vipwoaf.top:8080/get.php?username=VIP017811734874853285&password=e954c66a32ce&type=m3u_plus",
-      "server_url": null,
-      "id": "got_slot_40",
-      "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-30 06:55:47",
-      "change_log": "Initial assignment: vipwoaf.top:8080"
     },
     {
       "slot_id": 40,
@@ -571,7 +529,7 @@
       "server_url": null,
       "id": "slot_040",
       "last_changed": "2026-01-25 07:40:29",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-25 07:40:29"
     },
     {
@@ -585,7 +543,7 @@
       "server_url": null,
       "id": "got_slot_42",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Initial assignment: asterix-iptv.club:25461"
     },
     {
@@ -599,22 +557,8 @@
       "server_url": null,
       "id": "got_slot_43",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Initial assignment: caffe.link:25461"
-    },
-    {
-      "slot_id": 43,
-      "name": "Godswood",
-      "domain": "xline.live",
-      "channel_count": 116581,
-      "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/e/ea/Godtree_S8_EP2.jpg/revision/latest/scale-to-width-down/1000?cb=20190417202906",
-      "type": "m3u",
-      "url": "http://xline.live/get.php?username=555555&password=666666&type=m3u_plus",
-      "server_url": null,
-      "id": "slot_043",
-      "last_changed": "2026-01-25 07:40:29",
-      "last_validated": "2026-01-28 12:37:15",
-      "change_log": "Added via scraper on 2026-01-25 07:40:29"
     },
     {
       "slot_id": 44,
@@ -627,7 +571,7 @@
       "server_url": null,
       "id": "got_slot_45",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Initial assignment: roi-tv.net:9000"
     },
     {
@@ -641,7 +585,7 @@
       "server_url": null,
       "id": "got_slot_46",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Initial assignment: sansatplus.net:88"
     },
     {
@@ -655,21 +599,21 @@
       "server_url": null,
       "id": "got_slot_47",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Initial assignment: iptvch.com:2082"
     },
     {
       "slot_id": 47,
       "name": "The Seven",
       "domain": "world-service.us:8080",
-      "channel_count": 39325,
+      "channel_count": 39349,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/7/7e/501_Great_Sept_Seven_statues.jpg/revision/latest/scale-to-width-down/1000?cb=20150416164510",
       "type": "m3u",
       "url": "http://world-service.us:8080/get.php?username=luigiSon1&password=ZrhFBbFKxa&type=m3u_plus&output=mpegts",
       "server_url": null,
       "id": "got_slot_48",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-29 06:54:07",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Initial assignment: world-service.us:8080"
     },
     {
@@ -683,7 +627,7 @@
       "server_url": null,
       "id": "got_slot_49",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-29 06:54:07",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Initial assignment: fastopen.live:8080"
     },
     {
@@ -697,22 +641,8 @@
       "server_url": null,
       "id": "got_slot_50",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-29 06:54:07",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Initial assignment: iptv1.kavkom.tv:8000"
-    },
-    {
-      "slot_id": 50,
-      "name": "The Long Night",
-      "domain": "xworld-blue.com:25461",
-      "channel_count": 22774,
-      "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/7/75/Grey_Worm_S8_Ep3.jpg/revision/latest/scale-to-width-down/1000?cb=20190429030211",
-      "type": "m3u",
-      "url": "http://xworld-blue.com:25461/get.php?username=4220Maximo&password=4220&type=m3u",
-      "server_url": null,
-      "id": "got_slot_51",
-      "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-28 12:37:15",
-      "change_log": "Initial assignment: xworld-blue.com:25461"
     },
     {
       "slot_id": 51,
@@ -725,7 +655,7 @@
       "server_url": null,
       "id": "got_slot_52",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-29 06:54:07",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Initial assignment: apx-me.com:8880"
     },
     {
@@ -739,7 +669,7 @@
       "server_url": null,
       "id": "got_slot_53",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-29 06:54:07",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Initial assignment: best4u.biz:80"
     },
     {
@@ -753,7 +683,7 @@
       "server_url": null,
       "id": "slot_053",
       "last_changed": "2026-01-28 12:37:15",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-28 12:37:15"
     },
     {
@@ -767,7 +697,7 @@
       "server_url": null,
       "id": "slot_054",
       "last_changed": "2026-01-25 07:40:29",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-25 07:40:29"
     },
     {
@@ -781,7 +711,7 @@
       "server_url": null,
       "id": "slot_055",
       "last_changed": "2026-01-26 07:01:38",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-26 07:01:38"
     },
     {
@@ -795,7 +725,7 @@
       "server_url": null,
       "id": "got_slot_57",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Initial assignment: abtvab@cms.weltiptv.com:8000"
     },
     {
@@ -809,7 +739,7 @@
       "server_url": null,
       "id": "got_slot_58",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Initial assignment: abtvab@xplatinmedia.com:8080"
     },
     {
@@ -823,7 +753,7 @@
       "server_url": null,
       "id": "got_slot_59",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Initial assignment: abtvab@starshare.net:80"
     },
     {
@@ -837,22 +767,8 @@
       "server_url": null,
       "id": "got_slot_60",
       "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Initial assignment: abtvab@cord-cutter.net:8080"
-    },
-    {
-      "slot_id": 60,
-      "name": "Drogon",
-      "domain": "abtvab@starshare.st:80",
-      "channel_count": 603487,
-      "logo_url": "https://staticg.sportskeeda.com/editor/2022/12/9eb54-16722910132128-1920.jpg",
-      "type": "m3u",
-      "url": "http://abtvab@starshare.st:80/get.php?username=abidhussain112&password=abidhussain1167&type=m3u&output=mpegts",
-      "server_url": null,
-      "id": "got_slot_61",
-      "last_changed": "2026-01-22 15:45:29",
-      "last_validated": "2026-01-29 06:54:07",
-      "change_log": "Initial assignment: abtvab@starshare.st:80"
     },
     {
       "slot_id": 61,
@@ -865,7 +781,7 @@
       "server_url": null,
       "id": "slot_061",
       "last_changed": "2026-01-25 07:40:29",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-25 07:40:29"
     },
     {
@@ -879,7 +795,7 @@
       "server_url": null,
       "id": "slot_062",
       "last_changed": "2026-01-25 07:40:29",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-25 07:40:29"
     },
     {
@@ -893,7 +809,7 @@
       "server_url": null,
       "id": "slot_063",
       "last_changed": "2026-01-25 07:40:29",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-25 07:40:29"
     },
     {
@@ -907,7 +823,7 @@
       "server_url": null,
       "id": "slot_064",
       "last_changed": "2026-01-26 07:01:38",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-26 07:01:38"
     },
     {
@@ -921,7 +837,7 @@
       "server_url": null,
       "id": "slot_065",
       "last_changed": "2026-01-25 07:40:29",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-25 07:40:29"
     },
     {
@@ -935,7 +851,7 @@
       "server_url": null,
       "id": "slot_066",
       "last_changed": "2026-01-25 07:40:29",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-25 07:40:29"
     },
     {
@@ -949,7 +865,7 @@
       "server_url": null,
       "id": "slot_067",
       "last_changed": "2026-01-25 07:40:29",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-25 07:40:29"
     },
     {
@@ -963,7 +879,7 @@
       "server_url": null,
       "id": "slot_068",
       "last_changed": "2026-01-25 07:40:29",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-25 07:40:29"
     },
     {
@@ -977,7 +893,7 @@
       "server_url": null,
       "id": "slot_069",
       "last_changed": "2026-01-26 07:01:38",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-26 07:01:38"
     },
     {
@@ -991,7 +907,7 @@
       "server_url": null,
       "id": "slot_070",
       "last_changed": "2026-01-26 07:01:38",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-26 07:01:38"
     },
     {
@@ -1005,7 +921,7 @@
       "server_url": null,
       "id": "slot_071",
       "last_changed": "2026-01-28 12:37:15",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-28 12:37:15"
     },
     {
@@ -1019,7 +935,7 @@
       "server_url": null,
       "id": "slot_072",
       "last_changed": "2026-01-28 12:37:15",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-28 12:37:15"
     },
     {
@@ -1033,7 +949,7 @@
       "server_url": null,
       "id": "slot_073",
       "last_changed": "2026-01-28 12:37:15",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-28 12:37:15"
     },
     {
@@ -1047,7 +963,7 @@
       "server_url": null,
       "id": "slot_074",
       "last_changed": "2026-01-28 12:37:15",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-28 12:37:15"
     },
     {
@@ -1061,49 +977,49 @@
       "server_url": null,
       "id": "slot_075",
       "last_changed": "2026-01-28 12:37:15",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-28 12:37:15"
     },
     {
       "slot_id": 76,
       "name": "The Karstarks",
       "domain": "server.shamelforu.com:8080",
-      "channel_count": 104721,
+      "channel_count": 104723,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/8/80/House-Karstark-Main-Shield.png/revision/latest?cb=20170321190034",
       "type": "m3u",
       "url": "http://server.shamelforu.com:8080/get.php?username=mostafakabbout&password=Tb4aiDxXHB&type=m3u",
       "server_url": null,
       "id": "slot_076",
       "last_changed": "2026-01-28 12:37:15",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-28 12:37:15"
     },
     {
       "slot_id": 77,
       "name": "The Reeds",
       "domain": "zzt9k.xyz:8080",
-      "channel_count": 38319,
+      "channel_count": 38331,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/e/ef/House-Reed-Main-Shield.png/revision/latest?cb=20170321190122",
       "type": "m3u",
       "url": "http://zzt9k.xyz:8080/get.php?username=Hasanugur&password=4MUCxj8CFK&type=m3u_plus",
       "server_url": null,
       "id": "slot_077",
       "last_changed": "2026-01-29 06:54:07",
-      "last_validated": "2026-01-29 06:54:07",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-29 06:54:07"
     },
     {
       "slot_id": 78,
       "name": "The Manderlys",
       "domain": "dersa1private.xyz:8080",
-      "channel_count": 306129,
+      "channel_count": 306178,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/6/67/House-Manderly-Main-Shield.png/revision/latest?cb=20170321190212",
       "type": "m3u",
       "url": "http://dersa1private.xyz:8080/get.php?username=Senocak2022&password=kbbBxHgcMKxE&type=m3u_plus",
       "server_url": null,
       "id": "slot_078",
       "last_changed": "2026-01-29 06:54:07",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-29 06:54:07"
     },
     {
@@ -1117,21 +1033,7 @@
       "server_url": null,
       "id": "slot_079",
       "last_changed": "2026-01-29 06:54:07",
-      "last_validated": "2026-01-31 06:44:44",
-      "change_log": "Added via scraper on 2026-01-29 06:54:07"
-    },
-    {
-      "slot_id": 80,
-      "name": "The Tarlys",
-      "domain": "hrnayz.xyz:80",
-      "channel_count": 81017,
-      "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/5/5d/House-Tarly-Main-Shield.png/revision/latest?cb=20170321190347",
-      "type": "m3u",
-      "url": "http://hrnayz.xyz:80/get.php?username=kadirbs&password=czhDvXuktR&type=m3u_plus",
-      "server_url": null,
-      "id": "slot_080",
-      "last_changed": "2026-01-29 06:54:07",
-      "last_validated": "2026-01-29 06:54:07",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-29 06:54:07"
     },
     {
@@ -1145,7 +1047,7 @@
       "server_url": null,
       "id": "slot_081",
       "last_changed": "2026-01-29 06:54:07",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-29 06:54:07"
     },
     {
@@ -1159,7 +1061,7 @@
       "server_url": null,
       "id": "slot_082",
       "last_changed": "2026-01-29 06:54:07",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-29 06:54:07"
     },
     {
@@ -1173,7 +1075,7 @@
       "server_url": null,
       "id": "slot_083",
       "last_changed": "2026-01-29 06:54:07",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-29 06:54:07"
     },
     {
@@ -1187,7 +1089,7 @@
       "server_url": null,
       "id": "slot_084",
       "last_changed": "2026-01-29 06:54:07",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-29 06:54:07"
     },
     {
@@ -1201,7 +1103,7 @@
       "server_url": null,
       "id": "slot_085",
       "last_changed": "2026-01-29 06:54:07",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-29 06:54:07"
     },
     {
@@ -1215,21 +1117,21 @@
       "server_url": null,
       "id": "slot_086",
       "last_changed": "2026-01-29 06:54:07",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-29 06:54:07"
     },
     {
       "slot_id": 87,
       "name": "The Conningtons",
       "domain": "kalitemedya45.xyz:8080",
-      "channel_count": 42190,
+      "channel_count": 42613,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/9/91/House-Connington-Main-Shield.png/revision/latest?cb=20170321190903",
       "type": "m3u",
       "url": "http://kalitemedya45.xyz:8080/get.php?username=Nycist3497967865&password=9yeXHFCMa5Qk&type=m3u_plus",
       "server_url": null,
       "id": "slot_087",
       "last_changed": "2026-01-29 06:54:07",
-      "last_validated": "2026-01-30 06:55:47",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-29 06:54:07"
     },
     {
@@ -1243,7 +1145,7 @@
       "server_url": null,
       "id": "slot_088",
       "last_changed": "2026-01-29 06:54:07",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-29 06:54:07"
     },
     {
@@ -1257,7 +1159,7 @@
       "server_url": null,
       "id": "slot_089",
       "last_changed": "2026-01-29 06:54:07",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-29 06:54:07"
     },
     {
@@ -1271,77 +1173,49 @@
       "server_url": null,
       "id": "slot_090",
       "last_changed": "2026-01-29 06:54:07",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-29 06:54:07"
-    },
-    {
-      "slot_id": 91,
-      "name": "The Golden Company",
-      "domain": "wnwntv.com:8080",
-      "channel_count": 234213,
-      "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/c/c9/Golden_Company_S8.png/revision/latest?cb=20190414034906",
-      "type": "m3u",
-      "url": "http://wnwntv.com:8080/get.php?username=Sedaozdemir&password=g4yckErz7N4Ax&type=m3u_plus",
-      "server_url": null,
-      "id": "slot_091",
-      "last_changed": "2026-01-29 06:54:07",
-      "last_validated": "2026-01-31 06:44:44",
-      "change_log": "Added via scraper on 2026-01-29 06:54:07"
-    },
-    {
-      "slot_id": 92,
-      "name": "The Faith Militant",
-      "domain": "maveniptv.net:8080",
-      "channel_count": 211950,
-      "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/d/d9/Faith_Militant.png/revision/latest?cb=20170321191211",
-      "type": "m3u",
-      "url": "http://maveniptv.net:8080/get.php?username=aosman&password=0M@1115082222&type=m3u",
-      "server_url": null,
-      "id": "slot_092",
-      "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-30 06:55:47",
-      "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
       "slot_id": 93,
       "name": "The Brave Companions",
       "domain": "world-service.us:8080",
-      "channel_count": 39339,
+      "channel_count": 39349,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/d/d3/Brave_Companions.png/revision/latest?cb=20170321191257",
       "type": "m3u",
       "url": "http://world-service.us:8080/get.php?username=luigiSon1&password=ZrhFBbFKxa&type=m3u_plus&output=mpegts",
       "server_url": null,
       "id": "slot_093",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-30 06:55:47",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
       "slot_id": 94,
       "name": "The Burned Men",
       "domain": "exclusive.macumba.xyz:80",
-      "channel_count": 105075,
+      "channel_count": 105166,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/8/8e/Burned_Men.png/revision/latest?cb=20170321191343",
       "type": "m3u",
       "url": "http://exclusive.macumba.xyz:80/get.php?username=LRAjfucLpF&password=ryVjPeu7eC&type=m3u_plus&output=ts",
       "server_url": null,
       "id": "slot_094",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-30 06:55:47",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
       "slot_id": 95,
       "name": "The Stone Crows",
       "domain": "canal-pro.xyz:8080",
-      "channel_count": 67329,
+      "channel_count": 67334,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/5/5f/Stone_Crows.png/revision/latest?cb=20170321191428",
       "type": "m3u",
       "url": "http://canal-pro.xyz:8080/get.php?username=9531183tv&password=9opp9s&type=m3u",
       "server_url": null,
       "id": "slot_095",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-30 06:55:47",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1355,7 +1229,7 @@
       "server_url": null,
       "id": "slot_096",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-30 06:55:47",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1369,7 +1243,7 @@
       "server_url": null,
       "id": "slot_097",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-30 06:55:47",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1383,7 +1257,7 @@
       "server_url": null,
       "id": "slot_098",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-30 06:55:47",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1397,21 +1271,21 @@
       "server_url": null,
       "id": "slot_099",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-30 06:55:47",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
       "slot_id": 100,
       "name": "The Wise Masters",
       "domain": "tv70.icu:8080",
-      "channel_count": 64446,
+      "channel_count": 64339,
       "logo_url": "https://static.wikia.nocookie.net/gameofthrones/images/c/c1/Wise_Masters.png/revision/latest?cb=20170321191813",
       "type": "m3u",
       "url": "http://tv70.icu:8080/get.php?username=95992856&password=95992856&type=m3u",
       "server_url": null,
       "id": "slot_100",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-30 06:55:47",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1425,7 +1299,7 @@
       "server_url": null,
       "id": "slot_101",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-30 06:55:47",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1439,7 +1313,7 @@
       "server_url": null,
       "id": "slot_102",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-30 06:55:47",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1453,7 +1327,7 @@
       "server_url": null,
       "id": "slot_103",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1467,7 +1341,7 @@
       "server_url": null,
       "id": "slot_104",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1481,7 +1355,7 @@
       "server_url": null,
       "id": "slot_105",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1495,7 +1369,7 @@
       "server_url": null,
       "id": "slot_106",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1509,7 +1383,7 @@
       "server_url": null,
       "id": "slot_107",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1523,7 +1397,7 @@
       "server_url": null,
       "id": "slot_108",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1537,7 +1411,7 @@
       "server_url": null,
       "id": "slot_109",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1551,7 +1425,7 @@
       "server_url": null,
       "id": "slot_110",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1565,7 +1439,7 @@
       "server_url": null,
       "id": "slot_111",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1579,7 +1453,7 @@
       "server_url": null,
       "id": "slot_112",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1593,7 +1467,7 @@
       "server_url": null,
       "id": "slot_113",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1607,7 +1481,7 @@
       "server_url": null,
       "id": "slot_114",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1621,7 +1495,7 @@
       "server_url": null,
       "id": "slot_115",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1635,7 +1509,7 @@
       "server_url": null,
       "id": "slot_116",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1649,7 +1523,7 @@
       "server_url": null,
       "id": "slot_117",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1663,7 +1537,7 @@
       "server_url": null,
       "id": "slot_118",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1677,7 +1551,7 @@
       "server_url": null,
       "id": "slot_119",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1691,7 +1565,7 @@
       "server_url": null,
       "id": "slot_120",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1705,7 +1579,7 @@
       "server_url": null,
       "id": "slot_121",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1719,7 +1593,7 @@
       "server_url": null,
       "id": "slot_122",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1733,7 +1607,7 @@
       "server_url": null,
       "id": "slot_123",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1747,7 +1621,7 @@
       "server_url": null,
       "id": "slot_124",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1761,7 +1635,7 @@
       "server_url": null,
       "id": "slot_125",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1775,7 +1649,7 @@
       "server_url": null,
       "id": "slot_126",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1789,7 +1663,7 @@
       "server_url": null,
       "id": "slot_127",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1803,7 +1677,7 @@
       "server_url": null,
       "id": "slot_128",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1817,7 +1691,7 @@
       "server_url": null,
       "id": "slot_129",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1831,7 +1705,7 @@
       "server_url": null,
       "id": "slot_130",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1845,7 +1719,7 @@
       "server_url": null,
       "id": "slot_131",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1859,7 +1733,7 @@
       "server_url": null,
       "id": "slot_132",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1873,7 +1747,7 @@
       "server_url": null,
       "id": "slot_133",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1887,7 +1761,7 @@
       "server_url": null,
       "id": "slot_134",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1901,7 +1775,7 @@
       "server_url": null,
       "id": "slot_135",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1915,7 +1789,7 @@
       "server_url": null,
       "id": "slot_136",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1929,7 +1803,7 @@
       "server_url": null,
       "id": "slot_137",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-30 06:55:47",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1943,7 +1817,7 @@
       "server_url": null,
       "id": "slot_138",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1957,7 +1831,7 @@
       "server_url": null,
       "id": "slot_139",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1971,7 +1845,7 @@
       "server_url": null,
       "id": "slot_140",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1985,7 +1859,7 @@
       "server_url": null,
       "id": "slot_141",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -1999,7 +1873,7 @@
       "server_url": null,
       "id": "slot_142",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -2013,7 +1887,7 @@
       "server_url": null,
       "id": "slot_143",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -2027,7 +1901,7 @@
       "server_url": null,
       "id": "slot_144",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -2041,7 +1915,7 @@
       "server_url": null,
       "id": "slot_145",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-30 06:55:47",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -2055,7 +1929,7 @@
       "server_url": null,
       "id": "slot_146",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-30 06:55:47",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -2069,7 +1943,7 @@
       "server_url": null,
       "id": "slot_147",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -2083,7 +1957,7 @@
       "server_url": null,
       "id": "slot_148",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -2097,7 +1971,7 @@
       "server_url": null,
       "id": "slot_149",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -2111,7 +1985,7 @@
       "server_url": null,
       "id": "slot_150",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -2125,7 +1999,7 @@
       "server_url": null,
       "id": "slot_151",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -2139,7 +2013,7 @@
       "server_url": null,
       "id": "slot_152",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -2153,7 +2027,7 @@
       "server_url": null,
       "id": "slot_153",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -2167,7 +2041,7 @@
       "server_url": null,
       "id": "slot_154",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -2181,7 +2055,7 @@
       "server_url": null,
       "id": "slot_155",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -2195,7 +2069,7 @@
       "server_url": null,
       "id": "slot_156",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -2209,7 +2083,7 @@
       "server_url": null,
       "id": "slot_157",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -2223,7 +2097,7 @@
       "server_url": null,
       "id": "slot_158",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -2237,7 +2111,7 @@
       "server_url": null,
       "id": "slot_159",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -2251,7 +2125,7 @@
       "server_url": null,
       "id": "slot_160",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -2265,7 +2139,7 @@
       "server_url": null,
       "id": "slot_161",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -2279,7 +2153,7 @@
       "server_url": null,
       "id": "slot_162",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -2293,7 +2167,7 @@
       "server_url": null,
       "id": "slot_163",
       "last_changed": "2026-01-30 06:55:47",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-30 06:55:47"
     },
     {
@@ -2307,7 +2181,7 @@
       "server_url": null,
       "id": "slot_164",
       "last_changed": "2026-01-31 06:44:44",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-31 06:44:44"
     },
     {
@@ -2321,7 +2195,7 @@
       "server_url": null,
       "id": "slot_165",
       "last_changed": "2026-01-31 06:44:44",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-31 06:44:44"
     },
     {
@@ -2335,7 +2209,7 @@
       "server_url": null,
       "id": "slot_166",
       "last_changed": "2026-01-31 06:44:44",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-31 06:44:44"
     },
     {
@@ -2349,7 +2223,7 @@
       "server_url": null,
       "id": "slot_167",
       "last_changed": "2026-01-31 06:44:44",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-31 06:44:44"
     },
     {
@@ -2363,7 +2237,7 @@
       "server_url": null,
       "id": "slot_168",
       "last_changed": "2026-01-31 06:44:44",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-31 06:44:44"
     },
     {
@@ -2377,7 +2251,7 @@
       "server_url": null,
       "id": "slot_169",
       "last_changed": "2026-01-31 06:44:44",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-31 06:44:44"
     },
     {
@@ -2391,7 +2265,7 @@
       "server_url": null,
       "id": "slot_170",
       "last_changed": "2026-01-31 06:44:44",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-31 06:44:44"
     },
     {
@@ -2405,7 +2279,7 @@
       "server_url": null,
       "id": "slot_171",
       "last_changed": "2026-01-31 06:44:44",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-31 06:44:44"
     },
     {
@@ -2419,7 +2293,7 @@
       "server_url": null,
       "id": "slot_172",
       "last_changed": "2026-01-31 06:44:44",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-31 06:44:44"
     },
     {
@@ -2433,7 +2307,7 @@
       "server_url": null,
       "id": "slot_173",
       "last_changed": "2026-01-31 06:44:44",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-31 06:44:44"
     },
     {
@@ -2447,7 +2321,7 @@
       "server_url": null,
       "id": "slot_174",
       "last_changed": "2026-01-31 06:44:44",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-31 06:44:44"
     },
     {
@@ -2461,7 +2335,7 @@
       "server_url": null,
       "id": "slot_175",
       "last_changed": "2026-01-31 06:44:44",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-31 06:44:44"
     },
     {
@@ -2475,7 +2349,7 @@
       "server_url": null,
       "id": "slot_176",
       "last_changed": "2026-01-31 06:44:44",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-31 06:44:44"
     },
     {
@@ -2489,7 +2363,7 @@
       "server_url": null,
       "id": "slot_177",
       "last_changed": "2026-01-31 06:44:44",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-31 06:44:44"
     },
     {
@@ -2503,7 +2377,7 @@
       "server_url": null,
       "id": "slot_178",
       "last_changed": "2026-01-31 06:44:44",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-31 06:44:44"
     },
     {
@@ -2517,7 +2391,7 @@
       "server_url": null,
       "id": "slot_179",
       "last_changed": "2026-01-31 06:44:44",
-      "last_validated": "2026-01-31 06:44:44",
+      "last_validated": "2026-01-31 09:02:06",
       "change_log": "Added via scraper on 2026-01-31 06:44:44"
     }
   ]
