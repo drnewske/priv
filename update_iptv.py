@@ -11,7 +11,7 @@ from datetime import datetime as dt
 
 # --- CONFIGURATION ---
 JSON_FILE = "lovestory.json"
-LOG_FILE = "scraper_log.json"  # Changed to JSON for better tracking
+LOG_FILE = "scraper_log.json"
 FALLBACK_ICON = "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/myicon.png"
 
 # Sources
@@ -37,7 +37,7 @@ HEADERS = {
     "Upgrade-Insecure-Requests": "1"
 }
 
-# GOT_SLOTS - Full list
+# GOT_SLOTS - Paste your full list here
 GOT_SLOTS = [
     {"name": "Westeros", "logo": "https://static.digitecgalaxus.ch/im/Files/2/1/1/3/9/7/9/6/game_of_thrones_intro_map_westeros_elastic21.jpeg?impolicy=teaser&resizeWidth=1000&resizeHeight=500"},
     {"name": "Essos", "logo": "https://imgix.bustle.com/uploads/image/2017/7/12/4e391a2f-8663-4cdd-91eb-9102c5f731d7-52be1751932bb099d5d5650593df5807b50fc3fbbee7da6a556bd5d1d339f39a.jpg?w=800&h=532&fit=crop&crop=faces"},
@@ -378,7 +378,7 @@ def get_logo_for_slot(slot_id):
     return FALLBACK_ICON
 
 
-def find_available_slot(slot_registry):
+def find_available_slot(used_slots):
     """
     Find an available slot ID, prioritizing:
     1. Empty slots within GOT_SLOTS range (for named slots)
@@ -386,11 +386,11 @@ def find_available_slot(slot_registry):
     """
     # First, try to find an empty slot within GOT_SLOTS range
     for i in range(len(GOT_SLOTS)):
-        if i not in slot_registry:
+        if i not in used_slots:
             return i, "named"
     
     # If all GOT_SLOTS are taken, find the next available slot
-    max_id = max(slot_registry.keys()) if slot_registry else -1
+    max_id = max(used_slots) if used_slots else -1
     return max_id + 1, "untitled"
 
 
@@ -728,12 +728,52 @@ def main():
     log_data = load_scraper_log()
     
     existing_slots = data.get("featured_content", [])
-    slot_registry = {item["slot_id"]: item for item in existing_slots}
-    validated_domains = set()
+    
+    # --- VALIDATION PHASE (EXISTING PLAYLISTS) ---
+    print("\n" + "="*70)
+    print("  VALIDATION PHASE - CHECKING ALL EXISTING PLAYLISTS")
+    print("="*70)
+    print(f"\n[VALIDATION] Checking {len(existing_slots)} existing playlists...")
+    
+    live_playlists = {}
+    live_domains = set()
+    available_slots = set()
+    
+    for idx, item in enumerate(existing_slots, 1):
+        slot_id = item.get("slot_id")
+        url = item.get("url")
+        domain = get_domain(url)
+        name = item.get("name")
+        
+        print(f"[{idx}/{len(existing_slots)}] TESTING: {name}")
+        print(f"  Domain: {domain}")
+        print(f"  URL: {url[:80]}...")
+        
+        is_valid, reason, stream_count = validate_playlist(url, session)
+        
+        if is_valid:
+            # Playlist is alive
+            item["channel_count"] = stream_count
+            item["last_validated"] = timestamp_now
+            item["logo_url"] = get_logo_for_slot(slot_id)
+            
+            live_playlists[slot_id] = item
+            live_domains.add(domain)
+            
+            print(f"  ✓ ALIVE | Channels: {stream_count:,}\n")
+        else:
+            # Playlist is dead - clear slot
+            available_slots.add(slot_id)
+            print(f"  ✗ DEAD: {reason} | Slot {slot_id} cleared\n")
+    
+    print(f"\n[VALIDATION SUMMARY]")
+    print(f"  Live Playlists: {len(live_playlists)}")
+    print(f"  Dead Playlists: {len(available_slots)}")
+    print(f"  Live Domains: {', '.join(sorted(live_domains))}")
     
     # --- DISCOVERY PHASE (SCRAPE NEW) ---
     print("\n" + "="*70)
-    print("  DISCOVERY PHASE")
+    print("  DISCOVERY PHASE - SCRAPING NEW PLAYLISTS")
     print("="*70)
     
     new_links = []
@@ -749,107 +789,94 @@ def main():
     
     print(f"\n[TESTING] Found {len(new_links)} unique new links")
     
-    added_count = 0
-    tested_count = 0
-    
-    # Process New Links
+    # Group links by domain
+    domain_links = {}
     for link in new_links:
         domain = get_domain(link)
-        if domain in validated_domains:
+        if domain not in domain_links:
+            domain_links[domain] = []
+        domain_links[domain].append(link)
+    
+    print(f"[TESTING] Grouped into {len(domain_links)} unique domains")
+    
+    added_count = 0
+    skipped_domains = 0
+    tested_domains = 0
+    
+    # Process each domain
+    for domain, links in domain_links.items():
+        # Check if domain already exists in live playlists
+        if domain in live_domains:
+            skipped_domains += 1
+            print(f"\n[SKIP] Domain already live: {domain} ({len(links)} links skipped)")
             continue
         
-        tested_count += 1
-        print(f"[NEW {tested_count}/{len(new_links)}] TESTING: {domain}")
+        tested_domains += 1
+        print(f"\n[NEW DOMAIN {tested_domains}] TESTING: {domain} ({len(links)} links)")
         
-        is_valid, reason, stream_count = validate_playlist(link, session)
+        # Try each link for this domain until one works
+        found_valid = False
+        for link_idx, link in enumerate(links, 1):
+            print(f"  [{link_idx}/{len(links)}] Testing: {link[:80]}...")
+            
+            is_valid, reason, stream_count = validate_playlist(link, session)
+            
+            if is_valid:
+                # Found a valid playlist for this domain
+                found_valid = True
+                
+                # Find available slot
+                if available_slots:
+                    # Use a cleared slot first
+                    target_id = min(available_slots)
+                    available_slots.remove(target_id)
+                    slot_type = "reused"
+                else:
+                    # Find new slot
+                    target_id, slot_type = find_available_slot(set(live_playlists.keys()))
+                
+                name = get_name_for_slot(target_id, domain)
+                logo = get_logo_for_slot(target_id)
+                
+                new_entry = {
+                    "slot_id": target_id,
+                    "name": name,
+                    "domain": domain,
+                    "channel_count": stream_count,
+                    "logo_url": logo,
+                    "type": "m3u",
+                    "url": link,
+                    "server_url": None,
+                    "id": f"slot_{str(target_id).zfill(3)}",
+                    "last_changed": timestamp_now,
+                    "last_validated": timestamp_now,
+                    "change_log": f"Added via scraper on {timestamp_now}"
+                }
+                
+                live_playlists[target_id] = new_entry
+                live_domains.add(domain)
+                added_count += 1
+                
+                slot_info = f"Slot {target_id} ({slot_type})"
+                print(f"    ✓✓✓ SUCCESS! Added to {slot_info} | Channels: {stream_count:,}")
+                print(f"    Skipping remaining {len(links) - link_idx} links for domain {domain}\n")
+                break
+            else:
+                print(f"    ✗ Failed: {reason}")
         
-        if is_valid:
-            # Find available slot (prioritizes named slots)
-            target_id, slot_type = find_available_slot(slot_registry)
-            
-            name = get_name_for_slot(target_id, domain)
-            logo = get_logo_for_slot(target_id)
-            
-            new_entry = {
-                "slot_id": target_id,
-                "name": name,
-                "domain": domain,
-                "channel_count": stream_count,
-                "logo_url": logo,
-                "type": "m3u",
-                "url": link,
-                "server_url": None,
-                "id": f"slot_{str(target_id).zfill(3)}",
-                "last_changed": timestamp_now,
-                "last_validated": timestamp_now,
-                "change_log": f"Added via scraper on {timestamp_now}"
-            }
-            
-            slot_registry[target_id] = new_entry
-            validated_domains.add(domain)
-            added_count += 1
-            
-            slot_info = f"Slot {target_id} ({slot_type})"
-            print(f"  ✓✓✓ SUCCESS! Added to {slot_info} | Channels: {stream_count:,}\n")
-        else:
-            print(f"  ✗ Failed: {reason}\n")
+        if not found_valid:
+            print(f"  ✗ No valid playlist found for domain {domain}\n")
     
     # Rename untitled playlists if there are available named slots
-    renamed_count = rename_untitled_playlists(slot_registry)
-
-    # --- VALIDATION PHASE (EXISTING) ---
+    renamed_count = rename_untitled_playlists(live_playlists)
+    
+    # --- FINALIZE ---
     print("\n" + "="*70)
-    print("  VALIDATION PHASE (EXISTING)")
+    print("  FINALIZING")
     print("="*70)
-    print(f"\n[VALIDATION] Checking {len(existing_slots)} existing playlists...")
     
-    # timestamp_now is already defined at top of main
-    valid_count = 0
-    invalid_count = 0
-    
-    # We iterate over a COPY because we might unknowingly modify slot_registry structure if we were doing deletions (we aren't here, but safety first)
-    # Actually, we are just updating metadata in place.
-    
-    for idx, item in enumerate(existing_slots, 1):
-        slot_id = item.get("slot_id")
-        url = item.get("url")
-        domain = get_domain(url)
-        name = item.get("name")
-        
-        # If we just added this domain in the discovery phase, no need to re-validate immediately
-        # But discovery adds to 'slot_registry' and 'validated_domains', while 'existing_slots' is the old list.
-        # So we check against validated_domains.
-        
-        if domain in validated_domains:
-            print(f"[{idx}/{len(existing_slots)}] SKIP: {name} - Updated/Checked recently")
-            # Update the existing record in registry with the one that might have been just added/updated?
-            # Actually, if it's in existing_slots, it's an old one.
-            # If it's in validated_domains, it implies we either just added it OR we already processed it.
-            # But wait, we haven't processed existing_slots yet. 
-            # So if it is in validated_domains, it MUST be because we just added a DUPLICATE of an existing one in the discovery phase?
-            # If so, we should probably ensure the 'existing' one is the one kept or updated.
-            continue
-        
-        print(f"[{idx}/{len(existing_slots)}] TESTING: {name}")
-        print(f"  Domain: {domain}")
-        
-        is_valid, reason, stream_count = validate_playlist(url, session)
-        
-        if is_valid:
-            item["channel_count"] = stream_count
-            item["last_validated"] = timestamp_now
-            item["logo_url"] = get_logo_for_slot(slot_id)
-            
-            slot_registry[slot_id] = item
-            validated_domains.add(domain)
-            valid_count += 1
-            print(f"  ✓ Status: {reason} | Channels: {stream_count:,}\n")
-        else:
-            invalid_count += 1
-            print(f"  ✗ Status: {reason}\n")
-
-    # Finalize List
-    final_list = [slot_registry[sid] for sid in sorted(slot_registry.keys())]
+    # Create final list sorted by slot_id
+    final_list = [live_playlists[sid] for sid in sorted(live_playlists.keys())]
     data["featured_content"] = final_list
     
     with open(JSON_FILE, 'w', encoding='utf-8') as f:
@@ -862,6 +889,7 @@ def main():
     print("="*70)
     print(f"  Active Playlists: {len(final_list)}")
     print(f"  Newly Added: {added_count}")
+    print(f"  Domains Skipped (Already Live): {skipped_domains}")
     if renamed_count > 0:
         print(f"  Renamed (Untitled → Named): {renamed_count}")
     print(f"  Total Channels: {total_channels:,}")
