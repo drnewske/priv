@@ -9,19 +9,19 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from datetime import datetime as dt
 
-# --- CONFIGURATION ---
+
 JSON_FILE = "lovestory.json"
 LOG_FILE = "scraper_log.json"
 FALLBACK_ICON = "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/myicon.png"
 
-# Sources
+
 SOURCES = {
     "ninoiptv": "https://ninoiptv.com/",
     "iptvcodes": "https://www.iptvcodes.online/",
     "m3umax": "https://m3umax.blogspot.com/"
 }
 
-# Validation settings
+
 MIN_PLAYLIST_SIZE = 500
 MIN_STREAM_COUNT = 10
 PLAYLIST_TIMEOUT = 20
@@ -37,7 +37,7 @@ HEADERS = {
     "Upgrade-Insecure-Requests": "1"
 }
 
-# GOT_SLOTS - Paste your full list here
+
 GOT_SLOTS = [
     {"name": "Westeros", "logo": "https://static.digitecgalaxus.ch/im/Files/2/1/1/3/9/7/9/6/game_of_thrones_intro_map_westeros_elastic21.jpeg?impolicy=teaser&resizeWidth=1000&resizeHeight=500"},
     {"name": "Essos", "logo": "https://imgix.bustle.com/uploads/image/2017/7/12/4e391a2f-8663-4cdd-91eb-9102c5f731d7-52be1751932bb099d5d5650593df5807b50fc3fbbee7da6a556bd5d1d339f39a.jpg?w=800&h=532&fit=crop&crop=faces"},
@@ -232,7 +232,7 @@ GOT_SLOTS = [
 ]
 
 
-# --- HELPER FUNCTIONS ---
+
 
 def create_session():
     """Create a requests session with retry logic"""
@@ -262,13 +262,13 @@ def extract_m3u_links(html_content):
     """Extract M3U playlist URLs from HTML content"""
     links = []
     
-    # Pattern 1: Direct http/https URLs ending with common IPTV parameters
+    
     pattern1 = r'https?://[^\s<>"]+?(?:get\.php|player_api\.php)[^\s<>"]*'
     
-    # Pattern 2: M3U file URLs
+    
     pattern2 = r'https?://[^\s<>"]+?\.m3u[^\s<>"]*'
     
-    # Pattern 3: URLs with username and password parameters
+    
     pattern3 = r'https?://[^\s<>"]+?(?:username|user)=[^\s<>"&]+(?:&|&amp;)(?:password|pass)=[^\s<>"&]+'
     
     for pattern in [pattern1, pattern2, pattern3]:
@@ -290,10 +290,10 @@ def extract_m3u_links(html_content):
 
 def extract_date_from_title(title):
     """Extract date from article title or URL (e.g., '26-01-2026')"""
-    # Common date patterns
+  
     patterns = [
-        r'(\d{2})[-/.](\d{2})[-/.](\d{4})',  # DD-MM-YYYY
-        r'(\d{4})[-/.](\d{2})[-/.](\d{2})',  # YYYY-MM-DD
+        r'(\d{2})[-/.](\d{2})[-/.](\d{4})',  
+        r'(\d{4})[-/.](\d{2})[-/.](\d{2})',  
     ]
     
     for pattern in patterns:
@@ -301,12 +301,12 @@ def extract_date_from_title(title):
         if match:
             try:
                 g1, g2, g3 = match.groups()
-                # Determine basic format based on year position (4 digits)
+                
                 if len(g1) == 4:
-                    # YYYY-MM-DD
+                   
                     return dt.strptime(f"{g1}-{g2}-{g3}", "%Y-%m-%d")
                 else:
-                    # DD-MM-YYYY
+                    
                     return dt.strptime(f"{g3}-{g2}-{g1}", "%Y-%m-%d")
             except:
                 continue
@@ -319,7 +319,7 @@ def extract_version_from_title(title):
     match = re.search(r'V(\d+)', title, re.IGNORECASE)
     if match:
         return int(match.group(1))
-    return 1  # Default to V1 if no version specified
+    return 1  
 
 
 def validate_playlist(url, session):
@@ -327,12 +327,12 @@ def validate_playlist(url, session):
     try:
         response = session.get(url, timeout=PLAYLIST_TIMEOUT, headers=HEADERS, allow_redirects=True)
         
-        # Check response size
+        
         content_length = len(response.content)
         if content_length < MIN_PLAYLIST_SIZE:
             return False, f"Too small ({content_length} bytes)", 0
         
-        # Count streams in M3U
+       
         content = response.text
         stream_count = content.count('#EXTINF')
         
@@ -384,12 +384,12 @@ def find_available_slot(used_slots):
     1. Empty slots within GOT_SLOTS range (for named slots)
     2. Next available slot after all existing slots
     """
-    # First, try to find an empty slot within GOT_SLOTS range
+   
     for i in range(len(GOT_SLOTS)):
         if i not in used_slots:
             return i, "named"
     
-    # If all GOT_SLOTS are taken, find the next available slot
+    
     max_id = max(used_slots) if used_slots else -1
     return max_id + 1, "untitled"
 
@@ -401,7 +401,7 @@ def rename_untitled_playlists(slot_registry):
     """
     renamed_count = 0
     
-    # Find all untitled playlists
+   
     untitled_playlists = []
     for slot_id, item in slot_registry.items():
         if item.get("name", "").startswith("Untitled "):
@@ -421,14 +421,14 @@ def rename_untitled_playlists(slot_registry):
     
     print(f"\n[RENAMING] Found {len(untitled_playlists)} Untitled playlists and {len(available_named_slots)} available named slots")
     
-    # Move untitled playlists to named slots
+   
     for i, (old_slot_id, item) in enumerate(untitled_playlists):
         if i >= len(available_named_slots):
             break
         
         new_slot_id = available_named_slots[i]
         
-        # Update the item
+       
         old_name = item["name"]
         new_name = GOT_SLOTS[new_slot_id]["name"]
         new_logo = GOT_SLOTS[new_slot_id]["logo"]
@@ -440,7 +440,7 @@ def rename_untitled_playlists(slot_registry):
         item["last_changed"] = dt.now().strftime("%Y-%m-%d %H:%M:%S")
         item["change_log"] = f"Renamed from '{old_name}' to '{new_name}' on {item['last_changed']}"
         
-        # Move in registry
+        
         del slot_registry[old_slot_id]
         slot_registry[new_slot_id] = item
         
@@ -450,7 +450,7 @@ def rename_untitled_playlists(slot_registry):
     return renamed_count
 
 
-# --- SCRAPER FUNCTIONS ---
+
 
 def scrape_ninoiptv(session, log_data):
     """Scrape ninoiptv.com with date and version tracking"""
@@ -465,19 +465,19 @@ def scrape_ninoiptv(session, log_data):
         
         soup = BeautifulSoup(response.content, 'html.parser')
         
-        # Debug: Check what we're finding
+        
         all_articles = soup.find_all('article')
         print(f"  DEBUG: Found {len(all_articles)} <article> tags")
         
-        # Find all article titles and links
+        
         articles = []
         for idx, article in enumerate(all_articles):
-            # Try multiple ways to find the title
+           
             title_elem = article.find('h2', class_='entry-title')
             if not title_elem:
                 title_elem = article.find('h1', class_='entry-title')
             if not title_elem:
-                # Try without class
+               
                 title_elem = article.find('h2')
             if not title_elem:
                 title_elem = article.find('h1')
@@ -490,7 +490,7 @@ def scrape_ninoiptv(session, log_data):
                     
                     print(f"  DEBUG Article {idx+1}: {title[:80]}")
                     
-                    # Try extracting date from title first, then URL
+                   
                     article_date = extract_date_from_title(title)
                     if not article_date:
                         article_date = extract_date_from_title(url)
@@ -512,12 +512,12 @@ def scrape_ninoiptv(session, log_data):
             else:
                 print(f"  DEBUG Article {idx+1}: No title element found")
         
-        # Sort by date (newest first) then by version (highest first)
+       
         articles.sort(key=lambda x: (x['date'], x['version']), reverse=True)
         
         print(f"\n  Found {len(articles)} dated articles")
         
-        # Get the latest date
+        
         if not articles:
             print("  ERROR: No articles with dates found!")
             return []
@@ -525,7 +525,7 @@ def scrape_ninoiptv(session, log_data):
         latest_date = articles[0]['date']
         latest_date_str = latest_date.strftime("%Y-%m-%d")
         
-        # Get all versions for the latest date
+        
         latest_articles = [a for a in articles if a['date'] == latest_date]
         
         print(f"  Latest date: {latest_date_str}")
@@ -537,7 +537,7 @@ def scrape_ninoiptv(session, log_data):
         for article in latest_articles:
             article_key = f"{latest_date_str}_V{article['version']}"
             
-            # Check if already scraped
+            
             if article_key in source_log["scraped_articles"]:
                 print(f"  ✓ Already scraped: {article['title']}")
                 continue
@@ -548,7 +548,7 @@ def scrape_ninoiptv(session, log_data):
                 article_response = session.get(article['url'], headers=HEADERS, timeout=15)
                 article_soup = BeautifulSoup(article_response.content, 'html.parser')
                 
-                # Find entry content
+                
                 content = article_soup.find('div', class_='entry-content')
                 if content:
                     html_text = str(content)
@@ -557,7 +557,7 @@ def scrape_ninoiptv(session, log_data):
                     print(f"    Found {len(links)} links")
                     all_links.extend(links)
                     
-                    # Mark as scraped
+                    
                     source_log["scraped_articles"][article_key] = {
                         "title": article['title'],
                         "url": article['url'],
@@ -570,7 +570,7 @@ def scrape_ninoiptv(session, log_data):
             except Exception as e:
                 print(f"    ERROR scraping article: {type(e).__name__}: {str(e)}")
         
-        # Update log
+        
         log_data["sources"][source_name] = source_log
         
         print(f"  Total links extracted: {len(all_links)}")
@@ -594,9 +594,9 @@ def scrape_iptvcodes(session, log_data):
         response = session.get(SOURCES["iptvcodes"], headers=HEADERS, timeout=15)
         soup = BeautifulSoup(response.content, 'html.parser')
         
-        # Find article links - only latest 1
+        
         article_links = []
-        for article in soup.find_all('article')[:1]:  # Only first/latest article
+        for article in soup.find_all('article')[:1]:  
             link_elem = article.find('a', href=True)
             if link_elem:
                 url = link_elem['href']
@@ -624,7 +624,7 @@ def scrape_iptvcodes(session, log_data):
                 print(f"    Found {len(links)} links")
                 all_links.extend(links)
                 
-                # Mark as scraped
+                
                 source_log["scraped_articles"][article_key] = {
                     "title": article['title'],
                     "scraped_at": dt.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -634,7 +634,7 @@ def scrape_iptvcodes(session, log_data):
             except Exception as e:
                 print(f"    Error: {str(e)}")
         
-        # Update log
+        
         log_data["sources"][source_name] = source_log
         
         print(f"  Total links extracted: {len(all_links)}")
@@ -656,9 +656,9 @@ def scrape_m3umax(session, log_data):
         response = session.get(SOURCES["m3umax"], headers=HEADERS, timeout=15)
         soup = BeautifulSoup(response.content, 'html.parser')
         
-        # Find article links - only latest 1
+        
         article_links = []
-        for article in soup.find_all('h3', class_='post-title')[:1]:  # Only first/latest article
+        for article in soup.find_all('h3', class_='post-title')[:1]:  
             link_elem = article.find('a', href=True)
             if link_elem:
                 url = link_elem['href']
@@ -686,7 +686,7 @@ def scrape_m3umax(session, log_data):
                 print(f"    Found {len(links)} links")
                 all_links.extend(links)
                 
-                # Mark as scraped
+               
                 source_log["scraped_articles"][article_key] = {
                     "title": article['title'],
                     "scraped_at": dt.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -696,7 +696,7 @@ def scrape_m3umax(session, log_data):
             except Exception as e:
                 print(f"    Error: {str(e)}")
         
-        # Update log
+        
         log_data["sources"][source_name] = source_log
         
         print(f"  Total links extracted: {len(all_links)}")
@@ -707,7 +707,7 @@ def scrape_m3umax(session, log_data):
         return []
 
 
-# --- MAIN FUNCTION ---
+
 
 def main():
     print("="*70)
@@ -717,19 +717,19 @@ def main():
     session = create_session()
     timestamp_now = dt.now().strftime("%Y-%m-%d %H:%M:%S")
     
-    # Load existing data
+    
     try:
         with open(JSON_FILE, 'r', encoding='utf-8') as f:
             data = json.load(f)
     except FileNotFoundError:
         data = {"featured_content": []}
     
-    # Load scraper log
+    
     log_data = load_scraper_log()
     
     existing_slots = data.get("featured_content", [])
     
-    # --- VALIDATION PHASE (EXISTING PLAYLISTS) ---
+   
     print("\n" + "="*70)
     print("  VALIDATION PHASE - CHECKING ALL EXISTING PLAYLISTS")
     print("="*70)
@@ -752,7 +752,7 @@ def main():
         is_valid, reason, stream_count = validate_playlist(url, session)
         
         if is_valid:
-            # Playlist is alive
+            
             item["channel_count"] = stream_count
             item["last_validated"] = timestamp_now
             item["logo_url"] = get_logo_for_slot(slot_id)
@@ -762,7 +762,7 @@ def main():
             
             print(f"  ✓ ALIVE | Channels: {stream_count:,}\n")
         else:
-            # Playlist is dead - clear slot
+            
             available_slots.add(slot_id)
             print(f"  ✗ DEAD: {reason} | Slot {slot_id} cleared\n")
     
@@ -771,7 +771,7 @@ def main():
     print(f"  Dead Playlists: {len(available_slots)}")
     print(f"  Live Domains: {', '.join(sorted(live_domains))}")
     
-    # --- DISCOVERY PHASE (SCRAPE NEW) ---
+    
     print("\n" + "="*70)
     print("  DISCOVERY PHASE - SCRAPING NEW PLAYLISTS")
     print("="*70)
@@ -781,15 +781,15 @@ def main():
     new_links.extend(scrape_iptvcodes(session, log_data))
     new_links.extend(scrape_m3umax(session, log_data))
     
-    # Save updated log
+    
     save_scraper_log(log_data)
     
-    # Remove duplicates
+    
     new_links = list(dict.fromkeys(new_links))
     
     print(f"\n[TESTING] Found {len(new_links)} unique new links")
     
-    # Group links by domain
+    
     domain_links = {}
     for link in new_links:
         domain = get_domain(link)
@@ -803,9 +803,9 @@ def main():
     skipped_domains = 0
     tested_domains = 0
     
-    # Process each domain
+    
     for domain, links in domain_links.items():
-        # Check if domain already exists in live playlists
+        
         if domain in live_domains:
             skipped_domains += 1
             print(f"\n[SKIP] Domain already live: {domain} ({len(links)} links skipped)")
@@ -814,7 +814,7 @@ def main():
         tested_domains += 1
         print(f"\n[NEW DOMAIN {tested_domains}] TESTING: {domain} ({len(links)} links)")
         
-        # Try each link for this domain until one works
+        
         found_valid = False
         for link_idx, link in enumerate(links, 1):
             print(f"  [{link_idx}/{len(links)}] Testing: {link[:80]}...")
@@ -822,17 +822,17 @@ def main():
             is_valid, reason, stream_count = validate_playlist(link, session)
             
             if is_valid:
-                # Found a valid playlist for this domain
+                
                 found_valid = True
                 
-                # Find available slot
+                
                 if available_slots:
-                    # Use a cleared slot first
+                    
                     target_id = min(available_slots)
                     available_slots.remove(target_id)
                     slot_type = "reused"
                 else:
-                    # Find new slot
+                    
                     target_id, slot_type = find_available_slot(set(live_playlists.keys()))
                 
                 name = get_name_for_slot(target_id, domain)
@@ -867,15 +867,15 @@ def main():
         if not found_valid:
             print(f"  ✗ No valid playlist found for domain {domain}\n")
     
-    # Rename untitled playlists if there are available named slots
+   
     renamed_count = rename_untitled_playlists(live_playlists)
     
-    # --- FINALIZE ---
+    
     print("\n" + "="*70)
     print("  FINALIZING")
     print("="*70)
     
-    # Create final list sorted by slot_id
+    
     final_list = [live_playlists[sid] for sid in sorted(live_playlists.keys())]
     data["featured_content"] = final_list
     
