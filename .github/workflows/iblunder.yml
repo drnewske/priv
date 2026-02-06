@@ -1,11 +1,10 @@
-name: Daily IPTV Content Sync
+name: IT IS A BLUNDER AT SIX 
 on:
   schedule:
-    # Run at 6 AM UTC (adjust to your preferred time)
-    # Resetting to 6 AM UTC as requested by user originally
+   
     - cron: '0 6 * * *'
   workflow_dispatch:
-  # push:  # Commented out push to avoid redundant runs, un-comment to test immediately
+  # push:  
   #   branches: [ main ]
 
 jobs:
@@ -26,17 +25,17 @@ jobs:
         run: pip install requests beautifulsoup4
         
       - name: Run Scraper and Cleaner
-        run: python update_iptv.py
+        run: python bl34Gnderqqq123.py
         
       - name: Commit and Push Changes
         run: |
-          git config --global user.name "O.R-Bot"
+          git config --global user.name "BLUNDERER"
           git config --global user.email "bot@github.com"
           git add lovestory.json log.txt
           # The following logic is to prevent empty commits if no changes
           if git diff-index --quiet HEAD; then
             echo "No changes to commit"
           else
-            git commit -m "O.R: Daily sync - $(date +'%Y-%m-%d %H:%M:%S UTC')"
+            git commit -m "blundered - $(date +'%Y-%m-%d %H:%M:%S UTC')"
             git push
           fi
