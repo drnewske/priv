@@ -7,7 +7,9 @@ Fast AND accurate. Uses category filtering + smart fuzzy matching.
 import json
 import re
 import requests
-from typing import Dict, List, Optional, Tuple
+import argparse
+import sys
+from typing import Dict, List, Optional, Tuple, Set
 from urllib.parse import urlparse, parse_qs
 from collections import defaultdict
 from difflib import SequenceMatcher
@@ -37,7 +39,9 @@ class XtreamAPI:
                 raise ValueError(f"Cannot parse credentials from URL: {url}")
         
         port = parsed.port or 80
-        self.base_url = f"http://{parsed.hostname}:{port}"
+        # Handle cases where scheme is missing or incorrect in specific ways if needed
+        scheme = parsed.scheme if parsed.scheme else "http"
+        self.base_url = f"{scheme}://{parsed.hostname}:{port}"
         self.timeout = 20
     
     def _api_call(self, action: str, **params) -> Optional[List[Dict]]:
@@ -67,31 +71,37 @@ class XtreamAPI:
     
     def get_stream_url(self, stream_id: int) -> str:
         """Build stream URL."""
+        # Xtream codes usually exposes live streams at /live/username/password/stream_id.ts
         return f"{self.base_url}/live/{self.username}/{self.password}/{stream_id}.ts"
 
 
 class SportsFilter:
     """Filter sports categories and channels."""
     
-    # Sports category keywords
+    # Sports category keywords - Updated based on user request
     SPORTS_KEYWORDS = {
-        'sport', 'espn', 'fox sports', 'sky sports', 'bein', 'dazn',
+        'sport', 'espn', 'fox', 'sky', 'bein', 'dazn', 'dstv', 'supersport',
         'soccer', 'football', 'basketball', 'tennis', 'cricket', 'rugby',
         'golf', 'boxing', 'mma', 'ufc', 'wrestling', 'wwe', 'f1', 'formula',
         'motogp', 'nascar', 'hockey', 'baseball', 'nba', 'nfl', 'nhl', 'mlb',
-        'deportes', 'deportivo', 'calcio', 'fussball'
+        'deportes', 'deportivo', 'calcio', 'fussball', 'arena', 'tsn', 'optus',
+        'astro', 'star', 'sony', 'ten', 'willow', 'pl', 'premier league',
+        'la liga', 'bundesliga', 'serie a', 'ligue 1', 'ucl', 'uefa', 'fifa'
     }
     
     # NON-sports keywords (higher priority)
     EXCLUDE_KEYWORDS = {
         'movie', 'film', 'cinema', 'series', 'drama', 'comedy', 'kids',
         'anime', 'cartoon', 'music', 'news', 'entertainment', 'adult',
-        'xxx', '18+', 'porn', 'religion', 'documentary'
+        'xxx', '18+', 'porn', 'religion', 'documentary', 'vod'
     }
     
     @classmethod
     def is_sports_category(cls, category_name: str) -> bool:
         """Check if category is sports-related."""
+        if not category_name:
+            return False
+            
         name_lower = category_name.lower()
         
         # Exclude non-sports first
@@ -123,6 +133,7 @@ class ChannelNormalizer:
             re.compile(r'^\s*[#\-_*+=:|~]+\s*'),  # Leading junk
             re.compile(r'\s*[#\-_*+=:|~]+\s*$'),  # Trailing junk
             re.compile(r'\s*\|+\s*'),  # Pipes
+            re.compile(r'\s*-\s*'),     # Hyphens as separators
         ]
     
     def extract_quality(self, name: str) -> str:
@@ -368,29 +379,95 @@ class SportsScanner:
         print(f"{'='*70}\n")
 
 
+def parse_arguments():
+    """Parse command line arguments."""
+    parser = argparse.ArgumentParser(description='Scan sports channels from playlists.')
+    parser.add_argument('input_file', nargs='?', default='lovestory.json', help='Input JSON file with playlists')
+    parser.add_argument('output_file', nargs='?', default='channels.json', help='Output JSON file')
+    parser.add_argument('--limit', type=int, help='Limit number of playlists to scan (for testing)')
+    parser.add_argument('--domains', type=str, help='Comma-separated list of priority domains to scan')
+    return parser.parse_args()
+
+
 def main():
-    import sys
+    args = parse_arguments()
     
-    input_file = sys.argv[1] if len(sys.argv) > 1 else 'lovestory.json'
-    output_file = sys.argv[2] if len(sys.argv) > 2 else 'channels.json'
+    try:
+        with open(args.input_file, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+    except FileNotFoundError:
+        print(f"Error: Input file '{args.input_file}' not found.")
+        sys.exit(1)
     
-    # Load servers
-    with open(input_file, 'r', encoding='utf-8') as f:
-        data = json.load(f)
-    
-    servers = []
+    all_servers = []
     for item in data.get('featured_content', []):
         if item.get('type') == 'm3u' and item.get('url'):
-            servers.append({
+            all_servers.append({
                 'url': item['url'],
                 'name': item.get('name', 'Unknown'),
-                'domain': item.get('domain', 'Unknown')
+                'domain': item.get('domain', 'Unknown'),
+                'channel_count': int(item.get('channel_count', 0))
             })
+    
+    if not all_servers:
+        print("No M3U playlists found in input file.")
+        sys.exit(1)
+        
+    print(f"Found {len(all_servers)} total playlists.")
+    
+    # 1. Filter by Priority Domains
+    priority_domains = set()
+    if args.domains:
+        priority_domains = {d.strip().lower() for d in args.domains.split(',') if d.strip()}
+    
+    sorted_servers = []
+    
+    # Separate into priority and others
+    priorities = []
+    others = []
+    
+    for server in all_servers:
+        domain = server.get('domain', '').lower()
+        if any(pd in domain for pd in priority_domains):
+            priorities.append(server)
+        else:
+            others.append(server)
+            
+    # 2. Sort others by channel count (descending)
+    others.sort(key=lambda x: x['channel_count'], reverse=True)
+    
+    # 3. Select Top 20 from others
+    top_others = others[:20]
+    
+    # 4. Combine
+    final_servers = priorities + top_others
+    
+    # Remove duplicates (based on URL) just in case
+    unique_servers = []
+    seen_urls = set()
+    for s in final_servers:
+        if s['url'] not in seen_urls:
+            unique_servers.append(s)
+            seen_urls.add(s['url'])
+            
+    final_servers = unique_servers
+    
+    # Apply limit if specified
+    if args.limit:
+        final_servers = final_servers[:args.limit]
+        
+    print(f"Selected {len(final_servers)} playlists to scan:")
+    print(f"  - {len(priorities)} from priority domains")
+    print(f"  - {len(top_others)} from top channel counts")
+
+    if not final_servers:
+        print("No servers selected for scanning.")
+        sys.exit(0)
     
     # Scan with 90% similarity threshold
     scanner = SportsScanner(similarity_threshold=0.90)
-    scanner.scan_all(servers, max_workers=5)  # 5 parallel connections
-    scanner.save(output_file)
+    scanner.scan_all(final_servers, max_workers=5)
+    scanner.save(args.output_file)
 
 
 if __name__ == '__main__':
