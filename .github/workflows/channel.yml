@@ -1,69 +1,79 @@
 name: Scan Sports Channels
 
+# Manual trigger only
 on:
   workflow_dispatch:
+    inputs:
+      delay:
+        description: 'Delay between playlist requests (seconds)'
+        required: false
+        default: '0.5'
+        type: string
 
 jobs:
   scan-channels:
     runs-on: ubuntu-latest
-
+    
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Install deps
-        run: pip install requests
-
-      - name: Run scanner
-        run: python scan_sports_channels.py lovestory.json channels.json
-
-      - name: Verify output and print stats
-        id: verify
-        run: |
-          if [ ! -f channels.json ]; then
-            echo "❌ channels.json not found"
-            exit 1
-          fi
-
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: |
+        pip install requests
+    
+    - name: Run sports channel scanner
+      run: |
+        python scan_sports_channels.py lovestory.json channels.json
+      continue-on-error: false
+    
+    - name: Check if channels.json was created
+      id: check_file
+      run: |
+        if [ -f channels.json ]; then
           echo "file_exists=true" >> $GITHUB_OUTPUT
-          echo "✅ channels.json created"
-
-          python - <<'PY'
-import json
-with open("channels.json") as f:
-    d = json.load(f)["metadata"]
-
-print("📊 Scan Results:")
-print(f"  - Sports channels found: {d['sports_channels_found']}")
-print(f"  - Playlists scanned: {d['playlists_scanned']}")
-print(f"  - Total links collected: {d['total_links_collected']}")
-PY
-
-      - name: Commit and push
-        if: steps.verify.outputs.file_exists == 'true'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          git add channels.json
-
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-            exit 0
-          fi
-
-          git commit -m "Update sports channels database"
+          echo "✅ channels.json created successfully"
+          
+          # Show basic stats (Safely handles missing keys to avoid KeyError)
+          echo "📊 Scan Results:"
+          python -c "import json; data = json.load(open('channels.json')); meta = data.get('metadata', {}); print(f\"  - Sports channels found: {meta.get('sports_channels_found', 'N/A')}\"); print(f\"  - Playlists scanned: {meta.get('playlists_scanned', 'N/A')}\")"
+        else
+          echo "file_exists=false" >> $GITHUB_OUTPUT
+          echo "❌ channels.json was not created"
+          exit 1
+        fi
+    
+    - name: Commit and push changes
+      if: steps.check_file.outputs.file_exists == 'true'
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        
+        git add channels.json
+        
+        # Check if there are changes to commit
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "Update sports channels database
+          
+          - Scanned playlists from lovestory.json
+          - Updated channels.json with latest sports channels
+          - Automated scan via GitHub Actions"
+          
           git push
-
-      - name: Upload artifact
-        if: steps.verify.outputs.file_exists == 'true'
-        uses: actions/upload-artifact@v4
-        with:
-          name: sports-channels
-          path: channels.json
-          retention-days: 30
+          echo "✅ Changes pushed to repository"
+        fi
+    
+    - name: Upload channels.json as artifact
+      if: steps.check_file.outputs.file_exists == 'true'
+      uses: actions/upload-artifact@v4
+      with:
+        name: sports-channels
+        path: channels.json
+        retention-days: 30
