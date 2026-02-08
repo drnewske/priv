@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-M3U Sports Channel Scanner
-Scans multiple M3U playlists from lovestory.json and extracts sports channels.
+M3U Sports Channel Scanner with Quality Grouping
+Scans multiple M3U playlists and groups channels by base name with quality-tiered links.
 """
 
 import json
@@ -10,6 +10,7 @@ import requests
 from typing import List, Dict, Set
 from urllib.parse import urlparse
 import time
+from collections import defaultdict
 
 
 class M3UParser:
@@ -39,6 +40,22 @@ class M3UParser:
             'comedy', 'action', 'thriller', 'horror', 'documentary', 'kids',
             'anime', 'cartoon', 'music', 'news', 'entertainment', 'adult'
         ]
+        
+        # Quality patterns to extract and normalize
+        self.quality_patterns = {
+            'SD': [
+                r'\b(sd|480p?|360p?|240p?|low)\b',
+            ],
+            'HD': [
+                r'\b(hd|720p?|high)\b',
+            ],
+            'FHD': [
+                r'\b(fhd|full\s*hd|1080p?)\b',
+            ],
+            '4K': [
+                r'\b(4k|uhd|ultra\s*hd|2160p?)\b',
+            ]
+        }
     
     def is_sports_channel(self, channel_name: str, group_title: str, stream_url: str) -> bool:
         """
@@ -80,6 +97,60 @@ class M3UParser:
             return True
         
         return False
+    
+    def extract_quality(self, channel_name: str) -> str:
+        """
+        Extract quality tier from channel name.
+        
+        Args:
+            channel_name: The channel name
+            
+        Returns:
+            Quality tier: 'SD', 'HD', 'FHD', '4K', or 'HD' (default)
+        """
+        name_lower = channel_name.lower()
+        
+        # Check patterns in priority order (4K -> FHD -> HD -> SD)
+        for quality, patterns in [('4K', self.quality_patterns['4K']),
+                                   ('FHD', self.quality_patterns['FHD']),
+                                   ('HD', self.quality_patterns['HD']),
+                                   ('SD', self.quality_patterns['SD'])]:
+            for pattern in patterns:
+                if re.search(pattern, name_lower):
+                    return quality
+        
+        # Default to HD if no quality specified
+        return 'HD'
+    
+    def normalize_channel_name(self, channel_name: str) -> str:
+        """
+        Remove quality indicators from channel name to get base name.
+        
+        Args:
+            channel_name: The full channel name
+            
+        Returns:
+            Normalized base channel name
+        """
+        name = channel_name
+        
+        # Remove all quality indicators
+        all_patterns = []
+        for patterns in self.quality_patterns.values():
+            all_patterns.extend(patterns)
+        
+        for pattern in all_patterns:
+            name = re.sub(pattern, '', name, flags=re.IGNORECASE)
+        
+        # Clean up extra spaces, dashes, brackets, parentheses
+        name = re.sub(r'\s+', ' ', name)  # Multiple spaces to single
+        name = re.sub(r'\s*[-|:]\s*$', '', name)  # Trailing separators
+        name = re.sub(r'^\s*[-|:]\s*', '', name)  # Leading separators
+        name = re.sub(r'\[\s*\]', '', name)  # Empty brackets
+        name = re.sub(r'\(\s*\)', '', name)  # Empty parentheses
+        name = name.strip()
+        
+        return name
     
     def parse_m3u_line(self, line: str) -> Dict:
         """
@@ -163,7 +234,7 @@ class M3UParser:
 
 
 class SportsChannelScanner:
-    """Scans M3U playlists for sports channels."""
+    """Scans M3U playlists for sports channels with quality grouping."""
     
     def __init__(self, lovestory_path: str = 'lovestory.json'):
         """
@@ -174,14 +245,16 @@ class SportsChannelScanner:
         """
         self.lovestory_path = lovestory_path
         self.parser = M3UParser()
-        self.sports_channels = []
-        self.seen_streams = set()  # For deduplication
+        
+        # Nested dict: {base_channel_name: {quality: set(urls)}}
+        self.grouped_channels = defaultdict(lambda: defaultdict(set))
+        
         self.stats = {
             'playlists_scanned': 0,
             'playlists_failed': 0,
             'total_channels': 0,
-            'sports_channels': 0,
-            'duplicates_removed': 0
+            'sports_channels_found': 0,
+            'total_links_collected': 0
         }
     
     def load_playlists(self) -> List[Dict]:
@@ -226,15 +299,6 @@ class SportsChannelScanner:
         except UnicodeDecodeError:
             return response.content.decode('latin-1')
     
-    def normalize_stream_url(self, url: str) -> str:
-        """
-        Normalize stream URL for deduplication.
-        Removes query parameters that might vary.
-        """
-        parsed = urlparse(url)
-        # Keep scheme, netloc, and path, ignore query params for comparison
-        return f"{parsed.scheme}://{parsed.netloc}{parsed.path}"
-    
     def scan_playlist(self, playlist_info: Dict):
         """
         Scan a single playlist for sports channels.
@@ -254,8 +318,10 @@ class SportsChannelScanner:
             
             print(f"   Found {len(channels)} total channels")
             
-            # Filter for sports channels
+            # Filter for sports channels and group them
             sports_count = 0
+            links_added = 0
+            
             for channel in channels:
                 stream_url = channel.get('stream_url')
                 if not stream_url:
@@ -264,27 +330,24 @@ class SportsChannelScanner:
                 channel_name = channel.get('channel_name') or channel.get('tvg_name') or 'Unknown'
                 group_title = channel.get('group_title', '')
                 
-                # Check if it's a sports channel (with VOD filtering)
+                # Check if it's a sports channel
                 if self.parser.is_sports_channel(channel_name, group_title, stream_url):
-                    # Check for duplicates
-                    normalized_url = self.normalize_stream_url(stream_url)
+                    # Extract base name and quality
+                    base_name = self.parser.normalize_channel_name(channel_name)
+                    quality = self.parser.extract_quality(channel_name)
                     
-                    if normalized_url not in self.seen_streams:
-                        self.seen_streams.add(normalized_url)
-                        
-                        # Simplified output - just what's needed
-                        self.sports_channels.append({
-                            'channel_name': channel_name,
-                            'stream_url': stream_url,
-                            'group_title': group_title,
-                            'source_playlist': playlist_info['name']
-                        })
+                    # Add to grouped structure (set automatically deduplicates)
+                    before_size = len(self.grouped_channels[base_name][quality])
+                    self.grouped_channels[base_name][quality].add(stream_url)
+                    after_size = len(self.grouped_channels[base_name][quality])
+                    
+                    if after_size > before_size:
+                        links_added += 1
                         sports_count += 1
-                    else:
-                        self.stats['duplicates_removed'] += 1
             
-            print(f"   ✅ Found {sports_count} sports channels (unique)")
+            print(f"   ✅ Added {links_added} unique sports channel links")
             self.stats['playlists_scanned'] += 1
+            self.stats['total_links_collected'] += links_added
             
         except Exception as e:
             print(f"   ❌ Failed: {str(e)}")
@@ -310,39 +373,48 @@ class SportsChannelScanner:
             if i < len(playlists):
                 time.sleep(delay)
         
-        self.stats['sports_channels'] = len(self.sports_channels)
+        self.stats['sports_channels_found'] = len(self.grouped_channels)
     
     def save_channels(self, output_path: str = 'channels.json'):
         """
-        Save sports channels to JSON file.
+        Save grouped sports channels to JSON file.
         
         Args:
             output_path: Path to save the channels JSON
         """
+        # Convert sets to lists for JSON serialization
+        channels_output = {}
+        for channel_name, qualities in sorted(self.grouped_channels.items()):
+            channels_output[channel_name] = {}
+            for quality in ['SD', 'HD', 'FHD', '4K']:  # Fixed order
+                if quality in qualities:
+                    channels_output[channel_name][quality] = sorted(list(qualities[quality]))
+        
         output_data = {
             'metadata': {
                 'scan_date': time.strftime('%Y-%m-%d %H:%M:%S UTC', time.gmtime()),
                 'playlists_scanned': self.stats['playlists_scanned'],
                 'playlists_failed': self.stats['playlists_failed'],
                 'total_channels_checked': self.stats['total_channels'],
-                'sports_channels_found': self.stats['sports_channels'],
-                'duplicates_removed': self.stats['duplicates_removed']
+                'unique_channel_names': self.stats['sports_channels_found'],
+                'total_links_collected': self.stats['total_links_collected']
             },
-            'channels': self.sports_channels
+            'channels': channels_output
         }
         
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(output_data, f, indent=2, ensure_ascii=False)
         
         print(f"\n{'='*60}")
-        print(f"✅ Saved {self.stats['sports_channels']} sports channels to {output_path}")
+        print(f"✅ Saved {self.stats['sports_channels_found']} unique sports channels")
+        print(f"   with {self.stats['total_links_collected']} total links to {output_path}")
         print(f"{'='*60}")
         print(f"Statistics:")
         print(f"  - Playlists scanned: {self.stats['playlists_scanned']}")
         print(f"  - Playlists failed: {self.stats['playlists_failed']}")
         print(f"  - Total channels checked: {self.stats['total_channels']}")
-        print(f"  - Sports channels found: {self.stats['sports_channels']}")
-        print(f"  - Duplicates removed: {self.stats['duplicates_removed']}")
+        print(f"  - Unique channel names: {self.stats['sports_channels_found']}")
+        print(f"  - Total links collected: {self.stats['total_links_collected']}")
         print(f"{'='*60}\n")
 
 
