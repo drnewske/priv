@@ -396,7 +396,8 @@ class SportsChannelScanner:
                 'playlists_scanned': self.stats['playlists_scanned'],
                 'playlists_failed': self.stats['playlists_failed'],
                 'total_channels_checked': self.stats['total_channels'],
-                'unique_channel_names': self.stats['sports_channels_found'],
+                'sports_channels_found': len(self.grouped_channels),
+                'unique_channel_names': len(self.grouped_channels),
                 'total_links_collected': self.stats['total_links_collected']
             },
             'channels': channels_output
