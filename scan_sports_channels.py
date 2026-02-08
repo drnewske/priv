@@ -227,6 +227,7 @@ class SportsScanner:
     
     def scan_server(self, server: Dict) -> Dict:
         """Scan a single server."""
+        print(f"  > Starting scan: {server.get('domain', 'Unknown')}...", flush=True)
         result = {
             'name': server.get('name', 'Unknown'),
             'domain': server.get('domain', 'Unknown'),
@@ -254,11 +255,14 @@ class SportsScanner:
             
             if not sports_categories:
                 result['error'] = 'No sports categories'
+                print(f"  x {server.get('domain')} - No sports categories", flush=True)
                 return result
+            
+            print(f"    - Found {len(sports_categories)} sports categories in {server.get('domain')}. Scanning streams...", flush=True)
             
             # Get streams from each sports category
             channels_found = 0
-            for category in sports_categories:
+            for i, category in enumerate(sports_categories, 1):
                 cat_id = category.get('category_id')
                 if not cat_id:
                     continue
@@ -300,9 +304,11 @@ class SportsScanner:
             
             result['success'] = True
             result['channels_added'] = channels_found
+            print(f"  v {server.get('domain')} - Done. Found {channels_found} channels", flush=True)
             
         except Exception as e:
             result['error'] = str(e)
+            print(f"  ! {server.get('domain')} - Error: {e}", flush=True)
         
         return result
     
@@ -312,7 +318,7 @@ class SportsScanner:
         
         print(f"\n{'='*70}")
         print(f"Scanning {len(servers)} servers (max {max_workers} parallel)")
-        print(f"{'='*70}\n")
+        print(f"{'='*70}\n", flush=True)
         
         # Use thread pool for parallel requests
         with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
@@ -326,8 +332,8 @@ class SportsScanner:
                 status = '✅' if result['success'] else '❌'
                 error = f" ({result['error']})" if result['error'] else ''
                 
-                print(f"[{idx}/{len(servers)}] {status} {result['domain']} - "
-                      f"{result['channels_added']} channels{error}")
+                # print(f"[{idx}/{len(servers)}] {status} {result['domain']} - "
+                #       f"{result['channels_added']} channels{error}", flush=True)
                 
                 if result['success']:
                     self.stats['servers_success'] += 1
@@ -368,15 +374,15 @@ class SportsScanner:
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(output, f, indent=2, ensure_ascii=False)
         
-        print(f"\n{'='*70}")
-        print(f"✅ Saved {len(self.channels)} unique channels → {output_path}")
-        print(f"{'='*70}")
-        print(f"Statistics:")
+        print(f"\n{'='*70}", flush=True)
+        print(f"✅ Saved {len(self.channels)} unique channels → {output_path}", flush=True)
+        print(f"{'='*70}", flush=True)
+        print(f"Statistics:", flush=True)
         print(f"  Servers: {self.stats['servers_success']}/{self.stats['servers_total']} "
-              f"({self.stats['servers_failed']} failed)")
-        print(f"  Categories: {self.stats['sports_categories']}/{self.stats['categories_total']} sports")
-        print(f"  Channels: {len(self.channels)} unique ({self.stats['channels_added']} total links)")
-        print(f"{'='*70}\n")
+              f"({self.stats['servers_failed']} failed)", flush=True)
+        print(f"  Categories: {self.stats['sports_categories']}/{self.stats['categories_total']} sports", flush=True)
+        print(f"  Channels: {len(self.channels)} unique ({self.stats['channels_added']} total links)", flush=True)
+        print(f"{'='*70}\n", flush=True)
 
 
 def parse_arguments():
@@ -459,7 +465,7 @@ def main():
     print(f"Selected {len(final_servers)} playlists to scan:")
     print(f"  - {len(priorities)} from priority domains")
     print(f"  - {len(top_others)} from top channel counts")
-
+    
     if not final_servers:
         print("No servers selected for scanning.")
         sys.exit(0)
