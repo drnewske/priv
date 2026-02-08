@@ -1,329 +1,225 @@
 #!/usr/bin/env python3
 """
-M3U Sports Channel Scanner
-Scans multiple M3U playlists from lovestory.json and extracts sports channels.
+Channel Search Utility
+Browse and search sports channels from channels.json
 """
 
 import json
-import re
-import requests
-from typing import List, Dict, Set
-from urllib.parse import urlparse
-import time
+import sys
+from typing import List, Dict, Optional
 
 
-class M3UParser:
-    """Parser for M3U playlist format."""
-    
-    def __init__(self):
-        self.sports_keywords = [
-            'sport', 'espn', 'fox sports', 'sky sports', 'bein', 'tsn', 'eurosport',
-            'nba', 'nfl', 'nhl', 'mlb', 'soccer', 'football', 'racing', 'f1',
-            'tennis', 'golf', 'cricket', 'boxing', 'ufc', 'ppv', 'fight',
-            'dazn', 'arena', 'eleven sports', 'premier league', 'la liga',
-            'serie a', 'bundesliga', 'ligue 1', 'champions league', 'uefa',
-            'fifa', 'olympics', 'motogp', 'nascar', 'rugb', 'match', 'live'
-        ]
-    
-    def is_sports_channel(self, channel_name: str, group_title: str) -> bool:
-        """
-        Determine if a channel is sports-related.
-        
-        Args:
-            channel_name: The channel name
-            group_title: The group/category title
-            
-        Returns:
-            True if this appears to be a sports channel
-        """
-        # Check group title first (most reliable)
-        if group_title:
-            group_lower = group_title.lower()
-            if 'sport' in group_lower or 'live events' in group_lower:
-                return True
-        
-        # Check channel name for sports keywords
-        name_lower = channel_name.lower()
-        return any(keyword in name_lower for keyword in self.sports_keywords)
-    
-    def parse_m3u_line(self, line: str) -> Dict:
-        """
-        Parse an EXTINF line from M3U format.
-        
-        Format: #EXTINF:-1 tvg-id="..." tvg-name="..." tvg-logo="..." group-title="...",Channel Name
-        
-        Args:
-            line: The EXTINF line to parse
-            
-        Returns:
-            Dictionary with parsed attributes
-        """
-        result = {
-            'tvg_id': None,
-            'tvg_name': None,
-            'tvg_logo': None,
-            'group_title': None,
-            'channel_name': None
-        }
-        
-        # Extract tvg-id
-        tvg_id_match = re.search(r'tvg-id="([^"]*)"', line)
-        if tvg_id_match:
-            result['tvg_id'] = tvg_id_match.group(1)
-        
-        # Extract tvg-name
-        tvg_name_match = re.search(r'tvg-name="([^"]*)"', line)
-        if tvg_name_match:
-            result['tvg_name'] = tvg_name_match.group(1)
-        
-        # Extract tvg-logo
-        tvg_logo_match = re.search(r'tvg-logo="([^"]*)"', line)
-        if tvg_logo_match:
-            result['tvg_logo'] = tvg_logo_match.group(1)
-        
-        # Extract group-title
-        group_match = re.search(r'group-title="([^"]*)"', line)
-        if group_match:
-            result['group_title'] = group_match.group(1)
-        
-        # Extract channel name (after the last comma)
-        if ',' in line:
-            result['channel_name'] = line.split(',', 1)[1].strip()
-        
-        return result
-    
-    def parse_m3u_content(self, content: str) -> List[Dict]:
-        """
-        Parse M3U playlist content and extract all channels.
-        
-        Args:
-            content: The M3U file content
-            
-        Returns:
-            List of channel dictionaries
-        """
-        channels = []
-        lines = content.split('\n')
-        
-        i = 0
-        while i < len(lines):
-            line = lines[i].strip()
-            
-            # Look for EXTINF lines
-            if line.startswith('#EXTINF'):
-                channel_info = self.parse_m3u_line(line)
-                
-                # Next line should be the stream URL
-                if i + 1 < len(lines):
-                    url_line = lines[i + 1].strip()
-                    if url_line and not url_line.startswith('#'):
-                        channel_info['stream_url'] = url_line
-                        channels.append(channel_info)
-                
-                i += 2  # Skip to next EXTINF
-            else:
-                i += 1
-        
-        return channels
-
-
-class SportsChannelScanner:
-    """Scans M3U playlists for sports channels."""
-    
-    def __init__(self, lovestory_path: str = 'lovestory.json'):
-        """
-        Initialize the scanner.
-        
-        Args:
-            lovestory_path: Path to lovestory.json file
-        """
-        self.lovestory_path = lovestory_path
-        self.parser = M3UParser()
-        self.sports_channels = []
-        self.seen_streams = set()  # For deduplication
-        self.stats = {
-            'playlists_scanned': 0,
-            'playlists_failed': 0,
-            'total_channels': 0,
-            'sports_channels': 0,
-            'duplicates_removed': 0
-        }
-    
-    def load_playlists(self) -> List[Dict]:
-        """Load playlist URLs from lovestory.json."""
-        with open(self.lovestory_path, 'r', encoding='utf-8') as f:
+class ChannelSearcher:
+    def __init__(self, channels_json_path: str = 'channels.json'):
+        """Load the channels database."""
+        with open(channels_json_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
         
-        # Extract playlists from featured_content
-        playlists = []
-        for item in data.get('featured_content', []):
-            if item.get('type') == 'm3u' and item.get('url'):
-                playlists.append({
-                    'name': item.get('name', 'Unknown'),
-                    'url': item['url'],
-                    'domain': item.get('domain', 'Unknown'),
-                    'id': item.get('id', 'unknown')
-                })
+        self.metadata = data.get('metadata', {})
+        self.channels = data.get('channels', [])
         
-        return playlists
+        print(f"Loaded {len(self.channels)} sports channels")
+        print(f"  - Scan date: {self.metadata.get('scan_date', 'Unknown')}")
+        print(f"  - Playlists scanned: {self.metadata.get('playlists_scanned', 0)}")
+        print(f"  - Duplicates removed: {self.metadata.get('duplicates_removed', 0)}")
+        print()
     
-    def fetch_m3u_playlist(self, url: str, timeout: int = 30) -> str:
-        """
-        Fetch M3U playlist content from URL.
+    def search(self, query: str) -> List[Dict]:
+        """Search for channels matching the query."""
+        query_lower = query.lower()
+        matches = []
         
-        Args:
-            url: The playlist URL
-            timeout: Request timeout in seconds
+        for channel in self.channels:
+            channel_name = channel.get('channel_name', '').lower()
+            group_title = channel.get('group_title', '').lower()
             
-        Returns:
-            Playlist content as string
-        """
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-        }
+            if query_lower in channel_name or query_lower in group_title:
+                matches.append(channel)
         
-        response = requests.get(url, headers=headers, timeout=timeout)
-        response.raise_for_status()
-        
-        # Handle different encodings
-        try:
-            return response.content.decode('utf-8')
-        except UnicodeDecodeError:
-            return response.content.decode('latin-1')
+        return matches
     
-    def normalize_stream_url(self, url: str) -> str:
-        """
-        Normalize stream URL for deduplication.
-        Removes query parameters that might vary.
-        """
-        parsed = urlparse(url)
-        # Keep scheme, netloc, and path, ignore query params for comparison
-        return f"{parsed.scheme}://{parsed.netloc}{parsed.path}"
+    def get_by_source(self, source_name: str) -> List[Dict]:
+        """Get all channels from a specific source playlist."""
+        return [
+            ch for ch in self.channels
+            if ch.get('source_playlist', '').lower() == source_name.lower()
+        ]
     
-    def scan_playlist(self, playlist_info: Dict):
-        """
-        Scan a single playlist for sports channels.
+    def get_by_group(self, group_name: str) -> List[Dict]:
+        """Get all channels from a specific group/category."""
+        return [
+            ch for ch in self.channels
+            if group_name.lower() in ch.get('group_title', '').lower()
+        ]
+    
+    def get_unique_channels(self) -> List[str]:
+        """Get list of unique channel names."""
+        return sorted(set(ch.get('channel_name', 'Unknown') for ch in self.channels))
+    
+    def get_unique_sources(self) -> List[str]:
+        """Get list of unique source playlists."""
+        return sorted(set(ch.get('source_playlist', 'Unknown') for ch in self.channels))
+    
+    def get_unique_groups(self) -> List[str]:
+        """Get list of unique group titles."""
+        groups = set()
+        for ch in self.channels:
+            group = ch.get('group_title')
+            if group:
+                groups.add(group)
+        return sorted(groups)
+    
+    def display_channel(self, channel: Dict, show_url: bool = False):
+        """Pretty print channel information."""
+        print(f"\n{'='*70}")
+        print(f"Channel: {channel.get('channel_name', 'Unknown')}")
+        print(f"{'='*70}")
         
-        Args:
-            playlist_info: Dictionary with playlist metadata
-        """
-        print(f"\n📺 Scanning: {playlist_info['name']} ({playlist_info['domain']})")
+        if channel.get('group_title'):
+            print(f"Category:    {channel['group_title']}")
         
-        try:
-            # Fetch playlist content
-            content = self.fetch_m3u_playlist(playlist_info['url'])
-            
-            # Parse channels
-            channels = self.parser.parse_m3u_content(content)
-            self.stats['total_channels'] += len(channels)
-            
-            print(f"   Found {len(channels)} total channels")
-            
-            # Filter for sports channels
-            sports_count = 0
-            for channel in channels:
-                if not channel.get('stream_url'):
+        print(f"Source:      {channel.get('source_playlist', 'Unknown')}")
+        
+        if show_url and channel.get('stream_url'):
+            print(f"Stream URL:  {channel['stream_url']}")
+        
+        print(f"{'='*70}\n")
+    
+    def interactive_search(self):
+        """Run interactive search mode."""
+        print("\n" + "="*70)
+        print("INTERACTIVE CHANNEL SEARCH")
+        print("="*70)
+        print("Commands:")
+        print("  - Type to search channel names, groups, or TVG names")
+        print("  - 'source <name>' - List channels from specific source")
+        print("  - 'group <name>' - List channels from specific group")
+        print("  - 'sources' - List all unique sources")
+        print("  - 'groups' - List all unique groups")
+        print("  - 'stats' - Show scan statistics")
+        print("  - 'quit' or 'exit' - Exit")
+        print("="*70 + "\n")
+        
+        while True:
+            try:
+                query = input("Search: ").strip()
+                
+                if not query:
                     continue
                 
-                channel_name = channel.get('channel_name') or channel.get('tvg_name') or 'Unknown'
-                group_title = channel.get('group_title', '')
+                if query.lower() in ['quit', 'exit', 'q']:
+                    print("Goodbye!")
+                    break
                 
-                # Check if it's a sports channel
-                if self.parser.is_sports_channel(channel_name, group_title):
-                    # Check for duplicates
-                    normalized_url = self.normalize_stream_url(channel['stream_url'])
-                    
-                    if normalized_url not in self.seen_streams:
-                        self.seen_streams.add(normalized_url)
-                        
-                        # Add source information
-                        channel['source_playlist'] = playlist_info['name']
-                        channel['source_domain'] = playlist_info['domain']
-                        channel['source_id'] = playlist_info['id']
-                        
-                        self.sports_channels.append(channel)
-                        sports_count += 1
+                # Parse command
+                parts = query.split(maxsplit=1)
+                command = parts[0].lower()
+                
+                if command == 'stats':
+                    self.show_stats()
+                elif command == 'sources':
+                    sources = self.get_unique_sources()
+                    print(f"\n📂 {len(sources)} unique sources:\n")
+                    for source in sources:
+                        count = len(self.get_by_source(source))
+                        print(f"  - {source} ({count} channels)")
+                    print()
+                elif command == 'groups':
+                    groups = self.get_unique_groups()
+                    print(f"\n📁 {len(groups)} unique groups:\n")
+                    for group in groups:
+                        count = len(self.get_by_group(group))
+                        print(f"  - {group} ({count} channels)")
+                    print()
+                elif command == 'source' and len(parts) > 1:
+                    results = self.get_by_source(parts[1])
+                elif command == 'group' and len(parts) > 1:
+                    results = self.get_by_group(parts[1])
+                else:
+                    results = self.search(query)
+                
+                # Display results
+                if command not in ['stats', 'sources', 'groups']:
+                    if not results:
+                        print(f"❌ No channels found matching '{query}'\n")
+                    elif len(results) == 1:
+                        self.display_channel(results[0], show_url=True)
                     else:
-                        self.stats['duplicates_removed'] += 1
-            
-            print(f"   ✅ Found {sports_count} sports channels (unique)")
-            self.stats['playlists_scanned'] += 1
-            
-        except Exception as e:
-            print(f"   ❌ Failed: {str(e)}")
-            self.stats['playlists_failed'] += 1
+                        print(f"\n✅ Found {len(results)} channels:\n")
+                        for i, ch in enumerate(results[:30], 1):
+                            channel_name = ch.get('channel_name', 'Unknown')
+                            group = ch.get('group_title', 'N/A')
+                            source = ch.get('source_playlist', 'N/A')
+                            print(f"{i:3d}. {channel_name:<45} [{group}] from {source}")
+                        
+                        if len(results) > 30:
+                            print(f"\n... and {len(results) - 30} more results")
+                        
+                        # Option to view details
+                        print("\nType a number to view details, or press Enter to continue")
+                        choice = input("View channel #: ").strip()
+                        if choice.isdigit():
+                            idx = int(choice) - 1
+                            if 0 <= idx < len(results):
+                                self.display_channel(results[idx], show_url=True)
+                        print()
+                
+            except KeyboardInterrupt:
+                print("\n\nGoodbye!")
+                break
+            except Exception as e:
+                print(f"Error: {e}\n")
     
-    def scan_all_playlists(self, delay: float = 1.0):
-        """
-        Scan all playlists from lovestory.json.
-        
-        Args:
-            delay: Delay between requests in seconds (be nice to servers)
-        """
-        playlists = self.load_playlists()
-        print(f"\n{'='*60}")
-        print(f"Starting scan of {len(playlists)} playlists")
-        print(f"{'='*60}")
-        
-        for i, playlist in enumerate(playlists, 1):
-            print(f"\n[{i}/{len(playlists)}]", end=' ')
-            self.scan_playlist(playlist)
-            
-            # Be nice to servers
-            if i < len(playlists):
-                time.sleep(delay)
-        
-        self.stats['sports_channels'] = len(self.sports_channels)
-    
-    def save_channels(self, output_path: str = 'channels.json'):
-        """
-        Save sports channels to JSON file.
-        
-        Args:
-            output_path: Path to save the channels JSON
-        """
-        output_data = {
-            'metadata': {
-                'scan_date': time.strftime('%Y-%m-%d %H:%M:%S UTC', time.gmtime()),
-                'playlists_scanned': self.stats['playlists_scanned'],
-                'playlists_failed': self.stats['playlists_failed'],
-                'total_channels_checked': self.stats['total_channels'],
-                'sports_channels_found': self.stats['sports_channels'],
-                'duplicates_removed': self.stats['duplicates_removed']
-            },
-            'channels': self.sports_channels
-        }
-        
-        with open(output_path, 'w', encoding='utf-8') as f:
-            json.dump(output_data, f, indent=2, ensure_ascii=False)
-        
-        print(f"\n{'='*60}")
-        print(f"✅ Saved {self.stats['sports_channels']} sports channels to {output_path}")
-        print(f"{'='*60}")
-        print(f"Statistics:")
-        print(f"  - Playlists scanned: {self.stats['playlists_scanned']}")
-        print(f"  - Playlists failed: {self.stats['playlists_failed']}")
-        print(f"  - Total channels checked: {self.stats['total_channels']}")
-        print(f"  - Sports channels found: {self.stats['sports_channels']}")
-        print(f"  - Duplicates removed: {self.stats['duplicates_removed']}")
-        print(f"{'='*60}\n")
+    def show_stats(self):
+        """Display statistics about the channels database."""
+        print(f"\n{'='*70}")
+        print("SCAN STATISTICS")
+        print(f"{'='*70}")
+        print(f"Scan Date:              {self.metadata.get('scan_date', 'Unknown')}")
+        print(f"Playlists Scanned:      {self.metadata.get('playlists_scanned', 0)}")
+        print(f"Playlists Failed:       {self.metadata.get('playlists_failed', 0)}")
+        print(f"Total Channels Checked: {self.metadata.get('total_channels_checked', 0):,}")
+        print(f"Sports Channels Found:  {self.metadata.get('sports_channels_found', 0):,}")
+        print(f"Duplicates Removed:     {self.metadata.get('duplicates_removed', 0):,}")
+        print(f"\nUnique Channel Names:   {len(self.get_unique_channels())}")
+        print(f"Unique Sources:         {len(self.get_unique_sources())}")
+        print(f"Unique Groups:          {len(self.get_unique_groups())}")
+        print(f"{'='*70}\n")
 
 
 def main():
     """Main execution function."""
-    import sys
+    import os
     
-    # Get input/output paths
-    lovestory_path = sys.argv[1] if len(sys.argv) > 1 else 'lovestory.json'
-    output_path = sys.argv[2] if len(sys.argv) > 2 else 'channels.json'
+    json_path = 'channels.json'
+    if len(sys.argv) > 1:
+        json_path = sys.argv[1]
     
-    print(f"Input:  {lovestory_path}")
-    print(f"Output: {output_path}")
+    if not os.path.exists(json_path):
+        print(f"Error: {json_path} not found!")
+        print("Run scan_sports_channels.py first to generate the database.")
+        return
     
-    # Create scanner and run
-    scanner = SportsChannelScanner(lovestory_path)
-    scanner.scan_all_playlists(delay=0.5)  # 0.5 second delay between requests
-    scanner.save_channels(output_path)
+    # Load and run searcher
+    searcher = ChannelSearcher(json_path)
+    
+    # If command line search provided, do that
+    if len(sys.argv) > 2:
+        query = ' '.join(sys.argv[2:])
+        results = searcher.search(query)
+        
+        if results:
+            print(f"\nFound {len(results)} match(es) for '{query}':\n")
+            for channel in results[:10]:
+                searcher.display_channel(channel, show_url=True)
+            
+            if len(results) > 10:
+                print(f"... and {len(results) - 10} more results")
+        else:
+            print(f"No matches found for '{query}'")
+    else:
+        # Otherwise run interactive mode
+        searcher.interactive_search()
 
 
 if __name__ == '__main__':
