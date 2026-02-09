@@ -1,0 +1,37 @@
+name: Learn Team Mappings
+
+on:
+  workflow_dispatch:  # Manual trigger only
+
+jobs:
+  learn:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+        
+    - name: Run Learning Script
+      run: |
+        cd aongewach
+        python learn_mappings.py
+        
+    - name: Commit and push changes
+      run: |
+        git config --global user.name 'GitHub Action'
+        git config --global user.email 'action@github.com'
+        git add aongewach/teams.json
+        # Only commit if there are changes
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "chore: Learn new team mappings [skip ci]"
+          git push
+        fi
