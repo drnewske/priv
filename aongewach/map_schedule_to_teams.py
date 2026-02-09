@@ -62,7 +62,7 @@ def find_team_data(team_name, teams_data):
 def process_schedule():
     print("Loading data...")
     schedule_data = load_json('weekly_schedule.json')
-    teams_db = load_json('teams.json')
+    teams_db = load_json('spdb_teams.json')
 
     if not schedule_data or not teams_db:
         return
@@ -96,20 +96,23 @@ def process_schedule():
                 
                 # Initialize with None for consistency
                 event['home_team_id'] = None
+<<<<<<< HEAD
                 event['home_team_logo_id'] = None
                 event['home_team_logo'] = None
                 event['away_team_id'] = None
                 event['away_team_logo_id'] = None
+=======
+                event['home_team_logo'] = None
+                event['away_team_id'] = None
+>>>>>>> 77b495d9 (feat: integrate TheSportsDB API for team data and add manual competition filter)
                 event['away_team_logo'] = None
 
                 if home_data:
                     event['home_team_id'] = home_data.get('id')
-                    event['home_team_logo_id'] = home_data.get('logo_id')
                     event['home_team_logo'] = home_data.get('logo_url')
                 
                 if away_data:
                     event['away_team_id'] = away_data.get('id')
-                    event['away_team_logo_id'] = away_data.get('logo_id')
                     event['away_team_logo'] = away_data.get('logo_url')
                 
                 if home_data or away_data:

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pipeline Test UI</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .filters {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+
+        /* Thin scrollbar for filters */
+        .filters::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .filters::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+
+        .filters::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 4px;
+        }
+
+        .filter-group-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .filter-btn {
+            background: var(--card-bg);
+            border: 1px solid #334155;
+            color: var(--text-secondary);
+            padding: 6px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+            font-size: 0.9rem;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .comp-btn {
+            border-radius: 8px;
+            /* Square specific for comps */
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .comp-btn img {
+            width: 16px;
+            height: 16px;
+            object-fit: contain;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            border: 1px solid #334155;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+        }
+
+        .card-header {
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #334155;
+        }
+
+        .competition {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .competition img {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+        }
+
+        .time {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent);
+            background: rgba(59, 130, 246, 0.1);
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .card-body {
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .matchup {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .team {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 40%;
+        }
+
+        .team-logo {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            margin-bottom: 8px;
+        }
+
+        .team-name {
+            font-size: 0.9rem;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .vs {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            font-weight: bold;
+        }
+
+        .channels-list {
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .channel-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #0f172a;
+            padding: 8px 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: background 0.2s;
+            border: 1px solid #334155;
+            font-size: 0.85rem;
+        }
+
+        .channel-btn:hover {
+            background: #1e293b;
+            border-color: var(--accent);
+        }
+
+        .channel-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .channel-logo {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+            border-radius: 4px;
+            background: #fff;
+            padding: 2px;
+        }
+
+        .play-icon {
+            color: var(--accent);
+        }
+
+        .status-badge {
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 8px;
+        }
+
+        .status-mapped {
+            background: rgba(16, 185, 129, 0.2);
+            color: #34d399;
+        }
+
+        .status-missing {
+            background: rgba(239, 68, 68, 0.2);
+            color: #f87171;
+        }
+
+        .no-data {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div>
+                <h1>Sports Schedule Dashboard</h1>
+                <small style="color: var(--text-secondary)">Testing Pipeline Output</small>
+            </div>
+            <div id="last-updated" style="font-size: 0.85rem; color: var(--text-secondary)"></div>
+        </header>
+
+        <div>
+            <div class="filter-group-label">Date</div>
+            <div class="filters" id="date-filters">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
+        <div>
+            <div class="filter-group-label" id="comp-label" style="display:none">Competition</div>
+            <div class="filters" id="comp-filters">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
+        <div class="grid" id="events-grid">
+            <!-- Populated by JS -->
+        </div>
+    </div>
+
+    <script>
+        let scheduleData = null;
+        let channelsDb = null;
+        let selectedDayIndex = 0;
+        let selectedCompetition = 'All'; // 'All' or specific competition name
+
+        async function init() {
+            try {
+                // Fetch Data (Production)
+                const [schRes, chanRes] = await Promise.all([
+                    fetch('https://raw.githubusercontent.com/drnewske/priv/refs/heads/main/aongewach/weekly_schedule_final.json'),
+                    fetch('https://raw.githubusercontent.com/drnewske/priv/refs/heads/main/aongewach/channels.json')
+                ]);
+
+                if (!schRes.ok || !chanRes.ok) throw new Error("Failed to load JSON files");
+
+                scheduleData = await schRes.json();
+                channelsDb = await chanRes.json();
+
+                // Setup header
+                document.getElementById('last-updated').textContent = `Generated: ${new Date(scheduleData.generated_at).toLocaleString()}`;
+
+                // Render Dates
+                renderDateFilters();
+
+                // Render first day by default
+                if (scheduleData.schedule.length > 0) {
+                    selectDay(0);
+                } else {
+                    document.getElementById('events-grid').innerHTML = '<div class="no-data">No events found in schedule.</div>';
+                }
+
+            } catch (e) {
+                console.error(e);
+                document.getElementById('events-grid').innerHTML = `<div class="no-data" style="color:red">Error loading data. Make sure you are running a local server.<br><br>${e.message}</div>`;
+            }
+        }
+
+        function renderDateFilters() {
+            const container = document.getElementById('date-filters');
+            container.innerHTML = '';
+
+            scheduleData.schedule.forEach((day, index) => {
+                const btn = document.createElement('button');
+                btn.className = `filter-btn ${index === 0 ? 'active' : ''}`;
+                btn.id = `day-btn-${index}`;
+                btn.textContent = `${day.day} (${day.date})`;
+                btn.onclick = () => selectDay(index);
+                container.appendChild(btn);
+            });
+        }
+
+        function selectDay(index) {
+            selectedDayIndex = index;
+            selectedCompetition = 'All'; // Reset competition filter when day changes
+
+            // Update active state
+            document.querySelectorAll('#date-filters .filter-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(`day-btn-${index}`).classList.add('active');
+
+            // Render competitions for this day
+            renderCompetitionFilters();
+
+            // Render grid
+            renderGrid();
+        }
+
+        function renderCompetitionFilters() {
+            const day = scheduleData.schedule[selectedDayIndex];
+            const container = document.getElementById('comp-filters');
+            const label = document.getElementById('comp-label');
+
+            container.innerHTML = '';
+
+            if (!day.events || day.events.length === 0) {
+                label.style.display = 'none';
+                return;
+            }
+
+            label.style.display = 'block';
+
+            // Extract unique competitions
+            const competitions = new Map(); // Name -> Logo
+            day.events.forEach(e => {
+                if (!competitions.has(e.competition)) {
+                    competitions.set(e.competition, e.competition_logo);
+                }
+            });
+
+            // "All" Button
+            const allBtn = document.createElement('button');
+            allBtn.className = 'filter-btn active';
+            allBtn.textContent = 'All';
+            allBtn.onclick = () => filterCompetition('All', allBtn);
+            container.appendChild(allBtn);
+
+            // Competition Buttons
+            competitions.forEach((logo, name) => {
+                const btn = document.createElement('button');
+                btn.className = 'filter-btn comp-btn';
+                btn.innerHTML = `<img src="${logo || ''}" onerror="this.style.display='none'"> ${name}`;
+                btn.onclick = () => filterCompetition(name, btn);
+                container.appendChild(btn);
+            });
+        }
+
+        function filterCompetition(compName, btnElement) {
+            selectedCompetition = compName;
+
+            // Update active state
+            document.querySelectorAll('#comp-filters .filter-btn').forEach(b => b.classList.remove('active'));
+            btnElement.classList.add('active');
+
+            renderGrid();
+        }
+
+        function renderGrid() {
+            const day = scheduleData.schedule[selectedDayIndex];
+            const grid = document.getElementById('events-grid');
+            grid.innerHTML = '';
+
+            if (!day.events || day.events.length === 0) {
+                grid.innerHTML = '<div class="no-data">No events for this day.</div>';
+                return;
+            }
+
+            // Filter events
+            const filteredEvents = selectedCompetition === 'All'
+                ? day.events
+                : day.events.filter(e => e.competition === selectedCompetition);
+
+            if (filteredEvents.length === 0) {
+                grid.innerHTML = '<div class="no-data">No events found for this competition.</div>';
+                return;
+            }
+
+            filteredEvents.forEach(event => {
+                const card = document.createElement('div');
+                card.className = 'card';
+
+                // Resolve Channels
+                let channelsHtml = '';
+                if (event.channels && event.channels.length > 0) {
+                    event.channels.forEach(chanStr => {
+                        // Parse "Name, ID" or "Name, null"
+                        const parts = chanStr.split(', ');
+                        const name = parts[0];
+                        const id = parts.length > 1 && parts[1] !== 'null' ? parseInt(parts[1]) : null;
+
+                        const channelData = id ? getChannelstream(id) : null;
+
+                        if (channelData) {
+                            channelsHtml += `
+                                <a href="player.html?url=${encodeURIComponent(channelData.streamUrl)}" class="channel-btn">
+                                    <div class="channel-info">
+                                        <img src="${channelData.logo || 'https://via.placeholder.com/24'}" class="channel-logo" onerror="this.src='https://via.placeholder.com/24?text=?'">
+                                        <span>${channelData.iptvName || name}</span>
+                                        <span class="status-badge status-mapped">${channelData.quality}</span>
+                                    </div>
+                                    <span class="play-icon">▶</span>
+                                </a>
+                            `;
+                        } else {
+                            channelsHtml += `
+                                <div class="channel-btn" style="opacity:0.5; cursor:not-allowed">
+                                    <div class="channel-info">
+                                        <span>${name}</span>
+                                        <span class="status-badge status-missing">Offline</span>
+                                    </div>
+                                </div>
+                            `;
+                        }
+                    });
+                } else {
+                    channelsHtml = '<div style="font-size:0.8rem; color:#64748b; text-align:center; padding:10px;">No channels mapped</div>';
+                }
+
+                card.innerHTML = `
+                    <div class="card-header">
+                        <div class="competition">
+                            <img src="${event.competition_logo}" onerror="this.style.display='none'">
+                            <span>${event.competition}</span>
+                        </div>
+                        <div class="time">${event.time}</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="matchup">
+                            <div class="team">
+                                <img src="${event.home_team_logo}" class="team-logo" onerror="this.src='https://via.placeholder.com/60?text=Home'">
+                                <span class="team-name">${event.home_team}</span>
+                            </div>
+                            <div class="vs">VS</div>
+                            <div class="team">
+                                <img src="${event.away_team_logo}" class="team-logo" onerror="this.src='https://via.placeholder.com/60?text=Away'">
+                                <span class="team-name">${event.away_team}</span>
+                            </div>
+                        </div>
+                        <div class="channels-list">
+                            ${channelsHtml}
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function getChannelstream(channelId) {
+            for (const [name, data] of Object.entries(channelsDb.channels)) {
+                if (data.id === channelId) {
+                    let url = null;
+                    let quality = 'SD';
+
+                    if (data.qualities['4K'] && data.qualities['4K'].length > 0) {
+                        url = data.qualities['4K'][0];
+                        quality = '4K';
+                    } else if (data.qualities['FHD'] && data.qualities['FHD'].length > 0) {
+                        url = data.qualities['FHD'][0];
+                        quality = 'FHD';
+                    } else if (data.qualities['HD'] && data.qualities['HD'].length > 0) {
+                        url = data.qualities['HD'][0];
+                        quality = 'HD';
+                    } else if (data.qualities['SD'] && data.qualities['SD'].length > 0) {
+                        url = data.qualities['SD'][0];
+                        quality = 'SD';
+                    }
+
+                    if (url) return { streamUrl: url, quality, logo: data.logo, iptvName: name };
+                }
+            }
+            return null;
+        }
+
+        init();
+    </script>
+</body>
+
+</html>
