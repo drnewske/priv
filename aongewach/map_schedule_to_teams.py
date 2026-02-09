@@ -96,15 +96,8 @@ def process_schedule():
                 
                 # Initialize with None for consistency
                 event['home_team_id'] = None
-<<<<<<< HEAD
-                event['home_team_logo_id'] = None
                 event['home_team_logo'] = None
                 event['away_team_id'] = None
-                event['away_team_logo_id'] = None
-=======
-                event['home_team_logo'] = None
-                event['away_team_id'] = None
->>>>>>> 77b495d9 (feat: integrate TheSportsDB API for team data and add manual competition filter)
                 event['away_team_logo'] = None
 
                 if home_data:
