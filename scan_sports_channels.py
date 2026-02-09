@@ -115,7 +115,7 @@ class SportsFilter:
 class ChannelNormalizer:
     """Normalize and group channel names."""
     
-    def __init__(self, similarity_threshold: float = 0.90):
+    def __init__(self, similarity_threshold: float = 0.85):
         """Initialize with similarity threshold (0-1)."""
         self.similarity_threshold = similarity_threshold
         
@@ -127,13 +127,14 @@ class ChannelNormalizer:
         
         # Junk patterns (compile once for speed)
         self.junk_patterns = [
-            re.compile(r'[#\-_*+=:|~]{3,}'),  # Repeated chars
-            re.compile(r'\[(?:vip|hd|fhd|4k|sd|server|backup|link|premium|multi|test)\s*\d*\]', re.I),
-            re.compile(r'\((?:vip|hd|fhd|4k|sd|server|backup|link|premium|multi|test)\s*\d*\)', re.I),
+            re.compile(r'[#\-_*+=:|~]{2,}'),  # Repeated chars
+            re.compile(r'\[(?:vip|hd|fhd|4k|sd|server|backup|link|premium|multi|test|raw|direct|dn)\s*\d*\]', re.I),
+            re.compile(r'\((?:vip|hd|fhd|4k|sd|server|backup|link|premium|multi|test|raw|direct|dn)\s*\d*\)', re.I),
             re.compile(r'^\s*[#\-_*+=:|~]+\s*'),  # Leading junk
             re.compile(r'\s*[#\-_*+=:|~]+\s*$'),  # Trailing junk
             re.compile(r'\s*\|+\s*'),  # Pipes
             re.compile(r'\s*-\s*'),     # Hyphens as separators
+            re.compile(r'\b(ca|us|uk|de|fr|it|es|pt|br|ar|mx|tr|ru|nl|be|ch|at|pl|ro|bg|hr|rs|ba|mk|si|hu|cz|sk|ua|gr|cy|il|ae|sa|kw|qa|bh|om|lb|jo|eg|ma|dz|tn|ly|sd|sy|iq|ir|pk|in|bd|lk|np|mm|th|vn|la|kh|my|sg|id|ph|cn|tw|hk|mo|kp|kr|jp|au|nz)\s*[:-]\s*', re.I), # Country prefixes
         ]
     
     def extract_quality(self, name: str) -> str:
@@ -198,12 +199,12 @@ class ChannelNormalizer:
 class SportsScanner:
     """Main scanner class."""
     
-    def __init__(self, similarity_threshold: float = 0.90):
+    def __init__(self, similarity_threshold: float = 0.85):
         """Initialize scanner."""
         self.normalizer = ChannelNormalizer(similarity_threshold)
         
-        # Channel storage: {normalized_name: {quality: set(urls)}}
-        self.channels = defaultdict(lambda: defaultdict(set))
+        # Channel storage: {normalized_name: {matches: {quality: set()}, logo: str}}
+        self.channels = defaultdict(lambda: {'qualities': defaultdict(set), 'logo': None})
         self.channel_ids = {}
         self.next_id = 1
         
@@ -241,7 +242,14 @@ class SportsScanner:
             api = XtreamAPI(server['url'])
             
             # Get categories
-            categories = api.get_live_categories()
+            try:
+                categories = api.get_live_categories()
+            except Exception as e:
+                # Catch connection errors early
+                print(f"  x {server.get('domain')} - Connection Failed: {e}", flush=True)
+                result['error'] = str(e)
+                return result
+
             self.stats['categories_total'] += len(categories)
             
             # Filter sports categories
@@ -267,19 +275,24 @@ class SportsScanner:
                 if not cat_id:
                     continue
                 
-                streams = api.get_live_streams(cat_id)
+                try:
+                    streams = api.get_live_streams(cat_id)
+                except Exception:
+                    continue
+                    
                 self.stats['channels_checked'] += len(streams)
                 
                 for stream in streams:
                     stream_id = stream.get('stream_id')
                     stream_name = stream.get('name', '').strip()
+                    stream_icon = stream.get('stream_icon')
                     
                     if not stream_id or not stream_name:
                         continue
                     
                     # Normalize name
                     normalized = self.normalizer.normalize(stream_name)
-                    if not normalized:
+                    if not normalized or len(normalized) < 3: # Skip very short names
                         continue
                     
                     # Find similar channel
@@ -294,10 +307,14 @@ class SportsScanner:
                     url = api.get_stream_url(stream_id)
                     
                     # Add to channels
-                    if url not in self.channels[final_name][quality]:
-                        self.channels[final_name][quality].add(url)
+                    if url not in self.channels[final_name]['qualities'][quality]:
+                        self.channels[final_name]['qualities'][quality].add(url)
                         channels_found += 1
                         self.stats['channels_added'] += 1
+                        
+                        # Add logo if missing
+                        if not self.channels[final_name]['logo'] and stream_icon:
+                            self.channels[final_name]['logo'] = stream_icon
                     
                     # Ensure ID exists
                     self._get_channel_id(final_name)
@@ -312,34 +329,40 @@ class SportsScanner:
         
         return result
     
-    def scan_all(self, servers: List[Dict], max_workers: int = 5) -> None:
-        """Scan all servers (with optional parallel processing)."""
+    def scan_for_success(self, servers: List[Dict], target_success: int = 20, max_workers: int = 5) -> None:
+        """Scan servers until target success count is reached."""
         self.stats['servers_total'] = len(servers)
         
         print(f"\n{'='*70}")
-        print(f"Scanning {len(servers)} servers (max {max_workers} parallel)")
+        print(f"Scanning for {target_success} working servers (max {max_workers} parallel)")
         print(f"{'='*70}\n", flush=True)
         
-        # Use thread pool for parallel requests
-        with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
-            futures = {executor.submit(self.scan_server, server): i 
-                      for i, server in enumerate(servers, 1)}
+        success_count = 0
+        
+        # Process in batches to respect the target limit efficiently
+        # We don't want to spin up 100 threads if the first 20 work.
+        batch_size = max_workers
+        
+        for i in range(0, len(servers), batch_size):
+            if success_count >= target_success:
+                print(f"\nReached target of {target_success} successful scans. Stopping.", flush=True)
+                break
+                
+            batch = servers[i : i + batch_size]
             
-            for future in concurrent.futures.as_completed(futures):
-                idx = futures[future]
-                result = future.result()
+            with concurrent.futures.ThreadPoolExecutor(max_workers=len(batch)) as executor:
+                futures = {executor.submit(self.scan_server, server): server for server in batch}
                 
-                status = '✅' if result['success'] else '❌'
-                error = f" ({result['error']})" if result['error'] else ''
-                
-                # print(f"[{idx}/{len(servers)}] {status} {result['domain']} - "
-                #       f"{result['channels_added']} channels{error}", flush=True)
-                
-                if result['success']:
-                    self.stats['servers_success'] += 1
-                else:
-                    self.stats['servers_failed'] += 1
-    
+                for future in concurrent.futures.as_completed(futures):
+                    result = future.result()
+                    if result['success'] and result['channels_added'] > 0:
+                        success_count += 1
+                        self.stats['servers_success'] += 1
+                    else:
+                        self.stats['servers_failed'] += 1
+                        
+            print(f"--- Batch complete. Successes so far: {success_count}/{target_success} ---", flush=True)
+
     def save(self, output_path: str) -> None:
         """Save results to JSON."""
         output = {
@@ -359,29 +382,32 @@ class SportsScanner:
         
         # Build output
         for name in sorted(self.channels.keys()):
-            output['channels'][name] = {
-                'id': self.channel_ids[name],
-                'qualities': {}
-            }
+            channel_data = self.channels[name]
             
+            # Sort qualities
+            qualities = {}
             for quality in ['SD', 'HD', 'FHD', '4K']:
-                if quality in self.channels[name]:
-                    output['channels'][name]['qualities'][quality] = [
-                        {'url': url, 'source': 'xtream'}
-                        for url in sorted(self.channels[name][quality])
-                    ]
+                if quality in channel_data['qualities']:
+                    # Just the URL string list, no source object
+                    qualities[quality] = sorted(list(channel_data['qualities'][quality]))
+            
+            if qualities: # Only add if we have content
+                 output['channels'][name] = {
+                    'id': self.channel_ids[name],
+                    'logo': channel_data['logo'],
+                    'qualities': qualities
+                }
         
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(output, f, indent=2, ensure_ascii=False)
         
         print(f"\n{'='*70}", flush=True)
-        print(f"✅ Saved {len(self.channels)} unique channels → {output_path}", flush=True)
+        print(f"✅ Saved {len(output['channels'])} unique channels → {output_path}", flush=True)
         print(f"{'='*70}", flush=True)
         print(f"Statistics:", flush=True)
-        print(f"  Servers: {self.stats['servers_success']}/{self.stats['servers_total']} "
-              f"({self.stats['servers_failed']} failed)", flush=True)
-        print(f"  Categories: {self.stats['sports_categories']}/{self.stats['categories_total']} sports", flush=True)
-        print(f"  Channels: {len(self.channels)} unique ({self.stats['channels_added']} total links)", flush=True)
+        print(f"  Servers: {self.stats['servers_success']} successful", flush=True)
+        print(f"  Categories: {self.stats['sports_categories']} sports categories scanned", flush=True)
+        print(f"  Channels: {len(output['channels'])} unique ({self.stats['channels_added']} total links)", flush=True)
         print(f"{'='*70}\n", flush=True)
 
 
@@ -426,8 +452,6 @@ def main():
     if args.domains:
         priority_domains = {d.strip().lower() for d in args.domains.split(',') if d.strip()}
     
-    sorted_servers = []
-    
     # Separate into priority and others
     priorities = []
     others = []
@@ -442,11 +466,9 @@ def main():
     # 2. Sort others by channel count (descending)
     others.sort(key=lambda x: x['channel_count'], reverse=True)
     
-    # 3. Select Top 20 from others
-    top_others = others[:20]
-    
-    # 4. Combine
-    final_servers = priorities + top_others
+    # 3. Combine - PRIORITIES FIRST, then the rest of the sorted list
+    # We do NOT slice top 20 here anymore, because we want to scan UNTIL we hit 20 successes
+    final_servers = priorities + others
     
     # Remove duplicates (based on URL) just in case
     unique_servers = []
@@ -458,21 +480,27 @@ def main():
             
     final_servers = unique_servers
     
-    # Apply limit if specified
+    # Apply limit if specified (hard limit on total servers scanned, used for testing)
     if args.limit:
         final_servers = final_servers[:args.limit]
         
-    print(f"Selected {len(final_servers)} playlists to scan:")
-    print(f"  - {len(priorities)} from priority domains")
-    print(f"  - {len(top_others)} from top channel counts")
+    print(f"Queued {len(final_servers)} playlists for scanning:")
+    print(f"  - {len(priorities)} priority")
+    print(f"  - {len(others)} others")
     
     if not final_servers:
         print("No servers selected for scanning.")
         sys.exit(0)
     
-    # Scan with 90% similarity threshold
-    scanner = SportsScanner(similarity_threshold=0.90)
-    scanner.scan_all(final_servers, max_workers=5)
+    # Scan with 85% similarity threshold (relaxed to group better)
+    scanner = SportsScanner(similarity_threshold=0.85)
+    
+    # Use scan_for_success with target of 20 successful scans
+    target_success = 20
+    if args.limit:
+        target_success = args.limit # If testing with limit, success target matches limit
+        
+    scanner.scan_for_success(final_servers, target_success=target_success, max_workers=5)
     scanner.save(args.output_file)
 
 
