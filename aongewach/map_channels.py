@@ -90,12 +90,12 @@ def find_best_match_optimized(target_name, index, iptv_channels):
     if not tokens:
         return None, 0.0, None
         
-    # Get candidates that share at least one significant token
+    # Get candidates
     candidates = set()
     for token in tokens:
         if token in index:
             for entry in index[token]:
-                candidates.add(entry) # entry is (orig, clean)
+                candidates.add(entry)
     
     if not candidates:
         return None, 0.0, None
@@ -104,7 +104,6 @@ def find_best_match_optimized(target_name, index, iptv_channels):
     best_match = None
     best_match_key = None
     
-    # Compare only against candidates
     for original_name, candidate_clean in candidates:
         # Exact match check
         if target_clean == candidate_clean:
@@ -112,7 +111,6 @@ def find_best_match_optimized(target_name, index, iptv_channels):
             
         ratio = SequenceMatcher(None, target_clean, candidate_clean).ratio()
         
-        # Boost if contained
         if target_clean in candidate_clean:
             ratio = max(ratio, 0.9)
             
@@ -127,7 +125,7 @@ def map_channels():
     print("Loading data...")
     schedule_data = load_json(SCHEDULE_FILE)
     channels_db = load_json(CHANNELS_FILE)
-    saved_map = load_json(MAP_FILE)
+    saved_map = load_json(MAP_FILE) # Now maps Name -> Channel ID (int) OR Name -> Name (legacy)
     
     if not schedule_data or not channels_db:
         print("Missing input files.")
@@ -135,6 +133,16 @@ def map_channels():
 
     iptv_channels = channels_db.get('channels', {})
     
+    # Create lookup for ID -> Channel Data
+    id_to_channel = {}
+    name_to_id = {} # Helper for migration
+    
+    for k, v in iptv_channels.items():
+        if 'id' in v:
+            id_to_channel[v['id']] = v
+            id_to_channel[v['id']]['name'] = k # Inject name for ref
+            name_to_id[k] = v['id']
+
     print("Building index...")
     t0 = time.time()
     index = build_index(iptv_channels)
@@ -150,60 +158,57 @@ def map_channels():
     for day in schedule_data.get('schedule', []):
         for event in day.get('events', []):
             event_channels = event.get('channels', [])
-            playable_streams = []
+            mapped_channels = []
             
             for sched_chan in event_channels:
-                # 1. Saved Map
-                if sched_chan in saved_map:
-                    iptv_name = saved_map[sched_chan]
-                    if iptv_name in iptv_channels:
-                        match_data = iptv_channels[iptv_name]
-                        # Extract stream
-                        stream_url = None
-                        quality = "SD"
-                        for q in ["4K", "FHD", "HD", "SD"]:
-                            if q in match_data.get("qualities", {}):
-                                stream_url = match_data["qualities"][q][0]
-                                quality = q
-                                break
-                        if stream_url:
-                            playable_streams.append({
-                                "channel_name": sched_chan,
-                                "iptv_name": iptv_name,
-                                "url": stream_url, 
-                                "quality": quality,
-                                "logo": match_data.get("logo")
-                            })
-                            continue
-
-                # 2. Optimized Find
-                match_key, score, match_data = find_best_match_optimized(sched_chan, index, iptv_channels)
+                cid = None
                 
-                if score >= CONFIDENCE_THRESHOLD and match_data:
-                    # print(f"MATCH ({score:.2f}): '{sched_chan}' -> '{match_key}'")
-                    saved_map[sched_chan] = match_key
-                    if sched_chan not in processed_channels:
-                        unique_channels_mapped += 1
-                        processed_channels.add(sched_chan)
+                # 1. Check Saved Map
+                if sched_chan in saved_map:
+                    val = saved_map[sched_chan]
                     
-                    stream_url = None
-                    quality = "SD"
-                    for q in ["4K", "FHD", "HD", "SD"]:
-                        if q in match_data.get("qualities", {}):
-                            stream_url = match_data["qualities"][q][0]
-                            quality = q
-                            break
-                    if stream_url:
-                        playable_streams.append({
-                            "channel_name": sched_chan,
-                            "iptv_name": match_key,
-                            "url": stream_url,
-                            "quality": quality,
-                            "logo": match_data.get("logo")
-                        })
-            
-            if playable_streams:
-                event['streams'] = playable_streams
+                    # Case A: Integer ID (Stable Key)
+                    if isinstance(val, int):
+                        cid = val
+                        # Validate ID exists
+                        if cid not in id_to_channel:
+                             # print(f"Warning: Legacy ID {cid} not found.")
+                             cid = None
+                    
+                    # Case B: String Name (Legacy) -> Mails to ID
+                    elif isinstance(val, str):
+                        if val in name_to_id:
+                            cid = name_to_id[val]
+                            # Auto-migrate
+                            saved_map[sched_chan] = cid
+                        else:
+                            cid = None # Name no longer valid
+                
+                # 2. Find Match if not found
+                if not cid:
+                    match_key, score, match_data = find_best_match_optimized(sched_chan, index, iptv_channels)
+                    if score >= CONFIDENCE_THRESHOLD and match_data:
+                        cid = match_data.get('id')
+                        # Save new mapping
+                        if cid:
+                            saved_map[sched_chan] = cid
+                            if sched_chan not in processed_channels:
+                                unique_channels_mapped += 1
+                                processed_channels.add(sched_chan)
+
+                # 3. Add to event if we have a valid ID
+                if cid and cid in id_to_channel:
+                    c_data = id_to_channel[cid]
+                    
+                    mapped_channels.append({
+                        "channel_name": sched_chan,
+                        "channel_id": cid,
+                        "iptv_name": c_data.get('name'),
+                        "logo": c_data.get('logo')  
+                    })
+
+            if mapped_channels:
+                event['mapped_channels'] = mapped_channels
                 total_matches += 1
 
     print(f"Mapping finished in {time.time() - t0:.2f}s")
@@ -211,8 +216,8 @@ def map_channels():
     save_json(OUTPUT_FILE, schedule_data)
     save_json(MAP_FILE, saved_map)
     
-    print(f"Done. Mapped streams for {total_matches} events.")
-    print(f"Learned {unique_channels_mapped} new channel pairings.")
+    print(f"Done. Mapped {total_matches} events to Stable Channel IDs.")
+    print(f"Learned {unique_channels_mapped} new ID mappings.")
 
 if __name__ == "__main__":
     map_channels()

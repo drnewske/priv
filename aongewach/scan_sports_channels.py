@@ -15,6 +15,7 @@ from collections import defaultdict
 from difflib import SequenceMatcher
 import concurrent.futures
 import time
+import zlib  # Added for stable ID hashing
 
 
 class XtreamAPI:
@@ -206,7 +207,7 @@ class SportsScanner:
         # Channel storage: {normalized_name: {matches: {quality: set()}, logo: str}}
         self.channels = defaultdict(lambda: {'qualities': defaultdict(set), 'logo': None})
         self.channel_ids = {}
-        self.next_id = 1
+        # self.next_id = 1  # Removed in favor of stable hashing
         
         # Stats
         self.stats = {
@@ -220,10 +221,12 @@ class SportsScanner:
         }
     
     def _get_channel_id(self, normalized_name: str) -> int:
-        """Get or create channel ID."""
+        """Get or create STABLE channel ID (Hash of name)."""
         if normalized_name not in self.channel_ids:
-            self.channel_ids[normalized_name] = self.next_id
-            self.next_id += 1
+            # Use adler32 for deterministic ID
+            # & 0xffffffff ensures it's unsigned
+            val = zlib.adler32(normalized_name.encode('utf-8')) & 0xffffffff
+            self.channel_ids[normalized_name] = val
         return self.channel_ids[normalized_name]
     
     def scan_direct_m3u(self, url: str) -> Dict:
