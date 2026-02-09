@@ -226,8 +226,99 @@ class SportsScanner:
             self.next_id += 1
         return self.channel_ids[normalized_name]
     
+    def scan_direct_m3u(self, url: str) -> Dict:
+        """Scan a direct M3U file URL."""
+        print(f"  > Starting scan: Direct M3U ({url})...", flush=True)
+        result = {
+            'name': 'Direct M3U',
+            'domain': 'direct_m3u',
+            'success': False,
+            'channels_added': 0,
+            'error': None
+        }
+        
+        try:
+            response = requests.get(url, timeout=30)
+            response.raise_for_status()
+            lines = response.text.splitlines()
+            
+            channels_found = 0
+            
+            # Simple M3U parser
+            current_info = {}
+            
+            for line in lines:
+                line = line.strip()
+                if not line:
+                    continue
+                
+                if line.startswith('#EXTINF:'):
+                    # Reset info
+                    current_info = {}
+                    
+                    # Extract Logo
+                    logo_match = re.search(r'tvg-logo="([^"]*)"', line)
+                    if logo_match:
+                        current_info['logo'] = logo_match.group(1)
+                    
+                    # Extract Group
+                    group_match = re.search(r'group-title="([^"]*)"', line)
+                    if group_match:
+                        current_info['group'] = group_match.group(1)
+                    
+                    # Extract Name (last part after comma)
+                    name_match = re.search(r',([^,]*)$', line)
+                    if name_match:
+                        current_info['name'] = name_match.group(1).strip()
+                
+                elif not line.startswith('#'):
+                    # It's a URL
+                    if 'name' in current_info:
+                        stream_name = current_info['name']
+                        stream_url = line
+                        stream_logo = current_info.get('logo')
+                        
+                        # Normalize name
+                        normalized = self.normalizer.normalize(stream_name)
+                        if not normalized or len(normalized) < 3:
+                            continue
+                        
+                        # Find match
+                        existing_names = list(self.channels.keys())
+                        matched = self.normalizer.find_match(normalized, existing_names)
+                        final_name = matched or normalized
+                        
+                        # Get quality
+                        quality = self.normalizer.extract_quality(stream_name)
+                        
+                        # Add to channels
+                        if stream_url not in self.channels[final_name]['qualities'][quality]:
+                            self.channels[final_name]['qualities'][quality].add(stream_url)
+                            channels_found += 1
+                            self.stats['channels_added'] += 1
+                            
+                            # Add logo if missing
+                            if not self.channels[final_name]['logo'] and stream_logo:
+                                self.channels[final_name]['logo'] = stream_logo
+                        
+                        # Ensure ID exists
+                        self._get_channel_id(final_name)
+                        
+            result['success'] = True
+            result['channels_added'] = channels_found
+            print(f"  v Direct M3U - Done. Found {channels_found} channels", flush=True)
+            
+        except Exception as e:
+            result['error'] = str(e)
+            print(f"  ! Direct M3U - Error: {e}", flush=True)
+            
+        return result
+
     def scan_server(self, server: Dict) -> Dict:
         """Scan a single server."""
+        if server.get('type') == 'direct':
+            return self.scan_direct_m3u(server['url'])
+
         print(f"  > Starting scan: {server.get('domain', 'Unknown')}...", flush=True)
         result = {
             'name': server.get('name', 'Unknown'),
@@ -432,6 +523,16 @@ def main():
         sys.exit(1)
     
     all_servers = []
+    
+    # Add external source (User Request)
+    all_servers.append({
+        'url': 'https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/a1x.m3u',
+        'name': 'A1XM Public',
+        'domain': 'a1xmedia.github.io',
+        'channel_count': 99999, # High priority
+        'type': 'direct'
+    })
+    
     for item in data.get('featured_content', []):
         if item.get('type') == 'm3u' and item.get('url'):
             all_servers.append({
@@ -458,7 +559,7 @@ def main():
     
     for server in all_servers:
         domain = server.get('domain', '').lower()
-        if any(pd in domain for pd in priority_domains):
+        if server.get('type') == 'direct' or any(pd in domain for pd in priority_domains):
             priorities.append(server)
         else:
             others.append(server)
@@ -474,6 +575,7 @@ def main():
     unique_servers = []
     seen_urls = set()
     for s in final_servers:
+        # Check against base URL to allow different query params if needed, but here simple str check is fine
         if s['url'] not in seen_urls:
             unique_servers.append(s)
             seen_urls.add(s['url'])
