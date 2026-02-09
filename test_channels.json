@@ -1,0 +1,1340 @@
+{
+  "metadata": {
+    "scan_date": "2026-02-09 07:12:49 UTC",
+    "servers_total": 1,
+    "servers_success": 1,
+    "servers_failed": 0,
+    "categories_total": 0,
+    "sports_categories": 0,
+    "channels_checked": 0,
+    "unique_channels": 138,
+    "total_links": 207
+  },
+  "channels": {
+    "4Seven": {
+      "id": 47,
+      "logo": "https://i.ibb.co/XrqnS520/4seven.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/1000036"
+        ]
+      }
+    },
+    "ABC": {
+      "id": 97,
+      "logo": "https://i.ibb.co/1Jj28D3T/abc.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/300003"
+        ]
+      }
+    },
+    "ABC News Live": {
+      "id": 98,
+      "logo": "https://i.ibb.co/XZWNb5d1/ABC-News-Live.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/300016"
+        ]
+      }
+    },
+    "ACC Network": {
+      "id": 73,
+      "logo": "https://i.ibb.co/gFLLh4Vs/ACC-Network.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/40000016"
+        ]
+      }
+    },
+    "AL: Super Sport 1": {
+      "id": 136,
+      "logo": "https://i.ibb.co/pBVGcSLM/Super-Sport-Albania.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/130001",
+          "https://a1xs.vip/130002",
+          "https://a1xs.vip/130003"
+        ]
+      }
+    },
+    "Altitude Sports": {
+      "id": 82,
+      "logo": "https://i.ibb.co/7dZSXDBq/Altitude-Sports.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/40000048"
+        ]
+      }
+    },
+    "Animal Planet": {
+      "id": 115,
+      "logo": "https://i.ibb.co/k6hCxknW/Animal-Planet.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/300035"
+        ]
+      }
+    },
+    "Astro Grandstand": {
+      "id": 22,
+      "logo": "https://i.ibb.co/DDHZqWGq/Astro-Grandstand.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/1100032"
+        ]
+      }
+    },
+    "Astro Premier League": {
+      "id": 21,
+      "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/Astro_PL.webp",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/1100030",
+          "https://a1xs.vip/1100031"
+        ]
+      }
+    },
+    "Astro Sports": {
+      "id": 5,
+      "logo": "https://i.ibb.co/3hW45Pb/Astro-Sports-UHD.png",
+      "qualities": {
+        "4K": [
+          "https://a1xs.vip/9000001"
+        ]
+      }
+    },
+    "BBC News": {
+      "id": 34,
+      "logo": "https://i.ibb.co/zTrX98R6/BBC-News.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/1000015"
+        ]
+      }
+    },
+    "BBC One": {
+      "id": 38,
+      "logo": "https://i.ibb.co/Xk2nLVq/BBC-One.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/1000001"
+        ]
+      }
+    },
+    "BBC Three / CBBC": {
+      "id": 40,
+      "logo": "https://i.ibb.co/n8t4rCh/BBC-Three.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/1000003"
+        ]
+      }
+    },
+    "BBC Two": {
+      "id": 39,
+      "logo": "https://i.ibb.co/7vG6Nvz/BBC-Two.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/1000002"
+        ]
+      }
+    },
+    "Big Ten Network": {
+      "id": 81,
+      "logo": "https://i.ibb.co/KpvYSBVY/Big-Ten-Network.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/40000047"
+        ]
+      }
+    },
+    "Bloomberg TV": {
+      "id": 12,
+      "logo": "https://i.ibb.co/L61zPzP/Bloomberg-tv.png",
+      "qualities": {
+        "4K": [
+          "https://a1xs.vip/blombuhd"
+        ]
+      }
+    },
+    "CBC News Network": {
+      "id": 129,
+      "logo": "https://i.ibb.co/JR2WsMXN/CBC.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/610004"
+        ]
+      }
+    },
+    "CBS": {
+      "id": 102,
+      "logo": "https://i.ibb.co/BV8M6ddb/Cbs.webp",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/300010"
+        ]
+      }
+    },
+    "CBS Sports Golazo Network": {
+      "id": 68,
+      "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/golazo.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/4000009"
+        ]
+      }
+    },
+    "CBS Sports HQ": {
+      "id": 69,
+      "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/CBS_Sports_HQ.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/4000007"
+        ]
+      }
+    },
+    "CBS Sports Network": {
+      "id": 67,
+      "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/cbs-sports.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/4000008"
+        ]
+      }
+    },
+    "CNBC": {
+      "id": 101,
+      "logo": "https://i.ibb.co/XxMdyzfD/cnbc.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/300009",
+          "https://a1xs.vip/300015"
+        ]
+      }
+    },
+    "CNN": {
+      "id": 99,
+      "logo": "https://i.ibb.co/833YDR9/cnn.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/300007"
+        ]
+      }
+    },
+    "CNN UK": {
+      "id": 35,
+      "logo": "https://i.ibb.co/ccS7pQBs/CNN.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/1000016"
+        ]
+      }
+    },
+    "CP24": {
+      "id": 126,
+      "logo": "https://broadcasting-history.ca/wp-content/uploads/2021/03/CP24-Logo.jpg",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/610001"
+        ]
+      }
+    },
+    "CTV 2": {
+      "id": 128,
+      "logo": "https://i.ibb.co/XxQhJJFR/CTV2.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/610003"
+        ]
+      }
+    },
+    "CTV News": {
+      "id": 127,
+      "logo": "https://i.ibb.co/sp4C3bbY/CTV-News.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/610002"
+        ]
+      }
+    },
+    "Cartoon Network UK": {
+      "id": 58,
+      "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/cartoon-network.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/1000050",
+          "https://a1xs.vip/300032"
+        ]
+      }
+    },
+    "Channel 4": {
+      "id": 45,
+      "logo": "https://i.ibb.co/v3WBCFV/Channel-4.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/1000030",
+          "https://a1xs.vip/1000031"
+        ]
+      }
+    },
+    "Chicago Sports Network": {
+      "id": 94,
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/6/68/Chicago_Sports_Network_Logo.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/4000049"
+        ]
+      }
+    },
+    "Comedy Central": {
+      "id": 111,
+      "logo": "https://i.ibb.co/d3LYjfC/Comedy-Central.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/300004"
+        ]
+      }
+    },
+    "Discovery Channel": {
+      "id": 50,
+      "logo": "https://i.ibb.co/whkRg3B0/discovery-channel.jpg",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/1000033",
+          "https://a1xs.vip/300034"
+        ]
+      }
+    },
+    "Disney Channel": {
+      "id": 116,
+      "logo": "https://i.ibb.co/q3WPc2RY/2014-Disney-Channel.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/300037"
+        ]
+      }
+    },
+    "Disney Junior": {
+      "id": 117,
+      "logo": "https://i.ibb.co/dJBVkHgg/2024-Disney-Jr.png",
+      "qualities": {
+        "HD": [
+          "--- 📺 CA Sports",
+          "https://a1xs.vip/300036"
+        ]
+      }
+    },
+    "ESPN": {
+      "id": 70,
+      "logo": "https://i.ibb.co/gbhcvFKG/ESPN.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/40000011",
+          "https://a1xs.vip/40000012",
+          "https://a1xs.vip/40000013"
+        ]
+      }
+    },
+    "ESPN News": {
+      "id": 71,
+      "logo": "https://i.ibb.co/qSGNtmT/ESPNews.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/40000014"
+        ]
+      }
+    },
+    "Eleven Sports 1": {
+      "id": 10,
+      "logo": "https://i.imgur.com/k6MErsv.png",
+      "qualities": {
+        "4K": [
+          "https://a1xs.vip/14001"
+        ]
+      }
+    },
+    "FOX": {
+      "id": 105,
+      "logo": "https://i.ibb.co/QSHZDzQ/FOX.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/300014"
+        ]
+      }
+    },
+    "FS1": {
+      "id": 74,
+      "logo": "https://i.ibb.co/vx6X9LXV/FS1.jpg",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/40000021"
+        ]
+      }
+    },
+    "FS2": {
+      "id": 75,
+      "logo": "https://i.ibb.co/qFcxnxXw/FS2.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/40000022"
+        ]
+      }
+    },
+    "FXX": {
+      "id": 107,
+      "logo": "https://i.ibb.co/ZRYY8B4p/fxx.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/300006"
+        ]
+      }
+    },
+    "FanDuel Sports Florida": {
+      "id": 85,
+      "logo": "https://i.imgur.com/S5cqDnq.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/4000050"
+        ]
+      }
+    },
+    "FanDuel Sports Midwest": {
+      "id": 87,
+      "logo": "https://i.ibb.co/5W31SKh5/Fan-Duel-Midwest.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/4000054"
+        ]
+      }
+    },
+    "FanDuel Sports North": {
+      "id": 84,
+      "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/FanDuel_North.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/4000053",
+          "https://a1xs.vip/4000057"
+        ]
+      }
+    },
+    "FanDuel Sports Sun": {
+      "id": 86,
+      "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/FanDuel_Sun.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/4000051",
+          "https://a1xs.vip/4000052"
+        ]
+      }
+    },
+    "FanDuel Sports Wisconsin": {
+      "id": 88,
+      "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/FanDuel-Wisconsin.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/4000056"
+        ]
+      }
+    },
+    "FanDuel TV": {
+      "id": 83,
+      "logo": "https://i.ibb.co/SXKYD5VT/fanduel-tv.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/40000046"
+        ]
+      }
+    },
+    "Fashion TV": {
+      "id": 11,
+      "logo": "https://i.ibb.co/LNvfKrJ/FTVUHD.png",
+      "qualities": {
+        "4K": [
+          "https://a1xs.vip/ftv4kuhd"
+        ]
+      }
+    },
+    "Film4": {
+      "id": 48,
+      "logo": "https://i.ibb.co/dwLfJ590/film4.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/1000035"
+        ]
+      }
+    },
+    "Fox News": {
+      "id": 103,
+      "logo": "https://i.ibb.co/kg5ZMPCm/Fox-News-Channel.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/300011"
+        ]
+      }
+    },
+    "Fox Sports 501": {
+      "id": 131,
+      "logo": "https://i.ibb.co/hvxssSM/Fox-Cricket-501.png",
+      "qualities": {
+        "FHD": [
+          "--- 📺 NZ Sports",
+          "https://a1xs.vip/700001",
+          "https://a1xs.vip/700002",
+          "https://a1xs.vip/700003",
+          "https://a1xs.vip/700004",
+          "https://a1xs.vip/700005",
+          "https://a1xs.vip/700006",
+          "https://a1xs.vip/700007"
+        ]
+      }
+    },
+    "GB News": {
+      "id": 36,
+      "logo": "https://i.ibb.co/9Hk8HRRH/GB-News.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/1000017"
+        ]
+      }
+    },
+    "Global News": {
+      "id": 130,
+      "logo": "https://i.ibb.co/1GSRMzh1/GLB-News.png",
+      "qualities": {
+        "HD": [
+          "--- 📺 AU Sports",
+          "https://a1xs.vip/610005"
+        ]
+      }
+    },
+    "Golf Channel USA": {
+      "id": 93,
+      "logo": "https://github.com/a1xmedia/m3u/blob/main/img/golf-channel.png?raw=true",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/40000060"
+        ]
+      }
+    },
+    "HBO Comedy": {
+      "id": 112,
+      "logo": "https://i.ibb.co/0jHs79tX/hbo-comedy.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/300005"
+        ]
+      }
+    },
+    "HOME": {
+      "id": 15,
+      "logo": "https://i.ibb.co/kg6GPds2/Home4k.webp",
+      "qualities": {
+        "4K": [
+          "https://a1xs.vip/home4k"
+        ]
+      }
+    },
+    "Hub Premier 2": {
+      "id": 7,
+      "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/Hubp2.png",
+      "qualities": {
+        "FHD": [
+          "--- 📺 UK Sports",
+          "https://a1xs.vip/1100041",
+          "https://a1xs.vip/1100042",
+          "https://a1xs.vip/1100043",
+          "https://a1xs.vip/1100044"
+        ],
+        "4K": [
+          "https://a1xs.vip/9000012"
+        ]
+      }
+    },
+    "IRE: Premier Sports 1": {
+      "id": 132,
+      "logo": "https://i.ibb.co/Nd49Cwvc/Premier-Sports-1.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/8000021",
+          "https://a1xs.vip/8000022"
+        ]
+      }
+    },
+    "IRIB": {
+      "id": 19,
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/IRIB_FARATAR_UHD.png/960px-IRIB_FARATAR_UHD.png",
+      "qualities": {
+        "4K": [
+          "--- ⚽️ EPL",
+          "https://a1xs.vip/iribuhd"
+        ]
+      }
+    },
+    "Live Event 1": {
+      "id": 1,
+      "logo": "https://i.ibb.co/jpdQCJL/live-event.png",
+      "qualities": {
+        "HD": [
+          "--- 📺 UHD | 4K Channels",
+          "https://a1xs.vip/ppv1",
+          "https://a1xs.vip/ppv2",
+          "https://a1xs.vip/ppv3",
+          "https://a1xs.vip/ppv4",
+          "https://a1xs.vip/ppv5",
+          "https://a1xs.vip/ppv6",
+          "https://a1xs.vip/ppv7",
+          "https://a1xs.vip/ppv8"
+        ]
+      }
+    },
+    "Loupe": {
+      "id": 17,
+      "logo": "https://i.ibb.co/RP5Kv3k/loupe.png",
+      "qualities": {
+        "4K": [
+          "https://a1xs.vip/loupe4k"
+        ]
+      }
+    },
+    "Love Nature": {
+      "id": 13,
+      "logo": "https://i.ibb.co/SdSKhsj/love-nature-4k.png",
+      "qualities": {
+        "4K": [
+          "https://a1xs.vip/lovent4k"
+        ]
+      }
+    },
+    "MLB Network": {
+      "id": 76,
+      "logo": "https://i.ibb.co/sdrdqCBN/MLBNetwork.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/40000030"
+        ]
+      }
+    },
+    "MS NOW": {
+      "id": 100,
+      "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/MS-NOW.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/300008"
+        ]
+      }
+    },
+    "MSG": {
+      "id": 62,
+      "logo": "https://i.postimg.cc/W1jFdzt4/MSG-Network-logo.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/4000001"
+        ]
+      }
+    },
+    "MSG_PLUS": {
+      "id": 63,
+      "logo": "https://i.postimg.cc/W1jFdzt4/MSG-Network-logo.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/4000002"
+        ]
+      }
+    },
+    "MTV": {
+      "id": 49,
+      "logo": "https://i.ibb.co/qPqZ0KJ/MTV.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/1000037"
+        ]
+      }
+    },
+    "MUSEUM TV": {
+      "id": 16,
+      "logo": "https://i.ibb.co/TDXLDk4y/Museum-4-K.png",
+      "qualities": {
+        "4K": [
+          "https://a1xs.vip/msem4k"
+        ]
+      }
+    },
+    "Marquee Sports Network": {
+      "id": 80,
+      "logo": "https://i.ibb.co/LdLd08FH/Marquee-Sports-Network.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/4000010"
+        ]
+      }
+    },
+    "More4": {
+      "id": 46,
+      "logo": "https://i.ibb.co/JW60xfTZ/more4.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/1000034"
+        ]
+      }
+    },
+    "MyZen (Multi Audio": {
+      "id": 18,
+      "logo": "https://i.imgur.com/GDZobhF.png",
+      "qualities": {
+        "4K": [
+          "https://a1xs.vip/myzen4k"
+        ]
+      }
+    },
+    "NBA TV": {
+      "id": 77,
+      "logo": "https://i.ibb.co/ccZmV9J0/NBATV.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/40000031"
+        ]
+      }
+    },
+    "NBC News NOW": {
+      "id": 106,
+      "logo": "https://i.ibb.co/RpyqBcJb/NBC-News-Now.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/300013"
+        ]
+      }
+    },
+    "NBC Sports Bay Area": {
+      "id": 95,
+      "logo": "https://i.ibb.co/zT06gJ1F/NBC-Sports-Bay-Area.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/400050"
+        ]
+      }
+    },
+    "NBC Sports Philadelphia": {
+      "id": 96,
+      "logo": "https://i.ibb.co/qFd6p7t7/NBC-Sports-Philadelphia.png",
+      "qualities": {
+        "HD": [
+          "--- 📺 US Channels",
+          "https://a1xs.vip/400051"
+        ]
+      }
+    },
+    "NESN": {
+      "id": 9,
+      "logo": "https://i.postimg.cc/CxVDbJrS/nesn.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/4000004"
+        ],
+        "4K": [
+          "https://a1xs.vip/4000080"
+        ]
+      }
+    },
+    "NFL Network": {
+      "id": 78,
+      "logo": "https://i.ibb.co/vxNysPCG/NFL-Network.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/40000032",
+          "https://a1xs.vip/40000034"
+        ]
+      }
+    },
+    "NFL RedZone": {
+      "id": 79,
+      "logo": "https://i.ibb.co/f6YPH4S/NFLRed-Zone.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/40000033"
+        ]
+      }
+    },
+    "NewsMax": {
+      "id": 104,
+      "logo": "https://i.ibb.co/bMksM5z0/Newsmax.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/300012"
+        ]
+      }
+    },
+    "Nick Jr": {
+      "id": 114,
+      "logo": "https://i.ibb.co/rfspzqCr/Nick-Jr.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/300033"
+        ]
+      }
+    },
+    "Nick Jr. UK": {
+      "id": 60,
+      "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/Nick_Jr.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/1000052"
+        ]
+      }
+    },
+    "Nickelodeon UK": {
+      "id": 59,
+      "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/Nickelodeon.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/1000051",
+          "https://a1xs.vip/300030"
+        ]
+      }
+    },
+    "Nicktoon UK": {
+      "id": 61,
+      "logo": "https://i.ibb.co/q3qWFwNG/Nicktoons.png",
+      "qualities": {
+        "HD": [
+          "--- 📺 US Sports",
+          "https://a1xs.vip/100054"
+        ]
+      }
+    },
+    "Now Sports 1": {
+      "id": 6,
+      "logo": "https://www.nowtv.now.com/media/s-logo/611_e.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/1100001"
+        ],
+        "4K": [
+          "https://a1xs.vip/9000011"
+        ]
+      }
+    },
+    "Now Sports PL 2": {
+      "id": 20,
+      "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/NowPL2.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/1100002"
+        ]
+      }
+    },
+    "Peacock Premier League TV": {
+      "id": 24,
+      "logo": "https://i.ibb.co/SXm0wt5W/PL.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/1100021"
+        ]
+      }
+    },
+    "SE: V Sport": {
+      "id": 8,
+      "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/v-sport-ultra.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/9000013"
+        ]
+      }
+    },
+    "SEC Network": {
+      "id": 72,
+      "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/sec-network.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/40000015"
+        ]
+      }
+    },
+    "Sky Atlantic": {
+      "id": 51,
+      "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/sky-atlantic.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/210001"
+        ]
+      }
+    },
+    "Sky Cinema Action": {
+      "id": 55,
+      "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/sky-cinema-action.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/210006"
+        ]
+      }
+    },
+    "Sky Cinema Comedy": {
+      "id": 57,
+      "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/sky-cinema-comedy.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/210005"
+        ]
+      }
+    },
+    "Sky Cinema Family": {
+      "id": 56,
+      "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/sky-family.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/210007"
+        ]
+      }
+    },
+    "Sky Cinema Hits": {
+      "id": 52,
+      "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/sky-cinema-hits.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/210002"
+        ]
+      }
+    },
+    "Sky Cinema Premiere": {
+      "id": 53,
+      "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/sky-cinema-premiere.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/210003"
+        ]
+      }
+    },
+    "Sky Cinema Select": {
+      "id": 54,
+      "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/sky-cinema-select-.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/210004"
+        ]
+      }
+    },
+    "Sky News": {
+      "id": 37,
+      "logo": "https://i.ibb.co/354mTfkf/Sky-news.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/1000018"
+        ]
+      }
+    },
+    "Sky Sport Bundesliga": {
+      "id": 134,
+      "logo": "https://i.ibb.co/pv74RgXM/Sky-Sport-Bundesliga.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/120002"
+        ]
+      }
+    },
+    "Sky Sport PL NZ": {
+      "id": 23,
+      "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/Sky_Sport_PL_NZ.webp",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/700008",
+          "https://a1xs.vip/700031",
+          "https://a1xs.vip/700032",
+          "https://a1xs.vip/700033",
+          "https://a1xs.vip/700034",
+          "https://a1xs.vip/700035",
+          "https://a1xs.vip/700036",
+          "https://a1xs.vip/700037"
+        ]
+      }
+    },
+    "Sky Sport Top Event": {
+      "id": 135,
+      "logo": "https://i.ibb.co/DfFMRh8C/Sky-Sport-Top-Event.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/120003"
+        ]
+      }
+    },
+    "Sky Sports Cricket": {
+      "id": 29,
+      "logo": "https://i.ibb.co/JyPnwvB/sky-cricket.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/2000006"
+        ]
+      }
+    },
+    "Sky Sports F1": {
+      "id": 3,
+      "logo": "https://i.ibb.co/1tmrNyj9/Sky-Sport-F1-UHD.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/2000005",
+          "https://a1xs.vip/2000009",
+          "https://a1xs.vip/2000012"
+        ],
+        "4K": [
+          "https://a1xs.vip/2000016"
+        ]
+      }
+    },
+    "Sky Sports Football": {
+      "id": 27,
+      "logo": "https://i.ibb.co/WcCrBqx/sky-football.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/2000003"
+        ]
+      }
+    },
+    "Sky Sports Main Event": {
+      "id": 2,
+      "logo": "https://i.ibb.co/gwCk7Bc/sky-m-event-uhd.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/2000001"
+        ],
+        "4K": [
+          "https://a1xs.vip/2000015"
+        ]
+      }
+    },
+    "Sky Sports Mix": {
+      "id": 30,
+      "logo": "https://i.ibb.co/7kYj5gc/sky-mix.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/2000008"
+        ]
+      }
+    },
+    "Sky Sports News": {
+      "id": 28,
+      "logo": "https://i.ibb.co/7WMDvDP/sky-news.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/2000004"
+        ]
+      }
+    },
+    "Sky Sports Premier League": {
+      "id": 26,
+      "logo": "https://i.ibb.co/rcSRMh9/sky-sports-pl.png",
+      "qualities": {
+        "HD": [
+          "--- 📺 EU Sports",
+          "https://a1xs.vip/700008"
+        ],
+        "FHD": [
+          "https://a1xs.vip/120004",
+          "https://a1xs.vip/2000002"
+        ]
+      }
+    },
+    "Sky Sports Racing": {
+      "id": 31,
+      "logo": "https://i.ibb.co/Hnp1hBz/sky-racing.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/2000010",
+          "https://a1xs.vip/2000011"
+        ]
+      }
+    },
+    "Sky Sports Tennis": {
+      "id": 32,
+      "logo": "https://i.ibb.co/kVtPg1F5/Sky-Sports-Tennis.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/2000013"
+        ]
+      }
+    },
+    "Spectrum Sportsnet": {
+      "id": 65,
+      "logo": "https://i.postimg.cc/ZRChbGNc/spectrum-sportsnet.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/400052"
+        ],
+        "FHD": [
+          "https://a1xs.vip/4000006"
+        ]
+      }
+    },
+    "Spectrum Sportsnet Lakers": {
+      "id": 66,
+      "logo": "https://i.postimg.cc/ZRChbGNc/spectrum-sportsnet.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/400053"
+        ]
+      }
+    },
+    "Sportdigital Fussball": {
+      "id": 133,
+      "logo": "https://i.ibb.co/ksZQg3HW/sportdigital-fussball.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/120001"
+        ]
+      }
+    },
+    "SportsNet NY": {
+      "id": 64,
+      "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/Sportsnet_NY.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/40000045",
+          "https://a1xs.vip/6000012",
+          "https://a1xs.vip/6000014"
+        ]
+      }
+    },
+    "Sportsnet Ontario": {
+      "id": 123,
+      "logo": "https://i.ibb.co/xqdMW6XQ/Sports-Net-On.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/6000011"
+        ]
+      }
+    },
+    "Sportsnet West": {
+      "id": 125,
+      "logo": "https://i.ibb.co/gZZP5wVK/Sportsnet-W.png",
+      "qualities": {
+        "HD": [
+          "--- 📺 CA Channels",
+          "https://a1xs.vip/6000015"
+        ]
+      }
+    },
+    "Sportsnet World": {
+      "id": 124,
+      "logo": "https://i.ibb.co/yc68M4mG/Sports-Net-World.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/6000013"
+        ]
+      }
+    },
+    "Star Sports Select 1": {
+      "id": 138,
+      "logo": "https://i.ibb.co/zWqXTsyn/Star-select1.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/8000011",
+          "https://a1xs.vip/8000012"
+        ]
+      }
+    },
+    "TBS": {
+      "id": 110,
+      "logo": "https://i.ibb.co/Mx0fSZpK/TBS.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/300038"
+        ]
+      }
+    },
+    "TNT": {
+      "id": 108,
+      "logo": "https://i.ibb.co/4ZnJzNyz/tnt.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/300001"
+        ]
+      }
+    },
+    "TNT Sports 1": {
+      "id": 33,
+      "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/TNTS1.png",
+      "qualities": {
+        "FHD": [
+          "--- 📺 UK Channels",
+          "https://a1xs.vip/2000021",
+          "https://a1xs.vip/2000022",
+          "https://a1xs.vip/2000023",
+          "https://a1xs.vip/2000024"
+        ]
+      }
+    },
+    "TNT Sports Ultimate": {
+      "id": 4,
+      "logo": "https://i.ibb.co/QqGdJnM/TNTSprts-U.png",
+      "qualities": {
+        "4K": [
+          "https://a1xs.vip/2000031"
+        ]
+      }
+    },
+    "TSN1": {
+      "id": 118,
+      "logo": "https://i.ibb.co/MyTbNgYX/TSN1.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/6000001"
+        ]
+      }
+    },
+    "TSN2": {
+      "id": 119,
+      "logo": "https://i.ibb.co/fzHfwF5j/TSN2.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/6000002"
+        ]
+      }
+    },
+    "TSN3": {
+      "id": 120,
+      "logo": "https://i.ibb.co/0RMWTVX5/TSN3.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/6000003"
+        ]
+      }
+    },
+    "TSN4": {
+      "id": 121,
+      "logo": "https://i.ibb.co/jZgYf8yP/TSN4.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/6000004"
+        ]
+      }
+    },
+    "TSN5": {
+      "id": 122,
+      "logo": "https://i.ibb.co/gZMsLrtP/TSN5.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/6000005"
+        ]
+      }
+    },
+    "TeenNick": {
+      "id": 113,
+      "logo": "https://i.ibb.co/nNqN8d6s/TeenNick.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/300031"
+        ]
+      }
+    },
+    "Tennis Channel": {
+      "id": 91,
+      "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/tennis-channel.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/40000040"
+        ]
+      }
+    },
+    "Tennis Channel Plus": {
+      "id": 92,
+      "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/tennis-channel.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/40000041"
+        ]
+      }
+    },
+    "Travelxp": {
+      "id": 14,
+      "logo": "https://i.ibb.co/GCKtvqn/Travelxp-4-K.png",
+      "qualities": {
+        "4K": [
+          "https://a1xs.vip/travelxpuhd"
+        ]
+      }
+    },
+    "USA Network": {
+      "id": 25,
+      "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/usa-network.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/1100020"
+        ]
+      }
+    },
+    "Willow Cricket": {
+      "id": 89,
+      "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/Willowsport.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/40000042"
+        ]
+      }
+    },
+    "Willow Cricket Xtra": {
+      "id": 90,
+      "logo": "https://i.imgur.com/WicNmd5.png",
+      "qualities": {
+        "HD": [
+          "https://a1xs.vip/40000043"
+        ]
+      }
+    },
+    "Ziggo Sport": {
+      "id": 137,
+      "logo": "https://i.ibb.co/ycdhBFGj/Ziggo-Sport.png",
+      "qualities": {
+        "FHD": [
+          "--- 📺 World Sports",
+          "https://a1xs.vip/140001",
+          "https://a1xs.vip/140002",
+          "https://a1xs.vip/140003",
+          "https://a1xs.vip/140004"
+        ]
+      }
+    },
+    "iTV1": {
+      "id": 41,
+      "logo": "https://i.ibb.co/g6TqxVm/ITV1.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/1000011"
+        ]
+      }
+    },
+    "iTV2": {
+      "id": 42,
+      "logo": "https://i.ibb.co/Yc66t7f/ITV2.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/1000012"
+        ]
+      }
+    },
+    "iTV3": {
+      "id": 43,
+      "logo": "https://i.ibb.co/fHbyKrt/ITV3.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/1000013"
+        ]
+      }
+    },
+    "iTV4": {
+      "id": 44,
+      "logo": "https://i.ibb.co/rQhNxbN/ITV4.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/1000014"
+        ]
+      }
+    },
+    "truTV": {
+      "id": 109,
+      "logo": "https://i.ibb.co/mV9wzc4W/trutv.png",
+      "qualities": {
+        "FHD": [
+          "https://a1xs.vip/300002"
+        ]
+      }
+    }
+  }
+}

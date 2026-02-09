@@ -1,0 +1,490 @@
+{
+  "date": "2026-02-09",
+  "source": "wheresthematch.com",
+  "generated_at": "2026-02-09T09:30:40.455445Z",
+  "events": [
+    {
+      "name": "Scotland v Italy",
+      "start_time_iso": "2026-02-09T05:30:00Z",
+      "time": "05:30",
+      "sport": "Cricket",
+      "competition": "ICC T20 World Cup",
+      "channels": [
+        "Sky Sports Cricket",
+        "Sky Sports Main Event",
+        "Sky Sports Ultra HDR"
+      ]
+    },
+    {
+      "name": "Winter Olympics",
+      "start_time_iso": "2026-02-09T09:00:00Z",
+      "time": "09:00",
+      "sport": "Winter Sports",
+      "competition": "Winter Olympics",
+      "channels": [
+        "BBC1",
+        "BBC2",
+        "TNT Sports 2",
+        "TNT Sports Ultimate",
+        "BBC iPlayer",
+        "BBC Sport Website",
+        "Discovery+ Premium"
+      ]
+    },
+    {
+      "name": "2026 Winter Olympics Alpine Skiing",
+      "start_time_iso": "2026-02-09T09:00:00Z",
+      "time": "09:00",
+      "sport": "Winter Sports",
+      "competition": "Winter Olympics",
+      "channels": [
+        "TNT Sports 2",
+        "TNT Sports Ultimate",
+        "Discovery+ Premium"
+      ]
+    },
+    {
+      "name": "2026 Winter Olympics Curling",
+      "start_time_iso": "2026-02-09T09:00:00Z",
+      "time": "09:00",
+      "sport": "Winter Sports",
+      "competition": "Winter Olympics",
+      "channels": [
+        "TNT Sports 4",
+        "Discovery+ Premium"
+      ]
+    },
+    {
+      "name": "2026 Winter Olympics Curling",
+      "start_time_iso": "2026-02-09T09:00:00Z",
+      "time": "09:00",
+      "sport": "Winter Sports",
+      "competition": "Winter Olympics",
+      "channels": [
+        "TNT Sports Extra",
+        "Discovery+"
+      ]
+    },
+    {
+      "name": "2026 Winter Olympics Curling",
+      "start_time_iso": "2026-02-09T09:00:00Z",
+      "time": "09:00",
+      "sport": "Winter Sports",
+      "competition": "Winter Olympics",
+      "channels": [
+        "TNT Sports Extra",
+        "Discovery+"
+      ]
+    },
+    {
+      "name": "2026 Winter Olympics Curling",
+      "start_time_iso": "2026-02-09T09:00:00Z",
+      "time": "09:00",
+      "sport": "Winter Sports",
+      "competition": "Winter Olympics",
+      "channels": [
+        "TNT Sports Extra",
+        "Discovery+"
+      ]
+    },
+    {
+      "name": "Zimbabwe v Oman",
+      "start_time_iso": "2026-02-09T09:30:00Z",
+      "time": "09:30",
+      "sport": "Cricket",
+      "competition": "ICC T20 World Cup",
+      "channels": [
+        "Sky Sports Main Event",
+        "Sky Sports Cricket",
+        "Sky Sports Ultra HDR"
+      ]
+    },
+    {
+      "name": "WTA Qatar Open",
+      "start_time_iso": "2026-02-09T10:00:00Z",
+      "time": "10:00",
+      "sport": "Tennis",
+      "competition": "WTA Tour",
+      "channels": [
+        "Sky Sports Tennis",
+        "Sky Sports+"
+      ]
+    },
+    {
+      "name": "Japan v Italy",
+      "start_time_iso": "2026-02-09T11:00:00Z",
+      "time": "11:00",
+      "sport": "Ice-Hockey",
+      "competition": "Winter Olympics",
+      "channels": [
+        "TNT Sports 4",
+        "TNT Sports Extra",
+        "Discovery+ Premium"
+      ]
+    },
+    {
+      "name": "2026 Winter Olympics Freestyle Skiing",
+      "start_time_iso": "2026-02-09T11:15:00Z",
+      "time": "11:15",
+      "sport": "Winter Sports",
+      "competition": "Winter Olympics",
+      "channels": [
+        "TNT Sports 2",
+        "TNT Sports Extra",
+        "TNT Sports Ultimate",
+        "Discovery+ Premium"
+      ]
+    },
+    {
+      "name": "ATP Tennis",
+      "start_time_iso": "2026-02-09T12:00:00Z",
+      "time": "12:00",
+      "sport": "Tennis",
+      "competition": "ATP World Tour",
+      "channels": [
+        "Sky Sports Tennis"
+      ]
+    },
+    {
+      "name": "Raceday Live",
+      "start_time_iso": "2026-02-09T12:30:00Z",
+      "time": "12:30",
+      "sport": "Horse Racing",
+      "competition": "UK Race Meeting",
+      "channels": [
+        "Sky Sports Racing"
+      ]
+    },
+    {
+      "name": "2026 Winter Olympics Alpine Skiing",
+      "start_time_iso": "2026-02-09T12:30:00Z",
+      "time": "12:30",
+      "sport": "Winter Sports",
+      "competition": "Winter Olympics",
+      "channels": [
+        "TNT Sports 4",
+        "Discovery+ Premium"
+      ]
+    },
+    {
+      "name": "2026 Winter Olympics Alpine Skiing",
+      "start_time_iso": "2026-02-09T13:15:00Z",
+      "time": "13:15",
+      "sport": "Winter Sports",
+      "competition": "Winter Olympics",
+      "channels": [
+        "TNT Sports 2",
+        "TNT Sports Ultimate",
+        "Discovery+ Premium"
+      ]
+    },
+    {
+      "name": "South Africa v Canada",
+      "start_time_iso": "2026-02-09T13:30:00Z",
+      "time": "13:30",
+      "sport": "Cricket",
+      "competition": "ICC T20 World Cup",
+      "channels": [
+        "Sky Sports Cricket",
+        "Sky Sports Main Event",
+        "Sky Sports Ultra HDR"
+      ]
+    },
+    {
+      "name": "Live Racing",
+      "start_time_iso": "2026-02-09T13:30:00Z",
+      "time": "13:30",
+      "sport": "Horse Racing",
+      "competition": "UK Race Meeting",
+      "channels": [
+        "RacingTV"
+      ]
+    },
+    {
+      "name": "Al Wahda FC v Al Ahli",
+      "start_time_iso": "2026-02-09T13:45:00Z",
+      "time": "13:45",
+      "sport": "Football",
+      "competition": "AFC Champions League",
+      "channels": [
+        "The AFC Hub"
+      ]
+    },
+    {
+      "name": "Nasaf v Al Shorta",
+      "start_time_iso": "2026-02-09T13:45:00Z",
+      "time": "13:45",
+      "sport": "Football",
+      "competition": "AFC Champions League",
+      "channels": [
+        "The AFC Hub"
+      ]
+    },
+    {
+      "name": "Germany v France",
+      "start_time_iso": "2026-02-09T15:30:00Z",
+      "time": "15:30",
+      "sport": "Ice-Hockey",
+      "competition": "Winter Olympics",
+      "channels": [
+        "TNT Sports 4",
+        "TNT Sports Extra",
+        "Discovery+ Premium"
+      ]
+    },
+    {
+      "name": "2026 Winter Olympics Luge",
+      "start_time_iso": "2026-02-09T16:00:00Z",
+      "time": "16:00",
+      "sport": "Winter Sports",
+      "competition": "Winter Olympics",
+      "channels": [
+        "TNT Sports 2",
+        "TNT Sports Extra",
+        "TNT Sports Ultimate",
+        "Discovery+ Premium"
+      ]
+    },
+    {
+      "name": "Al-Duhail v Sharjah",
+      "start_time_iso": "2026-02-09T16:00:00Z",
+      "time": "16:00",
+      "sport": "Football",
+      "competition": "AFC Champions League",
+      "channels": [
+        "The AFC Hub"
+      ]
+    },
+    {
+      "name": "Shabab Al Ahli v Al Hilal",
+      "start_time_iso": "2026-02-09T16:00:00Z",
+      "time": "16:00",
+      "sport": "Football",
+      "competition": "AFC Champions League",
+      "channels": [
+        "The AFC Hub"
+      ]
+    },
+    {
+      "name": "2026 Winter Olympics Speed Skating",
+      "start_time_iso": "2026-02-09T16:15:00Z",
+      "time": "16:15",
+      "sport": "Winter Sports",
+      "competition": "Winter Olympics",
+      "channels": [
+        "TNT Sports 4",
+        "Discovery+ Premium"
+      ]
+    },
+    {
+      "name": "2026 Winter Olympics Curling",
+      "start_time_iso": "2026-02-09T16:45:00Z",
+      "time": "16:45",
+      "sport": "Winter Sports",
+      "competition": "Winter Olympics",
+      "channels": [
+        "TNT Sports Extra",
+        "Discovery+"
+      ]
+    },
+    {
+      "name": "Koln Women v SGS Essen",
+      "start_time_iso": "2026-02-09T17:00:00Z",
+      "time": "17:00",
+      "sport": "Football",
+      "competition": "Women's Bundesliga",
+      "channels": [
+        "DAZN"
+      ]
+    },
+    {
+      "name": "Atalanta v Cremonese",
+      "start_time_iso": "2026-02-09T17:00:00Z",
+      "time": "17:00",
+      "sport": "Football",
+      "competition": "Serie A",
+      "channels": [
+        "DAZN"
+      ]
+    },
+    {
+      "name": "2026 Winter Olympics Ski Jumping",
+      "start_time_iso": "2026-02-09T17:00:00Z",
+      "time": "17:00",
+      "sport": "Winter Sports",
+      "competition": "Winter Olympics",
+      "channels": [
+        "TNT Sports Extra",
+        "Discovery+"
+      ]
+    },
+    {
+      "name": "2026 Winter Olympics Luge",
+      "start_time_iso": "2026-02-09T17:30:00Z",
+      "time": "17:30",
+      "sport": "Winter Sports",
+      "competition": "Winter Olympics",
+      "channels": [
+        "TNT Sports 2",
+        "TNT Sports Ultimate",
+        "Discovery+ Premium"
+      ]
+    },
+    {
+      "name": "Ultimate Pool Champions League",
+      "start_time_iso": "2026-02-09T18:00:00Z",
+      "time": "18:00",
+      "sport": "Pool",
+      "competition": "Ultimate Pool Professional",
+      "channels": [
+        "TNT Sports 3",
+        "Discovery+ Premium"
+      ]
+    },
+    {
+      "name": "2026 Winter Olympics Ski Jumping",
+      "start_time_iso": "2026-02-09T18:00:00Z",
+      "time": "18:00",
+      "sport": "Winter Sports",
+      "competition": "Winter Olympics",
+      "channels": [
+        "TNT Sports 4",
+        "Discovery+ Premium"
+      ]
+    },
+    {
+      "name": "2026 Winter Olympics Snowboarding",
+      "start_time_iso": "2026-02-09T18:15:00Z",
+      "time": "18:15",
+      "sport": "Winter Sports",
+      "competition": "Winter Olympics",
+      "channels": [
+        "TNT Sports 2",
+        "TNT Sports Ultimate",
+        "Discovery+ Premium"
+      ]
+    },
+    {
+      "name": "Crystal Palace U21 v Middlesbrough U21",
+      "start_time_iso": "2026-02-09T19:00:00Z",
+      "time": "19:00",
+      "sport": "Football",
+      "competition": "Premier League 2",
+      "channels": [
+        "Palace TV+"
+      ]
+    },
+    {
+      "name": "Chelsea U18 v Manchester City U18s",
+      "start_time_iso": "2026-02-09T19:00:00Z",
+      "time": "19:00",
+      "sport": "Football",
+      "competition": "FA Youth Cup",
+      "channels": [
+        "ChelseaFC.com",
+        "CITY+",
+        "Chelsea Official App"
+      ]
+    },
+    {
+      "name": "Roma v Cagliari",
+      "start_time_iso": "2026-02-09T19:45:00Z",
+      "time": "19:45",
+      "sport": "Football",
+      "competition": "Serie A",
+      "channels": [
+        "DAZN",
+        "TNT Sports 1",
+        "Discovery+ Premium"
+      ]
+    },
+    {
+      "name": "2026 Winter Olympics Figure Skating",
+      "start_time_iso": "2026-02-09T19:45:00Z",
+      "time": "19:45",
+      "sport": "Winter Sports",
+      "competition": "Winter Olympics",
+      "channels": [
+        "TNT Sports 2",
+        "TNT Sports Ultimate",
+        "TNT Sports Extra",
+        "Discovery+ Premium"
+      ]
+    },
+    {
+      "name": "Villarreal v Espanyol",
+      "start_time_iso": "2026-02-09T20:00:00Z",
+      "time": "20:00",
+      "sport": "Football",
+      "competition": "La Liga",
+      "channels": [
+        "Premier Sports 1"
+      ]
+    },
+    {
+      "name": "Switzerland v USA",
+      "start_time_iso": "2026-02-09T20:00:00Z",
+      "time": "20:00",
+      "sport": "Ice-Hockey",
+      "competition": "Winter Olympics",
+      "channels": [
+        "TNT Sports Extra",
+        "TNT Sports 4",
+        "Discovery+ Premium"
+      ]
+    },
+    {
+      "name": "Canada v Czech Republic",
+      "start_time_iso": "2026-02-09T20:00:00Z",
+      "time": "20:00",
+      "sport": "Ice-Hockey",
+      "competition": "Winter Olympics",
+      "channels": [
+        "TNT Sports Extra",
+        "Discovery+"
+      ]
+    },
+    {
+      "name": "Sheffield United v Middlesbrough",
+      "start_time_iso": "2026-02-09T20:01:00Z",
+      "time": "20:01",
+      "sport": "Football",
+      "competition": "Championship",
+      "channels": [
+        "Sky Sports Main Event",
+        "Sky Sports Football",
+        "Sky Sports Ultra HDR"
+      ]
+    },
+    {
+      "name": "ATP Tennis",
+      "start_time_iso": "2026-02-09T22:30:00Z",
+      "time": "22:30",
+      "sport": "Tennis",
+      "competition": "ATP World Tour",
+      "channels": [
+        "Sky Sports Tennis"
+      ]
+    },
+    {
+      "name": "TGL",
+      "start_time_iso": "2026-02-10T00:00:00Z",
+      "time": "00:00",
+      "sport": "Golf",
+      "competition": "TGL 2026",
+      "channels": [
+        "Sky Sports Golf"
+      ]
+    },
+    {
+      "name": "Charlotte Hornets v Detroit Pistons",
+      "start_time_iso": "2026-02-10T00:00:00Z",
+      "time": "00:00",
+      "sport": "Basketball",
+      "competition": "NBA",
+      "channels": [
+        "NBA League Pass"
+      ]
+    }
+  ]
+}

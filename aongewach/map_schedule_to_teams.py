@@ -33,35 +33,29 @@ def clean_team_name(name):
     
     return cleaned.strip()
 
-def find_team_logo(team_name, teams_data):
+def find_team_data(team_name, teams_data):
     """
-    Find logo for a team name.
-    1. Exact match on Key.
-    2. Exact match on Alias.
-    3. Fuzzy match (optional, skipping for now to avoid bad matches).
+    Find team data for a name.
     """
     cleaned_name = clean_team_name(team_name)
     cleaned_lower = cleaned_name.lower()
 
-    # 1. Exact Key Match (Case-Indifferent for safety)
-    # The keys in teams.json seem to be Title Case, but let's iterate to be safe if direct lookup fails
+    # 1. Exact Key Match
     if cleaned_name in teams_data:
-        return teams_data[cleaned_name].get('logo_url')
+        return teams_data[cleaned_name]
 
     # Linear search for case-insensitive Key or Alias match
-    # (Optimizable by building a lookup map once, but dataset is small enough <1MB text for now)
     for team_key, data in teams_data.items():
         # Check Key
         if team_key.lower() == cleaned_lower:
-             return data.get('logo_url')
+             return data
         
         # Check Aliases
         aliases = data.get('aliases', [])
         if aliases:
-            # Aliases in JSON seem to be lowercase, but let's be safe
             for alias in aliases:
                 if alias.lower() == cleaned_lower:
-                    return data.get('logo_url')
+                    return data
     
     return None
 
@@ -86,8 +80,6 @@ def process_schedule():
             name = event.get('name', '')
             
             # Regex to split separate "Home" and "Away"
-            # Matches " v ", " vs ", " - " surrounded by spaces
-            # We use grouping to keep the parts? No, split is easier.
             split_match = re.split(r'\s+(?:v|vs|VS|V|-)\s+', name, maxsplit=1)
             
             if len(split_match) == 2:
@@ -98,21 +90,22 @@ def process_schedule():
                 event['home_team'] = home_raw
                 event['away_team'] = away_raw
                 
-                # Find Logos
-                home_logo = find_team_logo(home_raw, teams_map)
-                away_logo = find_team_logo(away_raw, teams_map)
+                # Find Teams
+                home_data = find_team_data(home_raw, teams_map)
+                away_data = find_team_data(away_raw, teams_map)
                 
-                if home_logo:
-                    event['home_team_logo'] = home_logo
-                if away_logo:
-                    event['away_team_logo'] = away_logo
+                if home_data:
+                    event['home_team_id'] = home_data.get('id')
+                    event['home_team_logo_id'] = home_data.get('logo_id')
+                    event['home_team_logo'] = home_data.get('logo_url')
                 
-                if home_logo or away_logo:
+                if away_data:
+                    event['away_team_id'] = away_data.get('id')
+                    event['away_team_logo_id'] = away_data.get('logo_id')
+                    event['away_team_logo'] = away_data.get('logo_url')
+                
+                if home_data or away_data:
                     mapped_count += 1
-            else:
-                # No "vs" found (e.g., "Winter Olympics", "F1 Qualifying")
-                # Leave as is, no team mapping.
-                pass
 
     output_file = 'weekly_schedule_mapped.json'
     with open(output_file, 'w', encoding='utf-8') as f:

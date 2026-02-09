@@ -1,17 +1,12 @@
-name: Scan Sports Channels
+name: Update Weekly Schedule
 
 on:
   schedule:
-    - cron: '0 */6 * * *'  # Run every 6 hours
+    - cron: '0 5 * * 1'  # Run every Monday at 05:00 UTC
   workflow_dispatch:
-    inputs:
-      domains:
-        description: 'Priority domains (comma-separated)'
-        required: false
-        default: ''
 
 jobs:
-  scan:
+  update-schedule:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -29,25 +24,23 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        # Ensure beautifulsoup4 is installed (critical for scraper)
+        pip install beautifulsoup4 requests
         
-    - name: Run Sports Scanner
+    - name: Run Schedule Pipeline
       run: |
-        # Use inputs if provided, otherwise default run
-        if [ -n "${{ inputs.domains }}" ]; then
-          python aongewach/scan_sports_channels.py lovestory.json aongewach/channels.json --domains "${{ inputs.domains }}"
-        else
-          python aongewach/scan_sports_channels.py lovestory.json aongewach/channels.json
-        fi
+        cd aongewach
+        python run_pipeline.py
         
     - name: Commit and push changes
       run: |
         git config --global user.name 'GitHub Action'
         git config --global user.email 'action@github.com'
-        git add aongewach/channels.json
+        git add aongewach/weekly_schedule.json aongewach/weekly_schedule_mapped.json aongewach/weekly_schedule_final.json aongewach/channel_map.json aongewach/teams.json
         # Only commit if there are changes
         if git diff --staged --quiet; then
           echo "No changes to commit"
         else
-          git commit -m "Update sports channels [skip ci]"
+          git commit -m "Update weekly schedule and mappings [skip ci]"
           git push
         fi
