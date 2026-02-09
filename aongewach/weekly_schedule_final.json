@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-09T12:27:24.368453Z",
+  "generated_at": "2026-02-09T13:58:13.967474Z",
   "source": "wheresthematch.com",
   "schedule": [
     {
@@ -562,7 +562,15 @@
             "DAZN"
           ],
           "home_team": "Koln Women",
-          "away_team": "SGS Essen"
+          "away_team": "SGS Essen",
+          "mapped_channels": [
+            {
+              "channel_name": "DAZN",
+              "channel_id": 47776046,
+              "iptv_name": "DAZN",
+              "logo": "http://2.bp.blogspot.com/-u13bfQHZkvs/XmUO_j1oEgI/AAAAAAAACVw/z-2xZpbmHiIew6ut2UB0AvDLtPDNlBbmQCK4BGAYYCw/s400/DANZ.png"
+            }
+          ]
         },
         {
           "name": "Atalanta v Cremonese",
@@ -575,7 +583,15 @@
             "DAZN"
           ],
           "home_team": "Atalanta",
-          "away_team": "Cremonese"
+          "away_team": "Cremonese",
+          "mapped_channels": [
+            {
+              "channel_name": "DAZN",
+              "channel_id": 47776046,
+              "iptv_name": "DAZN",
+              "logo": "http://2.bp.blogspot.com/-u13bfQHZkvs/XmUO_j1oEgI/AAAAAAAACVw/z-2xZpbmHiIew6ut2UB0AvDLtPDNlBbmQCK4BGAYYCw/s400/DANZ.png"
+            }
+          ]
         },
         {
           "name": "2026 Winter Olympics Ski Jumping",
@@ -723,7 +739,15 @@
             "Chelsea Official App"
           ],
           "home_team": "Chelsea U18",
-          "away_team": "Manchester City U18s"
+          "away_team": "Manchester City U18s",
+          "mapped_channels": [
+            {
+              "channel_name": "CITY+",
+              "channel_id": 3407548544,
+              "iptv_name": "stan] ???? LIVE: Arsenal v Manchester City WSL 202526",
+              "logo": null
+            }
+          ]
         },
         {
           "name": "Roma v Cagliari",
@@ -743,6 +767,12 @@
           "home_team_logo_id": "4248",
           "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/italy/as roma.png",
           "mapped_channels": [
+            {
+              "channel_name": "DAZN",
+              "channel_id": 47776046,
+              "iptv_name": "DAZN",
+              "logo": "http://2.bp.blogspot.com/-u13bfQHZkvs/XmUO_j1oEgI/AAAAAAAACVw/z-2xZpbmHiIew6ut2UB0AvDLtPDNlBbmQCK4BGAYYCw/s400/DANZ.png"
+            },
             {
               "channel_name": "TNT Sports 1",
               "channel_id": 433325043,
@@ -920,6 +950,14 @@
           "competition": "TGL 2026",
           "channels": [
             "Sky Sports Golf"
+          ],
+          "mapped_channels": [
+            {
+              "channel_name": "Sky Sports Golf",
+              "channel_id": 1367869177,
+              "iptv_name": "Sky Sports Golf 50FPS",
+              "logo": null
+            }
           ]
         },
         {
@@ -933,7 +971,15 @@
             "NBA League Pass"
           ],
           "home_team": "Charlotte Hornets",
-          "away_team": "Detroit Pistons"
+          "away_team": "Detroit Pistons",
+          "mapped_channels": [
+            {
+              "channel_name": "NBA League Pass",
+              "channel_id": 604898460,
+              "iptv_name": "NBA League PASS",
+              "logo": "http://i.postimg.cc/hjf15W4k/nbatv.png"
+            }
+          ]
         }
       ]
     },
@@ -950,6 +996,14 @@
           "competition": "TGL 2026",
           "channels": [
             "Sky Sports Golf"
+          ],
+          "mapped_channels": [
+            {
+              "channel_name": "Sky Sports Golf",
+              "channel_id": 1367869177,
+              "iptv_name": "Sky Sports Golf 50FPS",
+              "logo": null
+            }
           ]
         },
         {
@@ -963,7 +1017,15 @@
             "NBA League Pass"
           ],
           "home_team": "Charlotte Hornets",
-          "away_team": "Detroit Pistons"
+          "away_team": "Detroit Pistons",
+          "mapped_channels": [
+            {
+              "channel_name": "NBA League Pass",
+              "channel_id": 604898460,
+              "iptv_name": "NBA League PASS",
+              "logo": "http://i.postimg.cc/hjf15W4k/nbatv.png"
+            }
+          ]
         },
         {
           "name": "Orlando Magic v Milwaukee Bucks",
@@ -997,7 +1059,15 @@
             "NBA League Pass"
           ],
           "home_team": "Brooklyn Nets",
-          "away_team": "Chicago Bulls"
+          "away_team": "Chicago Bulls",
+          "mapped_channels": [
+            {
+              "channel_name": "NBA League Pass",
+              "channel_id": 604898460,
+              "iptv_name": "NBA League PASS",
+              "logo": "http://i.postimg.cc/hjf15W4k/nbatv.png"
+            }
+          ]
         },
         {
           "name": "Miami Heat v Utah Jazz",
@@ -1010,7 +1080,15 @@
             "NBA League Pass"
           ],
           "home_team": "Miami Heat",
-          "away_team": "Utah Jazz"
+          "away_team": "Utah Jazz",
+          "mapped_channels": [
+            {
+              "channel_name": "NBA League Pass",
+              "channel_id": 604898460,
+              "iptv_name": "NBA League PASS",
+              "logo": "http://i.postimg.cc/hjf15W4k/nbatv.png"
+            }
+          ]
         },
         {
           "name": "Minnesota Timberwolves v Atlanta Hawks",
@@ -1023,7 +1101,15 @@
             "NBA League Pass"
           ],
           "home_team": "Minnesota Timberwolves",
-          "away_team": "Atlanta Hawks"
+          "away_team": "Atlanta Hawks",
+          "mapped_channels": [
+            {
+              "channel_name": "NBA League Pass",
+              "channel_id": 604898460,
+              "iptv_name": "NBA League PASS",
+              "logo": "http://i.postimg.cc/hjf15W4k/nbatv.png"
+            }
+          ]
         },
         {
           "name": "New Orleans Pelicans v Sacramento Kings",
@@ -1036,7 +1122,15 @@
             "NBA League Pass"
           ],
           "home_team": "New Orleans Pelicans",
-          "away_team": "Sacramento Kings"
+          "away_team": "Sacramento Kings",
+          "mapped_channels": [
+            {
+              "channel_name": "NBA League Pass",
+              "channel_id": 604898460,
+              "iptv_name": "NBA League PASS",
+              "logo": "http://i.postimg.cc/hjf15W4k/nbatv.png"
+            }
+          ]
         },
         {
           "name": "Dallas Open",
@@ -1076,7 +1170,15 @@
             "NBA League Pass"
           ],
           "home_team": "Denver Nuggets",
-          "away_team": "Cleveland Cavaliers"
+          "away_team": "Cleveland Cavaliers",
+          "mapped_channels": [
+            {
+              "channel_name": "NBA League Pass",
+              "channel_id": 604898460,
+              "iptv_name": "NBA League PASS",
+              "logo": "http://i.postimg.cc/hjf15W4k/nbatv.png"
+            }
+          ]
         },
         {
           "name": "Los Angeles Lakers v Oklahoma City Thunder",
@@ -1110,7 +1212,15 @@
             "NBA League Pass"
           ],
           "home_team": "Golden State Warriors",
-          "away_team": "Memphis Grizzlies"
+          "away_team": "Memphis Grizzlies",
+          "mapped_channels": [
+            {
+              "channel_name": "NBA League Pass",
+              "channel_id": 604898460,
+              "iptv_name": "NBA League PASS",
+              "logo": "http://i.postimg.cc/hjf15W4k/nbatv.png"
+            }
+          ]
         },
         {
           "name": "Portland Trail Blazers v Philadelphia 76ers",
@@ -1123,7 +1233,15 @@
             "NBA League Pass"
           ],
           "home_team": "Portland Trail Blazers",
-          "away_team": "Philadelphia 76ers"
+          "away_team": "Philadelphia 76ers",
+          "mapped_channels": [
+            {
+              "channel_name": "NBA League Pass",
+              "channel_id": 604898460,
+              "iptv_name": "NBA League PASS",
+              "logo": "http://i.postimg.cc/hjf15W4k/nbatv.png"
+            }
+          ]
         },
         {
           "name": "Netherlands v Namibia",
@@ -1441,6 +1559,14 @@
           "competition": "World Snooker",
           "channels": [
             "YouTube"
+          ],
+          "mapped_channels": [
+            {
+              "channel_name": "YouTube",
+              "channel_id": 277611183,
+              "iptv_name": "YOUTUBE 01",
+              "logo": "http://i.postimg.cc/sX1wLXXQ/youtube.jpg"
+            }
           ]
         },
         {
@@ -1806,6 +1932,14 @@
           "competition": "World Snooker",
           "channels": [
             "YouTube"
+          ],
+          "mapped_channels": [
+            {
+              "channel_name": "YouTube",
+              "channel_id": 277611183,
+              "iptv_name": "YOUTUBE 01",
+              "logo": "http://i.postimg.cc/sX1wLXXQ/youtube.jpg"
+            }
           ]
         },
         {
@@ -1859,7 +1993,15 @@
             "DAZN"
           ],
           "home_team": "Karditsas",
-          "away_team": "Panionios Athens"
+          "away_team": "Panionios Athens",
+          "mapped_channels": [
+            {
+              "channel_name": "DAZN",
+              "channel_id": 47776046,
+              "iptv_name": "DAZN",
+              "logo": "http://2.bp.blogspot.com/-u13bfQHZkvs/XmUO_j1oEgI/AAAAAAAACVw/z-2xZpbmHiIew6ut2UB0AvDLtPDNlBbmQCK4BGAYYCw/s400/DANZ.png"
+            }
+          ]
         },
         {
           "name": "Sampdoria v Palermo",
@@ -2557,7 +2699,15 @@
           "away_team": "Como",
           "home_team_id": 4406,
           "home_team_logo_id": "4406",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/italy/ssc napoli.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/italy/ssc napoli.png",
+          "mapped_channels": [
+            {
+              "channel_name": "Premier Sports 2",
+              "channel_id": 867894738,
+              "iptv_name": "Premier Sports 2",
+              "logo": "http://starapk1.com/logo/football.png"
+            }
+          ]
         },
         {
           "name": "Finland v Switzerland",
@@ -2658,7 +2808,15 @@
             "Premier Sports 2"
           ],
           "home_team": "Vitoria",
-          "away_team": "Flamengo"
+          "away_team": "Flamengo",
+          "mapped_channels": [
+            {
+              "channel_name": "Premier Sports 2",
+              "channel_id": 867894738,
+              "iptv_name": "Premier Sports 2",
+              "logo": "http://starapk1.com/logo/football.png"
+            }
+          ]
         },
         {
           "name": "New York Knicks v Indiana Pacers",
@@ -2671,7 +2829,15 @@
             "NBA League Pass"
           ],
           "home_team": "New York Knicks",
-          "away_team": "Indiana Pacers"
+          "away_team": "Indiana Pacers",
+          "mapped_channels": [
+            {
+              "channel_name": "NBA League Pass",
+              "channel_id": 604898460,
+              "iptv_name": "NBA League PASS",
+              "logo": "http://i.postimg.cc/hjf15W4k/nbatv.png"
+            }
+          ]
         },
         {
           "name": "Live Boxing",
@@ -2682,6 +2848,14 @@
           "competition": "IBF Title Fights",
           "channels": [
             "DAZN"
+          ],
+          "mapped_channels": [
+            {
+              "channel_name": "DAZN",
+              "channel_id": 47776046,
+              "iptv_name": "DAZN",
+              "logo": "http://2.bp.blogspot.com/-u13bfQHZkvs/XmUO_j1oEgI/AAAAAAAACVw/z-2xZpbmHiIew6ut2UB0AvDLtPDNlBbmQCK4BGAYYCw/s400/DANZ.png"
+            }
           ]
         },
         {
@@ -2695,7 +2869,15 @@
             "NBA League Pass"
           ],
           "home_team": "Houston Rockets",
-          "away_team": "Los Angeles Clippers"
+          "away_team": "Los Angeles Clippers",
+          "mapped_channels": [
+            {
+              "channel_name": "NBA League Pass",
+              "channel_id": 604898460,
+              "iptv_name": "NBA League PASS",
+              "logo": "http://i.postimg.cc/hjf15W4k/nbatv.png"
+            }
+          ]
         },
         {
           "name": "Dallas Open",
@@ -2735,7 +2917,15 @@
             "NBA League Pass"
           ],
           "home_team": "Phoenix Suns",
-          "away_team": "Dallas Mavericks"
+          "away_team": "Dallas Mavericks",
+          "mapped_channels": [
+            {
+              "channel_name": "NBA League Pass",
+              "channel_id": 604898460,
+              "iptv_name": "NBA League PASS",
+              "logo": "http://i.postimg.cc/hjf15W4k/nbatv.png"
+            }
+          ]
         },
         {
           "name": "Los Angeles Lakers v San Antonio Spurs",
@@ -2748,7 +2938,15 @@
             "NBA League Pass"
           ],
           "home_team": "Los Angeles Lakers",
-          "away_team": "San Antonio Spurs"
+          "away_team": "San Antonio Spurs",
+          "mapped_channels": [
+            {
+              "channel_name": "NBA League Pass",
+              "channel_id": 604898460,
+              "iptv_name": "NBA League PASS",
+              "logo": "http://i.postimg.cc/hjf15W4k/nbatv.png"
+            }
+          ]
         },
         {
           "name": "South Africa v Afghanistan",
@@ -3012,6 +3210,14 @@
           "competition": "Ladies European Tour",
           "channels": [
             "Sky Sports Golf"
+          ],
+          "mapped_channels": [
+            {
+              "channel_name": "Sky Sports Golf",
+              "channel_id": 1367869177,
+              "iptv_name": "Sky Sports Golf 50FPS",
+              "logo": null
+            }
           ]
         },
         {
@@ -3043,6 +3249,14 @@
           "competition": "World Snooker",
           "channels": [
             "YouTube"
+          ],
+          "mapped_channels": [
+            {
+              "channel_name": "YouTube",
+              "channel_id": 277611183,
+              "iptv_name": "YOUTUBE 01",
+              "logo": "http://i.postimg.cc/sX1wLXXQ/youtube.jpg"
+            }
           ]
         },
         {
@@ -3336,6 +3550,14 @@
           "competition": "World Snooker",
           "channels": [
             "YouTube"
+          ],
+          "mapped_channels": [
+            {
+              "channel_name": "YouTube",
+              "channel_id": 277611183,
+              "iptv_name": "YOUTUBE 01",
+              "logo": "http://i.postimg.cc/sX1wLXXQ/youtube.jpg"
+            }
           ]
         },
         {
@@ -3369,7 +3591,15 @@
             "DAZN"
           ],
           "home_team": "Carl Zeiss Jena Women",
-          "away_team": "Bayern Munich Women"
+          "away_team": "Bayern Munich Women",
+          "mapped_channels": [
+            {
+              "channel_name": "DAZN",
+              "channel_id": 47776046,
+              "iptv_name": "DAZN",
+              "logo": "http://2.bp.blogspot.com/-u13bfQHZkvs/XmUO_j1oEgI/AAAAAAAACVw/z-2xZpbmHiIew6ut2UB0AvDLtPDNlBbmQCK4BGAYYCw/s400/DANZ.png"
+            }
+          ]
         },
         {
           "name": "2026 Winter Olympics Speed Skating",
@@ -3932,7 +4162,15 @@
           "away_team": "Lazio",
           "away_team_id": 4399,
           "away_team_logo_id": "4399",
-          "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/italy/ss lazio.png"
+          "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/italy/ss lazio.png",
+          "mapped_channels": [
+            {
+              "channel_name": "Premier Sports 2",
+              "channel_id": 867894738,
+              "iptv_name": "Premier Sports 2",
+              "logo": "http://starapk1.com/logo/football.png"
+            }
+          ]
         },
         {
           "name": "Sunderland v Liverpool",
@@ -3994,6 +4232,14 @@
           "competition": "Ladies European Tour",
           "channels": [
             "Sky Sports Golf"
+          ],
+          "mapped_channels": [
+            {
+              "channel_name": "Sky Sports Golf",
+              "channel_id": 1367869177,
+              "iptv_name": "Sky Sports Golf 50FPS",
+              "logo": null
+            }
           ]
         },
         {
@@ -4007,7 +4253,15 @@
             "NBA League Pass"
           ],
           "home_team": "Charlotte Hornets",
-          "away_team": "Atlanta Hawks"
+          "away_team": "Atlanta Hawks",
+          "mapped_channels": [
+            {
+              "channel_name": "NBA League Pass",
+              "channel_id": 604898460,
+              "iptv_name": "NBA League PASS",
+              "logo": "http://i.postimg.cc/hjf15W4k/nbatv.png"
+            }
+          ]
         },
         {
           "name": "Cleveland Cavaliers v Washington Wizards",
@@ -4020,7 +4274,15 @@
             "NBA League Pass"
           ],
           "home_team": "Cleveland Cavaliers",
-          "away_team": "Washington Wizards"
+          "away_team": "Washington Wizards",
+          "mapped_channels": [
+            {
+              "channel_name": "NBA League Pass",
+              "channel_id": 604898460,
+              "iptv_name": "NBA League PASS",
+              "logo": "http://i.postimg.cc/hjf15W4k/nbatv.png"
+            }
+          ]
         },
         {
           "name": "Orlando Magic v Milwaukee Bucks",
@@ -4033,7 +4295,15 @@
             "NBA League Pass"
           ],
           "home_team": "Orlando Magic",
-          "away_team": "Milwaukee Bucks"
+          "away_team": "Milwaukee Bucks",
+          "mapped_channels": [
+            {
+              "channel_name": "NBA League Pass",
+              "channel_id": 604898460,
+              "iptv_name": "NBA League PASS",
+              "logo": "http://i.postimg.cc/hjf15W4k/nbatv.png"
+            }
+          ]
         }
       ]
     },
@@ -4050,6 +4320,14 @@
           "competition": "Ladies European Tour",
           "channels": [
             "Sky Sports Golf"
+          ],
+          "mapped_channels": [
+            {
+              "channel_name": "Sky Sports Golf",
+              "channel_id": 1367869177,
+              "iptv_name": "Sky Sports Golf 50FPS",
+              "logo": null
+            }
           ]
         },
         {
@@ -4063,7 +4341,15 @@
             "NBA League Pass"
           ],
           "home_team": "Charlotte Hornets",
-          "away_team": "Atlanta Hawks"
+          "away_team": "Atlanta Hawks",
+          "mapped_channels": [
+            {
+              "channel_name": "NBA League Pass",
+              "channel_id": 604898460,
+              "iptv_name": "NBA League PASS",
+              "logo": "http://i.postimg.cc/hjf15W4k/nbatv.png"
+            }
+          ]
         },
         {
           "name": "Cleveland Cavaliers v Washington Wizards",
@@ -4076,7 +4362,15 @@
             "NBA League Pass"
           ],
           "home_team": "Cleveland Cavaliers",
-          "away_team": "Washington Wizards"
+          "away_team": "Washington Wizards",
+          "mapped_channels": [
+            {
+              "channel_name": "NBA League Pass",
+              "channel_id": 604898460,
+              "iptv_name": "NBA League PASS",
+              "logo": "http://i.postimg.cc/hjf15W4k/nbatv.png"
+            }
+          ]
         },
         {
           "name": "Orlando Magic v Milwaukee Bucks",
@@ -4089,7 +4383,15 @@
             "NBA League Pass"
           ],
           "home_team": "Orlando Magic",
-          "away_team": "Milwaukee Bucks"
+          "away_team": "Milwaukee Bucks",
+          "mapped_channels": [
+            {
+              "channel_name": "NBA League Pass",
+              "channel_id": 604898460,
+              "iptv_name": "NBA League PASS",
+              "logo": "http://i.postimg.cc/hjf15W4k/nbatv.png"
+            }
+          ]
         },
         {
           "name": "Boston Celtics v Chicago Bulls",
@@ -4102,7 +4404,15 @@
             "NBA League Pass"
           ],
           "home_team": "Boston Celtics",
-          "away_team": "Chicago Bulls"
+          "away_team": "Chicago Bulls",
+          "mapped_channels": [
+            {
+              "channel_name": "NBA League Pass",
+              "channel_id": 604898460,
+              "iptv_name": "NBA League PASS",
+              "logo": "http://i.postimg.cc/hjf15W4k/nbatv.png"
+            }
+          ]
         },
         {
           "name": "Brooklyn Nets v Indiana Pacers",
@@ -4115,7 +4425,15 @@
             "NBA League Pass"
           ],
           "home_team": "Brooklyn Nets",
-          "away_team": "Indiana Pacers"
+          "away_team": "Indiana Pacers",
+          "mapped_channels": [
+            {
+              "channel_name": "NBA League Pass",
+              "channel_id": 604898460,
+              "iptv_name": "NBA League PASS",
+              "logo": "http://i.postimg.cc/hjf15W4k/nbatv.png"
+            }
+          ]
         },
         {
           "name": "Philadelphia 76ers v New York Knicks",
@@ -4128,7 +4446,15 @@
             "NBA League Pass"
           ],
           "home_team": "Philadelphia 76ers",
-          "away_team": "New York Knicks"
+          "away_team": "New York Knicks",
+          "mapped_channels": [
+            {
+              "channel_name": "NBA League Pass",
+              "channel_id": 604898460,
+              "iptv_name": "NBA League PASS",
+              "logo": "http://i.postimg.cc/hjf15W4k/nbatv.png"
+            }
+          ]
         },
         {
           "name": "Toronto Raptors v Detroit Pistons",
@@ -4141,7 +4467,15 @@
             "NBA League Pass"
           ],
           "home_team": "Toronto Raptors",
-          "away_team": "Detroit Pistons"
+          "away_team": "Detroit Pistons",
+          "mapped_channels": [
+            {
+              "channel_name": "NBA League Pass",
+              "channel_id": 604898460,
+              "iptv_name": "NBA League PASS",
+              "logo": "http://i.postimg.cc/hjf15W4k/nbatv.png"
+            }
+          ]
         },
         {
           "name": "Houston Rockets v Los Angeles Clippers",
@@ -4154,7 +4488,15 @@
             "NBA League Pass"
           ],
           "home_team": "Houston Rockets",
-          "away_team": "Los Angeles Clippers"
+          "away_team": "Los Angeles Clippers",
+          "mapped_channels": [
+            {
+              "channel_name": "NBA League Pass",
+              "channel_id": 604898460,
+              "iptv_name": "NBA League PASS",
+              "logo": "http://i.postimg.cc/hjf15W4k/nbatv.png"
+            }
+          ]
         },
         {
           "name": "Minnesota Timberwolves v Portland Trail Blazers",
@@ -4167,7 +4509,15 @@
             "NBA League Pass"
           ],
           "home_team": "Minnesota Timberwolves",
-          "away_team": "Portland Trail Blazers"
+          "away_team": "Portland Trail Blazers",
+          "mapped_channels": [
+            {
+              "channel_name": "NBA League Pass",
+              "channel_id": 604898460,
+              "iptv_name": "NBA League PASS",
+              "logo": "http://i.postimg.cc/hjf15W4k/nbatv.png"
+            }
+          ]
         },
         {
           "name": "New Orleans Pelicans v Miami Heat",
@@ -4180,7 +4530,15 @@
             "NBA League Pass"
           ],
           "home_team": "New Orleans Pelicans",
-          "away_team": "Miami Heat"
+          "away_team": "Miami Heat",
+          "mapped_channels": [
+            {
+              "channel_name": "NBA League Pass",
+              "channel_id": 604898460,
+              "iptv_name": "NBA League PASS",
+              "logo": "http://i.postimg.cc/hjf15W4k/nbatv.png"
+            }
+          ]
         },
         {
           "name": "LIV Golf Adelaide",
@@ -4240,7 +4598,15 @@
             "NBA League Pass"
           ],
           "home_team": "Phoenix Suns",
-          "away_team": "Oklahoma City Thunder"
+          "away_team": "Oklahoma City Thunder",
+          "mapped_channels": [
+            {
+              "channel_name": "NBA League Pass",
+              "channel_id": 604898460,
+              "iptv_name": "NBA League PASS",
+              "logo": "http://i.postimg.cc/hjf15W4k/nbatv.png"
+            }
+          ]
         },
         {
           "name": "Utah Jazz v Sacramento Kings",
@@ -4253,7 +4619,15 @@
             "NBA League Pass"
           ],
           "home_team": "Utah Jazz",
-          "away_team": "Sacramento Kings"
+          "away_team": "Sacramento Kings",
+          "mapped_channels": [
+            {
+              "channel_name": "NBA League Pass",
+              "channel_id": 604898460,
+              "iptv_name": "NBA League PASS",
+              "logo": "http://i.postimg.cc/hjf15W4k/nbatv.png"
+            }
+          ]
         },
         {
           "name": "Denver Nuggets v Memphis Grizzlies",
@@ -4266,7 +4640,15 @@
             "NBA League Pass"
           ],
           "home_team": "Denver Nuggets",
-          "away_team": "Memphis Grizzlies"
+          "away_team": "Memphis Grizzlies",
+          "mapped_channels": [
+            {
+              "channel_name": "NBA League Pass",
+              "channel_id": 604898460,
+              "iptv_name": "NBA League PASS",
+              "logo": "http://i.postimg.cc/hjf15W4k/nbatv.png"
+            }
+          ]
         },
         {
           "name": "Golden State Warriors v San Antonio Spurs",
@@ -4279,7 +4661,15 @@
             "NBA League Pass"
           ],
           "home_team": "Golden State Warriors",
-          "away_team": "San Antonio Spurs"
+          "away_team": "San Antonio Spurs",
+          "mapped_channels": [
+            {
+              "channel_name": "NBA League Pass",
+              "channel_id": 604898460,
+              "iptv_name": "NBA League PASS",
+              "logo": "http://i.postimg.cc/hjf15W4k/nbatv.png"
+            }
+          ]
         },
         {
           "name": "Sri Lanka v Oman",
@@ -4388,7 +4778,15 @@
             "Watch NRL"
           ],
           "home_team": "Dolphins",
-          "away_team": "Gold Coast Titans"
+          "away_team": "Gold Coast Titans",
+          "mapped_channels": [
+            {
+              "channel_name": "Sky Sports Action",
+              "channel_id": 1400637249,
+              "iptv_name": "Sky Sports Action  UK",
+              "logo": "https://logo.mypanel.one/tv-logos-main/tv-logos-main/countries/united-kingdom/sky-sports-action-icon-uk.png"
+            }
+          ]
         },
         {
           "name": "Winter Olympics",
@@ -4604,6 +5002,14 @@
           "competition": "Ladies European Tour",
           "channels": [
             "Sky Sports Golf"
+          ],
+          "mapped_channels": [
+            {
+              "channel_name": "Sky Sports Golf",
+              "channel_id": 1367869177,
+              "iptv_name": "Sky Sports Golf 50FPS",
+              "logo": null
+            }
           ]
         },
         {
@@ -4983,6 +5389,14 @@
           "competition": "US PGA Tour",
           "channels": [
             "Sky Sports Golf"
+          ],
+          "mapped_channels": [
+            {
+              "channel_name": "Sky Sports Golf",
+              "channel_id": 1367869177,
+              "iptv_name": "Sky Sports Golf 50FPS",
+              "logo": null
+            }
           ]
         },
         {
@@ -5147,6 +5561,12 @@
           ],
           "mapped_channels": [
             {
+              "channel_name": "Sky Sports Action",
+              "channel_id": 1400637249,
+              "iptv_name": "Sky Sports Action  UK",
+              "logo": "https://logo.mypanel.one/tv-logos-main/tv-logos-main/countries/united-kingdom/sky-sports-action-icon-uk.png"
+            },
+            {
               "channel_name": "Sky Sports Main Event",
               "channel_id": 1401423786,
               "iptv_name": "Sky Sports Main Event",
@@ -5245,7 +5665,15 @@
             "YouTube"
           ],
           "home_team": "USON Nevers",
-          "away_team": "Colomiers"
+          "away_team": "Colomiers",
+          "mapped_channels": [
+            {
+              "channel_name": "YouTube",
+              "channel_id": 277611183,
+              "iptv_name": "YOUTUBE 01",
+              "logo": "http://i.postimg.cc/sX1wLXXQ/youtube.jpg"
+            }
+          ]
         },
         {
           "name": "2026 Winter Olympics Speed Skating",
@@ -5349,6 +5777,12 @@
               "channel_id": 1401423786,
               "iptv_name": "Sky Sports Main Event",
               "logo": "https://i.ibb.co/gwCk7Bc/sky-m-event-uhd.png"
+            },
+            {
+              "channel_name": "Sky Sports Golf",
+              "channel_id": 1367869177,
+              "iptv_name": "Sky Sports Golf 50FPS",
+              "logo": null
             }
           ]
         },
@@ -5382,6 +5816,14 @@
           "competition": "Ladies European Tour",
           "channels": [
             "Sky Sports Golf"
+          ],
+          "mapped_channels": [
+            {
+              "channel_name": "Sky Sports Golf",
+              "channel_id": 1367869177,
+              "iptv_name": "Sky Sports Golf 50FPS",
+              "logo": null
+            }
           ]
         }
       ]
@@ -5399,6 +5841,14 @@
           "competition": "Ladies European Tour",
           "channels": [
             "Sky Sports Golf"
+          ],
+          "mapped_channels": [
+            {
+              "channel_name": "Sky Sports Golf",
+              "channel_id": 1367869177,
+              "iptv_name": "Sky Sports Golf 50FPS",
+              "logo": null
+            }
           ]
         },
         {
@@ -5472,7 +5922,15 @@
             "NBA League Pass"
           ],
           "home_team": "Utah Jazz",
-          "away_team": "Portland Trail Blazers"
+          "away_team": "Portland Trail Blazers",
+          "mapped_channels": [
+            {
+              "channel_name": "NBA League Pass",
+              "channel_id": 604898460,
+              "iptv_name": "NBA League PASS",
+              "logo": "http://i.postimg.cc/hjf15W4k/nbatv.png"
+            }
+          ]
         },
         {
           "name": "Los Angeles Lakers v Dallas Mavericks",
@@ -5567,7 +6025,15 @@
             "Watch NRL"
           ],
           "home_team": "Canberra Raiders",
-          "away_team": "Melbourne Storm"
+          "away_team": "Melbourne Storm",
+          "mapped_channels": [
+            {
+              "channel_name": "Sky Sports Action",
+              "channel_id": 1400637249,
+              "iptv_name": "Sky Sports Action  UK",
+              "logo": "https://logo.mypanel.one/tv-logos-main/tv-logos-main/countries/united-kingdom/sky-sports-action-icon-uk.png"
+            }
+          ]
         },
         {
           "name": "Brisbane Roar Women v Sydney FC Women",
@@ -5727,7 +6193,15 @@
             "Watch NRL"
           ],
           "home_team": "North Queensland Cowboys",
-          "away_team": "Penrith Panthers"
+          "away_team": "Penrith Panthers",
+          "mapped_channels": [
+            {
+              "channel_name": "Sky Sports Action",
+              "channel_id": 1400637249,
+              "iptv_name": "Sky Sports Action  UK",
+              "logo": "https://logo.mypanel.one/tv-logos-main/tv-logos-main/countries/united-kingdom/sky-sports-action-icon-uk.png"
+            }
+          ]
         },
         {
           "name": "Winter Olympics",
@@ -5868,6 +6342,14 @@
           "competition": "Ladies European Tour",
           "channels": [
             "Sky Sports Golf"
+          ],
+          "mapped_channels": [
+            {
+              "channel_name": "Sky Sports Golf",
+              "channel_id": 1367869177,
+              "iptv_name": "Sky Sports Golf 50FPS",
+              "logo": null
+            }
           ]
         },
         {
@@ -6427,6 +6909,12 @@
               "channel_id": 1401423786,
               "iptv_name": "Sky Sports Main Event",
               "logo": "https://i.ibb.co/gwCk7Bc/sky-m-event-uhd.png"
+            },
+            {
+              "channel_name": "Sky Sports Golf",
+              "channel_id": 1367869177,
+              "iptv_name": "Sky Sports Golf 50FPS",
+              "logo": null
             }
           ]
         },
@@ -6561,7 +7049,15 @@
           "away_team": "Koln Women",
           "home_team_id": 3486,
           "home_team_logo_id": "3486",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/germany/bayer leverkusen.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/germany/bayer leverkusen.png",
+          "mapped_channels": [
+            {
+              "channel_name": "DAZN",
+              "channel_id": 47776046,
+              "iptv_name": "DAZN",
+              "logo": "http://2.bp.blogspot.com/-u13bfQHZkvs/XmUO_j1oEgI/AAAAAAAACVw/z-2xZpbmHiIew6ut2UB0AvDLtPDNlBbmQCK4BGAYYCw/s400/DANZ.png"
+            }
+          ]
         },
         {
           "name": "Rennes v Paris Saint Germain",
@@ -6577,7 +7073,15 @@
           "away_team": "Paris Saint Germain",
           "home_team_id": 3245,
           "home_team_logo_id": "3245",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/france/la tour d'auvergne de rennes.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/france/la tour d'auvergne de rennes.png",
+          "mapped_channels": [
+            {
+              "channel_name": "Ligue 1+",
+              "channel_id": 419758884,
+              "iptv_name": "LIGUE 1 01 (EN",
+              "logo": null
+            }
+          ]
         },
         {
           "name": "2026 Winter Olympics Skeleton",
@@ -6779,7 +7283,15 @@
           "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/netherlands/rkav volendam.png",
           "away_team_id": 5170,
           "away_team_logo_id": "5170",
-          "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/netherlands/psv eindhoven.png"
+          "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/netherlands/psv eindhoven.png",
+          "mapped_channels": [
+            {
+              "channel_name": "Premier Sports 2",
+              "channel_id": 867894738,
+              "iptv_name": "Premier Sports 2",
+              "logo": "http://starapk1.com/logo/football.png"
+            }
+          ]
         },
         {
           "name": "Derby County U21 v Manchester City U21",
@@ -6798,7 +7310,15 @@
           "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/derby county fc.png",
           "away_team_id": 2908,
           "away_team_logo_id": "2908",
-          "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/manchester city fc.png"
+          "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/manchester city fc.png",
+          "mapped_channels": [
+            {
+              "channel_name": "CITY+",
+              "channel_id": 3407548544,
+              "iptv_name": "stan] ???? LIVE: Arsenal v Manchester City WSL 202526",
+              "logo": null
+            }
+          ]
         },
         {
           "name": "Birmingham U21 v Chelsea U21",
@@ -6933,7 +7453,15 @@
           "away_team": "Waterford United",
           "home_team_id": 4172,
           "home_team_logo_id": "4172",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/ireland/drogheda united fc.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/ireland/drogheda united fc.png",
+          "mapped_channels": [
+            {
+              "channel_name": "LOITV",
+              "channel_id": 265224910,
+              "iptv_name": "IE LoiTV 1",
+              "logo": "https://logos.mypanel.one/logos/LogoEVDTV/Other/by_category/IE%20LoiTV.png"
+            }
+          ]
         },
         {
           "name": "Dundalk v Derry City",
@@ -6952,7 +7480,15 @@
           "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/ireland/dundalk fc.png",
           "away_team_id": 4171,
           "away_team_logo_id": "4171",
-          "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/ireland/derry city fc.png"
+          "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/ireland/derry city fc.png",
+          "mapped_channels": [
+            {
+              "channel_name": "LOITV",
+              "channel_id": 265224910,
+              "iptv_name": "IE LoiTV 1",
+              "logo": "https://logos.mypanel.one/logos/LogoEVDTV/Other/by_category/IE%20LoiTV.png"
+            }
+          ]
         },
         {
           "name": "St Patricks Athletic v Galway United",
@@ -6965,7 +7501,15 @@
             "LOITV"
           ],
           "home_team": "St Patricks Athletic",
-          "away_team": "Galway United"
+          "away_team": "Galway United",
+          "mapped_channels": [
+            {
+              "channel_name": "LOITV",
+              "channel_id": 265224910,
+              "iptv_name": "IE LoiTV 1",
+              "logo": "https://logos.mypanel.one/logos/LogoEVDTV/Other/by_category/IE%20LoiTV.png"
+            }
+          ]
         },
         {
           "name": "London Scottish v Worcester",
@@ -7069,7 +7613,15 @@
           "away_team": "Nantes",
           "away_team_id": 3216,
           "away_team_logo_id": "3216",
-          "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/france/fc nantes.png"
+          "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/france/fc nantes.png",
+          "mapped_channels": [
+            {
+              "channel_name": "Ligue 1+",
+              "channel_id": 419758884,
+              "iptv_name": "LIGUE 1 01 (EN",
+              "logo": null
+            }
+          ]
         },
         {
           "name": "Pisa SC v AC Milan",
@@ -7085,7 +7637,15 @@
           "away_team": "AC Milan",
           "away_team_id": 4220,
           "away_team_logo_id": "4220",
-          "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/italy/ac milan.png"
+          "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/italy/ac milan.png",
+          "mapped_channels": [
+            {
+              "channel_name": "DAZN",
+              "channel_id": 47776046,
+              "iptv_name": "DAZN",
+              "logo": "http://2.bp.blogspot.com/-u13bfQHZkvs/XmUO_j1oEgI/AAAAAAAACVw/z-2xZpbmHiIew6ut2UB0AvDLtPDNlBbmQCK4BGAYYCw/s400/DANZ.png"
+            }
+          ]
         },
         {
           "name": "Warrington Wolves v St Helens",
@@ -7103,6 +7663,12 @@
           "home_team": "Warrington Wolves",
           "away_team": "St Helens",
           "mapped_channels": [
+            {
+              "channel_name": "Sky Sports Action",
+              "channel_id": 1400637249,
+              "iptv_name": "Sky Sports Action  UK",
+              "logo": "https://logo.mypanel.one/tv-logos-main/tv-logos-main/countries/united-kingdom/sky-sports-action-icon-uk.png"
+            },
             {
               "channel_name": "Sky Sports Main Event",
               "channel_id": 1401423786,
@@ -7155,7 +7721,15 @@
           "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/ireland/shelbourne fc.png",
           "away_team_id": 4179,
           "away_team_logo_id": "4179",
-          "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/ireland/shamrock rovers fc.png"
+          "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/ireland/shamrock rovers fc.png",
+          "mapped_channels": [
+            {
+              "channel_name": "LOITV",
+              "channel_id": 265224910,
+              "iptv_name": "IE LoiTV 1",
+              "logo": "https://logos.mypanel.one/logos/LogoEVDTV/Other/by_category/IE%20LoiTV.png"
+            }
+          ]
         },
         {
           "name": "Coventry v Richmond",
@@ -7303,6 +7877,12 @@
               "channel_id": 1401423786,
               "iptv_name": "Sky Sports Main Event",
               "logo": "https://i.ibb.co/gwCk7Bc/sky-m-event-uhd.png"
+            },
+            {
+              "channel_name": "Sky Sports Golf",
+              "channel_id": 1367869177,
+              "iptv_name": "Sky Sports Golf 50FPS",
+              "logo": null
             }
           ]
         },
@@ -7320,7 +7900,15 @@
           "away_team": "Lanus",
           "home_team_id": 1120,
           "home_team_logo_id": "1120",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/panama/ca independiente.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/panama/ca independiente.png",
+          "mapped_channels": [
+            {
+              "channel_name": "Premier Sports 2",
+              "channel_id": 867894738,
+              "iptv_name": "Premier Sports 2",
+              "logo": "http://starapk1.com/logo/football.png"
+            }
+          ]
         },
         {
           "name": "Asia Pacific Womens Amateur Championship",
@@ -7331,6 +7919,14 @@
           "competition": "Ladies European Tour",
           "channels": [
             "Sky Sports Golf"
+          ],
+          "mapped_channels": [
+            {
+              "channel_name": "Sky Sports Golf",
+              "channel_id": 1367869177,
+              "iptv_name": "Sky Sports Golf 50FPS",
+              "logo": null
+            }
           ]
         }
       ]
@@ -7348,6 +7944,14 @@
           "competition": "Ladies European Tour",
           "channels": [
             "Sky Sports Golf"
+          ],
+          "mapped_channels": [
+            {
+              "channel_name": "Sky Sports Golf",
+              "channel_id": 1367869177,
+              "iptv_name": "Sky Sports Golf 50FPS",
+              "logo": null
+            }
           ]
         },
         {
@@ -7419,7 +8023,15 @@
             "Watch NRL"
           ],
           "home_team": "New Zealand Warriors",
-          "away_team": "Manly Warrinagh Sea Eagles"
+          "away_team": "Manly Warrinagh Sea Eagles",
+          "mapped_channels": [
+            {
+              "channel_name": "Sky Sports Action",
+              "channel_id": 1400637249,
+              "iptv_name": "Sky Sports Action  UK",
+              "logo": "https://logo.mypanel.one/tv-logos-main/tv-logos-main/countries/united-kingdom/sky-sports-action-icon-uk.png"
+            }
+          ]
         },
         {
           "name": "LIV Golf Adelaide",
@@ -7487,7 +8099,15 @@
             "Watch NRL"
           ],
           "home_team": "Wests Tigers",
-          "away_team": "Sydney Roosters"
+          "away_team": "Sydney Roosters",
+          "mapped_channels": [
+            {
+              "channel_name": "Sky Sports Action",
+              "channel_id": 1400637249,
+              "iptv_name": "Sky Sports Action  UK",
+              "logo": "https://logo.mypanel.one/tv-logos-main/tv-logos-main/countries/united-kingdom/sky-sports-action-icon-uk.png"
+            }
+          ]
         },
         {
           "name": "Ireland v Oman",
@@ -7535,7 +8155,15 @@
             "Premier Sports Rugby"
           ],
           "home_team": "Shizuoka Blue Revs",
-          "away_team": "Spears Tokyo Bay"
+          "away_team": "Spears Tokyo Bay",
+          "mapped_channels": [
+            {
+              "channel_name": "Premier Sports Rugby",
+              "channel_id": 1203177270,
+              "iptv_name": "Premier Sport Rugby",
+              "logo": null
+            }
+          ]
         },
         {
           "name": "Melbourne Victory v Brisbane Roar",
@@ -7590,7 +8218,15 @@
             "Watch NRL"
           ],
           "home_team": "Newcastle Knights",
-          "away_team": "Canterbury Bulldogs"
+          "away_team": "Canterbury Bulldogs",
+          "mapped_channels": [
+            {
+              "channel_name": "Sky Sports Action",
+              "channel_id": 1400637249,
+              "iptv_name": "Sky Sports Action  UK",
+              "logo": "https://logo.mypanel.one/tv-logos-main/tv-logos-main/countries/united-kingdom/sky-sports-action-icon-uk.png"
+            }
+          ]
         },
         {
           "name": "BWF World Tour",
@@ -7735,7 +8371,15 @@
             "Watch NRL"
           ],
           "home_team": "St George Illawarra Dragons",
-          "away_team": "South Sydney Rabbitohs"
+          "away_team": "South Sydney Rabbitohs",
+          "mapped_channels": [
+            {
+              "channel_name": "Sky Sports Action",
+              "channel_id": 1400637249,
+              "iptv_name": "Sky Sports Action  UK",
+              "logo": "https://logo.mypanel.one/tv-logos-main/tv-logos-main/countries/united-kingdom/sky-sports-action-icon-uk.png"
+            }
+          ]
         },
         {
           "name": "2026 Winter Olympics Freestyle Skiing",
@@ -7801,6 +8445,14 @@
           "competition": "Ladies European Tour",
           "channels": [
             "Sky Sports Golf"
+          ],
+          "mapped_channels": [
+            {
+              "channel_name": "Sky Sports Golf",
+              "channel_id": 1367869177,
+              "iptv_name": "Sky Sports Golf 50FPS",
+              "logo": null
+            }
           ]
         },
         {
@@ -7874,7 +8526,21 @@
             "CITY+"
           ],
           "home_team": "Manchester City U18s",
-          "away_team": "Manchester United U18s"
+          "away_team": "Manchester United U18s",
+          "mapped_channels": [
+            {
+              "channel_name": "MUTV",
+              "channel_id": 616563975,
+              "iptv_name": "MUTV VIP Sports",
+              "logo": null
+            },
+            {
+              "channel_name": "CITY+",
+              "channel_id": 3407548544,
+              "iptv_name": "stan] ???? LIVE: Arsenal v Manchester City WSL 202526",
+              "logo": null
+            }
+          ]
         },
         {
           "name": "Freiburg Women v Union Berlin Women",
@@ -7890,7 +8556,15 @@
           "away_team": "Union Berlin Women",
           "home_team_id": 3621,
           "home_team_logo_id": "3621",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/germany/sc freiburg.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/germany/sc freiburg.png",
+          "mapped_channels": [
+            {
+              "channel_name": "DAZN",
+              "channel_id": 47776046,
+              "iptv_name": "DAZN",
+              "logo": "http://2.bp.blogspot.com/-u13bfQHZkvs/XmUO_j1oEgI/AAAAAAAACVw/z-2xZpbmHiIew6ut2UB0AvDLtPDNlBbmQCK4BGAYYCw/s400/DANZ.png"
+            }
+          ]
         },
         {
           "name": "Crystal Palace U18 v Tottenham Hotspur U18",
@@ -8203,7 +8877,15 @@
             "YouTube"
           ],
           "home_team": "Brython Thunder",
-          "away_team": "Edinburgh"
+          "away_team": "Edinburgh",
+          "mapped_channels": [
+            {
+              "channel_name": "YouTube",
+              "channel_id": 277611183,
+              "iptv_name": "YOUTUBE 01",
+              "logo": "http://i.postimg.cc/sX1wLXXQ/youtube.jpg"
+            }
+          ]
         },
         {
           "name": "Penybont v Connahs quay nomads",
@@ -8477,7 +9159,15 @@
             "Premier Sports 2"
           ],
           "home_team": "Bordeaux Begles",
-          "away_team": "Castres"
+          "away_team": "Castres",
+          "mapped_channels": [
+            {
+              "channel_name": "Premier Sports 2",
+              "channel_id": 867894738,
+              "iptv_name": "Premier Sports 2",
+              "logo": "http://starapk1.com/logo/football.png"
+            }
+          ]
         },
         {
           "name": "Ampthill v Chinnor",
@@ -8650,7 +9340,15 @@
             "YouTube"
           ],
           "home_team": "Ealing Trailfinders Women",
-          "away_team": "Sale Sharks Women"
+          "away_team": "Sale Sharks Women",
+          "mapped_channels": [
+            {
+              "channel_name": "YouTube",
+              "channel_id": 277611183,
+              "iptv_name": "YOUTUBE 01",
+              "logo": "http://i.postimg.cc/sX1wLXXQ/youtube.jpg"
+            }
+          ]
         },
         {
           "name": "Figueira Champions Classic",
@@ -8699,7 +9397,15 @@
           "away_team": "Pau",
           "away_team_id": 3270,
           "away_team_logo_id": "3270",
-          "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/france/pau fc.png"
+          "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/france/pau fc.png",
+          "mapped_channels": [
+            {
+              "channel_name": "Premier Sports 2",
+              "channel_id": 867894738,
+              "iptv_name": "Premier Sports 2",
+              "logo": "http://starapk1.com/logo/football.png"
+            }
+          ]
         },
         {
           "name": "Al Ain v Al Nasr",
@@ -8827,6 +9533,12 @@
           ],
           "mapped_channels": [
             {
+              "channel_name": "Sky Sports Golf",
+              "channel_id": 1367869177,
+              "iptv_name": "Sky Sports Golf 50FPS",
+              "logo": null
+            },
+            {
               "channel_name": "Sky Sports Main Event",
               "channel_id": 1401423786,
               "iptv_name": "Sky Sports Main Event",
@@ -8848,7 +9560,15 @@
           "away_team": "Atalanta",
           "home_team_id": 4399,
           "home_team_logo_id": "4399",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/italy/ss lazio.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/italy/ss lazio.png",
+          "mapped_channels": [
+            {
+              "channel_name": "DAZN",
+              "channel_id": 47776046,
+              "iptv_name": "DAZN",
+              "logo": "http://2.bp.blogspot.com/-u13bfQHZkvs/XmUO_j1oEgI/AAAAAAAACVw/z-2xZpbmHiIew6ut2UB0AvDLtPDNlBbmQCK4BGAYYCw/s400/DANZ.png"
+            }
+          ]
         },
         {
           "name": "Formula E Jeddah ePrix",
@@ -9015,7 +9735,15 @@
           "away_team": "KAA Gent",
           "away_team_id": 1530,
           "away_team_logo_id": "1530",
-          "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/belgium/kaa gent.png"
+          "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/belgium/kaa gent.png",
+          "mapped_channels": [
+            {
+              "channel_name": "DAZN",
+              "channel_id": 47776046,
+              "iptv_name": "DAZN",
+              "logo": "http://2.bp.blogspot.com/-u13bfQHZkvs/XmUO_j1oEgI/AAAAAAAACVw/z-2xZpbmHiIew6ut2UB0AvDLtPDNlBbmQCK4BGAYYCw/s400/DANZ.png"
+            }
+          ]
         },
         {
           "name": "SBV Excelsior v AZ Alkmaar",
@@ -9044,7 +9772,15 @@
             "Ligue 1+"
           ],
           "home_team": "Lille",
-          "away_team": "Stade Brestois"
+          "away_team": "Stade Brestois",
+          "mapped_channels": [
+            {
+              "channel_name": "Ligue 1+",
+              "channel_id": 419758884,
+              "iptv_name": "LIGUE 1 01 (EN",
+              "logo": null
+            }
+          ]
         },
         {
           "name": "2026 Winter Olympics Curling",
@@ -9224,7 +9960,15 @@
           "away_team": "Bohemians Dublin",
           "home_team_id": 4181,
           "home_team_logo_id": "4181",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/ireland/sligo rovers fc.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/ireland/sligo rovers fc.png",
+          "mapped_channels": [
+            {
+              "channel_name": "LOITV",
+              "channel_id": 265224910,
+              "iptv_name": "IE LoiTV 1",
+              "logo": "https://logos.mypanel.one/logos/LogoEVDTV/Other/by_category/IE%20LoiTV.png"
+            }
+          ]
         },
         {
           "name": "Inter Milan v Juventus",
@@ -9245,6 +9989,12 @@
           "away_team_logo_id": "4367",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/italy/juventus fc.png",
           "mapped_channels": [
+            {
+              "channel_name": "DAZN",
+              "channel_id": 47776046,
+              "iptv_name": "DAZN",
+              "logo": "http://2.bp.blogspot.com/-u13bfQHZkvs/XmUO_j1oEgI/AAAAAAAACVw/z-2xZpbmHiIew6ut2UB0AvDLtPDNlBbmQCK4BGAYYCw/s400/DANZ.png"
+            },
             {
               "channel_name": "TNT Sports 3",
               "channel_id": 433325043,
@@ -9309,7 +10059,21 @@
           "away_team": "Clermont Auvergne",
           "home_team_id": 3293,
           "home_team_logo_id": "3293",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/france/sporting club de toulon.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/france/sporting club de toulon.png",
+          "mapped_channels": [
+            {
+              "channel_name": "Premier Sports 2",
+              "channel_id": 867894738,
+              "iptv_name": "Premier Sports 2",
+              "logo": "http://starapk1.com/logo/football.png"
+            },
+            {
+              "channel_name": "Premier Sports Rugby",
+              "channel_id": 1203177270,
+              "iptv_name": "Premier Sport Rugby",
+              "logo": null
+            }
+          ]
         },
         {
           "name": "Liverpool v Brighton",
@@ -9406,7 +10170,15 @@
           "away_team": "Lens",
           "away_team_id": 3275,
           "away_team_logo_id": "3275",
-          "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/france/racing club de lens.png"
+          "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/france/racing club de lens.png",
+          "mapped_channels": [
+            {
+              "channel_name": "Ligue 1+",
+              "channel_id": 419758884,
+              "iptv_name": "LIGUE 1 01 (EN",
+              "logo": null
+            }
+          ]
         },
         {
           "name": "2026 Winter Olympics Speed Skating",
@@ -9437,6 +10209,14 @@
           "competition": "Ladies European Tour",
           "channels": [
             "Sky Sports Golf"
+          ],
+          "mapped_channels": [
+            {
+              "channel_name": "Sky Sports Golf",
+              "channel_id": 1367869177,
+              "iptv_name": "Sky Sports Golf 50FPS",
+              "logo": null
+            }
           ]
         }
       ]
@@ -9454,6 +10234,14 @@
           "competition": "Ladies European Tour",
           "channels": [
             "Sky Sports Golf"
+          ],
+          "mapped_channels": [
+            {
+              "channel_name": "Sky Sports Golf",
+              "channel_id": 1367869177,
+              "iptv_name": "Sky Sports Golf 50FPS",
+              "logo": null
+            }
           ]
         },
         {
@@ -9490,6 +10278,12 @@
           "home_team": "Maori",
           "away_team": "Indigenous All Stars",
           "mapped_channels": [
+            {
+              "channel_name": "Sky Sports Action",
+              "channel_id": 1400637249,
+              "iptv_name": "Sky Sports Action  UK",
+              "logo": "https://logo.mypanel.one/tv-logos-main/tv-logos-main/countries/united-kingdom/sky-sports-action-icon-uk.png"
+            },
             {
               "channel_name": "Sky Sports+",
               "channel_id": 1294141326,
@@ -9541,6 +10335,12 @@
           "away_team": "Indigenous All Stars",
           "mapped_channels": [
             {
+              "channel_name": "Sky Sports Action",
+              "channel_id": 1400637249,
+              "iptv_name": "Sky Sports Action  UK",
+              "logo": "https://logo.mypanel.one/tv-logos-main/tv-logos-main/countries/united-kingdom/sky-sports-action-icon-uk.png"
+            },
+            {
               "channel_name": "Sky Sports+",
               "channel_id": 1294141326,
               "iptv_name": "Sky Sport Bundesliga",
@@ -9591,7 +10391,15 @@
             "Premier Sports Rugby"
           ],
           "home_team": "Brave Lupus Tokyo",
-          "away_team": "Kobe Steelers"
+          "away_team": "Kobe Steelers",
+          "mapped_channels": [
+            {
+              "channel_name": "Premier Sports Rugby",
+              "channel_id": 1203177270,
+              "iptv_name": "Premier Sport Rugby",
+              "logo": null
+            }
+          ]
         },
         {
           "name": "Melbourne Victory Women v Melbourne City Women",
@@ -9654,7 +10462,15 @@
             "Watch NRL"
           ],
           "home_team": "Cronulla Sharks",
-          "away_team": "Parramatta Eels"
+          "away_team": "Parramatta Eels",
+          "mapped_channels": [
+            {
+              "channel_name": "Sky Sports Action",
+              "channel_id": 1400637249,
+              "iptv_name": "Sky Sports Action  UK",
+              "logo": "https://logo.mypanel.one/tv-logos-main/tv-logos-main/countries/united-kingdom/sky-sports-action-icon-uk.png"
+            }
+          ]
         },
         {
           "name": "BWF World Tour",
@@ -10000,7 +10816,15 @@
           "away_team": "Sassuolo",
           "away_team_id": 4460,
           "away_team_logo_id": "4460",
-          "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/italy/us sassuolo.png"
+          "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/italy/us sassuolo.png",
+          "mapped_channels": [
+            {
+              "channel_name": "DAZN",
+              "channel_id": 47776046,
+              "iptv_name": "DAZN",
+              "logo": "http://2.bp.blogspot.com/-u13bfQHZkvs/XmUO_j1oEgI/AAAAAAAACVw/z-2xZpbmHiIew6ut2UB0AvDLtPDNlBbmQCK4BGAYYCw/s400/DANZ.png"
+            }
+          ]
         },
         {
           "name": "Netherlands v Georgia",
@@ -10065,6 +10889,12 @@
               "channel_id": 1401423786,
               "iptv_name": "Sky Sports Main Event",
               "logo": "https://i.ibb.co/gwCk7Bc/sky-m-event-uhd.png"
+            },
+            {
+              "channel_name": "Sky Showcase",
+              "channel_id": 1410205602,
+              "iptv_name": "WowTV DE] Sky Showcase",
+              "logo": "http://x.skycpd.com:24321/u=StreamTeam/p=1ace234bef981ee2cadd7d608ee9a722558496687d7f860b2726dd8525c9d96c/logos/wowtvde-skyshowcase.png"
             }
           ]
         },
@@ -10286,7 +11116,15 @@
           "away_team": "Club Brugge KV",
           "away_team_id": 1505,
           "away_team_logo_id": "1505",
-          "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/belgium/club brugge kv.png"
+          "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/belgium/club brugge kv.png",
+          "mapped_channels": [
+            {
+              "channel_name": "DAZN",
+              "channel_id": 47776046,
+              "iptv_name": "DAZN",
+              "logo": "http://2.bp.blogspot.com/-u13bfQHZkvs/XmUO_j1oEgI/AAAAAAAACVw/z-2xZpbmHiIew6ut2UB0AvDLtPDNlBbmQCK4BGAYYCw/s400/DANZ.png"
+            }
+          ]
         },
         {
           "name": "Exeter Chiefs Women v Loughborough Lightning",
@@ -10299,7 +11137,15 @@
             "YouTube"
           ],
           "home_team": "Exeter Chiefs Women",
-          "away_team": "Loughborough Lightning"
+          "away_team": "Loughborough Lightning",
+          "mapped_channels": [
+            {
+              "channel_name": "YouTube",
+              "channel_id": 277611183,
+              "iptv_name": "YOUTUBE 01",
+              "logo": "http://i.postimg.cc/sX1wLXXQ/youtube.jpg"
+            }
+          ]
         },
         {
           "name": "Wolfsburg Women v SGS Essen",
@@ -10315,7 +11161,15 @@
           "away_team": "SGS Essen",
           "home_team_id": 3766,
           "home_team_logo_id": "3766",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/germany/usi lupo-martini wolfsburg.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/germany/usi lupo-martini wolfsburg.png",
+          "mapped_channels": [
+            {
+              "channel_name": "DAZN",
+              "channel_id": 47776046,
+              "iptv_name": "DAZN",
+              "logo": "http://2.bp.blogspot.com/-u13bfQHZkvs/XmUO_j1oEgI/AAAAAAAACVw/z-2xZpbmHiIew6ut2UB0AvDLtPDNlBbmQCK4BGAYYCw/s400/DANZ.png"
+            }
+          ]
         },
         {
           "name": "Real Oviedo v Athletic Bilbao",
@@ -10331,7 +11185,15 @@
           "away_team": "Athletic Bilbao",
           "home_team_id": 6623,
           "home_team_logo_id": "6623",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/spain/real oviedo.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/spain/real oviedo.png",
+          "mapped_channels": [
+            {
+              "channel_name": "Premier Sports 2",
+              "channel_id": 867894738,
+              "iptv_name": "Premier Sports 2",
+              "logo": "http://starapk1.com/logo/football.png"
+            }
+          ]
         },
         {
           "name": "2026 Winter Olympics Biathlon",
@@ -10626,7 +11488,15 @@
           "away_team": "Toulouse",
           "away_team_id": 3312,
           "away_team_logo_id": "3312",
-          "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/france/toulouse fc.png"
+          "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/france/toulouse fc.png",
+          "mapped_channels": [
+            {
+              "channel_name": "Ligue 1+",
+              "channel_id": 419758884,
+              "iptv_name": "LIGUE 1 01 (EN",
+              "logo": null
+            }
+          ]
         },
         {
           "name": "Liverpool U21 v West Brom U21",
@@ -10656,7 +11526,15 @@
             "DAZN"
           ],
           "home_team": "Cremonese",
-          "away_team": "Genoa"
+          "away_team": "Genoa",
+          "mapped_channels": [
+            {
+              "channel_name": "DAZN",
+              "channel_id": 47776046,
+              "iptv_name": "DAZN",
+              "logo": "http://2.bp.blogspot.com/-u13bfQHZkvs/XmUO_j1oEgI/AAAAAAAACVw/z-2xZpbmHiIew6ut2UB0AvDLtPDNlBbmQCK4BGAYYCw/s400/DANZ.png"
+            }
+          ]
         },
         {
           "name": "Parma v Verona",
@@ -10672,7 +11550,15 @@
           "away_team": "Verona",
           "away_team_id": 4212,
           "away_team_logo_id": "4212",
-          "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/italy/ac chievo verona.png"
+          "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/italy/ac chievo verona.png",
+          "mapped_channels": [
+            {
+              "channel_name": "DAZN",
+              "channel_id": 47776046,
+              "iptv_name": "DAZN",
+              "logo": "http://2.bp.blogspot.com/-u13bfQHZkvs/XmUO_j1oEgI/AAAAAAAACVw/z-2xZpbmHiIew6ut2UB0AvDLtPDNlBbmQCK4BGAYYCw/s400/DANZ.png"
+            }
+          ]
         },
         {
           "name": "2026 Winter Olympics Curling",
@@ -10899,7 +11785,15 @@
             "Premier Sports 2"
           ],
           "home_team": "Getafe",
-          "away_team": "Villarreal"
+          "away_team": "Villarreal",
+          "mapped_channels": [
+            {
+              "channel_name": "Premier Sports 2",
+              "channel_id": 867894738,
+              "iptv_name": "Premier Sports 2",
+              "logo": "http://starapk1.com/logo/football.png"
+            }
+          ]
         },
         {
           "name": "Pebble Beach Pro Am",
@@ -10910,6 +11804,14 @@
           "competition": "US PGA Tour",
           "channels": [
             "Sky Sports Golf"
+          ],
+          "mapped_channels": [
+            {
+              "channel_name": "Sky Sports Golf",
+              "channel_id": 1367869177,
+              "iptv_name": "Sky Sports Golf 50FPS",
+              "logo": null
+            }
           ]
         },
         {
@@ -10952,7 +11854,15 @@
             "Ligue 1+"
           ],
           "home_team": "Lorient",
-          "away_team": "Angers"
+          "away_team": "Angers",
+          "mapped_channels": [
+            {
+              "channel_name": "Ligue 1+",
+              "channel_id": 419758884,
+              "iptv_name": "LIGUE 1 01 (EN",
+              "logo": null
+            }
+          ]
         },
         {
           "name": "Metz v Auxerre",
@@ -10968,7 +11878,15 @@
           "away_team": "Auxerre",
           "away_team_id": 3137,
           "away_team_logo_id": "3137",
-          "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/france/aj auxerre.png"
+          "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/france/aj auxerre.png",
+          "mapped_channels": [
+            {
+              "channel_name": "Ligue 1+",
+              "channel_id": 419758884,
+              "iptv_name": "LIGUE 1 01 (EN",
+              "logo": null
+            }
+          ]
         },
         {
           "name": "Rangers v Hearts",
@@ -11127,7 +12045,15 @@
           "away_team": "Bologna",
           "home_team_id": 4427,
           "home_team_logo_id": "4427",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/italy/torino fc.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/italy/torino fc.png",
+          "mapped_channels": [
+            {
+              "channel_name": "DAZN",
+              "channel_id": 47776046,
+              "iptv_name": "DAZN",
+              "logo": "http://2.bp.blogspot.com/-u13bfQHZkvs/XmUO_j1oEgI/AAAAAAAACVw/z-2xZpbmHiIew6ut2UB0AvDLtPDNlBbmQCK4BGAYYCw/s400/DANZ.png"
+            }
+          ]
         },
         {
           "name": "Levante v Valencia",
@@ -11146,7 +12072,15 @@
           "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/italy/us sestri levante.png",
           "away_team_id": 6676,
           "away_team_logo_id": "6676",
-          "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/spain/valencia cf.png"
+          "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/spain/valencia cf.png",
+          "mapped_channels": [
+            {
+              "channel_name": "Premier Sports 2",
+              "channel_id": 867894738,
+              "iptv_name": "Premier Sports 2",
+              "logo": "http://starapk1.com/logo/football.png"
+            }
+          ]
         },
         {
           "name": "Anderlecht v La Louviere",
@@ -11159,7 +12093,15 @@
             "DAZN"
           ],
           "home_team": "Anderlecht",
-          "away_team": "La Louviere"
+          "away_team": "La Louviere",
+          "mapped_channels": [
+            {
+              "channel_name": "DAZN",
+              "channel_id": 47776046,
+              "iptv_name": "DAZN",
+              "logo": "http://2.bp.blogspot.com/-u13bfQHZkvs/XmUO_j1oEgI/AAAAAAAACVw/z-2xZpbmHiIew6ut2UB0AvDLtPDNlBbmQCK4BGAYYCw/s400/DANZ.png"
+            }
+          ]
         },
         {
           "name": "2026 Winter Olympics Curling",
@@ -11271,6 +12213,14 @@
           "competition": "NASCAR Sprint Cup Series 2026Season",
           "channels": [
             "Premier Sports 2"
+          ],
+          "mapped_channels": [
+            {
+              "channel_name": "Premier Sports 2",
+              "channel_id": 867894738,
+              "iptv_name": "Premier Sports 2",
+              "logo": "http://starapk1.com/logo/football.png"
+            }
           ]
         },
         {
@@ -11286,6 +12236,12 @@
             "Sky Sports Ultra HDR"
           ],
           "mapped_channels": [
+            {
+              "channel_name": "Sky Sports Golf",
+              "channel_id": 1367869177,
+              "iptv_name": "Sky Sports Golf 50FPS",
+              "logo": null
+            },
             {
               "channel_name": "Sky Sports Main Event",
               "channel_id": 1401423786,
@@ -11392,7 +12348,15 @@
           "away_team": "Nice",
           "home_team_id": 3263,
           "home_team_logo_id": "3263",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/france/olympique lyonnais.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/france/olympique lyonnais.png",
+          "mapped_channels": [
+            {
+              "channel_name": "Ligue 1+",
+              "channel_id": 419758884,
+              "iptv_name": "LIGUE 1 01 (EN",
+              "logo": null
+            }
+          ]
         },
         {
           "name": "Napoli v Roma",
@@ -11416,6 +12380,12 @@
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/italy/as roma.png",
           "mapped_channels": [
             {
+              "channel_name": "DAZN",
+              "channel_id": 47776046,
+              "iptv_name": "DAZN",
+              "logo": "http://2.bp.blogspot.com/-u13bfQHZkvs/XmUO_j1oEgI/AAAAAAAACVw/z-2xZpbmHiIew6ut2UB0AvDLtPDNlBbmQCK4BGAYYCw/s400/DANZ.png"
+            },
+            {
               "channel_name": "TNT Sports 1",
               "channel_id": 433325043,
               "iptv_name": "TNT Sports 1",
@@ -11437,7 +12407,15 @@
           "away_team": "Real Betis",
           "home_team_id": 6609,
           "home_team_logo_id": "6609",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/spain/rcd mallorca.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/spain/rcd mallorca.png",
+          "mapped_channels": [
+            {
+              "channel_name": "Premier Sports 2",
+              "channel_id": 867894738,
+              "iptv_name": "Premier Sports 2",
+              "logo": "http://starapk1.com/logo/football.png"
+            }
+          ]
         },
         {
           "name": "Stade Francais v Toulouse",
@@ -11453,7 +12431,15 @@
           "away_team": "Toulouse",
           "away_team_id": 3312,
           "away_team_logo_id": "3312",
-          "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/france/toulouse fc.png"
+          "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/france/toulouse fc.png",
+          "mapped_channels": [
+            {
+              "channel_name": "Premier Sports Rugby",
+              "channel_id": 1203177270,
+              "iptv_name": "Premier Sport Rugby",
+              "logo": null
+            }
+          ]
         },
         {
           "name": "USA v Germany",
@@ -11546,6 +12532,12 @@
           "away_team": "TBC",
           "mapped_channels": [
             {
+              "channel_name": "Sky Sports Action",
+              "channel_id": 1400637249,
+              "iptv_name": "Sky Sports Action  UK",
+              "logo": "https://logo.mypanel.one/tv-logos-main/tv-logos-main/countries/united-kingdom/sky-sports-action-icon-uk.png"
+            },
+            {
               "channel_name": "Sky Sports+",
               "channel_id": 1294141326,
               "iptv_name": "Sky Sport Bundesliga",
@@ -11564,7 +12556,15 @@
             "Premier Sports 2"
           ],
           "home_team": "Boca Juniors",
-          "away_team": "Club Atletico Platense"
+          "away_team": "Club Atletico Platense",
+          "mapped_channels": [
+            {
+              "channel_name": "Premier Sports 2",
+              "channel_id": 867894738,
+              "iptv_name": "Premier Sports 2",
+              "logo": "http://starapk1.com/logo/football.png"
+            }
+          ]
         }
       ]
     }
