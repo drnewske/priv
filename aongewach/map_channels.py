@@ -158,7 +158,7 @@ def map_channels():
     for day in schedule_data.get('schedule', []):
         for event in day.get('events', []):
             event_channels = event.get('channels', [])
-            mapped_channels = []
+            new_channels_list = []
             
             for sched_chan in event_channels:
                 cid = None
@@ -196,20 +196,18 @@ def map_channels():
                                 unique_channels_mapped += 1
                                 processed_channels.add(sched_chan)
 
-                # 3. Add to event if we have a valid ID
-                if cid and cid in id_to_channel:
-                    c_data = id_to_channel[cid]
-                    
-                    mapped_channels.append({
-                        "channel_name": sched_chan,
-                        "channel_id": cid,
-                        "iptv_name": c_data.get('name'),
-                        "logo": c_data.get('logo')  
-                    })
+                # 3. Format as "Name, ID" or "Name, null"
+                if cid:
+                    new_channels_list.append(f"{sched_chan}, {cid}")
+                    total_matches += 1
+                else:
+                    new_channels_list.append(f"{sched_chan}, null")
 
-            if mapped_channels:
-                event['mapped_channels'] = mapped_channels
-                total_matches += 1
+            # Update event with new format
+            event['channels'] = new_channels_list
+            # Remove legacy field if it exists (though we are building fresh here)
+            if 'mapped_channels' in event:
+                del event['mapped_channels']
 
     print(f"Mapping finished in {time.time() - t0:.2f}s")
     
