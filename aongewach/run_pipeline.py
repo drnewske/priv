@@ -24,10 +24,13 @@ def main():
     # 1. Scrape Schedule (Weekly)
     run_step("scrape_schedule.py", "Scraping Weekly Schedule from Wheresthematch.com")
     
-    # 2. Map Teams (Event Names -> Team IDs & Logos)
+    # 2. Fetch Teams (TheSportsDB)
+    run_step("fetch_teams_db.py", "Fetching Team Data from TheSportsDB")
+
+    # 3. Map Teams (Event Names -> Team IDs & Logos)
     run_step("map_schedule_to_teams.py", "Mapping Events to Team IDs and Logos")
     
-    # 3. Map Channels (Schedule Channels -> IPTV Stream URLs)
+    # 4. Map Channels (Schedule Channels -> IPTV Stream URLs)
     run_step("map_channels.py", "Mapping Schedule Channels to Playable IPTV Streams")
 
     print(f"\n{'='*50}")
