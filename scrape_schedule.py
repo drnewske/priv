@@ -6,24 +6,15 @@ import datetime
 import re
 import sys
 
-def scrape_schedule(date_str=None):
+def scrape_date(date_obj):
     """
-    Scrape schedule for a specific date (YYYYMMDD) or today if None.
+    Scrape schedule for a specific date object. Returns list of events.
     """
-    if not date_str:
-        today = datetime.date.today()
-        date_str = today.strftime("%Y%m%d")
-        formatted_date = today.strftime("%Y-%m-%d")
-    else:
-        try:
-            dt = datetime.datetime.strptime(date_str, "%Y%m%d")
-            formatted_date = dt.strftime("%Y-%m-%d")
-        except ValueError:
-            print(f"Error: Invalid date format '{date_str}'. Use YYYYMMDD.")
-            sys.exit(1)
-
+    date_str = date_obj.strftime("%Y%m%d")
+    formatted_date = date_obj.strftime("%Y-%m-%d")
+    
     url = f"https://www.wheresthematch.com/live-sport-on-tv/?showdatestart={date_str}"
-    print(f"Scraping schedule for {formatted_date} from {url}...")
+    print(f"  > Scraping {formatted_date}...", flush=True)
 
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
@@ -33,31 +24,24 @@ def scrape_schedule(date_str=None):
         response = requests.get(url, headers=headers, timeout=30)
         response.raise_for_status()
     except requests.RequestException as e:
-        print(f"Error fetching URL: {e}")
-        return
+        print(f"    x Error fetching {formatted_date}: {e}")
+        return []
 
     soup = BeautifulSoup(response.text, 'html.parser')
     
     events = []
-    
-    # Locate rows with schema.org BroadcastEvent or similar structure
-    # Based on user snippet, rows are <tr> with itemscope itemtype="...BroadcastEvent"
     rows = soup.find_all('tr', attrs={'itemscope': True, 'itemtype': re.compile(r'schema\.org/BroadcastEvent')})
     
-    print(f"Found {len(rows)} events.")
-
     for row in rows:
         try:
             event_data = {}
 
             # 1. Event Name
-            # Try itemprop="name" first, then fixture details
             name_elem = row.find(attrs={"itemprop": "name"})
             if name_elem:
                 event_data['name'] = name_elem.get('content', '').strip()
             
             if not event_data.get('name'):
-                 # Fallback: Extract from .fixture-details text
                  fixture_span = row.find('span', class_='fixture')
                  if fixture_span:
                      event_data['name'] = fixture_span.get_text(strip=True)
@@ -66,26 +50,31 @@ def scrape_schedule(date_str=None):
             start_date_elem = row.find(attrs={"itemprop": "startDate"})
             if start_date_elem:
                 start_iso = start_date_elem.get('content', '')
-                # Extract time part (e.g., 2026-02-09T05:30:00Z -> 05:30)
-                # Keep original ISO for machine readability
                 event_data['start_time_iso'] = start_iso
                 try:
+                    # Parse simplified ISO for display time
                     dt_obj = datetime.datetime.fromisoformat(start_iso.replace('Z', '+00:00'))
                     event_data['time'] = dt_obj.strftime("%H:%M")
                 except ValueError:
                     event_data['time'] = start_iso
             else:
-                # Fallback to .time class
                 time_span = row.find('span', class_='time')
                 if time_span:
                     event_data['time'] = time_span.get_text(strip=True)
 
-            # 3. Competition / Sport
+            # 3. Competition / Sport / Logo
             comp_td = row.find('td', class_='competition-name')
             if comp_td:
-                # Try image alt for sport
+                # Competition Logo/Icon
                 img = comp_td.find('img')
                 if img:
+                    # Prioritize data-src (lazy load) over src (placeholder)
+                    event_data['competition_logo'] = img.get('data-src') or img.get('src')
+                    
+                    # Fix relative URLs if any (though usually absolute on this site, good practice)
+                    if event_data['competition_logo'] and not event_data['competition_logo'].startswith('http'):
+                         event_data['competition_logo'] = "https://www.wheresthematch.com" + event_data['competition_logo']
+
                     event_data['sport'] = img.get('alt', '').replace('Sport icon', '').strip()
                 
                 # Competition name
@@ -93,54 +82,83 @@ def scrape_schedule(date_str=None):
                 if comp_link:
                     event_data['competition'] = comp_link.get_text(strip=True)
                 else:
-                    # check for span text if no link
                     event_data['competition'] = comp_td.get_text(" ", strip=True)
 
             # 4. Channels
             channels = []
             channel_td = row.find('td', class_='channel-details')
             if channel_td:
-                # Channels are usually images
                 channel_imgs = channel_td.find_all('img', class_='channel')
                 for img in channel_imgs:
                     channel_name = img.get('title') or img.get('alt')
                     if channel_name:
-                        # Clean up " logo" suffix if present
                         channel_name = channel_name.replace(' logo', '').strip()
                         channels.append(channel_name)
             
             event_data['channels'] = channels
             
-            # Add to list if we have at least a name and time
             if event_data.get('name'):
                 events.append(event_data)
 
         except Exception as e:
-            print(f"Error parsing row: {e}")
             continue
 
+    print(f"    v Found {len(events)} events.")
+    return events
+
+def scrape_week():
+    """Scrape the entire current week (Monday to Sunday)."""
+    today = datetime.date.today()
+    # Find start of current week (Monday)
+    start_of_week = today - datetime.timedelta(days=today.weekday())
+    
+    weekly_schedule = []
+    
+    print(f"Scraping weekly schedule starting Monday {start_of_week}...")
+    
+    for i in range(7):
+        current_date = start_of_week + datetime.timedelta(days=i)
+        day_events = scrape_date(current_date)
+        
+        weekly_schedule.append({
+            "date": current_date.strftime("%Y-%m-%d"),
+            "day": current_date.strftime("%A"),
+            "events": day_events
+        })
+    
     # Output file
-    output_file = f"schedule_{formatted_date}.json"
+    output_file = f"weekly_schedule.json"
     
     result = {
-        "date": formatted_date,
-        "source": "wheresthematch.com",
         "generated_at": datetime.datetime.utcnow().isoformat() + "Z",
-        "events": events
+        "source": "wheresthematch.com",
+        "schedule": weekly_schedule
     }
 
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
     
-    print(f"Successfully saved {len(events)} events to {output_file}")
-
+    print(f"\nSuccessfully saved weekly schedule to {output_file}")
 
 def main():
-    parser = argparse.ArgumentParser(description="Scrape sports schedule from wheresthematch.com")
-    parser.add_argument("--date", type=str, help="Date to scrape in YYYYMMDD format (e.g., 20260210)")
+    parser = argparse.ArgumentParser(description="Scrape sports schedule.")
+    parser.add_argument("--date", type=str, help="Single date (YYYYMMDD). If omitted, scrapes full week.")
     args = parser.parse_args()
     
-    scrape_schedule(args.date)
+    if args.date:
+        # Single date mode
+        try:
+            dt = datetime.datetime.strptime(args.date, "%Y%m%d")
+            events = scrape_date(dt)
+            output_file = f"schedule_{dt.strftime('%Y-%m-%d')}.json"
+            with open(output_file, 'w', encoding='utf-8') as f:
+                json.dump({"date": args.date, "events": events}, f, indent=2)
+            print(f"Saved {output_file}")
+        except ValueError:
+            print("Invalid date format.")
+    else:
+        # Weekly mode
+        scrape_week()
 
 if __name__ == "__main__":
     main()
