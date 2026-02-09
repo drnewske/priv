@@ -94,6 +94,14 @@ def process_schedule():
                 home_data = find_team_data(home_raw, teams_map)
                 away_data = find_team_data(away_raw, teams_map)
                 
+                # Initialize with None for consistency
+                event['home_team_id'] = None
+                event['home_team_logo_id'] = None
+                event['home_team_logo'] = None
+                event['away_team_id'] = None
+                event['away_team_logo_id'] = None
+                event['away_team_logo'] = None
+
                 if home_data:
                     event['home_team_id'] = home_data.get('id')
                     event['home_team_logo_id'] = home_data.get('logo_id')
