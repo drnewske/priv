@@ -1,24 +1,11 @@
 {
-  "generated_at": "2026-02-09T11:07:39.817080Z",
+  "generated_at": "2026-02-09T12:27:24.368453Z",
   "source": "wheresthematch.com",
   "schedule": [
     {
       "date": "2026-02-09",
       "day": "Monday",
       "events": [
-        {
-          "name": "Scotland v Italy",
-          "start_time_iso": "2026-02-09T05:30:00Z",
-          "time": "05:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/cricket.gif",
-          "sport": "Cricket",
-          "competition": "ICC T20 World Cup",
-          "channels": [
-            "Sky Sports Cricket",
-            "Sky Sports Main Event",
-            "Sky Sports Ultra HDR"
-          ]
-        },
         {
           "name": "Winter Olympics",
           "start_time_iso": "2026-02-09T09:00:00Z",
