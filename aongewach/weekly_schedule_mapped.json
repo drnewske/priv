@@ -1,89 +1,11 @@
 {
-  "generated_at": "2026-02-09T13:58:13.967474Z",
+  "generated_at": "2026-02-09T15:22:13.140896Z",
   "source": "wheresthematch.com",
   "schedule": [
     {
       "date": "2026-02-09",
       "day": "Monday",
       "events": [
-        {
-          "name": "Winter Olympics",
-          "start_time_iso": "2026-02-09T09:00:00Z",
-          "time": "09:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "BBC1",
-            "BBC2",
-            "TNT Sports 2",
-            "TNT Sports Ultimate",
-            "BBC iPlayer",
-            "BBC Sport Website",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Alpine Skiing",
-          "start_time_iso": "2026-02-09T09:00:00Z",
-          "time": "09:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports 2",
-            "TNT Sports Ultimate",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Curling",
-          "start_time_iso": "2026-02-09T09:00:00Z",
-          "time": "09:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports 4",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Curling",
-          "start_time_iso": "2026-02-09T09:00:00Z",
-          "time": "09:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports Extra",
-            "Discovery+"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Curling",
-          "start_time_iso": "2026-02-09T09:00:00Z",
-          "time": "09:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports Extra",
-            "Discovery+"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Curling",
-          "start_time_iso": "2026-02-09T09:00:00Z",
-          "time": "09:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports Extra",
-            "Discovery+"
-          ]
-        },
         {
           "name": "Zimbabwe v Oman",
           "start_time_iso": "2026-02-09T09:30:00Z",
@@ -245,7 +167,10 @@
           "away_team": "Al Ahli",
           "home_team_id": 7384,
           "home_team_logo_id": "7384",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/united arab emirates/al wahda fc.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/united arab emirates/al wahda fc.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Nasaf v Al Shorta",
@@ -259,6 +184,9 @@
           ],
           "home_team": "Nasaf",
           "away_team": "Al Shorta",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 4147,
           "away_team_logo_id": "4147",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/iraq/al shorta sc.png"
@@ -310,6 +238,9 @@
           ],
           "home_team": "Al-Duhail",
           "away_team": "Sharjah",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 7390,
           "away_team_logo_id": "7390",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/united arab emirates/sharjah fc.png"
@@ -325,7 +256,13 @@
             "The AFC Hub"
           ],
           "home_team": "Shabab Al Ahli",
-          "away_team": "Al Hilal"
+          "away_team": "Al Hilal",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "2026 Winter Olympics Speed Skating",
@@ -362,7 +299,13 @@
             "DAZN"
           ],
           "home_team": "Koln Women",
-          "away_team": "SGS Essen"
+          "away_team": "SGS Essen",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Atalanta v Cremonese",
@@ -375,7 +318,13 @@
             "DAZN"
           ],
           "home_team": "Atalanta",
-          "away_team": "Cremonese"
+          "away_team": "Cremonese",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "2026 Winter Olympics Ski Jumping",
@@ -471,7 +420,13 @@
             "Chelsea Official App"
           ],
           "home_team": "Chelsea U18",
-          "away_team": "Manchester City U18s"
+          "away_team": "Manchester City U18s",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Roma v Cagliari",
@@ -489,7 +444,10 @@
           "away_team": "Cagliari",
           "home_team_id": 4248,
           "home_team_logo_id": "4248",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/italy/as roma.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/italy/as roma.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "2026 Winter Olympics Figure Skating",
@@ -516,7 +474,13 @@
             "Premier Sports 1"
           ],
           "home_team": "Villarreal",
-          "away_team": "Espanyol"
+          "away_team": "Espanyol",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Switzerland v USA",
@@ -613,7 +577,13 @@
             "NBA League Pass"
           ],
           "home_team": "Charlotte Hornets",
-          "away_team": "Detroit Pistons"
+          "away_team": "Detroit Pistons",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         }
       ]
     },
@@ -643,7 +613,13 @@
             "NBA League Pass"
           ],
           "home_team": "Charlotte Hornets",
-          "away_team": "Detroit Pistons"
+          "away_team": "Detroit Pistons",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Orlando Magic v Milwaukee Bucks",
@@ -656,7 +632,13 @@
             "Sky Sports+"
           ],
           "home_team": "Orlando Magic",
-          "away_team": "Milwaukee Bucks"
+          "away_team": "Milwaukee Bucks",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Brooklyn Nets v Chicago Bulls",
@@ -669,7 +651,13 @@
             "NBA League Pass"
           ],
           "home_team": "Brooklyn Nets",
-          "away_team": "Chicago Bulls"
+          "away_team": "Chicago Bulls",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Miami Heat v Utah Jazz",
@@ -682,7 +670,13 @@
             "NBA League Pass"
           ],
           "home_team": "Miami Heat",
-          "away_team": "Utah Jazz"
+          "away_team": "Utah Jazz",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Minnesota Timberwolves v Atlanta Hawks",
@@ -695,7 +689,13 @@
             "NBA League Pass"
           ],
           "home_team": "Minnesota Timberwolves",
-          "away_team": "Atlanta Hawks"
+          "away_team": "Atlanta Hawks",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "New Orleans Pelicans v Sacramento Kings",
@@ -708,7 +708,13 @@
             "NBA League Pass"
           ],
           "home_team": "New Orleans Pelicans",
-          "away_team": "Sacramento Kings"
+          "away_team": "Sacramento Kings",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Dallas Open",
@@ -734,7 +740,13 @@
             "NBA League Pass"
           ],
           "home_team": "Denver Nuggets",
-          "away_team": "Cleveland Cavaliers"
+          "away_team": "Cleveland Cavaliers",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Los Angeles Lakers v Oklahoma City Thunder",
@@ -747,7 +759,13 @@
             "Sky Sports+"
           ],
           "home_team": "Los Angeles Lakers",
-          "away_team": "Oklahoma City Thunder"
+          "away_team": "Oklahoma City Thunder",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Golden State Warriors v Memphis Grizzlies",
@@ -760,7 +778,13 @@
             "NBA League Pass"
           ],
           "home_team": "Golden State Warriors",
-          "away_team": "Memphis Grizzlies"
+          "away_team": "Memphis Grizzlies",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Portland Trail Blazers v Philadelphia 76ers",
@@ -773,7 +797,13 @@
             "NBA League Pass"
           ],
           "home_team": "Portland Trail Blazers",
-          "away_team": "Philadelphia 76ers"
+          "away_team": "Philadelphia 76ers",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Netherlands v Namibia",
@@ -896,7 +926,10 @@
           "away_team": "Johor Darul Tazim",
           "home_team_id": 4523,
           "home_team_logo_id": "4523",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/japan/sanfrecce hiroshima.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/japan/sanfrecce hiroshima.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Vissel Kobe v FC Seoul",
@@ -1039,6 +1072,9 @@
           ],
           "home_team": "Shanghai Shenhua",
           "away_team": "Machida Zelvia",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 4501,
           "away_team_logo_id": "4501",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/japan/fc machida zelvia.png"
@@ -1159,6 +1195,9 @@
           ],
           "home_team": "Esteghlal",
           "away_team": "Al Hussein",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 4536,
           "away_team_logo_id": "4536",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/jordan/al hussein sc.png"
@@ -1175,6 +1214,9 @@
           ],
           "home_team": "Ipswich Town U18",
           "away_team": "Crystal Palace U18",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 2845,
           "away_team_logo_id": "2845",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/crystal palace fc.png"
@@ -1213,7 +1255,13 @@
             "The AFC Hub"
           ],
           "home_team": "Tractor",
-          "away_team": "Al-Sadd"
+          "away_team": "Al-Sadd",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Al Zawraa SC v Al Wasl",
@@ -1227,6 +1275,9 @@
           ],
           "home_team": "Al Zawraa SC",
           "away_team": "Al Wasl",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 7385,
           "away_team_logo_id": "7385",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/united arab emirates/al wasl sc.png"
@@ -1277,7 +1328,13 @@
             "DAZN"
           ],
           "home_team": "Karditsas",
-          "away_team": "Panionios Athens"
+          "away_team": "Panionios Athens",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Sampdoria v Palermo",
@@ -1293,7 +1350,10 @@
           "away_team": "Palermo",
           "home_team_id": 4434,
           "home_team_logo_id": "4434",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/italy/uc sampdoria.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/italy/uc sampdoria.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Frolunda v Vaxjo Lakers",
@@ -1306,7 +1366,13 @@
             "Premier Player"
           ],
           "home_team": "Frolunda",
-          "away_team": "Vaxjo Lakers"
+          "away_team": "Vaxjo Lakers",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Al Ittihad v Al Gharafa",
@@ -1338,7 +1404,13 @@
             "Sky Sports+"
           ],
           "home_team": "AFC Wimbledon",
-          "away_team": "Northampton Town"
+          "away_team": "Northampton Town",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Huddersfield Town v Doncaster",
@@ -1351,7 +1423,13 @@
             "Sky Sports+"
           ],
           "home_team": "Huddersfield Town",
-          "away_team": "Doncaster"
+          "away_team": "Doncaster",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Port Vale v Stockport County",
@@ -1365,6 +1443,9 @@
           ],
           "home_team": "Port Vale",
           "away_team": "Stockport County",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 2962,
           "away_team_logo_id": "2962",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/stockport county fc.png"
@@ -1405,6 +1486,9 @@
           ],
           "home_team": "Chelsea",
           "away_team": "Leeds United",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 2902,
           "away_team_logo_id": "2902",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/leeds united fc.png"
@@ -1424,7 +1508,10 @@
           "away_team": "Bournemouth AFC",
           "home_team_id": 2861,
           "home_team_logo_id": "2861",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/everton fc.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/everton fc.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Tottenham Hotspur v Newcastle United",
@@ -1458,6 +1545,9 @@
           ],
           "home_team": "Oxford Utd",
           "away_team": "Norwich City",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 2929,
           "away_team_logo_id": "2929",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/norwich city fc.png"
@@ -1473,7 +1563,13 @@
             "DAZN National League"
           ],
           "home_team": "Chippenham Town",
-          "away_team": "Torquay United"
+          "away_team": "Torquay United",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Kidderminster Harriers v Merthyr Town",
@@ -1543,7 +1639,13 @@
             "DAZN National League"
           ],
           "home_team": "Carlisle United",
-          "away_team": "Scunthorpe United"
+          "away_team": "Scunthorpe United",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Morecambe v Tamworth",
@@ -1557,6 +1659,9 @@
           ],
           "home_team": "Morecambe",
           "away_team": "Tamworth",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 2970,
           "away_team_logo_id": "2970",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/tamworth fc.png"
@@ -1573,6 +1678,9 @@
           ],
           "home_team": "Solihull Moors",
           "away_team": "Eastleigh",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 2855,
           "away_team_logo_id": "2855",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/eastleigh fc.png"
@@ -1589,6 +1697,9 @@
           ],
           "home_team": "Truro City",
           "away_team": "Woking",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 2994,
           "away_team_logo_id": "2994",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/woking fc.png"
@@ -1605,7 +1716,13 @@
             "BBC Sport Website"
           ],
           "home_team": "Larne FC",
-          "away_team": "Glentoran FC Belfast"
+          "away_team": "Glentoran FC Belfast",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Stevenage v Barnsley",
@@ -1638,6 +1755,9 @@
           ],
           "home_team": "Scarborough Athletic",
           "away_team": "South Shields",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 2954,
           "away_team_logo_id": "2954",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/south shields fc.png"
@@ -1672,7 +1792,13 @@
             "Sky Sports+"
           ],
           "home_team": "Leicester City",
-          "away_team": "Southampton"
+          "away_team": "Southampton",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Wigan Athletic v Reading",
@@ -1688,7 +1814,10 @@
           "away_team": "Reading",
           "home_team_id": 2988,
           "home_team_logo_id": "2988",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/wigan athletic fc.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/wigan athletic fc.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Mansfield Town v Peterborough United",
@@ -1720,7 +1849,13 @@
             "Sky Sports+"
           ],
           "home_team": "Crawley Town",
-          "away_team": "Cambridge Utd"
+          "away_team": "Cambridge Utd",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Horsham v Dagenham and Redbridge",
@@ -1733,7 +1868,13 @@
             "DAZN National League"
           ],
           "home_team": "Horsham",
-          "away_team": "Dagenham and Redbridge"
+          "away_team": "Dagenham and Redbridge",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "AFC Fylde v Spennymoor Town",
@@ -1747,6 +1888,9 @@
           ],
           "home_team": "AFC Fylde",
           "away_team": "Spennymoor Town",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 2958,
           "away_team_logo_id": "2958",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/spennymoor town fc.png"
@@ -1762,7 +1906,13 @@
             "DAZN National League"
           ],
           "home_team": "Darlington",
-          "away_team": "Radcliffe Borough"
+          "away_team": "Radcliffe Borough",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Eastbourne Borough v Maidstone United",
@@ -1776,6 +1926,9 @@
           ],
           "home_team": "Eastbourne Borough",
           "away_team": "Maidstone United",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 2907,
           "away_team_logo_id": "2907",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/maidstone united fc.png"
@@ -1792,6 +1945,9 @@
           ],
           "home_team": "Hertha Berlin",
           "away_team": "SC Freiburg",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 3621,
           "away_team_logo_id": "3621",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/germany/sc freiburg.png"
@@ -1810,6 +1966,9 @@
           ],
           "home_team": "Birmingham City",
           "away_team": "West Bromwich Albion",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 2982,
           "away_team_logo_id": "2982",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/west bromwich albion fc.png"
@@ -1825,7 +1984,13 @@
             "Premier Sports 1"
           ],
           "home_team": "Hearts",
-          "away_team": "Hibernian"
+          "away_team": "Hibernian",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Napoli v Como",
@@ -1841,7 +2006,10 @@
           "away_team": "Como",
           "home_team_id": 4406,
           "home_team_logo_id": "4406",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/italy/ssc napoli.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/italy/ssc napoli.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Finland v Switzerland",
@@ -1912,7 +2080,13 @@
             "Premier Sports 2"
           ],
           "home_team": "Vitoria",
-          "away_team": "Flamengo"
+          "away_team": "Flamengo",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "New York Knicks v Indiana Pacers",
@@ -1925,7 +2099,13 @@
             "NBA League Pass"
           ],
           "home_team": "New York Knicks",
-          "away_team": "Indiana Pacers"
+          "away_team": "Indiana Pacers",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Live Boxing",
@@ -1949,7 +2129,13 @@
             "NBA League Pass"
           ],
           "home_team": "Houston Rockets",
-          "away_team": "Los Angeles Clippers"
+          "away_team": "Los Angeles Clippers",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Dallas Open",
@@ -1975,7 +2161,13 @@
             "NBA League Pass"
           ],
           "home_team": "Phoenix Suns",
-          "away_team": "Dallas Mavericks"
+          "away_team": "Dallas Mavericks",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Los Angeles Lakers v San Antonio Spurs",
@@ -1988,7 +2180,13 @@
             "NBA League Pass"
           ],
           "home_team": "Los Angeles Lakers",
-          "away_team": "San Antonio Spurs"
+          "away_team": "San Antonio Spurs",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "South Africa v Afghanistan",
@@ -2119,7 +2317,10 @@
           "away_team": "Shanghai Port",
           "home_team_id": 6477,
           "home_team_logo_id": "6477",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/south korea/gangwon fc.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/south korea/gangwon fc.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Ulsan v Melbourne City",
@@ -2133,6 +2334,9 @@
           ],
           "home_team": "Ulsan",
           "away_team": "Melbourne City",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 1213,
           "away_team_logo_id": "1213",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/australia/melbourne city fc.png"
@@ -2205,6 +2409,9 @@
           ],
           "home_team": "Hanoi",
           "away_team": "Tampines Rovers",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 6326,
           "away_team_logo_id": "6326",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/singapore/tampines rovers fc.png"
@@ -2290,7 +2497,10 @@
           "away_team": "West Indies",
           "home_team_id": 2859,
           "home_team_logo_id": "2859",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/england.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/england.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Arkadag v Al Nassr",
@@ -2389,7 +2599,13 @@
             "The AFC Hub"
           ],
           "home_team": "Sepahan",
-          "away_team": "Al Ahli"
+          "away_team": "Al Ahli",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Snooker Championship League",
@@ -2425,7 +2641,13 @@
             "DAZN"
           ],
           "home_team": "Carl Zeiss Jena Women",
-          "away_team": "Bayern Munich Women"
+          "away_team": "Bayern Munich Women",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "2026 Winter Olympics Speed Skating",
@@ -2451,6 +2673,9 @@
           ],
           "home_team": "OH Leuven Women",
           "away_team": "Arsenal Women",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 2778,
           "away_team_logo_id": "2778",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/arsenal fc.png"
@@ -2527,7 +2752,13 @@
             "Destination Calcio"
           ],
           "home_team": "Bari",
-          "away_team": "Spezia"
+          "away_team": "Spezia",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Empoli v SS Juve Stabia",
@@ -2571,7 +2802,13 @@
             "Discovery+ Premium"
           ],
           "home_team": "Aston Villa",
-          "away_team": "Brighton"
+          "away_team": "Brighton",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Crystal Palace v Burnley",
@@ -2645,6 +2882,9 @@
           ],
           "home_team": "Charlton Athletic",
           "away_team": "Stoke City",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 2964,
           "away_team_logo_id": "2964",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/stoke city fc.png"
@@ -2661,6 +2901,9 @@
           ],
           "home_team": "Aldershot Town",
           "away_team": "Southend United",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 2955,
           "away_team_logo_id": "2955",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/southend united fc.png"
@@ -2677,6 +2920,9 @@
           ],
           "home_team": "Boreham Wood",
           "away_team": "Yeovil Town",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 3001,
           "away_team_logo_id": "3001",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/yeovil town fc.png"
@@ -2693,6 +2939,9 @@
           ],
           "home_team": "Brackley Town",
           "away_team": "FC Halifax Town",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 2863,
           "away_team_logo_id": "2863",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/fc halifax town.png"
@@ -2708,7 +2957,13 @@
             "DAZN National League"
           ],
           "home_team": "Rochdale",
-          "away_team": "Forest Green Rovers"
+          "away_team": "Forest Green Rovers",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Sutton United v Braintree Town",
@@ -2722,6 +2977,9 @@
           ],
           "home_team": "Sutton United",
           "away_team": "Braintree Town",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 2810,
           "away_team_logo_id": "2810",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/braintree town fc.png"
@@ -2740,7 +2998,10 @@
           "away_team": "Hartlepool United",
           "home_team_id": 3002,
           "home_team_logo_id": "3002",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/york city fc.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/york city fc.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Bayern Munich v Red Bull Leipzig",
@@ -2753,7 +3014,13 @@
             "Premier Sports 1"
           ],
           "home_team": "Bayern Munich",
-          "away_team": "Red Bull Leipzig"
+          "away_team": "Red Bull Leipzig",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Grimsby Town v Accrington Stanley",
@@ -2767,6 +3034,9 @@
           ],
           "home_team": "Grimsby Town",
           "away_team": "Accrington Stanley",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 2769,
           "away_team_logo_id": "2769",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/accrington stanley fc.png"
@@ -2783,6 +3053,9 @@
           ],
           "home_team": "Paris Women",
           "away_team": "Real Madrid Women",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 6621,
           "away_team_logo_id": "6621",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/spain/real madrid.png"
@@ -2822,7 +3095,10 @@
           "away_team": "Newport County",
           "home_team_id": 2969,
           "home_team_logo_id": "2969",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/swindon town fc.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/swindon town fc.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Bologna v Lazio",
@@ -2836,6 +3112,9 @@
           ],
           "home_team": "Bologna",
           "away_team": "Lazio",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 4399,
           "away_team_logo_id": "4399",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/italy/ss lazio.png"
@@ -2854,6 +3133,9 @@
           ],
           "home_team": "Sunderland",
           "away_team": "Liverpool",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 2905,
           "away_team_logo_id": "2905",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/liverpool fc.png"
@@ -2891,7 +3173,13 @@
             "NBA League Pass"
           ],
           "home_team": "Charlotte Hornets",
-          "away_team": "Atlanta Hawks"
+          "away_team": "Atlanta Hawks",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Cleveland Cavaliers v Washington Wizards",
@@ -2904,7 +3192,13 @@
             "NBA League Pass"
           ],
           "home_team": "Cleveland Cavaliers",
-          "away_team": "Washington Wizards"
+          "away_team": "Washington Wizards",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Orlando Magic v Milwaukee Bucks",
@@ -2917,7 +3211,13 @@
             "NBA League Pass"
           ],
           "home_team": "Orlando Magic",
-          "away_team": "Milwaukee Bucks"
+          "away_team": "Milwaukee Bucks",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         }
       ]
     },
@@ -2947,7 +3247,13 @@
             "NBA League Pass"
           ],
           "home_team": "Charlotte Hornets",
-          "away_team": "Atlanta Hawks"
+          "away_team": "Atlanta Hawks",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Cleveland Cavaliers v Washington Wizards",
@@ -2960,7 +3266,13 @@
             "NBA League Pass"
           ],
           "home_team": "Cleveland Cavaliers",
-          "away_team": "Washington Wizards"
+          "away_team": "Washington Wizards",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Orlando Magic v Milwaukee Bucks",
@@ -2973,7 +3285,13 @@
             "NBA League Pass"
           ],
           "home_team": "Orlando Magic",
-          "away_team": "Milwaukee Bucks"
+          "away_team": "Milwaukee Bucks",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Boston Celtics v Chicago Bulls",
@@ -2986,7 +3304,13 @@
             "NBA League Pass"
           ],
           "home_team": "Boston Celtics",
-          "away_team": "Chicago Bulls"
+          "away_team": "Chicago Bulls",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Brooklyn Nets v Indiana Pacers",
@@ -2999,7 +3323,13 @@
             "NBA League Pass"
           ],
           "home_team": "Brooklyn Nets",
-          "away_team": "Indiana Pacers"
+          "away_team": "Indiana Pacers",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Philadelphia 76ers v New York Knicks",
@@ -3012,7 +3342,13 @@
             "NBA League Pass"
           ],
           "home_team": "Philadelphia 76ers",
-          "away_team": "New York Knicks"
+          "away_team": "New York Knicks",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Toronto Raptors v Detroit Pistons",
@@ -3025,7 +3361,13 @@
             "NBA League Pass"
           ],
           "home_team": "Toronto Raptors",
-          "away_team": "Detroit Pistons"
+          "away_team": "Detroit Pistons",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Houston Rockets v Los Angeles Clippers",
@@ -3038,7 +3380,13 @@
             "NBA League Pass"
           ],
           "home_team": "Houston Rockets",
-          "away_team": "Los Angeles Clippers"
+          "away_team": "Los Angeles Clippers",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Minnesota Timberwolves v Portland Trail Blazers",
@@ -3051,7 +3399,13 @@
             "NBA League Pass"
           ],
           "home_team": "Minnesota Timberwolves",
-          "away_team": "Portland Trail Blazers"
+          "away_team": "Portland Trail Blazers",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "New Orleans Pelicans v Miami Heat",
@@ -3064,7 +3418,13 @@
             "NBA League Pass"
           ],
           "home_team": "New Orleans Pelicans",
-          "away_team": "Miami Heat"
+          "away_team": "Miami Heat",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "LIV Golf Adelaide",
@@ -3102,7 +3462,13 @@
             "NBA League Pass"
           ],
           "home_team": "Phoenix Suns",
-          "away_team": "Oklahoma City Thunder"
+          "away_team": "Oklahoma City Thunder",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Utah Jazz v Sacramento Kings",
@@ -3115,7 +3481,13 @@
             "NBA League Pass"
           ],
           "home_team": "Utah Jazz",
-          "away_team": "Sacramento Kings"
+          "away_team": "Sacramento Kings",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Denver Nuggets v Memphis Grizzlies",
@@ -3128,7 +3500,13 @@
             "NBA League Pass"
           ],
           "home_team": "Denver Nuggets",
-          "away_team": "Memphis Grizzlies"
+          "away_team": "Memphis Grizzlies",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Golden State Warriors v San Antonio Spurs",
@@ -3141,7 +3519,13 @@
             "NBA League Pass"
           ],
           "home_team": "Golden State Warriors",
-          "away_team": "San Antonio Spurs"
+          "away_team": "San Antonio Spurs",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Sri Lanka v Oman",
@@ -3212,7 +3596,13 @@
             "Watch NRL"
           ],
           "home_team": "Dolphins",
-          "away_team": "Gold Coast Titans"
+          "away_team": "Gold Coast Titans",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Winter Olympics",
@@ -3723,7 +4113,13 @@
             "Sky Sports+"
           ],
           "home_team": "York Knights",
-          "away_team": "Hull KR"
+          "away_team": "Hull KR",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Brentford v Arsenal",
@@ -3758,6 +4154,9 @@
           ],
           "home_team": "Atletico Madrid Women",
           "away_team": "Manchester United Women",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 2909,
           "away_team_logo_id": "2909",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/manchester united fc.png"
@@ -3773,7 +4172,13 @@
             "YouTube"
           ],
           "home_team": "USON Nevers",
-          "away_team": "Colomiers"
+          "away_team": "Colomiers",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "2026 Winter Olympics Speed Skating",
@@ -3853,7 +4258,13 @@
             "Premier Sports 1"
           ],
           "home_team": "Fluminense",
-          "away_team": "Botafogo"
+          "away_team": "Botafogo",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Asia Pacific Womens Amateur Championship",
@@ -3894,7 +4305,13 @@
             "Amazon Prime Video"
           ],
           "home_team": "Oklahoma City Thunder",
-          "away_team": "Milwaukee Bucks"
+          "away_team": "Milwaukee Bucks",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "LIV Golf Adelaide",
@@ -3932,7 +4349,13 @@
             "NBA League Pass"
           ],
           "home_team": "Utah Jazz",
-          "away_team": "Portland Trail Blazers"
+          "away_team": "Portland Trail Blazers",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Los Angeles Lakers v Dallas Mavericks",
@@ -3945,7 +4368,13 @@
             "Amazon Prime Video"
           ],
           "home_team": "Los Angeles Lakers",
-          "away_team": "Dallas Mavericks"
+          "away_team": "Dallas Mavericks",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Australia v Zimbabwe",
@@ -3983,7 +4412,10 @@
           "away_team": "Newcastle Jets Women",
           "home_team_id": 1219,
           "home_team_logo_id": "1219",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/australia/western sydney wanderers fc.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/australia/western sydney wanderers fc.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Highlanders v Crusaders",
@@ -3999,7 +4431,10 @@
           "away_team": "Crusaders",
           "home_team_id": 7655,
           "home_team_logo_id": "7655",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/zimbabwe/highlanders fc.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/zimbabwe/highlanders fc.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Canberra Raiders v Melbourne Storm",
@@ -4013,7 +4448,13 @@
             "Watch NRL"
           ],
           "home_team": "Canberra Raiders",
-          "away_team": "Melbourne Storm"
+          "away_team": "Melbourne Storm",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Brisbane Roar Women v Sydney FC Women",
@@ -4028,6 +4469,9 @@
           ],
           "home_team": "Brisbane Roar Women",
           "away_team": "Sydney FC Women",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 1217,
           "away_team_logo_id": "1217",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/australia/sydney fc.png"
@@ -4091,7 +4535,13 @@
             "TBC"
           ],
           "home_team": "Waratahs",
-          "away_team": "Reds"
+          "away_team": "Reds",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Western Sydney Wanderers v Wellington Phoenix",
@@ -4125,7 +4575,13 @@
             "Watch NRL"
           ],
           "home_team": "North Queensland Cowboys",
-          "away_team": "Penrith Panthers"
+          "away_team": "Penrith Panthers",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Winter Olympics",
@@ -4249,7 +4705,10 @@
           "away_team": "Newcastle Jets",
           "home_team_id": 1216,
           "home_team_logo_id": "1216",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/australia/perth glory fc.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/australia/perth glory fc.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "2026 Winter Olympics Cross Country Skiing",
@@ -4437,7 +4896,10 @@
           "away_team": "Al Dhafra",
           "home_team_id": 7380,
           "home_team_logo_id": "7380",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/united arab emirates/al bataeh fc.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/united arab emirates/al bataeh fc.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "UCI Tour of Murcia",
@@ -4524,6 +4986,9 @@
           ],
           "home_team": "Al Hilal",
           "away_team": "Al Ettifaq",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 6103,
           "away_team_logo_id": "6103",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/saudi arabia/al ettifaq fc.png"
@@ -4559,7 +5024,13 @@
             "TrillerTV+"
           ],
           "home_team": "Al Jazira",
-          "away_team": "Kalba FC"
+          "away_team": "Kalba FC",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "2026 Winter Olympics Speed Skating",
@@ -4655,7 +5126,13 @@
             "Bundesliga YouTube"
           ],
           "home_team": "Fortuna Dusseldorf",
-          "away_team": "Preussen Munster"
+          "away_team": "Preussen Munster",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Nurnberg v Karlsruher",
@@ -4669,6 +5146,9 @@
           ],
           "home_team": "Nurnberg",
           "away_team": "Karlsruher",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 3597,
           "away_team_logo_id": "3597",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/germany/karlsruher sc.png"
@@ -4687,7 +5167,10 @@
           "away_team": "Koln Women",
           "home_team_id": 3486,
           "home_team_logo_id": "3486",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/germany/bayer leverkusen.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/germany/bayer leverkusen.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Rennes v Paris Saint Germain",
@@ -4703,7 +5186,10 @@
           "away_team": "Paris Saint Germain",
           "home_team_id": 3245,
           "home_team_logo_id": "3245",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/france/la tour d'auvergne de rennes.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/france/la tour d'auvergne de rennes.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "2026 Winter Olympics Skeleton",
@@ -4766,6 +5252,9 @@
           ],
           "home_team": "Viktoria Cologne",
           "away_team": "Erzgebirge Aue",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 3541,
           "away_team_logo_id": "3541",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/germany/fc erzgebirge aue.png"
@@ -4812,7 +5301,13 @@
             "Sky Sports+"
           ],
           "home_team": "Catalans Dragons",
-          "away_team": "Huddersfield Giants"
+          "away_team": "Huddersfield Giants",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Manchester City Women v Leicester City Women",
@@ -4829,7 +5324,10 @@
           "away_team": "Leicester City Women",
           "home_team_id": 2908,
           "home_team_logo_id": "2908",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/manchester city fc.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/manchester city fc.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Volendam v PSV Eindhoven",
@@ -4882,7 +5380,13 @@
             "Chelsea Official App"
           ],
           "home_team": "Birmingham U21",
-          "away_team": "Chelsea U21"
+          "away_team": "Chelsea U21",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Scotland U20 v England U20",
@@ -4917,7 +5421,13 @@
             "BBC Sport Website"
           ],
           "home_team": "Borussia Dortmund",
-          "away_team": "FSV Mainz 05"
+          "away_team": "FSV Mainz 05",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Almeria v FC Andorra",
@@ -4931,6 +5441,9 @@
           ],
           "home_team": "Almeria",
           "away_team": "FC Andorra",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 6582,
           "away_team_logo_id": "6582",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/spain/fc andorra.png"
@@ -4947,7 +5460,13 @@
             "BBC Sport Website"
           ],
           "home_team": "Dungannon Swifts",
-          "away_team": "Cliftonville FC Belfast"
+          "away_team": "Cliftonville FC Belfast",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Airdrieonians v St Johnstone",
@@ -4965,7 +5484,10 @@
           "away_team": "St Johnstone",
           "home_team_id": 6123,
           "home_team_logo_id": "6123",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/scotland/airdrieonians fc.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/scotland/airdrieonians fc.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Harlequins v Northampton",
@@ -4979,7 +5501,13 @@
             "Discovery+ Premium"
           ],
           "home_team": "Harlequins",
-          "away_team": "Northampton"
+          "away_team": "Northampton",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Drogheda United v Waterford United",
@@ -4995,7 +5523,10 @@
           "away_team": "Waterford United",
           "home_team_id": 4172,
           "home_team_logo_id": "4172",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/ireland/drogheda united fc.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/ireland/drogheda united fc.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Dundalk v Derry City",
@@ -5027,7 +5558,13 @@
             "LOITV"
           ],
           "home_team": "St Patricks Athletic",
-          "away_team": "Galway United"
+          "away_team": "Galway United",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "London Scottish v Worcester",
@@ -5040,7 +5577,13 @@
             "Clubber TV"
           ],
           "home_team": "London Scottish",
-          "away_team": "Worcester"
+          "away_team": "Worcester",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Nottingham v Cambridge",
@@ -5053,7 +5596,13 @@
             "Clubber TV"
           ],
           "home_team": "Nottingham",
-          "away_team": "Cambridge"
+          "away_team": "Cambridge",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Hull City v Chelsea",
@@ -5070,7 +5619,13 @@
             "Discovery+ Premium"
           ],
           "home_team": "Hull City",
-          "away_team": "Chelsea"
+          "away_team": "Chelsea",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Wrexham v Ipswich Town",
@@ -5087,7 +5642,13 @@
             "Discovery+ Premium"
           ],
           "home_team": "Wrexham",
-          "away_team": "Ipswich Town"
+          "away_team": "Ipswich Town",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Ireland U20 v Italy U20",
@@ -5121,6 +5682,9 @@
           ],
           "home_team": "Monaco",
           "away_team": "Nantes",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 3216,
           "away_team_logo_id": "3216",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/france/fc nantes.png"
@@ -5137,6 +5701,9 @@
           ],
           "home_team": "Pisa SC",
           "away_team": "AC Milan",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 4220,
           "away_team_logo_id": "4220",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/italy/ac milan.png"
@@ -5155,7 +5722,13 @@
             "Sky Sports+"
           ],
           "home_team": "Warrington Wolves",
-          "away_team": "St Helens"
+          "away_team": "St Helens",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Leigh Leopards v Leeds Rhinos",
@@ -5168,7 +5741,13 @@
             "Sky Sports+"
           ],
           "home_team": "Leigh Leopards",
-          "away_team": "Leeds Rhinos"
+          "away_team": "Leeds Rhinos",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Shelbourne v Shamrock Rovers",
@@ -5200,7 +5779,13 @@
             "Clubber TV"
           ],
           "home_team": "Coventry",
-          "away_team": "Richmond"
+          "away_team": "Richmond",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Elche v Osasuna",
@@ -5304,7 +5889,10 @@
           "away_team": "Lanus",
           "home_team_id": 1120,
           "home_team_logo_id": "1120",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/panama/ca independiente.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/panama/ca independiente.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Asia Pacific Womens Amateur Championship",
@@ -5381,7 +5969,13 @@
             "Watch NRL"
           ],
           "home_team": "New Zealand Warriors",
-          "away_team": "Manly Warrinagh Sea Eagles"
+          "away_team": "Manly Warrinagh Sea Eagles",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "LIV Golf Adelaide",
@@ -5406,7 +6000,13 @@
             "TBC"
           ],
           "home_team": "Fijian Drua",
-          "away_team": "Moana Pasifika"
+          "away_team": "Moana Pasifika",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Hampton Pirates v North Carolina AT Aggies",
@@ -5419,7 +6019,13 @@
             "Sky Sports+"
           ],
           "home_team": "Hampton Pirates",
-          "away_team": "North Carolina AT Aggies"
+          "away_team": "North Carolina AT Aggies",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Wests Tigers v Sydney Roosters",
@@ -5433,7 +6039,13 @@
             "Watch NRL"
           ],
           "home_team": "Wests Tigers",
-          "away_team": "Sydney Roosters"
+          "away_team": "Sydney Roosters",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Ireland v Oman",
@@ -5467,7 +6079,13 @@
             "Premier Sports Rugby"
           ],
           "home_team": "Shizuoka Blue Revs",
-          "away_team": "Spears Tokyo Bay"
+          "away_team": "Spears Tokyo Bay",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Melbourne Victory v Brisbane Roar",
@@ -5484,7 +6102,10 @@
           "away_team": "Brisbane Roar",
           "home_team_id": 1214,
           "home_team_logo_id": "1214",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/australia/melbourne victory fc.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/australia/melbourne victory fc.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Blues v Chiefs",
@@ -5498,6 +6119,9 @@
           ],
           "home_team": "Blues",
           "away_team": "Chiefs",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 6452,
           "away_team_logo_id": "6452",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/south africa/kaizer chiefs.png"
@@ -5514,7 +6138,13 @@
             "Watch NRL"
           ],
           "home_team": "Newcastle Knights",
-          "away_team": "Canterbury Bulldogs"
+          "away_team": "Canterbury Bulldogs",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "BWF World Tour",
@@ -5562,7 +6192,13 @@
             "TBC"
           ],
           "home_team": "Western Force",
-          "away_team": "Brumbies"
+          "away_team": "Brumbies",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Sydney FC v Adelaide United",
@@ -5599,7 +6235,10 @@
           "away_team": "Canberra United Women",
           "home_team_id": 1216,
           "home_team_logo_id": "1216",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/australia/perth glory fc.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/australia/perth glory fc.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Winter Olympics",
@@ -5627,7 +6266,13 @@
             "Watch NRL"
           ],
           "home_team": "St George Illawarra Dragons",
-          "away_team": "South Sydney Rabbitohs"
+          "away_team": "South Sydney Rabbitohs",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "2026 Winter Olympics Freestyle Skiing",
@@ -5720,7 +6365,13 @@
             "CITY+"
           ],
           "home_team": "Manchester City U18s",
-          "away_team": "Manchester United U18s"
+          "away_team": "Manchester United U18s",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Freiburg Women v Union Berlin Women",
@@ -5736,7 +6387,10 @@
           "away_team": "Union Berlin Women",
           "home_team_id": 3621,
           "home_team_logo_id": "3621",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/germany/sc freiburg.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/germany/sc freiburg.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Crystal Palace U18 v Tottenham Hotspur U18",
@@ -5813,7 +6467,13 @@
             "Discovery+ Premium"
           ],
           "home_team": "Gloucester Hartpury Women",
-          "away_team": "Harlequins Ladies"
+          "away_team": "Harlequins Ladies",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Eintracht Braunschweig v SV Darmstadt 98",
@@ -5846,6 +6506,9 @@
           ],
           "home_team": "Hertha Berlin",
           "away_team": "Hannover 96",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 3590,
           "away_team_logo_id": "3590",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/germany/hannover 96.png"
@@ -5864,7 +6527,10 @@
           "away_team": "Greuther Furth",
           "home_team_id": 3462,
           "home_team_logo_id": "3462",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/germany/1. fc kaiserslautern.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/germany/1. fc kaiserslautern.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Germany v Portugal",
@@ -5898,7 +6564,13 @@
             "Chelsea Official App"
           ],
           "home_team": "Aston Villa U18s",
-          "away_team": "Chelsea U18"
+          "away_team": "Chelsea U18",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Burton Albion v West Ham United",
@@ -5935,7 +6607,10 @@
           "away_team": "Huddersfield Town",
           "home_team_id": 2961,
           "home_team_logo_id": "2961",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/stevenage fc.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/stevenage fc.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Reading v Wycombe Wanderers",
@@ -5948,7 +6623,13 @@
             "Sky Sports+"
           ],
           "home_team": "Reading",
-          "away_team": "Wycombe Wanderers"
+          "away_team": "Wycombe Wanderers",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Barnet v Cheltenham Town",
@@ -5962,6 +6643,9 @@
           ],
           "home_team": "Barnet",
           "away_team": "Cheltenham Town",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 2829,
           "away_team_logo_id": "2829",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/cheltenham town fc.png"
@@ -5979,7 +6663,13 @@
             "YouTube"
           ],
           "home_team": "Brython Thunder",
-          "away_team": "Edinburgh"
+          "away_team": "Edinburgh",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Penybont v Connahs quay nomads",
@@ -5993,7 +6683,13 @@
             "S4C Online"
           ],
           "home_team": "Penybont",
-          "away_team": "Connahs quay nomads"
+          "away_team": "Connahs quay nomads",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Raceday Live",
@@ -6042,7 +6738,13 @@
             "TG4"
           ],
           "home_team": "Gwalia Lightning",
-          "away_team": "Clovers"
+          "away_team": "Clovers",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Espanyol v Celta Vigo",
@@ -6055,7 +6757,13 @@
             "Premier Sports 1"
           ],
           "home_team": "Espanyol",
-          "away_team": "Celta Vigo"
+          "away_team": "Celta Vigo",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "2026 Winter Olympics Curling",
@@ -6116,7 +6824,13 @@
             "DFB Play"
           ],
           "home_team": "Hansa Rostock",
-          "away_team": "Vfl Osnabruck"
+          "away_team": "Vfl Osnabruck",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "2026 Winter Olympics Biathlon",
@@ -6162,7 +6876,13 @@
             "TrillerTV+"
           ],
           "home_team": "Khor Fakkan",
-          "away_team": "Ajman"
+          "away_team": "Ajman",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Bordeaux Begles v Castres",
@@ -6175,7 +6895,13 @@
             "Premier Sports 2"
           ],
           "home_team": "Bordeaux Begles",
-          "away_team": "Castres"
+          "away_team": "Castres",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Ampthill v Chinnor",
@@ -6188,7 +6914,13 @@
             "Clubber TV"
           ],
           "home_team": "Ampthill",
-          "away_team": "Chinnor"
+          "away_team": "Chinnor",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Caldy v Cornish Pirates",
@@ -6201,7 +6933,13 @@
             "Clubber TV"
           ],
           "home_team": "Caldy",
-          "away_team": "Cornish Pirates"
+          "away_team": "Cornish Pirates",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Sampdoria v Padova",
@@ -6290,7 +7028,13 @@
             "Clubber TV"
           ],
           "home_team": "Doncaster",
-          "away_team": "Bedford"
+          "away_team": "Bedford",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Hartpury College v Ealing Trailfinders",
@@ -6303,7 +7047,13 @@
             "Clubber TV"
           ],
           "home_team": "Hartpury College",
-          "away_team": "Ealing Trailfinders"
+          "away_team": "Ealing Trailfinders",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Ealing Trailfinders Women v Sale Sharks Women",
@@ -6316,7 +7066,13 @@
             "YouTube"
           ],
           "home_team": "Ealing Trailfinders Women",
-          "away_team": "Sale Sharks Women"
+          "away_team": "Sale Sharks Women",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Figueira Champions Classic",
@@ -6341,7 +7097,13 @@
             "LaLigaTV"
           ],
           "home_team": "Rayo Vallecano",
-          "away_team": "Atletico Madrid"
+          "away_team": "Atletico Madrid",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Perpignan v Pau",
@@ -6355,6 +7117,9 @@
           ],
           "home_team": "Perpignan",
           "away_team": "Pau",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 3270,
           "away_team_logo_id": "3270",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/france/pau fc.png"
@@ -6373,7 +7138,10 @@
           "away_team": "Al Nasr",
           "home_team_id": 7379,
           "home_team_logo_id": "7379",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/united arab emirates/al ain fc.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/united arab emirates/al ain fc.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "WTA Qatar Open",
@@ -6460,7 +7228,10 @@
           "away_team": "Atalanta",
           "home_team_id": 4399,
           "home_team_logo_id": "4399",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/italy/ss lazio.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/italy/ss lazio.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Formula E Jeddah ePrix",
@@ -6487,7 +7258,13 @@
             "Sky Sports+"
           ],
           "home_team": "Hull FC",
-          "away_team": "Bradford Bulls"
+          "away_team": "Bradford Bulls",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Forest Green Rovers v Carlisle United",
@@ -6500,7 +7277,13 @@
             "DAZN National League"
           ],
           "home_team": "Forest Green Rovers",
-          "away_team": "Carlisle United"
+          "away_team": "Carlisle United",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Al Fateh v Al Nassr",
@@ -6535,7 +7318,10 @@
           "away_team": "Cologne",
           "home_team_id": 3778,
           "home_team_logo_id": "3778",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/germany/vfb stuttgart.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/germany/vfb stuttgart.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Sevilla v Deportivo Alaves",
@@ -6551,7 +7337,10 @@
           "away_team": "Deportivo Alaves",
           "home_team_id": 6652,
           "home_team_logo_id": "6652",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/spain/sevilla fc.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/spain/sevilla fc.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Aston Villa v Newcastle United",
@@ -6569,6 +7358,9 @@
           ],
           "home_team": "Aston Villa",
           "away_team": "Newcastle United",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 2922,
           "away_team_logo_id": "2922",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/newcastle united fc.png"
@@ -6585,6 +7377,9 @@
           ],
           "home_team": "Sporting de Charleroi",
           "away_team": "KAA Gent",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 1530,
           "away_team_logo_id": "1530",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/belgium/kaa gent.png"
@@ -6601,6 +7396,9 @@
           ],
           "home_team": "SBV Excelsior",
           "away_team": "AZ Alkmaar",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 5117,
           "away_team_logo_id": "5117",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/netherlands/az alkmaar.png"
@@ -6616,7 +7414,13 @@
             "Ligue 1+"
           ],
           "home_team": "Lille",
-          "away_team": "Stade Brestois"
+          "away_team": "Stade Brestois",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "2026 Winter Olympics Curling",
@@ -6728,7 +7532,13 @@
             "Bundesliga YouTube"
           ],
           "home_team": "Dynamo Dresden",
-          "away_team": "SV Elversberg"
+          "away_team": "SV Elversberg",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Sligo Rovers v Bohemians Dublin",
@@ -6744,7 +7554,10 @@
           "away_team": "Bohemians Dublin",
           "home_team_id": 4181,
           "home_team_logo_id": "4181",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/ireland/sligo rovers fc.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/ireland/sligo rovers fc.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Inter Milan v Juventus",
@@ -6761,6 +7574,9 @@
           ],
           "home_team": "Inter Milan",
           "away_team": "Juventus",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 4367,
           "away_team_logo_id": "4367",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/italy/juventus fc.png"
@@ -6788,7 +7604,13 @@
             "Sky Sports+"
           ],
           "home_team": "Wakefield Trinity",
-          "away_team": "Toulouse Olympique"
+          "away_team": "Toulouse Olympique",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Toulon v Clermont Auvergne",
@@ -6805,7 +7627,10 @@
           "away_team": "Clermont Auvergne",
           "home_team_id": 3293,
           "home_team_logo_id": "3293",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/france/sporting club de toulon.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/france/sporting club de toulon.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Liverpool v Brighton",
@@ -6823,7 +7648,10 @@
           "away_team": "Brighton",
           "home_team_id": 2905,
           "home_team_logo_id": "2905",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/liverpool fc.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/liverpool fc.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Wales U20 v France U20",
@@ -6878,6 +7706,9 @@
           ],
           "home_team": "Paris FC",
           "away_team": "Lens",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 3275,
           "away_team_logo_id": "3275",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/france/racing club de lens.png"
@@ -6946,7 +7777,13 @@
             "Sky Sports+"
           ],
           "home_team": "Maori",
-          "away_team": "Indigenous All Stars"
+          "away_team": "Indigenous All Stars",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Wellington Phoenix Women v Central Coast Mariners Women",
@@ -6980,7 +7817,13 @@
             "Sky Sports+"
           ],
           "home_team": "Maori",
-          "away_team": "Indigenous All Stars"
+          "away_team": "Indigenous All Stars",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "West Indies v Nepal",
@@ -6996,6 +7839,9 @@
           ],
           "home_team": "West Indies",
           "away_team": "Nepal",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 5106,
           "away_team_logo_id": "5106",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/nepal/nepal.png"
@@ -7011,7 +7857,13 @@
             "Premier Sports Rugby"
           ],
           "home_team": "Brave Lupus Tokyo",
-          "away_team": "Kobe Steelers"
+          "away_team": "Kobe Steelers",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Melbourne Victory Women v Melbourne City Women",
@@ -7058,7 +7910,13 @@
             "Watch NRL"
           ],
           "home_team": "Cronulla Sharks",
-          "away_team": "Parramatta Eels"
+          "away_team": "Parramatta Eels",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "BWF World Tour",
@@ -7270,7 +8128,13 @@
             "TrillerTV+"
           ],
           "home_team": "Feyenoord",
-          "away_team": "Go Ahead Eagles"
+          "away_team": "Go Ahead Eagles",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Udinese v Sassuolo",
@@ -7284,6 +8148,9 @@
           ],
           "home_team": "Udinese",
           "away_team": "Sassuolo",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 4460,
           "away_team_logo_id": "4460",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/italy/us sassuolo.png"
@@ -7319,7 +8186,13 @@
             "WSL2 YouTube"
           ],
           "home_team": "Charlton Athletic Women",
-          "away_team": "Durham Women"
+          "away_team": "Durham Women",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Chelsea Women v Liverpool Women",
@@ -7336,6 +8209,9 @@
           ],
           "home_team": "Chelsea Women",
           "away_team": "Liverpool Women",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 2905,
           "away_team_logo_id": "2905",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/liverpool fc.png"
@@ -7353,6 +8229,9 @@
           ],
           "home_team": "Aston Villa Women",
           "away_team": "Tottenham Hotspur Women",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 2973,
           "away_team_logo_id": "2973",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/tottenham hotspur fc.png"
@@ -7391,7 +8270,10 @@
           "away_team": "London City Lionesses",
           "home_team_id": 2909,
           "home_team_logo_id": "2909",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/manchester united fc.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/manchester united fc.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Birmingham City v Leeds United",
@@ -7406,6 +8288,9 @@
           ],
           "home_team": "Birmingham City",
           "away_team": "Leeds United",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 2902,
           "away_team_logo_id": "2902",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/leeds united fc.png"
@@ -7434,7 +8319,13 @@
             "Bundesliga YouTube"
           ],
           "home_team": "VfL Bochum",
-          "away_team": "SC Paderborn"
+          "away_team": "SC Paderborn",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Holstein Kiel v Schalke 04",
@@ -7448,6 +8339,9 @@
           ],
           "home_team": "Holstein Kiel",
           "away_team": "Schalke 04",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 3559,
           "away_team_logo_id": "3559",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/germany/fc schalke 04.png"
@@ -7463,7 +8357,13 @@
             "Bundesliga YouTube"
           ],
           "home_team": "FC Magdeburg",
-          "away_team": "Arminia Bielefeld"
+          "away_team": "Arminia Bielefeld",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Raceday Live",
@@ -7500,6 +8400,9 @@
           ],
           "home_team": "Cercle Brugge",
           "away_team": "Club Brugge KV",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 1505,
           "away_team_logo_id": "1505",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/belgium/club brugge kv.png"
@@ -7515,7 +8418,13 @@
             "YouTube"
           ],
           "home_team": "Exeter Chiefs Women",
-          "away_team": "Loughborough Lightning"
+          "away_team": "Loughborough Lightning",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Wolfsburg Women v SGS Essen",
@@ -7531,7 +8440,10 @@
           "away_team": "SGS Essen",
           "home_team_id": 3766,
           "home_team_logo_id": "3766",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/germany/usi lupo-martini wolfsburg.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/germany/usi lupo-martini wolfsburg.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Real Oviedo v Athletic Bilbao",
@@ -7547,7 +8459,10 @@
           "away_team": "Athletic Bilbao",
           "home_team_id": 6623,
           "home_team_logo_id": "6623",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/spain/real oviedo.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/spain/real oviedo.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "2026 Winter Olympics Biathlon",
@@ -7592,7 +8507,13 @@
             "BBC Sport Website"
           ],
           "home_team": "Saracens Women",
-          "away_team": "Bristol Bears Women"
+          "away_team": "Bristol Bears Women",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Grimsby Town v Wolves",
@@ -7608,6 +8529,9 @@
           ],
           "home_team": "Grimsby Town",
           "away_team": "Wolves",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 1856,
           "away_team_logo_id": "1856",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/british virgin islands/wolves fc.png"
@@ -7634,7 +8558,13 @@
             "TG4"
           ],
           "home_team": "Glasgow Warriors",
-          "away_team": "Irish Wolfhounds"
+          "away_team": "Irish Wolfhounds",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Kilmarnock v Celtic",
@@ -7650,6 +8580,9 @@
           ],
           "home_team": "Kilmarnock",
           "away_team": "Celtic",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 6134,
           "away_team_logo_id": "6134",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/scotland/celtic fc.png"
@@ -7668,7 +8601,10 @@
           "away_team": "Southampton Women",
           "home_team_id": 2816,
           "home_team_logo_id": "2816",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/bristol city fc.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/bristol city fc.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Ipswich Town Women v Sheffield United Women",
@@ -7682,6 +8618,9 @@
           ],
           "home_team": "Ipswich Town Women",
           "away_team": "Sheffield United Women",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 2948,
           "away_team_logo_id": "2948",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/sheffield united fc.png"
@@ -7717,6 +8656,9 @@
           ],
           "home_team": "Sunderland Women",
           "away_team": "Nottingham Forest Women",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 2930,
           "away_team_logo_id": "2930",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/nottingham forest fc.png"
@@ -7733,7 +8675,13 @@
             "Discovery+"
           ],
           "home_team": "Oxford Utd",
-          "away_team": "Sunderland"
+          "away_team": "Sunderland",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Stoke City v Fulham",
@@ -7766,7 +8714,13 @@
             "Destination Calcio"
           ],
           "home_team": "Bari",
-          "away_team": "Sudtirol"
+          "away_team": "Sudtirol",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Le Havre v Toulouse",
@@ -7780,6 +8734,9 @@
           ],
           "home_team": "Le Havre",
           "away_team": "Toulouse",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 3312,
           "away_team_logo_id": "3312",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/france/toulouse fc.png"
@@ -7799,7 +8756,10 @@
           "away_team": "West Brom U21",
           "home_team_id": 2905,
           "home_team_logo_id": "2905",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/liverpool fc.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/liverpool fc.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Cremonese v Genoa",
@@ -7812,7 +8772,13 @@
             "DAZN"
           ],
           "home_team": "Cremonese",
-          "away_team": "Genoa"
+          "away_team": "Genoa",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Parma v Verona",
@@ -7826,6 +8792,9 @@
           ],
           "home_team": "Parma",
           "away_team": "Verona",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 4212,
           "away_team_logo_id": "4212",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/italy/ac chievo verona.png"
@@ -7880,7 +8849,10 @@
           "away_team": "Heidenheim",
           "home_team_id": 3527,
           "home_team_logo_id": "3527",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/germany/fc augsburg.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/germany/fc augsburg.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Brighton and Hove Albion Women v Arsenal Women",
@@ -7895,6 +8867,9 @@
           ],
           "home_team": "Brighton and Hove Albion Women",
           "away_team": "Arsenal Women",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 2778,
           "away_team_logo_id": "2778",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/england/arsenal fc.png"
@@ -7948,7 +8923,13 @@
             "BBC Sport Website"
           ],
           "home_team": "Castleford Tigers",
-          "away_team": "Wigan Warriors"
+          "away_team": "Wigan Warriors",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Wales v France",
@@ -7985,7 +8966,13 @@
             "Premier Sports 2"
           ],
           "home_team": "Getafe",
-          "away_team": "Villarreal"
+          "away_team": "Villarreal",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Pebble Beach Pro Am",
@@ -8030,7 +9017,13 @@
             "Ligue 1+"
           ],
           "home_team": "Lorient",
-          "away_team": "Angers"
+          "away_team": "Angers",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Metz v Auxerre",
@@ -8044,6 +9037,9 @@
           ],
           "home_team": "Metz",
           "away_team": "Auxerre",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 3137,
           "away_team_logo_id": "3137",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/france/aj auxerre.png"
@@ -8064,7 +9060,10 @@
           "away_team": "Hearts",
           "home_team_id": 6167,
           "home_team_logo_id": "6167",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/scotland/rangers fc.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/scotland/rangers fc.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Red Bull Leipzig v Wolfsburg",
@@ -8078,6 +9077,9 @@
           ],
           "home_team": "Red Bull Leipzig",
           "away_team": "Wolfsburg",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 3766,
           "away_team_logo_id": "3766",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/germany/usi lupo-martini wolfsburg.png"
@@ -8161,7 +9163,10 @@
           "away_team": "Bologna",
           "home_team_id": 4427,
           "home_team_logo_id": "4427",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/italy/torino fc.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/italy/torino fc.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Levante v Valencia",
@@ -8193,7 +9198,13 @@
             "DAZN"
           ],
           "home_team": "Anderlecht",
-          "away_team": "La Louviere"
+          "away_team": "La Louviere",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "2026 Winter Olympics Curling",
@@ -8250,7 +9261,13 @@
             "Destination Calcio"
           ],
           "home_team": "US Avellino",
-          "away_team": "Pescara"
+          "away_team": "Pescara",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "2026 Winter Olympics Freestyle Skiing",
@@ -8348,7 +9365,10 @@
           "away_team": "Nice",
           "home_team_id": 3263,
           "home_team_logo_id": "3263",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/france/olympique lyonnais.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/france/olympique lyonnais.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Napoli v Roma",
@@ -8385,7 +9405,10 @@
           "away_team": "Real Betis",
           "home_team_id": 6609,
           "home_team_logo_id": "6609",
-          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/spain/rcd mallorca.png"
+          "home_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/spain/rcd mallorca.png",
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Stade Francais v Toulouse",
@@ -8399,6 +9422,9 @@
           ],
           "home_team": "Stade Francais",
           "away_team": "Toulouse",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
           "away_team_id": 3312,
           "away_team_logo_id": "3312",
           "away_team_logo": "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logos/france/toulouse fc.png"
@@ -8467,7 +9493,13 @@
             "Sky Sports+"
           ],
           "home_team": "TBC",
-          "away_team": "TBC"
+          "away_team": "TBC",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         },
         {
           "name": "Boca Juniors v Club Atletico Platense",
@@ -8480,7 +9512,13 @@
             "Premier Sports 2"
           ],
           "home_team": "Boca Juniors",
-          "away_team": "Club Atletico Platense"
+          "away_team": "Club Atletico Platense",
+          "home_team_id": null,
+          "home_team_logo_id": null,
+          "home_team_logo": null,
+          "away_team_id": null,
+          "away_team_logo_id": null,
+          "away_team_logo": null
         }
       ]
     }

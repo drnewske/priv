@@ -1,89 +1,11 @@
 {
-  "generated_at": "2026-02-09T13:58:13.967474Z",
+  "generated_at": "2026-02-09T15:22:13.140896Z",
   "source": "wheresthematch.com",
   "schedule": [
     {
       "date": "2026-02-09",
       "day": "Monday",
       "events": [
-        {
-          "name": "Winter Olympics",
-          "start_time_iso": "2026-02-09T09:00:00Z",
-          "time": "09:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "BBC1",
-            "BBC2",
-            "TNT Sports 2",
-            "TNT Sports Ultimate",
-            "BBC iPlayer",
-            "BBC Sport Website",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Alpine Skiing",
-          "start_time_iso": "2026-02-09T09:00:00Z",
-          "time": "09:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports 2",
-            "TNT Sports Ultimate",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Curling",
-          "start_time_iso": "2026-02-09T09:00:00Z",
-          "time": "09:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports 4",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Curling",
-          "start_time_iso": "2026-02-09T09:00:00Z",
-          "time": "09:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports Extra",
-            "Discovery+"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Curling",
-          "start_time_iso": "2026-02-09T09:00:00Z",
-          "time": "09:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports Extra",
-            "Discovery+"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Curling",
-          "start_time_iso": "2026-02-09T09:00:00Z",
-          "time": "09:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports Extra",
-            "Discovery+"
-          ]
-        },
         {
           "name": "Zimbabwe v Oman",
           "start_time_iso": "2026-02-09T09:30:00Z",
