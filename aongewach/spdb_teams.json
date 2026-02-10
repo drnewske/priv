@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "last_built": "2026-02-10T10:20:30.673132+00:00",
+    "last_built": "2026-02-10T11:43:15.542525+00:00",
     "team_count": 420,
-    "index_entries": 552
+    "index_entries": 555
   },
   "teams": {
     "Bolton Wanderers": {
@@ -4698,6 +4698,7 @@
     "al ittihad": "Al Ittihad",
     "al jazira": "Al Jazira",
     "al nasr": "Al Nasr",
+    "al nassr": "Al Nasr",
     "al wahda fc": "Al Wahda FC",
     "al wahda": "Al Wahda FC",
     "al wasl": "Al Wasl",
@@ -4835,6 +4836,7 @@
     "fortuna sittard": "Fortuna Sittard",
     "france": "France",
     "freiburg": "Freiburg",
+    "sc freiburg": "Freiburg",
     "frolunda": "Frolunda",
     "frölunda hc": "Frolunda",
     "fulham": "Fulham",
@@ -4952,6 +4954,7 @@
     "pakistan": "Pakistan",
     "palermo": "Palermo",
     "paris fc": "Paris FC",
+    "paris": "Paris FC",
     "parma": "Parma",
     "parramatta eels": "Parramatta Eels",
     "penrith panthers": "Penrith Panthers",
@@ -5130,9 +5133,6 @@
     "union berlin women": "Union Berlin Women",
     "1 fc union berlin frauen": "Union Berlin Women",
     "wellington phoenix women": "Wellington Phoenix Women",
-    "west brom u21": "West Brom U21",
-    "sc freiburg": "Freiburg",
-    "al nassr": "Al Nasr",
-    "paris": "Paris FC"
+    "west brom u21": "West Brom U21"
   }
 }
