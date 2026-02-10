@@ -9,7 +9,7 @@ from collections import defaultdict
 SCHEDULE_FILE = 'weekly_schedule_mapped.json'
 CHANNELS_FILE = 'channels.json'
 MAP_FILE = 'channel_map.json'
-OUTPUT_FILE = 'weekly_schedule_final.json'
+OUTPUT_FILE = 'e104f869d64e3d41256d5398.json'
 CONFIDENCE_THRESHOLD = 0.85 
 
 def load_json(filepath):

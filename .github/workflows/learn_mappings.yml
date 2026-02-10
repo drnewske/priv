@@ -1,5 +1,9 @@
 name: Learn Team Mappings
 
+# NOTE: Alias learning is now BUILT INTO the main pipeline.
+# The fuzzy_match.py module auto-learns aliases during map_schedule_to_teams.py.
+# This workflow is kept for manual re-learning only (e.g., after fixing data).
+
 on:
   workflow_dispatch:  # Manual trigger only
 
@@ -18,20 +22,20 @@ jobs:
       with:
         python-version: '3.10'
         
-    - name: Run Learning Script
+    - name: Run Team Mapper (with alias learning)
       run: |
         cd aongewach
-        python learn_mappings.py
+        python map_schedule_to_teams.py
         
     - name: Commit and push changes
       run: |
         git config --global user.name 'GitHub Action'
         git config --global user.email 'action@github.com'
-        git add aongewach/teams.json
+        git add aongewach/spdb_teams.json
         # Only commit if there are changes
         if git diff --staged --quiet; then
           echo "No changes to commit"
         else
-          git commit -m "chore: Learn new team mappings [skip ci]"
+          git commit -m "chore: Learn new team aliases [skip ci]"
           git push
         fi
