@@ -18,7 +18,15 @@ import time
 import zlib
 
 # Configuration
-SCHEDULE_FILE = 'weekly_schedule.json'
+import os
+
+# Configuration
+# Look for schedule in the same directory as this script, or current dir
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+SCHEDULE_FILE = os.path.join(SCRIPT_DIR, 'weekly_schedule.json')
+if not os.path.exists(SCHEDULE_FILE):
+    SCHEDULE_FILE = 'weekly_schedule.json'
+
 
 
 

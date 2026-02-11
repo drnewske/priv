@@ -30,10 +30,6 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         
-    - name: Generate Weekly Schedule
-      run: python aongewach/scrape_schedule.py
-
-        
     - name: Run Sports Scanner
       run: |
         # Use inputs if provided, otherwise default run
