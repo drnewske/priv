@@ -15,7 +15,11 @@ from collections import defaultdict
 from difflib import SequenceMatcher
 import concurrent.futures
 import time
-import zlib  # Added for stable ID hashing
+import zlib
+
+# Configuration
+SCHEDULE_FILE = 'weekly_schedule.json'
+
 
 
 class XtreamAPI:
@@ -200,14 +204,17 @@ class ChannelNormalizer:
 class SportsScanner:
     """Main scanner class."""
     
-    def __init__(self, similarity_threshold: float = 0.85):
-        """Initialize scanner."""
-        self.normalizer = ChannelNormalizer(similarity_threshold)
+    def __init__(self, target_channels: List[str], match_limit: int = 5):
+        """Initialize scanner with target channels and limit."""
+        # Normalize targets for matching
+        self.targets = [t.lower() for t in target_channels if t]
+        self.match_limit = match_limit
         
-        # Channel storage: {normalized_name: {matches: {quality: set()}, logo: str}}
+        # Channel storage: {original_target_name: {matches: {quality: set()}, logo: str}}
+        # We map back to the Target Name from the schedule
         self.channels = defaultdict(lambda: {'qualities': defaultdict(set), 'logo': None})
+        self.channel_counts = defaultdict(int) # Track count per target
         self.channel_ids = {}
-        # self.next_id = 1  # Removed in favor of stable hashing
         
         # Stats
         self.stats = {
@@ -220,14 +227,31 @@ class SportsScanner:
             'channels_added': 0
         }
     
-    def _get_channel_id(self, normalized_name: str) -> int:
+    def _get_channel_id(self, name: str) -> int:
         """Get or create STABLE channel ID (Hash of name)."""
-        if normalized_name not in self.channel_ids:
-            # Use adler32 for deterministic ID
-            # & 0xffffffff ensures it's unsigned
-            val = zlib.adler32(normalized_name.encode('utf-8')) & 0xffffffff
-            self.channel_ids[normalized_name] = val
-        return self.channel_ids[normalized_name]
+        if name not in self.channel_ids:
+            val = zlib.adler32(name.encode('utf-8')) & 0xffffffff
+            self.channel_ids[name] = val
+        return self.channel_ids[name]
+
+    def _find_target_match(self, stream_name: str) -> Optional[str]:
+        """Check if stream name contains any target channel (Substring Match)."""
+        name_lower = stream_name.lower()
+        # Strictly look for the target phrase in the stream name
+        # We iterate our targets. This could be O(N*M) so rely on optimization if needed
+        # but N (targets) is small (~100-200) and M (stream length) is small.
+        for target in self.targets:
+             if target in name_lower:
+                 return target # Return the matched target string (lower)
+        return None
+
+    def _get_display_name(self, target_lower: str) -> str:
+        """Recover display name (Title Case) - simplified."""
+        # In a real impl we might map lower->original, but for now Title Case is fine
+        # or we could store the original map.
+        # Actually, let's just title case it to look nice, or keep it simple.
+        return target_lower.title()
+
     
     def scan_direct_m3u(self, url: str) -> Dict:
         """Scan a direct M3U file URL."""
@@ -264,11 +288,6 @@ class SportsScanner:
                     if logo_match:
                         current_info['logo'] = logo_match.group(1)
                     
-                    # Extract Group
-                    group_match = re.search(r'group-title="([^"]*)"', line)
-                    if group_match:
-                        current_info['group'] = group_match.group(1)
-                    
                     # Extract Name (last part after comma)
                     name_match = re.search(r',([^,]*)$', line)
                     if name_match:
@@ -281,24 +300,28 @@ class SportsScanner:
                         stream_url = line
                         stream_logo = current_info.get('logo')
                         
-                        # Normalize name
-                        normalized = self.normalizer.normalize(stream_name)
-                        if not normalized or len(normalized) < 3:
+                        # Strict Match Check
+                        matched_target_lower = self._find_target_match(stream_name)
+                        if not matched_target_lower:
+                            continue
+
+                        # Check limit
+                        if self.channel_counts[matched_target_lower] >= self.match_limit:
                             continue
                         
-                        # Find match
-                        existing_names = list(self.channels.keys())
-                        matched = self.normalizer.find_match(normalized, existing_names)
-                        final_name = matched or normalized
+                        # Use title-cased target as key
+                        final_name = self._get_display_name(matched_target_lower)
                         
-                        # Get quality
-                        quality = self.normalizer.extract_quality(stream_name)
+                        # Get quality (using existing normalizer helper or logic)
+                        # We can instantiate normalizer locally or just use regex
+                        quality = ChannelNormalizer(0).extract_quality(stream_name)
                         
                         # Add to channels
                         if stream_url not in self.channels[final_name]['qualities'][quality]:
                             self.channels[final_name]['qualities'][quality].add(stream_url)
                             channels_found += 1
                             self.stats['channels_added'] += 1
+                            self.channel_counts[matched_target_lower] += 1
                             
                             # Add logo if missing
                             if not self.channels[final_name]['logo'] and stream_logo:
@@ -384,18 +407,19 @@ class SportsScanner:
                     if not stream_id or not stream_name:
                         continue
                     
-                    # Normalize name
-                    normalized = self.normalizer.normalize(stream_name)
-                    if not normalized or len(normalized) < 3: # Skip very short names
+                    # Strict Match Check
+                    matched_target_lower = self._find_target_match(stream_name)
+                    if not matched_target_lower:
+                         continue
+                         
+                    # Check limit
+                    if self.channel_counts[matched_target_lower] >= self.match_limit:
                         continue
-                    
-                    # Find similar channel
-                    existing_names = list(self.channels.keys())
-                    matched = self.normalizer.find_match(normalized, existing_names)
-                    final_name = matched or normalized
+                        
+                    final_name = self._get_display_name(matched_target_lower)
                     
                     # Get quality
-                    quality = self.normalizer.extract_quality(stream_name)
+                    quality = ChannelNormalizer(0).extract_quality(stream_name)
                     
                     # Build URL
                     url = api.get_stream_url(stream_id)
@@ -405,6 +429,7 @@ class SportsScanner:
                         self.channels[final_name]['qualities'][quality].add(url)
                         channels_found += 1
                         self.stats['channels_added'] += 1
+                        self.channel_counts[matched_target_lower] += 1
                         
                         # Add logo if missing
                         if not self.channels[final_name]['logo'] and stream_icon:
@@ -423,39 +448,30 @@ class SportsScanner:
         
         return result
     
-    def scan_for_success(self, servers: List[Dict], target_success: int = 20, max_workers: int = 5) -> None:
-        """Scan servers until target success count is reached."""
+    def scan_selected_servers(self, servers: List[Dict], max_workers: int = 5) -> None:
+        """Scan a fixed list of servers."""
         self.stats['servers_total'] = len(servers)
         
         print(f"\n{'='*70}")
-        print(f"Scanning for {target_success} working servers (max {max_workers} parallel)")
+        print(f"Scanning {len(servers)} playlists (Priority + Top 20) with max {max_workers} threads")
         print(f"{'='*70}\n", flush=True)
-        
-        success_count = 0
-        
-        # Process in batches to respect the target limit efficiently
-        # We don't want to spin up 100 threads if the first 20 work.
-        batch_size = max_workers
-        
-        for i in range(0, len(servers), batch_size):
-            if success_count >= target_success:
-                print(f"\nReached target of {target_success} successful scans. Stopping.", flush=True)
-                break
-                
-            batch = servers[i : i + batch_size]
+
+        with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+            futures = {executor.submit(self.scan_server, server): server for server in servers}
             
-            with concurrent.futures.ThreadPoolExecutor(max_workers=len(batch)) as executor:
-                futures = {executor.submit(self.scan_server, server): server for server in batch}
-                
-                for future in concurrent.futures.as_completed(futures):
+            for future in concurrent.futures.as_completed(futures):
+                server = futures[future]
+                try:
                     result = future.result()
                     if result['success'] and result['channels_added'] > 0:
-                        success_count += 1
                         self.stats['servers_success'] += 1
                     else:
                         self.stats['servers_failed'] += 1
-                        
-            print(f"--- Batch complete. Successes so far: {success_count}/{target_success} ---", flush=True)
+                except Exception as e:
+                    print(f"Exception scanning {server.get('name')}: {e}")
+                    self.stats['servers_failed'] += 1
+                    
+        print(f"--- Scan complete. ---", flush=True)
 
     def save(self, output_path: str) -> None:
         """Save results to JSON."""
@@ -515,9 +531,37 @@ def parse_arguments():
     return parser.parse_args()
 
 
+def load_target_channels(schedule_file):
+    """Load unique channel names from the weekly schedule."""
+    try:
+        with open(schedule_file, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        
+        targets = set()
+        for day in data.get('schedule', []):
+            for event in day.get('events', []):
+                for channel in event.get('channels', []):
+                    # We strip and maybe should be careful about splitting?
+                    # The user said strict match. Schedule has "Sky Sports Main Event".
+                    # We just take the full string.
+                    if channel:
+                         targets.add(channel.strip())
+        
+        print(f"Loaded {len(targets)} unique target channels from schedule.")
+        return list(targets)
+    except Exception as e:
+        print(f"Error loading schedule: {e}")
+        return []
+
 def main():
     args = parse_arguments()
     
+    # Load targets
+    targets = load_target_channels(SCHEDULE_FILE)
+    if not targets:
+        print("No target channels found. Exiting.")
+        sys.exit(1)
+
     try:
         with open(args.input_file, 'r', encoding='utf-8') as f:
             data = json.load(f)
@@ -532,7 +576,7 @@ def main():
         'url': 'https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/a1x.m3u',
         'name': 'A1XM Public',
         'domain': 'a1xmedia.github.io',
-        'channel_count': 99999, # High priority
+        'channel_count': 9999999, # HIGHEST priority
         'type': 'direct'
     })
     
@@ -551,61 +595,36 @@ def main():
         
     print(f"Found {len(all_servers)} total playlists.")
     
-    # 1. Filter by Priority Domains
-    priority_domains = set()
-    if args.domains:
-        priority_domains = {d.strip().lower() for d in args.domains.split(',') if d.strip()}
+    # STRATEGY: 
+    # 1. Identify Priorities (External URL)
+    # 2. Sort Rest by Channel Count desc
+    # 3. Take Top 20 of Rest
+    # 4. Combine
     
-    # Separate into priority and others
-    priorities = []
-    others = []
+    priority_url = "a1xmedia.github.io"
+    priorities = [s for s in all_servers if s.get('domain') == priority_url]
+    others = [s for s in all_servers if s.get('domain') != priority_url]
     
-    for server in all_servers:
-        domain = server.get('domain', '').lower()
-        if server.get('type') == 'direct' or any(pd in domain for pd in priority_domains):
-            priorities.append(server)
-        else:
-            others.append(server)
-            
-    # 2. Sort others by channel count (descending)
+    # Sort others by channel count
     others.sort(key=lambda x: x['channel_count'], reverse=True)
     
-    # 3. Combine - PRIORITIES FIRST, then the rest of the sorted list
-    # We do NOT slice top 20 here anymore, because we want to scan UNTIL we hit 20 successes
-    final_servers = priorities + others
+    # Take Top 20
+    top_20 = others[:20]
     
-    # Remove duplicates (based on URL) just in case
-    unique_servers = []
-    seen_urls = set()
-    for s in final_servers:
-        # Check against base URL to allow different query params if needed, but here simple str check is fine
-        if s['url'] not in seen_urls:
-            unique_servers.append(s)
-            seen_urls.add(s['url'])
-            
-    final_servers = unique_servers
+    final_servers = priorities + top_20
     
-    # Apply limit if specified (hard limit on total servers scanned, used for testing)
-    if args.limit:
-        final_servers = final_servers[:args.limit]
-        
-    print(f"Queued {len(final_servers)} playlists for scanning:")
-    print(f"  - {len(priorities)} priority")
-    print(f"  - {len(others)} others")
+    print(f"Selected {len(final_servers)} playlists for scanning:")
+    print(f"  - {len(priorities)} priority ({priority_url})")
+    print(f"  - {len(top_20)} top playlists (by count)")
     
     if not final_servers:
         print("No servers selected for scanning.")
         sys.exit(0)
     
-    # Scan with 85% similarity threshold (relaxed to group better)
-    scanner = SportsScanner(similarity_threshold=0.85)
+    # Scan with Strict Targets and Limit
+    scanner = SportsScanner(target_channels=targets, match_limit=5)
     
-    # Use scan_for_success with target of 20 successful scans
-    target_success = 20
-    if args.limit:
-        target_success = args.limit # If testing with limit, success target matches limit
-        
-    scanner.scan_for_success(final_servers, target_success=target_success, max_workers=5)
+    scanner.scan_selected_servers(final_servers, max_workers=5)
     scanner.save(args.output_file)
 
 
