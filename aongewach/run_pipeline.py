@@ -67,13 +67,16 @@ def main():
     # 1. Scrape Schedule (Weekly)
     run_step("scrape_schedule.py", "Scraping Weekly Schedule from Wheresthematch.com")
 
-    # 2. Build Teams Database (TheSportsDB bulk preload)
-    if is_db_fresh():
-        print(f"\n{'='*50}")
-        print(f"STEP: Teams DB is up to date — skipping build_teams_db.py")
-        print(f"{'='*50}\n")
-    else:
-        run_step("build_teams_db.py", "Building Teams Database from TheSportsDB (Bulk)")
+    # 2. Scan Sports Channels (Update channels.json based on schedule)
+    run_step("scan_sports_channels.py", "Scanning Playlists for Channels in Schedule")
+
+    # 3. Build Teams Database (TheSportsDB bulk preload) - DISABLED (Too slow, run manually)
+    # if is_db_fresh():
+    #     print(f"\n{'='*50}")
+    #     print(f"STEP: Teams DB is up to date — skipping build_teams_db.py")
+    #     print(f"{'='*50}\n")
+    # else:
+    #     run_step("build_teams_db.py", "Building Teams Database from TheSportsDB (Bulk)")
 
     # 3. Map Teams (Event Names -> Team IDs & Logos)
     run_step("map_schedule_to_teams.py", "Mapping Events to Team IDs and Logos")

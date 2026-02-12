@@ -454,74 +454,83 @@ class SportsScanner:
         print(f"--- Scan complete. ---", flush=True)
 
     def save(self, output_path: str) -> None:
-        """Save results to JSON."""
+        """Save results to JSON (Merge with existing)."""
+        
+        # 1. Load Existing Data to preserve Manual/Previous entries
+        existing_data = {}
+        if os.path.exists(output_path):
+            try:
+                with open(output_path, 'r', encoding='utf-8') as f:
+                    existing_data = json.load(f)
+            except Exception as e:
+                print(f"Warning: Could not load existing {output_path}: {e}")
+        
+        # Prepare Output Structure
         output = {
             'metadata': {
                 'scan_date': time.strftime('%Y-%m-%d %H:%M:%S UTC', time.gmtime()),
                 'stats': self.stats,
-                'unique_channels': len(self.channels)
+                # Unique channels is sum of existing + new (deduplicated)
             },
-            'channels': {}
+            'channels': existing_data.get('channels', {})
         }
         
-        # Build output from FOUND channels
-        found_names_lower = set()
-        for name in sorted(self.channels.keys()):
-            found_names_lower.add(name.lower())
-            channel_data = self.channels[name]
-            
-            # Sort qualities
-            qualities = {}
-            for quality in ['SD', 'HD', 'FHD', '4K']:
-                if quality in channel_data['qualities']:
-                    qualities[quality] = sorted(list(channel_data['qualities'][quality]))
-            
-            if qualities:
-                 output['channels'][name] = {
-                    'id': self.channel_ids[name],
-                    'logo': channel_data['logo'],
-                    'qualities': qualities
-                }
+        # 2. Merge Scanned Channels into Output
+        # We overwrite with NEW data if found, but keep old data if not found in this scan?
+        # User said: "scanner will always include what it finds from the schedule...it should not rewrite the file...it should add to the file"
+        # So if we found a channel, we update it. If we didn't find it, we leave it alone (it might be from a manual scan).
         
-        # Identify MISSING channels
-        missing = []
+        for name, data in self.channels.items():
+            # If we found streams for this channel
+            if data['qualities']: 
+                # Create/Update node
+                if name not in output['channels']:
+                     output['channels'][name] = {
+                         'id': self.channel_ids[name],
+                         'logo': None,
+                         'qualities': {}
+                     }
+                
+                # Update Qualities
+                qs = {}
+                for quality in ['SD', 'HD', 'FHD', '4K']:
+                    if quality in data['qualities']:
+                        qs[quality] = sorted(list(data['qualities'][quality]))
+                
+                output['channels'][name]['qualities'] = qs
+                output['channels'][name]['id'] = self.channel_ids[name] # Ensure ID is set
+                
+                # Update Logo if we have a new one and old is empty
+                if data['logo'] and not output['channels'][name].get('logo'):
+                    output['channels'][name]['logo'] = data['logo']
+
+        # 3. Add Missing Channels from Schedule (as nulls, ONLY if not already in DB)
+        # We don't want to overwrite a valid manual channel with a null just because it wasn't in this specific scan.
+        found_names_lower = set(k.lower() for k in output['channels'].keys())
+        
+        missing_count = 0
         for target in self.targets:
             if target.lower() not in found_names_lower:
-                missing.append(target)
-        missing.sort()
-        
-        # Add MISSING channels to output (with nulls)
-        for m in missing:
-            # We use the target name title-cased as the key
-            display_name = m.title()
-            output['channels'][display_name] = {
-                'id': None,
-                'logo': None,
-                'qualities': None 
-            }
+                # Truly new/missing
+                display_name = target.title()
+                output['channels'][display_name] = {
+                    'id': None,
+                    'logo': None,
+                    'qualities': None 
+                }
+                missing_count += 1
+
+        output['metadata']['unique_channels'] = len(output['channels'])
 
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(output, f, indent=2, ensure_ascii=False)
         
         # Console Reporting
-        x = len(self.targets)
-        y = len(found_names_lower)
-        z = len(missing)
-        
         print(f"\n{'='*70}", flush=True)
-        print(f"✅ Saved {len(output['channels'])} unique channels → {output_path}", flush=True)
-        print(f"{'='*70}", flush=True)
-        print(f"Statistics:", flush=True)
-        print(f"  Streams Scanned: {self.stats['streams_total']}", flush=True)
-        print(f"  Target Channels (Schedule): {x}", flush=True)
-        print(f"  Found Channels:             {y}", flush=True)
-        print(f"  Missing Channels:           {z}", flush=True)
-        print(f"{'='*70}", flush=True)
-        
-        if missing:
-            print("Missing Channels (Added to JSON with null values):")
-            for m in missing:
-                print(f"  - {m}")
+        print(f"✅ Saved merged results to {output_path}", flush=True)
+        print(f"  Total Channels in DB: {len(output['channels'])}", flush=True)
+        print(f"  New/Updated in this scan: {len(self.channels)}", flush=True)
+        print(f"  Missing (Added as null): {missing_count}", flush=True)
         print(f"{'='*70}\n", flush=True)
 
 
@@ -536,7 +545,11 @@ def load_target_channels(schedule_file):
             for event in day.get('events', []):
                 for channel in event.get('channels', []):
                     if channel:
-                         targets.add(channel.strip())
+                        clean_name = channel.strip()
+                        # Specific fix for Laliga TV
+                        if clean_name.lower() == 'laligatv':
+                            clean_name = 'Laliga Tv'
+                        targets.add(clean_name)
         
         print(f"Loaded {len(targets)} unique target channels from schedule.")
         return list(targets)

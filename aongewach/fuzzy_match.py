@@ -44,7 +44,12 @@ SPORT_MAP = {
 # ─── Suffixes to strip when cleaning team names
 TEAM_SUFFIXES = [
     r'\s+U\d+s?$',       # U18, U21, U23, U18s
+    r'\s+U\d+s?$',       # U18, U21, U23, U18s
     r'\s+Women$',         # Women
+    r'\bWomen\b',         # Women (anywhere)
+    r'\s+Ladies$',        # Ladies
+    r'\s+\(W\)$',         # (W)
+    r'\(W\)',             # (W) anytime
     r'\s+Ladies$',        # Ladies
     r'\s+\(W\)$',         # (W)
     r'\s+\(M\)$',         # (M)

@@ -1,15 +1,15 @@
 {
   "metadata": {
-    "scan_date": "2026-02-12 10:19:28 UTC",
+    "scan_date": "2026-02-12 12:23:38 UTC",
     "stats": {
       "servers_total": 5,
       "servers_success": 5,
       "servers_failed": 0,
       "categories_total": 0,
       "streams_total": 32011,
-      "channels_added": 111
+      "channels_added": 113
     },
-    "unique_channels": 31
+    "unique_channels": 65
   },
   "channels": {
     "Bbc Scotland": {
@@ -167,12 +167,12 @@
       "qualities": {
         "HD": [
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/122413.ts",
+          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/186617.ts",
           "http://tv.starsharetv.com:8080/live/7654321/1234567/122413.ts",
           "http://tv.starsharetv.com:8080/live/7654321/1234567/186617.ts"
         ],
         "FHD": [
-          "http://tv.starsharetv.com:8080/live/7654321/1234567/186618.ts",
-          "https://a1xs.vip/2000011"
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/186618.ts"
         ]
       }
     },
@@ -184,12 +184,12 @@
           "http://tv.starsharetv.com:8080/live/7654321/1234567/148679.ts"
         ],
         "HD": [
+          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/122412.ts",
           "http://tv.starsharetv.com:8080/live/7654321/1234567/122412.ts",
           "http://tv.starsharetv.com:8080/live/7654321/1234567/186605.ts"
         ],
         "FHD": [
-          "http://tv.starsharetv.com:8080/live/7654321/1234567/186606.ts",
-          "https://a1xs.vip/2000006"
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/186606.ts"
         ]
       }
     },
@@ -200,13 +200,15 @@
         "SD": [
           "http://tv.starsharetv.com:8080/live/7654321/1234567/148680.ts"
         ],
+        "HD": [
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/186615.ts"
+        ],
         "FHD": [
-          "https://a1xs.vip/2000005"
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/186616.ts"
         ],
         "4K": [
           "http://tv.starsharetv.com:8080/live/7654321/1234567/122181.ts",
-          "http://tv.starsharetv.com:8080/live/7654321/1234567/581306.ts",
-          "https://a1xs.vip/2000016"
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/581306.ts"
         ]
       }
     },
@@ -216,12 +218,12 @@
       "qualities": {
         "HD": [
           "http://tv.starsharetv.com:8080/live/7654321/1234567/122411.ts",
-          "http://tv.starsharetv.com:8080/live/7654321/1234567/186607.ts"
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/186607.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/19.ts"
         ],
         "FHD": [
           "http://tv.starsharetv.com:8080/live/7654321/1234567/186612.ts",
-          "http://tv.starsharetv.com:8080/live/7654321/1234567/23334.ts",
-          "https://a1xs.vip/2000003"
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/23334.ts"
         ]
       }
     },
@@ -233,12 +235,12 @@
           "http://tv.starsharetv.com:8080/live/7654321/1234567/148682.ts"
         ],
         "HD": [
-          "http://tv.starsharetv.com:8080/live/7654321/1234567/122417.ts"
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/122417.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/186613.ts"
         ],
         "FHD": [
           "http://tv.starsharetv.com:8080/live/7654321/1234567/186614.ts",
-          "http://tv.starsharetv.com:8080/live/7654321/1234567/23338.ts",
-          "https://a1xs.vip/2000009"
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/23338.ts"
         ]
       }
     },
@@ -247,15 +249,13 @@
       "logo": "https://i.ibb.co/gwCk7Bc/sky-m-event-uhd.png",
       "qualities": {
         "HD": [
-          "http://tv.starsharetv.com:8080/live/7654321/1234567/122409.ts"
-        ],
-        "FHD": [
-          "https://a1xs.vip/2000001"
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/122409.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/675821.ts"
         ],
         "4K": [
           "http://tv.starsharetv.com:8080/live/7654321/1234567/384215.ts",
           "http://tv.starsharetv.com:8080/live/7654321/1234567/581305.ts",
-          "https://a1xs.vip/2000015"
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/675822.ts"
         ]
       }
     },
@@ -267,12 +267,12 @@
           "http://tv.starsharetv.com:8080/live/7654321/1234567/148684.ts"
         ],
         "HD": [
+          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/122416.ts",
           "http://tv.starsharetv.com:8080/live/7654321/1234567/122416.ts",
           "http://tv.starsharetv.com:8080/live/7654321/1234567/186621.ts"
         ],
         "FHD": [
-          "http://tv.starsharetv.com:8080/live/7654321/1234567/186622.ts",
-          "https://a1xs.vip/2000008"
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/186622.ts"
         ]
       }
     },
@@ -286,8 +286,8 @@
           "http://tv.starsharetv.com:8080/live/7654321/1234567/9891.ts"
         ],
         "FHD": [
-          "http://tv.starsharetv.com:8080/live/7654321/1234567/23342.ts",
-          "https://a1xs.vip/2000002"
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/186604.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/23342.ts"
         ]
       }
     },
@@ -591,6 +591,16 @@
       "id": null,
       "logo": null,
       "qualities": null
+    },
+    "Laliga Tv": {
+      "id": 271319861,
+      "logo": null,
+      "qualities": {
+        "4K": [
+          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/581353.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/581353.ts"
+        ]
+      }
     }
   }
 }
