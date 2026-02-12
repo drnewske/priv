@@ -8,6 +8,8 @@ Self-learning aliases for continuous improvement.
 import json
 import os
 import re
+import time
+import requests
 from difflib import SequenceMatcher
 
 
@@ -103,6 +105,43 @@ def map_sport(schedule_sport):
     return SPORT_MAP.get(schedule_sport.lower(), schedule_sport)
 
 
+def clean_for_api(name):
+    """
+    Clean team name specifically for API search.
+    Removes: U18/U21/B/C team, standalone FC/Football Club.
+    """
+    if not name:
+        return ""
+    
+    # 1. Remove generic suffixes (U18, etc.) - reuse existing logic
+    cleaned = clean_team_name(name)
+    
+    # 2. Specific API cleaning rules (Case-insensitive)
+    # Remove standalone "FC", "Football Club"
+    # Note: \b ensures we don't match "AFC" or "FC" inside a word.
+    # We want to match "Arsenal FC" -> "Arsenal", but not "AFC Wimbledon" -> "Wimbledon" (user said unless part of word like afc)
+    # Wait, user said "unless fc is part of a word..like afc..so only rid of standalone fc".
+    # \bFC\b matches " FC " but NOT "AFC". So \bFC\b is safe.
+    
+    # Patterns to remove:
+    # - u18, u18s, u21, u21s
+    # - b team, team b, c team, team c
+    # - football club, fc
+    
+    patterns = [
+        r'\b(?:u18s?|u21s?)\b',
+        r'\b(?:[bc]\s+team|team\s+[bc])\b',
+        r'\b(?:football\s+club|fc)\b'
+    ]
+    
+    for pat in patterns:
+        cleaned = re.sub(pat, '', cleaned, flags=re.IGNORECASE)
+        
+    # Cleanup extra spaces
+    cleaned = re.sub(r'\s+', ' ', cleaned).strip()
+    return cleaned
+
+
 class TeamMatcher:
     """
     Multi-tier team name matcher with self-learning aliases.
@@ -179,6 +218,31 @@ class TeamMatcher:
                 self._learn_alias(team_key, cleaned)
                 return self.teams[team_key]
 
+        # ── Tier 3.5: Hyphenated match (User request)
+        # Try replacing spaces with hyphens and vice versa
+        hyphenated = cleaned.replace(' ', '-')
+        dehyphenated = cleaned.replace('-', ' ')
+        
+        for variant in [hyphenated, dehyphenated]:
+            if variant == cleaned:
+                continue
+                
+            # Check basic index with variant
+            v_norm = normalize_for_index(variant)
+            if v_norm in self.index:
+                 team_key = self.index[v_norm]
+                 if team_key in self.teams:
+                     self._learn_alias(team_key, cleaned)
+                     return self.teams[team_key]
+            
+            # Check deep index with variant
+            v_deep = normalize_deep(variant)
+            if v_deep in self._deep_index:
+                team_key = self._deep_index[v_deep]
+                if team_key in self.teams:
+                    self._learn_alias(team_key, cleaned)
+                    return self.teams[team_key]
+
         # ── Tier 4: Fuzzy match (sport-scoped if possible)
         tsdb_sport = map_sport(sport) if sport else None
         candidates = self._get_candidates(tsdb_sport)
@@ -194,12 +258,14 @@ class TeamMatcher:
                 best_score = score
                 best_key = candidate_key
 
-        if best_score >= 0.85 and best_key:
+        # User requested 90% threshold for auto-learning/matching
+        THRESHOLD = 0.90
+        
+        if best_score >= THRESHOLD and best_key:
             # Auto-learn high-confidence matches
-            if best_score >= 0.88:
-                self._learn_alias(best_key, cleaned)
+            self._learn_alias(best_key, cleaned)
             return self.teams[best_key]
-
+            
         return None
 
     def _get_candidates(self, tsdb_sport):
@@ -244,6 +310,86 @@ class TeamMatcher:
             self.db['_index'] = self.index
             save_json(self.db_path, self.db)
             print(f"  Saved {self.learned_count} new learned aliases.")
+
+    def fetch_and_learn(self, name):
+        """
+        Tier 3 Fallback: Query API directly for the name.
+        If found, add to DB and save.
+        """
+        cleaned_api = clean_for_api(name)
+        if not cleaned_api:
+            return None
+
+        # Strategies to try
+        search_terms = [cleaned_api]
+        
+        # Try hyphenated if spaces exist
+        if ' ' in cleaned_api:
+            search_terms.append(cleaned_api.replace(' ', '-'))
+
+        API_BASE = "https://www.thesportsdb.com/api/v1/json/3/searchteams.php?t="
+
+        for term in search_terms:
+            try:
+                # Add delay to respect rate limits
+                time.sleep(1.5)
+                
+                print(f"    API Fetching: {term}...")
+                url = API_BASE + requests.utils.quote(term)
+                response = requests.get(url, timeout=10)
+                
+                if response.status_code != 200:
+                    print(f"    -> API Error: Status {response.status_code}")
+                    continue
+                    
+                try:
+                    data = response.json()
+                except ValueError:
+                    print(f"    -> API Error: Invalid JSON response (Rate limit?)")
+                    continue
+                
+                if data and data.get("teams"):
+                    # Use the first result
+                    team_data = data["teams"][0]
+                    found_name = team_data["strTeam"]
+                    found_id = team_data["idTeam"]
+                    
+                    # Create entry
+                    entry = {
+                        "id": int(found_id) if found_id.isdigit() else found_id,
+                        "api_id": found_id,
+                        "name": found_name,
+                        "short_name": team_data.get("strTeamShort") or "",
+                        "alternates": [a.strip() for a in (team_data.get("strAlternate") or "").split(",") if a.strip()],
+                        "keywords": [k.strip() for k in (team_data.get("strKeywords") or "").split(",") if k.strip()],
+                        "logo_url": team_data.get("strTeamBadge"),
+                        "banner_url": team_data.get("strTeamBanner"),
+                        "league": team_data.get("strLeague") or "_No League",
+                        "sport": team_data.get("strSport") or "Unknown",
+                        "country": team_data.get("strCountry") or "Unknown",
+                        "aliases": [] # Initialize empty
+                    }
+
+                    # Add to DB
+                    self.teams[found_name] = entry
+                    
+                    # Index the found name
+                    norm_found = normalize_for_index(found_name)
+                    self.index[norm_found] = found_name
+                    
+                    # Index the search term/original name as an alias if different
+                    # (This effectively "learns" the mapping)
+                    if name != found_name:
+                        self._learn_alias(found_name, name)
+                    
+                    print(f"    -> FOUND: {found_name} (ID: {found_id})")
+                    self.learned_count += 1
+                    return entry
+
+            except Exception as e:
+                print(f"    -> API Error for {term}: {e}")
+
+        return None
 
 
 if __name__ == "__main__":

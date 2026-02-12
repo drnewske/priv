@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "last_updated": "2026-02-10T21:59:48.483205+00:00",
+    "last_updated": "2026-02-12T13:53:04+00:00",
     "team_count": 420,
     "index_entries": 561
   },
@@ -517,13 +517,20 @@
       "aliases": []
     },
     "Chelsea": {
-      "id": 175702710,
+      "id": 133610,
       "api_id": "133610",
       "name": "Chelsea",
+      "short_name": "CHE",
+      "alternates": [],
+      "keywords": [
+        "The Blues",
+        "The Pensioners"
+      ],
       "logo_url": "https://r2.thesportsdb.com/images/media/team/badge/yvwvtu1448813215.png",
       "banner_url": "https://r2.thesportsdb.com/images/media/team/banner/twxrxv1421778197.jpg",
       "league": "English Premier League",
       "sport": "Soccer",
+      "country": "England",
       "aliases": []
     },
     "Cheltenham Town": {
@@ -3885,6 +3892,276 @@
       "sport": "Soccer",
       "country": "England",
       "aliases": []
+    },
+    "Al-Nassr": {
+      "id": 136022,
+      "api_id": "136022",
+      "name": "Al-Nassr",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": "https://r2.thesportsdb.com/images/media/team/badge/84yvqi1748524565.png",
+      "banner_url": null,
+      "league": "Saudi-Arabian Pro League",
+      "sport": "Soccer",
+      "country": "Saudi Arabia",
+      "aliases": []
+    },
+    "Al-Hilal": {
+      "id": 136013,
+      "api_id": "136013",
+      "name": "Al-Hilal",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": "https://r2.thesportsdb.com/images/media/team/badge/w0b80d1661656916.png",
+      "banner_url": null,
+      "league": "Saudi-Arabian Pro League",
+      "sport": "Soccer",
+      "country": "Saudi Arabia",
+      "aliases": []
+    },
+    "Al-Shabab": {
+      "id": 136020,
+      "api_id": "136020",
+      "name": "Al-Shabab",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": "https://r2.thesportsdb.com/images/media/team/badge/zbums21755192520.png",
+      "banner_url": null,
+      "league": "Saudi-Arabian Pro League",
+      "sport": "Soccer",
+      "country": "Saudi Arabia",
+      "aliases": []
+    },
+    "Paris Saint-Germain Handball": {
+      "id": 136776,
+      "api_id": "136776",
+      "name": "Paris Saint-Germain Handball",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": "https://r2.thesportsdb.com/images/media/team/badge/vvj6uh1560677525.png",
+      "banner_url": null,
+      "league": "French LNH Division 1",
+      "sport": "Handball",
+      "country": "France",
+      "aliases": [
+        "psg"
+      ]
+    },
+    "Paris SG": {
+      "id": 133714,
+      "api_id": "133714",
+      "name": "Paris SG",
+      "short_name": "PSG",
+      "alternates": [],
+      "keywords": [
+        "Les Parisiens"
+      ],
+      "logo_url": "https://r2.thesportsdb.com/images/media/team/badge/rwqrrq1473504808.png",
+      "banner_url": "https://r2.thesportsdb.com/images/media/team/banner/wvaw7l1641382901.jpg",
+      "league": "French Ligue 1",
+      "sport": "Soccer",
+      "country": "France",
+      "aliases": [
+        "PSG",
+        "Paris Saint-Germain",
+        "Paris Saint Germain"
+      ]
+    },
+    "Antwerp": {
+      "id": 134245,
+      "api_id": "134245",
+      "name": "Antwerp",
+      "short_name": "ANT",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Belgian Pro League",
+      "sport": "Soccer",
+      "country": "Belgium",
+      "aliases": []
+    },
+    "Anderlecht": {
+      "id": 133776,
+      "api_id": "133776",
+      "name": "Anderlecht",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [
+        "Paars-wit"
+      ],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Belgian Pro League",
+      "sport": "Soccer",
+      "country": "Belgium",
+      "aliases": []
+    },
+    "Al Dhafra": {
+      "id": 137834,
+      "api_id": "137834",
+      "name": "Al Dhafra",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "UAE Pro League",
+      "sport": "Soccer",
+      "country": "United Arab Emirates",
+      "aliases": []
+    },
+    "Al Jazira": {
+      "id": 137830,
+      "api_id": "137830",
+      "name": "Al Jazira",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "UAE Pro League",
+      "sport": "Soccer",
+      "country": "United Arab Emirates",
+      "aliases": []
+    },
+    "Blackburn Rovers": {
+      "id": 133598,
+      "api_id": "133598",
+      "name": "Blackburn Rovers",
+      "short_name": "BBR",
+      "alternates": [],
+      "keywords": [
+        "Rovers"
+      ],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "English League Championship",
+      "sport": "Soccer",
+      "country": "England",
+      "aliases": [
+        "blackburn rovers u21"
+      ]
+    },
+    "Almería": {
+      "id": 133817,
+      "api_id": "133817",
+      "name": "Almería",
+      "short_name": "ALM",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Spanish La Liga 2",
+      "sport": "Soccer",
+      "country": "Spain",
+      "aliases": [
+        "almeria"
+      ]
+    },
+    "Huddersfield Town": {
+      "id": 133932,
+      "api_id": "133932",
+      "name": "Huddersfield Town",
+      "short_name": "HDD",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "English League 1",
+      "sport": "Soccer",
+      "country": "England",
+      "aliases": []
+    },
+    "Reading": {
+      "id": 133633,
+      "api_id": "133633",
+      "name": "Reading",
+      "short_name": "RDG",
+      "alternates": [],
+      "keywords": [
+        "The Royals"
+      ],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "English League 1",
+      "sport": "Soccer",
+      "country": "England",
+      "aliases": []
+    },
+    "Wycombe Wanderers": {
+      "id": 134382,
+      "api_id": "134382",
+      "name": "Wycombe Wanderers",
+      "short_name": "WYC",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "English League 1",
+      "sport": "Soccer",
+      "country": "England",
+      "aliases": []
+    },
+    "Ajman": {
+      "id": 137838,
+      "api_id": "137838",
+      "name": "Ajman",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "UAE Pro League",
+      "sport": "Soccer",
+      "country": "United Arab Emirates",
+      "aliases": []
+    },
+    "Rot-Weiss Essen": {
+      "id": 138400,
+      "api_id": "138400",
+      "name": "Rot-Weiss Essen",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Germany Liga 3",
+      "sport": "Soccer",
+      "country": "Germany",
+      "aliases": []
+    },
+    "Jahn Regensburg": {
+      "id": 136026,
+      "api_id": "136026",
+      "name": "Jahn Regensburg",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Germany Liga 3",
+      "sport": "Soccer",
+      "country": "Germany",
+      "aliases": []
+    },
+    "Al Nasr": {
+      "id": 137831,
+      "api_id": "137831",
+      "name": "Al Nasr",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "UAE Pro League",
+      "sport": "Soccer",
+      "country": "United Arab Emirates",
+      "aliases": []
     }
   },
   "_index": {
@@ -4015,7 +4292,7 @@
     "alsadd": "Al-Sadd",
     "aldershot town": "Aldershot Town",
     "almeria": "Almeria",
-    "almería": "Almeria",
+    "almería": "Almería",
     "altrincham": "Altrincham",
     "anderlecht": "Anderlecht",
     "angers": "Angers",
@@ -4448,6 +4725,19 @@
     "union berlin women": "Union Berlin Women",
     "1 fc union berlin frauen": "Union Berlin Women",
     "wellington phoenix women": "Wellington Phoenix Women",
-    "west brom u21": "West Brom U21"
+    "west brom u21": "West Brom U21",
+    "al-nassr": "Al-Nassr",
+    "al-hilal": "Al-Hilal",
+    "al-shabab": "Al-Shabab",
+    "parissaint-germainhandball": "Paris Saint-Germain Handball",
+    "psg": "Paris SG",
+    "parissg": "Paris SG",
+    "parissaintgermain": "Paris SG",
+    "parissaintgermainfc": "Paris SG",
+    "antwerp": "Antwerp",
+    "blackburn rovers": "Blackburn Rovers",
+    "blackburn rovers u21": "Blackburn Rovers",
+    "rotweiss essen": "Rot-Weiss Essen",
+    "jahn regensburg": "Jahn Regensburg"
   }
 }
