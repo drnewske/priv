@@ -1,52 +1,57 @@
 {
   "metadata": {
-    "scan_date": "2026-02-11 15:55:42 UTC",
-    "servers_total": 21,
-    "servers_success": 9,
-    "servers_failed": 12,
-    "categories_total": 1727,
-    "sports_categories": 459,
-    "channels_checked": 20711,
-    "unique_channels": 32,
-    "total_links": 140
+    "scan_date": "2026-02-12 10:19:28 UTC",
+    "stats": {
+      "servers_total": 5,
+      "servers_success": 5,
+      "servers_failed": 0,
+      "categories_total": 0,
+      "streams_total": 32011,
+      "channels_added": 111
+    },
+    "unique_channels": 31
   },
   "channels": {
-    "Dazn": {
-      "id": 60359054,
-      "logo": "https://img.onetv.plus/icones_channels/DAZN.png",
-      "qualities": {
-        "HD": [
-          "http://newoneblack.site:80/live/55582127/tp5966/234497.ts",
-          "http://newoneblack.site:80/live/55582127/tp5966/234499.ts",
-          "http://newoneblack.site:80/live/55582127/tp5966/234501.ts",
-          "http://newoneblack.site:80/live/55582127/tp5966/234503.ts",
-          "http://newoneblack.site:80/live/55582127/tp5966/234505.ts"
-        ]
-      }
-    },
-    "Discovery+": {
-      "id": 362742756,
+    "Bbc Scotland": {
+      "id": 446039136,
       "logo": null,
       "qualities": {
         "HD": [
-          "http://xc.tvset.top:80/live/JosefAbela/6Wr8Cy3Q/249675.ts",
-          "http://xc.tvset.top:80/live/JosefAbela/6Wr8Cy3Q/249679.ts",
-          "http://xc.tvset.top:80/live/JosefAbela/6Wr8Cy3Q/249682.ts",
-          "http://xc.tvset.top:80/live/JosefAbela/6Wr8Cy3Q/249685.ts",
-          "http://xc.tvset.top:80/live/JosefAbela/6Wr8Cy3Q/249687.ts"
+          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/12191.ts"
+        ]
+      }
+    },
+    "Bbc2": {
+      "id": 53084474,
+      "logo": null,
+      "qualities": {
+        "FHD": [
+          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/148218.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/148218.ts"
+        ]
+      }
+    },
+    "Dazn": {
+      "id": 60359054,
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/7/70/DAZN_F1_logo.png",
+      "qualities": {
+        "HD": [
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/564.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/615896.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/659426.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/659427.ts"
+        ],
+        "FHD": [
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/389165.ts"
         ]
       }
     },
     "Disney+": {
       "id": 177996440,
-      "logo": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019c0b16-de8c-79e8-9712-0d7398e1e847/compose?format=webp&label=standard_regular_prompt_espn_178&width=800",
+      "logo": null,
       "qualities": {
         "HD": [
-          "http://88.135.69.66:2095/live/zahCfqR9/vfBTGtMT/2287039.ts",
-          "http://88.135.69.66:2095/live/zahCfqR9/vfBTGtMT/2287040.ts",
-          "http://88.135.69.66:2095/live/zahCfqR9/vfBTGtMT/2287041.ts",
-          "http://88.135.69.66:2095/live/zahCfqR9/vfBTGtMT/2287042.ts",
-          "http://88.135.69.66:2095/live/zahCfqR9/vfBTGtMT/2287043.ts"
+          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/88449.ts"
         ]
       }
     },
@@ -63,49 +68,12 @@
       "id": 61079912,
       "logo": "https://i.ibb.co/rQhNxbN/ITV4.png",
       "qualities": {
-        "FHD": [
-          "https://a1xs.vip/1000014"
-        ]
-      }
-    },
-    "Laligatv": {
-      "id": 230753077,
-      "logo": null,
-      "qualities": {
         "HD": [
-          "http://iptvch.com:2082/live/BassamSaaid/Dr4RwAwFXJGN/303188.ts",
-          "http://iptvch.com:2082/live/BassamSaaid/Dr4RwAwFXJGN/303189.ts",
-          "http://iptvch.com:2082/live/BassamSaaid/Dr4RwAwFXJGN/303194.ts",
-          "http://iptvch.com:2082/live/BassamSaaid/Dr4RwAwFXJGN/303195.ts",
-          "http://iptvch.com:2082/live/BassamSaaid/Dr4RwAwFXJGN/303196.ts"
-        ]
-      }
-    },
-    "Ligue 1+": {
-      "id": 209388147,
-      "logo": null,
-      "qualities": {
-        "HD": [
-          "http://akselis.club:8080/live/eh4E44eHA6WM/a5JAzgdeFPAE/201515.ts",
-          "http://akselis.club:8080/live/eh4E44eHA6WM/a5JAzgdeFPAE/202877.ts",
-          "http://akselis.club:8080/live/eh4E44eHA6WM/a5JAzgdeFPAE/202878.ts"
+          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/5021.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/5021.ts"
         ],
         "FHD": [
-          "http://akselis.club:8080/live/eh4E44eHA6WM/a5JAzgdeFPAE/203029.ts",
-          "http://akselis.club:8080/live/eh4E44eHA6WM/a5JAzgdeFPAE/203030.ts"
-        ]
-      }
-    },
-    "Loitv": {
-      "id": 97911311,
-      "logo": "https://logos.mypanel.one/logos/LogoEVDTV/Other/by_category/IE%20LoiTV.png",
-      "qualities": {
-        "HD": [
-          "http://88.135.69.66:2095/live/zahCfqR9/vfBTGtMT/1159985.ts",
-          "http://88.135.69.66:2095/live/zahCfqR9/vfBTGtMT/1159986.ts",
-          "http://88.135.69.66:2095/live/zahCfqR9/vfBTGtMT/1159987.ts",
-          "http://88.135.69.66:2095/live/zahCfqR9/vfBTGtMT/1159988.ts",
-          "http://88.135.69.66:2095/live/zahCfqR9/vfBTGtMT/1159989.ts"
+          "https://a1xs.vip/1000014"
         ]
       }
     },
@@ -114,24 +82,24 @@
       "logo": "http://starapk1.com/logo/football.png",
       "qualities": {
         "HD": [
-          "http://62.182.83.108:80/live/qLTrkZoOTd/4tABFxM3xG/179831.ts",
-          "http://62.182.83.108:80/live/qLTrkZoOTd/4tABFxM3xG/283252.ts",
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/29.ts",
-          "http://xc.tvset.top:80/live/JosefAbela/6Wr8Cy3Q/179831.ts",
-          "http://xc.tvset.top:80/live/JosefAbela/6Wr8Cy3Q/283252.ts"
+          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/12264.ts",
+          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/148320.ts",
+          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/29.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/148320.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/29.ts"
         ]
       }
     },
     "Nba League Pass": {
       "id": 674104636,
-      "logo": "https://pbs.twimg.com/media/DWqNehTX4AAPpW1.png",
+      "logo": null,
       "qualities": {
         "HD": [
-          "http://newoneblack.site:80/live/55582127/tp5966/233127.ts",
-          "http://newoneblack.site:80/live/55582127/tp5966/233128.ts",
-          "http://newoneblack.site:80/live/55582127/tp5966/233129.ts",
-          "http://newoneblack.site:80/live/55582127/tp5966/233130.ts",
-          "http://newoneblack.site:80/live/55582127/tp5966/233131.ts"
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/154239.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/154244.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/154245.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/154246.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/661131.ts"
         ]
       }
     },
@@ -140,10 +108,8 @@
       "logo": "https://i.ibb.co/Nd49Cwvc/Premier-Sports-1.png",
       "qualities": {
         "HD": [
-          "http://62.182.83.108:80/live/qLTrkZoOTd/4tABFxM3xG/7172.ts",
-          "http://88.135.69.66:2095/live/zahCfqR9/vfBTGtMT/128364.ts",
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/5029.ts",
-          "http://xc.tvset.top:80/live/JosefAbela/6Wr8Cy3Q/7172.ts"
+          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/5029.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/5029.ts"
         ],
         "FHD": [
           "https://a1xs.vip/8000021"
@@ -155,23 +121,43 @@
       "logo": "https://i.ibb.co/5hfMsrXv/Premier-Sports-2.png",
       "qualities": {
         "HD": [
-          "http://62.182.83.108:80/live/qLTrkZoOTd/4tABFxM3xG/7173.ts",
-          "http://88.135.69.66:2095/live/zahCfqR9/vfBTGtMT/128365.ts",
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/5030.ts",
-          "http://xc.tvset.top:80/live/JosefAbela/6Wr8Cy3Q/7173.ts"
+          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/5030.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/5030.ts"
         ],
         "FHD": [
           "https://a1xs.vip/8000022"
         ]
       }
     },
-    "Sky Showcase": {
-      "id": 481952917,
-      "logo": "http://x.skycpd.com:24321/u=StreamTeam/p=1ace234bef981ee2cadd7d608ee9a722558496687d7f860b2726dd8525c9d96c/logos/wowtvde-skyshowcase.png",
+    "Rte 2": {
+      "id": 84935038,
+      "logo": null,
       "qualities": {
         "HD": [
-          "http://62.182.83.108:80/live/qLTrkZoOTd/4tABFxM3xG/271831.ts",
-          "http://xc.tvset.top:80/live/JosefAbela/6Wr8Cy3Q/271831.ts"
+          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/12282.ts",
+          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/12286.ts"
+        ]
+      }
+    },
+    "S4C": {
+      "id": 27721931,
+      "logo": null,
+      "qualities": {
+        "HD": [
+          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/12287.ts"
+        ]
+      }
+    },
+    "Sky Showcase": {
+      "id": 481952917,
+      "logo": null,
+      "qualities": {
+        "HD": [
+          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/148181.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/148181.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/148334.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/659197.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/659225.ts"
         ]
       }
     },
@@ -180,12 +166,12 @@
       "logo": "https://i.ibb.co/VqtQrDq/sky-action.png",
       "qualities": {
         "HD": [
-          "http://88.135.69.66:2095/live/zahCfqR9/vfBTGtMT/127993.ts",
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/122413.ts",
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/186617.ts"
+          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/122413.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/122413.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/186617.ts"
         ],
         "FHD": [
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/186618.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/186618.ts",
           "https://a1xs.vip/2000011"
         ]
       }
@@ -195,14 +181,14 @@
       "logo": "https://i.ibb.co/JyPnwvB/sky-cricket.png",
       "qualities": {
         "SD": [
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/148679.ts"
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/148679.ts"
         ],
         "HD": [
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/122412.ts",
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/186605.ts"
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/122412.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/186605.ts"
         ],
         "FHD": [
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/186606.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/186606.ts",
           "https://a1xs.vip/2000006"
         ]
       }
@@ -211,15 +197,15 @@
       "id": 554173562,
       "logo": "https://i.ibb.co/1tmrNyj9/Sky-Sport-F1-UHD.png",
       "qualities": {
-        "HD": [
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/144581.ts",
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/186615.ts"
+        "SD": [
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/148680.ts"
         ],
         "FHD": [
           "https://a1xs.vip/2000005"
         ],
         "4K": [
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/122181.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/122181.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/581306.ts",
           "https://a1xs.vip/2000016"
         ]
       }
@@ -229,12 +215,12 @@
       "logo": "https://i.ibb.co/WcCrBqx/sky-football.png",
       "qualities": {
         "HD": [
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/122411.ts",
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/186607.ts",
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/19.ts"
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/122411.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/186607.ts"
         ],
         "FHD": [
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/23334.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/186612.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/23334.ts",
           "https://a1xs.vip/2000003"
         ]
       }
@@ -244,14 +230,14 @@
       "logo": "https://i.ibb.co/QvhY4tX/sky-golf.png",
       "qualities": {
         "SD": [
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/148682.ts"
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/148682.ts"
         ],
         "HD": [
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/122417.ts",
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/186613.ts"
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/122417.ts"
         ],
         "FHD": [
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/186614.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/186614.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/23338.ts",
           "https://a1xs.vip/2000009"
         ]
       }
@@ -261,14 +247,14 @@
       "logo": "https://i.ibb.co/gwCk7Bc/sky-m-event-uhd.png",
       "qualities": {
         "HD": [
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/122409.ts",
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/186596.ts"
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/122409.ts"
         ],
         "FHD": [
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/186597.ts",
           "https://a1xs.vip/2000001"
         ],
         "4K": [
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/384215.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/581305.ts",
           "https://a1xs.vip/2000015"
         ]
       }
@@ -278,14 +264,14 @@
       "logo": "https://i.ibb.co/7kYj5gc/sky-mix.png",
       "qualities": {
         "SD": [
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/148684.ts"
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/148684.ts"
         ],
         "HD": [
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/122416.ts",
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/186621.ts"
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/122416.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/186621.ts"
         ],
         "FHD": [
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/186622.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/186622.ts",
           "https://a1xs.vip/2000008"
         ]
       }
@@ -295,12 +281,12 @@
       "logo": "https://i.ibb.co/rcSRMh9/sky-sports-pl.png",
       "qualities": {
         "HD": [
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/122410.ts",
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/186603.ts",
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/9891.ts"
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/122410.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/186603.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/9891.ts"
         ],
         "FHD": [
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/23342.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/23342.ts",
           "https://a1xs.vip/2000002"
         ]
       }
@@ -310,12 +296,12 @@
       "logo": "https://i.ibb.co/Hnp1hBz/sky-racing.png",
       "qualities": {
         "HD": [
-          "http://88.135.69.66:2095/live/zahCfqR9/vfBTGtMT/1451625.ts",
-          "http://88.135.69.66:2095/live/zahCfqR9/vfBTGtMT/37959.ts",
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/122415.ts"
+          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/122415.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/122415.ts"
         ],
         "FHD": [
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/186643.ts",
+          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/186643.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/186643.ts",
           "https://a1xs.vip/2000010"
         ]
       }
@@ -325,10 +311,8 @@
       "logo": "https://i.ibb.co/kVtPg1F5/Sky-Sports-Tennis.png",
       "qualities": {
         "FHD": [
-          "http://62.182.83.108:80/live/qLTrkZoOTd/4tABFxM3xG/203330.ts",
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/428098.ts",
-          "http://xc.tvset.top:80/live/JosefAbela/6Wr8Cy3Q/1965.ts",
-          "http://xc.tvset.top:80/live/JosefAbela/6Wr8Cy3Q/203330.ts",
+          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/428098.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/428098.ts",
           "https://a1xs.vip/2000013"
         ]
       }
@@ -337,37 +321,36 @@
       "id": 407897102,
       "logo": "https://i.ibb.co/yBqH98CM/Sky-Sports-Plus.webp",
       "qualities": {
-        "HD": [
-          "http://88.135.69.66:2095/live/zahCfqR9/vfBTGtMT/2113471.ts",
-          "http://88.135.69.66:2095/live/zahCfqR9/vfBTGtMT/2113472.ts"
-        ],
         "FHD": [
-          "http://88.135.69.66:2095/live/zahCfqR9/vfBTGtMT/959940.ts",
           "https://a1xs.vip/2000012"
         ]
       }
     },
     "Stv": {
       "id": 39452990,
-      "logo": "https://i.ibb.co/QKzqNG8/golf-wallpaper-preview.png",
+      "logo": "https://www.lyngsat.com/logo/tv/ss/supersport-cricket-za.png",
       "qualities": {
         "HD": [
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/525.ts"
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/144996.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/145174.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/145199.ts"
         ],
         "FHD": [
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/124000.ts",
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/157939.ts",
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/7603.ts",
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/778.ts"
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/124000.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/157939.ts"
         ]
       }
     },
-    "Tbc": {
-      "id": 36045082,
-      "logo": "https://pbs.twimg.com/profile_images/1179441513870155776/cyg92efr_400x400.jpg",
+    "Tg4": {
+      "id": 33620208,
+      "logo": null,
       "qualities": {
         "HD": [
-          "http://88.135.69.66:2095/live/zahCfqR9/vfBTGtMT/71826.ts"
+          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/12310.ts"
+        ],
+        "FHD": [
+          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/148273.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/148273.ts"
         ]
       }
     },
@@ -375,13 +358,15 @@
       "id": 477365299,
       "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/TNTS1.png",
       "qualities": {
+        "SD": [
+          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/85311.ts"
+        ],
         "HD": [
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/186627.ts"
+          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/85310.ts",
+          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/186627.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/186627.ts"
         ],
         "FHD": [
-          "http://xc.tvset.top:80/live/JosefAbela/6Wr8Cy3Q/161577.ts",
-          "http://xc.tvset.top:80/live/JosefAbela/6Wr8Cy3Q/177145.ts",
-          "http://xc.tvset.top:80/live/JosefAbela/6Wr8Cy3Q/242930.ts",
           "https://a1xs.vip/2000021"
         ]
       }
@@ -390,13 +375,13 @@
       "id": 477430836,
       "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/TNTS2.png",
       "qualities": {
+        "SD": [
+          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/85313.ts"
+        ],
         "HD": [
-          "http://xc.tvset.top:80/live/JosefAbela/6Wr8Cy3Q/161582.ts"
+          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/85312.ts"
         ],
         "FHD": [
-          "http://xc.tvset.top:80/live/JosefAbela/6Wr8Cy3Q/161580.ts",
-          "http://xc.tvset.top:80/live/JosefAbela/6Wr8Cy3Q/161581.ts",
-          "http://xc.tvset.top:80/live/JosefAbela/6Wr8Cy3Q/242931.ts",
           "https://a1xs.vip/2000022"
         ]
       }
@@ -405,13 +390,15 @@
       "id": 477496373,
       "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/TNTS3.png",
       "qualities": {
+        "SD": [
+          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/85315.ts"
+        ],
         "HD": [
-          "http://starshare.net:80/live/CVCVCVCV/CV1CV1CV1/148090.ts"
+          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/85314.ts",
+          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/148090.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/148090.ts"
         ],
         "FHD": [
-          "http://xc.tvset.top:80/live/JosefAbela/6Wr8Cy3Q/161584.ts",
-          "http://xc.tvset.top:80/live/JosefAbela/6Wr8Cy3Q/161585.ts",
-          "http://xc.tvset.top:80/live/JosefAbela/6Wr8Cy3Q/242932.ts",
           "https://a1xs.vip/2000023"
         ]
       }
@@ -420,13 +407,13 @@
       "id": 477561910,
       "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/TNTS4.png",
       "qualities": {
+        "SD": [
+          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/85317.ts"
+        ],
         "HD": [
-          "http://xc.tvset.top:80/live/JosefAbela/6Wr8Cy3Q/242933.ts"
+          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/85316.ts"
         ],
         "FHD": [
-          "--- 📺 UK Channels",
-          "http://xc.tvset.top:80/live/JosefAbela/6Wr8Cy3Q/161588.ts",
-          "http://xc.tvset.top:80/live/JosefAbela/6Wr8Cy3Q/161589.ts",
           "https://a1xs.vip/2000024"
         ]
       }
@@ -436,22 +423,174 @@
       "logo": "https://i.ibb.co/QqGdJnM/TNTSprts-U.png",
       "qualities": {
         "4K": [
-          "http://62.182.83.108:80/live/qLTrkZoOTd/4tABFxM3xG/163577.ts",
-          "http://88.135.69.66:2095/live/zahCfqR9/vfBTGtMT/643684.ts",
-          "http://xc.tvset.top:80/live/JosefAbela/6Wr8Cy3Q/163577.ts",
-          "http://xc.tvset.top:80/live/JosefAbela/6Wr8Cy3Q/197461.ts",
           "https://a1xs.vip/2000031"
         ]
       }
     },
-    "Youtube": {
-      "id": 196149998,
-      "logo": "http://i.postimg.cc/sX1wLXXQ/youtube.jpg",
-      "qualities": {
-        "HD": [
-          "http://desktopfibra.org:8080/live/80971566/76111841/289545.ts"
-        ]
-      }
+    "Amazon Prime Video": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Bbc Iplayer": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Bbc Wales": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Bbc1": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "City+": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Clubber Tv": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Dazn National League": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Destination Calcio": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Dfb Play": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Discovery+": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Discovery+ Premium": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Itvx": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Laligatv": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Lfc All Red": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Lfctv": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Ligue 1+": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Loitv": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Onefootball": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Palace Tv+": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Premier Player": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Premier Sports Rugby": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Racingtv": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Rte Player": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Rugbyeurope Tv": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Rugbypass Tv": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "S4C Online": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Sky Sports Ultra Hdr": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Spursplay": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Stv Player": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "The Afc Hub": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Tnt Sports Extra": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Trillertv+": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Watch Nrl": {
+      "id": null,
+      "logo": null,
+      "qualities": null
     }
   }
 }

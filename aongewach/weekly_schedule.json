@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-10T12:27:59.222783Z",
+  "generated_at": "2026-02-12T10:17:05.786499Z",
   "source": "wheresthematch.com",
   "schedule": [
     {
@@ -10,1997 +10,17 @@
     {
       "date": "2026-02-10",
       "day": "Tuesday",
-      "events": [
-        {
-          "name": "2026 Winter Olympics Cross Country Skiing",
-          "start_time_iso": "2026-02-10T08:00:00Z",
-          "time": "08:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports 4",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "Winter Olympics",
-          "start_time_iso": "2026-02-10T09:00:00Z",
-          "time": "09:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "BBC1",
-            "BBC2",
-            "BBC iPlayer",
-            "BBC Sport Website"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Alpine Skiing",
-          "start_time_iso": "2026-02-10T09:00:00Z",
-          "time": "09:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports 2",
-            "TNT Sports Ultimate",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Speed Skating",
-          "start_time_iso": "2026-02-10T09:15:00Z",
-          "time": "09:15",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports 3",
-            "TNT Sports Ultimate",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "New Zealand v United Arab Emirates",
-          "start_time_iso": "2026-02-10T09:30:00Z",
-          "time": "09:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/cricket.gif",
-          "sport": "Cricket",
-          "competition": "ICC T20 World Cup",
-          "channels": [
-            "Sky Sports Cricket",
-            "Sky Sports Main Event",
-            "Sky Sports Ultra HDR"
-          ]
-        },
-        {
-          "name": "WTA Qatar Open",
-          "start_time_iso": "2026-02-10T10:00:00Z",
-          "time": "10:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/tennis.gif",
-          "sport": "Tennis",
-          "competition": "WTA Tour",
-          "channels": [
-            "Sky Sports Tennis",
-            "Sky Sports Main Event",
-            "Sky Sports Ultra HDR"
-          ]
-        },
-        {
-          "name": "Sanfrecce Hiroshima v Johor Darul Tazim",
-          "start_time_iso": "2026-02-10T10:00:00Z",
-          "time": "10:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "AFC Champions League",
-          "channels": [
-            "OneFootball",
-            "The AFC Hub"
-          ]
-        },
-        {
-          "name": "Vissel Kobe v FC Seoul",
-          "start_time_iso": "2026-02-10T10:00:00Z",
-          "time": "10:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "AFC Champions League",
-          "channels": [
-            "OneFootball",
-            "The AFC Hub"
-          ]
-        },
-        {
-          "name": "Snooker World Open",
-          "start_time_iso": "2026-02-10T10:00:00Z",
-          "time": "10:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/snooker.gif",
-          "sport": "Snooker",
-          "competition": "World Snooker",
-          "channels": [
-            "Discovery+"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Cross Country Skiing",
-          "start_time_iso": "2026-02-10T10:15:00Z",
-          "time": "10:15",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports 4",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Freestyle Skiing",
-          "start_time_iso": "2026-02-10T10:15:00Z",
-          "time": "10:15",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports Extra",
-            "Discovery+"
-          ]
-        },
-        {
-          "name": "Japan v Sweden",
-          "start_time_iso": "2026-02-10T11:00:00Z",
-          "time": "11:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/icehockey.gif",
-          "sport": "Ice-Hockey",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports Extra",
-            "Discovery+"
-          ]
-        },
-        {
-          "name": "Snooker Championship League",
-          "start_time_iso": "2026-02-10T11:00:00Z",
-          "time": "11:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/snooker.gif",
-          "sport": "Snooker",
-          "competition": "World Snooker",
-          "channels": [
-            "YouTube"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Freestyle Skiing",
-          "start_time_iso": "2026-02-10T11:15:00Z",
-          "time": "11:15",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports 2",
-            "TNT Sports Ultimate",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Biathlon",
-          "start_time_iso": "2026-02-10T12:00:00Z",
-          "time": "12:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports Extra",
-            "Discovery+"
-          ]
-        },
-        {
-          "name": "Players Championship",
-          "start_time_iso": "2026-02-10T12:00:00Z",
-          "time": "12:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/darts.gif",
-          "sport": "Darts",
-          "competition": "PDC Darts Schedule",
-          "channels": [
-            "PDC.TV"
-          ]
-        },
-        {
-          "name": "Chengdu Rongcheng v Buriram United",
-          "start_time_iso": "2026-02-10T12:15:00Z",
-          "time": "12:15",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "AFC Champions League",
-          "channels": [
-            "OneFootball",
-            "The AFC Hub"
-          ]
-        },
-        {
-          "name": "Shanghai Shenhua v Machida Zelvia",
-          "start_time_iso": "2026-02-10T12:15:00Z",
-          "time": "12:15",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "AFC Champions League",
-          "channels": [
-            "OneFootball",
-            "The AFC Hub"
-          ]
-        },
-        {
-          "name": "Raceday Live",
-          "start_time_iso": "2026-02-10T12:30:00Z",
-          "time": "12:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/horseracing.gif",
-          "sport": "Horse Racing",
-          "competition": "UK Race Meeting",
-          "channels": [
-            "Sky Sports Racing"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Alpine Skiing",
-          "start_time_iso": "2026-02-10T12:30:00Z",
-          "time": "12:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports 1",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Biathlon",
-          "start_time_iso": "2026-02-10T12:30:00Z",
-          "time": "12:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports 3",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Curling",
-          "start_time_iso": "2026-02-10T12:45:00Z",
-          "time": "12:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports 4",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "Live Racing",
-          "start_time_iso": "2026-02-10T13:00:00Z",
-          "time": "13:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/horseracing.gif",
-          "sport": "Horse Racing",
-          "competition": "UK Race Meeting",
-          "channels": [
-            "RacingTV"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Alpine Skiing",
-          "start_time_iso": "2026-02-10T13:15:00Z",
-          "time": "13:15",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports 2",
-            "TNT Sports Ultimate",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Freestyle Skiing",
-          "start_time_iso": "2026-02-10T13:15:00Z",
-          "time": "13:15",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports Extra",
-            "Discovery+"
-          ]
-        },
-        {
-          "name": "Pakistan v USA",
-          "start_time_iso": "2026-02-10T13:30:00Z",
-          "time": "13:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/cricket.gif",
-          "sport": "Cricket",
-          "competition": "ICC T20 World Cup",
-          "channels": [
-            "Sky Sports Cricket",
-            "Sky Sports Main Event",
-            "Sky Sports Ultra HDR"
-          ]
-        },
-        {
-          "name": "Esteghlal v Al Hussein",
-          "start_time_iso": "2026-02-10T13:45:00Z",
-          "time": "13:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "AFC Champions League",
-          "channels": [
-            "OneFootball",
-            "The AFC Hub"
-          ]
-        },
-        {
-          "name": "Ipswich Town U18 v Crystal Palace U18",
-          "start_time_iso": "2026-02-10T14:00:00Z",
-          "time": "14:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "U18 Premier League",
-          "channels": [
-            "Palace TV+"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Curling",
-          "start_time_iso": "2026-02-10T14:15:00Z",
-          "time": "14:15",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports 2",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "Snooker World Open",
-          "start_time_iso": "2026-02-10T14:30:00Z",
-          "time": "14:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/snooker.gif",
-          "sport": "Snooker",
-          "competition": "World Snooker",
-          "channels": [
-            "Discovery+"
-          ]
-        },
-        {
-          "name": "Tractor v Al-Sadd",
-          "start_time_iso": "2026-02-10T16:00:00Z",
-          "time": "16:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "AFC Champions League",
-          "channels": [
-            "The AFC Hub",
-            "OneFootball"
-          ]
-        },
-        {
-          "name": "Al Zawraa SC v Al Wasl",
-          "start_time_iso": "2026-02-10T16:00:00Z",
-          "time": "16:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "AFC Champions League",
-          "channels": [
-            "OneFootball",
-            "The AFC Hub"
-          ]
-        },
-        {
-          "name": "Snooker Championship League",
-          "start_time_iso": "2026-02-10T16:30:00Z",
-          "time": "16:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/snooker.gif",
-          "sport": "Snooker",
-          "competition": "World Snooker",
-          "channels": [
-            "YouTube"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Curling",
-          "start_time_iso": "2026-02-10T16:45:00Z",
-          "time": "16:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports 2",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Luge",
-          "start_time_iso": "2026-02-10T17:30:00Z",
-          "time": "17:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports 4",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "Karditsas v Panionios Athens",
-          "start_time_iso": "2026-02-10T17:30:00Z",
-          "time": "17:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "sport": "Basketball",
-          "competition": "Basketball Champions League",
-          "channels": [
-            "DAZN"
-          ]
-        },
-        {
-          "name": "Sampdoria v Palermo",
-          "start_time_iso": "2026-02-10T18:00:00Z",
-          "time": "18:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Serie B",
-          "channels": [
-            "Destination Calcio"
-          ]
-        },
-        {
-          "name": "Frolunda v Vaxjo Lakers",
-          "start_time_iso": "2026-02-10T18:00:00Z",
-          "time": "18:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/icehockey.gif",
-          "sport": "Ice-Hockey",
-          "competition": "SHL",
-          "channels": [
-            "Premier Player"
-          ]
-        },
-        {
-          "name": "Al Ittihad v Al Gharafa",
-          "start_time_iso": "2026-02-10T18:15:00Z",
-          "time": "18:15",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "AFC Champions League",
-          "channels": [
-            "The AFC Hub",
-            "OneFootball"
-          ]
-        },
-        {
-          "name": "AFC Wimbledon v Northampton Town",
-          "start_time_iso": "2026-02-10T19:00:00Z",
-          "time": "19:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "EFL Trophy",
-          "channels": [
-            "Sky Sports+"
-          ]
-        },
-        {
-          "name": "Huddersfield Town v Doncaster",
-          "start_time_iso": "2026-02-10T19:00:00Z",
-          "time": "19:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "EFL Trophy",
-          "channels": [
-            "Sky Sports+"
-          ]
-        },
-        {
-          "name": "Port Vale v Stockport County",
-          "start_time_iso": "2026-02-10T19:00:00Z",
-          "time": "19:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "EFL Trophy",
-          "channels": [
-            "Sky Sports+"
-          ]
-        },
-        {
-          "name": "Snooker World Open",
-          "start_time_iso": "2026-02-10T19:00:00Z",
-          "time": "19:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/snooker.gif",
-          "sport": "Snooker",
-          "competition": "World Snooker",
-          "channels": [
-            "Discovery+"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Figure Skating",
-          "start_time_iso": "2026-02-10T19:15:00Z",
-          "time": "19:15",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports 2",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "Chelsea v Leeds United",
-          "start_time_iso": "2026-02-10T19:30:00Z",
-          "time": "19:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Premier League",
-          "channels": [
-            "TNT Sports 4",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "Everton v Bournemouth AFC",
-          "start_time_iso": "2026-02-10T19:30:00Z",
-          "time": "19:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Premier League",
-          "channels": [
-            "TNT Sports Extra",
-            "Discovery+"
-          ]
-        },
-        {
-          "name": "Tottenham Hotspur v Newcastle United",
-          "start_time_iso": "2026-02-10T19:30:00Z",
-          "time": "19:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Premier League",
-          "channels": [
-            "TNT Sports 3",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "Oxford Utd v Norwich City",
-          "start_time_iso": "2026-02-10T19:45:00Z",
-          "time": "19:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Championship",
-          "channels": [
-            "Sky Sports+"
-          ]
-        },
-        {
-          "name": "Chippenham Town v Torquay United",
-          "start_time_iso": "2026-02-10T19:45:00Z",
-          "time": "19:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "National League South",
-          "channels": [
-            "DAZN National League"
-          ]
-        },
-        {
-          "name": "Kidderminster Harriers v Merthyr Town",
-          "start_time_iso": "2026-02-10T19:45:00Z",
-          "time": "19:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "National League North",
-          "channels": [
-            "DAZN National League"
-          ]
-        },
-        {
-          "name": "Altrincham v Wealdstone",
-          "start_time_iso": "2026-02-10T19:45:00Z",
-          "time": "19:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "National League",
-          "channels": [
-            "DAZN National League"
-          ]
-        },
-        {
-          "name": "Boston United v Gateshead",
-          "start_time_iso": "2026-02-10T19:45:00Z",
-          "time": "19:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "National League",
-          "channels": [
-            "DAZN National League"
-          ]
-        },
-        {
-          "name": "Carlisle United v Scunthorpe United",
-          "start_time_iso": "2026-02-10T19:45:00Z",
-          "time": "19:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "National League",
-          "channels": [
-            "DAZN National League"
-          ]
-        },
-        {
-          "name": "Morecambe v Tamworth",
-          "start_time_iso": "2026-02-10T19:45:00Z",
-          "time": "19:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "National League",
-          "channels": [
-            "DAZN National League"
-          ]
-        },
-        {
-          "name": "Solihull Moors v Eastleigh",
-          "start_time_iso": "2026-02-10T19:45:00Z",
-          "time": "19:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "National League",
-          "channels": [
-            "DAZN National League"
-          ]
-        },
-        {
-          "name": "Truro City v Woking",
-          "start_time_iso": "2026-02-10T19:45:00Z",
-          "time": "19:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "National League",
-          "channels": [
-            "DAZN National League"
-          ]
-        },
-        {
-          "name": "Larne FC v Glentoran FC Belfast",
-          "start_time_iso": "2026-02-10T19:45:00Z",
-          "time": "19:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "NIFL Premiership",
-          "channels": [
-            "BBC iPlayer",
-            "BBC Sport Website"
-          ]
-        },
-        {
-          "name": "Stevenage v Barnsley",
-          "start_time_iso": "2026-02-10T19:45:00Z",
-          "time": "19:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "League One",
-          "channels": [
-            "Sky Sports+"
-          ]
-        },
-        {
-          "name": "Scarborough Athletic v South Shields",
-          "start_time_iso": "2026-02-10T19:45:00Z",
-          "time": "19:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "National League North",
-          "channels": [
-            "DAZN National League"
-          ]
-        },
-        {
-          "name": "Hornchurch v Chelmsford City",
-          "start_time_iso": "2026-02-10T19:45:00Z",
-          "time": "19:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "National League South",
-          "channels": [
-            "DAZN National League"
-          ]
-        },
-        {
-          "name": "Leicester City v Southampton",
-          "start_time_iso": "2026-02-10T19:45:00Z",
-          "time": "19:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Championship",
-          "channels": [
-            "Sky Sports+"
-          ]
-        },
-        {
-          "name": "Wigan Athletic v Reading",
-          "start_time_iso": "2026-02-10T19:45:00Z",
-          "time": "19:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "League One",
-          "channels": [
-            "Sky Sports+"
-          ]
-        },
-        {
-          "name": "Mansfield Town v Peterborough United",
-          "start_time_iso": "2026-02-10T19:45:00Z",
-          "time": "19:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "League One",
-          "channels": [
-            "Sky Sports+"
-          ]
-        },
-        {
-          "name": "Crawley Town v Cambridge Utd",
-          "start_time_iso": "2026-02-10T19:45:00Z",
-          "time": "19:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "League Two",
-          "channels": [
-            "Sky Sports+"
-          ]
-        },
-        {
-          "name": "Horsham v Dagenham and Redbridge",
-          "start_time_iso": "2026-02-10T19:45:00Z",
-          "time": "19:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "National League South",
-          "channels": [
-            "DAZN National League"
-          ]
-        },
-        {
-          "name": "AFC Fylde v Spennymoor Town",
-          "start_time_iso": "2026-02-10T19:45:00Z",
-          "time": "19:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "National League North",
-          "channels": [
-            "DAZN National League"
-          ]
-        },
-        {
-          "name": "Darlington v Radcliffe Borough",
-          "start_time_iso": "2026-02-10T19:45:00Z",
-          "time": "19:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "National League North",
-          "channels": [
-            "DAZN National League"
-          ]
-        },
-        {
-          "name": "Eastbourne Borough v Maidstone United",
-          "start_time_iso": "2026-02-10T19:45:00Z",
-          "time": "19:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "National League South",
-          "channels": [
-            "DAZN National League"
-          ]
-        },
-        {
-          "name": "Hertha Berlin v SC Freiburg",
-          "start_time_iso": "2026-02-10T19:45:00Z",
-          "time": "19:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "DFB Pokal Quarter Final",
-          "channels": [
-            "DFB Play"
-          ]
-        },
-        {
-          "name": "Birmingham City v West Bromwich Albion",
-          "start_time_iso": "2026-02-10T20:00:00Z",
-          "time": "20:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Championship",
-          "channels": [
-            "Sky Sports Main Event",
-            "Sky Sports Football",
-            "Sky Sports Ultra HDR"
-          ]
-        },
-        {
-          "name": "Hearts v Hibernian",
-          "start_time_iso": "2026-02-10T20:00:00Z",
-          "time": "20:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Scottish Premiership",
-          "channels": [
-            "Premier Sports 1"
-          ]
-        },
-        {
-          "name": "Napoli v Como",
-          "start_time_iso": "2026-02-10T20:00:00Z",
-          "time": "20:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Coppa Italia",
-          "channels": [
-            "Premier Sports 2"
-          ]
-        },
-        {
-          "name": "Finland v Switzerland",
-          "start_time_iso": "2026-02-10T20:00:00Z",
-          "time": "20:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/icehockey.gif",
-          "sport": "Ice-Hockey",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports Extra",
-            "Discovery+"
-          ]
-        },
-        {
-          "name": "West Ham United v Manchester United",
-          "start_time_iso": "2026-02-10T20:15:00Z",
-          "time": "20:15",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Premier League",
-          "channels": [
-            "TNT Sports 1",
-            "TNT Sports Ultimate",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "ATP Tennis",
-          "start_time_iso": "2026-02-10T22:30:00Z",
-          "time": "22:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/tennis.gif",
-          "sport": "Tennis",
-          "competition": "ATP World Tour",
-          "channels": [
-            "Sky Sports Tennis"
-          ]
-        }
-      ]
+      "events": []
     },
     {
       "date": "2026-02-11",
       "day": "Wednesday",
-      "events": [
-        {
-          "name": "Vitoria v Flamengo",
-          "start_time_iso": "2026-02-11T00:30:00Z",
-          "time": "00:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Brasileiro SÃ©rie A",
-          "channels": [
-            "Premier Sports 2"
-          ]
-        },
-        {
-          "name": "New York Knicks v Indiana Pacers",
-          "start_time_iso": "2026-02-11T00:30:00Z",
-          "time": "00:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "sport": "Basketball",
-          "competition": "NBA",
-          "channels": [
-            "NBA League Pass"
-          ]
-        },
-        {
-          "name": "Live Boxing",
-          "start_time_iso": "2026-02-11T01:00:00Z",
-          "time": "01:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/boxing.gif",
-          "sport": "Boxing",
-          "competition": "IBF Title Fights",
-          "channels": [
-            "DAZN"
-          ]
-        },
-        {
-          "name": "Houston Rockets v Los Angeles Clippers",
-          "start_time_iso": "2026-02-11T01:00:00Z",
-          "time": "01:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "sport": "Basketball",
-          "competition": "NBA",
-          "channels": [
-            "NBA League Pass"
-          ]
-        },
-        {
-          "name": "Dallas Open",
-          "start_time_iso": "2026-02-11T01:30:00Z",
-          "time": "01:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/tennis.gif",
-          "sport": "Tennis",
-          "competition": "ATP World Tour",
-          "channels": [
-            "Sky Sports Tennis",
-            "Sky Sports Main Event",
-            "Sky Sports Ultra HDR"
-          ]
-        },
-        {
-          "name": "Phoenix Suns v Dallas Mavericks",
-          "start_time_iso": "2026-02-11T02:00:00Z",
-          "time": "02:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "sport": "Basketball",
-          "competition": "NBA",
-          "channels": [
-            "NBA League Pass"
-          ]
-        },
-        {
-          "name": "Los Angeles Lakers v San Antonio Spurs",
-          "start_time_iso": "2026-02-11T03:30:00Z",
-          "time": "03:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "sport": "Basketball",
-          "competition": "NBA",
-          "channels": [
-            "NBA League Pass"
-          ]
-        },
-        {
-          "name": "South Africa v Afghanistan",
-          "start_time_iso": "2026-02-11T05:30:00Z",
-          "time": "05:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/cricket.gif",
-          "sport": "Cricket",
-          "competition": "ICC T20 World Cup",
-          "channels": [
-            "Sky Sports Main Event",
-            "Sky Sports Cricket",
-            "Sky Sports Ultra HDR"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Nordic Combined",
-          "start_time_iso": "2026-02-11T08:00:00Z",
-          "time": "08:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports Extra",
-            "Discovery+"
-          ]
-        },
-        {
-          "name": "Winter Olympics",
-          "start_time_iso": "2026-02-11T09:00:00Z",
-          "time": "09:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "BBC1",
-            "BBC2",
-            "BBC iPlayer",
-            "BBC Sport Website"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Nordic Combined",
-          "start_time_iso": "2026-02-11T09:00:00Z",
-          "time": "09:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports 2",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "Australia v Ireland",
-          "start_time_iso": "2026-02-11T09:30:00Z",
-          "time": "09:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/cricket.gif",
-          "sport": "Cricket",
-          "competition": "ICC T20 World Cup",
-          "channels": [
-            "Sky Sports Cricket",
-            "Sky Sports Main Event",
-            "Sky Sports Ultra HDR"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Snowboarding",
-          "start_time_iso": "2026-02-11T09:30:00Z",
-          "time": "09:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports 4",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "WTA Qatar Open",
-          "start_time_iso": "2026-02-11T10:00:00Z",
-          "time": "10:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/tennis.gif",
-          "sport": "Tennis",
-          "competition": "WTA Tour",
-          "channels": [
-            "Sky Sports Tennis"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Freestyle Skiing",
-          "start_time_iso": "2026-02-11T10:00:00Z",
-          "time": "10:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports 2",
-            "TNT Sports 3",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "Gangwon v Shanghai Port",
-          "start_time_iso": "2026-02-11T10:00:00Z",
-          "time": "10:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "AFC Champions League",
-          "channels": [
-            "OneFootball",
-            "The AFC Hub"
-          ]
-        },
-        {
-          "name": "Ulsan v Melbourne City",
-          "start_time_iso": "2026-02-11T10:00:00Z",
-          "time": "10:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "AFC Champions League",
-          "channels": [
-            "The AFC Hub",
-            "OneFootball"
-          ]
-        },
-        {
-          "name": "ATP Tennis",
-          "start_time_iso": "2026-02-11T10:00:00Z",
-          "time": "10:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/tennis.gif",
-          "sport": "Tennis",
-          "competition": "ATP World Tour",
-          "channels": [
-            "Sky Sports Tennis"
-          ]
-        },
-        {
-          "name": "Snooker World Open",
-          "start_time_iso": "2026-02-11T10:00:00Z",
-          "time": "10:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/snooker.gif",
-          "sport": "Snooker",
-          "competition": "World Snooker",
-          "channels": [
-            "Discovery+"
-          ]
-        },
-        {
-          "name": "LET Saudi Ladies Team International",
-          "start_time_iso": "2026-02-11T10:30:00Z",
-          "time": "10:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
-          "sport": "Golf",
-          "competition": "Ladies European Tour",
-          "channels": [
-            "Sky Sports Golf"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Alpine Skiing",
-          "start_time_iso": "2026-02-11T10:45:00Z",
-          "time": "10:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports 2",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "Snooker Championship League",
-          "start_time_iso": "2026-02-11T11:00:00Z",
-          "time": "11:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/snooker.gif",
-          "sport": "Snooker",
-          "competition": "World Snooker",
-          "channels": [
-            "YouTube"
-          ]
-        },
-        {
-          "name": "Hanoi v Tampines Rovers",
-          "start_time_iso": "2026-02-11T12:15:00Z",
-          "time": "12:15",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "AFC Champions League",
-          "channels": [
-            "The AFC Hub",
-            "OneFootball"
-          ]
-        },
-        {
-          "name": "Ratchaburi v Persib Bandung",
-          "start_time_iso": "2026-02-11T12:15:00Z",
-          "time": "12:15",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "AFC Champions League",
-          "channels": [
-            "OneFootball",
-            "The AFC Hub"
-          ]
-        },
-        {
-          "name": "Raceday Live",
-          "start_time_iso": "2026-02-11T12:30:00Z",
-          "time": "12:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/horseracing.gif",
-          "sport": "Horse Racing",
-          "competition": "UK Race Meeting",
-          "channels": [
-            "Sky Sports Racing"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Biathlon",
-          "start_time_iso": "2026-02-11T12:45:00Z",
-          "time": "12:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports 4",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "Live Racing",
-          "start_time_iso": "2026-02-11T12:45:00Z",
-          "time": "12:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/horseracing.gif",
-          "sport": "Horse Racing",
-          "competition": "UK Race Meeting",
-          "channels": [
-            "RacingTV"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Nordic Combined",
-          "start_time_iso": "2026-02-11T12:45:00Z",
-          "time": "12:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports 3",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Freestyle Skiing",
-          "start_time_iso": "2026-02-11T13:00:00Z",
-          "time": "13:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports 2",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "England v West Indies",
-          "start_time_iso": "2026-02-11T13:30:00Z",
-          "time": "13:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/cricket.gif",
-          "sport": "Cricket",
-          "competition": "ICC T20 World Cup",
-          "channels": [
-            "Sky Sports Cricket",
-            "Sky Sports Main Event",
-            "Sky Sports Ultra HDR"
-          ]
-        },
-        {
-          "name": "Arkadag v Al Nassr",
-          "start_time_iso": "2026-02-11T13:45:00Z",
-          "time": "13:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "AFC Champions League",
-          "channels": [
-            "OneFootball",
-            "The AFC Hub"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Biathlon",
-          "start_time_iso": "2026-02-11T14:30:00Z",
-          "time": "14:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports 2",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "Snooker World Open",
-          "start_time_iso": "2026-02-11T14:30:00Z",
-          "time": "14:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/snooker.gif",
-          "sport": "Snooker",
-          "competition": "World Snooker",
-          "channels": [
-            "Discovery+"
-          ]
-        },
-        {
-          "name": "Bahrain Grand Prix",
-          "start_time_iso": "2026-02-11T15:00:00Z",
-          "time": "15:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/f1.gif",
-          "sport": "Formula 1",
-          "competition": "F1 2026 season",
-          "channels": [
-            "Sky Sports F1",
-            "Sky Sports Mix"
-          ]
-        },
-        {
-          "name": "Slovakia v Finland",
-          "start_time_iso": "2026-02-11T15:30:00Z",
-          "time": "15:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/icehockey.gif",
-          "sport": "Ice-Hockey",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports 4",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Luge",
-          "start_time_iso": "2026-02-11T16:00:00Z",
-          "time": "16:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports 2",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "Sepahan v Al Ahli",
-          "start_time_iso": "2026-02-11T16:00:00Z",
-          "time": "16:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "AFC Champions League",
-          "channels": [
-            "The AFC Hub",
-            "OneFootball"
-          ]
-        },
-        {
-          "name": "Snooker Championship League",
-          "start_time_iso": "2026-02-11T16:30:00Z",
-          "time": "16:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/snooker.gif",
-          "sport": "Snooker",
-          "competition": "World Snooker",
-          "channels": [
-            "YouTube"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Luge",
-          "start_time_iso": "2026-02-11T16:45:00Z",
-          "time": "16:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports 2",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "Carl Zeiss Jena Women v Bayern Munich Women",
-          "start_time_iso": "2026-02-11T17:00:00Z",
-          "time": "17:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Women's Bundesliga",
-          "channels": [
-            "DAZN"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Speed Skating",
-          "start_time_iso": "2026-02-11T17:15:00Z",
-          "time": "17:15",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports 3",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "OH Leuven Women v Arsenal Women",
-          "start_time_iso": "2026-02-11T17:45:00Z",
-          "time": "17:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Women's UEFA Champions League",
-          "channels": [
-            "Disney+"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Luge",
-          "start_time_iso": "2026-02-11T17:45:00Z",
-          "time": "17:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports 2",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Curling",
-          "start_time_iso": "2026-02-11T18:00:00Z",
-          "time": "18:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports Extra",
-            "TNT Sports 4",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Curling",
-          "start_time_iso": "2026-02-11T18:00:00Z",
-          "time": "18:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports Extra",
-            "Discovery+"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Figure Skating",
-          "start_time_iso": "2026-02-11T18:15:00Z",
-          "time": "18:15",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports 2",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "2026 Winter Olympics Snowboarding",
-          "start_time_iso": "2026-02-11T18:30:00Z",
-          "time": "18:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport": "Winter Sports",
-          "competition": "Winter Olympics",
-          "channels": [
-            "TNT Sports Extra",
-            "Discovery+"
-          ]
-        },
-        {
-          "name": "Bari v Spezia",
-          "start_time_iso": "2026-02-11T19:00:00Z",
-          "time": "19:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Serie B",
-          "channels": [
-            "Destination Calcio"
-          ]
-        },
-        {
-          "name": "Empoli v SS Juve Stabia",
-          "start_time_iso": "2026-02-11T19:00:00Z",
-          "time": "19:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Serie B",
-          "channels": [
-            "Destination Calcio"
-          ]
-        },
-        {
-          "name": "Snooker World Open",
-          "start_time_iso": "2026-02-11T19:00:00Z",
-          "time": "19:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/snooker.gif",
-          "sport": "Snooker",
-          "competition": "World Snooker",
-          "channels": [
-            "Discovery+"
-          ]
-        },
-        {
-          "name": "Aston Villa v Brighton",
-          "start_time_iso": "2026-02-11T19:30:00Z",
-          "time": "19:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Premier League",
-          "channels": [
-            "TNT Sports 3",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "Crystal Palace v Burnley",
-          "start_time_iso": "2026-02-11T19:30:00Z",
-          "time": "19:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Premier League",
-          "channels": [
-            "TNT Sports Extra",
-            "Discovery+"
-          ]
-        },
-        {
-          "name": "Manchester City v Fulham",
-          "start_time_iso": "2026-02-11T19:30:00Z",
-          "time": "19:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Premier League",
-          "channels": [
-            "TNT Sports 4",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "Nottingham Forest v Wolves",
-          "start_time_iso": "2026-02-11T19:30:00Z",
-          "time": "19:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Premier League",
-          "channels": [
-            "TNT Sports Extra",
-            "Discovery+"
-          ]
-        },
-        {
-          "name": "Union Saint-Gilloise v Sporting de Charleroi",
-          "start_time_iso": "2026-02-11T19:30:00Z",
-          "time": "19:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Belgian Cup Semi Final 2nd Leg",
-          "channels": [
-            "DAZN"
-          ]
-        },
-        {
-          "name": "University Limerick v Cork",
-          "start_time_iso": "2026-02-11T19:30:00Z",
-          "time": "19:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/gaa.gif",
-          "sport": "GAA",
-          "competition": "GAA Allianz Leagues",
-          "channels": [
-            "TG4"
-          ]
-        },
-        {
-          "name": "Charlton Athletic v Stoke City",
-          "start_time_iso": "2026-02-11T19:45:00Z",
-          "time": "19:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Championship",
-          "channels": [
-            "Sky Sports+"
-          ]
-        },
-        {
-          "name": "Aldershot Town v Southend United",
-          "start_time_iso": "2026-02-11T19:45:00Z",
-          "time": "19:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "National League",
-          "channels": [
-            "DAZN National League"
-          ]
-        },
-        {
-          "name": "Boreham Wood v Yeovil Town",
-          "start_time_iso": "2026-02-11T19:45:00Z",
-          "time": "19:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "National League",
-          "channels": [
-            "DAZN National League"
-          ]
-        },
-        {
-          "name": "Brackley Town v FC Halifax Town",
-          "start_time_iso": "2026-02-11T19:45:00Z",
-          "time": "19:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "National League",
-          "channels": [
-            "DAZN National League"
-          ]
-        },
-        {
-          "name": "Rochdale v Forest Green Rovers",
-          "start_time_iso": "2026-02-11T19:45:00Z",
-          "time": "19:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "National League",
-          "channels": [
-            "DAZN National League"
-          ]
-        },
-        {
-          "name": "Sutton United v Braintree Town",
-          "start_time_iso": "2026-02-11T19:45:00Z",
-          "time": "19:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "National League",
-          "channels": [
-            "DAZN National League"
-          ]
-        },
-        {
-          "name": "York City v Hartlepool United",
-          "start_time_iso": "2026-02-11T19:45:00Z",
-          "time": "19:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "National League",
-          "channels": [
-            "DAZN National League"
-          ]
-        },
-        {
-          "name": "Bayern Munich v Red Bull Leipzig",
-          "start_time_iso": "2026-02-11T19:45:00Z",
-          "time": "19:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "DFB Pokal Quarter Final",
-          "channels": [
-            "Premier Sports 2",
-            "DFB Play"
-          ]
-        },
-        {
-          "name": "Grimsby Town v Accrington Stanley",
-          "start_time_iso": "2026-02-11T19:45:00Z",
-          "time": "19:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "League Two",
-          "channels": [
-            "Sky Sports+"
-          ]
-        },
-        {
-          "name": "Celtic v Livingston",
-          "start_time_iso": "2026-02-11T19:45:00Z",
-          "time": "19:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Scottish Premiership",
-          "channels": [
-            "Celtic TV"
-          ]
-        },
-        {
-          "name": "Falkirk v Dundee",
-          "start_time_iso": "2026-02-11T19:45:00Z",
-          "time": "19:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Scottish Premiership",
-          "channels": [
-            "Falkirk TV"
-          ]
-        },
-        {
-          "name": "Kilmarnock v St Mirren",
-          "start_time_iso": "2026-02-11T19:45:00Z",
-          "time": "19:45",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Scottish Premiership",
-          "channels": [
-            "Killie TV"
-          ]
-        },
-        {
-          "name": "Paris Women v Real Madrid Women",
-          "start_time_iso": "2026-02-11T20:00:00Z",
-          "time": "20:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Women's UEFA Champions League",
-          "channels": [
-            "Disney+"
-          ]
-        },
-        {
-          "name": "Motherwell v Rangers",
-          "start_time_iso": "2026-02-11T20:00:00Z",
-          "time": "20:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Scottish Premiership",
-          "channels": [
-            "Sky Sports Main Event",
-            "Sky Sports Football",
-            "Sky Sports Ultra HDR"
-          ]
-        },
-        {
-          "name": "Swindon Town v Newport County",
-          "start_time_iso": "2026-02-11T20:00:00Z",
-          "time": "20:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "League Two",
-          "channels": [
-            "Sky Sports+"
-          ]
-        },
-        {
-          "name": "Bologna v Lazio",
-          "start_time_iso": "2026-02-11T20:00:00Z",
-          "time": "20:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Coppa Italia",
-          "channels": [
-            "Premier Player"
-          ]
-        },
-        {
-          "name": "Athletic Bilbao v Real Sociedad",
-          "start_time_iso": "2026-02-11T20:00:00Z",
-          "time": "20:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Copa del Rey",
-          "channels": [
-            "Premier Sports 1"
-          ]
-        },
-        {
-          "name": "Sunderland v Liverpool",
-          "start_time_iso": "2026-02-11T20:15:00Z",
-          "time": "20:15",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Premier League",
-          "channels": [
-            "TNT Sports 1",
-            "TNT Sports Ultimate",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "ATP Tennis",
-          "start_time_iso": "2026-02-11T22:30:00Z",
-          "time": "22:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/tennis.gif",
-          "sport": "Tennis",
-          "competition": "ATP World Tour",
-          "channels": [
-            "Sky Sports Tennis"
-          ]
-        },
-        {
-          "name": "Asia Pacific Womens Amateur Championship",
-          "start_time_iso": "2026-02-12T00:00:00Z",
-          "time": "00:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
-          "sport": "Golf",
-          "competition": "Ladies European Tour",
-          "channels": [
-            "Sky Sports Golf"
-          ]
-        },
-        {
-          "name": "Charlotte Hornets v Atlanta Hawks",
-          "start_time_iso": "2026-02-12T00:00:00Z",
-          "time": "00:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "sport": "Basketball",
-          "competition": "NBA",
-          "channels": [
-            "NBA League Pass"
-          ]
-        },
-        {
-          "name": "Cleveland Cavaliers v Washington Wizards",
-          "start_time_iso": "2026-02-12T00:00:00Z",
-          "time": "00:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "sport": "Basketball",
-          "competition": "NBA",
-          "channels": [
-            "NBA League Pass"
-          ]
-        },
-        {
-          "name": "Orlando Magic v Milwaukee Bucks",
-          "start_time_iso": "2026-02-12T00:00:00Z",
-          "time": "00:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "sport": "Basketball",
-          "competition": "NBA",
-          "channels": [
-            "NBA League Pass"
-          ]
-        }
-      ]
+      "events": []
     },
     {
       "date": "2026-02-12",
       "day": "Thursday",
       "events": [
-        {
-          "name": "Asia Pacific Womens Amateur Championship",
-          "start_time_iso": "2026-02-12T00:00:00Z",
-          "time": "00:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
-          "sport": "Golf",
-          "competition": "Ladies European Tour",
-          "channels": [
-            "Sky Sports Golf"
-          ]
-        },
-        {
-          "name": "Charlotte Hornets v Atlanta Hawks",
-          "start_time_iso": "2026-02-12T00:00:00Z",
-          "time": "00:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "sport": "Basketball",
-          "competition": "NBA",
-          "channels": [
-            "NBA League Pass"
-          ]
-        },
-        {
-          "name": "Cleveland Cavaliers v Washington Wizards",
-          "start_time_iso": "2026-02-12T00:00:00Z",
-          "time": "00:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "sport": "Basketball",
-          "competition": "NBA",
-          "channels": [
-            "NBA League Pass"
-          ]
-        },
-        {
-          "name": "Orlando Magic v Milwaukee Bucks",
-          "start_time_iso": "2026-02-12T00:00:00Z",
-          "time": "00:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "sport": "Basketball",
-          "competition": "NBA",
-          "channels": [
-            "NBA League Pass"
-          ]
-        },
-        {
-          "name": "Boston Celtics v Chicago Bulls",
-          "start_time_iso": "2026-02-12T00:30:00Z",
-          "time": "00:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "sport": "Basketball",
-          "competition": "NBA",
-          "channels": [
-            "NBA League Pass"
-          ]
-        },
-        {
-          "name": "Brooklyn Nets v Indiana Pacers",
-          "start_time_iso": "2026-02-12T00:30:00Z",
-          "time": "00:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "sport": "Basketball",
-          "competition": "NBA",
-          "channels": [
-            "NBA League Pass"
-          ]
-        },
-        {
-          "name": "Philadelphia 76ers v New York Knicks",
-          "start_time_iso": "2026-02-12T00:30:00Z",
-          "time": "00:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "sport": "Basketball",
-          "competition": "NBA",
-          "channels": [
-            "NBA League Pass"
-          ]
-        },
-        {
-          "name": "Toronto Raptors v Detroit Pistons",
-          "start_time_iso": "2026-02-12T00:30:00Z",
-          "time": "00:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "sport": "Basketball",
-          "competition": "NBA",
-          "channels": [
-            "NBA League Pass"
-          ]
-        },
-        {
-          "name": "Houston Rockets v Los Angeles Clippers",
-          "start_time_iso": "2026-02-12T01:00:00Z",
-          "time": "01:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "sport": "Basketball",
-          "competition": "NBA",
-          "channels": [
-            "NBA League Pass"
-          ]
-        },
-        {
-          "name": "Minnesota Timberwolves v Portland Trail Blazers",
-          "start_time_iso": "2026-02-12T01:00:00Z",
-          "time": "01:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "sport": "Basketball",
-          "competition": "NBA",
-          "channels": [
-            "NBA League Pass"
-          ]
-        },
-        {
-          "name": "New Orleans Pelicans v Miami Heat",
-          "start_time_iso": "2026-02-12T01:00:00Z",
-          "time": "01:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "sport": "Basketball",
-          "competition": "NBA",
-          "channels": [
-            "NBA League Pass"
-          ]
-        },
-        {
-          "name": "LIV Golf Adelaide",
-          "start_time_iso": "2026-02-12T01:05:00Z",
-          "time": "01:05",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
-          "sport": "Golf",
-          "competition": "LIV Golf Series",
-          "channels": [
-            "TNT Sports 1",
-            "Discovery+ Premium"
-          ]
-        },
-        {
-          "name": "Dallas Open",
-          "start_time_iso": "2026-02-12T01:30:00Z",
-          "time": "01:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/tennis.gif",
-          "sport": "Tennis",
-          "competition": "ATP World Tour",
-          "channels": [
-            "Sky Sports Tennis",
-            "Sky Sports Main Event",
-            "Sky Sports Ultra HDR"
-          ]
-        },
-        {
-          "name": "Phoenix Suns v Oklahoma City Thunder",
-          "start_time_iso": "2026-02-12T02:00:00Z",
-          "time": "02:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "sport": "Basketball",
-          "competition": "NBA",
-          "channels": [
-            "NBA League Pass"
-          ]
-        },
-        {
-          "name": "Utah Jazz v Sacramento Kings",
-          "start_time_iso": "2026-02-12T02:00:00Z",
-          "time": "02:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "sport": "Basketball",
-          "competition": "NBA",
-          "channels": [
-            "NBA League Pass"
-          ]
-        },
-        {
-          "name": "Denver Nuggets v Memphis Grizzlies",
-          "start_time_iso": "2026-02-12T02:00:00Z",
-          "time": "02:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "sport": "Basketball",
-          "competition": "NBA",
-          "channels": [
-            "NBA League Pass"
-          ]
-        },
-        {
-          "name": "Golden State Warriors v San Antonio Spurs",
-          "start_time_iso": "2026-02-12T03:00:00Z",
-          "time": "03:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "sport": "Basketball",
-          "competition": "NBA",
-          "channels": [
-            "NBA League Pass"
-          ]
-        },
         {
           "name": "Sri Lanka v Oman",
           "start_time_iso": "2026-02-12T05:30:00Z",
@@ -2072,8 +92,7 @@
           "channels": [
             "BBC1",
             "BBC2",
-            "BBC iPlayer",
-            "BBC Sport Website"
+            "BBC iPlayer"
           ]
         },
         {
@@ -2108,8 +127,8 @@
           "sport": "Cricket",
           "competition": "ICC T20 World Cup",
           "channels": [
-            "Sky Sports Cricket",
             "Sky Sports Main Event",
+            "Sky Sports Cricket",
             "Sky Sports Ultra HDR"
           ]
         },
@@ -2251,8 +270,8 @@
           "sport": "Football",
           "competition": "AFC Champions League",
           "channels": [
-            "The AFC Hub",
-            "OneFootball"
+            "OneFootball",
+            "The AFC Hub"
           ]
         },
         {
@@ -2322,8 +341,8 @@
           "sport": "Cricket",
           "competition": "ICC T20 World Cup",
           "channels": [
-            "Sky Sports Main Event",
             "Sky Sports Cricket",
+            "Sky Sports Main Event",
             "Sky Sports Ultra HDR"
           ]
         },
@@ -2565,17 +584,6 @@
           ]
         },
         {
-          "name": "USON Nevers v Colomiers",
-          "start_time_iso": "2026-02-12T20:00:00Z",
-          "time": "20:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
-          "sport": "Rugby-Union",
-          "competition": "Pro D2",
-          "channels": [
-            "YouTube"
-          ]
-        },
-        {
           "name": "2026 Winter Olympics Speed Skating",
           "start_time_iso": "2026-02-12T20:00:00Z",
           "time": "20:00",
@@ -2597,6 +605,18 @@
           "channels": [
             "TNT Sports Extra",
             "Discovery+"
+          ]
+        },
+        {
+          "name": "Atletico Madrid v Barcelona",
+          "start_time_iso": "2026-02-12T20:00:00Z",
+          "time": "20:00",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
+          "sport": "Football",
+          "competition": "Copa del Rey",
+          "channels": [
+            "ITV4",
+            "ITVX"
           ]
         },
         {
@@ -2742,8 +762,8 @@
           "sport": "Cricket",
           "competition": "ICC T20 World Cup",
           "channels": [
-            "Sky Sports Cricket",
             "Sky Sports Main Event",
+            "Sky Sports Cricket",
             "Sky Sports Ultra HDR"
           ]
         },
@@ -2767,7 +787,7 @@
           "sport": "Rugby-Union",
           "competition": "Super Rugby Pacific",
           "channels": [
-            "TBC"
+            "Sky Sports+"
           ]
         },
         {
@@ -2850,7 +870,7 @@
           "sport": "Rugby-Union",
           "competition": "Super Rugby Pacific",
           "channels": [
-            "TBC"
+            "Sky Sports+"
           ]
         },
         {
@@ -2887,8 +907,7 @@
           "channels": [
             "BBC1",
             "BBC2",
-            "BBC iPlayer",
-            "BBC Sport Website"
+            "BBC iPlayer"
           ]
         },
         {
@@ -3229,17 +1248,6 @@
           ]
         },
         {
-          "name": "Al Hilal v Al Ettifaq",
-          "start_time_iso": "2026-02-13T15:25:00Z",
-          "time": "15:25",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Saudi Pro League",
-          "channels": [
-            "Saudi Pro League YouTube"
-          ]
-        },
-        {
           "name": "France v Czech Republic",
           "start_time_iso": "2026-02-13T15:30:00Z",
           "time": "15:30",
@@ -3282,8 +1290,8 @@
           "sport": "Golf",
           "competition": "US PGA Tour",
           "channels": [
-            "Sky Sports Main Event",
             "Sky Sports Golf",
+            "Sky Sports Main Event",
             "Sky Sports Ultra HDR"
           ]
         },
@@ -3327,39 +1335,6 @@
           ]
         },
         {
-          "name": "Al Ittihad v Al Fayha",
-          "start_time_iso": "2026-02-13T17:30:00Z",
-          "time": "17:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Saudi Pro League",
-          "channels": [
-            "Saudi Pro League YouTube"
-          ]
-        },
-        {
-          "name": "Fortuna Dusseldorf v Preussen Munster",
-          "start_time_iso": "2026-02-13T17:30:00Z",
-          "time": "17:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Bundesliga 2",
-          "channels": [
-            "Bundesliga YouTube"
-          ]
-        },
-        {
-          "name": "Nurnberg v Karlsruher",
-          "start_time_iso": "2026-02-13T17:30:00Z",
-          "time": "17:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Bundesliga 2",
-          "channels": [
-            "Bundesliga YouTube"
-          ]
-        },
-        {
           "name": "Bayer Leverkusen Women v Koln Women",
           "start_time_iso": "2026-02-13T17:30:00Z",
           "time": "17:30",
@@ -3378,6 +1353,7 @@
           "sport": "Football",
           "competition": "Ligue 1",
           "channels": [
+            "Amazon Prime Video",
             "Ligue 1+"
           ]
         },
@@ -3454,17 +1430,6 @@
           ]
         },
         {
-          "name": "Arsenal U21 v Newcastle United U21",
-          "start_time_iso": "2026-02-13T19:00:00Z",
-          "time": "19:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Premier League 2",
-          "channels": [
-            "Arsenal.com"
-          ]
-        },
-        {
           "name": "Catalans Dragons v Huddersfield Giants",
           "start_time_iso": "2026-02-13T19:00:00Z",
           "time": "19:00",
@@ -3500,6 +1465,17 @@
           ]
         },
         {
+          "name": "Blackburn Rovers U21 v Tottenham Hotspur U21",
+          "start_time_iso": "2026-02-13T19:00:00Z",
+          "time": "19:00",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
+          "sport": "Football",
+          "competition": "Premier League 2",
+          "channels": [
+            "SpursPlay"
+          ]
+        },
+        {
           "name": "Derby County U21 v Manchester City U21",
           "start_time_iso": "2026-02-13T19:00:00Z",
           "time": "19:00",
@@ -3511,18 +1487,6 @@
           ]
         },
         {
-          "name": "Birmingham U21 v Chelsea U21",
-          "start_time_iso": "2026-02-13T19:00:00Z",
-          "time": "19:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Premier League 2",
-          "channels": [
-            "ChelseaFC.com",
-            "Chelsea Official App"
-          ]
-        },
-        {
           "name": "Scotland U20 v England U20",
           "start_time_iso": "2026-02-13T19:15:00Z",
           "time": "19:15",
@@ -3530,8 +1494,7 @@
           "sport": "Rugby-Union",
           "competition": "U20s Six Nations",
           "channels": [
-            "BBC iPlayer",
-            "BBC Sport Website"
+            "BBC iPlayer"
           ]
         },
         {
@@ -3542,9 +1505,7 @@
           "sport": "Football",
           "competition": "Bundesliga",
           "channels": [
-            "Bundesliga YouTube",
-            "BBC iPlayer",
-            "BBC Sport Website"
+            "BBC iPlayer"
           ]
         },
         {
@@ -3577,8 +1538,7 @@
           "sport": "Football",
           "competition": "NIFL Premiership",
           "channels": [
-            "BBC iPlayer",
-            "BBC Sport Website"
+            "BBC iPlayer"
           ]
         },
         {
@@ -3590,8 +1550,7 @@
           "competition": "Scottish Championship",
           "channels": [
             "BBC Scotland",
-            "BBC iPlayer",
-            "BBC Sport Website"
+            "BBC iPlayer"
           ]
         },
         {
@@ -3672,7 +1631,6 @@
             "BBC1",
             "TNT Sports 1",
             "BBC iPlayer",
-            "BBC Sport Website",
             "Discovery+ Premium"
           ]
         },
@@ -3687,7 +1645,6 @@
             "BBC Wales",
             "TNT Sports Extra",
             "BBC iPlayer",
-            "BBC Sport Website",
             "Discovery+ Premium"
           ]
         },
@@ -3700,7 +1657,8 @@
           "competition": "U20s Six Nations",
           "channels": [
             "BBC iPlayer",
-            "BBC Sport Website"
+            "RTE 2",
+            "RTE Player"
           ]
         },
         {
@@ -3950,7 +1908,7 @@
           "sport": "Rugby-Union",
           "competition": "Super Rugby Pacific",
           "channels": [
-            "TBC"
+            "Sky Sports+"
           ]
         },
         {
@@ -3984,8 +1942,8 @@
           "sport": "Cricket",
           "competition": "ICC T20 World Cup",
           "channels": [
-            "Sky Sports Main Event",
             "Sky Sports Cricket",
+            "Sky Sports Main Event",
             "Sky Sports Ultra HDR"
           ]
         },
@@ -4020,7 +1978,7 @@
           "sport": "Rugby-Union",
           "competition": "Super Rugby Pacific",
           "channels": [
-            "TBC"
+            "Sky Sports+"
           ]
         },
         {
@@ -4078,7 +2036,7 @@
           "sport": "Rugby-Union",
           "competition": "Super Rugby Pacific",
           "channels": [
-            "TBC"
+            "Sky Sports+"
           ]
         },
         {
@@ -4089,6 +2047,7 @@
           "sport": "Football",
           "competition": "A-League Men",
           "channels": [
+            "TNT Sports 1",
             "TNT Sports Extra",
             "Discovery+ Premium"
           ]
@@ -4115,8 +2074,7 @@
           "channels": [
             "BBC1",
             "BBC2",
-            "BBC iPlayer",
-            "BBC Sport Website"
+            "BBC iPlayer"
           ]
         },
         {
@@ -4151,8 +2109,8 @@
           "sport": "Cricket",
           "competition": "ICC T20 World Cup",
           "channels": [
-            "Sky Sports Cricket",
             "Sky Sports Main Event",
+            "Sky Sports Cricket",
             "Sky Sports Ultra HDR"
           ]
         },
@@ -4210,8 +2168,8 @@
           "sport": "Football",
           "competition": "U18 Premier League",
           "channels": [
-            "CITY+",
-            "MUTV"
+            "MUTV",
+            "CITY+"
           ]
         },
         {
@@ -4285,39 +2243,6 @@
           ]
         },
         {
-          "name": "Eintracht Braunschweig v SV Darmstadt 98",
-          "start_time_iso": "2026-02-14T12:00:00Z",
-          "time": "12:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Bundesliga 2",
-          "channels": [
-            "Bundesliga YouTube"
-          ]
-        },
-        {
-          "name": "Hertha Berlin v Hannover 96",
-          "start_time_iso": "2026-02-14T12:00:00Z",
-          "time": "12:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Bundesliga 2",
-          "channels": [
-            "Bundesliga YouTube"
-          ]
-        },
-        {
-          "name": "Kaiserslautern v Greuther Furth",
-          "start_time_iso": "2026-02-14T12:00:00Z",
-          "time": "12:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Bundesliga 2",
-          "channels": [
-            "Bundesliga YouTube"
-          ]
-        },
-        {
           "name": "Germany v Portugal",
           "start_time_iso": "2026-02-14T12:00:00Z",
           "time": "12:00",
@@ -4327,18 +2252,6 @@
           "channels": [
             "RugbyEurope TV",
             "RugbyPass TV"
-          ]
-        },
-        {
-          "name": "Aston Villa U18s v Chelsea U18",
-          "start_time_iso": "2026-02-14T12:00:00Z",
-          "time": "12:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "U18 Premier League",
-          "channels": [
-            "ChelseaFC.com",
-            "Chelsea Official App"
           ]
         },
         {
@@ -4395,9 +2308,7 @@
           "sport": "Rugby-Union",
           "competition": "Celtic Challenge",
           "channels": [
-            "BBC iPlayer",
-            "BBC Sport Website",
-            "YouTube"
+            "BBC iPlayer"
           ]
         },
         {
@@ -4455,7 +2366,6 @@
           "competition": "Celtic Challenge",
           "channels": [
             "BBC iPlayer",
-            "BBC Sport Website",
             "TG4"
           ]
         },
@@ -4526,7 +2436,6 @@
           "sport": "Football",
           "competition": "3. Liga",
           "channels": [
-            "German Football YouTube",
             "DFB Play"
           ]
         },
@@ -4550,8 +2459,8 @@
           "sport": "Cricket",
           "competition": "ICC T20 World Cup",
           "channels": [
-            "Sky Sports Cricket",
             "Sky Sports Main Event",
+            "Sky Sports Cricket",
             "Sky Sports Ultra HDR"
           ]
         },
@@ -4682,17 +2591,6 @@
           ]
         },
         {
-          "name": "Ealing Trailfinders Women v Sale Sharks Women",
-          "start_time_iso": "2026-02-14T15:00:00Z",
-          "time": "15:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
-          "sport": "Rugby-Union",
-          "competition": "Premiership Womenâs Rugby",
-          "channels": [
-            "YouTube"
-          ]
-        },
-        {
           "name": "Figueira Champions Classic",
           "start_time_iso": "2026-02-14T15:00:00Z",
           "time": "15:00",
@@ -4702,6 +2600,17 @@
           "channels": [
             "TNT Sports 3",
             "Discovery+ Premium"
+          ]
+        },
+        {
+          "name": "Live Boxing",
+          "start_time_iso": "2026-02-14T15:00:00Z",
+          "time": "15:00",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/boxing.gif",
+          "sport": "Boxing",
+          "competition": "IBF Title Fights",
+          "channels": [
+            "DAZN"
           ]
         },
         {
@@ -4724,6 +2633,29 @@
           "competition": "French Top 14",
           "channels": [
             "Premier Sports 2"
+          ]
+        },
+        {
+          "name": "Rot-Weiss Essen v Jahn Regensburg",
+          "start_time_iso": "2026-02-14T15:30:00Z",
+          "time": "15:30",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
+          "sport": "Football",
+          "competition": "3. Liga",
+          "channels": [
+            "DFB Play"
+          ]
+        },
+        {
+          "name": "2026 Winter Olympics Ice Hockey",
+          "start_time_iso": "2026-02-14T15:30:00Z",
+          "time": "15:30",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/icehockey.gif",
+          "sport": "Ice Hockey",
+          "competition": "Winter Olympics",
+          "channels": [
+            "TNT Sports Extra",
+            "Discovery+"
           ]
         },
         {
@@ -4795,8 +2727,8 @@
           "sport": "Golf",
           "competition": "US PGA Tour",
           "channels": [
-            "Sky Sports Golf",
             "Sky Sports Main Event",
+            "Sky Sports Golf",
             "Sky Sports Ultra HDR"
           ]
         },
@@ -4821,6 +2753,17 @@
           "channels": [
             "RTE 2",
             "RTE Player"
+          ]
+        },
+        {
+          "name": "Live Boxing",
+          "start_time_iso": "2026-02-14T17:00:00Z",
+          "time": "17:00",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/boxing.gif",
+          "sport": "Boxing",
+          "competition": "IBF Title Fights",
+          "channels": [
+            "DAZN"
           ]
         },
         {
@@ -4860,17 +2803,6 @@
           ]
         },
         {
-          "name": "Al Fateh v Al Nassr",
-          "start_time_iso": "2026-02-14T17:30:00Z",
-          "time": "17:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Saudi Pro League",
-          "channels": [
-            "Saudi Pro League YouTube"
-          ]
-        },
-        {
           "name": "VfB Stuttgart v Cologne",
           "start_time_iso": "2026-02-14T17:30:00Z",
           "time": "17:30",
@@ -4903,7 +2835,6 @@
             "BBC1",
             "TNT Sports 3",
             "BBC iPlayer",
-            "BBC Sport Website",
             "Discovery+ Premium"
           ]
         },
@@ -5035,17 +2966,6 @@
           ]
         },
         {
-          "name": "Dynamo Dresden v SV Elversberg",
-          "start_time_iso": "2026-02-14T19:30:00Z",
-          "time": "19:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Bundesliga 2",
-          "channels": [
-            "Bundesliga YouTube"
-          ]
-        },
-        {
           "name": "Sligo Rovers v Bohemians Dublin",
           "start_time_iso": "2026-02-14T19:45:00Z",
           "time": "19:45",
@@ -5064,8 +2984,8 @@
           "sport": "Football",
           "competition": "Serie A",
           "channels": [
-            "TNT Sports 3",
             "DAZN",
+            "TNT Sports 3",
             "TNT Sports Extra",
             "Discovery+ Premium"
           ]
@@ -5127,7 +3047,6 @@
           "competition": "U20s Six Nations",
           "channels": [
             "BBC iPlayer",
-            "BBC Sport Website",
             "S4C",
             "S4C Online"
           ]
@@ -5151,6 +3070,7 @@
           "sport": "Football",
           "competition": "Ligue 1",
           "channels": [
+            "Amazon Prime Video",
             "Ligue 1+"
           ]
         },
@@ -5394,8 +3314,7 @@
           "channels": [
             "BBC1",
             "BBC2",
-            "BBC iPlayer",
-            "BBC Sport Website"
+            "BBC iPlayer"
           ]
         },
         {
@@ -5443,8 +3362,8 @@
           "sport": "Cricket",
           "competition": "ICC T20 World Cup",
           "channels": [
-            "Sky Sports Cricket",
             "Sky Sports Main Event",
+            "Sky Sports Cricket",
             "Sky Sports Ultra HDR"
           ]
         },
@@ -5458,17 +3377,6 @@
           "channels": [
             "TNT Sports Extra",
             "Discovery+"
-          ]
-        },
-        {
-          "name": "Hamburg U19 v FC Koln U19",
-          "start_time_iso": "2026-02-15T10:00:00Z",
-          "time": "10:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "U19 Bundesliga",
-          "channels": [
-            "German Football YouTube"
           ]
         },
         {
@@ -5543,17 +3451,6 @@
           ]
         },
         {
-          "name": "Charlton Athletic Women v Durham Women",
-          "start_time_iso": "2026-02-15T12:00:00Z",
-          "time": "12:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Women's Super League 2",
-          "channels": [
-            "WSL2 YouTube"
-          ]
-        },
-        {
           "name": "Chelsea Women v Liverpool Women",
           "start_time_iso": "2026-02-15T12:00:00Z",
           "time": "12:00",
@@ -5575,7 +3472,6 @@
           "sport": "Football",
           "competition": "Women's Super League",
           "channels": [
-            "WSL YouTube",
             "Sky Sports+"
           ]
         },
@@ -5587,7 +3483,6 @@
           "sport": "Football",
           "competition": "Women's Super League",
           "channels": [
-            "WSL YouTube",
             "Sky Sports+"
           ]
         },
@@ -5628,39 +3523,6 @@
           ]
         },
         {
-          "name": "VfL Bochum v SC Paderborn",
-          "start_time_iso": "2026-02-15T12:30:00Z",
-          "time": "12:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Bundesliga 2",
-          "channels": [
-            "Bundesliga YouTube"
-          ]
-        },
-        {
-          "name": "Holstein Kiel v Schalke 04",
-          "start_time_iso": "2026-02-15T12:30:00Z",
-          "time": "12:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Bundesliga 2",
-          "channels": [
-            "Bundesliga YouTube"
-          ]
-        },
-        {
-          "name": "FC Magdeburg v Arminia Bielefeld",
-          "start_time_iso": "2026-02-15T12:30:00Z",
-          "time": "12:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Bundesliga 2",
-          "channels": [
-            "Bundesliga YouTube"
-          ]
-        },
-        {
           "name": "Raceday Live",
           "start_time_iso": "2026-02-15T12:30:00Z",
           "time": "12:30",
@@ -5692,17 +3554,6 @@
           "competition": "Belgian Pro League",
           "channels": [
             "DAZN"
-          ]
-        },
-        {
-          "name": "Exeter Chiefs Women v Loughborough Lightning",
-          "start_time_iso": "2026-02-15T13:00:00Z",
-          "time": "13:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
-          "sport": "Rugby-Union",
-          "competition": "Premiership Womenâs Rugby",
-          "channels": [
-            "YouTube"
           ]
         },
         {
@@ -5758,8 +3609,7 @@
           "sport": "Rugby-Union",
           "competition": "Premiership Womenâs Rugby",
           "channels": [
-            "BBC iPlayer",
-            "BBC Sport Website"
+            "BBC iPlayer"
           ]
         },
         {
@@ -5816,53 +3666,9 @@
           "sport": "Football",
           "competition": "Scottish Premiership",
           "channels": [
-            "Sky Sports Main Event",
             "Sky Sports Football",
+            "Sky Sports Main Event",
             "Sky Sports Ultra HDR"
-          ]
-        },
-        {
-          "name": "Bristol City Women v Southampton Women",
-          "start_time_iso": "2026-02-15T14:00:00Z",
-          "time": "14:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Women's Super League 2",
-          "channels": [
-            "WSL2 YouTube"
-          ]
-        },
-        {
-          "name": "Ipswich Town Women v Sheffield United Women",
-          "start_time_iso": "2026-02-15T14:00:00Z",
-          "time": "14:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Women's Super League 2",
-          "channels": [
-            "WSL2 YouTube"
-          ]
-        },
-        {
-          "name": "Newcastle United Women v Portsmouth Women",
-          "start_time_iso": "2026-02-15T14:00:00Z",
-          "time": "14:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Women's Super League 2",
-          "channels": [
-            "WSL2 YouTube"
-          ]
-        },
-        {
-          "name": "Sunderland Women v Nottingham Forest Women",
-          "start_time_iso": "2026-02-15T14:00:00Z",
-          "time": "14:00",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/football.gif",
-          "sport": "Football",
-          "competition": "Women's Super League 2",
-          "channels": [
-            "WSL2 YouTube"
           ]
         },
         {
@@ -6000,8 +3806,7 @@
           "sport": "Football",
           "competition": "Women's Super League",
           "channels": [
-            "BBC iPlayer",
-            "BBC Sport Website"
+            "BBC iPlayer"
           ]
         },
         {
@@ -6049,8 +3854,7 @@
           "competition": "Super League",
           "channels": [
             "Sky Sports+",
-            "BBC iPlayer",
-            "BBC Sport Website"
+            "BBC iPlayer"
           ]
         },
         {
@@ -6064,7 +3868,6 @@
             "BBC1",
             "Premier Sports 1",
             "BBC iPlayer",
-            "BBC Sport Website",
             "S4C",
             "S4C Online"
           ]
@@ -6222,6 +4025,17 @@
           ]
         },
         {
+          "name": "Live Boxing",
+          "start_time_iso": "2026-02-15T17:00:00Z",
+          "time": "17:00",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/boxing.gif",
+          "sport": "Boxing",
+          "competition": "IBF Title Fights",
+          "channels": [
+            "DAZN"
+          ]
+        },
+        {
           "name": "Levante v Valencia",
           "start_time_iso": "2026-02-15T17:30:00Z",
           "time": "17:30",
@@ -6369,6 +4183,7 @@
           "sport": "Football",
           "competition": "Ligue 1",
           "channels": [
+            "Amazon Prime Video",
             "Ligue 1+"
           ]
         },
@@ -6380,8 +4195,8 @@
           "sport": "Football",
           "competition": "Serie A",
           "channels": [
-            "DAZN",
             "TNT Sports 1",
+            "DAZN",
             "Discovery+ Premium"
           ]
         },

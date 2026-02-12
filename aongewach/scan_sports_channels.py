@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Xtream Sports Channel Scanner - Production Version
-Fast AND accurate. Uses category filtering + smart fuzzy matching.
+Fast AND accurate. Scans specific servers for matching channels.
 """
 
 import json
@@ -16,18 +16,42 @@ from difflib import SequenceMatcher
 import concurrent.futures
 import time
 import zlib
-
-# Configuration
 import os
 
 # Configuration
-# Look for schedule in the same directory as this script, or current dir
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 SCHEDULE_FILE = os.path.join(SCRIPT_DIR, 'weekly_schedule.json')
 if not os.path.exists(SCHEDULE_FILE):
     SCHEDULE_FILE = 'weekly_schedule.json'
 
-
+# Hardcoded Server List
+SERVERS = [
+    {
+        'url': 'http://tv.starsharetv.com:8080/get.php?username=7654321&password=1234567&type=m3u_plus&output=ts',
+        'name': 'StarShare TV',
+        'type': 'api'
+    },
+    {
+        'url': 'http://abtvab@starshare.net:80/get.php?username=CVCVCVCV&password=CV1CV1CV1&type=m3u&output=mpegts',
+        'name': 'StarShare Net',
+        'type': 'api'
+    },
+    {
+        'url': 'http://couchguy.club:80/get.php?username=Joshua754&password=Vk8KJG6VqFN3&type=m3u_plus&output=ts',
+        'name': 'CouchGuy',
+        'type': 'api'
+    },
+    {
+        'url': 'http://Supersonictv.live:8080/get.php?username=Ramsey123&password=Ramsey123&type=m3u_plus&output=ts',
+        'name': 'Supersonic TV',
+        'type': 'api'
+    },
+    {
+        'url': 'https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/a1x.m3u',
+        'name': 'A1XM Public',
+        'type': 'direct'
+    }
+]
 
 
 class XtreamAPI:
@@ -51,11 +75,11 @@ class XtreamAPI:
             else:
                 raise ValueError(f"Cannot parse credentials from URL: {url}")
         
-        port = parsed.port or 80
-        # Handle cases where scheme is missing or incorrect in specific ways if needed
+        # Construct Base URL
+        # IMPORTANT: Use netloc to preserve Basic Auth (user@host) if present
         scheme = parsed.scheme if parsed.scheme else "http"
-        self.base_url = f"{scheme}://{parsed.hostname}:{port}"
-        self.timeout = 20
+        self.base_url = f"{scheme}://{parsed.netloc}"
+        self.timeout = 30
     
     def _api_call(self, action: str, **params) -> Optional[List[Dict]]:
         """Make API call."""
@@ -69,6 +93,7 @@ class XtreamAPI:
             data = response.json()
             return data if isinstance(data, list) else []
         except Exception as e:
+            # print(f"API Call Failed ({action}): {e}")
             return None
     
     def get_live_categories(self) -> List[Dict]:
@@ -86,43 +111,6 @@ class XtreamAPI:
         """Build stream URL."""
         # Xtream codes usually exposes live streams at /live/username/password/stream_id.ts
         return f"{self.base_url}/live/{self.username}/{self.password}/{stream_id}.ts"
-
-
-class SportsFilter:
-    """Filter sports categories and channels."""
-    
-    # Sports category keywords - Updated based on user request
-    SPORTS_KEYWORDS = {
-        'sport', 'espn', 'fox', 'sky', 'bein', 'dazn', 'dstv', 'supersport',
-        'soccer', 'football', 'basketball', 'tennis', 'cricket', 'rugby',
-        'golf', 'boxing', 'mma', 'ufc', 'wrestling', 'wwe', 'f1', 'formula',
-        'motogp', 'nascar', 'hockey', 'baseball', 'nba', 'nfl', 'nhl', 'mlb',
-        'deportes', 'deportivo', 'calcio', 'fussball', 'arena', 'tsn', 'optus',
-        'astro', 'star', 'sony', 'ten', 'willow', 'pl', 'premier league',
-        'la liga', 'bundesliga', 'serie a', 'ligue 1', 'ucl', 'uefa', 'fifa'
-    }
-    
-    # NON-sports keywords (higher priority)
-    EXCLUDE_KEYWORDS = {
-        'movie', 'film', 'cinema', 'series', 'drama', 'comedy', 'kids',
-        'anime', 'cartoon', 'music', 'news', 'entertainment', 'adult',
-        'xxx', '18+', 'porn', 'religion', 'documentary', 'vod'
-    }
-    
-    @classmethod
-    def is_sports_category(cls, category_name: str) -> bool:
-        """Check if category is sports-related."""
-        if not category_name:
-            return False
-            
-        name_lower = category_name.lower()
-        
-        # Exclude non-sports first
-        if any(kw in name_lower for kw in cls.EXCLUDE_KEYWORDS):
-            return False
-        
-        # Check sports keywords
-        return any(kw in name_lower for kw in cls.SPORTS_KEYWORDS)
 
 
 class ChannelNormalizer:
@@ -219,7 +207,6 @@ class SportsScanner:
         self.match_limit = match_limit
         
         # Channel storage: {original_target_name: {matches: {quality: set()}, logo: str}}
-        # We map back to the Target Name from the schedule
         self.channels = defaultdict(lambda: {'qualities': defaultdict(set), 'logo': None})
         self.channel_counts = defaultdict(int) # Track count per target
         self.channel_ids = {}
@@ -230,8 +217,7 @@ class SportsScanner:
             'servers_success': 0,
             'servers_failed': 0,
             'categories_total': 0,
-            'sports_categories': 0,
-            'channels_checked': 0,
+            'streams_total': 0,
             'channels_added': 0
         }
     
@@ -243,30 +229,81 @@ class SportsScanner:
         return self.channel_ids[name]
 
     def _find_target_match(self, stream_name: str) -> Optional[str]:
-        """Check if stream name contains any target channel (Substring Match)."""
+        """
+        Check if stream name contains any target channel (Substring Match).
+        This is the inner loop hot-path.
+        """
         name_lower = stream_name.lower()
-        # Strictly look for the target phrase in the stream name
-        # We iterate our targets. This could be O(N*M) so rely on optimization if needed
-        # but N (targets) is small (~100-200) and M (stream length) is small.
+        
+        # Simple substring check against all targets
+        # Optimizations could be done here if targets list is huge, 
+        # but for ~200 targets and ~100k channels it's acceptable (~20M ops).
         for target in self.targets:
              if target in name_lower:
                  return target # Return the matched target string (lower)
         return None
 
     def _get_display_name(self, target_lower: str) -> str:
-        """Recover display name (Title Case) - simplified."""
-        # In a real impl we might map lower->original, but for now Title Case is fine
-        # or we could store the original map.
-        # Actually, let's just title case it to look nice, or keep it simple.
+        """Recover display name (Title Case)."""
         return target_lower.title()
 
+    def process_streams(self, streams: List[Dict], api_instance: Optional[XtreamAPI] = None):
+        """Process a list of streams and match against targets."""
+        found_in_batch = 0
+        
+        for stream in streams:
+            stream_name = stream.get('name', '').strip()
+            
+            if not stream_name:
+                continue
+            
+            # 1. Match Check
+            matched_target_lower = self._find_target_match(stream_name)
+            if not matched_target_lower:
+                    continue
+                    
+            # 2. Check limit
+            if self.channel_counts[matched_target_lower] >= self.match_limit:
+                continue
+                
+            final_name = self._get_display_name(matched_target_lower)
+            
+            # 3. Extract Details
+            # Use 'stream_icon' for API, 'logo' for M3U dict
+            stream_logo = stream.get('stream_icon') or stream.get('logo')
+            
+            quality = ChannelNormalizer(0).extract_quality(stream_name)
+            
+            # 4. Get URL
+            if api_instance:
+                stream_id = stream.get('stream_id')
+                if not stream_id: continue
+                url = api_instance.get_stream_url(stream_id)
+            else:
+                # Direct M3U url
+                url = stream.get('url')
+                if not url: continue
+            
+            # 5. Store
+            if url not in self.channels[final_name]['qualities'][quality]:
+                self.channels[final_name]['qualities'][quality].add(url)
+                found_in_batch += 1
+                self.stats['channels_added'] += 1
+                self.channel_counts[matched_target_lower] += 1
+                
+                # Add logo if missing
+                if not self.channels[final_name]['logo'] and stream_logo:
+                    self.channels[final_name]['logo'] = stream_logo
+            
+            # Ensure ID exists
+            self._get_channel_id(final_name)
+            
+        return found_in_batch
     
     def scan_direct_m3u(self, url: str) -> Dict:
         """Scan a direct M3U file URL."""
         print(f"  > Starting scan: Direct M3U ({url})...", flush=True)
         result = {
-            'name': 'Direct M3U',
-            'domain': 'direct_m3u',
             'success': False,
             'channels_added': 0,
             'error': None
@@ -277,9 +314,7 @@ class SportsScanner:
             response.raise_for_status()
             lines = response.text.splitlines()
             
-            channels_found = 0
-            
-            # Simple M3U parser
+            parsed_streams = []
             current_info = {}
             
             for line in lines:
@@ -288,15 +323,13 @@ class SportsScanner:
                     continue
                 
                 if line.startswith('#EXTINF:'):
-                    # Reset info
                     current_info = {}
-                    
                     # Extract Logo
                     logo_match = re.search(r'tvg-logo="([^"]*)"', line)
                     if logo_match:
                         current_info['logo'] = logo_match.group(1)
                     
-                    # Extract Name (last part after comma)
+                    # Extract Name
                     name_match = re.search(r',([^,]*)$', line)
                     if name_match:
                         current_info['name'] = name_match.group(1).strip()
@@ -304,43 +337,18 @@ class SportsScanner:
                 elif not line.startswith('#'):
                     # It's a URL
                     if 'name' in current_info:
-                        stream_name = current_info['name']
-                        stream_url = line
-                        stream_logo = current_info.get('logo')
+                        current_info['url'] = line
+                        parsed_streams.append(current_info)
+                        current_info = {} # Reset
                         
-                        # Strict Match Check
-                        matched_target_lower = self._find_target_match(stream_name)
-                        if not matched_target_lower:
-                            continue
-
-                        # Check limit
-                        if self.channel_counts[matched_target_lower] >= self.match_limit:
-                            continue
-                        
-                        # Use title-cased target as key
-                        final_name = self._get_display_name(matched_target_lower)
-                        
-                        # Get quality (using existing normalizer helper or logic)
-                        # We can instantiate normalizer locally or just use regex
-                        quality = ChannelNormalizer(0).extract_quality(stream_name)
-                        
-                        # Add to channels
-                        if stream_url not in self.channels[final_name]['qualities'][quality]:
-                            self.channels[final_name]['qualities'][quality].add(stream_url)
-                            channels_found += 1
-                            self.stats['channels_added'] += 1
-                            self.channel_counts[matched_target_lower] += 1
-                            
-                            # Add logo if missing
-                            if not self.channels[final_name]['logo'] and stream_logo:
-                                self.channels[final_name]['logo'] = stream_logo
-                        
-                        # Ensure ID exists
-                        self._get_channel_id(final_name)
-                        
+            print(f"    - Parsed {len(parsed_streams)} streams from M3U. Matching...", flush=True)
+            self.stats['streams_total'] += len(parsed_streams)
+            
+            added = self.process_streams(parsed_streams, api_instance=None)
+            
             result['success'] = True
-            result['channels_added'] = channels_found
-            print(f"  v Direct M3U - Done. Found {channels_found} channels", flush=True)
+            result['channels_added'] = added
+            print(f"  v Direct M3U - Done. Added {added} relevant channels.", flush=True)
             
         except Exception as e:
             result['error'] = str(e)
@@ -353,10 +361,9 @@ class SportsScanner:
         if server.get('type') == 'direct':
             return self.scan_direct_m3u(server['url'])
 
-        print(f"  > Starting scan: {server.get('domain', 'Unknown')}...", flush=True)
+        print(f"  > Starting scan: {server.get('name', 'Unknown')}...", flush=True)
         result = {
             'name': server.get('name', 'Unknown'),
-            'domain': server.get('domain', 'Unknown'),
             'success': False,
             'channels_added': 0,
             'error': None
@@ -366,102 +373,67 @@ class SportsScanner:
             # Connect to API
             api = XtreamAPI(server['url'])
             
-            # Get categories
+            # STRATEGY: Try to fetch ALL streams first (some providers support this)
+            # If that fails or returns empty, fetch all categories and iterate.
+            
+            all_streams = []
+            
+            # Method A: Get All Streams
+            print(f"    - Attempting to fetch full stream list...", flush=True)
+            all_streams = api.get_live_streams(category_id=None)
+            
+            if all_streams:
+                print(f"    - Success. Got {len(all_streams)} streams. Matching...", flush=True)
+                self.stats['streams_total'] += len(all_streams)
+                added = self.process_streams(all_streams, api_instance=api)
+                
+                result['success'] = True
+                result['channels_added'] = added
+                print(f"  v {server.get('name')} - Done. Added {added} channels.", flush=True)
+                return result
+                
+            # Method B: Iterate Categories (Fallback)
+            print(f"    - Full list fetch returned empty. Switching to Category Iteration...", flush=True)
             try:
                 categories = api.get_live_categories()
             except Exception as e:
-                # Catch connection errors early
-                print(f"  x {server.get('domain')} - Connection Failed: {e}", flush=True)
-                result['error'] = str(e)
+                result['error'] = f"Failed to get categories: {e}"
+                print(f"  x {server.get('name')} - Error: {e}", flush=True)
                 return result
 
             self.stats['categories_total'] += len(categories)
+            print(f"    - Found {len(categories)} categories. Scanning ALL...", flush=True)
             
-            # Filter sports categories
-            sports_categories = [
-                cat for cat in categories
-                if cat.get('category_name') and 
-                   SportsFilter.is_sports_category(cat['category_name'])
-            ]
+            total_added = 0
             
-            self.stats['sports_categories'] += len(sports_categories)
-            
-            if not sports_categories:
-                result['error'] = 'No sports categories'
-                print(f"  x {server.get('domain')} - No sports categories", flush=True)
-                return result
-            
-            print(f"    - Found {len(sports_categories)} sports categories in {server.get('domain')}. Scanning streams...", flush=True)
-            
-            # Get streams from each sports category
-            channels_found = 0
-            for i, category in enumerate(sports_categories, 1):
-                cat_id = category.get('category_id')
-                if not cat_id:
-                    continue
+            # Scan ALL categories
+            for cat in categories:
+                cat_id = cat.get('category_id')
+                if not cat_id: continue
                 
-                try:
-                    streams = api.get_live_streams(cat_id)
-                except Exception:
-                    continue
-                    
-                self.stats['channels_checked'] += len(streams)
-                
-                for stream in streams:
-                    stream_id = stream.get('stream_id')
-                    stream_name = stream.get('name', '').strip()
-                    stream_icon = stream.get('stream_icon')
-                    
-                    if not stream_id or not stream_name:
-                        continue
-                    
-                    # Strict Match Check
-                    matched_target_lower = self._find_target_match(stream_name)
-                    if not matched_target_lower:
-                         continue
-                         
-                    # Check limit
-                    if self.channel_counts[matched_target_lower] >= self.match_limit:
-                        continue
-                        
-                    final_name = self._get_display_name(matched_target_lower)
-                    
-                    # Get quality
-                    quality = ChannelNormalizer(0).extract_quality(stream_name)
-                    
-                    # Build URL
-                    url = api.get_stream_url(stream_id)
-                    
-                    # Add to channels
-                    if url not in self.channels[final_name]['qualities'][quality]:
-                        self.channels[final_name]['qualities'][quality].add(url)
-                        channels_found += 1
-                        self.stats['channels_added'] += 1
-                        self.channel_counts[matched_target_lower] += 1
-                        
-                        # Add logo if missing
-                        if not self.channels[final_name]['logo'] and stream_icon:
-                            self.channels[final_name]['logo'] = stream_icon
-                    
-                    # Ensure ID exists
-                    self._get_channel_id(final_name)
+                streams = api.get_live_streams(cat_id)
+                if streams:
+                    self.stats['streams_total'] += len(streams)
+                    # Process batch
+                    added = self.process_streams(streams, api_instance=api)
+                    total_added += added
             
             result['success'] = True
-            result['channels_added'] = channels_found
-            print(f"  v {server.get('domain')} - Done. Found {channels_found} channels", flush=True)
+            result['channels_added'] = total_added
+            print(f"  v {server.get('name')} - Done. Added {total_added} channels.", flush=True)
             
         except Exception as e:
             result['error'] = str(e)
-            print(f"  ! {server.get('domain')} - Error: {e}", flush=True)
+            print(f"  ! {server.get('name')} - Error: {e}", flush=True)
         
         return result
     
-    def scan_selected_servers(self, servers: List[Dict], max_workers: int = 5) -> None:
-        """Scan a fixed list of servers."""
+    def scan_all(self, servers: List[Dict], max_workers: int = 5) -> None:
+        """Scan all provided servers."""
         self.stats['servers_total'] = len(servers)
         
         print(f"\n{'='*70}")
-        print(f"Scanning {len(servers)} playlists (Priority + Top 20) with max {max_workers} threads")
+        print(f"Scanning {len(servers)} configured servers")
         print(f"{'='*70}\n", flush=True)
 
         with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
@@ -471,7 +443,7 @@ class SportsScanner:
                 server = futures[future]
                 try:
                     result = future.result()
-                    if result['success'] and result['channels_added'] > 0:
+                    if result['success']:
                         self.stats['servers_success'] += 1
                     else:
                         self.stats['servers_failed'] += 1
@@ -486,57 +458,71 @@ class SportsScanner:
         output = {
             'metadata': {
                 'scan_date': time.strftime('%Y-%m-%d %H:%M:%S UTC', time.gmtime()),
-                'servers_total': self.stats['servers_total'],
-                'servers_success': self.stats['servers_success'],
-                'servers_failed': self.stats['servers_failed'],
-                'categories_total': self.stats['categories_total'],
-                'sports_categories': self.stats['sports_categories'],
-                'channels_checked': self.stats['channels_checked'],
-                'unique_channels': len(self.channels),
-                'total_links': self.stats['channels_added']
+                'stats': self.stats,
+                'unique_channels': len(self.channels)
             },
             'channels': {}
         }
         
-        # Build output
+        # Build output from FOUND channels
+        found_names_lower = set()
         for name in sorted(self.channels.keys()):
+            found_names_lower.add(name.lower())
             channel_data = self.channels[name]
             
             # Sort qualities
             qualities = {}
             for quality in ['SD', 'HD', 'FHD', '4K']:
                 if quality in channel_data['qualities']:
-                    # Just the URL string list, no source object
                     qualities[quality] = sorted(list(channel_data['qualities'][quality]))
             
-            if qualities: # Only add if we have content
+            if qualities:
                  output['channels'][name] = {
                     'id': self.channel_ids[name],
                     'logo': channel_data['logo'],
                     'qualities': qualities
                 }
         
+        # Identify MISSING channels
+        missing = []
+        for target in self.targets:
+            if target.lower() not in found_names_lower:
+                missing.append(target)
+        missing.sort()
+        
+        # Add MISSING channels to output (with nulls)
+        for m in missing:
+            # We use the target name title-cased as the key
+            display_name = m.title()
+            output['channels'][display_name] = {
+                'id': None,
+                'logo': None,
+                'qualities': None 
+            }
+
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(output, f, indent=2, ensure_ascii=False)
+        
+        # Console Reporting
+        x = len(self.targets)
+        y = len(found_names_lower)
+        z = len(missing)
         
         print(f"\n{'='*70}", flush=True)
         print(f"✅ Saved {len(output['channels'])} unique channels → {output_path}", flush=True)
         print(f"{'='*70}", flush=True)
         print(f"Statistics:", flush=True)
-        print(f"  Servers: {self.stats['servers_success']} successful", flush=True)
-        print(f"  Categories: {self.stats['sports_categories']} sports categories scanned", flush=True)
-        print(f"  Channels: {len(output['channels'])} unique ({self.stats['channels_added']} total links)", flush=True)
+        print(f"  Streams Scanned: {self.stats['streams_total']}", flush=True)
+        print(f"  Target Channels (Schedule): {x}", flush=True)
+        print(f"  Found Channels:             {y}", flush=True)
+        print(f"  Missing Channels:           {z}", flush=True)
+        print(f"{'='*70}", flush=True)
+        
+        if missing:
+            print("Missing Channels (Added to JSON with null values):")
+            for m in missing:
+                print(f"  - {m}")
         print(f"{'='*70}\n", flush=True)
-
-
-def parse_arguments():
-    """Parse command line arguments."""
-    parser = argparse.ArgumentParser(description='Scan sports channels from playlists.')
-    parser.add_argument('input_file', nargs='?', default='lovestory.json', help='Input JSON file with playlists')
-    parser.add_argument('output_file', nargs='?', default='channels.json', help='Output JSON file')
-    parser.add_argument('--limit', type=int, help='Limit number of playlists to scan (for testing)')
-    parser.add_argument('--domains', type=str, help='Comma-separated list of priority domains to scan')
-    return parser.parse_args()
 
 
 def load_target_channels(schedule_file):
@@ -549,9 +535,6 @@ def load_target_channels(schedule_file):
         for day in data.get('schedule', []):
             for event in day.get('events', []):
                 for channel in event.get('channels', []):
-                    # We strip and maybe should be careful about splitting?
-                    # The user said strict match. Schedule has "Sky Sports Main Event".
-                    # We just take the full string.
                     if channel:
                          targets.add(channel.strip())
         
@@ -562,77 +545,23 @@ def load_target_channels(schedule_file):
         return []
 
 def main():
-    args = parse_arguments()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('output_file', nargs='?', default='channels.json', help='Output JSON file')
+    args = parser.parse_args()
     
-    # Load targets
+    # 1. Load Targets
     targets = load_target_channels(SCHEDULE_FILE)
     if not targets:
         print("No target channels found. Exiting.")
         sys.exit(1)
 
-    try:
-        with open(args.input_file, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-    except FileNotFoundError:
-        print(f"Error: Input file '{args.input_file}' not found.")
-        sys.exit(1)
-    
-    all_servers = []
-    
-    # Add external source (User Request)
-    all_servers.append({
-        'url': 'https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/a1x.m3u',
-        'name': 'A1XM Public',
-        'domain': 'a1xmedia.github.io',
-        'channel_count': 9999999, # HIGHEST priority
-        'type': 'direct'
-    })
-    
-    for item in data.get('featured_content', []):
-        if item.get('type') == 'm3u' and item.get('url'):
-            all_servers.append({
-                'url': item['url'],
-                'name': item.get('name', 'Unknown'),
-                'domain': item.get('domain', 'Unknown'),
-                'channel_count': int(item.get('channel_count', 0))
-            })
-    
-    if not all_servers:
-        print("No M3U playlists found in input file.")
-        sys.exit(1)
-        
-    print(f"Found {len(all_servers)} total playlists.")
-    
-    # STRATEGY: 
-    # 1. Identify Priorities (External URL)
-    # 2. Sort Rest by Channel Count desc
-    # 3. Take Top 20 of Rest
-    # 4. Combine
-    
-    priority_url = "a1xmedia.github.io"
-    priorities = [s for s in all_servers if s.get('domain') == priority_url]
-    others = [s for s in all_servers if s.get('domain') != priority_url]
-    
-    # Sort others by channel count
-    others.sort(key=lambda x: x['channel_count'], reverse=True)
-    
-    # Take Top 20
-    top_20 = others[:20]
-    
-    final_servers = priorities + top_20
-    
-    print(f"Selected {len(final_servers)} playlists for scanning:")
-    print(f"  - {len(priorities)} priority ({priority_url})")
-    print(f"  - {len(top_20)} top playlists (by count)")
-    
-    if not final_servers:
-        print("No servers selected for scanning.")
-        sys.exit(0)
-    
-    # Scan with Strict Targets and Limit
+    # 2. Init Scanner
     scanner = SportsScanner(target_channels=targets, match_limit=5)
     
-    scanner.scan_selected_servers(final_servers, max_workers=5)
+    # 3. Run Scan
+    scanner.scan_all(SERVERS, max_workers=5)
+    
+    # 4. Save
     scanner.save(args.output_file)
 
 

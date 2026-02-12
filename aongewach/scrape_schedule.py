@@ -85,7 +85,7 @@ def scrape_date(date_obj):
                     event_data['competition'] = comp_td.get_text(" ", strip=True)
 
             # 4. Channels
-            channels = []
+            raw_channels = []
             channel_td = row.find('td', class_='channel-details')
             if channel_td:
                 channel_imgs = channel_td.find_all('img', class_='channel')
@@ -93,17 +93,43 @@ def scrape_date(date_obj):
                     channel_name = img.get('title') or img.get('alt')
                     if channel_name:
                         channel_name = channel_name.replace(' logo', '').strip()
-                        channels.append(channel_name)
+                        raw_channels.append(channel_name)
             
-            event_data['channels'] = channels
+            # --- FILTERING LOGIC ---
+            # Filter out junk channels
+            junk_keywords = ["website", "youtube", "app"]
+            # Regex for domains (e.g. channel.net, site.com, something.co.uk)
+            domain_regex = re.compile(r'\b[\w-]+\.(com|net|org|co\.[a-z]{2}|io|tv|biz|info|me|eu|us)\b', re.IGNORECASE)
             
-            if event_data.get('name'):
+            filtered_channels = []
+            
+            for ch in raw_channels:
+                is_junk = False
+                ch_lower = ch.lower()
+                
+                # Scan for keywords
+                for kw in junk_keywords:
+                    if kw in ch_lower:
+                        is_junk = True
+                        break
+                
+                # Scan for domain patterns
+                if not is_junk and domain_regex.search(ch):
+                    is_junk = True
+                
+                if not is_junk:
+                    filtered_channels.append(ch)
+
+            event_data['channels'] = filtered_channels
+            
+            # Only add event if it has valid channels (and a name)
+            if event_data.get('name') and event_data.get('channels'):
                 events.append(event_data)
 
         except Exception as e:
             continue
 
-    print(f"    v Found {len(events)} events.")
+    print(f"    v Found {len(events)} events (after filtering).")
     return events
 
 def scrape_week():
