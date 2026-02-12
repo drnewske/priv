@@ -2,9 +2,9 @@
 
 This system runs automatically via GitHub Actions to keep sports schedules, team data, and channel mappings up to date.
 
-## 1. Daily Pipeline Update
+## 1. Weekly Pipeline Update
 **Workflow:** `pipeline.yml`
-- **Runs:** Daily at 05:00 UTC
+- **Runs:** Weekly (Mondays at 05:00 UTC)
 - **What it does:** Orchestrates the entire data update process in one go.
   1. **Scrapes** the latest schedule from Wheresthematch.com (`scrape_schedule.py`)
   2. **Scans** IPTV playlists for active channels (`scan_sports_channels.py`)

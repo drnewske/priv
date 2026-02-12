@@ -2,8 +2,8 @@ name: Update Sports Pipeline
 
 on:
   schedule:
-    # Run at 05:00 UTC every day
-    - cron: '0 5 * * *'
+    # Run at 05:00 UTC every Monday
+    - cron: '0 5 * * 1'
   workflow_dispatch:  # Allow manual trigger
 
 jobs:
