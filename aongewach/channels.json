@@ -1,15 +1,15 @@
 {
   "metadata": {
-    "scan_date": "2026-02-14 13:06:34 UTC",
+    "scan_date": "2026-02-14 13:12:47 UTC",
     "stats": {
       "servers_total": 165,
       "servers_success": 165,
       "servers_failed": 0,
-      "categories_total": 0,
-      "streams_total": 708974,
-      "channels_added": 219
+      "categories_total": 324,
+      "streams_total": 706994,
+      "channels_added": 203
     },
-    "unique_channels": 65
+    "unique_channels": 66
   },
   "channels": {
     "Bbc Scotland": {
@@ -864,6 +864,19 @@
           "http://canal-pro.xyz:8080/live/962251034tv/7t48ipxw/60311.ts",
           "http://canal-pro.xyz:8080/live/962251034tv/7t48ipxw/60316.ts",
           "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/1062.ts"
+        ]
+      }
+    },
+    "Bbc Alba": {
+      "id": 186974872,
+      "logo": "http://tugapt.com/picons/bbcalbauk.png",
+      "qualities": {
+        "HD": [
+          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/12185.ts",
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/5739.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/10735.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/5739.ts",
+          "http://supersonictv.live:8080/live/Keyonna123/Keyonna123/12185.ts"
         ]
       }
     }

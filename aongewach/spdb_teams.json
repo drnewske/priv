@@ -4162,6 +4162,40 @@
       "sport": "Soccer",
       "country": "United Arab Emirates",
       "aliases": []
+    },
+    "Barcelona": {
+      "id": 133739,
+      "api_id": "133739",
+      "name": "Barcelona",
+      "short_name": "FCB",
+      "alternates": [],
+      "keywords": [
+        "Barça"
+      ],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Spanish La Liga",
+      "sport": "Soccer",
+      "country": "Spain",
+      "aliases": [
+        "barcelona women"
+      ]
+    },
+    "Eibar": {
+      "id": 134626,
+      "api_id": "134626",
+      "name": "Eibar",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Spanish La Liga 2",
+      "sport": "Soccer",
+      "country": "Spain",
+      "aliases": [
+        "eibar women"
+      ]
     }
   },
   "_index": {
@@ -4738,6 +4772,10 @@
     "blackburn rovers": "Blackburn Rovers",
     "blackburn rovers u21": "Blackburn Rovers",
     "rotweiss essen": "Rot-Weiss Essen",
-    "jahn regensburg": "Jahn Regensburg"
+    "jahn regensburg": "Jahn Regensburg",
+    "barcelona": "Barcelona",
+    "barcelona women": "Barcelona",
+    "eibar": "Eibar",
+    "eibar women": "Eibar"
   }
 }
