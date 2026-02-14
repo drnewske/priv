@@ -1,13 +1,13 @@
 {
   "metadata": {
-    "scan_date": "2026-02-12 12:23:38 UTC",
+    "scan_date": "2026-02-14 12:34:00 UTC",
     "stats": {
-      "servers_total": 5,
-      "servers_success": 5,
-      "servers_failed": 0,
+      "servers_total": 4,
+      "servers_success": 3,
+      "servers_failed": 1,
       "categories_total": 0,
-      "streams_total": 32011,
-      "channels_added": 113
+      "streams_total": 864,
+      "channels_added": 0
     },
     "unique_channels": 65
   },

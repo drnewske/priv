@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Xtream Sports Channel Scanner - Production Version
-Fast AND accurate. Scans specific servers for matching channels.
+Fast AND accurate. Scans playlists from lovestory.json for matching channels.
 """
 
 import json
@@ -21,31 +21,13 @@ import os
 # Configuration
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 SCHEDULE_FILE = os.path.join(SCRIPT_DIR, 'weekly_schedule.json')
+LOVESTORY_FILE = os.path.join(SCRIPT_DIR, '..', 'lovestory.json')
+
 if not os.path.exists(SCHEDULE_FILE):
     SCHEDULE_FILE = 'weekly_schedule.json'
 
-# Hardcoded Server List
-SERVERS = [
-    {
-        'url': 'http://tv.starsharetv.com:8080/get.php?username=7654321&password=1234567&type=m3u_plus&output=ts',
-        'name': 'StarShare TV',
-        'type': 'api'
-    },
-    {
-        'url': 'http://abtvab@starshare.net:80/get.php?username=CVCVCVCV&password=CV1CV1CV1&type=m3u&output=mpegts',
-        'name': 'StarShare Net',
-        'type': 'api'
-    },
-    {
-        'url': 'http://couchguy.club:80/get.php?username=Joshua754&password=Vk8KJG6VqFN3&type=m3u_plus&output=ts',
-        'name': 'CouchGuy',
-        'type': 'api'
-    },
-    {
-        'url': 'http://Supersonictv.live:8080/get.php?username=Ramsey123&password=Ramsey123&type=m3u_plus&output=ts',
-        'name': 'Supersonic TV',
-        'type': 'api'
-    },
+# Hardcoded Extra Server (Always included)
+EXTRA_SERVERS = [
     {
         'url': 'https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/a1x.m3u',
         'name': 'A1XM Public',
@@ -53,6 +35,66 @@ SERVERS = [
     }
 ]
 
+def load_servers_from_lovestory(file_path: str) -> List[Dict]:
+    """Load servers from lovestory.json featured_content."""
+    servers = []
+    
+    # Add hardcoded extras first
+    servers.extend(EXTRA_SERVERS)
+    
+    if not os.path.exists(file_path):
+        print(f"Warning: {file_path} not found. Using only hardcoded servers.")
+        return servers
+        
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+            
+        featured = data.get('featured_content', [])
+        for item in featured:
+            url = item.get('url')
+            if not url:
+                continue
+                
+            # Determine type
+            # If it ends in .m3u or .m3u8 it might be direct, but the existing code 
+            # treats xtream api urls specially.
+            # Most entries in lovestory.json seem to be Xtream codes API urls 
+            # (e.g. contains username=...&password=...)
+            # We'll assume 'api' unless it looks like a direct file list without params, 
+            # but the scanner handles both.
+            # The existing scanner distinguishes based on 'type' field in the server dict,
+            # or we can infer it.
+            
+            # The item in lovestory.json has a "type": "m3u" field.
+            # But the URLs are API urls like .../get.php?username=...
+            # The scanner's "scan_server" checks if type == 'direct'.
+            # If the URL has username/password params, it's likely an API that returns M3U.
+            # The XtreamAPI class handles these URLs.
+            
+            # Let's map lovestory "type" to our scanner "type".
+            # Lovestory "type" is usually "m3u".
+            # If the URL looks like a get.php API call, we treat it as 'api' (which downloads m3u or uses player_api)
+            # Actually, the previous hardcoded list had 'type': 'api'.
+            # Users directive: "replace hardcoded links with data dynamically loaded"
+            
+            server_type = 'api'
+            # If it's a raw github url or doesn't have credentials in query, maybe direct?
+            if 'githubusercontent.com' in url or 'raw' in url:
+                server_type = 'direct'
+            
+            servers.append({
+                'url': url,
+                'name': item.get('name', 'Unknown'),
+                'type': server_type
+            })
+            
+        print(f"Loaded {len(servers)} servers from lovestory.json (+ {len(EXTRA_SERVERS)} static).")
+        
+    except Exception as e:
+        print(f"Error loading {file_path}: {e}")
+        
+    return servers
 
 class XtreamAPI:
     """Xtream Codes API client."""
@@ -73,7 +115,10 @@ class XtreamAPI:
                 self.username = parts[0]
                 self.password = parts[1]
             else:
-                raise ValueError(f"Cannot parse credentials from URL: {url}")
+                # Fallback for non-standard URLs or lack of creds
+                self.username = ""
+                self.password = ""
+                # print(f"Warning: Cannot parse credentials from URL: {url}")
         
         # Construct Base URL
         # IMPORTANT: Use netloc to preserve Basic Auth (user@host) if present
@@ -83,6 +128,9 @@ class XtreamAPI:
     
     def _api_call(self, action: str, **params) -> Optional[List[Dict]]:
         """Make API call."""
+        if not self.username or not self.password:
+            return None
+
         url = f"{self.base_url}/player_api.php?username={self.username}&password={self.password}&action={action}"
         for key, value in params.items():
             url += f"&{key}={value}"
@@ -110,6 +158,8 @@ class XtreamAPI:
     def get_stream_url(self, stream_id: int) -> str:
         """Build stream URL."""
         # Xtream codes usually exposes live streams at /live/username/password/stream_id.ts
+        if not self.username or not self.password:
+             return ""
         return f"{self.base_url}/live/{self.username}/{self.password}/{stream_id}.ts"
 
 
@@ -122,33 +172,33 @@ class ChannelNormalizer:
         
         # Quality patterns
         self.quality_regex = re.compile(
-            r'\b(4k|uhd|ultra\s*hd|2160p?|fhd|full\s*hd|1080p?|hd|720p?|sd|480p?|360p?|hevc|h\.?26[45])\b',
+            r'\\b(4k|uhd|ultra\\s*hd|2160p?|fhd|full\\s*hd|1080p?|hd|720p?|sd|480p?|360p?|hevc|h\\.?26[45])\\b',
             re.IGNORECASE
         )
         
         # Junk patterns (compile once for speed)
         self.junk_patterns = [
-            re.compile(r'[#\-_*+=:|~]{2,}'),  # Repeated chars
-            re.compile(r'\[(?:vip|hd|fhd|4k|sd|server|backup|link|premium|multi|test|raw|direct|dn)\s*\d*\]', re.I),
-            re.compile(r'\((?:vip|hd|fhd|4k|sd|server|backup|link|premium|multi|test|raw|direct|dn)\s*\d*\)', re.I),
-            re.compile(r'^\s*[#\-_*+=:|~]+\s*'),  # Leading junk
-            re.compile(r'\s*[#\-_*+=:|~]+\s*$'),  # Trailing junk
-            re.compile(r'\s*\|+\s*'),  # Pipes
-            re.compile(r'\s*-\s*'),     # Hyphens as separators
-            re.compile(r'\b(ca|us|uk|de|fr|it|es|pt|br|ar|mx|tr|ru|nl|be|ch|at|pl|ro|bg|hr|rs|ba|mk|si|hu|cz|sk|ua|gr|cy|il|ae|sa|kw|qa|bh|om|lb|jo|eg|ma|dz|tn|ly|sd|sy|iq|ir|pk|in|bd|lk|np|mm|th|vn|la|kh|my|sg|id|ph|cn|tw|hk|mo|kp|kr|jp|au|nz)\s*[:-]\s*', re.I), # Country prefixes
+            re.compile(r'[#\\-_*+=:|~]{2,}'),  # Repeated chars
+            re.compile(r'\\[(?:vip|hd|fhd|4k|sd|server|backup|link|premium|multi|test|raw|direct|dn)\\s*\\d*\\]', re.I),
+            re.compile(r'\\((?:vip|hd|fhd|4k|sd|server|backup|link|premium|multi|test|raw|direct|dn)\\s*\\d*\\)', re.I),
+            re.compile(r'^\\s*[#\\-_*+=:|~]+\\s*'),  # Leading junk
+            re.compile(r'\\s*[#\\-_*+=:|~]+\\s*$'),  # Trailing junk
+            re.compile(r'\\s*\\|+\\s*'),  # Pipes
+            re.compile(r'\\s*-\\s*'),     # Hyphens as separators
+            re.compile(r'\\b(ca|us|uk|de|fr|it|es|pt|br|ar|mx|tr|ru|nl|be|ch|at|pl|ro|bg|hr|rs|ba|mk|si|hu|cz|sk|ua|gr|cy|il|ae|sa|kw|qa|bh|om|lb|jo|eg|ma|dz|tn|ly|sd|sy|iq|ir|pk|in|bd|lk|np|mm|th|vn|la|kh|my|sg|id|ph|cn|tw|hk|mo|kp|kr|jp|au|nz)\\s*[:-]\\s*', re.I), # Country prefixes
         ]
     
     def extract_quality(self, name: str) -> str:
         """Extract quality tier from channel name."""
         name_lower = name.lower()
         
-        if re.search(r'\b(4k|uhd|2160p?)\b', name_lower):
+        if re.search(r'\\b(4k|uhd|2160p?)\\b', name_lower):
             return '4K'
-        elif re.search(r'\b(fhd|1080p?)\b', name_lower):
+        elif re.search(r'\\b(fhd|1080p?)\\b', name_lower):
             return 'FHD'
-        elif re.search(r'\b(hd|720p?)\b', name_lower):
+        elif re.search(r'\\b(hd|720p?)\\b', name_lower):
             return 'HD'
-        elif re.search(r'\b(sd|480p?|360p?)\b', name_lower):
+        elif re.search(r'\\b(sd|480p?|360p?)\\b', name_lower):
             return 'SD'
         else:
             return 'HD'  # Default
@@ -166,10 +216,10 @@ class ChannelNormalizer:
             cleaned = pattern.sub(' ', cleaned)
         
         # Clean whitespace
-        cleaned = re.sub(r'\s+', ' ', cleaned).strip()
+        cleaned = re.sub(r'\\s+', ' ', cleaned).strip()
         
         # Remove empty brackets
-        cleaned = re.sub(r'\[\s*\]|\(\s*\)|\{\s*\}', '', cleaned)
+        cleaned = re.sub(r'\\[\\s*\\]|\\(\\s*\\)|\\{\\s*\\}', '', cleaned)
         
         # Final trim of special chars
         cleaned = cleaned.strip(' -_#|:;*+=~()[]{}.,\'"\\/')
@@ -206,7 +256,7 @@ class SportsScanner:
         self.targets = [t.lower() for t in target_channels if t]
         self.match_limit = match_limit
         
-        # Channel storage: {original_target_name: {matches: {quality: set()}, logo: str}}
+        # Channel storage: {original_target_name: {qualities: {quality: set()}, logo: str}}
         self.channels = defaultdict(lambda: {'qualities': defaultdict(set), 'logo': None})
         self.channel_counts = defaultdict(int) # Track count per target
         self.channel_ids = {}
@@ -236,8 +286,6 @@ class SportsScanner:
         name_lower = stream_name.lower()
         
         # Simple substring check against all targets
-        # Optimizations could be done here if targets list is huge, 
-        # but for ~200 targets and ~100k channels it's acceptable (~20M ops).
         for target in self.targets:
              if target in name_lower:
                  return target # Return the matched target string (lower)
@@ -262,11 +310,18 @@ class SportsScanner:
             if not matched_target_lower:
                     continue
                     
-            # 2. Check limit
-            if self.channel_counts[matched_target_lower] >= self.match_limit:
-                continue
-                
-            final_name = self._get_display_name(matched_target_lower)
+            # 2. Check limit logic
+            # Count the total number of links across all qualities for this target
+            current_count = 0
+            display_name = self._get_display_name(matched_target_lower)
+            if display_name in self.channels:
+                 for q_set in self.channels[display_name]['qualities'].values():
+                     current_count += len(q_set)
+            
+            if current_count >= self.match_limit:
+                 continue
+
+            final_name = display_name
             
             # 3. Extract Details
             # Use 'stream_icon' for API, 'logo' for M3U dict
@@ -432,9 +487,9 @@ class SportsScanner:
         """Scan all provided servers."""
         self.stats['servers_total'] = len(servers)
         
-        print(f"\n{'='*70}")
+        print(f"\\n{'='*70}")
         print(f"Scanning {len(servers)} configured servers")
-        print(f"{'='*70}\n", flush=True)
+        print(f"{'='*70}\\n", flush=True)
 
         with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
             futures = {executor.submit(self.scan_server, server): server for server in servers}
@@ -476,10 +531,6 @@ class SportsScanner:
         }
         
         # 2. Merge Scanned Channels into Output
-        # We overwrite with NEW data if found, but keep old data if not found in this scan?
-        # User said: "scanner will always include what it finds from the schedule...it should not rewrite the file...it should add to the file"
-        # So if we found a channel, we update it. If we didn't find it, we leave it alone (it might be from a manual scan).
-        
         for name, data in self.channels.items():
             # If we found streams for this channel
             if data['qualities']: 
@@ -492,10 +543,15 @@ class SportsScanner:
                      }
                 
                 # Update Qualities
-                qs = {}
+                qs = output['channels'][name].get('qualities') or {}
+                
                 for quality in ['SD', 'HD', 'FHD', '4K']:
-                    if quality in data['qualities']:
-                        qs[quality] = sorted(list(data['qualities'][quality]))
+                    new_urls = data['qualities'].get(quality, set())
+                    if new_urls:
+                        # Merge with existing
+                        existing_urls = set(qs.get(quality, []))
+                        merged_urls = existing_urls.union(new_urls)
+                        qs[quality] = sorted(list(merged_urls))
                 
                 output['channels'][name]['qualities'] = qs
                 output['channels'][name]['id'] = self.channel_ids[name] # Ensure ID is set
@@ -505,7 +561,6 @@ class SportsScanner:
                     output['channels'][name]['logo'] = data['logo']
 
         # 3. Add Missing Channels from Schedule (as nulls, ONLY if not already in DB)
-        # We don't want to overwrite a valid manual channel with a null just because it wasn't in this specific scan.
         found_names_lower = set(k.lower() for k in output['channels'].keys())
         
         missing_count = 0
@@ -526,12 +581,12 @@ class SportsScanner:
             json.dump(output, f, indent=2, ensure_ascii=False)
         
         # Console Reporting
-        print(f"\n{'='*70}", flush=True)
+        print(f"\\n{'='*70}", flush=True)
         print(f"✅ Saved merged results to {output_path}", flush=True)
         print(f"  Total Channels in DB: {len(output['channels'])}", flush=True)
         print(f"  New/Updated in this scan: {len(self.channels)}", flush=True)
         print(f"  Missing (Added as null): {missing_count}", flush=True)
-        print(f"{'='*70}\n", flush=True)
+        print(f"{'='*70}\\n", flush=True)
 
 
 def load_target_channels(schedule_file):
@@ -546,9 +601,7 @@ def load_target_channels(schedule_file):
                 for channel in event.get('channels', []):
                     if channel:
                         clean_name = channel.strip()
-                        # Specific fix for Laliga TV
-                        if clean_name.lower() == 'laligatv':
-                            clean_name = 'Laliga Tv'
+                        if clean_name.lower() == 'laligatv': clean_name = 'Laliga Tv'
                         targets.add(clean_name)
         
         print(f"Loaded {len(targets)} unique target channels from schedule.")
@@ -560,6 +613,7 @@ def load_target_channels(schedule_file):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('output_file', nargs='?', default='channels.json', help='Output JSON file')
+    parser.add_argument('--verify', action='store_true', help='Use only first 3 servers for verification')
     args = parser.parse_args()
     
     # 1. Load Targets
@@ -568,13 +622,27 @@ def main():
         print("No target channels found. Exiting.")
         sys.exit(1)
 
-    # 2. Init Scanner
+    # 2. Load Servers
+    servers = load_servers_from_lovestory(LOVESTORY_FILE)
+    if args.verify:
+         print("VERIFY MODE: Limiting to first 3 servers + Github")
+         # We want to keep the git link (usually first in list from load_servers if we put it there, 
+         # but actually we prepended it to servers list in load_servers_from_lovestory).
+         # So taking the first 4 (1 static + 3 dynamic) roughly matches the "verify with just three links" request.
+         # Or strictly following "verify with just three links from the json"
+         
+         # The servers list starts with EXTRA_SERVERS (1 item).
+         # Then appends items from json.
+         # We'll stick to 1 (git) + 3 (json) = 4 total.
+         servers = servers[:4]
+         
+    # 3. Init Scanner (with limit 5)
     scanner = SportsScanner(target_channels=targets, match_limit=5)
     
-    # 3. Run Scan
-    scanner.scan_all(SERVERS, max_workers=5)
+    # 4. Run Scan
+    scanner.scan_all(servers, max_workers=5)
     
-    # 4. Save
+    # 5. Save
     scanner.save(args.output_file)
 
 

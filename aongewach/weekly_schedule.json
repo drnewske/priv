@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-12T10:17:05.786499Z",
+  "generated_at": "2026-02-12T12:23:06.669860Z",
   "source": "wheresthematch.com",
   "schedule": [
     {
@@ -21,19 +21,6 @@
       "date": "2026-02-12",
       "day": "Thursday",
       "events": [
-        {
-          "name": "Sri Lanka v Oman",
-          "start_time_iso": "2026-02-12T05:30:00Z",
-          "time": "05:30",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/cricket.gif",
-          "sport": "Cricket",
-          "competition": "ICC T20 World Cup",
-          "channels": [
-            "Sky Sports Cricket",
-            "Sky Sports Main Event",
-            "Sky Sports Ultra HDR"
-          ]
-        },
         {
           "name": "2026 Winter Olympics Curling",
           "start_time_iso": "2026-02-12T08:00:00Z",
