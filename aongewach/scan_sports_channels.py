@@ -172,20 +172,20 @@ class ChannelNormalizer:
         
         # Quality patterns
         self.quality_regex = re.compile(
-            r'\\b(4k|uhd|ultra\\s*hd|2160p?|fhd|full\\s*hd|1080p?|hd|720p?|sd|480p?|360p?|hevc|h\\.?26[45])\\b',
+            r'\b(4k|uhd|ultra\s*hd|2160p?|fhd|full\s*hd|1080p?|hd|720p?|sd|480p?|360p?|hevc|h\.?26[45])\b',
             re.IGNORECASE
         )
         
         # Junk patterns (compile once for speed)
         self.junk_patterns = [
-            re.compile(r'[#\\-_*+=:|~]{2,}'),  # Repeated chars
-            re.compile(r'\\[(?:vip|hd|fhd|4k|sd|server|backup|link|premium|multi|test|raw|direct|dn)\\s*\\d*\\]', re.I),
-            re.compile(r'\\((?:vip|hd|fhd|4k|sd|server|backup|link|premium|multi|test|raw|direct|dn)\\s*\\d*\\)', re.I),
-            re.compile(r'^\\s*[#\\-_*+=:|~]+\\s*'),  # Leading junk
-            re.compile(r'\\s*[#\\-_*+=:|~]+\\s*$'),  # Trailing junk
-            re.compile(r'\\s*\\|+\\s*'),  # Pipes
-            re.compile(r'\\s*-\\s*'),     # Hyphens as separators
-            re.compile(r'\\b(ca|us|uk|de|fr|it|es|pt|br|ar|mx|tr|ru|nl|be|ch|at|pl|ro|bg|hr|rs|ba|mk|si|hu|cz|sk|ua|gr|cy|il|ae|sa|kw|qa|bh|om|lb|jo|eg|ma|dz|tn|ly|sd|sy|iq|ir|pk|in|bd|lk|np|mm|th|vn|la|kh|my|sg|id|ph|cn|tw|hk|mo|kp|kr|jp|au|nz)\\s*[:-]\\s*', re.I), # Country prefixes
+            re.compile(r'[#\-_*+=:|~]{2,}'),  # Repeated chars
+            re.compile(r'\[(?:vip|hd|fhd|4k|sd|server|backup|link|premium|multi|test|raw|direct|dn)\s*\d*\]', re.I),
+            re.compile(r'\((?:vip|hd|fhd|4k|sd|server|backup|link|premium|multi|test|raw|direct|dn)\s*\d*\)', re.I),
+            re.compile(r'^\s*[#\-_*+=:|~]+\s*'),  # Leading junk
+            re.compile(r'\s*[#\-_*+=:|~]+\s*$'),  # Trailing junk
+            re.compile(r'\s*\|+\s*'),  # Pipes
+            re.compile(r'\s*-\s*'),     # Hyphens as separators
+            re.compile(r'\b(ca|us|uk|de|fr|it|es|pt|br|ar|mx|tr|ru|nl|be|ch|at|pl|ro|bg|hr|rs|ba|mk|si|hu|cz|sk|ua|gr|cy|il|ae|sa|kw|qa|bh|om|lb|jo|eg|ma|dz|tn|ly|sd|sy|iq|ir|pk|in|bd|lk|np|mm|th|vn|la|kh|my|sg|id|ph|cn|tw|hk|mo|kp|kr|jp|au|nz)\s*[:-]\s*', re.I), # Country prefixes
         ]
     
     def extract_quality(self, name: str) -> str:
