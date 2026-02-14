@@ -1,14 +1,7 @@
 name: Scan Sports Channels
 
 on:
-  schedule:
-    - cron: '0 0 */2 * *'  # Run every 2 days
   workflow_dispatch:
-    inputs:
-      domains:
-        description: 'Priority domains (comma-separated)'
-        required: false
-        default: ''
 
 jobs:
   scan:
@@ -32,12 +25,8 @@ jobs:
         
     - name: Run Sports Scanner
       run: |
-        # Use inputs if provided, otherwise default run
-        if [ -n "${{ inputs.domains }}" ]; then
-          python aongewach/scan_sports_channels.py lovestory.json aongewach/channels.json --domains "${{ inputs.domains }}"
-        else
-          python aongewach/scan_sports_channels.py lovestory.json aongewach/channels.json
-        fi
+        # Run scanner with output file argument
+        python aongewach/scan_sports_channels.py aongewach/channels.json
         
     - name: Commit and push changes
       run: |
