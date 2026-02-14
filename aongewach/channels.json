@@ -1,33 +1,44 @@
 {
   "metadata": {
-    "scan_date": "2026-02-14 12:34:00 UTC",
+    "scan_date": "2026-02-14 13:06:34 UTC",
     "stats": {
-      "servers_total": 4,
-      "servers_success": 3,
-      "servers_failed": 1,
+      "servers_total": 165,
+      "servers_success": 165,
+      "servers_failed": 0,
       "categories_total": 0,
-      "streams_total": 864,
-      "channels_added": 0
+      "streams_total": 708974,
+      "channels_added": 219
     },
     "unique_channels": 65
   },
   "channels": {
     "Bbc Scotland": {
       "id": 446039136,
-      "logo": null,
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/3/33/BBC_Scotland_channel_logo.jpg",
       "qualities": {
         "HD": [
-          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/12191.ts"
+          "http://185.134.22.131:8080/live/ozzie_skype/Brestream2020/24762.ts",
+          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/12191.ts",
+          "http://supersonictv.live:8080/live/Keyonna123/Keyonna123/12191.ts",
+          "http://vipfdedgevv.top:8080/live/VIP01111745677578410/9dc2f8805d63/146933.ts",
+          "http://vipfdedgevv.top:8080/live/VIP01111745677578410/9dc2f8805d63/1751.ts"
         ]
       }
     },
     "Bbc2": {
       "id": 53084474,
-      "logo": null,
+      "logo": "http://vodkom.com:25461/Logo/UK/LOGO/BBC_Two.png",
       "qualities": {
         "FHD": [
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/148218.ts",
           "http://tv.starsharetv.com:8080/live/7654321/1234567/148218.ts"
+        ],
+        "HD": [
+          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/148218.ts",
+          "http://globe2.midomed.com/live/dpajHNaWQB/1KtuliwKqY/984.ts",
+          "http://innovationtv.eu:80/live/bf88fc3c48/cab72d6b9a/1458573.ts",
+          "http://innovationtv.eu:80/live/bf88fc3c48/cab72d6b9a/1458577.ts",
+          "http://sansatplus.net:88/live/2LMHSORKPS/LXFPNMRLCF/102522.ts"
         ]
       }
     },
@@ -36,6 +47,11 @@
       "logo": "https://upload.wikimedia.org/wikipedia/commons/7/70/DAZN_F1_logo.png",
       "qualities": {
         "HD": [
+          "http://newoneblack.site/live/55582127/tp5966/234497.ts",
+          "http://newoneblack.site/live/55582127/tp5966/234499.ts",
+          "http://newoneblack.site/live/55582127/tp5966/234501.ts",
+          "http://newoneblack.site/live/55582127/tp5966/234503.ts",
+          "http://newoneblack.site/live/55582127/tp5966/234505.ts",
           "http://tv.starsharetv.com:8080/live/7654321/1234567/564.ts",
           "http://tv.starsharetv.com:8080/live/7654321/1234567/615896.ts",
           "http://tv.starsharetv.com:8080/live/7654321/1234567/659426.ts",
@@ -48,10 +64,14 @@
     },
     "Disney+": {
       "id": 177996440,
-      "logo": null,
+      "logo": "https://www.linkpicture.com/q/gp5cs1.jpg",
       "qualities": {
         "HD": [
-          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/88449.ts"
+          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/88449.ts",
+          "http://localiptv.site:85/live/martagadaneczfov/martagadaneczfov/50300.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/104719.ts",
+          "http://supersonictv.live:8080/live/Keyonna123/Keyonna123/88449.ts",
+          "http://tvpremiund.ddns.me:27890/live/juancarlosmiranda/juan2314/55037.ts"
         ]
       }
     },
@@ -60,6 +80,13 @@
       "logo": "https://i.ibb.co/g6TqxVm/ITV1.png",
       "qualities": {
         "FHD": [
+          "https://a1xs.vip/1000011"
+        ],
+        "HD": [
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/1986.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/1986.ts",
+          "http://satk.pro:8080/live/maldonadoluis/frEbTPk9DN3L/68541.ts",
+          "http://tanzanyanuh.xyz:8080/live/cm1202/cm00xyy/202268.ts",
           "https://a1xs.vip/1000011"
         ]
       }
@@ -70,7 +97,12 @@
       "qualities": {
         "HD": [
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/5021.ts",
-          "http://tv.starsharetv.com:8080/live/7654321/1234567/5021.ts"
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/112787.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/1975.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/1976.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/1977.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/5021.ts",
+          "https://a1xs.vip/1000014"
         ],
         "FHD": [
           "https://a1xs.vip/1000014"
@@ -83,8 +115,12 @@
       "qualities": {
         "HD": [
           "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/12264.ts",
+          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/12265.ts",
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/148320.ts",
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/29.ts",
+          "http://localiptv.site:85/live/martagadaneczfov/martagadaneczfov/775.ts",
+          "http://supersonictv.live:8080/live/Keyonna123/Keyonna123/12264.ts",
+          "http://supersonictv.live:8080/live/Keyonna123/Keyonna123/12265.ts",
           "http://tv.starsharetv.com:8080/live/7654321/1234567/148320.ts",
           "http://tv.starsharetv.com:8080/live/7654321/1234567/29.ts"
         ]
@@ -92,9 +128,14 @@
     },
     "Nba League Pass": {
       "id": 674104636,
-      "logo": null,
+      "logo": "https://pbs.twimg.com/media/DWqNehTX4AAPpW1.png",
       "qualities": {
         "HD": [
+          "http://newoneblack.site/live/55582127/tp5966/233127.ts",
+          "http://newoneblack.site/live/55582127/tp5966/233128.ts",
+          "http://newoneblack.site/live/55582127/tp5966/233129.ts",
+          "http://newoneblack.site/live/55582127/tp5966/233130.ts",
+          "http://newoneblack.site/live/55582127/tp5966/233131.ts",
           "http://tv.starsharetv.com:8080/live/7654321/1234567/154239.ts",
           "http://tv.starsharetv.com:8080/live/7654321/1234567/154244.ts",
           "http://tv.starsharetv.com:8080/live/7654321/1234567/154245.ts",
@@ -109,7 +150,12 @@
       "qualities": {
         "HD": [
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/5029.ts",
-          "http://tv.starsharetv.com:8080/live/7654321/1234567/5029.ts"
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/10669.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/133210.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/1808.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/5737.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/5029.ts",
+          "https://a1xs.vip/8000021"
         ],
         "FHD": [
           "https://a1xs.vip/8000021"
@@ -122,7 +168,12 @@
       "qualities": {
         "HD": [
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/5030.ts",
-          "http://tv.starsharetv.com:8080/live/7654321/1234567/5030.ts"
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/105337.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/112194.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/126176.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/91016.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/5030.ts",
+          "https://a1xs.vip/8000022"
         ],
         "FHD": [
           "https://a1xs.vip/8000022"
@@ -131,29 +182,43 @@
     },
     "Rte 2": {
       "id": 84935038,
-      "logo": null,
+      "logo": "https://i.postimg.cc/fRBpQcdw/imagem-2025-11-19-175922544.png",
       "qualities": {
         "HD": [
           "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/12282.ts",
-          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/12286.ts"
+          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/12286.ts",
+          "http://newoneblack.site/live/55582127/tp5966/1619540.ts",
+          "http://newoneblack.site/live/55582127/tp5966/1619547.ts",
+          "http://newoneblack.site/live/55582127/tp5966/1619564.ts",
+          "http://tv.proyectox.vip:8080/live/diazalfredo/BCsDswwJ26/165560.ts",
+          "http://tv.proyectox.vip:8080/live/diazalfredo/BCsDswwJ26/166087.ts"
         ]
       }
     },
     "S4C": {
       "id": 27721931,
-      "logo": null,
+      "logo": "http://tugapt.com/picons/s4cuk.png",
       "qualities": {
         "HD": [
-          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/12287.ts"
+          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/12287.ts",
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/1931.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/10658.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/1931.ts",
+          "http://supersonictv.live:8080/live/Keyonna123/Keyonna123/12287.ts"
         ]
       }
     },
     "Sky Showcase": {
       "id": 481952917,
-      "logo": null,
+      "logo": "https://i.ibb.co/kMxRbND/Sky-Showcase-HD-2021.png",
       "qualities": {
         "HD": [
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/148181.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/10776.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/10836.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/108588.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/112783.ts",
+          "http://tanzanyanuh.xyz:8080/live/cm1202/cm00xyy/532965.ts",
           "http://tv.starsharetv.com:8080/live/7654321/1234567/148181.ts",
           "http://tv.starsharetv.com:8080/live/7654321/1234567/148334.ts",
           "http://tv.starsharetv.com:8080/live/7654321/1234567/659197.ts",
@@ -168,8 +233,13 @@
         "HD": [
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/122413.ts",
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/186617.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/10835.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/333.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/374.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/5720.ts",
           "http://tv.starsharetv.com:8080/live/7654321/1234567/122413.ts",
-          "http://tv.starsharetv.com:8080/live/7654321/1234567/186617.ts"
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/186617.ts",
+          "https://a1xs.vip/2000011"
         ],
         "FHD": [
           "http://tv.starsharetv.com:8080/live/7654321/1234567/186618.ts"
@@ -185,8 +255,13 @@
         ],
         "HD": [
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/122412.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/10798.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/10833.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/375.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/5721.ts",
           "http://tv.starsharetv.com:8080/live/7654321/1234567/122412.ts",
-          "http://tv.starsharetv.com:8080/live/7654321/1234567/186605.ts"
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/186605.ts",
+          "https://a1xs.vip/2000006"
         ],
         "FHD": [
           "http://tv.starsharetv.com:8080/live/7654321/1234567/186606.ts"
@@ -201,7 +276,12 @@
           "http://tv.starsharetv.com:8080/live/7654321/1234567/148680.ts"
         ],
         "HD": [
-          "http://tv.starsharetv.com:8080/live/7654321/1234567/186615.ts"
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/10797.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/10832.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/371.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/186615.ts",
+          "https://a1xs.vip/2000005",
+          "https://a1xs.vip/2000016"
         ],
         "FHD": [
           "http://tv.starsharetv.com:8080/live/7654321/1234567/186616.ts"
@@ -217,9 +297,14 @@
       "logo": "https://i.ibb.co/WcCrBqx/sky-football.png",
       "qualities": {
         "HD": [
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/10831.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/6203.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/6204.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/6205.ts",
           "http://tv.starsharetv.com:8080/live/7654321/1234567/122411.ts",
           "http://tv.starsharetv.com:8080/live/7654321/1234567/186607.ts",
-          "http://tv.starsharetv.com:8080/live/7654321/1234567/19.ts"
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/19.ts",
+          "https://a1xs.vip/2000003"
         ],
         "FHD": [
           "http://tv.starsharetv.com:8080/live/7654321/1234567/186612.ts",
@@ -235,8 +320,13 @@
           "http://tv.starsharetv.com:8080/live/7654321/1234567/148682.ts"
         ],
         "HD": [
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/10830.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/332.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/373.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/5719.ts",
           "http://tv.starsharetv.com:8080/live/7654321/1234567/122417.ts",
-          "http://tv.starsharetv.com:8080/live/7654321/1234567/186613.ts"
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/186613.ts",
+          "https://a1xs.vip/2000009"
         ],
         "FHD": [
           "http://tv.starsharetv.com:8080/live/7654321/1234567/186614.ts",
@@ -249,8 +339,13 @@
       "logo": "https://i.ibb.co/gwCk7Bc/sky-m-event-uhd.png",
       "qualities": {
         "HD": [
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/335.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/376.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/5722.ts",
           "http://tv.starsharetv.com:8080/live/7654321/1234567/122409.ts",
-          "http://tv.starsharetv.com:8080/live/7654321/1234567/675821.ts"
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/675821.ts",
+          "https://a1xs.vip/2000001",
+          "https://a1xs.vip/2000015"
         ],
         "4K": [
           "http://tv.starsharetv.com:8080/live/7654321/1234567/384215.ts",
@@ -268,8 +363,13 @@
         ],
         "HD": [
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/122416.ts",
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/10793.ts",
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/112729.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/10793.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/112729.ts",
           "http://tv.starsharetv.com:8080/live/7654321/1234567/122416.ts",
-          "http://tv.starsharetv.com:8080/live/7654321/1234567/186621.ts"
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/186621.ts",
+          "https://a1xs.vip/2000008"
         ],
         "FHD": [
           "http://tv.starsharetv.com:8080/live/7654321/1234567/186622.ts"
@@ -281,9 +381,14 @@
       "logo": "https://i.ibb.co/rcSRMh9/sky-sports-pl.png",
       "qualities": {
         "HD": [
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/10826.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/331.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/372.ts",
+          "http://tv.proyectox.vip:8080/live/diazalfredo/BCsDswwJ26/164159.ts",
           "http://tv.starsharetv.com:8080/live/7654321/1234567/122410.ts",
           "http://tv.starsharetv.com:8080/live/7654321/1234567/186603.ts",
-          "http://tv.starsharetv.com:8080/live/7654321/1234567/9891.ts"
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/9891.ts",
+          "https://a1xs.vip/2000002"
         ],
         "FHD": [
           "http://tv.starsharetv.com:8080/live/7654321/1234567/186604.ts",
@@ -297,7 +402,12 @@
       "qualities": {
         "HD": [
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/122415.ts",
-          "http://tv.starsharetv.com:8080/live/7654321/1234567/122415.ts"
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/112730.ts",
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/1801.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/112730.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/1801.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/122415.ts",
+          "https://a1xs.vip/2000010"
         ],
         "FHD": [
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/186643.ts",
@@ -314,6 +424,13 @@
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/428098.ts",
           "http://tv.starsharetv.com:8080/live/7654321/1234567/428098.ts",
           "https://a1xs.vip/2000013"
+        ],
+        "HD": [
+          "http://smartho.st:8080/live/jenko/dSMk4Sy8/267314.ts",
+          "http://smartho.st:8080/live/jenko/dSMk4Sy8/267315.ts",
+          "http://vipfdedgevv.top:8080/live/VIP01111745677578410/9dc2f8805d63/146469.ts",
+          "http://vipfdedgevv.top:8080/live/VIP01111745677578410/9dc2f8805d63/147068.ts",
+          "https://a1xs.vip/2000013"
         ]
       }
     },
@@ -323,6 +440,13 @@
       "qualities": {
         "FHD": [
           "https://a1xs.vip/2000012"
+        ],
+        "HD": [
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/130381.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/130382.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/130383.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/130385.ts",
+          "https://a1xs.vip/2000012"
         ]
       }
     },
@@ -331,9 +455,14 @@
       "logo": "https://www.lyngsat.com/logo/tv/ss/supersport-cricket-za.png",
       "qualities": {
         "HD": [
+          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/12306.ts",
+          "http://localiptv.site:85/live/martagadaneczfov/martagadaneczfov/1341.ts",
+          "http://localiptv.site:85/live/martagadaneczfov/martagadaneczfov/5500.ts",
+          "http://tv.proyectox.vip:8080/live/diazalfredo/BCsDswwJ26/160844.ts",
           "http://tv.starsharetv.com:8080/live/7654321/1234567/144996.ts",
           "http://tv.starsharetv.com:8080/live/7654321/1234567/145174.ts",
-          "http://tv.starsharetv.com:8080/live/7654321/1234567/145199.ts"
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/145199.ts",
+          "http://tvappapk@trsat.nl:80/live/Iq0SgJ4APO/J6o8jK2vSA/28608.ts"
         ],
         "FHD": [
           "http://tv.starsharetv.com:8080/live/7654321/1234567/124000.ts",
@@ -343,10 +472,14 @@
     },
     "Tg4": {
       "id": 33620208,
-      "logo": null,
+      "logo": "http://tugapt.com/picons/tg4uk.png",
       "qualities": {
         "HD": [
-          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/12310.ts"
+          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/12310.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/10791.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/112704.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/1793.ts",
+          "http://supersonictv.live:8080/live/Keyonna123/Keyonna123/12310.ts"
         ],
         "FHD": [
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/148273.ts",
@@ -363,8 +496,12 @@
         ],
         "HD": [
           "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/85310.ts",
+          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/85311.ts",
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/186627.ts",
-          "http://tv.starsharetv.com:8080/live/7654321/1234567/186627.ts"
+          "http://supersonictv.live:8080/live/Keyonna123/Keyonna123/85310.ts",
+          "http://supersonictv.live:8080/live/Keyonna123/Keyonna123/85311.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/186627.ts",
+          "https://a1xs.vip/2000021"
         ],
         "FHD": [
           "https://a1xs.vip/2000021"
@@ -379,7 +516,12 @@
           "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/85313.ts"
         ],
         "HD": [
-          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/85312.ts"
+          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/85312.ts",
+          "http://tv.proyectox.vip:8080/live/diazalfredo/BCsDswwJ26/112997.ts",
+          "http://tv.proyectox.vip:8080/live/diazalfredo/BCsDswwJ26/87176.ts",
+          "http://tv.proyectox.vip:8080/live/diazalfredo/BCsDswwJ26/9925.ts",
+          "http://tv.proyectox.vip:8080/live/diazalfredo/BCsDswwJ26/9926.ts",
+          "https://a1xs.vip/2000022"
         ],
         "FHD": [
           "https://a1xs.vip/2000022"
@@ -395,8 +537,12 @@
         ],
         "HD": [
           "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/85314.ts",
+          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/85315.ts",
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/148090.ts",
-          "http://tv.starsharetv.com:8080/live/7654321/1234567/148090.ts"
+          "http://supersonictv.live:8080/live/Keyonna123/Keyonna123/85314.ts",
+          "http://tv.proyectox.vip:8080/live/diazalfredo/BCsDswwJ26/9929.ts",
+          "http://tv.starsharetv.com:8080/live/7654321/1234567/148090.ts",
+          "https://a1xs.vip/2000023"
         ],
         "FHD": [
           "https://a1xs.vip/2000023"
@@ -411,7 +557,11 @@
           "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/85317.ts"
         ],
         "HD": [
-          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/85316.ts"
+          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/85316.ts",
+          "http://Supersonictv.live:8080/live/Ramsey123/Ramsey123/85317.ts",
+          "http://supersonictv.live:8080/live/Keyonna123/Keyonna123/85316.ts",
+          "http://supersonictv.live:8080/live/Keyonna123/Keyonna123/85317.ts",
+          "https://a1xs.vip/2000024"
         ],
         "FHD": [
           "https://a1xs.vip/2000024"
@@ -424,28 +574,60 @@
       "qualities": {
         "4K": [
           "https://a1xs.vip/2000031"
+        ],
+        "HD": [
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/131353.ts",
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/131354.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/131353.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/131354.ts",
+          "https://a1xs.vip/2000031"
         ]
       }
     },
     "Amazon Prime Video": {
-      "id": null,
-      "logo": null,
-      "qualities": null
+      "id": 1047922331,
+      "logo": "https://m.media-amazon.com/images/G/01/support_images/GUID-21C09ED9-332E-4D83-BEAC-2A81E3DC7B9D=1=de-DE=Normal.png",
+      "qualities": {
+        "HD": [
+          "http://blackheaven-iptv.com:8080/live/pkgSCyhEeP/tMS2jx8jFC/289513.ts",
+          "http://blackheaven-iptv.com:8080/live/pkgSCyhEeP/tMS2jx8jFC/289514.ts",
+          "http://blackheaven-iptv.com:8080/live/pkgSCyhEeP/tMS2jx8jFC/347680.ts",
+          "http://iptvch.com:2082/live/BassamSaaid/Dr4RwAwFXJGN/302933.ts",
+          "http://iptvch.com:2082/live/BassamSaaid/Dr4RwAwFXJGN/302934.ts"
+        ]
+      }
     },
     "Bbc Iplayer": {
-      "id": null,
-      "logo": null,
-      "qualities": null
+      "id": 370541566,
+      "logo": "https://ptvs.live:443/images/E5RZh2Rva3GK_RYtX_CL8FnaxIRj5i3OZfq9mn-9LCqT9tvrlsg4ZbIc1yxWsid4JpimTc05DobZAiFb32vODFaF0NzX3aR1TR04Lr4a3R69IRZcl14reBfMu6llII01slvQrkanKzyTJMZbVP68Lu52_-b4rSnFtwwoKgeRsKA.png",
+      "qualities": {
+        "HD": [
+          "http://b1g.uk:8080/live/255988/889552/873130.ts",
+          "http://b1g.uk:8080/live/255988/889552/873131.ts",
+          "http://client.newborne.xyz:80/live/ZP2MD4iCsIx/9TWnl5pFhL/114126.ts",
+          "http://client.newborne.xyz:80/live/ZP2MD4iCsIx/9TWnl5pFhL/114127.ts"
+        ]
+      }
     },
     "Bbc Wales": {
-      "id": null,
+      "id": 244843300,
       "logo": null,
-      "qualities": null
+      "qualities": {
+        "HD": [
+          "http://b1g.uk:8080/live/255988/889552/373913.ts"
+        ]
+      }
     },
     "Bbc1": {
-      "id": null,
-      "logo": null,
-      "qualities": null
+      "id": 53018937,
+      "logo": "http://vodkom.com:25461/Logo/UK/LOGO/BBC_One_HD.png",
+      "qualities": {
+        "HD": [
+          "http://globe2.midomed.com/live/dpajHNaWQB/1KtuliwKqY/983.ts",
+          "http://innovationtv.eu:80/live/bf88fc3c48/cab72d6b9a/1458572.ts",
+          "http://sansatplus.net:88/live/2LMHSORKPS/LXFPNMRLCF/102521.ts"
+        ]
+      }
     },
     "City+": {
       "id": null,
@@ -453,9 +635,17 @@
       "qualities": null
     },
     "Clubber Tv": {
-      "id": null,
-      "logo": null,
-      "qualities": null
+      "id": 341115818,
+      "logo": "https://i.postimg.cc/8Crmzny2/rsz-clubber-768x271.png",
+      "qualities": {
+        "HD": [
+          "http://smartho.st:8080/live/jenko/dSMk4Sy8/252601.ts",
+          "http://smartho.st:8080/live/jenko/dSMk4Sy8/252602.ts",
+          "http://smartho.st:8080/live/jenko/dSMk4Sy8/252603.ts",
+          "http://smartho.st:8080/live/jenko/dSMk4Sy8/252604.ts",
+          "http://smartho.st:8080/live/jenko/dSMk4Sy8/252605.ts"
+        ]
+      }
     },
     "Dazn National League": {
       "id": null,
@@ -473,9 +663,17 @@
       "qualities": null
     },
     "Discovery+": {
-      "id": null,
-      "logo": null,
-      "qualities": null
+      "id": 362742756,
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROhApyj4kexKl6fsOfvn0mUMXHGo1iVnUv_Q_vrqAxNQ&s",
+      "qualities": {
+        "HD": [
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/105800.ts",
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/105801.ts",
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/105802.ts",
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/105803.ts",
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/105804.ts"
+        ]
+      }
     },
     "Discovery+ Premium": {
       "id": null,
@@ -483,9 +681,17 @@
       "qualities": null
     },
     "Itvx": {
-      "id": null,
-      "logo": null,
-      "qualities": null
+      "id": 65536428,
+      "logo": "https://image.roku.com/developer_channels/prod/cd8057b5f5d6606fcf9b998569ae206c2a76e905cc3d51c84fe0f3aef48d4fbe.png",
+      "qualities": {
+        "HD": [
+          "http://bigballs.ddns.net:8383/live/samanthamay/T9IaO2UAeNN/570260.ts",
+          "http://bigballs.ddns.net:8383/live/samanthamay/T9IaO2UAeNN/570261.ts",
+          "http://bigballs.ddns.net:8383/live/samanthamay/T9IaO2UAeNN/570262.ts",
+          "http://xc.tvset.top:80/live/JosefAbela/6Wr8Cy3Q/233816.ts",
+          "http://xc.tvset.top:80/live/JosefAbela/6Wr8Cy3Q/243248.ts"
+        ]
+      }
     },
     "Laligatv": {
       "id": null,
@@ -498,24 +704,56 @@
       "qualities": null
     },
     "Lfctv": {
-      "id": null,
-      "logo": null,
-      "qualities": null
+      "id": 94372352,
+      "logo": "https://github.com/Tapiosinn/tv-logos/blob/master/countries/united-kingdom/lfctv-uk.png?raw=true",
+      "qualities": {
+        "HD": [
+          "http://client.newborne.xyz:80/live/ZP2MD4iCsIx/9TWnl5pFhL/114297.ts",
+          "http://jarodtv62000.com:8000/live/boukais2023/17082023/551.ts",
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/10859.ts",
+          "http://porn-hub.streamtv.to:8080/live/Wolfgang/5he6ERunyN/10859.ts",
+          "http://portal.geniptv.com:8080/live/dmtndmtnkimo/a7GPMeArdf/10859.ts"
+        ]
+      }
     },
     "Ligue 1+": {
-      "id": null,
+      "id": 209388147,
       "logo": null,
-      "qualities": null
+      "qualities": {
+        "HD": [
+          "http://117.55.202.58:8080/live/55570637746838/KmBK8Rl8GW/71951.ts",
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/130432.ts",
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/130433.ts",
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/130434.ts",
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/130435.ts"
+        ]
+      }
     },
     "Loitv": {
-      "id": null,
-      "logo": null,
-      "qualities": null
+      "id": 97911311,
+      "logo": "https://i.postimg.cc/pLqkc6rm/rsz-loitv.png",
+      "qualities": {
+        "HD": [
+          "http://smartho.st:8080/live/jenko/dSMk4Sy8/248266.ts",
+          "http://smartho.st:8080/live/jenko/dSMk4Sy8/248267.ts",
+          "http://smartho.st:8080/live/jenko/dSMk4Sy8/248268.ts",
+          "http://smartho.st:8080/live/jenko/dSMk4Sy8/248269.ts",
+          "http://smartho.st:8080/live/jenko/dSMk4Sy8/248270.ts"
+        ]
+      }
     },
     "Onefootball": {
-      "id": null,
-      "logo": null,
-      "qualities": null
+      "id": 441386102,
+      "logo": "https://m.media-amazon.com/images/I/31B1Ty+1SzL.png",
+      "qualities": {
+        "HD": [
+          "http://b1g.uk:8080/live/255988/889552/955813.ts",
+          "http://newoneblack.site/live/55582127/tp5966/234507.ts",
+          "http://newoneblack.site/live/55582127/tp5966/234509.ts",
+          "http://newoneblack.site/live/55582127/tp5966/234510.ts",
+          "http://newoneblack.site/live/55582127/tp5966/234511.ts"
+        ]
+      }
     },
     "Palace Tv+": {
       "id": null,
@@ -528,9 +766,15 @@
       "qualities": null
     },
     "Premier Sports Rugby": {
-      "id": null,
-      "logo": null,
-      "qualities": null
+      "id": 1340671913,
+      "logo": "https://pbs.twimg.com/media/F14ANlOWAAQwKiU.jpg",
+      "qualities": {
+        "HD": [
+          "http://abtvab@xplatinmedia.com:8080/live/Elko/mhj8LHTJJC/7815.ts",
+          "http://bigballs.ddns.net:8383/live/samanthamay/T9IaO2UAeNN/578569.ts",
+          "http://innovationtv.eu:80/live/bf88fc3c48/cab72d6b9a/1920841.ts"
+        ]
+      }
     },
     "Racingtv": {
       "id": null,
@@ -548,9 +792,15 @@
       "qualities": null
     },
     "Rugbypass Tv": {
-      "id": null,
-      "logo": null,
-      "qualities": null
+      "id": 520750251,
+      "logo": "https://b1gchlogos.xyz/wp-content/uploads/2023/10/Rugby-TV-Pass-Channel.png",
+      "qualities": {
+        "HD": [
+          "http://b1g.uk:8080/live/255988/889552/313508.ts",
+          "http://b1g.uk:8080/live/255988/889552/313509.ts",
+          "http://b1g.uk:8080/live/255988/889552/313510.ts"
+        ]
+      }
     },
     "S4C Online": {
       "id": null,
@@ -578,9 +828,17 @@
       "qualities": null
     },
     "Tnt Sports Extra": {
-      "id": null,
-      "logo": null,
-      "qualities": null
+      "id": 841287174,
+      "logo": "https://focus.independent.ie/thumbor/PYsZIWAXFkr0cGYCG6tf_YAmtHE=/86x0:672x391/960x640/prod-mh-ireland/4ae6eef1-b7ab-4fcd-bc20-18ac49124d95/09985a92-eab1-4a87-97d1-5baf522d3c5a/4ae6eef1-b7ab-4fcd-bc20-18ac49124d95.jpg",
+      "qualities": {
+        "HD": [
+          "http://185.134.22.131:8080/live/ozzie_skype/Brestream2020/58912.ts",
+          "http://185.134.22.131:8080/live/ozzie_skype/Brestream2020/58914.ts",
+          "http://185.134.22.131:8080/live/ozzie_skype/Brestream2020/58915.ts",
+          "http://185.134.22.131:8080/live/ozzie_skype/Brestream2020/58916.ts",
+          "http://sansatplus.net:88/live/2LMHSORKPS/LXFPNMRLCF/102272.ts"
+        ]
+      }
     },
     "Trillertv+": {
       "id": null,
@@ -594,11 +852,18 @@
     },
     "Laliga Tv": {
       "id": 271319861,
-      "logo": null,
+      "logo": "https://www.movistarplus.es/recorte/m-NEO/canal/MLIGS.png",
       "qualities": {
         "4K": [
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/581353.ts",
           "http://tv.starsharetv.com:8080/live/7654321/1234567/581353.ts"
+        ],
+        "HD": [
+          "http://185.134.22.131:8080/live/ozzie_skype/Brestream2020/12037.ts",
+          "http://canal-pro.xyz:8080/live/962251034tv/7t48ipxw/256385.ts",
+          "http://canal-pro.xyz:8080/live/962251034tv/7t48ipxw/60311.ts",
+          "http://canal-pro.xyz:8080/live/962251034tv/7t48ipxw/60316.ts",
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/1062.ts"
         ]
       }
     }
