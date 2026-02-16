@@ -4658,7 +4658,8 @@
       "sport": "Soccer",
       "country": "Germany",
       "aliases": [
-        "borussia monchengladbach u21"
+        "borussia monchengladbach u21",
+        "borussia monchengladbach"
       ]
     },
     "Racing Club": {
@@ -4820,6 +4821,507 @@
       "aliases": [
         "ternana women"
       ]
+    },
+    "Luton Town": {
+      "id": 133888,
+      "api_id": "133888",
+      "name": "Luton Town",
+      "short_name": "LUT",
+      "alternates": [],
+      "keywords": [
+        "The Hatters"
+      ],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "English League 1",
+      "sport": "Soccer",
+      "country": "England",
+      "aliases": []
+    },
+    "KuPS": {
+      "id": 134018,
+      "api_id": "134018",
+      "name": "KuPS",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Finnish Veikkausliiga",
+      "sport": "Soccer",
+      "country": "Finland",
+      "aliases": []
+    },
+    "Lech Poznań": {
+      "id": 134010,
+      "api_id": "134010",
+      "name": "Lech Poznań",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Polish Ekstraklasa",
+      "sport": "Soccer",
+      "country": "Poland",
+      "aliases": [
+        "lech poznan"
+      ]
+    },
+    "Zrinjski Mostar": {
+      "id": 134341,
+      "api_id": "134341",
+      "name": "Zrinjski Mostar",
+      "short_name": "ZRI",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Bosnian Premier Liga",
+      "sport": "Soccer",
+      "country": "Bosnia and Herzegovina",
+      "aliases": []
+    },
+    "Dinamo Zagreb": {
+      "id": 133961,
+      "api_id": "133961",
+      "name": "Dinamo Zagreb",
+      "short_name": "DZA",
+      "alternates": [],
+      "keywords": [
+        "Modri",
+        "Plavi"
+      ],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Croatian First Football League",
+      "sport": "Soccer",
+      "country": "Croatia",
+      "aliases": []
+    },
+    "Genk": {
+      "id": 133779,
+      "api_id": "133779",
+      "name": "Genk",
+      "short_name": "GEN",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Belgian Pro League",
+      "sport": "Soccer",
+      "country": "Belgium",
+      "aliases": []
+    },
+    "Fenerbahçe": {
+      "id": 133807,
+      "api_id": "133807",
+      "name": "Fenerbahçe",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [
+        "Sarı Kanaryalar",
+        "Sarı-Lacivertliler"
+      ],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Turkish Super Lig",
+      "sport": "Soccer",
+      "country": "Turkey",
+      "aliases": [
+        "fenerbahce"
+      ]
+    },
+    "PAOK": {
+      "id": 133749,
+      "api_id": "133749",
+      "name": "PAOK",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Greek Superleague Greece",
+      "sport": "Soccer",
+      "country": "Greece",
+      "aliases": [
+        "paok fc"
+      ]
+    },
+    "Brynäs IF": {
+      "id": 135138,
+      "api_id": "135138",
+      "name": "Brynäs IF",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Swedish Hockey League",
+      "sport": "Ice Hockey",
+      "country": "Sweden",
+      "aliases": [
+        "brynas"
+      ]
+    },
+    "Djurgårdens IF": {
+      "id": 135139,
+      "api_id": "135139",
+      "name": "Djurgårdens IF",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Swedish Hockey League",
+      "sport": "Ice Hockey",
+      "country": "Sweden",
+      "aliases": [
+        "djurgardens"
+      ]
+    },
+    "Brisbane Broncos": {
+      "id": 135191,
+      "api_id": "135191",
+      "name": "Brisbane Broncos",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Australian National Rugby League",
+      "sport": "Rugby",
+      "country": "Australia",
+      "aliases": []
+    },
+    "Jagiellonia Białystok": {
+      "id": 135297,
+      "api_id": "135297",
+      "name": "Jagiellonia Białystok",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Polish Ekstraklasa",
+      "sport": "Soccer",
+      "country": "Poland",
+      "aliases": [
+        "jagiellonia bialystok"
+      ]
+    },
+    "Shkëndija": {
+      "id": 134024,
+      "api_id": "134024",
+      "name": "Shkëndija",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Macedonian First League",
+      "sport": "Soccer",
+      "country": "Macedonia",
+      "aliases": [
+        "shkendija"
+      ]
+    },
+    "Drita": {
+      "id": 140098,
+      "api_id": "140098",
+      "name": "Drita",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [
+        "Intelektualët (Intellectuals)"
+      ],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Kosovan Superleague",
+      "sport": "Soccer",
+      "country": "Kosovo",
+      "aliases": []
+    },
+    "Rijeka": {
+      "id": 134399,
+      "api_id": "134399",
+      "name": "Rijeka",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Croatian First Football League",
+      "sport": "Soccer",
+      "country": "Croatia",
+      "aliases": []
+    },
+    "Crvena Zvezda": {
+      "id": 133987,
+      "api_id": "133987",
+      "name": "Crvena Zvezda",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Serbian Super Liga",
+      "sport": "Soccer",
+      "country": "Serbia",
+      "aliases": []
+    },
+    "Ludogorets Razgrad": {
+      "id": 133981,
+      "api_id": "133981",
+      "name": "Ludogorets Razgrad",
+      "short_name": "LUD",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Bulgarian First League",
+      "sport": "Soccer",
+      "country": "Bulgaria",
+      "aliases": []
+    },
+    "Ferencváros": {
+      "id": 134620,
+      "api_id": "134620",
+      "name": "Ferencváros",
+      "short_name": "FER",
+      "alternates": [],
+      "keywords": [
+        "Fradi",
+        "Zöld Sasok"
+      ],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Hungarian NB I",
+      "sport": "Soccer",
+      "country": "Hungary",
+      "aliases": [
+        "ferencvaros"
+      ]
+    },
+    "Panathinaikos": {
+      "id": 133746,
+      "api_id": "133746",
+      "name": "Panathinaikos",
+      "short_name": "PAO",
+      "alternates": [],
+      "keywords": [
+        "Πράσινοι (Greens)"
+      ],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Greek Superleague Greece",
+      "sport": "Soccer",
+      "country": "Greece",
+      "aliases": []
+    },
+    "Tenerife": {
+      "id": 133840,
+      "api_id": "133840",
+      "name": "Tenerife",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Spanish Primera RFEF Group 1",
+      "sport": "Soccer",
+      "country": "Spain",
+      "aliases": [
+        "tenerife women"
+      ]
+    },
+    "Sheffield Wednesday": {
+      "id": 133837,
+      "api_id": "133837",
+      "name": "Sheffield Wednesday",
+      "short_name": "SHF",
+      "alternates": [],
+      "keywords": [
+        "Owls"
+      ],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "English League Championship",
+      "sport": "Soccer",
+      "country": "England",
+      "aliases": []
+    },
+    "Manchester Basketball": {
+      "id": 135349,
+      "api_id": "135349",
+      "name": "Manchester Basketball",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Super League Basketball",
+      "sport": "Basketball",
+      "country": "England",
+      "aliases": []
+    },
+    "London Lions": {
+      "id": 135348,
+      "api_id": "135348",
+      "name": "London Lions",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Super League Basketball",
+      "sport": "Basketball",
+      "country": "England",
+      "aliases": []
+    },
+    "Livingston": {
+      "id": 134133,
+      "api_id": "134133",
+      "name": "Livingston",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Scottish Premier League",
+      "sport": "Soccer",
+      "country": "Scotland",
+      "aliases": []
+    },
+    "Sheffield Sharks": {
+      "id": 135352,
+      "api_id": "135352",
+      "name": "Sheffield Sharks",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Super League Basketball",
+      "sport": "Basketball",
+      "country": "England",
+      "aliases": []
+    },
+    "Bristol Flyers": {
+      "id": 135342,
+      "api_id": "135342",
+      "name": "Bristol Flyers",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Super League Basketball",
+      "sport": "Basketball",
+      "country": "England",
+      "aliases": []
+    },
+    "St Pauli": {
+      "id": 133813,
+      "api_id": "133813",
+      "name": "St Pauli",
+      "short_name": "FCP",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "German Bundesliga",
+      "sport": "Soccer",
+      "country": "Germany",
+      "aliases": []
+    },
+    "Cheshire Phoenix": {
+      "id": 135343,
+      "api_id": "135343",
+      "name": "Cheshire Phoenix",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Super League Basketball",
+      "sport": "Basketball",
+      "country": "England",
+      "aliases": []
+    },
+    "Surrey 89ers": {
+      "id": 135353,
+      "api_id": "135353",
+      "name": "Surrey 89ers",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Super League Basketball",
+      "sport": "Basketball",
+      "country": "England",
+      "aliases": []
+    },
+    "Zulte Waregem": {
+      "id": 133786,
+      "api_id": "133786",
+      "name": "Zulte Waregem",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Belgian Pro League",
+      "sport": "Soccer",
+      "country": "Belgium",
+      "aliases": []
+    },
+    "Strasbourg": {
+      "id": 133882,
+      "api_id": "133882",
+      "name": "Strasbourg",
+      "short_name": "STR",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "French Ligue 1",
+      "sport": "Soccer",
+      "country": "France",
+      "aliases": []
+    },
+    "Vélez Sarsfield": {
+      "id": 135179,
+      "api_id": "135179",
+      "name": "Vélez Sarsfield",
+      "short_name": "VEL",
+      "alternates": [],
+      "keywords": [
+        "El Fortín"
+      ],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Argentinian Primera Division",
+      "sport": "Soccer",
+      "country": "Argentina",
+      "aliases": [
+        "velez sarsfield"
+      ]
+    },
+    "River Plate": {
+      "id": 135171,
+      "api_id": "135171",
+      "name": "River Plate",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Argentinian Primera Division",
+      "sport": "Soccer",
+      "country": "Argentina",
+      "aliases": []
     }
   },
   "_index": {
@@ -5346,6 +5848,50 @@
     "granada women": "Granada",
     "st mirren": "St Mirren",
     "ternana": "Ternana",
-    "ternana women": "Ternana"
+    "ternana women": "Ternana",
+    "luton town": "Luton Town",
+    "kups": "KuPS",
+    "lech poznań": "Lech Poznań",
+    "lech poznan": "Lech Poznań",
+    "zrinjski mostar": "Zrinjski Mostar",
+    "dinamo zagreb": "Dinamo Zagreb",
+    "genk": "Genk",
+    "fenerbahçe": "Fenerbahçe",
+    "fenerbahce": "Fenerbahçe",
+    "paok": "PAOK",
+    "paok fc": "PAOK",
+    "brynäs if": "Brynäs IF",
+    "brynas": "Brynäs IF",
+    "djurgårdens if": "Djurgårdens IF",
+    "djurgardens": "Djurgårdens IF",
+    "brisbane broncos": "Brisbane Broncos",
+    "jagiellonia białystok": "Jagiellonia Białystok",
+    "jagiellonia bialystok": "Jagiellonia Białystok",
+    "shkëndija": "Shkëndija",
+    "shkendija": "Shkëndija",
+    "drita": "Drita",
+    "rijeka": "Rijeka",
+    "crvena zvezda": "Crvena Zvezda",
+    "ludogorets razgrad": "Ludogorets Razgrad",
+    "ferencváros": "Ferencváros",
+    "ferencvaros": "Ferencváros",
+    "panathinaikos": "Panathinaikos",
+    "tenerife": "Tenerife",
+    "tenerife women": "Tenerife",
+    "sheffield wednesday": "Sheffield Wednesday",
+    "borussia monchengladbach": "Borussia Mönchengladbach",
+    "manchester basketball": "Manchester Basketball",
+    "london lions": "London Lions",
+    "livingston": "Livingston",
+    "sheffield sharks": "Sheffield Sharks",
+    "bristol flyers": "Bristol Flyers",
+    "st pauli": "St Pauli",
+    "cheshire phoenix": "Cheshire Phoenix",
+    "surrey 89ers": "Surrey 89ers",
+    "zulte waregem": "Zulte Waregem",
+    "strasbourg": "Strasbourg",
+    "vélez sarsfield": "Vélez Sarsfield",
+    "velez sarsfield": "Vélez Sarsfield",
+    "river plate": "River Plate"
   }
 }
