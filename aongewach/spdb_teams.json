@@ -1636,14 +1636,20 @@
       "aliases": []
     },
     "Lens": {
-      "id": 61997459,
+      "id": 133822,
       "api_id": "133822",
       "name": "Lens",
-      "logo_url": "https://r2.thesportsdb.com/images/media/team/badge/3pxoum1598797195.png",
-      "banner_url": "https://r2.thesportsdb.com/images/media/team/banner/txrwyq1423691048.jpg",
+      "short_name": "LNS",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
       "league": "French Ligue 1",
       "sport": "Soccer",
-      "aliases": []
+      "country": "France",
+      "aliases": [
+        "rc lens women"
+      ]
     },
     "Levante": {
       "id": 182584016,
@@ -3905,7 +3911,9 @@
       "league": "Saudi-Arabian Pro League",
       "sport": "Soccer",
       "country": "Saudi Arabia",
-      "aliases": []
+      "aliases": [
+        "al nassr"
+      ]
     },
     "Al-Hilal": {
       "id": 136013,
@@ -3919,7 +3927,9 @@
       "league": "Saudi-Arabian Pro League",
       "sport": "Soccer",
       "country": "Saudi Arabia",
-      "aliases": []
+      "aliases": [
+        "al hilal"
+      ]
     },
     "Al-Shabab": {
       "id": 136020,
@@ -4195,6 +4205,620 @@
       "country": "Spain",
       "aliases": [
         "eibar women"
+      ]
+    },
+    "Werder Bremen": {
+      "id": 133662,
+      "api_id": "133662",
+      "name": "Werder Bremen",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [
+        "Die Werderaner"
+      ],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "German Bundesliga",
+      "sport": "Soccer",
+      "country": "Germany",
+      "aliases": [
+        "werder bremen women"
+      ]
+    },
+    "Al-Duhail": {
+      "id": 137679,
+      "api_id": "137679",
+      "name": "Al-Duhail",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Qatar Stars League",
+      "sport": "Soccer",
+      "country": "Qatar",
+      "aliases": []
+    },
+    "Macclesfield Town": {
+      "id": 134449,
+      "api_id": "134449",
+      "name": "Macclesfield Town",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [
+        "silkmen"
+      ],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "_Defunct Soccer Teams",
+      "sport": "Soccer",
+      "country": "England",
+      "aliases": []
+    },
+    "Lecce": {
+      "id": 133678,
+      "api_id": "133678",
+      "name": "Lecce",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [
+        "I Giallorossi"
+      ],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Italian Serie A",
+      "sport": "Soccer",
+      "country": "Italy",
+      "aliases": []
+    },
+    "Peterborough United": {
+      "id": 133631,
+      "api_id": "133631",
+      "name": "Peterborough United",
+      "short_name": "PTU",
+      "alternates": [],
+      "keywords": [
+        "PUFC",
+        "The Posh"
+      ],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "English League 1",
+      "sport": "Soccer",
+      "country": "England",
+      "aliases": [
+        "peterborough united u18"
+      ]
+    },
+    "Al-Sadd": {
+      "id": 137648,
+      "api_id": "137648",
+      "name": "Al-Sadd",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Qatar Stars League",
+      "sport": "Soccer",
+      "country": "Qatar",
+      "aliases": []
+    },
+    "Galatasaray": {
+      "id": 133804,
+      "api_id": "133804",
+      "name": "Galatasaray",
+      "short_name": "GAL",
+      "alternates": [],
+      "keywords": [
+        "Cim-Bom",
+        "Sarı-Kırmızılılar",
+        "Aslanlar"
+      ],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Turkish Super Lig",
+      "sport": "Soccer",
+      "country": "Turkey",
+      "aliases": []
+    },
+    "Aldershot Town": {
+      "id": 134401,
+      "api_id": "134401",
+      "name": "Aldershot Town",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "English National League",
+      "sport": "Soccer",
+      "country": "England",
+      "aliases": []
+    },
+    "Oldham Athletic": {
+      "id": 134185,
+      "api_id": "134185",
+      "name": "Oldham Athletic",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [
+        "Latics",
+        "Oldham"
+      ],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "English League 2",
+      "sport": "Soccer",
+      "country": "England",
+      "aliases": []
+    },
+    "Ebbsfleet United": {
+      "id": 136152,
+      "api_id": "136152",
+      "name": "Ebbsfleet United",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "English National League South",
+      "sport": "Soccer",
+      "country": "England",
+      "aliases": []
+    },
+    "Bradford City": {
+      "id": 134189,
+      "api_id": "134189",
+      "name": "Bradford City",
+      "short_name": "BDC",
+      "alternates": [],
+      "keywords": [
+        "Bradford",
+        "Bantams",
+        "Paraders",
+        "BCAFC"
+      ],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "English League 1",
+      "sport": "Soccer",
+      "country": "England",
+      "aliases": []
+    },
+    "Rotherham United": {
+      "id": 134231,
+      "api_id": "134231",
+      "name": "Rotherham United",
+      "short_name": "RTU",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "English League 1",
+      "sport": "Soccer",
+      "country": "England",
+      "aliases": []
+    },
+    "Cardiff City": {
+      "id": 133637,
+      "api_id": "133637",
+      "name": "Cardiff City",
+      "short_name": "CDF",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "English League 1",
+      "sport": "Soccer",
+      "country": "Wales",
+      "aliases": []
+    },
+    "AFC Wimbledon": {
+      "id": 134241,
+      "api_id": "134241",
+      "name": "AFC Wimbledon",
+      "short_name": "AWM",
+      "alternates": [],
+      "keywords": [
+        "The Dons"
+      ],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "English League 1",
+      "sport": "Soccer",
+      "country": "England",
+      "aliases": []
+    },
+    "Plymouth Argyle": {
+      "id": 133836,
+      "api_id": "133836",
+      "name": "Plymouth Argyle",
+      "short_name": "PLA",
+      "alternates": [],
+      "keywords": [
+        "The Pilgrims"
+      ],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "English League 1",
+      "sport": "Soccer",
+      "country": "England",
+      "aliases": []
+    },
+    "Lincoln City": {
+      "id": 135900,
+      "api_id": "135900",
+      "name": "Lincoln City",
+      "short_name": "LNC",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "English League 1",
+      "sport": "Soccer",
+      "country": "England",
+      "aliases": []
+    },
+    "Northampton Town": {
+      "id": 134370,
+      "api_id": "134370",
+      "name": "Northampton Town",
+      "short_name": "NHT",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "English League 1",
+      "sport": "Soccer",
+      "country": "England",
+      "aliases": []
+    },
+    "Port Vale": {
+      "id": 134375,
+      "api_id": "134375",
+      "name": "Port Vale",
+      "short_name": "PTV",
+      "alternates": [],
+      "keywords": [
+        "The Valiants",
+        "Vale",
+        "PVFC"
+      ],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "English League 1",
+      "sport": "Soccer",
+      "country": "England",
+      "aliases": []
+    },
+    "Barrow": {
+      "id": 136000,
+      "api_id": "136000",
+      "name": "Barrow",
+      "short_name": "BRW",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "English League 2",
+      "sport": "Soccer",
+      "country": "England",
+      "aliases": []
+    },
+    "Harrogate Town": {
+      "id": 137534,
+      "api_id": "137534",
+      "name": "Harrogate Town",
+      "short_name": "HAT",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "English League 2",
+      "sport": "Soccer",
+      "country": "England",
+      "aliases": []
+    },
+    "Crewe Alexandra": {
+      "id": 134218,
+      "api_id": "134218",
+      "name": "Crewe Alexandra",
+      "short_name": "CAX",
+      "alternates": [],
+      "keywords": [
+        "The Railwaymen",
+        "The Alex",
+        "Alexandra"
+      ],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "English League 2",
+      "sport": "Soccer",
+      "country": "England",
+      "aliases": []
+    },
+    "Fleetwood Town": {
+      "id": 134374,
+      "api_id": "134374",
+      "name": "Fleetwood Town",
+      "short_name": "FLT",
+      "alternates": [],
+      "keywords": [
+        "Cod Army",
+        "Fleetwood",
+        "FTFC"
+      ],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "English League 2",
+      "sport": "Soccer",
+      "country": "England",
+      "aliases": []
+    },
+    "Milton Keynes Dons": {
+      "id": 134371,
+      "api_id": "134371",
+      "name": "Milton Keynes Dons",
+      "short_name": "MKD",
+      "alternates": [],
+      "keywords": [
+        "The Dons"
+      ],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "English League 2",
+      "sport": "Soccer",
+      "country": "England",
+      "aliases": []
+    },
+    "Shrewsbury Town": {
+      "id": 134377,
+      "api_id": "134377",
+      "name": "Shrewsbury Town",
+      "short_name": "SHT",
+      "alternates": [],
+      "keywords": [
+        "The Shrews",
+        "STFC"
+      ],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "English League 2",
+      "sport": "Soccer",
+      "country": "England",
+      "aliases": []
+    },
+    "Notts County": {
+      "id": 134373,
+      "api_id": "134373",
+      "name": "Notts County",
+      "short_name": "NTC",
+      "alternates": [],
+      "keywords": [
+        "The Magpies",
+        "County",
+        "Notts"
+      ],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "English League 2",
+      "sport": "Soccer",
+      "country": "England",
+      "aliases": []
+    },
+    "Eintracht Frankfurt": {
+      "id": 133814,
+      "api_id": "133814",
+      "name": "Eintracht Frankfurt",
+      "short_name": "SGE",
+      "alternates": [],
+      "keywords": [
+        "Die Adler"
+      ],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "German Bundesliga",
+      "sport": "Soccer",
+      "country": "Germany",
+      "aliases": [
+        "eintracht frankfurt u19"
+      ]
+    },
+    "Oxford United": {
+      "id": 134361,
+      "api_id": "134361",
+      "name": "Oxford United",
+      "short_name": "OXF",
+      "alternates": [],
+      "keywords": [
+        "The U"
+      ],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "English League Championship",
+      "sport": "Soccer",
+      "country": "England",
+      "aliases": [
+        "oxford united u18"
+      ]
+    },
+    "Borussia Mönchengladbach": {
+      "id": 134779,
+      "api_id": "134779",
+      "name": "Borussia Mönchengladbach",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [
+        "Die Fohlen"
+      ],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "German Bundesliga",
+      "sport": "Soccer",
+      "country": "Germany",
+      "aliases": [
+        "borussia monchengladbach u21"
+      ]
+    },
+    "Racing Club": {
+      "id": 135170,
+      "api_id": "135170",
+      "name": "Racing Club",
+      "short_name": "RAC",
+      "alternates": [],
+      "keywords": [
+        "La Academia"
+      ],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Argentinian Primera Division",
+      "sport": "Soccer",
+      "country": "Argentina",
+      "aliases": []
+    },
+    "Saitama Wild Knights": {
+      "id": 144812,
+      "api_id": "144812",
+      "name": "Saitama Wild Knights",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Japan Rugby League One",
+      "sport": "Rugby",
+      "country": "Japan",
+      "aliases": []
+    },
+    "Detroit Lions": {
+      "id": 134939,
+      "api_id": "134939",
+      "name": "Detroit Lions",
+      "short_name": "DET",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "NFL",
+      "sport": "American Football",
+      "country": "United States",
+      "aliases": [
+        "lions"
+      ]
+    },
+    "San Jose Sharks": {
+      "id": 134853,
+      "api_id": "134853",
+      "name": "San Jose Sharks",
+      "short_name": "SJS",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "NHL",
+      "sport": "Ice Hockey",
+      "country": "United States",
+      "aliases": [
+        "sharks"
+      ]
+    },
+    "Briton Ferry Llansawel": {
+      "id": 142383,
+      "api_id": "142383",
+      "name": "Briton Ferry Llansawel",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Welsh Premier League",
+      "sport": "Soccer",
+      "country": "Wales",
+      "aliases": []
+    },
+    "AC Milan": {
+      "id": 133667,
+      "api_id": "133667",
+      "name": "AC Milan",
+      "short_name": "MIL",
+      "alternates": [],
+      "keywords": [
+        "Rossoneri"
+      ],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Italian Serie A",
+      "sport": "Soccer",
+      "country": "Italy",
+      "aliases": [
+        "ac milan women"
+      ]
+    },
+    "Chatham Town": {
+      "id": 146593,
+      "api_id": "146593",
+      "name": "Chatham Town",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [
+        "The Chats"
+      ],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "English Isthmian League Premier Division",
+      "sport": "Soccer",
+      "country": "England",
+      "aliases": [
+        "chatham town women"
+      ]
+    },
+    "Granada": {
+      "id": 133721,
+      "api_id": "133721",
+      "name": "Granada",
+      "short_name": "GRN",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Spanish La Liga 2",
+      "sport": "Soccer",
+      "country": "Spain",
+      "aliases": [
+        "granada women"
+      ]
+    },
+    "St Mirren": {
+      "id": 133649,
+      "api_id": "133649",
+      "name": "St Mirren",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Scottish Premier League",
+      "sport": "Soccer",
+      "country": "Scotland",
+      "aliases": []
+    },
+    "Ternana": {
+      "id": 133973,
+      "api_id": "133973",
+      "name": "Ternana",
+      "short_name": "",
+      "alternates": [],
+      "keywords": [
+        "I Rossoverdi"
+      ],
+      "logo_url": null,
+      "banner_url": null,
+      "league": "Italian Serie C Girone B",
+      "sport": "Soccer",
+      "country": "Italy",
+      "aliases": [
+        "ternana women"
       ]
     }
   },
@@ -4670,6 +5294,58 @@
     "barça": "Barcelona",
     "barcelona women": "Barcelona",
     "eibar": "Eibar",
-    "eibar women": "Eibar"
+    "eibar women": "Eibar",
+    "werder bremen": "Werder Bremen",
+    "werder bremen women": "Werder Bremen",
+    "al hilal": "Al-Hilal",
+    "alduhail": "Al-Duhail",
+    "macclesfield town": "Macclesfield Town",
+    "lecce": "Lecce",
+    "peterborough united": "Peterborough United",
+    "peterborough united u18": "Peterborough United",
+    "alsadd": "Al-Sadd",
+    "galatasaray": "Galatasaray",
+    "aldershot town": "Aldershot Town",
+    "oldham athletic": "Oldham Athletic",
+    "ebbsfleet united": "Ebbsfleet United",
+    "bradford city": "Bradford City",
+    "rotherham united": "Rotherham United",
+    "cardiff city": "Cardiff City",
+    "afc wimbledon": "AFC Wimbledon",
+    "plymouth argyle": "Plymouth Argyle",
+    "lincoln city": "Lincoln City",
+    "northampton town": "Northampton Town",
+    "port vale": "Port Vale",
+    "barrow": "Barrow",
+    "harrogate town": "Harrogate Town",
+    "crewe alexandra": "Crewe Alexandra",
+    "fleetwood town": "Fleetwood Town",
+    "milton keynes dons": "Milton Keynes Dons",
+    "shrewsbury town": "Shrewsbury Town",
+    "notts county": "Notts County",
+    "eintracht frankfurt": "Eintracht Frankfurt",
+    "eintracht frankfurt u19": "Eintracht Frankfurt",
+    "oxford united": "Oxford United",
+    "oxford united u18": "Oxford United",
+    "al nassr": "Al-Nassr",
+    "borussia mönchengladbach": "Borussia Mönchengladbach",
+    "borussia monchengladbach u21": "Borussia Mönchengladbach",
+    "rc lens women": "Lens",
+    "racing club": "Racing Club",
+    "saitama wild knights": "Saitama Wild Knights",
+    "detroit lions": "Detroit Lions",
+    "lions": "Detroit Lions",
+    "san jose sharks": "San Jose Sharks",
+    "sharks": "San Jose Sharks",
+    "briton ferry llansawel": "Briton Ferry Llansawel",
+    "ac milan": "AC Milan",
+    "ac milan women": "AC Milan",
+    "chatham town": "Chatham Town",
+    "chatham town women": "Chatham Town",
+    "granada": "Granada",
+    "granada women": "Granada",
+    "st mirren": "St Mirren",
+    "ternana": "Ternana",
+    "ternana women": "Ternana"
   }
 }
