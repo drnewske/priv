@@ -66,13 +66,18 @@ NOISE_WORDS = {'fc', 'afc', 'sc', 'cf', 'fk', 'bk', 'sk'}
 def load_json(filepath):
     if not os.path.exists(filepath):
         return {}
-    with open(filepath, 'r', encoding='utf-8') as f:
-        return json.load(f)
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception:
+        return {}
 
 
 def save_json(filepath, data):
-    with open(filepath, 'w', encoding='utf-8') as f:
+    tmp_path = f"{filepath}.tmp"
+    with open(tmp_path, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
+    os.replace(tmp_path, filepath)
 
 
 def clean_team_name(name):
@@ -163,6 +168,7 @@ class TeamMatcher:
         self.teams = self.db.get('teams', {})
         self.index = self.db.get('_index', {})
         self.learned_count = 0
+        self._api_lookup_cache = {}
 
         # Build sport-filtered sets for fuzzy matching
         self._sport_teams = {}
@@ -287,10 +293,14 @@ class TeamMatcher:
         """Learn a new alias for a team."""
         if team_key not in self.teams:
             return
+        if not alias_name or not isinstance(alias_name, str):
+            return
 
         data = self.teams[team_key]
         aliases = data.get('aliases', [])
-        norm_alias = alias_name.lower().strip()
+        norm_alias = alias_name.strip().lower()
+        if not norm_alias:
+            return
 
         # Don't add if it's already known
         if norm_alias in [a.lower() for a in aliases]:
@@ -324,6 +334,10 @@ class TeamMatcher:
         cleaned_api = clean_for_api(name)
         if not cleaned_api:
             return None
+        
+        cache_key = cleaned_api.lower()
+        if cache_key in self._api_lookup_cache:
+            return self._api_lookup_cache[cache_key]
 
         # Strategies to try
         search_terms = [cleaned_api]
@@ -356,12 +370,20 @@ class TeamMatcher:
                 if data and data.get("teams"):
                     # Use the first result
                     team_data = data["teams"][0]
-                    found_name = team_data["strTeam"]
-                    found_id = team_data["idTeam"]
+                    found_name = team_data.get("strTeam")
+                    found_id = team_data.get("idTeam")
+                    if not found_name:
+                        continue
                     
                     # Create entry
+                    parsed_id = None
+                    if isinstance(found_id, str) and found_id.isdigit():
+                        parsed_id = int(found_id)
+                    elif isinstance(found_id, int):
+                        parsed_id = found_id
+
                     entry = {
-                        "id": int(found_id) if found_id.isdigit() else found_id,
+                        "id": parsed_id,
                         "api_id": found_id,
                         "name": found_name,
                         "short_name": team_data.get("strTeamShort") or "",
@@ -375,8 +397,14 @@ class TeamMatcher:
                         "aliases": [] # Initialize empty
                     }
 
-                    # Add to DB
-                    self.teams[found_name] = entry
+                    # Add or update DB entry
+                    if found_name in self.teams and isinstance(self.teams[found_name], dict):
+                        existing = self.teams[found_name]
+                        existing.update({k: v for k, v in entry.items() if v})
+                        entry = existing
+                    else:
+                        self.teams[found_name] = entry
+                        self.learned_count += 1
                     
                     # Index the found name
                     norm_found = normalize_for_index(found_name)
@@ -388,12 +416,13 @@ class TeamMatcher:
                         self._learn_alias(found_name, name)
                     
                     print(f"    -> FOUND: {found_name} (ID: {found_id})")
-                    self.learned_count += 1
+                    self._api_lookup_cache[cache_key] = entry
                     return entry
 
             except Exception as e:
                 print(f"    -> API Error for {term}: {e}")
 
+        self._api_lookup_cache[cache_key] = None
         return None
 
 

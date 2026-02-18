@@ -15,8 +15,11 @@ CONFIDENCE_THRESHOLD = 0.85
 def load_json(filepath):
     if not os.path.exists(filepath):
         return {}
-    with open(filepath, 'r', encoding='utf-8') as f:
-        return json.load(f)
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception:
+        return {}
 
 def save_json(filepath, data):
     with open(filepath, 'w', encoding='utf-8') as f:
@@ -138,10 +141,11 @@ def map_channels():
     name_to_id = {} # Helper for migration
     
     for k, v in iptv_channels.items():
-        if 'id' in v:
-            id_to_channel[v['id']] = v
-            id_to_channel[v['id']]['name'] = k # Inject name for ref
-            name_to_id[k] = v['id']
+        cid = v.get('id') if isinstance(v, dict) else None
+        if isinstance(cid, int):
+            id_to_channel[cid] = v
+            id_to_channel[cid]['name'] = k # Inject name for ref
+            name_to_id[k] = cid
 
     print("Building index...")
     t0 = time.time()
@@ -185,19 +189,19 @@ def map_channels():
                             cid = None # Name no longer valid
                 
                 # 2. Find Match if not found
-                if not cid:
+                if cid is None:
                     match_key, score, match_data = find_best_match_optimized(sched_chan, index, iptv_channels)
                     if score >= CONFIDENCE_THRESHOLD and match_data:
                         cid = match_data.get('id')
                         # Save new mapping
-                        if cid:
+                        if isinstance(cid, int):
                             saved_map[sched_chan] = cid
                             if sched_chan not in processed_channels:
                                 unique_channels_mapped += 1
                                 processed_channels.add(sched_chan)
 
                 # 3. Format as "Name, ID" or "Name, null"
-                if cid:
+                if isinstance(cid, int):
                     new_channels_list.append(f"{sched_chan}, {cid}")
                     total_matches += 1
                 else:

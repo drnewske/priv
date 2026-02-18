@@ -26,6 +26,8 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         # Core deps: scraper + API client
         pip install beautifulsoup4 requests
+        sudo apt-get update
+        sudo apt-get install -y ffmpeg
         
     - name: Run Schedule Pipeline
       run: |

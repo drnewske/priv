@@ -22,11 +22,17 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        sudo apt-get update
+        sudo apt-get install -y ffmpeg
         
     - name: Run Sports Scanner
       run: |
         # Run scanner with output file argument
         python aongewach/scan_sports_channels.py aongewach/channels.json
+
+    - name: Prune dead streams with ffprobe/ffmpeg
+      run: |
+        python aongewach/stream_tester.py aongewach/channels.json --workers 12 --timeout 8 --retry-failed 1
         
     - name: Commit and push changes
       run: |

@@ -250,16 +250,25 @@ class ChannelNormalizer:
 class SportsScanner:
     """Main scanner class."""
     
-    def __init__(self, target_channels: List[str], match_limit: int = 5):
-        """Initialize scanner with target channels and limit."""
-        # Normalize targets for matching
-        self.targets = [t.lower() for t in target_channels if t]
-        self.match_limit = match_limit
+    def __init__(self, target_channels: List[str]):
+        """Initialize scanner with target channels."""
+        # Normalize targets for matching while preserving stable display names.
+        self.target_display_names = {}
+        for name in target_channels:
+            if not name:
+                continue
+            cleaned = name.strip()
+            if not cleaned:
+                continue
+            key = cleaned.lower()
+            if key not in self.target_display_names:
+                self.target_display_names[key] = cleaned
+        self.targets = list(self.target_display_names.keys())
         
         # Channel storage: {original_target_name: {qualities: {quality: set()}, logo: str}}
         self.channels = defaultdict(lambda: {'qualities': defaultdict(set), 'logo': None})
-        self.channel_counts = defaultdict(int) # Track count per target
         self.channel_ids = {}
+        self.normalizer = ChannelNormalizer(0)
         
         # Stats
         self.stats = {
@@ -292,8 +301,8 @@ class SportsScanner:
         return None
 
     def _get_display_name(self, target_lower: str) -> str:
-        """Recover display name (Title Case)."""
-        return target_lower.title()
+        """Recover display name using original schedule casing when available."""
+        return self.target_display_names.get(target_lower, target_lower.title())
 
     def process_streams(self, streams: List[Dict], api_instance: Optional[XtreamAPI] = None):
         """Process a list of streams and match against targets."""
@@ -309,27 +318,15 @@ class SportsScanner:
             matched_target_lower = self._find_target_match(stream_name)
             if not matched_target_lower:
                     continue
-                    
-            # 2. Check limit logic
-            # Count the total number of links across all qualities for this target
-            current_count = 0
-            display_name = self._get_display_name(matched_target_lower)
-            if display_name in self.channels:
-                 for q_set in self.channels[display_name]['qualities'].values():
-                     current_count += len(q_set)
+            final_name = self._get_display_name(matched_target_lower)
             
-            if current_count >= self.match_limit:
-                 continue
-
-            final_name = display_name
-            
-            # 3. Extract Details
+            # 2. Extract Details
             # Use 'stream_icon' for API, 'logo' for M3U dict
             stream_logo = stream.get('stream_icon') or stream.get('logo')
             
-            quality = ChannelNormalizer(0).extract_quality(stream_name)
+            quality = self.normalizer.extract_quality(stream_name)
             
-            # 4. Get URL
+            # 3. Get URL
             if api_instance:
                 stream_id = stream.get('stream_id')
                 if not stream_id: continue
@@ -339,12 +336,11 @@ class SportsScanner:
                 url = stream.get('url')
                 if not url: continue
             
-            # 5. Store
+            # 4. Store
             if url not in self.channels[final_name]['qualities'][quality]:
                 self.channels[final_name]['qualities'][quality].add(url)
                 found_in_batch += 1
                 self.stats['channels_added'] += 1
-                self.channel_counts[matched_target_lower] += 1
                 
                 # Add logo if missing
                 if not self.channels[final_name]['logo'] and stream_logo:
@@ -529,21 +525,25 @@ class SportsScanner:
             },
             'channels': existing_data.get('channels', {})
         }
+        existing_name_by_lower = {name.lower(): name for name in output['channels'].keys()}
         
         # 2. Merge Scanned Channels into Output
         for name, data in self.channels.items():
             # If we found streams for this channel
             if data['qualities']: 
+                canonical_name = existing_name_by_lower.get(name.lower(), name)
+
                 # Create/Update node
-                if name not in output['channels']:
-                     output['channels'][name] = {
-                         'id': self.channel_ids[name],
+                if canonical_name not in output['channels']:
+                     output['channels'][canonical_name] = {
+                         'id': self._get_channel_id(canonical_name),
                          'logo': None,
                          'qualities': {}
                      }
+                     existing_name_by_lower[canonical_name.lower()] = canonical_name
                 
                 # Update Qualities
-                qs = output['channels'][name].get('qualities') or {}
+                qs = output['channels'][canonical_name].get('qualities') or {}
                 
                 for quality in ['SD', 'HD', 'FHD', '4K']:
                     new_urls = data['qualities'].get(quality, set())
@@ -553,26 +553,29 @@ class SportsScanner:
                         merged_urls = existing_urls.union(new_urls)
                         qs[quality] = sorted(list(merged_urls))
                 
-                output['channels'][name]['qualities'] = qs
-                output['channels'][name]['id'] = self.channel_ids[name] # Ensure ID is set
+                output['channels'][canonical_name]['qualities'] = qs
+                if output['channels'][canonical_name].get('id') is None:
+                    output['channels'][canonical_name]['id'] = self._get_channel_id(canonical_name)
                 
                 # Update Logo if we have a new one and old is empty
-                if data['logo'] and not output['channels'][name].get('logo'):
-                    output['channels'][name]['logo'] = data['logo']
+                if data['logo'] and not output['channels'][canonical_name].get('logo'):
+                    output['channels'][canonical_name]['logo'] = data['logo']
 
-        # 3. Add Missing Channels from Schedule (as nulls, ONLY if not already in DB)
-        found_names_lower = set(k.lower() for k in output['channels'].keys())
+        # 3. Add missing channels from the current schedule as placeholders.
+        # Existing channels are never removed.
+        found_names_lower = set(existing_name_by_lower.keys())
         
         missing_count = 0
-        for target in self.targets:
-            if target.lower() not in found_names_lower:
+        for target_lower in self.targets:
+            if target_lower not in found_names_lower:
                 # Truly new/missing
-                display_name = target.title()
+                display_name = self._get_display_name(target_lower)
                 output['channels'][display_name] = {
                     'id': None,
                     'logo': None,
                     'qualities': None 
                 }
+                existing_name_by_lower[target_lower] = display_name
                 missing_count += 1
 
         output['metadata']['unique_channels'] = len(output['channels'])
@@ -582,7 +585,7 @@ class SportsScanner:
         
         # Console Reporting
         print(f"\\n{'='*70}", flush=True)
-        print(f"✅ Saved merged results to {output_path}", flush=True)
+        print(f"[OK] Saved merged results to {output_path}", flush=True)
         print(f"  Total Channels in DB: {len(output['channels'])}", flush=True)
         print(f"  New/Updated in this scan: {len(self.channels)}", flush=True)
         print(f"  Missing (Added as null): {missing_count}", flush=True)
@@ -636,8 +639,8 @@ def main():
          # We'll stick to 1 (git) + 3 (json) = 4 total.
          servers = servers[:4]
          
-    # 3. Init Scanner (with limit 5)
-    scanner = SportsScanner(target_channels=targets, match_limit=5)
+    # 3. Init Scanner (unlimited per-channel stream collection)
+    scanner = SportsScanner(target_channels=targets)
     
     # 4. Run Scan
     scanner.scan_all(servers, max_workers=5)
@@ -648,3 +651,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+

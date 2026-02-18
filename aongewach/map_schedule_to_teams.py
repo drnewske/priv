@@ -13,9 +13,13 @@ from fuzzy_match import TeamMatcher, clean_team_name
 def load_json(filepath):
     if not os.path.exists(filepath):
         print(f"File not found: {filepath}")
-        return None
-    with open(filepath, 'r', encoding='utf-8') as f:
-        return json.load(f)
+        return {}
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"Failed to parse {filepath}: {e}")
+        return {}
 
 
 def process_schedule():
@@ -32,7 +36,8 @@ def process_schedule():
     # Load legacy teams for fallback
     print("Loading legacy teams...")
     legacy_db = load_json('teams.json')
-    legacy_teams = legacy_db.get('teams', {})
+    legacy_teams = legacy_db.get('teams', {}) if isinstance(legacy_db, dict) else {}
+    api_lookup_cache = {}
     
     # helper to find in legacy
     def find_in_legacy(name):
@@ -82,10 +87,16 @@ def process_schedule():
 
                 # Helper to process a single team side
                 def resolve_team(raw_name):
+                    cache_key = (raw_name.lower().strip(), (sport or '').lower().strip())
+                    if cache_key in api_lookup_cache:
+                        return api_lookup_cache[cache_key]
+
                     # 1. Try SPDB Matcher
                     match = matcher.find(raw_name, sport)
                     if match:
-                        return match, False
+                        result = (match, False)
+                        api_lookup_cache[cache_key] = result
+                        return result
                     
                     # 2. Techically not found, try Legacy Fallback
                     legacy_match = find_in_legacy(raw_name)
@@ -100,23 +111,31 @@ def process_schedule():
                             # Yes! The legacy name led us to a valid SPDB entry.
                             # We should learn the original raw_name as an alias for this SPDB team.
                             matcher._learn_alias(spdb_check['name'], raw_name)
-                            return spdb_check, False
+                            result = (spdb_check, False)
+                            api_lookup_cache[cache_key] = result
+                            return result
                         else:
                             # No, SPDB really doesn't have it. Use Legacy data provided it has an ID/Logo.
                             # Create a pseudo-object to return
-                            return {
+                            result = ({
                                 'id': legacy_match.get('id'),
                                 'logo_url': legacy_match.get('logo_url')
-                            }, True
+                            }, True)
+                            api_lookup_cache[cache_key] = result
+                            return result
                     
                     # 3. Tier 3: API Fallback (The user's new request)
                     # If still not found, try to fetch from API directly
                     print(f"  Thinking... attempting API fetch for: {raw_name}")
                     api_match = matcher.fetch_and_learn(raw_name)
                     if api_match:
-                        return api_match, False
+                        result = (api_match, False)
+                        api_lookup_cache[cache_key] = result
+                        return result
 
-                    return None, False
+                    result = (None, False)
+                    api_lookup_cache[cache_key] = result
+                    return result
 
                 # Resolve Home
                 home_data, used_legacy_home = resolve_team(home_raw)

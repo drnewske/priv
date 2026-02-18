@@ -1,33 +1,37 @@
 #!/usr/bin/env python3
 """
-Run Pipeline — Orchestrates the full schedule processing pipeline.
+Run Pipeline - Orchestrates the full schedule processing pipeline.
 
 Steps:
   1. Scrape weekly schedule from wheresthematch.com
-  2. Build/update teams database from TheSportsDB (bulk preload)
-  3. Map schedule events to team IDs and logos
-  4. Map schedule channels to IPTV stream URLs
+  2. Scan/update channels.json from configured playlists/providers
+  3. Validate channels with ffprobe/ffmpeg and prune dead streams
+  4. Map schedule events to team IDs and logos
+  5. Map schedule channels to IPTV stream URLs
 """
 
+import json
 import os
 import subprocess
 import sys
-import json
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timedelta, timezone
 
-
-DB_FILE = os.path.join(os.path.dirname(__file__) or '.', 'spdb_teams.json')
+DB_FILE = os.path.join(os.path.dirname(__file__) or ".", "spdb_teams.json")
 DB_MAX_AGE_DAYS = 7  # Skip rebuild if DB is less than this many days old
 
 
-def run_step(script_name, description):
-    print(f"\n{'='*50}")
+def run_step(script_name, description, extra_args=None):
+    print(f"\n{'=' * 50}")
     print(f"STEP: {description}")
     print(f"Running {script_name}...")
-    print(f"{'='*50}\n")
+    print(f"{'=' * 50}\n")
+
+    cmd = [sys.executable, script_name]
+    if extra_args:
+        cmd.extend(extra_args)
 
     try:
-        result = subprocess.run([sys.executable, script_name], check=True)
+        result = subprocess.run(cmd, check=True)
         if result.returncode == 0:
             print(f"\n[SUCCESS] {script_name} completed.")
     except subprocess.CalledProcessError as e:
@@ -44,17 +48,17 @@ def is_db_fresh():
         return False
 
     try:
-        with open(DB_FILE, 'r', encoding='utf-8') as f:
+        with open(DB_FILE, "r", encoding="utf-8") as f:
             data = json.load(f)
-        meta = data.get('_meta', {})
-        last_built = meta.get('last_built')
+        meta = data.get("_meta", {})
+        last_built = meta.get("last_built")
         if not last_built:
             return False
 
         built_dt = datetime.fromisoformat(last_built)
         age = datetime.now(timezone.utc) - built_dt
         if age < timedelta(days=DB_MAX_AGE_DAYS):
-            team_count = meta.get('team_count', 0)
+            team_count = meta.get("team_count", 0)
             print(f"  Teams DB is fresh ({age.days}d old, {team_count} teams). Skipping rebuild.")
             return True
     except Exception:
@@ -70,24 +74,31 @@ def main():
     # 2. Scan Sports Channels (Update channels.json based on schedule)
     run_step("scan_sports_channels.py", "Scanning Playlists for Channels in Schedule")
 
-    # 3. Build Teams Database (TheSportsDB bulk preload) - DISABLED (Too slow, run manually)
+    # 3. Validate stream URLs and remove dead links
+    run_step(
+        "stream_tester.py",
+        "Testing Stream URLs (ffprobe/ffmpeg) and pruning dead links",
+        ["channels.json", "--workers", "12", "--timeout", "8", "--retry-failed", "1"],
+    )
+
+    # Optional: Build Teams Database (TheSportsDB bulk preload) - DISABLED (too slow, run manually)
     # if is_db_fresh():
-    #     print(f"\n{'='*50}")
-    #     print(f"STEP: Teams DB is up to date — skipping build_teams_db.py")
-    #     print(f"{'='*50}\n")
+    #     print(f"\n{'=' * 50}")
+    #     print("STEP: Teams DB is up to date - skipping build_teams_db.py")
+    #     print(f"{'=' * 50}\n")
     # else:
     #     run_step("build_teams_db.py", "Building Teams Database from TheSportsDB (Bulk)")
 
-    # 3. Map Teams (Event Names -> Team IDs & Logos)
+    # 4. Map Teams (Event Names -> Team IDs & Logos)
     run_step("map_schedule_to_teams.py", "Mapping Events to Team IDs and Logos")
 
-    # 4. Map Channels (Schedule Channels -> IPTV Stream URLs)
+    # 5. Map Channels (Schedule Channels -> IPTV Stream URLs)
     run_step("map_channels.py", "Mapping Schedule Channels to Playable IPTV Streams")
 
-    print(f"\n{'='*50}")
+    print(f"\n{'=' * 50}")
     print("PIPELINE COMPLETE")
     print("Output available in: e104f869d64e3d41256d5398.json")
-    print(f"{'='*50}\n")
+    print(f"{'=' * 50}\n")
 
 
 if __name__ == "__main__":
