@@ -14,7 +14,8 @@ Workflow: `update_schedule.yml`
 - Manual trigger: Actions -> "Update Weekly Schedule" -> "Run workflow"
 
 ## 2. Manual Maintenance Workflows
-- `scan_channels.yml`: manual channel scan + stream pruning (`stream_tester.py`).
+- `scan_channels.yml`: manual channel scan only.
+- `stream_test.yml`: manual stream validation/pruning only (`stream_tester.py`).
 
 ## 3. Manual Maintenance Scripts
 - `build_teams_db.py`: legacy team DB refresh script (now at repo root).
