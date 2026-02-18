@@ -9,7 +9,9 @@ import re
 import requests
 import argparse
 import sys
-from typing import Dict, List, Optional, Tuple, Set
+import shutil
+import subprocess
+from typing import Dict, List, Optional, Tuple
 from urllib.parse import urlparse, parse_qs
 from collections import defaultdict
 from difflib import SequenceMatcher
@@ -17,13 +19,24 @@ import concurrent.futures
 import time
 import zlib
 import os
+import threading
 
 # Configuration
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 SCHEDULE_FILE = os.path.join(SCRIPT_DIR, 'weekly_schedule.json')
 LOVESTORY_FILE = os.path.join(SCRIPT_DIR, '..', 'lovestory.json')
-MAX_STREAMS_PER_CHANNEL = 30
+MAX_STREAMS_PER_CHANNEL = 5
 QUALITY_PRIORITY = ['4K', 'FHD', 'HD', 'SD']
+TEST_TIMEOUT_SECONDS = 8
+TEST_RETRY_FAILED = 1
+TEST_RETRY_DELAY_SECONDS = 0.35
+TEST_FFMPEG_FALLBACK = True
+TEST_WORKERS = 12
+DEFAULT_USER_AGENT = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) "
+    "Chrome/120.0.0.0 Safari/537.36"
+)
 
 if not os.path.exists(SCHEDULE_FILE):
     SCHEDULE_FILE = 'weekly_schedule.json'
@@ -294,7 +307,17 @@ class ChannelNormalizer:
 class SportsScanner:
     """Main scanner class."""
     
-    def __init__(self, target_channels: List[str], max_streams_per_channel: int = MAX_STREAMS_PER_CHANNEL):
+    def __init__(
+        self,
+        target_channels: List[str],
+        max_streams_per_channel: int = MAX_STREAMS_PER_CHANNEL,
+        test_timeout: int = TEST_TIMEOUT_SECONDS,
+        test_retry_failed: int = TEST_RETRY_FAILED,
+        test_retry_delay: float = TEST_RETRY_DELAY_SECONDS,
+        allow_ffmpeg_fallback: bool = TEST_FFMPEG_FALLBACK,
+        test_workers: int = TEST_WORKERS,
+        test_user_agent: str = DEFAULT_USER_AGENT,
+    ):
         """Initialize scanner with target channels."""
         # Normalize targets for matching while preserving stable display names.
         self.target_display_names = {}
@@ -315,6 +338,21 @@ class SportsScanner:
         self.channel_ids = {}
         self.normalizer = ChannelNormalizer(0)
         self.max_streams_per_channel = max(1, int(max_streams_per_channel))
+        self.test_timeout = max(1, int(test_timeout))
+        self.test_retry_failed = max(0, int(test_retry_failed))
+        self.test_retry_delay = max(0.0, float(test_retry_delay))
+        self.test_workers = max(1, int(test_workers))
+        self.test_user_agent = test_user_agent
+        self.lock = threading.Lock()
+        self.url_test_cache: Dict[str, bool] = {}
+        self.ffprobe_bin = shutil.which('ffprobe')
+        self.ffmpeg_bin = shutil.which('ffmpeg')
+        self.allow_ffmpeg_fallback = bool(allow_ffmpeg_fallback and self.ffmpeg_bin)
+
+        if not self.ffprobe_bin:
+            raise RuntimeError("ffprobe not found in PATH. Install ffmpeg/ffprobe before scanning.")
+        if allow_ffmpeg_fallback and not self.ffmpeg_bin:
+            print("Warning: ffmpeg not found; proceeding with ffprobe-only stream validation.", flush=True)
         
         # Stats
         self.stats = {
@@ -327,6 +365,13 @@ class SportsScanner:
             'streams_skipped_cap': 0,
             'channels_trimmed_to_cap': 0,
             'streams_trimmed_to_cap': 0,
+            'streams_tested': 0,
+            'streams_alive': 0,
+            'streams_dead': 0,
+            'streams_cached': 0,
+            'channels_completed': 0,
+            'channels_refreshed_from_tested_streams': 0,
+            'channels_cleared_no_working_streams': 0,
         }
     
     def _get_channel_id(self, name: str) -> int:
@@ -352,6 +397,134 @@ class SportsScanner:
     def _get_display_name(self, target_lower: str) -> str:
         """Recover display name using original schedule casing when available."""
         return self.target_display_names.get(target_lower, target_lower.title())
+
+    def _is_channel_complete(self, channel_name: str) -> bool:
+        with self.lock:
+            return len(self.channel_urls[channel_name]) >= self.max_streams_per_channel
+
+    def _all_targets_complete(self) -> bool:
+        with self.lock:
+            completed = 0
+            for target_lower in self.targets:
+                channel_name = self._get_display_name(target_lower)
+                if len(self.channel_urls[channel_name]) >= self.max_streams_per_channel:
+                    completed += 1
+            return completed == len(self.targets)
+
+    def _run_ffprobe(self, url: str) -> bool:
+        cmd = [
+            self.ffprobe_bin,
+            "-v",
+            "error",
+            "-rw_timeout",
+            str(self.test_timeout * 1_000_000),
+            "-analyzeduration",
+            "1000000",
+            "-probesize",
+            "65536",
+            "-user_agent",
+            self.test_user_agent,
+            "-show_entries",
+            "stream=codec_type",
+            "-of",
+            "default=noprint_wrappers=1:nokey=1",
+            url,
+        ]
+        try:
+            result = subprocess.run(
+                cmd,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True,
+                timeout=self.test_timeout + 2,
+                check=False,
+            )
+        except subprocess.TimeoutExpired:
+            return False
+        except Exception:
+            return False
+        return result.returncode == 0 and bool(result.stdout.strip())
+
+    def _run_ffmpeg(self, url: str) -> bool:
+        if not self.ffmpeg_bin:
+            return False
+        cmd = [
+            self.ffmpeg_bin,
+            "-v",
+            "error",
+            "-rw_timeout",
+            str(self.test_timeout * 1_000_000),
+            "-user_agent",
+            self.test_user_agent,
+            "-t",
+            "6",
+            "-i",
+            url,
+            "-f",
+            "null",
+            "-",
+        ]
+        try:
+            result = subprocess.run(
+                cmd,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True,
+                timeout=self.test_timeout + 4,
+                check=False,
+            )
+        except subprocess.TimeoutExpired:
+            return False
+        except Exception:
+            return False
+        return result.returncode == 0
+
+    def _validate_stream_url(self, channel_name: str, stream_name: str, url: str, source_label: str) -> bool:
+        with self.lock:
+            cached = self.url_test_cache.get(url)
+        if cached is not None:
+            with self.lock:
+                self.stats['streams_cached'] += 1
+            cached_label = 'ALIVE' if cached else 'DEAD'
+            print(
+                f"[TEST][CACHED] {cached_label} | channel={channel_name} | source={source_label} | stream={stream_name} | url={url}",
+                flush=True,
+            )
+            return cached
+
+        attempts = self.test_retry_failed + 1
+        ok = False
+        method = "ffprobe"
+        for attempt in range(1, attempts + 1):
+            ok = self._run_ffprobe(url)
+            if ok:
+                method = f"ffprobe(attempt={attempt})"
+                break
+            if attempt < attempts and self.test_retry_delay > 0:
+                time.sleep(self.test_retry_delay)
+
+        if not ok and self.allow_ffmpeg_fallback:
+            ffmpeg_ok = self._run_ffmpeg(url)
+            if ffmpeg_ok:
+                ok = True
+                method = "ffmpeg-fallback"
+            else:
+                method = "ffprobe+ffmpeg-fallback"
+
+        with self.lock:
+            self.url_test_cache[url] = ok
+            self.stats['streams_tested'] += 1
+            if ok:
+                self.stats['streams_alive'] += 1
+            else:
+                self.stats['streams_dead'] += 1
+
+        status = 'ALIVE' if ok else 'DEAD'
+        print(
+            f"[TEST] {status} | channel={channel_name} | source={source_label} | method={method} | stream={stream_name} | url={url}",
+            flush=True,
+        )
+        return ok
 
     def _apply_channel_cap(self, qualities: Dict[str, List[str]]) -> Tuple[Dict[str, List[str]], int]:
         """Ensure no channel exceeds max_streams_per_channel across all qualities."""
@@ -391,61 +564,133 @@ class SportsScanner:
 
         return limited, dropped
 
-    def process_streams(self, streams: List[Dict], api_instance: Optional[XtreamAPI] = None):
-        """Process a list of streams and match against targets."""
+    def process_streams(
+        self,
+        streams: List[Dict],
+        api_instance: Optional[XtreamAPI] = None,
+        source_label: str = "Unknown",
+    ):
+        """Process one playlist batch: collect candidates, test in parallel, keep only alive."""
         found_in_batch = 0
-        
+        candidates = []
+        seen_pairs = set()
+
         for stream in streams:
+            if self._all_targets_complete():
+                print("  [INFO] All target channels reached the working-stream cap. Skipping remaining streams.", flush=True)
+                break
+
             stream_name = stream.get('name', '').strip()
-            
             if not stream_name:
                 continue
-            
-            # 1. Match Check
+
             matched_target_lower = self._find_target_match(stream_name)
             if not matched_target_lower:
-                    continue
+                continue
+
             final_name = self._get_display_name(matched_target_lower)
-            
-            # 2. Extract Details
-            # Use 'stream_icon' for API, 'logo' for M3U dict
-            stream_logo = stream.get('stream_icon') or stream.get('logo')
-            
-            quality = self.normalizer.extract_quality(stream_name)
-            
-            # 3. Get URL
+            if self._is_channel_complete(final_name):
+                with self.lock:
+                    self.stats['streams_skipped_cap'] += 1
+                continue
+
             if api_instance:
                 stream_id = stream.get('stream_id')
-                if not stream_id: continue
+                if not stream_id:
+                    continue
                 url = api_instance.get_stream_url(stream_id)
             else:
-                # Direct M3U url
                 url = stream.get('url')
-                if not url: continue
-            
-            # 4. Store
-            channel_urls = self.channel_urls[final_name]
-            if url in channel_urls:
-                # Already added for this channel (possibly in a different quality bucket).
+                if not url:
+                    continue
+
+            url = url.strip()
+            if not url:
                 continue
 
-            if len(channel_urls) >= self.max_streams_per_channel:
-                self.stats['streams_skipped_cap'] += 1
-                continue
+            with self.lock:
+                if url in self.channel_urls[final_name]:
+                    continue
 
-            if url not in self.channels[final_name]['qualities'][quality]:
-                self.channels[final_name]['qualities'][quality].add(url)
-                channel_urls.add(url)
-                found_in_batch += 1
-                self.stats['channels_added'] += 1
-                
-                # Add logo if missing
-                if not self.channels[final_name]['logo'] and stream_logo:
-                    self.channels[final_name]['logo'] = stream_logo
-            
-            # Ensure ID exists
-            self._get_channel_id(final_name)
-            
+            key = (final_name, url)
+            if key in seen_pairs:
+                continue
+            seen_pairs.add(key)
+
+            candidates.append(
+                {
+                    'channel': final_name,
+                    'stream_name': stream_name,
+                    'quality': self.normalizer.extract_quality(stream_name),
+                    'logo': stream.get('stream_icon') or stream.get('logo'),
+                    'url': url,
+                }
+            )
+
+        if not candidates:
+            return 0
+
+        print(
+            f"    - Testing {len(candidates)} candidate streams with {self.test_workers} workers for source '{source_label}'...",
+            flush=True,
+        )
+
+        def _test_candidate(candidate: Dict[str, str]) -> Optional[Dict[str, str]]:
+            channel_name = candidate['channel']
+            if self._is_channel_complete(channel_name):
+                with self.lock:
+                    self.stats['streams_skipped_cap'] += 1
+                return None
+            is_alive = self._validate_stream_url(
+                channel_name=channel_name,
+                stream_name=candidate['stream_name'],
+                url=candidate['url'],
+                source_label=source_label,
+            )
+            return candidate if is_alive else None
+
+        with concurrent.futures.ThreadPoolExecutor(max_workers=self.test_workers) as executor:
+            futures = [executor.submit(_test_candidate, candidate) for candidate in candidates]
+            for future in concurrent.futures.as_completed(futures):
+                try:
+                    candidate = future.result()
+                except Exception as e:
+                    print(f"  ! Stream test worker error in source '{source_label}': {e}", flush=True)
+                    continue
+
+                if not candidate:
+                    continue
+
+                channel_name = candidate['channel']
+                url = candidate['url']
+                quality = candidate['quality']
+                stream_logo = candidate['logo']
+
+                with self.lock:
+                    channel_urls = self.channel_urls[channel_name]
+                    if url in channel_urls:
+                        continue
+                    if len(channel_urls) >= self.max_streams_per_channel:
+                        self.stats['streams_skipped_cap'] += 1
+                        continue
+
+                    self.channels[channel_name]['qualities'][quality].add(url)
+                    channel_urls.add(url)
+                    found_in_batch += 1
+                    self.stats['channels_added'] += 1
+
+                    if not self.channels[channel_name]['logo'] and stream_logo:
+                        self.channels[channel_name]['logo'] = stream_logo
+
+                    if len(channel_urls) == self.max_streams_per_channel:
+                        self.stats['channels_completed'] += 1
+                        print(
+                            f"[CAP] Channel '{channel_name}' reached {self.max_streams_per_channel} working streams.",
+                            flush=True,
+                        )
+
+                self._get_channel_id(channel_name)
+
         return found_in_batch
     
     def scan_direct_m3u(self, url: str) -> Dict:
@@ -492,7 +737,11 @@ class SportsScanner:
             print(f"    - Parsed {len(parsed_streams)} streams from M3U. Matching...", flush=True)
             self.stats['streams_total'] += len(parsed_streams)
             
-            added = self.process_streams(parsed_streams, api_instance=None)
+            added = self.process_streams(
+                parsed_streams,
+                api_instance=None,
+                source_label=f"Direct M3U: {url}",
+            )
             
             result['success'] = True
             result['channels_added'] = added
@@ -533,7 +782,11 @@ class SportsScanner:
             if all_streams:
                 print(f"    - Success. Got {len(all_streams)} streams. Matching...", flush=True)
                 self.stats['streams_total'] += len(all_streams)
-                added = self.process_streams(all_streams, api_instance=api)
+                added = self.process_streams(
+                    all_streams,
+                    api_instance=api,
+                    source_label=server.get('name', 'Unknown'),
+                )
                 
                 result['success'] = True
                 result['channels_added'] = added
@@ -556,6 +809,9 @@ class SportsScanner:
             
             # Scan ALL categories
             for cat in categories:
+                if self._all_targets_complete():
+                    print(f"    - Target channels complete. Stopping category scan for {server.get('name')}.", flush=True)
+                    break
                 cat_id = cat.get('category_id')
                 if not cat_id: continue
                 
@@ -563,7 +819,11 @@ class SportsScanner:
                 if streams:
                     self.stats['streams_total'] += len(streams)
                     # Process batch
-                    added = self.process_streams(streams, api_instance=api)
+                    added = self.process_streams(
+                        streams,
+                        api_instance=api,
+                        source_label=server.get('name', 'Unknown'),
+                    )
                     total_added += added
             
             result['success'] = True
@@ -576,7 +836,7 @@ class SportsScanner:
         
         return result
     
-    def scan_all(self, servers: List[Dict], max_workers: int = 5) -> None:
+    def scan_all(self, servers: List[Dict]) -> None:
         """Scan all provided servers."""
         servers_sorted = sorted(servers, key=lambda s: safe_int(s.get('stream_count', 0), 0), reverse=True)
         self.stats['servers_total'] = len(servers_sorted)
@@ -584,22 +844,25 @@ class SportsScanner:
         print(f"\\n{'='*70}")
         print(f"Scanning {len(servers_sorted)} configured servers")
         print(f"Priority: highest stream-count playlists first")
+        print(f"Flow: one playlist at a time, batch-test URLs with {self.test_workers} workers, then move on")
         print(f"{'='*70}\\n", flush=True)
 
-        with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
-            futures = {executor.submit(self.scan_server, server): server for server in servers_sorted}
-            
-            for future in concurrent.futures.as_completed(futures):
-                server = futures[future]
-                try:
-                    result = future.result()
-                    if result['success']:
-                        self.stats['servers_success'] += 1
-                    else:
-                        self.stats['servers_failed'] += 1
-                except Exception as e:
-                    print(f"Exception scanning {server.get('name')}: {e}")
+        for idx, server in enumerate(servers_sorted, start=1):
+            if self._all_targets_complete():
+                print("All target channels are fully populated with working streams. Ending scan early.", flush=True)
+                break
+
+            server_name = server.get('name', 'Unknown')
+            print(f"Playlist {idx}/{len(servers_sorted)}: {server_name}", flush=True)
+            try:
+                result = self.scan_server(server)
+                if result['success']:
+                    self.stats['servers_success'] += 1
+                else:
                     self.stats['servers_failed'] += 1
+            except Exception as e:
+                print(f"Exception scanning {server_name}: {e}")
+                self.stats['servers_failed'] += 1
                     
         print(f"--- Scan complete. ---", flush=True)
 
@@ -626,44 +889,59 @@ class SportsScanner:
         }
         existing_name_by_lower = {name.lower(): name for name in output['channels'].keys()}
         
-        # 2. Merge Scanned Channels into Output
-        for name, data in self.channels.items():
-            # If we found streams for this channel
-            if data['qualities']: 
-                canonical_name = existing_name_by_lower.get(name.lower(), name)
+        # 2. Replace target-channel URLs with this run's tested-alive URLs only.
+        scanned_name_by_lower = {name.lower(): name for name in self.channels.keys()}
+        refreshed_channels = 0
+        emptied_channels = 0
 
-                # Create/Update node
-                if canonical_name not in output['channels']:
-                     output['channels'][canonical_name] = {
-                         'id': self._get_channel_id(canonical_name),
-                         'logo': None,
-                         'qualities': {}
-                     }
-                     existing_name_by_lower[canonical_name.lower()] = canonical_name
-                
-                # Update Qualities
-                qs = output['channels'][canonical_name].get('qualities') or {}
-                
-                for quality in ['SD', 'HD', 'FHD', '4K']:
-                    new_urls = data['qualities'].get(quality, set())
-                    if new_urls:
-                        # Merge with existing
-                        existing_urls = set(qs.get(quality, []))
-                        merged_urls = existing_urls.union(new_urls)
-                        qs[quality] = sorted(list(merged_urls))
-                
-                output['channels'][canonical_name]['qualities'] = qs
-                if output['channels'][canonical_name].get('id') is None:
-                    output['channels'][canonical_name]['id'] = self._get_channel_id(canonical_name)
-                
-                # Update Logo if we have a new one and old is empty
-                if data['logo'] and not output['channels'][canonical_name].get('logo'):
-                    output['channels'][canonical_name]['logo'] = data['logo']
+        for target_lower in self.targets:
+            display_name = self._get_display_name(target_lower)
+            canonical_name = existing_name_by_lower.get(target_lower, display_name)
+            scanned_name = scanned_name_by_lower.get(target_lower)
+            scanned_data = self.channels.get(scanned_name) if scanned_name else None
+
+            has_existing = canonical_name in output['channels']
+            if not has_existing and not scanned_data:
+                continue
+
+            if canonical_name not in output['channels']:
+                output['channels'][canonical_name] = {
+                    'id': None,
+                    'logo': None,
+                    'qualities': {}
+                }
+                existing_name_by_lower[canonical_name.lower()] = canonical_name
+
+            node = output['channels'][canonical_name]
+
+            if scanned_data and scanned_data.get('qualities'):
+                fresh_qualities = {}
+                for quality in QUALITY_PRIORITY:
+                    urls = scanned_data['qualities'].get(quality, set())
+                    if urls:
+                        fresh_qualities[quality] = sorted(urls)
+
+                node['qualities'] = fresh_qualities if fresh_qualities else {}
+                if node.get('id') is None:
+                    node['id'] = self._get_channel_id(canonical_name)
+                if scanned_data.get('logo') and not node.get('logo'):
+                    node['logo'] = scanned_data['logo']
+                refreshed_channels += 1
+            else:
+                # Channel was targeted this run but no working stream survived testing.
+                node['qualities'] = {}
+                emptied_channels += 1
 
         # 2b. Enforce hard per-channel stream cap in final merged output.
         trimmed_channels = 0
         trimmed_urls = 0
-        for channel_data in output['channels'].values():
+        for target_lower in self.targets:
+            channel_name = existing_name_by_lower.get(target_lower)
+            if not channel_name:
+                continue
+            channel_data = output['channels'].get(channel_name)
+            if not isinstance(channel_data, dict):
+                continue
             qualities = channel_data.get('qualities')
             if not isinstance(qualities, dict):
                 continue
@@ -675,6 +953,8 @@ class SportsScanner:
 
         self.stats['channels_trimmed_to_cap'] = trimmed_channels
         self.stats['streams_trimmed_to_cap'] = trimmed_urls
+        self.stats['channels_refreshed_from_tested_streams'] = refreshed_channels
+        self.stats['channels_cleared_no_working_streams'] = emptied_channels
 
         # 3. Add missing channels from the current schedule as placeholders.
         # Existing channels are never removed.
@@ -705,6 +985,13 @@ class SportsScanner:
         print(f"  New/Updated in this scan: {len(self.channels)}", flush=True)
         print(f"  Missing (Added as null): {missing_count}", flush=True)
         print(f"  Max streams/channel cap: {self.max_streams_per_channel}", flush=True)
+        print(f"  Streams tested: {self.stats['streams_tested']}", flush=True)
+        print(f"  Streams alive: {self.stats['streams_alive']}", flush=True)
+        print(f"  Streams dead: {self.stats['streams_dead']}", flush=True)
+        print(f"  Cached stream test hits: {self.stats['streams_cached']}", flush=True)
+        print(f"  Channels completed at cap: {self.stats['channels_completed']}", flush=True)
+        print(f"  Channels refreshed with tested streams: {self.stats['channels_refreshed_from_tested_streams']}", flush=True)
+        print(f"  Channels cleared (no working streams): {self.stats['channels_cleared_no_working_streams']}", flush=True)
         print(f"  Streams skipped during scan due to cap: {self.stats['streams_skipped_cap']}", flush=True)
         print(f"  Channels trimmed to cap in final output: {trimmed_channels}", flush=True)
         print(f"  Streams trimmed to cap in final output: {trimmed_urls}", flush=True)
@@ -738,6 +1025,18 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('output_file', nargs='?', default='channels.json', help='Output JSON file')
     parser.add_argument('--verify', action='store_true', help='Use only first 3 servers for verification')
+    parser.add_argument(
+        '--max-working-streams-per-channel',
+        type=int,
+        default=MAX_STREAMS_PER_CHANNEL,
+        help='Hard cap of working streams to keep per channel',
+    )
+    parser.add_argument('--test-workers', type=int, default=TEST_WORKERS, help='Parallel workers per playlist for stream testing')
+    parser.add_argument('--test-timeout', type=int, default=TEST_TIMEOUT_SECONDS, help='Per-stream ffprobe timeout in seconds')
+    parser.add_argument('--test-retry-failed', type=int, default=TEST_RETRY_FAILED, help='Extra ffprobe retries before marking dead')
+    parser.add_argument('--test-retry-delay', type=float, default=TEST_RETRY_DELAY_SECONDS, help='Delay between ffprobe retries')
+    parser.add_argument('--no-ffmpeg-fallback', action='store_true', help='Disable ffmpeg fallback test')
+    parser.add_argument('--test-user-agent', default=DEFAULT_USER_AGENT, help='HTTP User-Agent for ffprobe/ffmpeg')
     args = parser.parse_args()
     
     # 1. Load Targets
@@ -761,10 +1060,19 @@ def main():
          servers = servers[:4]
          
     # 3. Init Scanner (hard cap enforced per channel)
-    scanner = SportsScanner(target_channels=targets)
+    scanner = SportsScanner(
+        target_channels=targets,
+        max_streams_per_channel=args.max_working_streams_per_channel,
+        test_timeout=args.test_timeout,
+        test_retry_failed=args.test_retry_failed,
+        test_retry_delay=args.test_retry_delay,
+        allow_ffmpeg_fallback=not args.no_ffmpeg_fallback,
+        test_workers=args.test_workers,
+        test_user_agent=args.test_user_agent,
+    )
     
     # 4. Run Scan
-    scanner.scan_all(servers, max_workers=5)
+    scanner.scan_all(servers)
     
     # 5. Save
     scanner.save(args.output_file)

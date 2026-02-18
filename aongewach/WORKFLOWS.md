@@ -7,7 +7,7 @@ Workflow: `update_schedule.yml`
 - Runs: Weekly (Mondays at 05:00 UTC)
 - What it does:
 1. Scrapes weekly schedule from FANZO (`scrape_schedule_fanzo.py`).
-2. Scans IPTV playlists for channels found in the schedule (`scan_sports_channels.py`).
+2. Scans IPTV playlists for channels found in the schedule (`scan_sports_channels.py`), tests each matched stream URL inline with ffprobe/ffmpeg, and keeps only alive streams.
 3. Maps events to team IDs/logos (`map_schedule_to_teams.py`).
 4. Maps schedule channel names to stream channel IDs (`map_channels.py`).
 5. Outputs final JSON to `e104f869d64e3d41256d5398.json`.
@@ -15,6 +15,8 @@ Workflow: `update_schedule.yml`
 
 ## 2. Manual Maintenance Workflows
 - `scan_channels.yml`: manual channel scan only.
+  - Uses the same inline stream testing behavior as pipeline scan.
+  - Batch testing runs per playlist with workers (`test-workers=12` by default).
 - `stream_test.yml`: manual stream validation/pruning only (`stream_tester.py`).
   - Supports run-time inputs in Actions UI: `workers`, `timeout`, `retry_failed`,
     `use_ffmpeg_fallback`, `progress_every`, `verbose`, and `show_failures`.
@@ -31,6 +33,6 @@ Workflow: `update_schedule.yml`
 
 ## Pipeline Order
 1. `scrape_schedule_fanzo.py` -> `weekly_schedule.json`
-2. `scan_sports_channels.py` -> merges/updates `channels.json`
+2. `scan_sports_channels.py` -> updates `channels.json` using only tested-alive streams (cap: 5 working streams/channel)
 3. `map_schedule_to_teams.py` -> `weekly_schedule_mapped.json`
 4. `map_channels.py` -> `e104f869d64e3d41256d5398.json` (final output)

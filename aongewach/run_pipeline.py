@@ -50,7 +50,21 @@ def main():
     )
 
     # 2. Scan Sports Channels (Update channels.json based on schedule)
-    run_step("scan_sports_channels.py", "Scanning Playlists for Channels in Schedule")
+    run_step(
+        "scan_sports_channels.py",
+        "Scanning Playlists for Channels in Schedule (Inline Stream Validation)",
+        extra_args=[
+            "channels.json",
+            "--max-working-streams-per-channel",
+            "5",
+            "--test-workers",
+            "12",
+            "--test-timeout",
+            "8",
+            "--test-retry-failed",
+            "1",
+        ],
+    )
 
     # 3. Map Teams (Event Names -> Team IDs & Logos)
     run_step("map_schedule_to_teams.py", "Mapping Events to Team IDs and Logos")
