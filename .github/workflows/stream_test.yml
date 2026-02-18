@@ -2,10 +2,45 @@ name: Test And Prune Streams
 
 on:
   workflow_dispatch:
+    inputs:
+      workers:
+        description: "Parallel workers"
+        required: false
+        default: "24"
+      timeout:
+        description: "Per-URL ffprobe timeout in seconds"
+        required: false
+        default: "5"
+      retry_failed:
+        description: "Extra ffprobe retries for failed URLs"
+        required: false
+        default: "0"
+      use_ffmpeg_fallback:
+        description: "Use ffmpeg fallback after ffprobe failure"
+        required: false
+        type: boolean
+        default: false
+      progress_every:
+        description: "Progress log interval (URLs)"
+        required: false
+        default: "50"
+      verbose:
+        description: "Log every URL result"
+        required: false
+        type: boolean
+        default: false
+      show_failures:
+        description: "Max failed URLs to print in summary"
+        required: false
+        default: "30"
 
 jobs:
   stream-test:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
+    concurrency:
+      group: stream-test
+      cancel-in-progress: true
     permissions:
       contents: write
 
@@ -18,22 +53,12 @@ jobs:
       with:
         python-version: '3.10'
 
-    - name: Cache apt packages (ffmpeg)
-      uses: actions/cache@v4
-      with:
-        path: |
-          /var/cache/apt/archives
-          /var/lib/apt/lists
-        key: ${{ runner.os }}-apt-ffmpeg-v1
-        restore-keys: |
-          ${{ runner.os }}-apt-ffmpeg-
-
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-        if command -v ffmpeg >/dev/null 2>&1; then
-          echo "ffmpeg already available, skipping install."
+        if command -v ffprobe >/dev/null 2>&1; then
+          echo "ffprobe already available, skipping install."
         else
           sudo apt-get update
           sudo apt-get install -y ffmpeg
@@ -41,7 +66,24 @@ jobs:
 
     - name: Prune dead streams with ffprobe/ffmpeg
       run: |
-        python aongewach/stream_tester.py aongewach/channels.json --workers 12 --timeout 8 --retry-failed 1
+        CMD=(python aongewach/stream_tester.py aongewach/channels.json
+          --workers "${{ inputs.workers }}"
+          --timeout "${{ inputs.timeout }}"
+          --retry-failed "${{ inputs.retry_failed }}"
+          --progress-every "${{ inputs.progress_every }}"
+          --show-failures "${{ inputs.show_failures }}")
+
+        if [ "${{ inputs.use_ffmpeg_fallback }}" != "true" ]; then
+          CMD+=(--no-ffmpeg-fallback)
+        fi
+        if [ "${{ inputs.verbose }}" = "true" ]; then
+          CMD+=(--verbose)
+        fi
+
+        printf 'Running command:\n  '
+        printf '%q ' "${CMD[@]}"
+        echo
+        "${CMD[@]}"
 
     - name: Commit and push changes
       run: |

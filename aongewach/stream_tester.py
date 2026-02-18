@@ -11,6 +11,7 @@ import shutil
 import subprocess
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from dataclasses import dataclass
 from typing import Dict, List, Tuple
 
 DEFAULT_USER_AGENT = (
@@ -18,6 +19,15 @@ DEFAULT_USER_AGENT = (
     "AppleWebKit/537.36 (KHTML, like Gecko) "
     "Chrome/120.0.0.0 Safari/537.36"
 )
+
+
+@dataclass
+class URLTestResult:
+    url: str
+    ok: bool
+    method: str
+    attempts: int
+    elapsed_seconds: float
 
 
 def load_json(path: str) -> Dict:
@@ -130,27 +140,51 @@ def test_single_url(
     allow_ffmpeg_fallback: bool,
     retry_failed: int,
     retry_delay: float,
-) -> Tuple[str, bool]:
+) -> URLTestResult:
+    started_at = time.time()
     attempts = max(0, retry_failed) + 1
+    attempts_executed = 0
     for attempt in range(attempts):
+        attempts_executed += 1
         if run_ffprobe(ffprobe_bin, url, timeout, user_agent):
-            return url, True
+            return URLTestResult(
+                url=url,
+                ok=True,
+                method="ffprobe",
+                attempts=attempts_executed,
+                elapsed_seconds=time.time() - started_at,
+            )
         if attempt < attempts - 1 and retry_delay > 0:
             time.sleep(retry_delay)
 
     if allow_ffmpeg_fallback and ffmpeg_bin:
-        return url, run_ffmpeg(ffmpeg_bin, url, timeout, user_agent)
+        attempts_executed += 1
+        ffmpeg_ok = run_ffmpeg(ffmpeg_bin, url, timeout, user_agent)
+        return URLTestResult(
+            url=url,
+            ok=ffmpeg_ok,
+            method="ffmpeg" if ffmpeg_ok else "dead",
+            attempts=attempts_executed,
+            elapsed_seconds=time.time() - started_at,
+        )
 
-    return url, False
+    return URLTestResult(
+        url=url,
+        ok=False,
+        method="dead",
+        attempts=attempts_executed,
+        elapsed_seconds=time.time() - started_at,
+    )
 
 
 def prune_dead_streams(
     db: Dict,
     url_health: Dict[str, bool],
-) -> Tuple[int, int, int]:
+) -> Tuple[int, int, int, int]:
     kept = 0
     removed = 0
     channels_touched = 0
+    untested_kept = 0
 
     channels = db.get("channels", {})
     for _, channel_data in channels.items():
@@ -165,12 +199,27 @@ def prune_dead_streams(
             if not isinstance(urls, list):
                 continue
 
-            alive_urls = sorted(
-                {u.strip() for u in urls if isinstance(u, str) and url_health.get(u.strip(), False)}
-            )
+            alive_urls = []
+            seen = set()
+            for raw_url in urls:
+                if not isinstance(raw_url, str):
+                    continue
+                cleaned_url = raw_url.strip()
+                if not cleaned_url:
+                    continue
+                if cleaned_url in seen:
+                    continue
+                seen.add(cleaned_url)
+                if cleaned_url in url_health:
+                    if url_health[cleaned_url]:
+                        alive_urls.append(cleaned_url)
+                    else:
+                        removed += 1
+                else:
+                    alive_urls.append(cleaned_url)
+                    untested_kept += 1
 
             kept += len(alive_urls)
-            removed += len(urls) - len(alive_urls)
 
             if alive_urls:
                 new_qualities[quality] = alive_urls
@@ -182,7 +231,7 @@ def prune_dead_streams(
             channels_touched += 1
         channel_data["qualities"] = new_qualities if new_qualities else {}
 
-    return kept, removed, channels_touched
+    return kept, removed, channels_touched, untested_kept
 
 
 def main() -> int:
@@ -197,6 +246,9 @@ def main() -> int:
     parser.add_argument("--no-ffmpeg-fallback", action="store_true", help="Only use ffprobe")
     parser.add_argument("--retry-failed", type=int, default=1, help="Extra ffprobe retries on failure")
     parser.add_argument("--retry-delay", type=float, default=0.35, help="Seconds between retries")
+    parser.add_argument("--progress-every", type=int, default=25, help="Print progress every N URLs (0 disables)")
+    parser.add_argument("--verbose", action="store_true", help="Print every URL result")
+    parser.add_argument("--show-failures", type=int, default=20, help="Show up to N failed URLs in summary")
     parser.add_argument("--user-agent", default=DEFAULT_USER_AGENT, help="HTTP User-Agent")
     args = parser.parse_args()
 
@@ -217,11 +269,35 @@ def main() -> int:
     if not allow_ffmpeg_fallback and not args.no_ffmpeg_fallback:
         print("ffmpeg not found; proceeding with ffprobe-only validation.")
 
-    urls = collect_unique_urls(channels)
+    all_urls = collect_unique_urls(channels)
+    urls = all_urls
     if args.max_urls > 0:
         urls = urls[: args.max_urls]
 
+    tested_urls = len(urls)
+    untested_urls = max(0, len(all_urls) - tested_urls)
+
     total_urls = len(urls)
+    workers = max(1, args.workers)
+    print("Stream tester configuration:")
+    print(f"  File: {args.channels_file}")
+    print(f"  Workers: {workers}")
+    print(f"  Timeout per ffprobe attempt: {args.timeout}s")
+    print(f"  Retry failed (extra attempts): {max(0, args.retry_failed)}")
+    print(f"  FFmpeg fallback: {allow_ffmpeg_fallback}")
+    print(f"  Progress every: {args.progress_every if args.progress_every > 0 else 'disabled'}")
+    if args.max_urls > 0:
+        print(f"  URL cap: {args.max_urls}")
+    else:
+        print("  URL cap: disabled (test all)")
+    if tested_urls != len(all_urls):
+        print(f"  Limited test mode: testing {tested_urls}/{len(all_urls)} URLs; untested URLs are kept.")
+
+    per_url_worst_case = args.timeout * (max(0, args.retry_failed) + 1)
+    if allow_ffmpeg_fallback:
+        per_url_worst_case += args.timeout + 4
+    rough_worst_case_seconds = (total_urls * per_url_worst_case) / workers if workers else 0
+    print(f"  Rough worst-case runtime: {rough_worst_case_seconds / 60:.1f} minutes")
     print(f"Testing {total_urls} unique stream URLs...")
     if total_urls == 0:
         print("No stream URLs found. Nothing to prune.")
@@ -229,8 +305,13 @@ def main() -> int:
 
     started = time.time()
     url_health: Dict[str, bool] = {}
+    alive_so_far = 0
+    dead_so_far = 0
+    ffprobe_ok = 0
+    ffmpeg_ok = 0
+    failed_urls: List[str] = []
 
-    with ThreadPoolExecutor(max_workers=max(1, args.workers)) as executor:
+    with ThreadPoolExecutor(max_workers=workers) as executor:
         futures = {
             executor.submit(
                 test_single_url,
@@ -247,22 +328,52 @@ def main() -> int:
         }
 
         for idx, future in enumerate(as_completed(futures), start=1):
-            url, ok = future.result()
-            url_health[url] = ok
-            if idx % 25 == 0 or idx == total_urls:
-                print(f"  Progress: {idx}/{total_urls}")
+            result = future.result()
+            url_health[result.url] = result.ok
+
+            if result.ok:
+                alive_so_far += 1
+                if result.method == "ffprobe":
+                    ffprobe_ok += 1
+                elif result.method == "ffmpeg":
+                    ffmpeg_ok += 1
+            else:
+                dead_so_far += 1
+                if len(failed_urls) < max(0, args.show_failures):
+                    failed_urls.append(result.url)
+
+            if args.verbose:
+                status = "OK" if result.ok else "DEAD"
+                print(
+                    f"[{idx}/{total_urls}] {status:<4} via {result.method:<7} "
+                    f"attempts={result.attempts} elapsed={result.elapsed_seconds:.2f}s {result.url}"
+                )
+            elif args.progress_every > 0 and (idx % args.progress_every == 0 or idx == total_urls):
+                elapsed = max(0.001, time.time() - started)
+                rate = idx / elapsed
+                eta_seconds = (total_urls - idx) / rate if rate > 0 else 0
+                print(
+                    f"  Progress: {idx}/{total_urls} | Alive: {alive_so_far} | Dead: {dead_so_far} | "
+                    f"ffprobe OK: {ffprobe_ok} | ffmpeg OK: {ffmpeg_ok} | "
+                    f"Rate: {rate:.2f}/s | ETA: {eta_seconds / 60:.1f}m"
+                )
 
     alive = sum(1 for ok in url_health.values() if ok)
     dead = total_urls - alive
 
-    kept, removed, channels_touched = prune_dead_streams(db, url_health)
+    kept, removed, channels_touched, untested_kept = prune_dead_streams(db, url_health)
 
     metadata = db.setdefault("metadata", {})
     metadata["stream_tester"] = {
         "tested_at": time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime()),
         "total_urls_tested": total_urls,
+        "total_unique_urls_in_file": len(all_urls),
+        "untested_urls": untested_urls,
+        "untested_urls_kept_after_prune": untested_kept,
         "alive_urls": alive,
         "dead_urls": dead,
+        "ffprobe_successes": ffprobe_ok,
+        "ffmpeg_successes": ffmpeg_ok,
         "urls_kept_after_prune": kept,
         "urls_removed": removed,
         "channels_touched": channels_touched,
@@ -270,6 +381,7 @@ def main() -> int:
         "timeout_seconds": args.timeout,
         "retry_failed": args.retry_failed,
         "retry_delay_seconds": args.retry_delay,
+        "workers": workers,
     }
 
     save_json(args.channels_file, db)
@@ -280,9 +392,16 @@ def main() -> int:
     print(f"  Tested: {total_urls} URLs")
     print(f"  Alive: {alive}")
     print(f"  Dead: {dead}")
+    print(f"  ffprobe OK: {ffprobe_ok}")
+    print(f"  ffmpeg OK: {ffmpeg_ok}")
     print(f"  Removed URLs: {removed}")
+    print(f"  Untested URLs kept: {untested_kept}")
     print(f"  Channels updated: {channels_touched}")
     print(f"  Duration: {elapsed:.1f}s")
+    if failed_urls:
+        print(f"  Sample failed URLs ({len(failed_urls)} shown):")
+        for failed_url in failed_urls:
+            print(f"    - {failed_url}")
 
     return 0
 

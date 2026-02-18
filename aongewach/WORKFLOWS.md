@@ -16,6 +16,10 @@ Workflow: `update_schedule.yml`
 ## 2. Manual Maintenance Workflows
 - `scan_channels.yml`: manual channel scan only.
 - `stream_test.yml`: manual stream validation/pruning only (`stream_tester.py`).
+  - Supports run-time inputs in Actions UI: `workers`, `timeout`, `retry_failed`,
+    `use_ffmpeg_fallback`, `progress_every`, `verbose`, and `show_failures`.
+  - Current low-cost defaults: `workers=24`, `timeout=5`, `retry_failed=0`,
+    `use_ffmpeg_fallback=false`, `progress_every=50`.
 
 ## 3. Manual Maintenance Scripts
 - `build_teams_db.py`: legacy team DB refresh script (now at repo root).
