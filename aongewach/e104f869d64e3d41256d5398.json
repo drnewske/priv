@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-18T17:21:40.914186Z",
+  "generated_at": "2026-02-18T20:49:01.045592Z",
   "source": "fanzo.com",
   "schedule": [
     {
@@ -40,126 +40,6 @@
           "away_team_logo": null
         },
         {
-          "name": "India vs Netherlands",
-          "start_time_iso": "2026-02-18T13:30:00Z",
-          "time": "13:30",
-          "sport": "Cricket",
-          "competition": "Twenty20 World Cup",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/default.png",
-          "channels": [
-            "Sky Sports Cricket, 1056114376"
-          ],
-          "home_team": "India",
-          "away_team": "Netherlands",
-          "home_team_id": 13984,
-          "away_team_id": 19730,
-          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2018-06/13984-india_cricket-2018.png",
-          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/19730/logo_1648522462.png"
-        },
-        {
-          "name": "Punchestown",
-          "start_time_iso": "2026-02-18T13:40:00Z",
-          "time": "13:40",
-          "sport": "Horse Racing",
-          "competition": "Irish Racing",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/default.png",
-          "channels": [
-            "Racing TV, 272499487"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Ludlow",
-          "start_time_iso": "2026-02-18T14:00:00Z",
-          "time": "14:00",
-          "sport": "Horse Racing",
-          "competition": "British Racing",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/88/competition_logo_1692681117.jpeg",
-          "channels": [
-            "Racing TV, 272499487"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Southwell",
-          "start_time_iso": "2026-02-18T14:20:00Z",
-          "time": "14:20",
-          "sport": "Horse Racing",
-          "competition": "British Racing",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/88/competition_logo_1692681117.jpeg",
-          "channels": [
-            "Sky Sports Racing, 942802519"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Valley",
-          "start_time_iso": "2026-02-18T14:25:00Z",
-          "time": "14:25",
-          "sport": "Greyhound Racing",
-          "competition": "GB Greyhound Racing",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/default.png",
-          "channels": [
-            "SIS Greyhounds, null"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Doncaster",
-          "start_time_iso": "2026-02-18T14:30:00Z",
-          "time": "14:30",
-          "sport": "Greyhound Racing",
-          "competition": "GB Greyhound Racing",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/default.png",
-          "channels": [
-            "SIS Greyhounds, null"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Canada vs Czech Republic",
-          "start_time_iso": "2026-02-18T15:40:00Z",
-          "time": "15:40",
-          "sport": "Ice Hockey",
-          "competition": "Olympics (M)",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/default.png",
-          "channels": [
-            "BBCi, 46203185",
-            "TNT Sports, 304022434"
-          ],
-          "home_team": "Canada",
-          "away_team": "Czech Republic",
-          "home_team_id": 16563,
-          "away_team_id": 15770,
-          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/16563/logo_1622455478.png",
-          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/15770/logo_1622455173.png"
-        },
-        {
           "name": "Pornichet",
           "start_time_iso": "2026-02-18T15:50:00Z",
           "time": "15:50",
@@ -175,24 +55,6 @@
           "away_team_id": null,
           "home_team_logo": null,
           "away_team_logo": null
-        },
-        {
-          "name": "Finland vs Switzerland",
-          "start_time_iso": "2026-02-18T17:10:00Z",
-          "time": "17:10",
-          "sport": "Ice Hockey",
-          "competition": "Olympics (M)",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/default.png",
-          "channels": [
-            "BBCi, 46203185",
-            "TNT Sports, 304022434"
-          ],
-          "home_team": "Finland",
-          "away_team": "Switzerland",
-          "home_team_id": 15773,
-          "away_team_id": 16568,
-          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/15773/logo_1622207914.png",
-          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/16568/logo_1622455379.png"
         },
         {
           "name": "Mahoning Valley",
@@ -230,23 +92,6 @@
           "away_team_logo": null
         },
         {
-          "name": "Real Madrid (W) vs Paris FC (W)",
-          "start_time_iso": "2026-02-18T17:45:00Z",
-          "time": "17:45",
-          "sport": "Football",
-          "competition": "UEFA Champions League (W)",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/600/competition_logo_1701944671.jpeg",
-          "channels": [
-            "Disney+, 177996440"
-          ],
-          "home_team": "Real Madrid (W)",
-          "away_team": "Paris FC (W)",
-          "home_team_id": 17615,
-          "away_team_id": 14892,
-          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/17615/logo_1728397300.png",
-          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/14892/logo_1683582704.png"
-        },
-        {
           "name": "Tampa Bay Downs",
           "start_time_iso": "2026-02-18T17:45:00Z",
           "time": "17:45",
@@ -263,24 +108,6 @@
           "away_team_id": null,
           "home_team_logo": null,
           "away_team_logo": null
-        },
-        {
-          "name": "Karabakh vs Newcastle",
-          "start_time_iso": "2026-02-18T17:45:00Z",
-          "time": "17:45",
-          "sport": "Football",
-          "competition": "UEFA Champions League",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/55/competition_logo_1682587714.jpeg",
-          "channels": [
-            "TNT Sports, 304022434",
-            "TNT Sports 1, null"
-          ],
-          "home_team": "Karabakh",
-          "away_team": "Newcastle",
-          "home_team_id": 6902,
-          "away_team_id": 7341,
-          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2015-11/6902-fk_karabakh.png",
-          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/7341/logo_1692695130.png"
         },
         {
           "name": "Dunstall Park",
@@ -4467,7 +4294,7 @@
           "competition": "Boxing",
           "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/default.png",
           "channels": [
-            "DAZN PPV, null"
+            "DAZN PPV, 167182916"
           ],
           "home_team": "Mario Barrios",
           "away_team": "Ryan Garcia",
