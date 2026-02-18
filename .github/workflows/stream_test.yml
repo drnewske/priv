@@ -6,20 +6,20 @@ on:
       workers:
         description: "Parallel workers"
         required: false
-        default: "24"
+        default: "12"
       timeout:
         description: "Per-URL ffprobe timeout in seconds"
         required: false
-        default: "5"
+        default: "8"
       retry_failed:
         description: "Extra ffprobe retries for failed URLs"
         required: false
-        default: "0"
+        default: "1"
       use_ffmpeg_fallback:
         description: "Use ffmpeg fallback after ffprobe failure"
         required: false
         type: boolean
-        default: false
+        default: true
       progress_every:
         description: "Progress log interval (URLs)"
         required: false
@@ -37,7 +37,7 @@ on:
 jobs:
   stream-test:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 90
     concurrency:
       group: stream-test
       cancel-in-progress: true

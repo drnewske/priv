@@ -237,7 +237,7 @@ def prune_dead_streams(
 def main() -> int:
     parser = argparse.ArgumentParser(description="Validate and prune dead stream URLs in channels.json")
     parser.add_argument("channels_file", nargs="?", default="channels.json", help="Path to channels.json")
-    default_workers = min(32, max(8, (os.cpu_count() or 4) * 4))
+    default_workers = 12
     parser.add_argument("--workers", type=int, default=default_workers, help="Parallel URL test workers")
     parser.add_argument("--timeout", type=int, default=8, help="Per-URL probe timeout (seconds)")
     parser.add_argument("--max-urls", type=int, default=0, help="Optional cap for testing/debug")
