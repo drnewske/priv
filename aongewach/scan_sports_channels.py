@@ -22,6 +22,8 @@ import os
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 SCHEDULE_FILE = os.path.join(SCRIPT_DIR, 'weekly_schedule.json')
 LOVESTORY_FILE = os.path.join(SCRIPT_DIR, '..', 'lovestory.json')
+MAX_STREAMS_PER_CHANNEL = 30
+QUALITY_PRIORITY = ['4K', 'FHD', 'HD', 'SD']
 
 if not os.path.exists(SCHEDULE_FILE):
     SCHEDULE_FILE = 'weekly_schedule.json'
@@ -52,12 +54,23 @@ def is_usable_channel_name(name: str) -> bool:
         return False
     return True
 
+
+def safe_int(value, default: int = 0) -> int:
+    """Parse integer-like values safely."""
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return default
+
 def load_servers_from_lovestory(file_path: str) -> List[Dict]:
     """Load servers from lovestory.json featured_content."""
     servers = []
     
     # Add hardcoded extras first
-    servers.extend(EXTRA_SERVERS)
+    for extra in EXTRA_SERVERS:
+        normalized_extra = dict(extra)
+        normalized_extra['stream_count'] = safe_int(extra.get('channel_count', 0), 0)
+        servers.append(normalized_extra)
     
     if not os.path.exists(file_path):
         print(f"Warning: {file_path} not found. Using only hardcoded servers.")
@@ -100,13 +113,27 @@ def load_servers_from_lovestory(file_path: str) -> List[Dict]:
             if 'githubusercontent.com' in url or 'raw' in url:
                 server_type = 'direct'
             
+            stream_count = safe_int(
+                item.get('channel_count', item.get('stream_count', item.get('streams', 0))),
+                0,
+            )
+
             servers.append({
                 'url': url,
                 'name': item.get('name', 'Unknown'),
-                'type': server_type
+                'type': server_type,
+                'stream_count': stream_count
             })
-            
+
+        # Prioritize largest playlists first.
+        servers.sort(key=lambda s: safe_int(s.get('stream_count', 0), 0), reverse=True)
+
         print(f"Loaded {len(servers)} servers from lovestory.json (+ {len(EXTRA_SERVERS)} static).")
+        top_n = min(10, len(servers))
+        if top_n:
+            print("Top playlists by stream count:")
+            for i, server in enumerate(servers[:top_n], start=1):
+                print(f"  {i}. {server.get('name', 'Unknown')} ({safe_int(server.get('stream_count', 0), 0)} streams)")
         
     except Exception as e:
         print(f"Error loading {file_path}: {e}")
@@ -267,7 +294,7 @@ class ChannelNormalizer:
 class SportsScanner:
     """Main scanner class."""
     
-    def __init__(self, target_channels: List[str]):
+    def __init__(self, target_channels: List[str], max_streams_per_channel: int = MAX_STREAMS_PER_CHANNEL):
         """Initialize scanner with target channels."""
         # Normalize targets for matching while preserving stable display names.
         self.target_display_names = {}
@@ -284,8 +311,10 @@ class SportsScanner:
         
         # Channel storage: {original_target_name: {qualities: {quality: set()}, logo: str}}
         self.channels = defaultdict(lambda: {'qualities': defaultdict(set), 'logo': None})
+        self.channel_urls = defaultdict(set)
         self.channel_ids = {}
         self.normalizer = ChannelNormalizer(0)
+        self.max_streams_per_channel = max(1, int(max_streams_per_channel))
         
         # Stats
         self.stats = {
@@ -294,7 +323,10 @@ class SportsScanner:
             'servers_failed': 0,
             'categories_total': 0,
             'streams_total': 0,
-            'channels_added': 0
+            'channels_added': 0,
+            'streams_skipped_cap': 0,
+            'channels_trimmed_to_cap': 0,
+            'streams_trimmed_to_cap': 0,
         }
     
     def _get_channel_id(self, name: str) -> int:
@@ -320,6 +352,44 @@ class SportsScanner:
     def _get_display_name(self, target_lower: str) -> str:
         """Recover display name using original schedule casing when available."""
         return self.target_display_names.get(target_lower, target_lower.title())
+
+    def _apply_channel_cap(self, qualities: Dict[str, List[str]]) -> Tuple[Dict[str, List[str]], int]:
+        """Ensure no channel exceeds max_streams_per_channel across all qualities."""
+        if not isinstance(qualities, dict):
+            return {}, 0
+
+        limited = {}
+        seen_urls = set()
+        dropped = 0
+        kept_count = 0
+        ordered_keys = [q for q in QUALITY_PRIORITY if q in qualities]
+        ordered_keys.extend(sorted(q for q in qualities.keys() if q not in QUALITY_PRIORITY))
+
+        for quality in ordered_keys:
+            urls = qualities.get(quality) or []
+            if not isinstance(urls, list):
+                continue
+
+            limited_urls = []
+            for raw in urls:
+                if not isinstance(raw, str):
+                    continue
+                url = raw.strip()
+                if not url or url in seen_urls:
+                    continue
+
+                if kept_count >= self.max_streams_per_channel:
+                    dropped += 1
+                    continue
+
+                seen_urls.add(url)
+                kept_count += 1
+                limited_urls.append(url)
+
+            if limited_urls:
+                limited[quality] = limited_urls
+
+        return limited, dropped
 
     def process_streams(self, streams: List[Dict], api_instance: Optional[XtreamAPI] = None):
         """Process a list of streams and match against targets."""
@@ -354,8 +424,18 @@ class SportsScanner:
                 if not url: continue
             
             # 4. Store
+            channel_urls = self.channel_urls[final_name]
+            if url in channel_urls:
+                # Already added for this channel (possibly in a different quality bucket).
+                continue
+
+            if len(channel_urls) >= self.max_streams_per_channel:
+                self.stats['streams_skipped_cap'] += 1
+                continue
+
             if url not in self.channels[final_name]['qualities'][quality]:
                 self.channels[final_name]['qualities'][quality].add(url)
+                channel_urls.add(url)
                 found_in_batch += 1
                 self.stats['channels_added'] += 1
                 
@@ -498,14 +578,16 @@ class SportsScanner:
     
     def scan_all(self, servers: List[Dict], max_workers: int = 5) -> None:
         """Scan all provided servers."""
-        self.stats['servers_total'] = len(servers)
+        servers_sorted = sorted(servers, key=lambda s: safe_int(s.get('stream_count', 0), 0), reverse=True)
+        self.stats['servers_total'] = len(servers_sorted)
         
         print(f"\\n{'='*70}")
-        print(f"Scanning {len(servers)} configured servers")
+        print(f"Scanning {len(servers_sorted)} configured servers")
+        print(f"Priority: highest stream-count playlists first")
         print(f"{'='*70}\\n", flush=True)
 
         with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
-            futures = {executor.submit(self.scan_server, server): server for server in servers}
+            futures = {executor.submit(self.scan_server, server): server for server in servers_sorted}
             
             for future in concurrent.futures.as_completed(futures):
                 server = futures[future]
@@ -578,6 +660,22 @@ class SportsScanner:
                 if data['logo'] and not output['channels'][canonical_name].get('logo'):
                     output['channels'][canonical_name]['logo'] = data['logo']
 
+        # 2b. Enforce hard per-channel stream cap in final merged output.
+        trimmed_channels = 0
+        trimmed_urls = 0
+        for channel_data in output['channels'].values():
+            qualities = channel_data.get('qualities')
+            if not isinstance(qualities, dict):
+                continue
+            limited_qualities, dropped = self._apply_channel_cap(qualities)
+            if dropped > 0:
+                trimmed_channels += 1
+                trimmed_urls += dropped
+            channel_data['qualities'] = limited_qualities if limited_qualities else {}
+
+        self.stats['channels_trimmed_to_cap'] = trimmed_channels
+        self.stats['streams_trimmed_to_cap'] = trimmed_urls
+
         # 3. Add missing channels from the current schedule as placeholders.
         # Existing channels are never removed.
         found_names_lower = set(existing_name_by_lower.keys())
@@ -606,6 +704,10 @@ class SportsScanner:
         print(f"  Total Channels in DB: {len(output['channels'])}", flush=True)
         print(f"  New/Updated in this scan: {len(self.channels)}", flush=True)
         print(f"  Missing (Added as null): {missing_count}", flush=True)
+        print(f"  Max streams/channel cap: {self.max_streams_per_channel}", flush=True)
+        print(f"  Streams skipped during scan due to cap: {self.stats['streams_skipped_cap']}", flush=True)
+        print(f"  Channels trimmed to cap in final output: {trimmed_channels}", flush=True)
+        print(f"  Streams trimmed to cap in final output: {trimmed_urls}", flush=True)
         print(f"{'='*70}\\n", flush=True)
 
 
@@ -658,7 +760,7 @@ def main():
          # We'll stick to 1 (git) + 3 (json) = 4 total.
          servers = servers[:4]
          
-    # 3. Init Scanner (unlimited per-channel stream collection)
+    # 3. Init Scanner (hard cap enforced per channel)
     scanner = SportsScanner(target_channels=targets)
     
     # 4. Run Scan
