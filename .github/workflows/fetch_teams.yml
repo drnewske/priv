@@ -27,12 +27,11 @@ jobs:
 
     - name: Build Teams Database (Bulk Preload)
       run: |
-        cd aongewach
         python -u build_teams_db.py
         
     - name: Commit and Push
       run: |
         git config --global user.name 'GitHub Action'
         git config --global user.email 'action@github.com'
-        git add aongewach/spdb_teams.json
+        git add spdb_teams.json spdb_build_state.json
         git diff --quiet && git diff --staged --quiet || (git commit -m "Update TheSportsDB teams database (bulk)" && git push)

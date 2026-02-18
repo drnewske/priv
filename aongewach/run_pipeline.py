@@ -3,24 +3,19 @@
 Run Pipeline - Orchestrates the full schedule processing pipeline.
 
 Steps:
-  1. Scrape weekly schedule from wheresthematch.com
+  1. Scrape weekly schedule (FANZO by default, with legacy fallback support)
   2. Scan/update channels.json from configured playlists/providers
   3. Validate channels with ffprobe/ffmpeg and prune dead streams
   4. Map schedule events to team IDs and logos
   5. Map schedule channels to IPTV stream URLs
 """
 
-import json
-import os
+import argparse
 import subprocess
 import sys
-from datetime import datetime, timedelta, timezone
-
-DB_FILE = os.path.join(os.path.dirname(__file__) or ".", "spdb_teams.json")
-DB_MAX_AGE_DAYS = 7  # Skip rebuild if DB is less than this many days old
 
 
-def run_step(script_name, description, extra_args=None):
+def run_step(script_name, description, extra_args=None, fail_on_error=True):
     print(f"\n{'=' * 50}")
     print(f"STEP: {description}")
     print(f"Running {script_name}...")
@@ -34,42 +29,76 @@ def run_step(script_name, description, extra_args=None):
         result = subprocess.run(cmd, check=True)
         if result.returncode == 0:
             print(f"\n[SUCCESS] {script_name} completed.")
+            return True
     except subprocess.CalledProcessError as e:
         print(f"\n[ERROR] {script_name} failed with return code {e.returncode}.")
-        sys.exit(1)
+        if fail_on_error:
+            sys.exit(1)
+        return False
     except Exception as e:
         print(f"\n[ERROR] Failed to run {script_name}: {e}")
-        sys.exit(1)
-
-
-def is_db_fresh():
-    """Check if spdb_teams.json exists and is recent enough to skip rebuild."""
-    if not os.path.exists(DB_FILE):
+        if fail_on_error:
+            sys.exit(1)
         return False
 
-    try:
-        with open(DB_FILE, "r", encoding="utf-8") as f:
-            data = json.load(f)
-        meta = data.get("_meta", {})
-        last_built = meta.get("last_built")
-        if not last_built:
-            return False
+    return True
 
-        built_dt = datetime.fromisoformat(last_built)
-        age = datetime.now(timezone.utc) - built_dt
-        if age < timedelta(days=DB_MAX_AGE_DAYS):
-            team_count = meta.get("team_count", 0)
-            print(f"  Teams DB is fresh ({age.days}d old, {team_count} teams). Skipping rebuild.")
-            return True
-    except Exception:
-        pass
 
-    return False
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="Run the sports pipeline with configurable schedule source."
+    )
+    parser.add_argument(
+        "--schedule-source",
+        choices=["fanzo", "wheresthematch"],
+        default="fanzo",
+        help="Schedule source to use (default: fanzo).",
+    )
+    parser.add_argument(
+        "--no-legacy-fallback",
+        action="store_true",
+        help="Disable fallback to legacy scrape_schedule.py when FANZO scraping fails.",
+    )
+    return parser.parse_args()
+
+
+def run_schedule_step(schedule_source, allow_legacy_fallback):
+    if schedule_source == "wheresthematch":
+        run_step(
+            "scrape_schedule.py",
+            "Scraping Weekly Schedule from Wheresthematch.com (legacy)",
+        )
+        return
+
+    fanzo_ok = run_step(
+        "scrape_schedule_fanzo.py",
+        "Scraping Weekly Schedule from FANZO TV Guide API",
+        fail_on_error=False,
+    )
+    if fanzo_ok:
+        return
+
+    if allow_legacy_fallback:
+        print(
+            "\n[WARN] FANZO scraping failed. Falling back to legacy Wheresthematch scraper.\n"
+        )
+        run_step(
+            "scrape_schedule.py",
+            "Scraping Weekly Schedule from Wheresthematch.com (fallback legacy)",
+        )
+        return
+
+    print("\n[ERROR] FANZO scraping failed and legacy fallback is disabled.")
+    sys.exit(1)
 
 
 def main():
+    args = parse_args()
     # 1. Scrape Schedule (Weekly)
-    run_step("scrape_schedule.py", "Scraping Weekly Schedule from Wheresthematch.com")
+    run_schedule_step(
+        schedule_source=args.schedule_source,
+        allow_legacy_fallback=not args.no_legacy_fallback,
+    )
 
     # 2. Scan Sports Channels (Update channels.json based on schedule)
     run_step("scan_sports_channels.py", "Scanning Playlists for Channels in Schedule")
@@ -80,14 +109,6 @@ def main():
         "Testing Stream URLs (ffprobe/ffmpeg) and pruning dead links",
         ["channels.json", "--workers", "12", "--timeout", "8", "--retry-failed", "1"],
     )
-
-    # Optional: Build Teams Database (TheSportsDB bulk preload) - DISABLED (too slow, run manually)
-    # if is_db_fresh():
-    #     print(f"\n{'=' * 50}")
-    #     print("STEP: Teams DB is up to date - skipping build_teams_db.py")
-    #     print(f"{'=' * 50}\n")
-    # else:
-    #     run_step("build_teams_db.py", "Building Teams Database from TheSportsDB (Bulk)")
 
     # 4. Map Teams (Event Names -> Team IDs & Logos)
     run_step("map_schedule_to_teams.py", "Mapping Events to Team IDs and Logos")

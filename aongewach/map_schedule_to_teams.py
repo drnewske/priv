@@ -6,16 +6,20 @@ Uses the new fuzzy_match.TeamMatcher for multi-tier matching.
 
 import json
 import re
-import os
-from fuzzy_match import TeamMatcher, clean_team_name
+import sys
+from pathlib import Path
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+ROOT_DIR = SCRIPT_DIR.parent
 
 
 def load_json(filepath):
-    if not os.path.exists(filepath):
+    path = Path(filepath)
+    if not path.exists():
         print(f"File not found: {filepath}")
         return {}
     try:
-        with open(filepath, 'r', encoding='utf-8') as f:
+        with path.open('r', encoding='utf-8') as f:
             return json.load(f)
     except Exception as e:
         print(f"Failed to parse {filepath}: {e}")
@@ -24,18 +28,55 @@ def load_json(filepath):
 
 def process_schedule():
     print("Loading data...")
-    schedule_data = load_json('weekly_schedule.json')
+    schedule_file = SCRIPT_DIR / 'weekly_schedule.json'
+    schedule_data = load_json(schedule_file)
 
     if not schedule_data:
         return
 
+    source = str(schedule_data.get('source', '')).lower()
+    if source.startswith('fanzo'):
+        print("FANZO source detected: preserving seeded team data and skipping fuzzy/API team mapping.")
+        total_events = 0
+        for day in schedule_data.get('schedule', []):
+            for event in day.get('events', []):
+                name = event.get('name', '')
+                split_match = re.split(r'\s+(?:v|vs|VS|V|-)\s+', name, maxsplit=1)
+                if len(split_match) == 2:
+                    total_events += 1
+                    home_raw = split_match[0].strip()
+                    away_raw = split_match[1].strip()
+                    event['home_team'] = event.get('home_team') or home_raw
+                    event['away_team'] = event.get('away_team') or away_raw
+                    if 'home_team_id' not in event:
+                        event['home_team_id'] = None
+                    if 'home_team_logo' not in event:
+                        event['home_team_logo'] = None
+                    if 'away_team_id' not in event:
+                        event['away_team_id'] = None
+                    if 'away_team_logo' not in event:
+                        event['away_team_logo'] = None
+
+        output_file = SCRIPT_DIR / 'weekly_schedule_mapped.json'
+        with output_file.open('w', encoding='utf-8') as f:
+            json.dump(schedule_data, f, indent=2, ensure_ascii=False)
+
+        print(f"Done. Processed {total_events} team events (FANZO fast path).")
+        print(f"Saved to {output_file.name}")
+        return
+
+    # Legacy path: load matcher module from repo root where legacy scripts now live.
+    if str(ROOT_DIR) not in sys.path:
+        sys.path.insert(0, str(ROOT_DIR))
+    from fuzzy_match import TeamMatcher, clean_team_name
+
     # Initialize the matcher
-    matcher = TeamMatcher('spdb_teams.json')
+    matcher = TeamMatcher(str(ROOT_DIR / 'spdb_teams.json'))
     print(f"Loaded {len(matcher.teams)} teams in database.")
 
     # Load legacy teams for fallback
     print("Loading legacy teams...")
-    legacy_db = load_json('teams.json')
+    legacy_db = load_json(ROOT_DIR / 'teams.json')
     legacy_teams = legacy_db.get('teams', {}) if isinstance(legacy_db, dict) else {}
     api_lookup_cache = {}
     
@@ -75,15 +116,17 @@ def process_schedule():
                 home_raw = split_match[0].strip()
                 away_raw = split_match[1].strip()
 
-                # Store parsed raw names
-                event['home_team'] = home_raw
-                event['away_team'] = away_raw
-
-                # Initialize with None
-                event['home_team_id'] = None
-                event['home_team_logo'] = None
-                event['away_team_id'] = None
-                event['away_team_logo'] = None
+                # Preserve pre-seeded values (e.g. FANZO source), only fill missing fields.
+                event['home_team'] = event.get('home_team') or home_raw
+                event['away_team'] = event.get('away_team') or away_raw
+                if 'home_team_id' not in event:
+                    event['home_team_id'] = None
+                if 'home_team_logo' not in event:
+                    event['home_team_logo'] = None
+                if 'away_team_id' not in event:
+                    event['away_team_id'] = None
+                if 'away_team_logo' not in event:
+                    event['away_team_logo'] = None
 
                 # Helper to process a single team side
                 def resolve_team(raw_name):
@@ -137,35 +180,53 @@ def process_schedule():
                     api_lookup_cache[cache_key] = result
                     return result
 
-                # Resolve Home
-                home_data, used_legacy_home = resolve_team(home_raw)
-                if home_data:
-                    event['home_team_id'] = home_data.get('id')
-                    event['home_team_logo'] = home_data.get('logo_url')
-                    if used_legacy_home: legacy_fallback_count += 1
+                # Only resolve missing IDs/logos to avoid overwriting preloaded values.
+                home_data = None
+                away_data = None
+                used_legacy_home = False
+                used_legacy_away = False
 
-                # Resolve Away
-                away_data, used_legacy_away = resolve_team(away_raw)
-                if away_data:
-                    event['away_team_id'] = away_data.get('id')
-                    event['away_team_logo'] = away_data.get('logo_url')
-                    if used_legacy_away: legacy_fallback_count += 1
+                home_needs_lookup = not event.get('home_team_id') or not event.get('home_team_logo')
+                away_needs_lookup = not event.get('away_team_id') or not event.get('away_team_logo')
+
+                if home_needs_lookup:
+                    home_data, used_legacy_home = resolve_team(home_raw)
+                    if home_data:
+                        if not event.get('home_team_id'):
+                            event['home_team_id'] = home_data.get('id')
+                        if not event.get('home_team_logo'):
+                            event['home_team_logo'] = home_data.get('logo_url')
+                        if used_legacy_home:
+                            legacy_fallback_count += 1
+
+                if away_needs_lookup:
+                    away_data, used_legacy_away = resolve_team(away_raw)
+                    if away_data:
+                        if not event.get('away_team_id'):
+                            event['away_team_id'] = away_data.get('id')
+                        if not event.get('away_team_logo'):
+                            event['away_team_logo'] = away_data.get('logo_url')
+                        if used_legacy_away:
+                            legacy_fallback_count += 1
                 
                 # Tracking
-                if not home_data:
+                home_mapped = bool(event.get('home_team_id')) or bool(event.get('home_team_logo'))
+                away_mapped = bool(event.get('away_team_id')) or bool(event.get('away_team_logo'))
+
+                if not home_mapped:
                     not_found_names.add(f"{clean_team_name(home_raw)} ({sport})")
                 
-                if not away_data:
+                if not away_mapped:
                     not_found_names.add(f"{clean_team_name(away_raw)} ({sport})")
 
-                if home_data and away_data:
+                if home_mapped and away_mapped:
                     mapped_count += 1
-                elif home_data or away_data:
+                elif home_mapped or away_mapped:
                     partial_count += 1
 
     # Save the mapped schedule
-    output_file = 'weekly_schedule_mapped.json'
-    with open(output_file, 'w', encoding='utf-8') as f:
+    output_file = SCRIPT_DIR / 'weekly_schedule_mapped.json'
+    with output_file.open('w', encoding='utf-8') as f:
         json.dump(schedule_data, f, indent=2, ensure_ascii=False)
 
     # Save learned aliases back to database
@@ -176,7 +237,7 @@ def process_schedule():
     print(f"  Partially matched: {partial_count}")
     print(f"  Legacy Fallback:   {legacy_fallback_count} (Used legacy DB directly)")
     print(f"  No match:          {total_events - mapped_count - partial_count}")
-    print(f"Saved to {output_file}")
+    print(f"Saved to {output_file.name}")
 
     if not_found_names:
         print(f"\nTeams NOT found ({len(not_found_names)}):")
