@@ -3,14 +3,13 @@
 Run Pipeline - Orchestrates the full schedule processing pipeline.
 
 Steps:
-  1. Scrape weekly schedule (FANZO by default, with legacy fallback support)
+  1. Scrape weekly schedule from FANZO TV Guide API
   2. Scan/update channels.json from configured playlists/providers
   3. Validate channels with ffprobe/ffmpeg and prune dead streams
   4. Map schedule events to team IDs and logos
   5. Map schedule channels to IPTV stream URLs
 """
 
-import argparse
 import subprocess
 import sys
 
@@ -44,60 +43,11 @@ def run_step(script_name, description, extra_args=None, fail_on_error=True):
     return True
 
 
-def parse_args():
-    parser = argparse.ArgumentParser(
-        description="Run the sports pipeline with configurable schedule source."
-    )
-    parser.add_argument(
-        "--schedule-source",
-        choices=["fanzo", "wheresthematch"],
-        default="fanzo",
-        help="Schedule source to use (default: fanzo).",
-    )
-    parser.add_argument(
-        "--no-legacy-fallback",
-        action="store_true",
-        help="Disable fallback to legacy scrape_schedule.py when FANZO scraping fails.",
-    )
-    return parser.parse_args()
-
-
-def run_schedule_step(schedule_source, allow_legacy_fallback):
-    if schedule_source == "wheresthematch":
-        run_step(
-            "scrape_schedule.py",
-            "Scraping Weekly Schedule from Wheresthematch.com (legacy)",
-        )
-        return
-
-    fanzo_ok = run_step(
+def main():
+    # 1. Scrape Schedule (Weekly)
+    run_step(
         "scrape_schedule_fanzo.py",
         "Scraping Weekly Schedule from FANZO TV Guide API",
-        fail_on_error=False,
-    )
-    if fanzo_ok:
-        return
-
-    if allow_legacy_fallback:
-        print(
-            "\n[WARN] FANZO scraping failed. Falling back to legacy Wheresthematch scraper.\n"
-        )
-        run_step(
-            "scrape_schedule.py",
-            "Scraping Weekly Schedule from Wheresthematch.com (fallback legacy)",
-        )
-        return
-
-    print("\n[ERROR] FANZO scraping failed and legacy fallback is disabled.")
-    sys.exit(1)
-
-
-def main():
-    args = parse_args()
-    # 1. Scrape Schedule (Weekly)
-    run_schedule_step(
-        schedule_source=args.schedule_source,
-        allow_legacy_fallback=not args.no_legacy_fallback,
     )
 
     # 2. Scan Sports Channels (Update channels.json based on schedule)

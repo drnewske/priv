@@ -7,12 +7,11 @@ Workflow: `update_schedule.yml`
 - Runs: Weekly (Mondays at 05:00 UTC)
 - What it does:
 1. Scrapes weekly schedule from FANZO (`scrape_schedule_fanzo.py`).
-2. If FANZO fails, automatically falls back to legacy WherestheMatch scraping (`scrape_schedule.py`).
-3. Scans IPTV playlists for channels found in the schedule (`scan_sports_channels.py`).
-4. Tests streams with `ffprobe/ffmpeg` and removes dead URLs (`stream_tester.py`).
-5. Maps events to team IDs/logos (`map_schedule_to_teams.py`).
-6. Maps schedule channel names to stream channel IDs (`map_channels.py`).
-7. Outputs final JSON to `e104f869d64e3d41256d5398.json`.
+2. Scans IPTV playlists for channels found in the schedule (`scan_sports_channels.py`).
+3. Tests streams with `ffprobe/ffmpeg` and removes dead URLs (`stream_tester.py`).
+4. Maps events to team IDs/logos (`map_schedule_to_teams.py`).
+5. Maps schedule channel names to stream channel IDs (`map_channels.py`).
+6. Outputs final JSON to `e104f869d64e3d41256d5398.json`.
 - Manual trigger: Actions -> "Update Weekly Schedule" -> "Run workflow"
 
 ## 2. Manual Maintenance Workflows
@@ -28,7 +27,7 @@ Workflow: `update_schedule.yml`
 - `fuzzy_match.py`, `build_teams_db.py`, `build_teams_mirror.py`, `fetch_missing_teams.py`
 
 ## Pipeline Order
-1. `scrape_schedule_fanzo.py` (default) or `scrape_schedule.py` (legacy fallback) -> `weekly_schedule.json`
+1. `scrape_schedule_fanzo.py` -> `weekly_schedule.json`
 2. `scan_sports_channels.py` -> merges/updates `channels.json`
 3. `stream_tester.py` -> validates and prunes stream URLs in `channels.json`
 4. `map_schedule_to_teams.py` -> `weekly_schedule_mapped.json`
