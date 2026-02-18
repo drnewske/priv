@@ -26,6 +26,12 @@ LOVESTORY_FILE = os.path.join(SCRIPT_DIR, '..', 'lovestory.json')
 if not os.path.exists(SCHEDULE_FILE):
     SCHEDULE_FILE = 'weekly_schedule.json'
 
+NON_BROADCAST_WORD_RE = re.compile(r"\b(app|website|web\s*site|youtube)\b", re.IGNORECASE)
+DOMAIN_RE = re.compile(
+    r"\b[a-z0-9][a-z0-9.-]{0,251}\.(com|net|org|io|tv|co|app|gg|me|fm|uk|us|au|de|fr)\b",
+    re.IGNORECASE,
+)
+
 # Hardcoded Extra Server (Always included)
 EXTRA_SERVERS = [
     {
@@ -34,6 +40,17 @@ EXTRA_SERVERS = [
         'type': 'direct'
     }
 ]
+
+
+def is_usable_channel_name(name: str) -> bool:
+    cleaned = (name or "").strip()
+    if not cleaned:
+        return False
+    if NON_BROADCAST_WORD_RE.search(cleaned):
+        return False
+    if DOMAIN_RE.search(cleaned):
+        return False
+    return True
 
 def load_servers_from_lovestory(file_path: str) -> List[Dict]:
     """Load servers from lovestory.json featured_content."""
@@ -604,6 +621,8 @@ def load_target_channels(schedule_file):
                 for channel in event.get('channels', []):
                     if channel:
                         clean_name = channel.strip()
+                        if not is_usable_channel_name(clean_name):
+                            continue
                         if clean_name.lower() == 'laligatv': clean_name = 'Laliga Tv'
                         targets.add(clean_name)
         

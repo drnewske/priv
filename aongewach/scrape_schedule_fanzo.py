@@ -42,6 +42,11 @@ DEFAULT_UID = int(os.getenv("FANZO_UID", "2"))
 PAGE_LIMIT = 100
 
 MATCH_SPLIT_RE = re.compile(r"\s+(?:v|vs|-)\s+", re.IGNORECASE)
+NON_BROADCAST_WORD_RE = re.compile(r"\b(app|website|web\s*site|youtube)\b", re.IGNORECASE)
+DOMAIN_RE = re.compile(
+    r"\b[a-z0-9][a-z0-9.-]{0,251}\.(com|net|org|io|tv|co|app|gg|me|fm|uk|us|au|de|fr)\b",
+    re.IGNORECASE,
+)
 
 
 def b64url_encode(raw: bytes) -> str:
@@ -86,6 +91,17 @@ def split_match_name(name: str) -> Optional[Tuple[str, str]]:
     if not left or not right:
         return None
     return left, right
+
+
+def is_usable_channel_name(name: str) -> bool:
+    cleaned = (name or "").strip()
+    if not cleaned:
+        return False
+    if NON_BROADCAST_WORD_RE.search(cleaned):
+        return False
+    if DOMAIN_RE.search(cleaned):
+        return False
+    return True
 
 
 def build_jwt(uid: int = DEFAULT_UID) -> Tuple[str, int]:
@@ -278,6 +294,8 @@ def transform_event(raw_event: Dict) -> Optional[Dict]:
             continue
         channel_name = (channel.get("name") or "").strip()
         if not channel_name:
+            continue
+        if not is_usable_channel_name(channel_name):
             continue
         key = channel_name.lower()
         if key in seen:
