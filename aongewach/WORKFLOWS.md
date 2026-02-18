@@ -16,7 +16,6 @@ Workflow: `update_schedule.yml`
 
 ## 2. Manual Maintenance Workflows
 - `scan_channels.yml`: manual channel scan + stream pruning.
-- `learn_mappings.yml`: manual legacy team alias learning refresh (uses root `spdb_teams.json`).
 
 ## 3. Manual Maintenance Scripts
 - `build_teams_db.py`: legacy team DB refresh script (now at repo root).
