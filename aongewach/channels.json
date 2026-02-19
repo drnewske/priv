@@ -1,25 +1,27 @@
 {
   "metadata": {
-    "scan_date": "2026-02-18 22:23:49 UTC",
+    "scan_date": "2026-02-19 09:06:31 UTC",
     "stats": {
-      "servers_total": 171,
-      "servers_success": 171,
+      "servers_total": 177,
+      "servers_success": 177,
       "servers_failed": 0,
       "categories_total": 0,
-      "streams_total": 632605,
-      "channels_added": 171,
-      "streams_skipped_cap": 14658,
+      "streams_total": 864620,
+      "channels_added": 217,
+      "streams_skipped_cap": 18552,
       "channels_trimmed_to_cap": 0,
       "streams_trimmed_to_cap": 0,
-      "streams_tested": 831,
-      "streams_alive": 227,
-      "streams_dead": 604,
-      "streams_cached": 0,
-      "channels_completed": 33,
-      "channels_refreshed_from_tested_streams": 35,
-      "channels_cleared_no_working_streams": 14
+      "streams_tested": 1128,
+      "streams_alive": 298,
+      "streams_dead": 830,
+      "streams_cached": 3,
+      "channels_completed": 41,
+      "channels_refreshed_from_tested_streams": 45,
+      "channels_cleared_no_working_streams": 13,
+      "channels_seeded_from_existing": 0,
+      "streams_seeded_from_existing": 0
     },
-    "unique_channels": 49
+    "unique_channels": 65
   },
   "channels": {
     "Sky Sports Main Event": {
@@ -40,11 +42,11 @@
       "logo": "https://i.ibb.co/QqGdJnM/TNTSprts-U.png",
       "qualities": {
         "HD": [
-          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/148090.ts",
-          "http://ahmad.raedisd.com:80/live/20172023/20232024/239122.ts",
           "http://ahmad.raedisd.com:80/live/20172023/20232024/239216.ts",
           "http://ahmad.raedisd.com:80/live/20172023/20232024/239219.ts",
-          "http://ahmad.raedisd.com:80/live/20172023/20232024/239222.ts"
+          "http://ahmad.raedisd.com:80/live/20172023/20232024/239222.ts",
+          "http://ahmad.raedisd.com:80/live/20172023/20232024/239223.ts",
+          "http://ahmad.raedisd.com:80/live/20172023/20232024/239224.ts"
         ]
       }
     },
@@ -83,7 +85,7 @@
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/148679.ts",
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/186605.ts",
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/186606.ts",
-          "http://ahmad.raedisd.com:80/live/20172023/20232024/239158.ts"
+          "http://ahmad.raedisd.com:80/live/20172023/20232024/239157.ts"
         ]
       }
     },
@@ -122,7 +124,7 @@
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/186643.ts",
           "http://ahmad.raedisd.com:80/live/20172023/20232024/239161.ts",
           "http://ahmad.raedisd.com:80/live/20172023/20232024/239162.ts",
-          "http://ahmad.raedisd.com:80/live/20172023/20232024/239163.ts"
+          "http://ahmad.raedisd.com:80/live/20172023/20232024/239172.ts"
         ]
       }
     },
@@ -144,11 +146,11 @@
       "logo": "https://i.ibb.co/yBqH98CM/Sky-Sports-Plus.webp",
       "qualities": {
         "HD": [
+          "http://lemon.catchmeifyo.com:8000/live/4971131096/0964688296/158352.ts",
+          "http://lemon.catchmeifyo.com:8000/live/4971131096/0964688296/158353.ts",
+          "http://lemon.catchmeifyo.com:8000/live/4971131096/0964688296/158515.ts",
           "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/130381.ts",
-          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/130382.ts",
-          "http://smartho.st:8080/live/jenko/dSMk4Sy8/250009.ts",
-          "http://smartho.st:8080/live/jenko/dSMk4Sy8/45.ts",
-          "http://smartho.st:8080/live/jenko/dSMk4Sy8/756.ts"
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/130382.ts"
         ]
       }
     },
@@ -160,7 +162,15 @@
     "TNT Sports 3": {
       "id": 433456117,
       "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/TNTS3.png",
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/148090.ts",
+          "http://ahmad.raedisd.com:80/live/20172023/20232024/239122.ts",
+          "http://ahmad.raedisd.com:80/live/20172023/20232024/239221.ts",
+          "http://hf.rawtvprime.com:80/534689/fsmx2mz/668960",
+          "http://main.isppak.eu:80/live/Dani12/Dani12/1665012.ts"
+        ]
+      }
     },
     "TNT Sports 4": {
       "id": 433521654,
@@ -189,7 +199,7 @@
           "http://ahmad.raedisd.com:80/live/20172023/20232024/233530.ts",
           "http://ahmad.raedisd.com:80/live/20172023/20232024/238978.ts",
           "http://ahmad.raedisd.com:80/live/20172023/20232024/238979.ts",
-          "http://akselis.club:8080/live/eh4E44eHA6WM/a5JAzgdeFPAE/2238.ts"
+          "http://rey-premium.ddns.net:54321/live/DPVEduardoEspa/Espa020828/439214.ts"
         ]
       }
     },
@@ -198,11 +208,11 @@
       "logo": "https://i.ibb.co/n8t4rCh/BBC-Three.png",
       "qualities": {
         "HD": [
+          "http://20012.xyz:2086/live/07XJwOyG0Z/5417828008/284305.ts",
+          "http://20012.xyz:2086/live/07XJwOyG0Z/5417828008/284306.ts",
+          "http://20012.xyz:2086/live/07XJwOyG0Z/5417828008/291032.ts",
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/148236.ts",
-          "http://akselis.club:8080/live/eh4E44eHA6WM/a5JAzgdeFPAE/2239.ts",
-          "http://diversion.digital:8080/live/Jamespuyqet56/uFqQFY45Fb/437875.ts",
-          "http://diversion.digital:8080/live/Jamespuyqet56/uFqQFY45Fb/437876.ts",
-          "http://diversion.digital:8080/live/Jamespuyqet56/uFqQFY45Fb/437877.ts"
+          "http://main.isppak.eu:80/live/Dani12/Dani12/1535739.ts"
         ]
       }
     },
@@ -227,8 +237,8 @@
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/259.ts",
           "http://ahmad.raedisd.com:80/live/20172023/20232024/238856.ts",
           "http://ahmad.raedisd.com:80/live/20172023/20232024/238857.ts",
-          "http://akselis.club:8080/live/eh4E44eHA6WM/a5JAzgdeFPAE/8171.ts",
-          "http://ip.tvgo4.me:2095/live/Toledo0903/sEtcZ2aPs4/32442.ts"
+          "http://ip.tvgo4.me:2095/live/Toledo0903/sEtcZ2aPs4/32442.ts",
+          "http://rey-premium.ddns.net:54321/live/DPVEduardoEspa/Espa020828/439180.ts"
         ]
       }
     },
@@ -253,8 +263,8 @@
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/5029.ts",
           "http://ahmad.raedisd.com:80/live/20172023/20232024/239210.ts",
           "http://ahmad.raedisd.com:80/live/20172023/20232024/239234.ts",
-          "http://ahmad.raedisd.com:80/live/20172023/20232024/239237.ts",
-          "http://ahmad.raedisd.com:80/live/20172023/20232024/239238.ts"
+          "http://ahmad.raedisd.com:80/live/20172023/20232024/239238.ts",
+          "http://ahmad.raedisd.com:80/live/20172023/20232024/239242.ts"
         ]
       }
     },
@@ -267,7 +277,7 @@
           "http://ahmad.raedisd.com:80/live/20172023/20232024/239211.ts",
           "http://ahmad.raedisd.com:80/live/20172023/20232024/239235.ts",
           "http://ahmad.raedisd.com:80/live/20172023/20232024/239239.ts",
-          "http://ahmad.raedisd.com:80/live/20172023/20232024/239240.ts"
+          "http://ahmad.raedisd.com:80/live/20172023/20232024/239243.ts"
         ]
       }
     },
@@ -276,11 +286,11 @@
       "logo": "https://www.linkpicture.com/q/gp5cs1.jpg",
       "qualities": {
         "HD": [
-          "http://akselis.club:8080/live/eh4E44eHA6WM/a5JAzgdeFPAE/172242.ts",
-          "http://akselis.club:8080/live/eh4E44eHA6WM/a5JAzgdeFPAE/172243.ts",
-          "http://akselis.club:8080/live/eh4E44eHA6WM/a5JAzgdeFPAE/207562.ts",
-          "http://akselis.club:8080/live/eh4E44eHA6WM/a5JAzgdeFPAE/207563.ts",
-          "http://ip.tvgo4.me:2095/live/Toledo0903/sEtcZ2aPs4/643512.ts"
+          "http://ghiptv.com.br:80/live/claudiaprofessora/ytb99hTkY/202345.ts",
+          "http://ghiptv.com.br:80/live/claudiaprofessora/ytb99hTkY/202346.ts",
+          "http://ghiptv.com.br:80/live/claudiaprofessora/ytb99hTkY/202349.ts",
+          "http://ghiptv.com.br:80/live/claudiaprofessora/ytb99hTkY/202350.ts",
+          "http://ghiptv.com.br:80/live/claudiaprofessora/ytb99hTkY/202351.ts"
         ]
       }
     },
@@ -289,11 +299,11 @@
       "logo": "http://tugapt.com/picons/itvuk.png",
       "qualities": {
         "HD": [
+          "http://20012.xyz:2086/live/07XJwOyG0Z/5417828008/284349.ts",
           "http://ahmad.raedisd.com:80/live/20172023/20232024/238839.ts",
-          "http://akselis.club:8080/live/eh4E44eHA6WM/a5JAzgdeFPAE/169185.ts",
-          "http://akselis.club:8080/live/eh4E44eHA6WM/a5JAzgdeFPAE/176369.ts",
-          "http://akselis.club:8080/live/eh4E44eHA6WM/a5JAzgdeFPAE/74182.ts",
-          "http://ip.tvgo4.me:2095/live/Toledo0903/sEtcZ2aPs4/32436.ts"
+          "http://io-pro.live:8080/live/8241899486046784/8241899486046784/397783.ts",
+          "http://ip.tvgo4.me:2095/live/Toledo0903/sEtcZ2aPs4/32436.ts",
+          "http://main.isppak.eu:80/live/Dani12/Dani12/401775.ts"
         ]
       }
     },
@@ -304,9 +314,9 @@
         "HD": [
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/32.ts",
           "http://ahmad.raedisd.com:80/live/20172023/20232024/238850.ts",
-          "http://akselis.club:8080/live/eh4E44eHA6WM/a5JAzgdeFPAE/74185.ts",
-          "http://akselis.club:8080/live/eh4E44eHA6WM/a5JAzgdeFPAE/7624.ts",
-          "http://ip.tvgo4.me:2095/live/Toledo0903/sEtcZ2aPs4/32439.ts"
+          "http://ip.tvgo4.me:2095/live/Toledo0903/sEtcZ2aPs4/32439.ts",
+          "http://rey-premium.ddns.net:54321/live/DPVEduardoEspa/Espa020828/439084.ts",
+          "http://rey-premium.ddns.net:54321/live/DPVEduardoEspa/Espa020828/439085.ts"
         ]
       }
     },
@@ -318,8 +328,8 @@
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/389165.ts",
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/564.ts",
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/615896.ts",
-          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/615899.ts",
-          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/615900.ts"
+          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/615897.ts",
+          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/615898.ts"
         ]
       }
     },
@@ -328,8 +338,8 @@
       "logo": "http://tugapt.com/picons/bbcalbauk.png",
       "qualities": {
         "HD": [
-          "http://akselis.club:8080/live/eh4E44eHA6WM/a5JAzgdeFPAE/17999.ts",
           "http://ip.tvgo4.me:2095/live/Toledo0903/sEtcZ2aPs4/125990.ts",
+          "http://main.isppak.eu:80/live/Dani12/Dani12/401627.ts",
           "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/10735.ts",
           "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/5739.ts",
           "http://rey-premium.ddns.net:54321/live/DPVEduardoEspa/Espa020828/439238.ts"
@@ -342,8 +352,8 @@
       "qualities": {
         "HD": [
           "http://ahmad.raedisd.com:80/live/20172023/20232024/238980.ts",
-          "http://akselis.club:8080/live/eh4E44eHA6WM/a5JAzgdeFPAE/29121.ts",
-          "http://ip.tvgo4.me:2095/live/Toledo0903/sEtcZ2aPs4/678838.ts",
+          "http://main.isppak.eu:80/live/Dani12/Dani12/1337048.ts",
+          "http://main.isppak.eu:80/live/Dani12/Dani12/1337049.ts",
           "http://rey-premium.ddns.net:54321/live/DPVEduardoEspa/Espa020828/439216.ts",
           "http://rey-premium.ddns.net:54321/live/DPVEduardoEspa/Espa020828/439217.ts"
         ]
@@ -358,7 +368,7 @@
           "http://ahmad.raedisd.com:80/live/20172023/20232024/239247.ts",
           "http://ip.tvgo4.me:2095/live/Toledo0903/sEtcZ2aPs4/32573.ts",
           "http://rey-premium.ddns.net:54321/live/DPVEduardoEspa/Espa020828/313220.ts",
-          "http://rey-premium.ddns.net:54321/live/DPVEduardoEspa/Espa020828/313229.ts"
+          "http://rey-premium.ddns.net:54321/live/DPVEduardoEspa/Espa020828/439024.ts"
         ]
       }
     },
@@ -368,7 +378,7 @@
       "qualities": {
         "HD": [
           "http://ahmad.raedisd.com:80/live/20172023/20232024/238898.ts",
-          "http://akselis.club:8080/live/eh4E44eHA6WM/a5JAzgdeFPAE/12491.ts",
+          "http://main.isppak.eu:80/live/Dani12/Dani12/1486730.ts",
           "http://rey-premium.ddns.net:54321/live/DPVEduardoEspa/Espa020828/439019.ts",
           "http://rey-premium.ddns.net:54321/live/DPVEduardoEspa/Espa020828/439020.ts",
           "http://rey-premium.ddns.net:54321/live/DPVEduardoEspa/Espa020828/439021.ts"
@@ -380,11 +390,11 @@
       "logo": "http://tugapt.com/picons/tg4uk.png",
       "qualities": {
         "HD": [
+          "http://20012.xyz:2086/live/07XJwOyG0Z/5417828008/291260.ts",
+          "http://20012.xyz:2086/live/07XJwOyG0Z/5417828008/291263.ts",
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/148273.ts",
           "http://ahmad.raedisd.com:80/live/20172023/20232024/238889.ts",
-          "http://akselis.club:8080/live/eh4E44eHA6WM/a5JAzgdeFPAE/1255.ts",
-          "http://diversion.digital:8080/live/Jamespuyqet56/uFqQFY45Fb/437797.ts",
-          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/112704.ts"
+          "http://main.isppak.eu:80/live/Dani12/Dani12/99948.ts"
         ]
       }
     },
@@ -396,8 +406,8 @@
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/154239.ts",
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/154244.ts",
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/154245.ts",
-          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/154247.ts",
-          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/154248.ts"
+          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/154246.ts",
+          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/154247.ts"
         ]
       }
     },
@@ -407,10 +417,10 @@
       "qualities": {
         "HD": [
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/581353.ts",
+          "http://ahmad.raedisd.com:80/live/20172023/20232024/236860.ts",
           "http://ahmad.raedisd.com:80/live/20172023/20232024/236861.ts",
           "http://ahmad.raedisd.com:80/live/20172023/20232024/236862.ts",
-          "http://ahmad.raedisd.com:80/live/20172023/20232024/236863.ts",
-          "http://ahmad.raedisd.com:80/live/20172023/20232024/236867.ts"
+          "http://ahmad.raedisd.com:80/live/20172023/20232024/236863.ts"
         ]
       }
     },
@@ -419,9 +429,9 @@
       "logo": "https://image.roku.com/developer_channels/prod/cd8057b5f5d6606fcf9b998569ae206c2a76e905cc3d51c84fe0f3aef48d4fbe.png",
       "qualities": {
         "HD": [
-          "http://akselis.club:8080/live/eh4E44eHA6WM/a5JAzgdeFPAE/169187.ts",
-          "http://akselis.club:8080/live/eh4E44eHA6WM/a5JAzgdeFPAE/169190.ts",
-          "http://akselis.club:8080/live/eh4E44eHA6WM/a5JAzgdeFPAE/206150.ts",
+          "http://20012.xyz:2086/live/07XJwOyG0Z/5417828008/291382.ts",
+          "http://20012.xyz:2086/live/07XJwOyG0Z/5417828008/291383.ts",
+          "http://20012.xyz:2086/live/07XJwOyG0Z/5417828008/291384.ts",
           "http://bigballs.ddns.net:8383/live/samanthamay/T9IaO2UAeNN/570260.ts"
         ]
       }
@@ -431,6 +441,9 @@
       "logo": "https://pbs.twimg.com/media/F14ANlOWAAQwKiU.jpg",
       "qualities": {
         "HD": [
+          "http://20012.xyz:2086/live/07XJwOyG0Z/5417828008/280669.ts",
+          "http://20012.xyz:2086/live/07XJwOyG0Z/5417828008/280670.ts",
+          "http://20012.xyz:2086/live/07XJwOyG0Z/5417828008/280671.ts",
           "http://abtvab@xplatinmedia.com:8080/live/Elko/mhj8LHTJJC/7815.ts",
           "http://bigballs.ddns.net:8383/live/samanthamay/T9IaO2UAeNN/578569.ts"
         ]
@@ -443,9 +456,9 @@
         "HD": [
           "http://23.227.140.75:8880/live/KanishaHill440/bbBzSTjhJR/566975.ts",
           "http://23.227.140.75:8880/live/KanishaHill440/bbBzSTjhJR/566976.ts",
-          "http://23.227.140.75:8880/live/KanishaHill440/bbBzSTjhJR/566977.ts",
-          "http://23.227.140.75:8880/live/KanishaHill440/bbBzSTjhJR/566978.ts",
-          "http://23.227.140.75:8880/live/KanishaHill440/bbBzSTjhJR/566983.ts"
+          "http://23.227.140.75:8880/live/KanishaHill440/bbBzSTjhJR/566980.ts",
+          "http://23.227.140.75:8880/live/KanishaHill440/bbBzSTjhJR/566981.ts",
+          "http://23.227.140.75:8880/live/KanishaHill440/bbBzSTjhJR/566982.ts"
         ]
       }
     },
@@ -502,11 +515,11 @@
       "logo": "http://pic.apkdt.co/pic/liga/DAZN.png",
       "qualities": {
         "HD": [
+          "http://abtvab@xplatinmedia.com:8080/live/Elko/mhj8LHTJJC/173242.ts",
           "http://abtvab@xplatinmedia.com:8080/live/Elko/mhj8LHTJJC/173243.ts",
           "http://abtvab@xplatinmedia.com:8080/live/Elko/mhj8LHTJJC/173244.ts",
-          "http://akselis.club:8080/live/eh4E44eHA6WM/a5JAzgdeFPAE/202888.ts",
-          "http://akselis.club:8080/live/eh4E44eHA6WM/a5JAzgdeFPAE/202889.ts",
-          "http://bigballs.ddns.net:8383/live/samanthamay/T9IaO2UAeNN/239302.ts"
+          "http://ahmad.raedisd.com:80/live/20172023/20232024/239267.ts",
+          "http://protzpwcf1.top:8080/live/pro8511767984359/d676165e724f/362.ts"
         ]
       }
     },
@@ -538,10 +551,155 @@
           "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/186627.ts",
           "http://ahmad.raedisd.com:80/live/20172023/20232024/239213.ts",
           "http://ahmad.raedisd.com:80/live/20172023/20232024/239214.ts",
-          "http://akselis.club:8080/live/eh4E44eHA6WM/a5JAzgdeFPAE/60877.ts",
-          "http://akselis.club:8080/live/eh4E44eHA6WM/a5JAzgdeFPAE/8178.ts"
+          "http://hf.rawtvprime.com:80/534689/fsmx2mz/668962",
+          "http://main.isppak.eu:80/live/Dani12/Dani12/1665010.ts"
         ]
       }
+    },
+    "ITV1": {
+      "id": 50397477,
+      "logo": "http://slho.xyz:81/file_2213.jpg",
+      "qualities": {
+        "HD": [
+          "http://client.newborne.xyz:80/live/ZP2MD4iCsIx/9TWnl5pFhL/114310.ts",
+          "http://fastrunner.live:8080/live/LXdVGQ2ulN/2YV8Pnu7e9/1986.ts",
+          "http://main.isppak.eu:80/live/Dani12/Dani12/401840.ts",
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/1986.ts"
+        ]
+      }
+    },
+    "Ligue 1+": {
+      "id": 209388147,
+      "logo": "https://images2.imgbox.com/47/a9/lwRNzryM_o.png",
+      "qualities": {
+        "HD": [
+          "http://20012.xyz:2086/live/07XJwOyG0Z/5417828008/279525.ts",
+          "http://20012.xyz:2086/live/07XJwOyG0Z/5417828008/279526.ts",
+          "http://20012.xyz:2086/live/07XJwOyG0Z/5417828008/279527.ts",
+          "http://20012.xyz:2086/live/07XJwOyG0Z/5417828008/279529.ts",
+          "http://20012.xyz:2086/live/07XJwOyG0Z/5417828008/279530.ts"
+        ]
+      }
+    },
+    "BBC iPlayer": {
+      "id": 332792766,
+      "logo": "https://ptvs.live:443/images/E5RZh2Rva3GK_RYtX_CL8FnaxIRj5i3OZfq9mn-9LCqT9tvrlsg4ZbIc1yxWsid4JpimTc05DobZAiFb32vODFaF0NzX3aR1TR04Lr4a3R69IRZcl14reBfMu6llII01slvQrkanKzyTJMZbVP68Lu52_-b4rSnFtwwoKgeRsKA.png",
+      "qualities": {
+        "HD": [
+          "http://client.newborne.xyz:80/live/ZP2MD4iCsIx/9TWnl5pFhL/114126.ts"
+        ]
+      }
+    },
+    "RTE 2": {
+      "id": 70254910,
+      "logo": "http://logos.ti7an.net/logos/otros/24_7.png",
+      "qualities": {
+        "HD": [
+          "http://ip.tvgo4.me:2095/live/Toledo0903/sEtcZ2aPs4/25122.ts",
+          "http://ip.tvgo4.me:2095/live/Toledo0903/sEtcZ2aPs4/438591.ts",
+          "http://main.isppak.eu:80/live/Dani12/Dani12/1845819.ts",
+          "http://main.isppak.eu:80/live/Dani12/Dani12/99945.ts",
+          "http://rey-premium.ddns.net:54321/live/DPVEduardoEspa/Espa020828/438811.ts"
+        ]
+      }
+    },
+    "Discovery+": {
+      "id": 362742756,
+      "logo": "http://logos.ti7an.net/logos/spain/EU_Espana_Entretenimiento/Discovery_mas.png",
+      "qualities": {
+        "HD": [
+          "http://ip.tvgo4.me:2095/live/Toledo0903/sEtcZ2aPs4/403104.ts",
+          "http://ip.tvgo4.me:2095/live/Toledo0903/sEtcZ2aPs4/403329.ts",
+          "http://ip.tvgo4.me:2095/live/Toledo0903/sEtcZ2aPs4/445768.ts",
+          "http://lemon.catchmeifyo.com:8000/live/4971131096/0964688296/195116.ts",
+          "http://rey-premium.ddns.net:54321/live/DPVEduardoEspa/Espa020828/745983.ts"
+        ]
+      }
+    },
+    "Amazon Prime Video": {
+      "id": 1047922331,
+      "logo": "http://case2.lat:80/images/562a2ad62127a601f3308f5a622a704e.png",
+      "qualities": {
+        "HD": [
+          "http://ghiptv.com.br:80/live/claudiaprofessora/ytb99hTkY/202341.ts",
+          "http://ghiptv.com.br:80/live/claudiaprofessora/ytb99hTkY/202342.ts",
+          "http://ghiptv.com.br:80/live/claudiaprofessora/ytb99hTkY/202343.ts",
+          "http://ghiptv.com.br:80/live/claudiaprofessora/ytb99hTkY/202344.ts",
+          "http://mexlinux.ddns.me:8000/live/fabriziocugino/mottaT7D12Gf/59546.ts"
+        ]
+      }
+    },
+    "STV": {
+      "id": 33161470,
+      "logo": "https://www.lyngsat.com/logo/tv/gg/goodness_tv_in.png",
+      "qualities": {
+        "HD": [
+          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/167458.ts",
+          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/24115.ts",
+          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/516.ts",
+          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/521.ts",
+          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/85915.ts"
+        ]
+      }
+    },
+    "All 4": {
+      "id": 78774638,
+      "logo": "http://pic.apkdt.co/pic/temu/Europe/Germany/SPORT_DIGITAL_FUSSBALL.jpg",
+      "qualities": {
+        "HD": [
+          "http://ahmad.raedisd.com:80/live/20172023/20232024/233993.ts",
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/74293.ts",
+          "http://rey-premium.ddns.net:54321/live/DPVEduardoEspa/Espa020828/439317.ts",
+          "http://yn83wvfx.k2sfsc.xyz:80/live/Ange830X/Aapaeywtt122/1221962.ts",
+          "http://yn83wvfx.k2sfsc.xyz:80/live/Ange830X/Aapaeywtt122/1221984.ts"
+        ]
+      }
+    },
+    "BBC1": {
+      "id": 42533113,
+      "logo": "https://staticqbr-prod-ie.gnp.cloud.virginmediatv.ie/image-service/ImagesEPG/EventImages/IESVC1227_f.png",
+      "qualities": {
+        "HD": [
+          "http://20012.xyz:2086/live/07XJwOyG0Z/5417828008/291176.ts",
+          "http://20012.xyz:2086/live/07XJwOyG0Z/5417828008/291177.ts",
+          "http://20012.xyz:2086/live/07XJwOyG0Z/5417828008/291178.ts"
+        ]
+      }
+    },
+    "RTE Player": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Watch NRL": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Discovery+ Premium": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "BBC TBC": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Sky Sports Ultra HDR": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "TrillerTV+": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "STV Player": {
+      "id": null,
+      "logo": null,
+      "qualities": null
     }
   }
 }
