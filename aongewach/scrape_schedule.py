@@ -132,7 +132,7 @@ def scrape_date(date_obj):
     print(f"    v Found {len(events)} events (after filtering).")
     return events
 
-def scrape_week():
+def scrape_week(output_file: str = "weekly_schedule.json"):
     """Scrape the entire current week (Monday to Sunday)."""
     today = datetime.date.today()
     # Find start of current week (Monday)
@@ -152,9 +152,6 @@ def scrape_week():
             "events": day_events
         })
     
-    # Output file
-    output_file = f"weekly_schedule.json"
-    
     result = {
         "generated_at": datetime.datetime.utcnow().isoformat() + "Z",
         "source": "wheresthematch.com",
@@ -169,6 +166,11 @@ def scrape_week():
 def main():
     parser = argparse.ArgumentParser(description="Scrape sports schedule.")
     parser.add_argument("--date", type=str, help="Single date (YYYYMMDD). If omitted, scrapes full week.")
+    parser.add_argument(
+        "--output",
+        type=str,
+        help="Output JSON file path. Default: weekly_schedule.json (weekly mode) or schedule_YYYY-MM-DD.json (single date mode).",
+    )
     args = parser.parse_args()
     
     if args.date:
@@ -176,7 +178,7 @@ def main():
         try:
             dt = datetime.datetime.strptime(args.date, "%Y%m%d")
             events = scrape_date(dt)
-            output_file = f"schedule_{dt.strftime('%Y-%m-%d')}.json"
+            output_file = args.output or f"schedule_{dt.strftime('%Y-%m-%d')}.json"
             with open(output_file, 'w', encoding='utf-8') as f:
                 json.dump({"date": args.date, "events": events}, f, indent=2)
             print(f"Saved {output_file}")
@@ -184,7 +186,7 @@ def main():
             print("Invalid date format.")
     else:
         # Weekly mode
-        scrape_week()
+        scrape_week(output_file=args.output or "weekly_schedule.json")
 
 if __name__ == "__main__":
     main()

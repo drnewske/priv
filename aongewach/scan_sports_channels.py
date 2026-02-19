@@ -317,6 +317,8 @@ class SportsScanner:
         allow_ffmpeg_fallback: bool = TEST_FFMPEG_FALLBACK,
         test_workers: int = TEST_WORKERS,
         test_user_agent: str = DEFAULT_USER_AGENT,
+        preserve_existing_streams: bool = False,
+        existing_channels: Optional[Dict[str, Dict]] = None,
     ):
         """Initialize scanner with target channels."""
         # Normalize targets for matching while preserving stable display names.
@@ -343,6 +345,7 @@ class SportsScanner:
         self.test_retry_delay = max(0.0, float(test_retry_delay))
         self.test_workers = max(1, int(test_workers))
         self.test_user_agent = test_user_agent
+        self.preserve_existing_streams = bool(preserve_existing_streams)
         self.lock = threading.Lock()
         self.url_test_cache: Dict[str, bool] = {}
         self.ffprobe_bin = shutil.which('ffprobe')
@@ -372,7 +375,12 @@ class SportsScanner:
             'channels_completed': 0,
             'channels_refreshed_from_tested_streams': 0,
             'channels_cleared_no_working_streams': 0,
+            'channels_seeded_from_existing': 0,
+            'streams_seeded_from_existing': 0,
         }
+
+        if self.preserve_existing_streams:
+            self._seed_existing_channels(existing_channels or {})
     
     def _get_channel_id(self, name: str) -> int:
         """Get or create STABLE channel ID (Hash of name)."""
@@ -397,6 +405,82 @@ class SportsScanner:
     def _get_display_name(self, target_lower: str) -> str:
         """Recover display name using original schedule casing when available."""
         return self.target_display_names.get(target_lower, target_lower.title())
+
+    def _seed_existing_channels(self, existing_channels: Dict[str, Dict]) -> None:
+        """Preload existing URLs so scans add/refill instead of rebuilding from scratch."""
+        if not isinstance(existing_channels, dict) or not existing_channels:
+            return
+
+        existing_name_by_lower = {name.lower(): name for name in existing_channels.keys()}
+        seeded_channels = 0
+        seeded_streams = 0
+
+        for target_lower in self.targets:
+            canonical_name = existing_name_by_lower.get(target_lower)
+            if not canonical_name:
+                continue
+
+            channel_data = existing_channels.get(canonical_name)
+            if not isinstance(channel_data, dict):
+                continue
+
+            existing_qualities = channel_data.get('qualities')
+            if not isinstance(existing_qualities, dict):
+                continue
+
+            display_name = self._get_display_name(target_lower)
+            ordered_qualities = [q for q in QUALITY_PRIORITY if q in existing_qualities]
+            ordered_qualities.extend(
+                sorted(q for q in existing_qualities.keys() if q not in QUALITY_PRIORITY)
+            )
+
+            had_any = False
+            for quality in ordered_qualities:
+                raw_urls = existing_qualities.get(quality) or []
+                if not isinstance(raw_urls, list):
+                    continue
+
+                for raw_url in raw_urls:
+                    if len(self.channel_urls[display_name]) >= self.max_streams_per_channel:
+                        break
+                    if not isinstance(raw_url, str):
+                        continue
+
+                    url = raw_url.strip()
+                    if not url:
+                        continue
+                    if url in self.channel_urls[display_name]:
+                        continue
+
+                    self.channel_urls[display_name].add(url)
+                    self.channels[display_name]['qualities'][quality].add(url)
+                    seeded_streams += 1
+                    had_any = True
+
+                if len(self.channel_urls[display_name]) >= self.max_streams_per_channel:
+                    break
+
+            if not had_any:
+                continue
+
+            seeded_channels += 1
+            logo = channel_data.get('logo')
+            if isinstance(logo, str):
+                logo = logo.strip()
+                if logo and not self.channels[display_name]['logo']:
+                    self.channels[display_name]['logo'] = logo
+
+            if len(self.channel_urls[display_name]) >= self.max_streams_per_channel:
+                self.stats['channels_completed'] += 1
+
+        self.stats['channels_seeded_from_existing'] = seeded_channels
+        self.stats['streams_seeded_from_existing'] = seeded_streams
+
+        if seeded_channels > 0:
+            print(
+                f"Seeded {seeded_channels} target channels with {seeded_streams} existing streams before scanning.",
+                flush=True,
+            )
 
     def _is_channel_complete(self, channel_name: str) -> bool:
         with self.lock:
@@ -985,6 +1069,9 @@ class SportsScanner:
         print(f"  New/Updated in this scan: {len(self.channels)}", flush=True)
         print(f"  Missing (Added as null): {missing_count}", flush=True)
         print(f"  Max streams/channel cap: {self.max_streams_per_channel}", flush=True)
+        if self.preserve_existing_streams:
+            print(f"  Seeded channels from existing DB: {self.stats['channels_seeded_from_existing']}", flush=True)
+            print(f"  Seeded streams from existing DB: {self.stats['streams_seeded_from_existing']}", flush=True)
         print(f"  Streams tested: {self.stats['streams_tested']}", flush=True)
         print(f"  Streams alive: {self.stats['streams_alive']}", flush=True)
         print(f"  Streams dead: {self.stats['streams_dead']}", flush=True)
@@ -1026,6 +1113,11 @@ def main():
     parser.add_argument('output_file', nargs='?', default='channels.json', help='Output JSON file')
     parser.add_argument('--verify', action='store_true', help='Use only first 3 servers for verification')
     parser.add_argument(
+        '--preserve-existing-streams',
+        action='store_true',
+        help='Pre-seed target channels from existing output file before scanning (useful after stream pruning).',
+    )
+    parser.add_argument(
         '--max-working-streams-per-channel',
         type=int,
         default=MAX_STREAMS_PER_CHANNEL,
@@ -1059,6 +1151,17 @@ def main():
          # We'll stick to 1 (git) + 3 (json) = 4 total.
          servers = servers[:4]
          
+    existing_channels = {}
+    if args.preserve_existing_streams and os.path.exists(args.output_file):
+        try:
+            with open(args.output_file, 'r', encoding='utf-8') as handle:
+                existing_data = json.load(handle)
+            parsed_channels = existing_data.get('channels', {})
+            if isinstance(parsed_channels, dict):
+                existing_channels = parsed_channels
+        except Exception as e:
+            print(f"Warning: could not pre-load existing channels from {args.output_file}: {e}")
+
     # 3. Init Scanner (hard cap enforced per channel)
     scanner = SportsScanner(
         target_channels=targets,
@@ -1069,6 +1172,8 @@ def main():
         allow_ffmpeg_fallback=not args.no_ffmpeg_fallback,
         test_workers=args.test_workers,
         test_user_agent=args.test_user_agent,
+        preserve_existing_streams=args.preserve_existing_streams,
+        existing_channels=existing_channels,
     )
     
     # 4. Run Scan

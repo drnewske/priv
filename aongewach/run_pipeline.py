@@ -4,9 +4,11 @@ Run Pipeline - Orchestrates the full schedule processing pipeline.
 
 Steps:
   1. Scrape weekly schedule from FANZO TV Guide API
-  2. Scan/update channels.json from configured playlists/providers
-  3. Map schedule events to team IDs and logos
-  4. Map schedule channels to IPTV stream URLs
+  2. Scrape weekly schedule from Where's The Match
+  3. Merge FANZO events with Where's The Match channels (exact match)
+  4. Scan/update channels.json from configured playlists/providers
+  5. Map schedule events to team IDs and logos
+  6. Map schedule channels to IPTV stream URLs
 """
 
 import subprocess
@@ -49,7 +51,28 @@ def main():
         "Scraping Weekly Schedule from FANZO TV Guide API",
     )
 
-    # 2. Scan Sports Channels (Update channels.json based on schedule)
+    # 2. Scrape Where's The Match (Weekly) to side file
+    run_step(
+        "scrape_schedule.py",
+        "Scraping Weekly Schedule from Where's The Match",
+        extra_args=["--output", "weekly_schedule_witm.json"],
+    )
+
+    # 3. Merge FANZO + Where's The Match channels (exact event match)
+    run_step(
+        "merge_schedule_channels.py",
+        "Merging FANZO Events with Where's The Match Channel Listings",
+        extra_args=[
+            "--fanzo",
+            "weekly_schedule.json",
+            "--witm",
+            "weekly_schedule_witm.json",
+            "--output",
+            "weekly_schedule.json",
+        ],
+    )
+
+    # 4. Scan Sports Channels (Update channels.json based on schedule)
     run_step(
         "scan_sports_channels.py",
         "Scanning Playlists for Channels in Schedule (Inline Stream Validation)",
@@ -66,10 +89,10 @@ def main():
         ],
     )
 
-    # 3. Map Teams (Event Names -> Team IDs & Logos)
+    # 5. Map Teams (Event Names -> Team IDs & Logos)
     run_step("map_schedule_to_teams.py", "Mapping Events to Team IDs and Logos")
 
-    # 4. Map Channels (Schedule Channels -> IPTV Stream URLs)
+    # 6. Map Channels (Schedule Channels -> IPTV Stream URLs)
     run_step("map_channels.py", "Mapping Schedule Channels to Playable IPTV Streams")
 
     print(f"\n{'=' * 50}")

@@ -1,0 +1,111 @@
+name: Refresh Streams And Update Schedule
+
+on:
+  workflow_dispatch:
+    inputs:
+      stream_workers:
+        description: "Parallel workers for stream_tester.py"
+        required: false
+        default: "12"
+      stream_timeout:
+        description: "ffprobe timeout (seconds) for stream_tester.py"
+        required: false
+        default: "8"
+      stream_retry_failed:
+        description: "Extra ffprobe retries in stream_tester.py"
+        required: false
+        default: "1"
+      stream_use_ffmpeg_fallback:
+        description: "Use ffmpeg fallback in stream_tester.py"
+        required: false
+        type: boolean
+        default: true
+      scan_workers:
+        description: "Parallel workers per playlist in scan_sports_channels.py"
+        required: false
+        default: "12"
+      scan_timeout:
+        description: "ffprobe timeout (seconds) in scan_sports_channels.py"
+        required: false
+        default: "8"
+      scan_retry_failed:
+        description: "Extra ffprobe retries in scan_sports_channels.py"
+        required: false
+        default: "1"
+      scan_use_ffmpeg_fallback:
+        description: "Use ffmpeg fallback in scan_sports_channels.py"
+        required: false
+        type: boolean
+        default: true
+      max_working_streams_per_channel:
+        description: "Max working streams kept per channel"
+        required: false
+        default: "5"
+
+jobs:
+  refresh-pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    concurrency:
+      group: refresh-streams-pipeline
+      cancel-in-progress: true
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.10"
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        pip install beautifulsoup4 requests
+        if command -v ffprobe >/dev/null 2>&1; then
+          echo "ffprobe already available, skipping install."
+        else
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+        fi
+
+    - name: Run dead-stream-first pipeline
+      run: |
+        cd aongewach
+        CMD=(python run_pipeline_stream_refresh.py
+          --channels-file channels.json
+          --stream-workers "${{ inputs.stream_workers }}"
+          --stream-timeout "${{ inputs.stream_timeout }}"
+          --stream-retry-failed "${{ inputs.stream_retry_failed }}"
+          --scan-workers "${{ inputs.scan_workers }}"
+          --scan-timeout "${{ inputs.scan_timeout }}"
+          --scan-retry-failed "${{ inputs.scan_retry_failed }}"
+          --max-working-streams-per-channel "${{ inputs.max_working_streams_per_channel }}")
+
+        if [ "${{ inputs.stream_use_ffmpeg_fallback }}" != "true" ]; then
+          CMD+=(--no-stream-ffmpeg-fallback)
+        fi
+        if [ "${{ inputs.scan_use_ffmpeg_fallback }}" != "true" ]; then
+          CMD+=(--no-scan-ffmpeg-fallback)
+        fi
+
+        printf 'Running command:\n  '
+        printf '%q ' "${CMD[@]}"
+        echo
+        "${CMD[@]}"
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name "GitHub Action"
+        git config --global user.email "action@github.com"
+        git add aongewach/weekly_schedule.json aongewach/weekly_schedule_witm.json aongewach/weekly_schedule_mapped.json aongewach/e104f869d64e3d41256d5398.json aongewach/channel_map.json aongewach/channels.json
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "Refresh streams and update weekly schedule [skip ci]"
+          git push
+        fi
