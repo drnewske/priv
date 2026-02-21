@@ -35,8 +35,8 @@ def process_schedule():
         return
 
     source = str(schedule_data.get('source', '')).lower()
-    if source.startswith('fanzo'):
-        print("FANZO source detected: preserving seeded team data and skipping fuzzy/API team mapping.")
+    if source.startswith(('fanzo', 'livesporttv')):
+        print("Schedule source already includes team metadata. Skipping fuzzy/API team mapping.")
         total_events = 0
         for day in schedule_data.get('schedule', []):
             for event in day.get('events', []):
@@ -167,15 +167,7 @@ def process_schedule():
                             api_lookup_cache[cache_key] = result
                             return result
                     
-                    # 3. Tier 3: API Fallback (The user's new request)
-                    # If still not found, try to fetch from API directly
-                    print(f"  Thinking... attempting API fetch for: {raw_name}")
-                    api_match = matcher.fetch_and_learn(raw_name)
-                    if api_match:
-                        result = (api_match, False)
-                        api_lookup_cache[cache_key] = result
-                        return result
-
+                    # 3. Stop here intentionally: no external API fallback.
                     result = (None, False)
                     api_lookup_cache[cache_key] = result
                     return result

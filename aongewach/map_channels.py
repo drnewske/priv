@@ -3,7 +3,8 @@ import os
 import time
 
 # Configuration
-SCHEDULE_FILE = 'weekly_schedule_mapped.json'
+SCHEDULE_FILE = 'weekly_schedule.json'
+SCHEDULE_FILE_FALLBACK = 'weekly_schedule_mapped.json'
 CHANNELS_FILE = 'channels.json'
 MAP_FILE = 'channel_map.json'
 OUTPUT_FILE = 'e104f869d64e3d41256d5398.json'
@@ -42,12 +43,17 @@ def build_exact_lookup(iptv_channels):
 def map_channels():
     print("Loading data...")
     schedule_data = load_json(SCHEDULE_FILE)
+    schedule_source = SCHEDULE_FILE
+    if not schedule_data:
+        schedule_data = load_json(SCHEDULE_FILE_FALLBACK)
+        schedule_source = SCHEDULE_FILE_FALLBACK
     channels_db = load_json(CHANNELS_FILE)
     saved_map = load_json(MAP_FILE) # Name -> Channel ID (preferred)
     
     if not schedule_data or not channels_db:
         print("Missing input files.")
         return
+    print(f"Using schedule file: {schedule_source}")
 
     iptv_channels = channels_db.get('channels', {})
     print("Building exact lookup...")

@@ -5,8 +5,7 @@ Run Pipeline - Orchestrates the full schedule processing pipeline.
 Steps:
   1. Scrape weekly schedule from LiveSportTV
   2. Scan/update channels.json from configured playlists/providers
-  3. Map schedule events to team IDs and logos
-  4. Map schedule channels to IPTV stream URLs
+  3. Map schedule channels to IPTV stream URLs
 """
 
 import subprocess
@@ -67,10 +66,7 @@ def main():
         ],
     )
 
-    # 3. Map Teams (Event Names -> Team IDs & Logos).
-    run_step("map_schedule_to_teams.py", "Mapping Events to Team IDs and Logos")
-
-    # 4. Map Channels (Schedule Channels -> IPTV Stream URLs).
+    # 3. Map Channels (Schedule Channels -> IPTV Stream URLs).
     run_step("map_channels.py", "Mapping Schedule Channels to Playable IPTV Streams")
 
     print(f"\n{'=' * 50}")

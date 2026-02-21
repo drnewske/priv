@@ -6,8 +6,7 @@ Flow:
   1. Test/prune existing streams in channels.json (mark dead URLs and remove them)
   2. Scrape weekly schedule from LiveSportTV
   3. Run batched playlist scan to refill/add streams and discover schedule channels
-  4. Map schedule events to team IDs/logos
-  5. Map schedule channels to IPTV stream IDs
+  4. Map schedule channels to IPTV stream IDs
 """
 
 import argparse
@@ -153,10 +152,7 @@ def main() -> int:
         extra_args=scan_args,
     )
 
-    # 4. Map teams.
-    run_step("map_schedule_to_teams.py", "Mapping Events to Team IDs and Logos")
-
-    # 5. Map channels.
+    # 4. Map channels.
     run_step("map_channels.py", "Mapping Schedule Channels to Playable IPTV Streams")
 
     print(f"\n{'=' * 60}")
