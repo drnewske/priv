@@ -32,6 +32,7 @@ Workflow: `update_schedule.yml`
 ## 3. Manual Maintenance Scripts
 - `build_teams_db.py`: legacy team DB refresh script (now at repo root).
 - `scan_specific_playlist.py`: targeted channel scans for missing channels/debugging.
+- `scrape_schedule_livesporttv.py`: LiveSportTV guide scraper (HTML + data-today + tournament API).
 
 ## 4. Legacy Team Assets (Repo Root)
 - `spdb_teams.json`, `teams.json`, `spdb_build_state.json`

@@ -1,0 +1,118 @@
+name: Scrape LiveSportTV Weekly
+
+on:
+  workflow_dispatch:
+    inputs:
+      start_date:
+        description: "Start date (YYYY-MM-DD). Leave blank for today (UTC)."
+        required: false
+        default: ""
+      days:
+        description: "Number of days to scrape"
+        required: false
+        default: "7"
+      max_pages:
+        description: "Per-day /data-today pages (site default: 2)"
+        required: false
+        default: "2"
+      max_tournaments:
+        description: "Tournament API call cap per day. Use 0 for no cap."
+        required: false
+        default: "0"
+      output_file:
+        description: "Output file path (repo-relative)"
+        required: false
+        default: "aongewach/weekly_schedule_livesporttv.json"
+
+jobs:
+  scrape-livesporttv:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    concurrency:
+      group: scrape-livesporttv-weekly
+      cancel-in-progress: true
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.10"
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then
+          pip install -r requirements.txt
+        fi
+        if [ -f aongewach/requirements.txt ]; then
+          pip install -r aongewach/requirements.txt
+        fi
+
+    - name: Run LiveSportTV scraper
+      run: |
+        OUTPUT_FILE="${{ inputs.output_file }}"
+        DAYS="${{ inputs.days }}"
+        MAX_PAGES="${{ inputs.max_pages }}"
+        MAX_TOURNAMENTS="${{ inputs.max_tournaments }}"
+        START_DATE="${{ inputs.start_date }}"
+
+        CMD=(python aongewach/scrape_schedule_livesporttv.py
+          --days "$DAYS"
+          --max-pages "$MAX_PAGES"
+          --output "$OUTPUT_FILE")
+
+        if [ -n "$START_DATE" ]; then
+          CMD+=(--date "$START_DATE")
+        fi
+        if [ "$MAX_TOURNAMENTS" != "0" ]; then
+          CMD+=(--max-tournaments "$MAX_TOURNAMENTS")
+        fi
+
+        echo "Running command:"
+        printf '  %q ' "${CMD[@]}"
+        echo
+        "${CMD[@]}"
+
+        echo "OUTPUT_FILE=$OUTPUT_FILE" >> "$GITHUB_ENV"
+
+    - name: Print summary
+      run: |
+        python - <<'PY'
+        import json
+        import os
+        from collections import Counter
+
+        output_file = os.environ["OUTPUT_FILE"]
+        with open(output_file, "r", encoding="utf-8") as f:
+            payload = json.load(f)
+
+        schedule = payload.get("schedule") or []
+        print(f"Source: {payload.get('source')}")
+        print(f"Generated at: {payload.get('generated_at')}")
+        print(f"Days scraped: {len(schedule)}")
+
+        total_events = 0
+        sport_counts = Counter()
+        for day in schedule:
+            events = day.get("events") or []
+            total_events += len(events)
+            print(f"- {day.get('date')} ({day.get('day')}): {len(events)} events")
+            for event in events:
+                sport = (event.get("sport") or "").strip() or "unknown"
+                sport_counts[sport] += 1
+
+        print(f"Total events: {total_events}")
+        print("Top sports:")
+        for sport, count in sport_counts.most_common(15):
+            print(f"  {sport}: {count}")
+        PY
+
+    - name: Upload output artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: livesporttv-weekly-json
+        path: ${{ env.OUTPUT_FILE }}
+        if-no-files-found: error
