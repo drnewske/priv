@@ -31,7 +31,7 @@ TEST_TIMEOUT_SECONDS = 8
 TEST_RETRY_FAILED = 1
 TEST_RETRY_DELAY_SECONDS = 0.35
 TEST_FFMPEG_FALLBACK = True
-TEST_WORKERS = 12
+TEST_WORKERS = 20
 DEFAULT_USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
     "AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -333,7 +333,18 @@ class SportsScanner:
             if key not in self.target_display_names:
                 self.target_display_names[key] = cleaned
         self.targets = list(self.target_display_names.keys())
-        
+        self.total_targets = len(self.targets)
+        self.use_indexed_target_match = self.total_targets > 128
+
+        # Fast target-matching index:
+        # - targets length < 3 are checked directly
+        # - targets length >= 3 use a selected trigram anchor
+        #   so each stream only checks a small candidate subset.
+        self.short_target_indices = tuple()
+        self.anchor_to_target_indices = {}
+        if self.use_indexed_target_match:
+            self._build_target_match_index()
+
         # Channel storage: {original_target_name: {qualities: {quality: set()}, logo: str}}
         self.channels = defaultdict(lambda: {'qualities': defaultdict(set), 'logo': None})
         self.channel_urls = defaultdict(set)
@@ -348,6 +359,7 @@ class SportsScanner:
         self.preserve_existing_streams = bool(preserve_existing_streams)
         self.lock = threading.Lock()
         self.url_test_cache: Dict[str, bool] = {}
+        self.completed_targets = set()
         self.ffprobe_bin = shutil.which('ffprobe')
         self.ffmpeg_bin = shutil.which('ffmpeg')
         self.allow_ffmpeg_fallback = bool(allow_ffmpeg_fallback and self.ffmpeg_bin)
@@ -381,7 +393,38 @@ class SportsScanner:
 
         if self.preserve_existing_streams:
             self._seed_existing_channels(existing_channels or {})
-    
+
+    def _build_target_match_index(self) -> None:
+        """Build a compact substring prefilter index for fast candidate selection."""
+        gram_frequency = defaultdict(int)
+        target_grams: List[Optional[set]] = []
+        short_indices = []
+
+        for idx, target in enumerate(self.targets):
+            if len(target) < 3:
+                short_indices.append(idx)
+                target_grams.append(None)
+                continue
+
+            grams = {target[i:i + 3] for i in range(len(target) - 2)}
+            target_grams.append(grams)
+            for gram in grams:
+                gram_frequency[gram] += 1
+
+        anchor_map = defaultdict(list)
+        for idx, grams in enumerate(target_grams):
+            if not grams:
+                continue
+            # Use rarest trigram as anchor to minimize candidate fan-out.
+            anchor = min(grams, key=lambda g: (gram_frequency[g], g))
+            anchor_map[anchor].append(idx)
+
+        self.short_target_indices = tuple(short_indices)
+        self.anchor_to_target_indices = {
+            anchor: tuple(indices)
+            for anchor, indices in anchor_map.items()
+        }
+
     def _get_channel_id(self, name: str) -> int:
         """Get or create STABLE channel ID (Hash of name)."""
         if name not in self.channel_ids:
@@ -395,16 +438,43 @@ class SportsScanner:
         This is the inner loop hot-path.
         """
         name_lower = stream_name.lower()
-        
-        # Simple substring check against all targets
-        for target in self.targets:
-             if target in name_lower:
-                 return target # Return the matched target string (lower)
+        if not name_lower:
+            return None
+
+        if not self.use_indexed_target_match:
+            for target in self.targets:
+                if target in name_lower:
+                    return target
+            return None
+
+        candidate_indices = set(self.short_target_indices)
+
+        # Gather candidates for targets length >= 3 via trigram anchors.
+        if len(name_lower) >= 3:
+            for i in range(len(name_lower) - 2):
+                gram = name_lower[i:i + 3]
+                anchored = self.anchor_to_target_indices.get(gram)
+                if anchored:
+                    candidate_indices.update(anchored)
+
+        if not candidate_indices:
+            return None
+
+        # Preserve existing behavior: return first target by original target order.
+        for idx in sorted(candidate_indices):
+            target = self.targets[idx]
+            if target in name_lower:
+                return target
         return None
 
     def _get_display_name(self, target_lower: str) -> str:
         """Recover display name using original schedule casing when available."""
         return self.target_display_names.get(target_lower, target_lower.title())
+
+    def _mark_channel_complete_locked(self, channel_name: str) -> None:
+        if channel_name not in self.completed_targets:
+            self.completed_targets.add(channel_name)
+            self.stats['channels_completed'] += 1
 
     def _seed_existing_channels(self, existing_channels: Dict[str, Dict]) -> None:
         """Preload existing URLs so scans add/refill instead of rebuilding from scratch."""
@@ -471,7 +541,8 @@ class SportsScanner:
                     self.channels[display_name]['logo'] = logo
 
             if len(self.channel_urls[display_name]) >= self.max_streams_per_channel:
-                self.stats['channels_completed'] += 1
+                with self.lock:
+                    self._mark_channel_complete_locked(display_name)
 
         self.stats['channels_seeded_from_existing'] = seeded_channels
         self.stats['streams_seeded_from_existing'] = seeded_streams
@@ -484,16 +555,12 @@ class SportsScanner:
 
     def _is_channel_complete(self, channel_name: str) -> bool:
         with self.lock:
-            return len(self.channel_urls[channel_name]) >= self.max_streams_per_channel
+            urls = self.channel_urls.get(channel_name)
+            return len(urls) >= self.max_streams_per_channel if urls is not None else False
 
     def _all_targets_complete(self) -> bool:
         with self.lock:
-            completed = 0
-            for target_lower in self.targets:
-                channel_name = self._get_display_name(target_lower)
-                if len(self.channel_urls[channel_name]) >= self.max_streams_per_channel:
-                    completed += 1
-            return completed == len(self.targets)
+            return self.total_targets > 0 and len(self.completed_targets) >= self.total_targets
 
     def _run_ffprobe(self, url: str) -> bool:
         cmd = [
@@ -767,7 +834,7 @@ class SportsScanner:
                         self.channels[channel_name]['logo'] = stream_logo
 
                     if len(channel_urls) == self.max_streams_per_channel:
-                        self.stats['channels_completed'] += 1
+                        self._mark_channel_complete_locked(channel_name)
                         print(
                             f"[CAP] Channel '{channel_name}' reached {self.max_streams_per_channel} working streams.",
                             flush=True,
@@ -854,8 +921,8 @@ class SportsScanner:
             # Connect to API
             api = XtreamAPI(server['url'])
             
-            # STRATEGY: Try to fetch ALL streams first (some providers support this)
-            # If that fails or returns empty, fetch all categories and iterate.
+            # STRATEGY: fetch full live stream list only.
+            # Category iteration fallback is intentionally disabled for speed.
             
             all_streams = []
             
@@ -876,43 +943,14 @@ class SportsScanner:
                 result['channels_added'] = added
                 print(f"  v {server.get('name')} - Done. Added {added} channels.", flush=True)
                 return result
-                
-            # Method B: Iterate Categories (Fallback)
-            print(f"    - Full list fetch returned empty. Switching to Category Iteration...", flush=True)
-            try:
-                categories = api.get_live_categories()
-            except Exception as e:
-                result['error'] = f"Failed to get categories: {e}"
-                print(f"  x {server.get('name')} - Error: {e}", flush=True)
-                return result
 
-            self.stats['categories_total'] += len(categories)
-            print(f"    - Found {len(categories)} categories. Scanning ALL...", flush=True)
-            
-            total_added = 0
-            
-            # Scan ALL categories
-            for cat in categories:
-                if self._all_targets_complete():
-                    print(f"    - Target channels complete. Stopping category scan for {server.get('name')}.", flush=True)
-                    break
-                cat_id = cat.get('category_id')
-                if not cat_id: continue
-                
-                streams = api.get_live_streams(cat_id)
-                if streams:
-                    self.stats['streams_total'] += len(streams)
-                    # Process batch
-                    added = self.process_streams(
-                        streams,
-                        api_instance=api,
-                        source_label=server.get('name', 'Unknown'),
-                    )
-                    total_added += added
-            
+            print(
+                "    - Full list fetch returned empty. Category fallback disabled; skipping server.",
+                flush=True,
+            )
             result['success'] = True
-            result['channels_added'] = total_added
-            print(f"  v {server.get('name')} - Done. Added {total_added} channels.", flush=True)
+            result['channels_added'] = 0
+            print(f"  v {server.get('name')} - Done. Added 0 channels.", flush=True)
             
         except Exception as e:
             result['error'] = str(e)

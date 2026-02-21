@@ -49,7 +49,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--channels-file", default="channels.json", help="Path to channels DB")
 
     # Stream tester settings
-    parser.add_argument("--stream-workers", type=int, default=12, help="Parallel testers for stream_tester.py")
+    parser.add_argument("--stream-workers", type=int, default=20, help="Parallel testers for stream_tester.py")
     parser.add_argument("--stream-timeout", type=int, default=8, help="ffprobe timeout for stream_tester.py")
     parser.add_argument(
         "--stream-retry-failed",
@@ -76,7 +76,7 @@ def parse_args() -> argparse.Namespace:
         default=5,
         help="Hard cap of working streams to keep per channel",
     )
-    parser.add_argument("--scan-workers", type=int, default=12, help="Parallel workers per playlist scan")
+    parser.add_argument("--scan-workers", type=int, default=20, help="Parallel workers per playlist scan")
     parser.add_argument("--scan-timeout", type=int, default=8, help="ffprobe timeout for playlist scanner")
     parser.add_argument(
         "--scan-retry-failed",

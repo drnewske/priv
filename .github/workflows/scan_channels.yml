@@ -34,7 +34,7 @@ jobs:
         # Run scanner with output file argument
         python aongewach/scan_sports_channels.py aongewach/channels.json \
           --max-working-streams-per-channel 5 \
-          --test-workers 12 \
+          --test-workers 20 \
           --test-timeout 8 \
           --test-retry-failed 1
         

@@ -58,7 +58,7 @@ def main():
             "--max-working-streams-per-channel",
             "5",
             "--test-workers",
-            "12",
+            "20",
             "--test-timeout",
             "8",
             "--test-retry-failed",

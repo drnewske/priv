@@ -15,11 +15,11 @@ Workflow: `update_schedule.yml`
 ## 2. Manual Maintenance Workflows
 - `scan_channels.yml`: manual channel scan only.
   - Uses the same inline stream testing behavior as pipeline scan.
-  - Batch testing runs per playlist with workers (`test-workers=12` by default).
+  - Batch testing runs per playlist with workers (`test-workers=20` by default).
 - `stream_test.yml`: manual stream validation/pruning only (`stream_tester.py`).
   - Supports run-time inputs in Actions UI: `workers`, `timeout`, `retry_failed`,
     `use_ffmpeg_fallback`, `progress_every`, `verbose`, and `show_failures`.
-  - Current accuracy defaults: `workers=12`, `timeout=8`, `retry_failed=1`,
+  - Current accuracy defaults: `workers=20`, `timeout=8`, `retry_failed=1`,
     `use_ffmpeg_fallback=true`, `progress_every=50`.
 - `refresh_streams_pipeline.yml`: dead-stream-first full pipeline.
   - Starts with `stream_tester.py` to prune dead URLs in `channels.json`.

@@ -6,7 +6,7 @@ on:
       workers:
         description: "Parallel workers"
         required: false
-        default: "12"
+        default: "20"
       timeout:
         description: "Per-URL ffprobe timeout in seconds"
         required: false

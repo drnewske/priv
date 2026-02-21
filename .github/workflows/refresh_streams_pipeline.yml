@@ -6,7 +6,7 @@ on:
       stream_workers:
         description: "Parallel workers for stream_tester.py"
         required: false
-        default: "12"
+        default: "20"
       stream_timeout:
         description: "ffprobe timeout (seconds) for stream_tester.py"
         required: false
@@ -23,7 +23,7 @@ on:
       scan_workers:
         description: "Parallel workers per playlist in scan_sports_channels.py"
         required: false
-        default: "12"
+        default: "20"
       scan_timeout:
         description: "ffprobe timeout (seconds) in scan_sports_channels.py"
         required: false
