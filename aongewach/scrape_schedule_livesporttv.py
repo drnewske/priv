@@ -32,6 +32,7 @@ from urllib.parse import urlparse
 
 import cloudscraper
 from bs4 import BeautifulSoup, Tag
+from bs4 import FeatureNotFound
 
 try:
     from zoneinfo import ZoneInfo
@@ -53,6 +54,17 @@ VERSION_RE = re.compile(r"version:\s*'([^']+)'")
 TIME_ZONE_RE = re.compile(r"time_zone:\s*'([^']+)'")
 ISO_CODE_RE = re.compile(r"iso_code:\s*'([^']+)'")
 LOCALE_RE = re.compile(r"locale:\s*'([^']+)'")
+
+_PARSER = "lxml"
+
+
+def parse_html(html: str) -> BeautifulSoup:
+    global _PARSER
+    try:
+        return BeautifulSoup(html, _PARSER)
+    except FeatureNotFound:
+        _PARSER = "html.parser"
+        return BeautifulSoup(html, _PARSER)
 
 
 @dataclass(frozen=True)
@@ -220,7 +232,7 @@ def parse_channels_from_match_payload(
 
     html_values = tv_listings.get("html")
     if isinstance(html_values, str) and html_values.strip():
-        soup = BeautifulSoup(html_values, "lxml")
+        soup = parse_html(html_values)
         for anchor in soup.select("a"):
             text = anchor.get_text(" ", strip=True)
             if text:
@@ -378,7 +390,7 @@ def parse_match_payload_event(
     li_node: Optional[Tag] = None
     html = payload.get("html")
     if isinstance(html, str) and html.strip():
-        soup = BeautifulSoup(html, "lxml")
+        soup = parse_html(html)
         li_node = soup.select_one("li[data-match]")
 
     tv_listings = payload.get("tv_listings")
@@ -563,7 +575,7 @@ def parse_data_today_tournaments(
         if not chunks:
             continue
         html = "".join(chunks)
-        soup = BeautifulSoup(html, "lxml")
+        soup = parse_html(html)
         parsed = extract_tournaments_from_soup(
             soup, default_iso_code=default_iso_code, source_sport_key=sport_key
         )
@@ -581,7 +593,7 @@ def scrape_one_date(
     html_override: Optional[str] = None,
 ) -> Tuple[List[Dict], Dict[str, int]]:
     html = html_override if html_override is not None else client.get_schedule_html(target_date)
-    soup = BeautifulSoup(html, "lxml")
+    soup = parse_html(html)
 
     config = extract_script_config(html)
     sport_by_id = extract_sport_map(soup)
