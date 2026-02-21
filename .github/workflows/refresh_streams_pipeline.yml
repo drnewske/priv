@@ -102,7 +102,7 @@ jobs:
       run: |
         git config --global user.name "GitHub Action"
         git config --global user.email "action@github.com"
-        git add aongewach/weekly_schedule.json aongewach/weekly_schedule_witm.json aongewach/weekly_schedule_mapped.json aongewach/e104f869d64e3d41256d5398.json aongewach/channel_map.json aongewach/channels.json
+        git add aongewach/weekly_schedule.json aongewach/weekly_schedule_mapped.json aongewach/e104f869d64e3d41256d5398.json aongewach/channel_map.json aongewach/channels.json
         if git diff --staged --quiet; then
           echo "No changes to commit"
         else

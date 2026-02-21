@@ -4,12 +4,10 @@ Run Pipeline (Dead-Stream-First Mode)
 
 Flow:
   1. Test/prune existing streams in channels.json (mark dead URLs and remove them)
-  2. Scrape weekly schedule from FANZO
-  3. Scrape weekly schedule from Where's The Match
-  4. Merge FANZO events with Where's The Match channels
-  5. Run batched playlist scan to refill/add streams and discover schedule channels
-  6. Map schedule events to team IDs/logos
-  7. Map schedule channels to IPTV stream IDs
+  2. Scrape weekly schedule from LiveSportTV
+  3. Run batched playlist scan to refill/add streams and discover schedule channels
+  4. Map schedule events to team IDs/logos
+  5. Map schedule channels to IPTV stream IDs
 """
 
 import argparse
@@ -125,34 +123,14 @@ def main() -> int:
         extra_args=stream_tester_args,
     )
 
-    # 2. Scrape FANZO weekly schedule.
+    # 2. Scrape LiveSportTV weekly schedule.
     run_step(
-        "scrape_schedule_fanzo.py",
-        "Scraping Weekly Schedule from FANZO TV Guide API",
+        "scrape_schedule_livesporttv.py",
+        "Scraping Weekly Schedule from LiveSportTV",
+        extra_args=["--days", "7", "--output", "weekly_schedule.json"],
     )
 
-    # 3. Scrape Where's The Match weekly schedule to side file.
-    run_step(
-        "scrape_schedule.py",
-        "Scraping Weekly Schedule from Where's The Match",
-        extra_args=["--output", "weekly_schedule_witm.json"],
-    )
-
-    # 4. Merge schedule channels by exact event match.
-    run_step(
-        "merge_schedule_channels.py",
-        "Merging FANZO Events with Where's The Match Channel Listings",
-        extra_args=[
-            "--fanzo",
-            "weekly_schedule.json",
-            "--witm",
-            "weekly_schedule_witm.json",
-            "--output",
-            "weekly_schedule.json",
-        ],
-    )
-
-    # 5. Playlist scan (batch per playlist, parallel stream tests) to refill/add.
+    # 3. Playlist scan (batch per playlist, parallel stream tests) to refill/add.
     scan_args = [
         args.channels_file,
         "--preserve-existing-streams",
@@ -175,10 +153,10 @@ def main() -> int:
         extra_args=scan_args,
     )
 
-    # 6. Map teams.
+    # 4. Map teams.
     run_step("map_schedule_to_teams.py", "Mapping Events to Team IDs and Logos")
 
-    # 7. Map channels.
+    # 5. Map channels.
     run_step("map_channels.py", "Mapping Schedule Channels to Playable IPTV Streams")
 
     print(f"\n{'=' * 60}")
