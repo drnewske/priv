@@ -56,6 +56,7 @@ ISO_CODE_RE = re.compile(r"iso_code:\s*'([^']+)'")
 LOCALE_RE = re.compile(r"locale:\s*'([^']+)'")
 MATCH_TOKEN_RE = re.compile(r"^[A-Za-z0-9_-]{4,64}$")
 LOGO_PLACEHOLDER_RE = re.compile(r"(?:^|[/_-])(no-logo|default)(?:[._/-]|$)", re.IGNORECASE)
+TEAM_LOGO_WIDTH_RE = re.compile(r"/resize/width/20(?=/uploads/teams/)", re.IGNORECASE)
 
 _PARSER = "lxml"
 
@@ -223,6 +224,68 @@ def normalize_identity_text(value: object) -> str:
     return normalize_whitespace(value).casefold()
 
 
+def normalize_logo_url(raw: object) -> str:
+    normalized = normalize_site_url(raw)
+    if not normalized:
+        return ""
+    parsed = urlparse(normalized)
+    if not parsed.path:
+        return normalized
+    patched_path = TEAM_LOGO_WIDTH_RE.sub("/resize/width/40", parsed.path)
+    if patched_path == parsed.path:
+        return normalized
+    return parsed._replace(path=patched_path).geturl().rstrip("/")
+
+
+def is_special_competition_event(competition: object, country: object, sport: object) -> bool:
+    comp = normalize_identity_text(competition)
+    country_key = normalize_identity_text(country)
+    sport_key = normalize_identity_text(sport)
+
+    if not comp:
+        return False
+
+    # UEFA top competitions
+    if "champions league" in comp:
+        if "afc champions league" in comp or "caf champions league" in comp:
+            return False
+        if "uefa" in comp or country_key in {"international", "europe"}:
+            return True
+    if "europa league" in comp:
+        if "uefa" in comp or country_key in {"international", "europe"}:
+            return True
+    if "conference league" in comp:
+        if "uefa" in comp or country_key in {"international", "europe"}:
+            return True
+
+    # England top comps
+    if "premier league" in comp and country_key == "england":
+        return True
+    if "carabao cup" in comp or ("efl cup" in comp and country_key == "england"):
+        return True
+    if "fa cup" in comp and country_key == "england":
+        return True
+
+    # Spain / Germany / France top leagues/cups
+    if ("la liga" in comp or "laliga" in comp) and country_key == "spain":
+        if "2" not in comp and "hypermotion" not in comp:
+            return True
+    if "bundesliga" in comp and country_key == "germany":
+        if "2. bundesliga" not in comp and "2 bundesliga" not in comp:
+            return True
+    if ("dfb-pokal" in comp or "dfb pokal" in comp) and country_key == "germany":
+        return True
+    if "ligue 1" in comp and country_key == "france":
+        return True
+
+    # Top NBA competitions
+    if "nba" in comp and sport_key == "basketball":
+        if "g league" not in comp:
+            return True
+
+    return False
+
+
 def normalize_site_url(raw: object, keep_fragment: bool = False) -> str:
     url = str(raw or "").strip()
     if not url:
@@ -291,7 +354,7 @@ def extract_match_identity_token(event: Dict) -> str:
 
 
 def is_usable_logo_url(raw: object) -> bool:
-    normalized = normalize_site_url(raw)
+    normalized = normalize_logo_url(raw)
     if not normalized:
         return False
     if LOGO_PLACEHOLDER_RE.search(normalized):
@@ -304,7 +367,7 @@ def is_usable_logo_url(raw: object) -> bool:
 
 
 def logo_quality_score(raw: object) -> int:
-    url = normalize_site_url(raw)
+    url = normalize_logo_url(raw)
     if not url:
         return -100
     lowered = url.lower()
@@ -321,8 +384,8 @@ def logo_quality_score(raw: object) -> int:
 
 
 def choose_preferred_logo(existing: object, incoming: object) -> Optional[str]:
-    existing_url = normalize_site_url(existing)
-    incoming_url = normalize_site_url(incoming)
+    existing_url = normalize_logo_url(existing)
+    incoming_url = normalize_logo_url(incoming)
 
     if not existing_url and not incoming_url:
         return None
@@ -371,7 +434,7 @@ def extract_logo_from_node(node: Optional[Tag]) -> Optional[str]:
         candidate = parse_srcset_first_url(raw) if "srcset" in attr else str(raw).strip()
         if candidate.startswith("data:"):
             continue
-        normalized = normalize_site_url(candidate)
+        normalized = normalize_logo_url(candidate)
         if normalized:
             return normalized
     return None
@@ -415,6 +478,7 @@ def merge_duplicate_events(existing: Dict, incoming: Dict) -> Dict:
     merged["away_team_logo"] = choose_preferred_logo(
         existing.get("away_team_logo"), incoming.get("away_team_logo")
     )
+    merged["special"] = bool(existing.get("special")) or bool(incoming.get("special"))
 
     for field in (
         "name",
@@ -596,13 +660,18 @@ def parse_li_match_event(
         sport_name = infer_sport_from_url(detail_url)
     sport_name = normalize_sport_name(sport_name)
 
+    competition = normalize_whitespace(match_node.get("data-comp"))
+    country = normalize_whitespace(match_node.get("data-country"))
+    special = is_special_competition_event(competition, country, sport_name)
+
     event = {
         "name": event_name,
         "start_time_iso": match_iso,
         "time": match_time,
         "sport": sport_name,
-        "competition": normalize_whitespace(match_node.get("data-comp")),
-        "country": normalize_whitespace(match_node.get("data-country")),
+        "competition": competition,
+        "country": country,
+        "special": special,
         "channels": channels,
         "home_team": home_name or None,
         "away_team": away_name or None,
@@ -728,6 +797,7 @@ def parse_match_payload_event(
 
     competition = normalize_whitespace(match_node.get("data-comp"))
     country = normalize_whitespace(match_node.get("data-country"))
+    special = is_special_competition_event(competition, country, sport_name)
     competition_url = normalize_site_url(match_node.get("data-comp_link"))
     match_key = normalize_whitespace(match_node.get("data-match") or match_node.get("id"))
 
@@ -743,6 +813,7 @@ def parse_match_payload_event(
         "sport": sport_name,
         "competition": competition,
         "country": country,
+        "special": special,
         "channels": channels,
         "home_team": home_name or None,
         "away_team": away_name or None,
@@ -786,6 +857,32 @@ def sort_events(events: List[Dict]) -> List[Dict]:
         return (start_iso, name.lower())
 
     return sorted(events, key=_sort_key)
+
+
+def apply_competition_special_labels(events: List[Dict]) -> List[Dict]:
+    """Apply `special` as a competition-level label and propagate to all its events."""
+    by_competition: Dict[Tuple[str, str, str], bool] = {}
+
+    for event in events:
+        key = (
+            normalize_identity_text(event.get("competition")),
+            normalize_identity_text(event.get("country")),
+            normalize_identity_text(event.get("sport")),
+        )
+        if key not in by_competition:
+            by_competition[key] = is_special_competition_event(
+                event.get("competition"), event.get("country"), event.get("sport")
+            )
+
+    for event in events:
+        key = (
+            normalize_identity_text(event.get("competition")),
+            normalize_identity_text(event.get("country")),
+            normalize_identity_text(event.get("sport")),
+        )
+        event["special"] = bool(by_competition.get(key, False))
+
+    return events
 
 
 def extract_sport_map(soup: BeautifulSoup) -> Dict[str, str]:
@@ -942,7 +1039,10 @@ def scrape_one_date(
             continue
         merged_events[key] = merge_duplicate_events(merged_events[key], event)
 
-    return sort_events(list(merged_events.values())), {
+    events = sort_events(list(merged_events.values()))
+    events = apply_competition_special_labels(events)
+
+    return events, {
         "initial_matches": len(initial_matches),
         "api_matches": len(api_events),
         "tournaments_total": len(tournament_items),
