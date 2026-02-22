@@ -13,6 +13,10 @@ Workflow: `update_schedule.yml`
 - Manual trigger: Actions -> "Update Weekly Schedule" -> "Run workflow"
 
 ## 2. Manual Maintenance Workflows
+- `scrape_and_map.yml`: manual scrape + mapper only (no channel scan).
+  - Runs `run_pipeline_scrape_map.py` to scrape LiveSportTV and then map channels
+    against existing `channels.json`.
+  - Useful when stream links are already populated and you only want fresh schedule + mapping.
 - `scan_channels.yml`: manual channel scan only.
   - Uses the same inline stream testing behavior as pipeline scan.
   - Batch testing runs per playlist with workers (`test-workers=20` by default).
@@ -28,6 +32,7 @@ Workflow: `update_schedule.yml`
 
 ## 3. Manual Maintenance Scripts
 - `scrape_schedule_livesporttv.py`: LiveSportTV guide scraper (HTML + data-today + tournament API).
+- `run_pipeline_scrape_map.py`: scrape + channel map runner (no playlist scan).
 
 ## 4. Archived Legacy Files (`aongewach/legacy/`)
 - `legacy/scripts/`: archived/unused scripts from FANZO/WITM/team-mapping era.

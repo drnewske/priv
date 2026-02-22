@@ -28,7 +28,7 @@ import sys
 import time
 from dataclasses import dataclass
 from typing import Dict, Iterable, List, Optional, Tuple
-from urllib.parse import urlparse
+from urllib.parse import quote, unquote, urljoin, urlparse
 
 import cloudscraper
 from bs4 import BeautifulSoup, Tag
@@ -54,6 +54,8 @@ VERSION_RE = re.compile(r"version:\s*'([^']+)'")
 TIME_ZONE_RE = re.compile(r"time_zone:\s*'([^']+)'")
 ISO_CODE_RE = re.compile(r"iso_code:\s*'([^']+)'")
 LOCALE_RE = re.compile(r"locale:\s*'([^']+)'")
+MATCH_TOKEN_RE = re.compile(r"^[A-Za-z0-9_-]{4,64}$")
+LOGO_PLACEHOLDER_RE = re.compile(r"(?:^|[/_-])(no-logo|default)(?:[._/-]|$)", re.IGNORECASE)
 
 _PARSER = "lxml"
 
@@ -213,9 +215,245 @@ def dedupe_strings(values: Iterable[str]) -> List[str]:
     return result
 
 
+def normalize_whitespace(value: object) -> str:
+    return " ".join(str(value or "").strip().split())
+
+
+def normalize_identity_text(value: object) -> str:
+    return normalize_whitespace(value).casefold()
+
+
+def normalize_site_url(raw: object, keep_fragment: bool = False) -> str:
+    url = str(raw or "").strip()
+    if not url:
+        return ""
+    if url.startswith("//"):
+        url = f"https:{url}"
+    elif url.startswith("/"):
+        url = urljoin(BASE_URL, url)
+    elif not urlparse(url).scheme:
+        url = urljoin(BASE_URL + "/", url)
+
+    parsed = urlparse(url)
+    if parsed.scheme in {"http", "https"}:
+        parsed = parsed._replace(scheme="https")
+    if parsed.path:
+        encoded_path = quote(unquote(parsed.path), safe="/:@&+$,;=-_.!~*'()")
+        parsed = parsed._replace(path=encoded_path)
+    if not keep_fragment:
+        parsed = parsed._replace(fragment="")
+    normalized = parsed.geturl().rstrip("/")
+    return normalized
+
+
+def canonicalize_match_url(raw: object) -> str:
+    normalized = normalize_site_url(raw, keep_fragment=True)
+    if not normalized:
+        return ""
+
+    parsed = urlparse(normalized)
+    path_parts = [part for part in parsed.path.split("/") if part]
+    fragment = normalize_whitespace(parsed.fragment)
+    token = fragment if MATCH_TOKEN_RE.match(fragment) else ""
+
+    if not token and path_parts:
+        last = normalize_whitespace(path_parts[-1])
+        if MATCH_TOKEN_RE.match(last):
+            token = last
+
+    if token and path_parts:
+        path_parts[-1] = token
+        new_path = "/" + "/".join(path_parts)
+    else:
+        new_path = parsed.path
+
+    canonical = parsed._replace(path=new_path, fragment="")
+    return canonical.geturl().rstrip("/")
+
+
+def extract_match_identity_token(event: Dict) -> str:
+    key = normalize_whitespace(event.get("match_key"))
+    if key:
+        return normalize_identity_text(key)
+
+    match_url = canonicalize_match_url(event.get("match_url"))
+    if not match_url:
+        return ""
+
+    parsed = urlparse(match_url)
+    path_parts = [part for part in parsed.path.split("/") if part]
+    if not path_parts:
+        return ""
+    tail = normalize_whitespace(path_parts[-1])
+    if MATCH_TOKEN_RE.match(tail):
+        return normalize_identity_text(tail)
+    return ""
+
+
+def is_usable_logo_url(raw: object) -> bool:
+    normalized = normalize_site_url(raw)
+    if not normalized:
+        return False
+    if LOGO_PLACEHOLDER_RE.search(normalized):
+        return False
+    parsed = urlparse(normalized)
+    filename = unquote(parsed.path).rsplit("/", 1)[-1].strip()
+    if not filename or "." not in filename:
+        return False
+    return True
+
+
+def logo_quality_score(raw: object) -> int:
+    url = normalize_site_url(raw)
+    if not url:
+        return -100
+    lowered = url.lower()
+    score = 0
+    if "/resize/" in lowered:
+        score += 4
+    if "?" in lowered:
+        score += 1
+    if "/uploads/" in lowered and "/resize/" not in lowered:
+        score -= 1
+    if LOGO_PLACEHOLDER_RE.search(lowered):
+        score -= 5
+    return score
+
+
+def choose_preferred_logo(existing: object, incoming: object) -> Optional[str]:
+    existing_url = normalize_site_url(existing)
+    incoming_url = normalize_site_url(incoming)
+
+    if not existing_url and not incoming_url:
+        return None
+    if not existing_url:
+        return incoming_url if is_usable_logo_url(incoming_url) else None
+    if not incoming_url:
+        return existing_url if is_usable_logo_url(existing_url) else None
+
+    existing_score = logo_quality_score(existing_url)
+    incoming_score = logo_quality_score(incoming_url)
+    chosen = incoming_url if incoming_score > existing_score else existing_url
+    if not is_usable_logo_url(chosen):
+        fallback = existing_url if chosen == incoming_url else incoming_url
+        return fallback if is_usable_logo_url(fallback) else None
+    return chosen
+
+
+def parse_srcset_first_url(raw: object) -> str:
+    text = str(raw or "").strip()
+    if not text:
+        return ""
+    first = text.split(",", 1)[0].strip()
+    if not first:
+        return ""
+    return first.split(" ", 1)[0].strip()
+
+
+def extract_logo_from_node(node: Optional[Tag]) -> Optional[str]:
+    if node is None:
+        return None
+    if not isinstance(node, Tag):
+        return None
+
+    candidate_attrs = (
+        "src",
+        "data-src",
+        "data-original",
+        "data-lazy-src",
+        "data-srcset",
+        "srcset",
+    )
+    for attr in candidate_attrs:
+        raw = node.get(attr)
+        if not raw:
+            continue
+        candidate = parse_srcset_first_url(raw) if "srcset" in attr else str(raw).strip()
+        if candidate.startswith("data:"):
+            continue
+        normalized = normalize_site_url(candidate)
+        if normalized:
+            return normalized
+    return None
+
+
+def select_match_node(container: Tag) -> Optional[Tag]:
+    if not isinstance(container, Tag):
+        return None
+    if container.has_attr("data-match"):
+        return container
+    return container.select_one("[data-match]")
+
+
+def iter_unique_match_nodes(soup: BeautifulSoup) -> Iterable[Tag]:
+    seen = set()
+    for node in soup.select("[data-match]"):
+        if not isinstance(node, Tag):
+            continue
+        key = normalize_whitespace(node.get("data-match") or node.get("id"))
+        if not key:
+            continue
+        lowered = key.casefold()
+        if lowered in seen:
+            continue
+        seen.add(lowered)
+        yield node
+
+
+def merge_duplicate_events(existing: Dict, incoming: Dict) -> Dict:
+    merged = dict(existing)
+
+    merged_channels = dedupe_strings(
+        list(existing.get("channels") or []) + list(incoming.get("channels") or [])
+    )
+    if merged_channels:
+        merged["channels"] = merged_channels
+
+    merged["home_team_logo"] = choose_preferred_logo(
+        existing.get("home_team_logo"), incoming.get("home_team_logo")
+    )
+    merged["away_team_logo"] = choose_preferred_logo(
+        existing.get("away_team_logo"), incoming.get("away_team_logo")
+    )
+
+    for field in (
+        "name",
+        "start_time_iso",
+        "time",
+        "sport",
+        "competition",
+        "country",
+        "home_team",
+        "away_team",
+        "home_team_id",
+        "away_team_id",
+        "status",
+        "score_home",
+        "score_away",
+        "match_key",
+        "match_fx_id",
+        "competition_url",
+        "sport_id",
+    ):
+        if normalize_whitespace(merged.get(field)):
+            continue
+        merged[field] = incoming.get(field)
+
+    existing_match_url = canonicalize_match_url(existing.get("match_url"))
+    incoming_match_url = canonicalize_match_url(incoming.get("match_url"))
+    if existing_match_url:
+        merged["match_url"] = existing_match_url
+    elif incoming_match_url:
+        merged["match_url"] = incoming_match_url
+    else:
+        merged["match_url"] = ""
+
+    return merged
+
+
 def parse_channels_from_match_payload(
     tv_listings: Dict,
-    li_node: Optional[Tag],
+    match_node: Optional[Tag],
     keep_noisy_channels: bool = False,
 ) -> List[str]:
     candidates: List[str] = []
@@ -238,8 +476,8 @@ def parse_channels_from_match_payload(
             if text:
                 candidates.append(text)
 
-    if li_node is not None:
-        for anchor in li_node.select(".match__channels a, .match_channels a"):
+    if match_node is not None:
+        for anchor in match_node.select(".match__channels a, .match_channels a"):
             text = anchor.get_text(" ", strip=True)
             if text:
                 candidates.append(text)
@@ -260,6 +498,7 @@ def build_event_name(home_name: str, away_name: str) -> str:
 
 
 def parse_match_datetime(time_text: Optional[str], tz_name: str) -> Tuple[Optional[str], str]:
+    _ = tz_name
     if not time_text:
         return None, ""
     cleaned = time_text.strip()
@@ -276,10 +515,10 @@ def parse_match_datetime(time_text: Optional[str], tz_name: str) -> Tuple[Option
     if parsed is None:
         return None, ""
 
-    tzinfo = get_timezone(tz_name)
-    local_dt = parsed.replace(tzinfo=tzinfo)
-    iso = local_dt.astimezone(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
-    return iso, local_dt.strftime("%H:%M")
+    # LiveSportTV's data-time behaves as UTC clock time for schedule payloads.
+    utc_dt = parsed.replace(tzinfo=dt.timezone.utc)
+    iso = utc_dt.replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    return iso, parsed.strftime("%H:%M")
 
 
 def infer_sport_from_url(url: str) -> str:
@@ -311,12 +550,16 @@ def parse_li_match_event(
     if not isinstance(li, Tag):
         return None
 
-    data_match = (li.get("data-match") or li.get("id") or "").strip()
-    detail_anchor = li.select_one(".matches-status a.link_matchs_pjax, a.link_matchs_pjax")
-    detail_url = detail_anchor.get("href").strip() if detail_anchor and detail_anchor.get("href") else ""
+    match_node = select_match_node(li)
+    if match_node is None:
+        return None
 
-    home_name_node = li.select_one(".match__home__name, .match_home_name")
-    away_name_node = li.select_one(".match__away__name, .match_away_name")
+    data_match = normalize_whitespace(match_node.get("data-match") or match_node.get("id"))
+    detail_anchor = match_node.select_one(".matches-status a.link_matchs_pjax, a.link_matchs_pjax")
+    detail_url = canonicalize_match_url(detail_anchor.get("href") if detail_anchor else "")
+
+    home_name_node = match_node.select_one(".match__home__name, .match_home_name")
+    away_name_node = match_node.select_one(".match__away__name, .match_away_name")
     home_name = home_name_node.get_text(" ", strip=True) if home_name_node else ""
     away_name = away_name_node.get_text(" ", strip=True) if away_name_node else ""
 
@@ -324,21 +567,21 @@ def parse_li_match_event(
         return None
 
     event_name = build_event_name(home_name, away_name)
-    status_node = li.select_one(".matches-status")
+    status_node = match_node.select_one(".matches-status")
     status_text = status_node.get_text(" ", strip=True) if status_node else ""
 
-    home_logo_node = li.select_one(".match__home__image img, .match_home_img img")
-    away_logo_node = li.select_one(".match__away__image img, .match_away_img img")
-    home_logo = home_logo_node.get("src").strip() if home_logo_node and home_logo_node.get("src") else None
-    away_logo = away_logo_node.get("src").strip() if away_logo_node and away_logo_node.get("src") else None
+    home_logo_node = match_node.select_one(".match__home__image img, .match_home_img img")
+    away_logo_node = match_node.select_one(".match__away__image img, .match_away_img img")
+    home_logo = choose_preferred_logo(None, extract_logo_from_node(home_logo_node))
+    away_logo = choose_preferred_logo(None, extract_logo_from_node(away_logo_node))
 
-    home_score_node = li.select_one(".matches-home")
-    away_score_node = li.select_one(".matches-away")
+    home_score_node = match_node.select_one(".matches-home")
+    away_score_node = match_node.select_one(".matches-away")
     home_score = home_score_node.get_text(" ", strip=True) if home_score_node else ""
     away_score = away_score_node.get_text(" ", strip=True) if away_score_node else ""
 
     channels: List[str] = []
-    for anchor in li.select(".match__channels a, .match_channels a"):
+    for anchor in match_node.select(".match__channels a, .match_channels a"):
         text = anchor.get_text(" ", strip=True)
         if text and is_usable_channel_name(text, keep_noisy_channels=keep_noisy_channels):
             channels.append(text)
@@ -346,8 +589,8 @@ def parse_li_match_event(
     if not channels:
         return None
 
-    match_iso, match_time = parse_match_datetime(li.get("data-time"), default_tz)
-    sport_id = (li.get("data-sport") or "").strip()
+    match_iso, match_time = parse_match_datetime(match_node.get("data-time"), default_tz)
+    sport_id = normalize_whitespace(match_node.get("data-sport"))
     sport_name = sport_by_id.get(sport_id, "")
     if not sport_name:
         sport_name = infer_sport_from_url(detail_url)
@@ -358,8 +601,8 @@ def parse_li_match_event(
         "start_time_iso": match_iso,
         "time": match_time,
         "sport": sport_name,
-        "competition": (li.get("data-comp") or "").strip(),
-        "country": (li.get("data-country") or "").strip(),
+        "competition": normalize_whitespace(match_node.get("data-comp")),
+        "country": normalize_whitespace(match_node.get("data-country")),
         "channels": channels,
         "home_team": home_name or None,
         "away_team": away_name or None,
@@ -370,9 +613,9 @@ def parse_li_match_event(
         "status": status_text,
         "score_home": home_score or None,
         "score_away": away_score or None,
-        "match_key": data_match,
+        "match_key": data_match or None,
         "match_url": detail_url,
-        "competition_url": (li.get("data-comp_link") or "").strip(),
+        "competition_url": normalize_site_url(match_node.get("data-comp_link")),
         "sport_id": sport_id or None,
     }
     return event
@@ -387,16 +630,20 @@ def parse_match_payload_event(
     if not isinstance(payload, dict):
         return None
 
-    li_node: Optional[Tag] = None
+    match_node: Optional[Tag] = None
     html = payload.get("html")
     if isinstance(html, str) and html.strip():
         soup = parse_html(html)
-        li_node = soup.select_one("li[data-match]")
+        match_node = select_match_node(soup)
+
+    # Keep API enrichment page-aligned: skip rows without a visible match node.
+    if match_node is None:
+        return None
 
     tv_listings = payload.get("tv_listings")
     tv_listings_dict = tv_listings if isinstance(tv_listings, dict) else {}
     channels = parse_channels_from_match_payload(
-        tv_listings_dict, li_node, keep_noisy_channels=keep_noisy_channels
+        tv_listings_dict, match_node, keep_noisy_channels=keep_noisy_channels
     )
     if not channels:
         return None
@@ -406,33 +653,36 @@ def parse_match_payload_event(
     away = payload.get("away") if isinstance(payload.get("away"), dict) else {}
     score = payload.get("score") if isinstance(payload.get("score"), dict) else {}
 
-    home_name = str(home.get("name") or "").strip()
-    away_name = str(away.get("name") or "").strip()
-    if not home_name and li_node is not None:
-        node = li_node.select_one(".match__home__name, .match_home_name")
-        if node:
-            home_name = node.get_text(" ", strip=True)
-    if not away_name and li_node is not None:
-        node = li_node.select_one(".match__away__name, .match_away_name")
-        if node:
-            away_name = node.get_text(" ", strip=True)
+    home_name = ""
+    away_name = ""
+    node = match_node.select_one(".match__home__name, .match_home_name")
+    if node:
+        home_name = node.get_text(" ", strip=True)
+    node = match_node.select_one(".match__away__name, .match_away_name")
+    if node:
+        away_name = node.get_text(" ", strip=True)
+
+    if not home_name:
+        home_name = normalize_whitespace(home.get("name"))
+    if not away_name:
+        away_name = normalize_whitespace(away.get("name"))
 
     if not home_name and not away_name:
         return None
 
     event_name = build_event_name(home_name, away_name)
 
-    data_time = li_node.get("data-time") if li_node is not None else None
+    data_time = match_node.get("data-time")
     start_iso, local_time = parse_match_datetime(data_time, fallback_tz)
 
     status_text = ""
-    status = match.get("status")
-    if isinstance(status, dict):
-        status_text = str(status.get("value") or "").strip()
-    if not status_text and li_node is not None:
-        status_node = li_node.select_one(".matches-status")
-        if status_node:
-            status_text = status_node.get_text(" ", strip=True)
+    status_node = match_node.select_one(".matches-status")
+    if status_node:
+        status_text = status_node.get_text(" ", strip=True)
+    if not status_text:
+        status = match.get("status")
+        if isinstance(status, dict):
+            status_text = normalize_whitespace(status.get("value"))
 
     score_home = None
     score_away = None
@@ -440,37 +690,51 @@ def parse_match_payload_event(
         score_home = score["home"].get("value")
     if isinstance(score.get("away"), dict):
         score_away = score["away"].get("value")
+    if score_home in (None, ""):
+        score_node = match_node.select_one(".matches-home")
+        if score_node:
+            score_home = score_node.get_text(" ", strip=True)
+    if score_away in (None, ""):
+        score_node = match_node.select_one(".matches-away")
+        if score_node:
+            score_away = score_node.get_text(" ", strip=True)
 
-    li_data = li_node if li_node is not None else {}
-    sport_id = (li_data.get("data-sport") or "").strip() if isinstance(li_data, Tag) else ""
-    match_url = str(match.get("url") or "").strip()
-    if not match_url and li_node is not None:
-        anchor = li_node.select_one("a.link_matchs_pjax")
+    sport_id = normalize_whitespace(match_node.get("data-sport"))
+    match_url = normalize_whitespace(match.get("url"))
+    if not match_url:
+        anchor = match_node.select_one("a.link_matchs_pjax")
         if anchor and anchor.get("href"):
-            match_url = anchor.get("href").strip()
+            match_url = normalize_whitespace(anchor.get("href"))
+    match_url = canonicalize_match_url(match_url)
 
     sport_name = sport_by_id.get(sport_id, "")
     if not sport_name:
         sport_name = infer_sport_from_url(match_url)
     sport_name = normalize_sport_name(sport_name)
 
-    home_logo = str(home.get("image") or "").strip() or None
-    away_logo = str(away.get("image") or "").strip() or None
+    home_logo = choose_preferred_logo(
+        extract_logo_from_node(match_node.select_one(".match__home__image img, .match_home_img img")),
+        home.get("image"),
+    )
+    home_logo = choose_preferred_logo(home_logo, home.get("logo"))
+    home_logo = choose_preferred_logo(home_logo, home.get("image_url"))
 
-    competition = ""
-    country = ""
-    competition_url = ""
-    match_key = ""
-    if isinstance(li_data, Tag):
-        competition = str(li_data.get("data-comp") or "").strip()
-        country = str(li_data.get("data-country") or "").strip()
-        competition_url = str(li_data.get("data-comp_link") or "").strip()
-        match_key = str(li_data.get("data-match") or li_data.get("id") or "").strip()
+    away_logo = choose_preferred_logo(
+        extract_logo_from_node(match_node.select_one(".match__away__image img, .match_away_img img")),
+        away.get("image"),
+    )
+    away_logo = choose_preferred_logo(away_logo, away.get("logo"))
+    away_logo = choose_preferred_logo(away_logo, away.get("image_url"))
+
+    competition = normalize_whitespace(match_node.get("data-comp"))
+    country = normalize_whitespace(match_node.get("data-country"))
+    competition_url = normalize_site_url(match_node.get("data-comp_link"))
+    match_key = normalize_whitespace(match_node.get("data-match") or match_node.get("id"))
 
     if not match_key:
         raw_key = match.get("key")
         if raw_key:
-            match_key = str(raw_key).strip()
+            match_key = normalize_whitespace(raw_key)
 
     return {
         "name": event_name,
@@ -497,12 +761,22 @@ def parse_match_payload_event(
     }
 
 
-def event_dedupe_key(event: Dict) -> Tuple[str, str, str]:
-    url = str(event.get("match_url") or "").split("#", 1)[0].rstrip("/")
-    key = str(event.get("match_key") or "")
-    name = str(event.get("name") or "")
-    start_iso = str(event.get("start_time_iso") or "")
-    return (url or key, start_iso, name)
+def event_dedupe_key(event: Dict) -> Tuple[str, ...]:
+    start_iso = normalize_identity_text(event.get("start_time_iso"))
+    sport = normalize_identity_text(event.get("sport"))
+
+    token = extract_match_identity_token(event)
+    if token:
+        return ("match", token, start_iso)
+
+    home = normalize_identity_text(event.get("home_team"))
+    away = normalize_identity_text(event.get("away_team"))
+    if home or away:
+        return ("teams", home, away, start_iso, sport)
+
+    name = normalize_identity_text(event.get("name"))
+    competition = normalize_identity_text(event.get("competition"))
+    return ("name", name, start_iso, sport, competition)
 
 
 def sort_events(events: List[Dict]) -> List[Dict]:
@@ -602,7 +876,7 @@ def scrape_one_date(
 
     tournaments = extract_tournaments_from_soup(soup, default_iso_code=config["iso_code"])
     initial_matches: List[Dict] = []
-    for li in soup.select("li[data-match]"):
+    for li in iter_unique_match_nodes(soup):
         event = parse_li_match_event(
             li,
             default_tz=config["time_zone"],
@@ -629,46 +903,44 @@ def scrape_one_date(
             parsed = parse_data_today_tournaments(payload, default_iso_code=config["iso_code"])
             merge_tournaments(tournaments, parsed)
 
-    tournament_items = list(tournaments.values())
-    if max_tournaments is not None and max_tournaments > 0:
-        tournament_items = tournament_items[:max_tournaments]
-
     api_events: List[Dict] = []
     success = 0
     failed = 0
-    for tournament in tournament_items:
-        try:
-            payload = client.get_tournament(tournament)
-        except Exception:
-            failed += 1
-            continue
+    tournament_items: List[TournamentRequest] = []
+    if include_data_today:
+        tournament_items = list(tournaments.values())
+        if max_tournaments is not None and max_tournaments > 0:
+            tournament_items = tournament_items[:max_tournaments]
 
-        matches = payload.get("matches")
-        if not isinstance(matches, list):
-            continue
+        for tournament in tournament_items:
+            try:
+                payload = client.get_tournament(tournament)
+            except Exception:
+                failed += 1
+                continue
 
-        for raw_match in matches:
-            event = parse_match_payload_event(
-                raw_match if isinstance(raw_match, dict) else {},
-                fallback_tz=tournament.time_zone,
-                sport_by_id=sport_by_id,
-                keep_noisy_channels=keep_noisy_channels,
-            )
-            if event:
-                api_events.append(event)
-        success += 1
+            matches = payload.get("matches")
+            if not isinstance(matches, list):
+                continue
 
-    merged_events: Dict[Tuple[str, str, str], Dict] = {}
+            for raw_match in matches:
+                event = parse_match_payload_event(
+                    raw_match if isinstance(raw_match, dict) else {},
+                    fallback_tz=tournament.time_zone,
+                    sport_by_id=sport_by_id,
+                    keep_noisy_channels=keep_noisy_channels,
+                )
+                if event:
+                    api_events.append(event)
+            success += 1
+
+    merged_events: Dict[Tuple[str, ...], Dict] = {}
     for event in initial_matches + api_events:
         key = event_dedupe_key(event)
         if key not in merged_events:
             merged_events[key] = event
             continue
-        # Keep richer event payload if duplicate is encountered.
-        existing_channels = len(merged_events[key].get("channels") or [])
-        current_channels = len(event.get("channels") or [])
-        if current_channels > existing_channels:
-            merged_events[key] = event
+        merged_events[key] = merge_duplicate_events(merged_events[key], event)
 
     return sort_events(list(merged_events.values())), {
         "initial_matches": len(initial_matches),
