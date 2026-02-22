@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Xtream Sports Channel Scanner - Production Version
-Fast AND accurate. Scans playlists from lovestory.json for matching channels.
+Fast AND accurate. Scans external playlists first, then lovestory.json for matching channels.
 """
 
 import json
@@ -25,6 +25,7 @@ import threading
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 SCHEDULE_FILE = os.path.join(SCRIPT_DIR, 'weekly_schedule.json')
 LOVESTORY_FILE = os.path.join(SCRIPT_DIR, '..', 'lovestory.json')
+EXTERNAL_PLAYLISTS_FILE = os.path.join(SCRIPT_DIR, '..', 'external_playlists.txt')
 MAX_STREAMS_PER_CHANNEL = 5
 QUALITY_PRIORITY = ['4K', 'FHD', 'HD', 'SD']
 TEST_TIMEOUT_SECONDS = 8
@@ -47,14 +48,26 @@ DOMAIN_RE = re.compile(
     re.IGNORECASE,
 )
 
-# Hardcoded Extra Server (Always included)
-EXTRA_SERVERS = [
-    {
-        'url': 'https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/a1x.m3u',
-        'name': 'A1XM Public',
-        'type': 'direct'
-    }
-]
+def infer_server_type(url: str, declared_type: Optional[str] = None) -> str:
+    """Infer server scan mode from URL + optional declared type."""
+    declared = (declared_type or "").strip().lower()
+    parsed = urlparse(url)
+    path = (parsed.path or "").lower()
+    params = parse_qs(parsed.query)
+    query_type = ((params.get("type") or [""])[0] or "").strip().lower()
+
+    if path.endswith((".m3u", ".m3u8")):
+        return "direct"
+    if query_type in {"m3u", "m3u8", "m3u_plus"}:
+        return "direct"
+    if declared in {"direct", "m3u", "m3u8", "playlist"}:
+        return "direct"
+    if "githubusercontent.com" in (parsed.netloc or "").lower():
+        return "direct"
+
+    if "username" in params and "password" in params:
+        return "api"
+    return "direct"
 
 
 def is_usable_channel_name(name: str) -> bool:
@@ -75,56 +88,77 @@ def safe_int(value, default: int = 0) -> int:
     except (TypeError, ValueError):
         return default
 
+def load_external_servers(file_path: str) -> List[Dict]:
+    """Load direct/API playlist URLs from a plain-text file in repo root.
+
+    Accepted line formats:
+      - URL
+      - Name|URL
+    Empty lines and lines starting with '#' are ignored.
+    """
+    servers: List[Dict] = []
+    if not os.path.exists(file_path):
+        print(f"External playlist file not found: {file_path}. Skipping external sources.")
+        return servers
+
+    try:
+        with open(file_path, "r", encoding="utf-8") as handle:
+            for line_no, raw_line in enumerate(handle, start=1):
+                line = raw_line.strip()
+                if not line or line.startswith("#"):
+                    continue
+
+                name = ""
+                url = line
+                if "|" in line:
+                    name, url = line.split("|", 1)
+                    name = name.strip()
+                    url = url.strip()
+
+                if not url:
+                    continue
+                parsed = urlparse(url)
+                if not parsed.scheme or not parsed.netloc:
+                    print(f"  - Skipping invalid external playlist line {line_no}: {line}")
+                    continue
+
+                server_type = infer_server_type(url)
+                servers.append(
+                    {
+                        "url": url,
+                        "name": name or f"External Playlist {len(servers) + 1}",
+                        "type": server_type,
+                        "stream_count": 0,
+                        "source": "external",
+                    }
+                )
+    except Exception as e:
+        print(f"Error loading external playlists from {file_path}: {e}")
+        return []
+
+    print(f"Loaded {len(servers)} external playlist sources from {file_path}.")
+    return servers
+
+
 def load_servers_from_lovestory(file_path: str) -> List[Dict]:
     """Load servers from lovestory.json featured_content."""
-    servers = []
-    
-    # Add hardcoded extras first
-    for extra in EXTRA_SERVERS:
-        normalized_extra = dict(extra)
-        normalized_extra['stream_count'] = safe_int(extra.get('channel_count', 0), 0)
-        servers.append(normalized_extra)
-    
+    servers: List[Dict] = []
+
     if not os.path.exists(file_path):
-        print(f"Warning: {file_path} not found. Using only hardcoded servers.")
+        print(f"Warning: {file_path} not found. Skipping lovestory sources.")
         return servers
-        
+
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
-            
+
         featured = data.get('featured_content', [])
         for item in featured:
             url = item.get('url')
             if not url:
                 continue
-                
-            # Determine type
-            # If it ends in .m3u or .m3u8 it might be direct, but the existing code 
-            # treats xtream api urls specially.
-            # Most entries in lovestory.json seem to be Xtream codes API urls 
-            # (e.g. contains username=...&password=...)
-            # We'll assume 'api' unless it looks like a direct file list without params, 
-            # but the scanner handles both.
-            # The existing scanner distinguishes based on 'type' field in the server dict,
-            # or we can infer it.
-            
-            # The item in lovestory.json has a "type": "m3u" field.
-            # But the URLs are API urls like .../get.php?username=...
-            # The scanner's "scan_server" checks if type == 'direct'.
-            # If the URL has username/password params, it's likely an API that returns M3U.
-            # The XtreamAPI class handles these URLs.
-            
-            # Let's map lovestory "type" to our scanner "type".
-            # Lovestory "type" is usually "m3u".
-            # If the URL looks like a get.php API call, we treat it as 'api' (which downloads m3u or uses player_api)
-            # Actually, the previous hardcoded list had 'type': 'api'.
-            # Users directive: "replace hardcoded links with data dynamically loaded"
-            
-            server_type = 'api'
-            # If it's a raw github url or doesn't have credentials in query, maybe direct?
-            if 'githubusercontent.com' in url or 'raw' in url:
-                server_type = 'direct'
+
+            server_type = infer_server_type(url, declared_type=item.get("type"))
             
             stream_count = safe_int(
                 item.get('channel_count', item.get('stream_count', item.get('streams', 0))),
@@ -135,22 +169,47 @@ def load_servers_from_lovestory(file_path: str) -> List[Dict]:
                 'url': url,
                 'name': item.get('name', 'Unknown'),
                 'type': server_type,
-                'stream_count': stream_count
+                'stream_count': stream_count,
+                'source': 'lovestory',
             })
 
-        # Prioritize largest playlists first.
+        # Prioritize largest lovestory playlists first (external list order is preserved separately).
         servers.sort(key=lambda s: safe_int(s.get('stream_count', 0), 0), reverse=True)
 
-        print(f"Loaded {len(servers)} servers from lovestory.json (+ {len(EXTRA_SERVERS)} static).")
+        print(f"Loaded {len(servers)} servers from lovestory.json.")
         top_n = min(10, len(servers))
         if top_n:
-            print("Top playlists by stream count:")
+            print("Top lovestory playlists by stream count:")
             for i, server in enumerate(servers[:top_n], start=1):
                 print(f"  {i}. {server.get('name', 'Unknown')} ({safe_int(server.get('stream_count', 0), 0)} streams)")
-        
+
     except Exception as e:
         print(f"Error loading {file_path}: {e}")
-        
+
+    return servers
+
+
+def load_scan_servers(external_file_path: str, lovestory_file_path: str) -> List[Dict]:
+    """Build final scan order: external playlists first, then lovestory playlists."""
+    external_servers = load_external_servers(external_file_path)
+    lovestory_servers = load_servers_from_lovestory(lovestory_file_path)
+
+    servers: List[Dict] = []
+    seen_urls = set()
+    for server in external_servers + lovestory_servers:
+        url = str(server.get("url", "")).strip()
+        if not url:
+            continue
+        url_key = url.lower()
+        if url_key in seen_urls:
+            continue
+        seen_urls.add(url_key)
+        servers.append(server)
+
+    print(
+        f"Final server list: {len(servers)} total "
+        f"({len(external_servers)} external + {len(lovestory_servers)} lovestory, deduped)."
+    )
     return servers
 
 class XtreamAPI:
@@ -960,22 +1019,24 @@ class SportsScanner:
     
     def scan_all(self, servers: List[Dict]) -> None:
         """Scan all provided servers."""
-        servers_sorted = sorted(servers, key=lambda s: safe_int(s.get('stream_count', 0), 0), reverse=True)
-        self.stats['servers_total'] = len(servers_sorted)
+        servers_ordered = list(servers)
+        self.stats['servers_total'] = len(servers_ordered)
         
         print(f"\\n{'='*70}")
-        print(f"Scanning {len(servers_sorted)} configured servers")
-        print(f"Priority: highest stream-count playlists first")
-        print(f"Flow: one playlist at a time, batch-test URLs with {self.test_workers} workers, then move on")
+        print(f"Scanning {len(servers_ordered)} configured servers")
+        print("Priority: configured order (external playlists first, then lovestory)")
+        print(
+            f"Flow: one playlist at a time, batch-test URLs with {self.test_workers} workers, then move on"
+        )
         print(f"{'='*70}\\n", flush=True)
 
-        for idx, server in enumerate(servers_sorted, start=1):
+        for idx, server in enumerate(servers_ordered, start=1):
             if self._all_targets_complete():
                 print("All target channels are fully populated with working streams. Ending scan early.", flush=True)
                 break
 
             server_name = server.get('name', 'Unknown')
-            print(f"Playlist {idx}/{len(servers_sorted)}: {server_name}", flush=True)
+            print(f"Playlist {idx}/{len(servers_ordered)}: {server_name}", flush=True)
             try:
                 result = self.scan_server(server)
                 if result['success']:
@@ -1176,18 +1237,10 @@ def main():
         sys.exit(1)
 
     # 2. Load Servers
-    servers = load_servers_from_lovestory(LOVESTORY_FILE)
+    servers = load_scan_servers(EXTERNAL_PLAYLISTS_FILE, LOVESTORY_FILE)
     if args.verify:
-         print("VERIFY MODE: Limiting to first 3 servers + Github")
-         # We want to keep the git link (usually first in list from load_servers if we put it there, 
-         # but actually we prepended it to servers list in load_servers_from_lovestory).
-         # So taking the first 4 (1 static + 3 dynamic) roughly matches the "verify with just three links" request.
-         # Or strictly following "verify with just three links from the json"
-         
-         # The servers list starts with EXTRA_SERVERS (1 item).
-         # Then appends items from json.
-         # We'll stick to 1 (git) + 3 (json) = 4 total.
-         servers = servers[:4]
+         print("VERIFY MODE: Limiting to first 3 configured playlist sources")
+         servers = servers[:3]
          
     existing_channels = {}
     if args.preserve_existing_streams and os.path.exists(args.output_file):

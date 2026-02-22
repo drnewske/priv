@@ -12,9 +12,9 @@ on:
         required: false
         default: "7"
       max_pages:
-        description: "Per-day /data-today pages (site default: 2)"
+        description: "Per-day /data-today pages"
         required: false
-        default: "2"
+        default: "7"
       max_tournaments:
         description: "Tournament API call cap per day. Use 0 for no cap."
         required: false

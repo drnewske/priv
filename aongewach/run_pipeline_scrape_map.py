@@ -47,7 +47,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Scrape LiveSportTV and map channels without scanning playlists.")
     parser.add_argument("--date", default=None, help="Start date (YYYY-MM-DD). Default: today UTC.")
     parser.add_argument("--days", type=int, default=7, help="Number of days to scrape.")
-    parser.add_argument("--max-pages", type=int, default=2, help="How many /data-today pages per day.")
+    parser.add_argument("--max-pages", type=int, default=7, help="How many /data-today pages per day.")
     parser.add_argument(
         "--max-tournaments",
         type=int,

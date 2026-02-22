@@ -33,6 +33,9 @@ Workflow: `update_schedule.yml`
 ## 3. Manual Maintenance Scripts
 - `scrape_schedule_livesporttv.py`: LiveSportTV guide scraper (HTML + data-today + tournament API).
 - `run_pipeline_scrape_map.py`: scrape + channel map runner (no playlist scan).
+- `scan_sports_channels.py`: scans sources in this order:
+  1. `external_playlists.txt` (repo root, one URL per line, optional `Name|URL`)
+  2. `lovestory.json` featured playlists
 
 ## 4. Archived Legacy Files (`aongewach/legacy/`)
 - `legacy/scripts/`: archived/unused scripts from FANZO/WITM/team-mapping era.

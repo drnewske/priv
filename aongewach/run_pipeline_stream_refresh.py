@@ -76,6 +76,7 @@ def parse_args() -> argparse.Namespace:
         default=5,
         help="Hard cap of working streams to keep per channel",
     )
+    parser.add_argument("--max-pages", type=int, default=7, help="How many /data-today pages per day for scraper")
     parser.add_argument("--scan-workers", type=int, default=20, help="Parallel workers per playlist scan")
     parser.add_argument("--scan-timeout", type=int, default=8, help="ffprobe timeout for playlist scanner")
     parser.add_argument(
@@ -126,7 +127,7 @@ def main() -> int:
     run_step(
         "scrape_schedule_livesporttv.py",
         "Scraping Weekly Schedule from LiveSportTV",
-        extra_args=["--days", "7", "--output", "weekly_schedule.json"],
+        extra_args=["--days", "7", "--max-pages", str(args.max_pages), "--output", "weekly_schedule.json"],
     )
 
     # 3. Playlist scan (batch per playlist, parallel stream tests) to refill/add.

@@ -46,7 +46,7 @@ def main():
     run_step(
         "scrape_schedule_livesporttv.py",
         "Scraping Weekly Schedule from LiveSportTV",
-        extra_args=["--days", "7", "--output", "weekly_schedule.json"],
+        extra_args=["--days", "7", "--max-pages", "7", "--output", "weekly_schedule.json"],
     )
 
     # 2. Scan Sports Channels (Update channels.json based on schedule).
