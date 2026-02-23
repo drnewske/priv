@@ -1055,7 +1055,22 @@ def _parse_match_international_channels(
         if cleaned:
             country_rows[country] = cleaned
 
-    return country_rows
+    # Enforce 1-to-1 ownership for country-channel rows.
+    # If the same channel appears in multiple countries, keep its first country only.
+    assigned: set[str] = set()
+    deduped_rows: Dict[str, List[str]] = {}
+    for country, channels in country_rows.items():
+        unique_for_country: List[str] = []
+        for channel in channels:
+            key = normalize_identity_text(channel)
+            if not key or key in assigned:
+                continue
+            assigned.add(key)
+            unique_for_country.append(channel)
+        if unique_for_country:
+            deduped_rows[country] = unique_for_country
+
+    return deduped_rows
 
 
 def _build_country_candidates(
