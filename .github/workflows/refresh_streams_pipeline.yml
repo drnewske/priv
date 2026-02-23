@@ -55,6 +55,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -114,6 +116,7 @@ jobs:
       run: |
         git config --global user.name "GitHub Action"
         git config --global user.email "action@github.com"
+        BRANCH="${GITHUB_REF_NAME:-main}"
         FILES=(
           "aongewach/weekly_schedule.json"
           "aongewach/e104f869d64e3d41256d5398.json"
@@ -130,6 +133,26 @@ jobs:
         if git diff --staged --quiet; then
           echo "No changes to commit"
         else
+          git fetch origin "$BRANCH"
+          git rebase "origin/$BRANCH" || {
+            git rebase --abort || true
+            git pull --rebase origin "$BRANCH"
+          }
           git commit -m "Refresh streams and update weekly schedule [skip ci]"
-          git push
+          for attempt in 1 2 3; do
+            if git push origin "HEAD:$BRANCH"; then
+              echo "Push succeeded on attempt $attempt"
+              break
+            fi
+            if [ "$attempt" -eq 3 ]; then
+              echo "Push failed after 3 attempts"
+              exit 1
+            fi
+            echo "Push rejected, rebasing and retrying..."
+            git fetch origin "$BRANCH"
+            git rebase "origin/$BRANCH" || {
+              git rebase --abort || true
+              git pull --rebase origin "$BRANCH"
+            }
+          done
         fi

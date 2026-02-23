@@ -4,7 +4,9 @@ Run Pipeline (Dead-Stream-First Mode)
 
 Flow:
   1. Test/prune existing streams in channels.json (mark dead URLs and remove them)
-  2. Scrape weekly schedule from LiveSportTV
+  2. Build composed weekly schedule:
+     - LiveSportTV for soccer/football
+     - FANZO + WITM for non-soccer
   3. Run batched playlist scan to refill/add streams and discover schedule channels
   4. Map schedule channels to IPTV stream IDs
 """
@@ -47,6 +49,8 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Dead-stream-first schedule/channel pipeline.")
 
     parser.add_argument("--channels-file", default="channels.json", help="Path to channels DB")
+    parser.add_argument("--date", default=None, help="Start date (YYYY-MM-DD). Default: today UTC.")
+    parser.add_argument("--days", type=int, default=7, help="Number of days to scrape.")
 
     # Stream tester settings
     parser.add_argument("--stream-workers", type=int, default=20, help="Parallel testers for stream_tester.py")
@@ -123,14 +127,81 @@ def main() -> int:
         extra_args=stream_tester_args,
     )
 
-    # 2. Scrape LiveSportTV weekly schedule.
+    # 2. Scrape LiveSportTV schedule (soccer source).
+    scrape_lsv_args = [
+        "--days",
+        str(args.days),
+        "--max-pages",
+        str(args.max_pages),
+        "--geo-rules-file",
+        "channel_geo_rules.json",
+        "--output",
+        "weekly_schedule_livesporttv.json",
+    ]
+    if args.date:
+        scrape_lsv_args.extend(["--date", args.date])
     run_step(
         "scrape_schedule_livesporttv.py",
         "Scraping Weekly Schedule from LiveSportTV",
-        extra_args=["--days", "7", "--max-pages", str(args.max_pages), "--output", "weekly_schedule.json"],
+        extra_args=scrape_lsv_args,
     )
 
-    # 3. Playlist scan (batch per playlist, parallel stream tests) to refill/add.
+    # 3. Scrape FANZO/WITM non-soccer and merge.
+    scrape_fanzo_args = [
+        "--days",
+        str(args.days),
+        "--output",
+        "weekly_schedule_fanzo.json",
+    ]
+    if args.date:
+        scrape_fanzo_args.extend(["--date", args.date])
+    run_step(
+        "scrape_schedule_fanzo.py",
+        "Scraping Weekly Non-Soccer Schedule from FANZO",
+        extra_args=scrape_fanzo_args,
+    )
+
+    scrape_witm_args = [
+        "--days",
+        str(args.days),
+        "--output",
+        "weekly_schedule_witm.json",
+    ]
+    if args.date:
+        scrape_witm_args.extend(["--date", args.date])
+    run_step(
+        "scrape_schedule_witm.py",
+        "Scraping Weekly Non-Soccer Schedule from WITM",
+        extra_args=scrape_witm_args,
+    )
+
+    run_step(
+        "merge_fanzo_witm.py",
+        "Merging FANZO + WITM Non-Soccer Schedule",
+        extra_args=[
+            "--fanzo",
+            "weekly_schedule_fanzo.json",
+            "--witm",
+            "weekly_schedule_witm.json",
+            "--output",
+            "weekly_schedule_fanzo_enriched.json",
+        ],
+    )
+
+    run_step(
+        "compose_weekly_schedule.py",
+        "Composing Final Weekly Schedule (LSTV Soccer + FANZO/WITM Non-Soccer)",
+        extra_args=[
+            "--livesporttv",
+            "weekly_schedule_livesporttv.json",
+            "--fanzo-witm",
+            "weekly_schedule_fanzo_enriched.json",
+            "--output",
+            "weekly_schedule.json",
+        ],
+    )
+
+    # 4. Playlist scan (batch per playlist, parallel stream tests) to refill/add.
     scan_args = [
         args.channels_file,
         "--preserve-existing-streams",
@@ -153,8 +224,12 @@ def main() -> int:
         extra_args=scan_args,
     )
 
-    # 4. Map channels.
-    run_step("map_channels.py", "Mapping Schedule Channels to Playable IPTV Streams")
+    # 5. Map channels.
+    run_step(
+        "map_channels.py",
+        "Mapping Schedule Channels to Playable IPTV Streams",
+        extra_args=["--geo-rules-file", "channel_geo_rules.json"],
+    )
 
     print(f"\n{'=' * 60}")
     print("DEAD-STREAM-FIRST PIPELINE COMPLETE")

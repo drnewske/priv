@@ -42,7 +42,7 @@ DEFAULT_USER_AGENT = (
 if not os.path.exists(SCHEDULE_FILE):
     SCHEDULE_FILE = 'weekly_schedule.json'
 
-NON_BROADCAST_WORD_RE = re.compile(r"\b(app|website|web\s*site|youtube)\b", re.IGNORECASE)
+NON_BROADCAST_WORD_RE = re.compile(r"\b(app|website|web\s*site|youtube|radio)\b", re.IGNORECASE)
 DOMAIN_RE = re.compile(
     r"\b[a-z0-9][a-z0-9.-]{0,251}\.(com|net|org|io|tv|co|app|gg|me|fm|uk|us|au|de|fr)\b",
     re.IGNORECASE,

@@ -23,6 +23,7 @@ import argparse
 import ast
 import datetime as dt
 import json
+import os
 import re
 import sys
 import time
@@ -33,6 +34,13 @@ from urllib.parse import quote, unquote, urljoin, urlparse
 import cloudscraper
 from bs4 import BeautifulSoup, Tag
 from bs4 import FeatureNotFound
+
+from channel_selection import (
+    build_channel_candidates,
+    get_active_geo_profiles,
+    load_geo_rules,
+    merge_channel_candidates,
+)
 
 try:
     from zoneinfo import ZoneInfo
@@ -45,7 +53,7 @@ SCHEDULE_PATH = "/schedules/{date}/"
 DATA_TODAY_ENDPOINT = f"{BASE_URL}/data-today"
 TOURNAMENT_ENDPOINT = f"{BASE_URL}/api/collapsible/tournament/"
 
-NON_BROADCAST_WORD_RE = re.compile(r"\b(app|website|web\s*site|youtube)\b", re.IGNORECASE)
+NON_BROADCAST_WORD_RE = re.compile(r"\b(app|website|web\s*site|youtube|radio)\b", re.IGNORECASE)
 DOMAIN_RE = re.compile(
     r"\b[a-z0-9][a-z0-9.-]{0,251}\.(com|net|org|io|tv|co|app|gg|me|fm|uk|us|au|de|fr)\b",
     re.IGNORECASE,
@@ -57,8 +65,11 @@ LOCALE_RE = re.compile(r"locale:\s*'([^']+)'")
 MATCH_TOKEN_RE = re.compile(r"^[A-Za-z0-9_-]{4,64}$")
 LOGO_PLACEHOLDER_RE = re.compile(r"(?:^|[/_-])(no-logo|default)(?:[._/-]|$)", re.IGNORECASE)
 TEAM_LOGO_WIDTH_RE = re.compile(r"/resize/width/20(?=/uploads/teams/)", re.IGNORECASE)
+CHANNEL_TEXT_SPLIT_RE = re.compile(r"\s*,\s*")
 
 _PARSER = "lxml"
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+DEFAULT_GEO_RULES_FILE = os.path.join(SCRIPT_DIR, "channel_geo_rules.json")
 
 
 def parse_html(html: str) -> BeautifulSoup:
@@ -118,9 +129,11 @@ class LiveSportTVClient:
             raise RuntimeError(f"Request failed for {url}")
         raise RuntimeError(f"Request failed for {url}: {last_exc}") from last_exc
 
-    def get_schedule_html(self, target_date: dt.date) -> str:
+    def get_schedule_html(
+        self, target_date: dt.date, extra_params: Optional[Dict[str, str]] = None
+    ) -> str:
         url = BASE_URL + SCHEDULE_PATH.format(date=target_date.isoformat())
-        return self._get_text(url)
+        return self._get_text(url, params=extra_params)
 
     def get_data_today(self, params: Dict[str, str]) -> Dict[str, List[str]]:
         body = self._get_text(DATA_TODAY_ENDPOINT, params=params)
@@ -222,6 +235,15 @@ def normalize_whitespace(value: object) -> str:
 
 def normalize_identity_text(value: object) -> str:
     return normalize_whitespace(value).casefold()
+
+
+def normalize_channel_label(value: object) -> str:
+    text = normalize_whitespace(value)
+    if not text:
+        return ""
+    text = text.strip(" \t\r\n,;|")
+    text = re.sub(r"\s*,\s*$", "", text)
+    return normalize_whitespace(text)
 
 
 def normalize_logo_url(raw: object) -> str:
@@ -466,8 +488,18 @@ def iter_unique_match_nodes(soup: BeautifulSoup) -> Iterable[Tag]:
 def merge_duplicate_events(existing: Dict, incoming: Dict) -> Dict:
     merged = dict(existing)
 
+    merged_candidates = merge_channel_candidates(
+        list(existing.get("channel_candidates") or []),
+        list(incoming.get("channel_candidates") or []),
+    )
+    if merged_candidates:
+        merged["channel_candidates"] = merged_candidates
+
+    candidate_names = [item.get("name") for item in merged_candidates if isinstance(item, dict)]
     merged_channels = dedupe_strings(
-        list(existing.get("channels") or []) + list(incoming.get("channels") or [])
+        list(existing.get("channels") or [])
+        + list(incoming.get("channels") or [])
+        + candidate_names
     )
     if merged_channels:
         merged["channels"] = merged_channels
@@ -536,13 +568,13 @@ def parse_channels_from_match_payload(
     if isinstance(html_values, str) and html_values.strip():
         soup = parse_html(html_values)
         for anchor in soup.select("a"):
-            text = anchor.get_text(" ", strip=True)
+            text = normalize_channel_label(anchor.get_text(" ", strip=True))
             if text:
                 candidates.append(text)
 
     if match_node is not None:
         for anchor in match_node.select(".match__channels a, .match_channels a"):
-            text = anchor.get_text(" ", strip=True)
+            text = normalize_channel_label(anchor.get_text(" ", strip=True))
             if text:
                 candidates.append(text)
 
@@ -610,6 +642,9 @@ def parse_li_match_event(
     default_tz: str,
     sport_by_id: Dict[str, str],
     keep_noisy_channels: bool = False,
+    source_profile: str = "",
+    bucket_hint: str = "",
+    preferred_other: bool = False,
 ) -> Optional[Dict]:
     if not isinstance(li, Tag):
         return None
@@ -646,12 +681,18 @@ def parse_li_match_event(
 
     channels: List[str] = []
     for anchor in match_node.select(".match__channels a, .match_channels a"):
-        text = anchor.get_text(" ", strip=True)
+        text = normalize_channel_label(anchor.get_text(" ", strip=True))
         if text and is_usable_channel_name(text, keep_noisy_channels=keep_noisy_channels):
             channels.append(text)
     channels = dedupe_strings(channels)
     if not channels:
         return None
+    channel_candidates = build_channel_candidates(
+        channels,
+        profile_name=source_profile,
+        bucket_hint=bucket_hint,
+        preferred_other=preferred_other,
+    )
 
     match_iso, match_time = parse_match_datetime(match_node.get("data-time"), default_tz)
     sport_id = normalize_whitespace(match_node.get("data-sport"))
@@ -673,6 +714,7 @@ def parse_li_match_event(
         "country": country,
         "special": special,
         "channels": channels,
+        "channel_candidates": channel_candidates,
         "home_team": home_name or None,
         "away_team": away_name or None,
         "home_team_id": None,
@@ -695,6 +737,9 @@ def parse_match_payload_event(
     fallback_tz: str,
     sport_by_id: Dict[str, str],
     keep_noisy_channels: bool = False,
+    source_profile: str = "",
+    bucket_hint: str = "",
+    preferred_other: bool = False,
 ) -> Optional[Dict]:
     if not isinstance(payload, dict):
         return None
@@ -716,6 +761,12 @@ def parse_match_payload_event(
     )
     if not channels:
         return None
+    channel_candidates = build_channel_candidates(
+        channels,
+        profile_name=source_profile,
+        bucket_hint=bucket_hint,
+        preferred_other=preferred_other,
+    )
 
     match = payload.get("match") if isinstance(payload.get("match"), dict) else {}
     home = payload.get("home") if isinstance(payload.get("home"), dict) else {}
@@ -815,6 +866,7 @@ def parse_match_payload_event(
         "country": country,
         "special": special,
         "channels": channels,
+        "channel_candidates": channel_candidates,
         "home_team": home_name or None,
         "away_team": away_name or None,
         "home_team_id": None,
@@ -883,6 +935,272 @@ def apply_competition_special_labels(events: List[Dict]) -> List[Dict]:
         event["special"] = bool(by_competition.get(key, False))
 
     return events
+
+
+def _is_soccer_event(event: Dict) -> bool:
+    sport = normalize_identity_text(event.get("sport"))
+    if sport in {"soccer", "football"} or "soccer" in sport:
+        if "american football" in sport or "australian rules" in sport or "gaelic football" in sport:
+            return False
+        return True
+    match_url = normalize_identity_text(event.get("match_url"))
+    return "/soccer/" in match_url
+
+
+def _normalize_country_groups(geo_rules: Dict) -> Dict[str, List[str]]:
+    country_groups = geo_rules.get("country_groups", {}) if isinstance(geo_rules, dict) else {}
+    if not isinstance(country_groups, dict):
+        country_groups = {}
+
+    normalized: Dict[str, List[str]] = {}
+    for key in ("uk", "us", "preferred_other", "watch"):
+        values = country_groups.get(key, [])
+        if isinstance(values, list):
+            normalized[key] = dedupe_strings([normalize_whitespace(value) for value in values])
+        else:
+            normalized[key] = []
+    return normalized
+
+
+def _match_country_enrichment_config(geo_rules: Dict) -> Dict[str, object]:
+    cfg = geo_rules.get("match_country_enrichment", {}) if isinstance(geo_rules, dict) else {}
+    if not isinstance(cfg, dict):
+        cfg = {}
+
+    countries = cfg.get("countries", [])
+    if not isinstance(countries, list):
+        countries = []
+    countries = dedupe_strings([normalize_whitespace(value) for value in countries])
+
+    country_groups = _normalize_country_groups(geo_rules)
+    if not countries:
+        countries = list(country_groups.get("watch", []))
+
+    max_events = 0
+    try:
+        max_events = int(cfg.get("max_events_per_day", 0))
+    except Exception:
+        max_events = 0
+
+    return {
+        "enabled": bool(cfg.get("enabled", False)),
+        "include_live_tab": bool(cfg.get("include_live_tab", True)),
+        "include_all_international": bool(cfg.get("include_all_international", False)),
+        "countries": countries,
+        "max_events_per_day": max_events if max_events > 0 else 0,
+    }
+
+
+def _parse_match_live_channels(soup: BeautifulSoup, keep_noisy_channels: bool) -> List[str]:
+    channels: List[str] = []
+    for box in soup.select(".live_time .live-tv-list-box"):
+        heading = normalize_identity_text(box.select_one("h5").get_text(" ", strip=True) if box.select_one("h5") else "")
+        if "radio" in heading and not keep_noisy_channels:
+            continue
+
+        for row in box.select(".live-tv-list"):
+            anchors = row.select("a")
+            text = ""
+            if anchors:
+                text = anchors[-1].get_text(" ", strip=True)
+            if not text:
+                text = row.get_text(" ", strip=True)
+            text = normalize_channel_label(text)
+            if not text:
+                continue
+            if not is_usable_channel_name(text, keep_noisy_channels=keep_noisy_channels):
+                continue
+            channels.append(text)
+    return dedupe_strings(channels)
+
+
+def _parse_match_international_channels(
+    soup: BeautifulSoup,
+    keep_noisy_channels: bool,
+    target_countries: List[str],
+    include_all: bool,
+) -> Dict[str, List[str]]:
+    wanted = {normalize_identity_text(country): country for country in target_countries}
+    country_rows: Dict[str, List[str]] = {}
+
+    for row in soup.select(".inter_nation .list-tv-international"):
+        country_node = row.select_one(".list-tv-country")
+        channels_node = row.select_one(".list-tv-name")
+        if country_node is None or channels_node is None:
+            continue
+
+        country = normalize_whitespace(country_node.get_text(" ", strip=True))
+        if not country:
+            continue
+        country_key = normalize_identity_text(country)
+        if not include_all and wanted and country_key not in wanted:
+            continue
+
+        extracted: List[str] = []
+        anchors = channels_node.select("a")
+        if anchors:
+            for anchor in anchors:
+                text = normalize_channel_label(anchor.get_text(" ", strip=True))
+                if text:
+                    extracted.append(text)
+        else:
+            text_blob = normalize_whitespace(channels_node.get_text(" ", strip=True))
+            if text_blob:
+                extracted.extend([normalize_channel_label(part) for part in CHANNEL_TEXT_SPLIT_RE.split(text_blob)])
+
+        cleaned: List[str] = []
+        for channel in dedupe_strings(extracted):
+            if is_usable_channel_name(channel, keep_noisy_channels=keep_noisy_channels):
+                cleaned.append(channel)
+        if cleaned:
+            country_rows[country] = cleaned
+
+    return country_rows
+
+
+def _build_country_candidates(
+    local_channels: List[str],
+    country_rows: Dict[str, List[str]],
+) -> Tuple[List[str], List[Dict], List[Dict]]:
+    country_by_channel: Dict[str, List[str]] = {}
+    for country, channels in country_rows.items():
+        for channel in channels:
+            node = country_by_channel.setdefault(channel, [])
+            if country not in node:
+                node.append(country)
+
+    for channel in local_channels:
+        node = country_by_channel.setdefault(channel, [])
+        if "LOCAL" not in node:
+            node.append("LOCAL")
+
+    all_channels = dedupe_strings(list(country_by_channel.keys()))
+    candidates = build_channel_candidates(
+        all_channels,
+        profile_name="",
+        bucket_hint="",
+        preferred_other=False,
+        countries_by_name=country_by_channel,
+    )
+    groups = [{"country": country, "channels": channels} for country, channels in country_rows.items()]
+    return all_channels, candidates, groups
+
+
+def _extract_match_country_channel_payload(
+    html: str,
+    keep_noisy_channels: bool,
+    include_live_tab: bool,
+    target_countries: List[str],
+    include_all_international: bool,
+) -> Dict[str, object]:
+    soup = parse_html(html)
+    country_rows = _parse_match_international_channels(
+        soup,
+        keep_noisy_channels=keep_noisy_channels,
+        target_countries=target_countries,
+        include_all=include_all_international,
+    )
+    local_channels: List[str] = []
+    if include_live_tab:
+        local_channels = _parse_match_live_channels(soup, keep_noisy_channels=keep_noisy_channels)
+
+    channels, candidates, groups = _build_country_candidates(local_channels, country_rows)
+    return {
+        "channels": channels,
+        "channel_candidates": candidates,
+        "channel_country_groups": groups,
+        "countries_found": len(country_rows),
+    }
+
+
+def enrich_events_with_match_country_channels(
+    client: LiveSportTVClient,
+    events: List[Dict],
+    geo_rules: Dict,
+    keep_noisy_channels: bool,
+) -> Dict[str, int]:
+    cfg = _match_country_enrichment_config(geo_rules)
+    if not bool(cfg.get("enabled")):
+        return {
+            "enabled": 0,
+            "eligible_events": 0,
+            "fetched_pages": 0,
+            "fetch_failed": 0,
+            "channels_added": 0,
+            "events_enriched": 0,
+        }
+
+    url_to_indices: Dict[str, List[int]] = {}
+    for idx, event in enumerate(events):
+        if not _is_soccer_event(event):
+            continue
+        match_url = canonicalize_match_url(event.get("match_url"))
+        if not match_url:
+            continue
+        url_to_indices.setdefault(match_url, []).append(idx)
+
+    unique_urls = list(url_to_indices.keys())
+    max_events = int(cfg.get("max_events_per_day") or 0)
+    if max_events > 0:
+        unique_urls = unique_urls[:max_events]
+
+    fetched_pages = 0
+    fetch_failed = 0
+    channels_added = 0
+    events_enriched = 0
+
+    for match_url in unique_urls:
+        try:
+            html = client._get_text(match_url)
+            payload = _extract_match_country_channel_payload(
+                html,
+                keep_noisy_channels=keep_noisy_channels,
+                include_live_tab=bool(cfg.get("include_live_tab")),
+                target_countries=list(cfg.get("countries", [])),
+                include_all_international=bool(cfg.get("include_all_international")),
+            )
+            fetched_pages += 1
+        except Exception:
+            fetch_failed += 1
+            continue
+
+        incoming_channels = payload.get("channels", []) if isinstance(payload.get("channels"), list) else []
+        incoming_candidates = (
+            payload.get("channel_candidates", [])
+            if isinstance(payload.get("channel_candidates"), list)
+            else []
+        )
+        incoming_groups = (
+            payload.get("channel_country_groups", [])
+            if isinstance(payload.get("channel_country_groups"), list)
+            else []
+        )
+        if not incoming_channels and not incoming_candidates:
+            continue
+
+        for event_idx in url_to_indices.get(match_url, []):
+            event = events[event_idx]
+            before = len(_event_channel_set(event))
+            event["channels"] = dedupe_strings(list(event.get("channels", [])) + incoming_channels)
+            event["channel_candidates"] = merge_channel_candidates(
+                list(event.get("channel_candidates", [])),
+                incoming_candidates,
+            )
+            if incoming_groups:
+                event["channel_country_groups"] = incoming_groups
+            after = len(_event_channel_set(event))
+            if after > before:
+                channels_added += after - before
+                events_enriched += 1
+
+    return {
+        "enabled": 1,
+        "eligible_events": len(url_to_indices),
+        "fetched_pages": fetched_pages,
+        "fetch_failed": fetch_failed,
+        "channels_added": channels_added,
+        "events_enriched": events_enriched,
+    }
 
 
 def extract_sport_map(soup: BeautifulSoup) -> Dict[str, str]:
@@ -954,6 +1272,74 @@ def parse_data_today_tournaments(
     return tournaments
 
 
+def _override_tournament_request(
+    base_request: TournamentRequest,
+    profile: Dict[str, object],
+    profile_config: Dict[str, str],
+) -> TournamentRequest:
+    overrides = (
+        profile.get("tournament_overrides", {})
+        if isinstance(profile.get("tournament_overrides"), dict)
+        else {}
+    )
+
+    override_time_zone = normalize_whitespace(overrides.get("time_zone"))
+    override_iso_code = normalize_whitespace(overrides.get("iso_code"))
+
+    cfg_time_zone = normalize_whitespace(profile_config.get("time_zone"))
+    cfg_iso_code = normalize_whitespace(profile_config.get("iso_code"))
+
+    time_zone = override_time_zone or cfg_time_zone or base_request.time_zone
+    iso_code = override_iso_code
+    if not iso_code and cfg_iso_code and cfg_iso_code != "0":
+        iso_code = cfg_iso_code
+    if not iso_code:
+        iso_code = base_request.iso_code
+
+    return TournamentRequest(
+        request_id=base_request.request_id,
+        create_time=base_request.create_time,
+        expire_time=base_request.expire_time,
+        order_by=base_request.order_by,
+        time_zone=time_zone,
+        iso_code=iso_code,
+        source_sport_key=base_request.source_sport_key,
+    )
+
+
+def _event_channel_set(event: Dict) -> set:
+    return {
+        normalize_identity_text(channel)
+        for channel in event.get("channels", [])
+        if isinstance(channel, str) and normalize_whitespace(channel)
+    }
+
+
+def _merge_events_with_tracking(
+    merged_events: Dict[Tuple[str, ...], Dict],
+    incoming_events: List[Dict],
+) -> Tuple[int, int]:
+    channels_added = 0
+    enriched_keys = set()
+
+    for event in incoming_events:
+        key = event_dedupe_key(event)
+        if key not in merged_events:
+            merged_events[key] = event
+            added = len(_event_channel_set(event))
+        else:
+            before_channels = _event_channel_set(merged_events[key])
+            merged_events[key] = merge_duplicate_events(merged_events[key], event)
+            after_channels = _event_channel_set(merged_events[key])
+            added = max(0, len(after_channels) - len(before_channels))
+
+        if added > 0:
+            channels_added += added
+            enriched_keys.add(key)
+
+    return channels_added, len(enriched_keys)
+
+
 def scrape_one_date(
     client: LiveSportTVClient,
     target_date: dt.date,
@@ -961,9 +1347,25 @@ def scrape_one_date(
     max_pages: int,
     max_tournaments: Optional[int],
     keep_noisy_channels: bool,
+    geo_rules: Dict,
     html_override: Optional[str] = None,
-) -> Tuple[List[Dict], Dict[str, int]]:
-    html = html_override if html_override is not None else client.get_schedule_html(target_date)
+) -> Tuple[List[Dict], Dict[str, object]]:
+    profiles = get_active_geo_profiles(geo_rules)
+    primary_profile = next((profile for profile in profiles if profile.get("primary")), profiles[0])
+    primary_name = str(primary_profile.get("name", "default"))
+    primary_schedule_params = (
+        primary_profile.get("schedule_params", {})
+        if isinstance(primary_profile.get("schedule_params"), dict)
+        else {}
+    )
+    primary_bucket_hint = normalize_whitespace(primary_profile.get("bucket_hint")).lower()
+    primary_preferred_other = bool(primary_profile.get("preferred_other"))
+
+    html = (
+        html_override
+        if html_override is not None
+        else client.get_schedule_html(target_date, extra_params=primary_schedule_params)
+    )
     soup = parse_html(html)
 
     config = extract_script_config(html)
@@ -979,6 +1381,9 @@ def scrape_one_date(
             default_tz=config["time_zone"],
             sport_by_id=sport_by_id,
             keep_noisy_channels=keep_noisy_channels,
+            source_profile=primary_name,
+            bucket_hint=primary_bucket_hint,
+            preferred_other=primary_preferred_other,
         )
         if event:
             initial_matches.append(event)
@@ -1026,21 +1431,124 @@ def scrape_one_date(
                     fallback_tz=tournament.time_zone,
                     sport_by_id=sport_by_id,
                     keep_noisy_channels=keep_noisy_channels,
+                    source_profile=primary_name,
+                    bucket_hint=primary_bucket_hint,
+                    preferred_other=primary_preferred_other,
                 )
                 if event:
                     api_events.append(event)
             success += 1
 
     merged_events: Dict[Tuple[str, ...], Dict] = {}
-    for event in initial_matches + api_events:
-        key = event_dedupe_key(event)
-        if key not in merged_events:
-            merged_events[key] = event
-            continue
-        merged_events[key] = merge_duplicate_events(merged_events[key], event)
+    default_added, default_enriched = _merge_events_with_tracking(
+        merged_events, initial_matches + api_events
+    )
+
+    profile_stats: Dict[str, Dict[str, int]] = {
+        primary_name: {
+            "prewarm_attempted": 1 if html_override is None else 0,
+            "prewarm_failed": 0,
+            "tournaments_attempted": len(tournament_items),
+            "tournaments_success": success,
+            "tournaments_failed": failed,
+            "api_matches": len(api_events),
+            "channels_added": default_added,
+            "events_enriched": default_enriched,
+        }
+    }
+
+    if include_data_today and html_override is None and tournament_items:
+        for profile in profiles:
+            profile_name = str(profile.get("name", "")).strip()
+            if not profile_name or profile_name == primary_name:
+                continue
+
+            profile_stats.setdefault(
+                profile_name,
+                {
+                    "prewarm_attempted": 0,
+                    "prewarm_failed": 0,
+                    "tournaments_attempted": 0,
+                    "tournaments_success": 0,
+                    "tournaments_failed": 0,
+                    "api_matches": 0,
+                    "channels_added": 0,
+                    "events_enriched": 0,
+                },
+            )
+
+            profile_client = LiveSportTVClient(
+                timeout=client.timeout,
+                retries=client.retries,
+                backoff_seconds=client.backoff_seconds,
+            )
+            profile_stats[profile_name]["prewarm_attempted"] += 1
+
+            profile_config = config
+            try:
+                profile_html = profile_client.get_schedule_html(
+                    target_date,
+                    extra_params=(
+                        profile.get("schedule_params", {})
+                        if isinstance(profile.get("schedule_params"), dict)
+                        else {}
+                    ),
+                )
+                profile_config = extract_script_config(profile_html, default_locale=config["locale"])
+            except Exception as exc:
+                profile_stats[profile_name]["prewarm_failed"] += 1
+                print(
+                    f"[LiveSportTV] Profile '{profile_name}' prewarm failed on {target_date.isoformat()}: {exc}"
+                )
+                continue
+
+            profile_events: List[Dict] = []
+            profile_bucket_hint = normalize_whitespace(profile.get("bucket_hint")).lower()
+            profile_preferred_other = bool(profile.get("preferred_other"))
+
+            for tournament in tournament_items:
+                profile_stats[profile_name]["tournaments_attempted"] += 1
+                override_request = _override_tournament_request(
+                    tournament, profile=profile, profile_config=profile_config
+                )
+                try:
+                    payload = profile_client.get_tournament(override_request)
+                except Exception:
+                    profile_stats[profile_name]["tournaments_failed"] += 1
+                    continue
+
+                profile_stats[profile_name]["tournaments_success"] += 1
+                matches = payload.get("matches")
+                if not isinstance(matches, list):
+                    continue
+
+                for raw_match in matches:
+                    event = parse_match_payload_event(
+                        raw_match if isinstance(raw_match, dict) else {},
+                        fallback_tz=override_request.time_zone,
+                        sport_by_id=sport_by_id,
+                        keep_noisy_channels=keep_noisy_channels,
+                        source_profile=profile_name,
+                        bucket_hint=profile_bucket_hint,
+                        preferred_other=profile_preferred_other,
+                    )
+                    if event:
+                        profile_events.append(event)
+
+            profile_stats[profile_name]["api_matches"] = len(profile_events)
+            channels_added, events_enriched = _merge_events_with_tracking(merged_events, profile_events)
+            profile_stats[profile_name]["channels_added"] = channels_added
+            profile_stats[profile_name]["events_enriched"] = events_enriched
 
     events = sort_events(list(merged_events.values()))
     events = apply_competition_special_labels(events)
+    match_country_stats = enrich_events_with_match_country_channels(
+        client=client,
+        events=events,
+        geo_rules=geo_rules,
+        keep_noisy_channels=keep_noisy_channels,
+    )
+    events = sort_events(events)
 
     return events, {
         "initial_matches": len(initial_matches),
@@ -1048,6 +1556,8 @@ def scrape_one_date(
         "tournaments_total": len(tournament_items),
         "tournaments_success": success,
         "tournaments_failed": failed,
+        "profiles": profile_stats,
+        "match_country_enrichment": match_country_stats,
     }
 
 
@@ -1114,6 +1624,11 @@ def parse_args() -> argparse.Namespace:
         default=None,
         help="Parse a local schedules HTML file instead of requesting LiveSportTV (single-day only).",
     )
+    parser.add_argument(
+        "--geo-rules-file",
+        default=DEFAULT_GEO_RULES_FILE,
+        help="Path to channel geo rules JSON (default: aongewach/channel_geo_rules.json).",
+    )
     return parser.parse_args()
 
 
@@ -1148,6 +1663,13 @@ def main() -> int:
             print(f"Failed to read --html-file '{args.html_file}': {exc}", file=sys.stderr)
             return 1
 
+    geo_rules = load_geo_rules(args.geo_rules_file)
+    geo_profiles = get_active_geo_profiles(geo_rules)
+    primary_profile_name = next(
+        (str(profile.get("name")) for profile in geo_profiles if profile.get("primary")),
+        "default",
+    )
+
     client = LiveSportTVClient(timeout=args.timeout, retries=args.retries, backoff_seconds=args.backoff)
 
     schedule: List[Dict] = []
@@ -1158,6 +1680,15 @@ def main() -> int:
         "tournaments_success": 0,
         "tournaments_failed": 0,
     }
+    aggregate_match_country_stats = {
+        "enabled_days": 0,
+        "eligible_events": 0,
+        "fetched_pages": 0,
+        "fetch_failed": 0,
+        "channels_added": 0,
+        "events_enriched": 0,
+    }
+    aggregate_profile_stats: Dict[str, Dict[str, int]] = {}
 
     for offset in range(args.days):
         target_date = start_date + dt.timedelta(days=offset)
@@ -1170,6 +1701,7 @@ def main() -> int:
                 max_pages=args.max_pages,
                 max_tournaments=args.max_tournaments,
                 keep_noisy_channels=args.keep_noisy_channels,
+                geo_rules=geo_rules,
                 html_override=html_override if offset == 0 else None,
             )
         except Exception as exc:
@@ -1177,7 +1709,55 @@ def main() -> int:
             return 1
 
         for key in aggregate_stats:
-            aggregate_stats[key] += stats.get(key, 0)
+            aggregate_stats[key] += int(stats.get(key, 0))
+
+        day_match_country_stats = (
+            stats.get("match_country_enrichment", {})
+            if isinstance(stats.get("match_country_enrichment"), dict)
+            else {}
+        )
+        if int(day_match_country_stats.get("enabled", 0)) > 0:
+            aggregate_match_country_stats["enabled_days"] += 1
+        for metric in (
+            "eligible_events",
+            "fetched_pages",
+            "fetch_failed",
+            "channels_added",
+            "events_enriched",
+        ):
+            aggregate_match_country_stats[metric] += int(day_match_country_stats.get(metric, 0))
+
+        day_profile_stats = stats.get("profiles", {})
+        if isinstance(day_profile_stats, dict):
+            for profile_name, profile_values in day_profile_stats.items():
+                if not isinstance(profile_values, dict):
+                    continue
+                node = aggregate_profile_stats.setdefault(
+                    str(profile_name),
+                    {
+                        "days_seen": 0,
+                        "prewarm_attempted": 0,
+                        "prewarm_failed": 0,
+                        "tournaments_attempted": 0,
+                        "tournaments_success": 0,
+                        "tournaments_failed": 0,
+                        "api_matches": 0,
+                        "channels_added": 0,
+                        "events_enriched": 0,
+                    },
+                )
+                node["days_seen"] += 1
+                for metric in (
+                    "prewarm_attempted",
+                    "prewarm_failed",
+                    "tournaments_attempted",
+                    "tournaments_success",
+                    "tournaments_failed",
+                    "api_matches",
+                    "channels_added",
+                    "events_enriched",
+                ):
+                    node[metric] += int(profile_values.get(metric, 0))
 
         schedule.append(
             {
@@ -1191,6 +1771,36 @@ def main() -> int:
             f"(initial={stats['initial_matches']}, api={stats['api_matches']}, "
             f"tournaments={stats['tournaments_success']}/{stats['tournaments_total']})"
         )
+        if isinstance(day_match_country_stats, dict) and int(day_match_country_stats.get("enabled", 0)) > 0:
+            print(
+                f"[LiveSportTV]   match-country pages={int(day_match_country_stats.get('fetched_pages', 0))}/"
+                f"{int(day_match_country_stats.get('eligible_events', 0))} "
+                f"failed={int(day_match_country_stats.get('fetch_failed', 0))} "
+                f"channels_added={int(day_match_country_stats.get('channels_added', 0))}"
+            )
+        if isinstance(day_profile_stats, dict):
+            for profile_name in sorted(day_profile_stats.keys()):
+                profile_values = day_profile_stats.get(profile_name) or {}
+                if not isinstance(profile_values, dict):
+                    continue
+                print(
+                    f"[LiveSportTV]   profile={profile_name} "
+                    f"api={int(profile_values.get('api_matches', 0))} "
+                    f"added={int(profile_values.get('channels_added', 0))} "
+                    f"events={int(profile_values.get('events_enriched', 0))} "
+                    f"tournaments={int(profile_values.get('tournaments_success', 0))}/"
+                    f"{int(profile_values.get('tournaments_attempted', 0))}"
+                )
+
+    if args.days > 1:
+        for profile_name, profile_values in sorted(aggregate_profile_stats.items()):
+            if profile_name == primary_profile_name:
+                continue
+            if int(profile_values.get("channels_added", 0)) == 0:
+                print(
+                    f"[LiveSportTV][WARN] Geo profile '{profile_name}' added zero unique channels "
+                    f"across {int(profile_values.get('days_seen', 0))} day(s)."
+                )
 
     payload = {
         "generated_at": iso_z_now(),
@@ -1199,7 +1809,10 @@ def main() -> int:
         "extraction": {
             "mode": "schedule+data-today+tournament-api" if not args.no_data_today else "schedule-only",
             "max_pages": max(1, args.max_pages),
+            "geo_profiles_active": [str(profile.get("name")) for profile in geo_profiles],
             "stats": aggregate_stats,
+            "profile_stats": aggregate_profile_stats,
+            "match_country_enrichment_stats": aggregate_match_country_stats,
         },
     }
 

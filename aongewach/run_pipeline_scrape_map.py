@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """
-Run Pipeline (LiveSportTV Scrape + Channel Mapper only)
+Run Pipeline (Scrape + Compose + Channel Mapper only)
 
 Flow:
-  1. Scrape schedule from LiveSportTV
-  2. Map schedule channels to existing IPTV channel IDs
+  1. Scrape LiveSportTV (soccer source)
+  2. Scrape FANZO + WITM (non-soccer sources)
+  3. Merge/compose final weekly schedule
+  4. Map schedule channels to existing IPTV channel IDs
 """
 
 import argparse
@@ -44,7 +46,9 @@ def run_step(script_name, description, extra_args=None, fail_on_error=True):
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Scrape LiveSportTV and map channels without scanning playlists.")
+    parser = argparse.ArgumentParser(
+        description="Build composed schedule (LSTV soccer + FANZO/WITM non-soccer) and map channels without scanning playlists."
+    )
     parser.add_argument("--date", default=None, help="Start date (YYYY-MM-DD). Default: today UTC.")
     parser.add_argument("--days", type=int, default=7, help="Number of days to scrape.")
     parser.add_argument("--max-pages", type=int, default=7, help="How many /data-today pages per day.")
@@ -65,13 +69,20 @@ def parse_args() -> argparse.Namespace:
 def main() -> int:
     args = parse_args()
 
+    lsv_output = "weekly_schedule_livesporttv.json"
+    fanzo_output = "weekly_schedule_fanzo.json"
+    witm_output = "weekly_schedule_witm.json"
+    fanzo_witm_output = "weekly_schedule_fanzo_enriched.json"
+
     scrape_args = [
         "--days",
         str(args.days),
         "--max-pages",
         str(args.max_pages),
+        "--geo-rules-file",
+        "channel_geo_rules.json",
         "--output",
-        args.schedule_output,
+        lsv_output,
     ]
     if args.date:
         scrape_args.extend(["--date", args.date])
@@ -84,12 +95,70 @@ def main() -> int:
         extra_args=scrape_args,
     )
 
+    fanzo_args = [
+        "--days",
+        str(args.days),
+        "--output",
+        fanzo_output,
+    ]
+    if args.date:
+        fanzo_args.extend(["--date", args.date])
+    run_step(
+        "scrape_schedule_fanzo.py",
+        "Scraping Weekly Non-Soccer Schedule from FANZO",
+        extra_args=fanzo_args,
+    )
+
+    witm_args = [
+        "--days",
+        str(args.days),
+        "--output",
+        witm_output,
+    ]
+    if args.date:
+        witm_args.extend(["--date", args.date])
+    run_step(
+        "scrape_schedule_witm.py",
+        "Scraping Weekly Non-Soccer Schedule from WITM",
+        extra_args=witm_args,
+    )
+
+    run_step(
+        "merge_fanzo_witm.py",
+        "Merging FANZO + WITM Non-Soccer Schedule",
+        extra_args=[
+            "--fanzo",
+            fanzo_output,
+            "--witm",
+            witm_output,
+            "--output",
+            fanzo_witm_output,
+        ],
+    )
+
+    run_step(
+        "compose_weekly_schedule.py",
+        "Composing Final Weekly Schedule (LSTV Soccer + FANZO/WITM Non-Soccer)",
+        extra_args=[
+            "--livesporttv",
+            lsv_output,
+            "--fanzo-witm",
+            fanzo_witm_output,
+            "--output",
+            args.schedule_output,
+        ],
+    )
+
     mapper_input = "weekly_schedule.json"
     if os.path.normcase(args.schedule_output) != os.path.normcase(mapper_input):
         shutil.copyfile(args.schedule_output, mapper_input)
         print(f"[INFO] Copied {args.schedule_output} -> {mapper_input} for mapper input.")
 
-    run_step("map_channels.py", "Mapping Schedule Channels to Existing Channel IDs")
+    run_step(
+        "map_channels.py",
+        "Mapping Schedule Channels to Existing Channel IDs",
+        extra_args=["--geo-rules-file", "channel_geo_rules.json"],
+    )
 
     print(f"\n{'=' * 60}")
     print("SCRAPE + MAP PIPELINE COMPLETE")

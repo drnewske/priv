@@ -1,0 +1,127 @@
+{
+  "max_event_channels": 5,
+  "max_per_bucket": {
+    "uk": 2,
+    "us": 2
+  },
+  "classification": {
+    "uk": {
+      "exact": [],
+      "keywords": []
+    },
+    "us": {
+      "exact": [],
+      "keywords": []
+    },
+    "preferred_other": {
+      "exact": [],
+      "keywords": []
+    }
+  },
+  "country_groups": {
+    "uk": [
+      "United Kingdom",
+      "UK",
+      "England",
+      "Scotland",
+      "Wales",
+      "Northern Ireland",
+      "Great Britain"
+    ],
+    "us": [
+      "United States",
+      "United States of America",
+      "USA",
+      "U.S.A."
+    ],
+    "preferred_other": [
+      "South Africa",
+      "Saudi Arabia"
+    ],
+    "watch": [
+      "Nigeria",
+      "Ghana",
+      "United Kingdom",
+      "United States",
+      "South Africa",
+      "Saudi Arabia"
+    ]
+  },
+  "match_country_enrichment": {
+    "enabled": true,
+    "include_live_tab": true,
+    "include_all_international": false,
+    "countries": [
+      "Nigeria",
+      "Ghana",
+      "United Kingdom",
+      "United States",
+      "South Africa",
+      "Saudi Arabia"
+    ],
+    "max_events_per_day": 0
+  },
+  "geo_profiles": [
+    {
+      "name": "default",
+      "enabled": true,
+      "primary": true,
+      "bucket_hint": "",
+      "preferred_other": false,
+      "schedule_params": {},
+      "tournament_overrides": {}
+    },
+    {
+      "name": "uk",
+      "enabled": true,
+      "primary": false,
+      "bucket_hint": "uk",
+      "preferred_other": false,
+      "schedule_params": {
+        "iso_code": "235"
+      },
+      "tournament_overrides": {
+        "iso_code": "235"
+      }
+    },
+    {
+      "name": "us",
+      "enabled": true,
+      "primary": false,
+      "bucket_hint": "us",
+      "preferred_other": false,
+      "schedule_params": {
+        "iso_code": "233"
+      },
+      "tournament_overrides": {
+        "iso_code": "233"
+      }
+    },
+    {
+      "name": "za",
+      "enabled": true,
+      "primary": false,
+      "bucket_hint": "other",
+      "preferred_other": true,
+      "schedule_params": {
+        "iso_code": "147"
+      },
+      "tournament_overrides": {
+        "iso_code": "147"
+      }
+    },
+    {
+      "name": "saudi",
+      "enabled": true,
+      "primary": false,
+      "bucket_hint": "other",
+      "preferred_other": true,
+      "schedule_params": {
+        "iso_code": "163"
+      },
+      "tournament_overrides": {
+        "iso_code": "163"
+      }
+    }
+  ]
+}

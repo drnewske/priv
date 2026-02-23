@@ -3,9 +3,11 @@
 Run Pipeline - Orchestrates the full schedule processing pipeline.
 
 Steps:
-  1. Scrape weekly schedule from LiveSportTV
-  2. Scan/update channels.json from configured playlists/providers
-  3. Map schedule channels to IPTV stream URLs
+  1. Scrape LiveSportTV schedule (soccer source)
+  2. Scrape FANZO + WITM schedules (non-soccer sources)
+  3. Merge/compose final weekly schedule
+  4. Scan/update channels.json from configured playlists/providers
+  5. Map schedule channels to IPTV stream URLs
 """
 
 import subprocess
@@ -42,14 +44,76 @@ def run_step(script_name, description, extra_args=None, fail_on_error=True):
 
 
 def main():
-    # 1. Scrape Schedule (Weekly) from LiveSportTV.
+    # 1. Scrape LiveSportTV schedule (used for soccer/football only in final compose).
     run_step(
         "scrape_schedule_livesporttv.py",
         "Scraping Weekly Schedule from LiveSportTV",
-        extra_args=["--days", "7", "--max-pages", "7", "--output", "weekly_schedule.json"],
+        extra_args=[
+            "--days",
+            "7",
+            "--max-pages",
+            "7",
+            "--geo-rules-file",
+            "channel_geo_rules.json",
+            "--output",
+            "weekly_schedule_livesporttv.json",
+        ],
     )
 
-    # 2. Scan Sports Channels (Update channels.json based on schedule).
+    # 2. Scrape FANZO non-soccer schedule.
+    run_step(
+        "scrape_schedule_fanzo.py",
+        "Scraping Weekly Non-Soccer Schedule from FANZO",
+        extra_args=[
+            "--days",
+            "7",
+            "--output",
+            "weekly_schedule_fanzo.json",
+        ],
+    )
+
+    # 3. Scrape WITM non-soccer schedule for channel/logo reinforcement.
+    run_step(
+        "scrape_schedule_witm.py",
+        "Scraping Weekly Non-Soccer Schedule from WITM",
+        extra_args=[
+            "--days",
+            "7",
+            "--output",
+            "weekly_schedule_witm.json",
+        ],
+    )
+
+    # 4. Merge FANZO with WITM (exact match enrichment).
+    run_step(
+        "merge_fanzo_witm.py",
+        "Merging FANZO + WITM Non-Soccer Schedule",
+        extra_args=[
+            "--fanzo",
+            "weekly_schedule_fanzo.json",
+            "--witm",
+            "weekly_schedule_witm.json",
+            "--output",
+            "weekly_schedule_fanzo_enriched.json",
+        ],
+    )
+
+    # 5. Compose final weekly schedule:
+    #    soccer from LiveSportTV + non-soccer from FANZO/WITM.
+    run_step(
+        "compose_weekly_schedule.py",
+        "Composing Final Weekly Schedule (LSTV Soccer + FANZO/WITM Non-Soccer)",
+        extra_args=[
+            "--livesporttv",
+            "weekly_schedule_livesporttv.json",
+            "--fanzo-witm",
+            "weekly_schedule_fanzo_enriched.json",
+            "--output",
+            "weekly_schedule.json",
+        ],
+    )
+
+    # 6. Scan Sports Channels (Update channels.json based on composed schedule).
     run_step(
         "scan_sports_channels.py",
         "Scanning Playlists for Channels in Schedule (Inline Stream Validation)",
@@ -66,8 +130,12 @@ def main():
         ],
     )
 
-    # 3. Map Channels (Schedule Channels -> IPTV Stream URLs).
-    run_step("map_channels.py", "Mapping Schedule Channels to Playable IPTV Streams")
+    # 7. Map Channels (Schedule Channels -> IPTV Stream URLs).
+    run_step(
+        "map_channels.py",
+        "Mapping Schedule Channels to Playable IPTV Streams",
+        extra_args=["--geo-rules-file", "channel_geo_rules.json"],
+    )
 
     print(f"\n{'=' * 50}")
     print("PIPELINE COMPLETE")
