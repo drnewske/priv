@@ -1,0 +1,247 @@
+{
+  "generated_at": "2026-02-24T09:41:50Z",
+  "source": "wheresthematch.com",
+  "schedule": [
+    {
+      "date": "2026-02-24",
+      "day": "Tuesday",
+      "events": [
+        {
+          "name": "Australia Women v India Women",
+          "start_time_iso": "2026-02-24T03:50:00Z",
+          "time": "03:50",
+          "sport": "Cricket",
+          "competition": "One Day International",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/cricket.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/cricket.gif",
+          "channels": [
+            "TNT Sports 1",
+            "Discovery+ Premium"
+          ],
+          "home_team": "Australia Women",
+          "away_team": "India Women",
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Snooker Welsh Open",
+          "start_time_iso": "2026-02-24T10:00:00Z",
+          "time": "10:00",
+          "sport": "Snooker",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/snooker.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/snooker.gif",
+          "channels": [
+            "BBC2 Wales",
+            "BBC iPlayer",
+            "TNT Sports Extra",
+            "BBC Red Button",
+            "Discovery+"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Dubai Duty Free Tennis Championships",
+          "start_time_iso": "2026-02-24T10:00:00Z",
+          "time": "10:00",
+          "sport": "Tennis",
+          "competition": "ATP World Tour",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/tennis.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/tennis.gif",
+          "channels": [
+            "Sky Sports Main Event",
+            "Sky Sports Tennis",
+            "Sky Sports Ultra HDR"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Raceday Live",
+          "start_time_iso": "2026-02-24T12:30:00Z",
+          "time": "12:30",
+          "sport": "Horse Racing",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/horseracing.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/horseracing.gif",
+          "channels": [
+            "Sky Sports Racing"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Snooker Welsh Open",
+          "start_time_iso": "2026-02-24T13:00:00Z",
+          "time": "13:00",
+          "sport": "Snooker",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/snooker.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/snooker.gif",
+          "channels": [
+            "TNT Sports 1",
+            "Discovery+ Premium"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "England v Pakistan",
+          "start_time_iso": "2026-02-24T13:30:00Z",
+          "time": "13:30",
+          "sport": "Cricket",
+          "competition": "ICC T20 World Cup",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/cricket.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/cricket.gif",
+          "channels": [
+            "Sky Sports Main Event",
+            "Sky Sports Cricket",
+            "Sky Sports Ultra HDR"
+          ],
+          "home_team": "England",
+          "away_team": "Pakistan",
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Live Racing",
+          "start_time_iso": "2026-02-24T13:30:00Z",
+          "time": "13:30",
+          "sport": "Horse Racing",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/horseracing.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/horseracing.gif",
+          "channels": [
+            "RacingTV"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "ATP Tennis",
+          "start_time_iso": "2026-02-24T16:00:00Z",
+          "time": "16:00",
+          "sport": "Tennis",
+          "competition": "ATP World Tour",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/tennis.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/tennis.gif",
+          "channels": [
+            "Sky Sports Tennis",
+            "Sky Sports+"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "ATP Tennis",
+          "start_time_iso": "2026-02-24T17:00:00Z",
+          "time": "17:00",
+          "sport": "Tennis",
+          "competition": "ATP World Tour",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/tennis.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/tennis.gif",
+          "channels": [
+            "Sky Sports Tennis",
+            "Sky Sports Main Event",
+            "Sky Sports Ultra HDR",
+            "Sky Sports+"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Snooker Welsh Open",
+          "start_time_iso": "2026-02-24T19:00:00Z",
+          "time": "19:00",
+          "sport": "Snooker",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/snooker.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/snooker.gif",
+          "channels": [
+            "BBC2 Wales",
+            "TNT Sports 4",
+            "BBC iPlayer",
+            "Discovery+ Premium"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "TGL",
+          "start_time_iso": "2026-02-24T22:00:00Z",
+          "time": "22:00",
+          "sport": "Golf",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
+          "channels": [
+            "Sky Sports Golf",
+            "Sky Sports Main Event",
+            "Sky Sports Ultra HDR"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Indiana Pacers v Philadelphia 76ers",
+          "start_time_iso": "2026-02-25T00:00:00Z",
+          "time": "00:00",
+          "sport": "Basketball",
+          "competition": "NBA",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
+          "channels": [
+            "NBA League Pass"
+          ],
+          "home_team": "Indiana Pacers",
+          "away_team": "Philadelphia 76ers",
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        }
+      ]
+    }
+  ]
+}
