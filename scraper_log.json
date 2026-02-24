@@ -1,0 +1,30 @@
+{
+  "sources": {
+    "iptvcodes": {
+      "scraped_articles": {
+        "https://www.iptvcodes.online/2026/02/xtream-codes-iptv-m3u-playlists-24022026_01857873136.html": {
+          "title": "XTREAM CODES & IPTV M3U PLAYLISTS 24/02/2026",
+          "url": "https://www.iptvcodes.online/2026/02/xtream-codes-iptv-m3u-playlists-24022026_01857873136.html",
+          "scraped_at": "2026-02-24 12:07:42",
+          "links_found": 218,
+          "extraction": "feed",
+          "inspection_count": 1,
+          "last_result": "ok"
+        }
+      }
+    },
+    "m3umax": {
+      "scraped_articles": {
+        "https://m3umax.blogspot.com/2026/02/m3u-link-iptv-21022026-list-of-30-m3u.html": {
+          "title": "M3U Link IPTV 21/02/2026 – List of 30 M3U Link random host for Free",
+          "url": "https://m3umax.blogspot.com/2026/02/m3u-link-iptv-21022026-list-of-30-m3u.html",
+          "scraped_at": "2026-02-24 12:07:43",
+          "links_found": 70,
+          "extraction": "feed",
+          "inspection_count": 1,
+          "last_result": "ok"
+        }
+      }
+    }
+  }
+}
