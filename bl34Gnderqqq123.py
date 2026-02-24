@@ -6,8 +6,9 @@ import datetime
 import re
 import time
 import threading
+from html import unescape
 from bs4 import BeautifulSoup
-from urllib.parse import urlparse
+from urllib.parse import quote_plus, urlparse
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
@@ -22,7 +23,8 @@ FALLBACK_ICON = "https://cdn.jsdelivr.net/gh/drnewske/tyhdsjax-nfhbqsm@main/logo
 SOURCES = {
     "ninoiptv": "https://ninoiptv.com/",
     "iptvcodes": "https://www.iptvcodes.online/",
-    "m3umax": "https://m3umax.blogspot.com/"
+    "m3umax": "https://m3umax.blogspot.com/",
+    "worldiptv": "https://world-iptv.club/"
 }
 
 
@@ -31,10 +33,10 @@ MIN_STREAM_COUNT = 10
 PLAYLIST_TIMEOUT = 20
 MAX_RETRIES = 3
 RETRY_DELAY = 2
-DEFAULT_VALIDATION_WORKERS = 5
-DEFAULT_DISCOVERY_WORKERS = 5
-DEFAULT_SOURCE_WORKERS = 3
+DEFAULT_VALIDATION_WORKERS = 10
+DEFAULT_DISCOVERY_WORKERS = 10
 MAX_WORKERS_LIMIT = 24
+ZERO_LINK_REINSPECT_HOURS = 12
 
 THREAD_LOCAL = threading.local()
 
@@ -262,14 +264,113 @@ def get_domain(url):
     """Extract domain from URL"""
     try:
         parsed = urlparse(url)
-        domain = parsed.netloc or parsed.path.split('/')[0]
-        return domain.replace('www.', '')
+        domain = (parsed.netloc or parsed.path.split('/')[0]).strip()
+        # Normalize away embedded credentials so domain grouping is stable.
+        domain = domain.split("@")[-1]
+        return domain.replace('www.', '').lower()
     except:
         return "unknown"
 
 
+def clean_credential_token(value):
+    """Clean scraped credential values."""
+    token = unescape(str(value or "")).strip().strip("\"'`")
+    token = re.sub(r"[,\];|]+$", "", token).strip()
+    return token
+
+
+def normalize_xtream_base_url(raw_url):
+    """Normalize a raw Xtream host value into a base URL."""
+    base = clean_credential_token(raw_url)
+    if not base:
+        return ""
+    if not re.match(r"^https?://", base, re.IGNORECASE):
+        base = f"http://{base}"
+    try:
+        parsed = urlparse(base)
+        if not parsed.netloc:
+            return ""
+        path = (parsed.path or "").rstrip("/")
+        return f"{parsed.scheme}://{parsed.netloc}{path}"
+    except Exception:
+        return ""
+
+
+def build_xtream_playlist_urls(base_url, username, password):
+    """Build candidate playlist URLs from Xtream credentials."""
+    username = clean_credential_token(username)
+    password = clean_credential_token(password)
+    if not base_url or not username or not password:
+        return []
+    user_q = quote_plus(username)
+    pass_q = quote_plus(password)
+    return [
+        f"{base_url}/get.php?username={user_q}&password={pass_q}&type=m3u_plus&output=ts",
+        f"{base_url}/get.php?username={user_q}&password={pass_q}&type=m3u_plus&output=m3u8",
+    ]
+
+
+def extract_xtream_credential_links(html_content):
+    """Extract bare Xtream URL/User/Pass blocks and convert to playlist URLs."""
+    text = BeautifulSoup(html_content or "", "html.parser").get_text("\n")
+    text = unescape(text)
+    lines = [line.strip() for line in text.splitlines() if line.strip()]
+
+    extracted = []
+    current = {}
+    last_seen_idx = -999
+
+    url_pattern = re.compile(
+        r"(?:url|host|server|portal)\b[^A-Za-z0-9]+"
+        r"(https?://[^\s]+|[A-Za-z0-9.-]+:\d{2,5}[^\s]*)",
+        re.IGNORECASE,
+    )
+    user_pattern = re.compile(
+        r"(?:user(?:name)?|login)\b[^A-Za-z0-9]+([^\s]+)",
+        re.IGNORECASE,
+    )
+    pass_pattern = re.compile(
+        r"(?:pass(?:word)?|pwd)\b[^A-Za-z0-9]+([^\s]+)",
+        re.IGNORECASE,
+    )
+
+    for idx, line in enumerate(lines):
+        if current and idx - last_seen_idx > 6:
+            current = {}
+
+        url_match = url_pattern.search(line)
+        if url_match:
+            current["base_url"] = normalize_xtream_base_url(url_match.group(1))
+            last_seen_idx = idx
+
+        user_match = user_pattern.search(line)
+        if user_match:
+            current["username"] = clean_credential_token(user_match.group(1))
+            last_seen_idx = idx
+
+        pass_match = pass_pattern.search(line)
+        if pass_match:
+            current["password"] = clean_credential_token(pass_match.group(1))
+            last_seen_idx = idx
+
+        if all(key in current and current.get(key) for key in ("base_url", "username", "password")):
+            extracted.extend(
+                build_xtream_playlist_urls(
+                    current["base_url"],
+                    current["username"],
+                    current["password"],
+                )
+            )
+            # Keep base_url for repeated user/pass blocks on the same host.
+            current = {"base_url": current["base_url"]}
+            last_seen_idx = idx
+
+    return extracted
+
+
 def extract_m3u_links(html_content):
     """Extract M3U playlist URLs from HTML content"""
+    html_content = unescape(html_content or "")
     links = []
     
     
@@ -279,17 +380,20 @@ def extract_m3u_links(html_content):
     pattern2 = r'https?://[^\s<>"]+?\.m3u[^\s<>"]*'
     
     
-    pattern3 = r'https?://[^\s<>"]+?(?:username|user)=[^\s<>"&]+(?:&|&amp;)(?:password|pass)=[^\s<>"&]+'
+    pattern3 = r'https?://[^\s<>"]+?(?:username|user)=[^\s<>"&]+(?:&|&amp;|&#038;)(?:password|pass)=[^\s<>"&]+'
     
     for pattern in [pattern1, pattern2, pattern3]:
         matches = re.findall(pattern, html_content, re.IGNORECASE)
         links.extend(matches)
+
+    # Convert bare Xtream credentials (URL/User/Pass blocks) into get.php playlist URLs.
+    links.extend(extract_xtream_credential_links(html_content))
     
     # Clean up HTML entities and duplicates
     cleaned_links = []
     for link in links:
         # Decode HTML entities
-        link = link.replace('&amp;', '&')
+        link = unescape(link.replace('&amp;', '&'))
         # Remove trailing punctuation
         link = re.sub(r'[.,;:)\]]+$', '', link)
         if link not in cleaned_links:
@@ -320,7 +424,17 @@ def extract_date_from_title(title):
                     return dt.strptime(f"{g3}-{g2}-{g1}", "%Y-%m-%d")
             except:
                 continue
-                
+
+    text_date_match = re.search(r'(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})', title)
+    if text_date_match:
+        day, month_name, year = text_date_match.groups()
+        text_value = f"{int(day):02d} {month_name} {year}"
+        for fmt in ("%d %B %Y", "%d %b %Y"):
+            try:
+                return dt.strptime(text_value, fmt)
+            except ValueError:
+                continue
+
     return None
 
 
@@ -362,7 +476,7 @@ def load_scraper_log():
     try:
         with open(LOG_FILE, 'r', encoding='utf-8') as f:
             return json.load(f)
-    except FileNotFoundError:
+    except (FileNotFoundError, json.JSONDecodeError):
         return {"sources": {}}
 
 
@@ -594,127 +708,265 @@ def scrape_ninoiptv(session, log_data):
 
 
 def scrape_iptvcodes(session, log_data):
-    """Scrape iptvcodes.online"""
-    print("\n[SCRAPING] iptvcodes.online...")
-    
-    source_name = "iptvcodes"
-    source_log = log_data["sources"].get(source_name, {"scraped_articles": {}})
-    
-    try:
-        response = session.get(SOURCES["iptvcodes"], headers=HEADERS, timeout=15)
-        soup = BeautifulSoup(response.content, 'html.parser')
-        
-        
-        article_links = []
-        for article in soup.find_all('article')[:1]:  
-            link_elem = article.find('a', href=True)
-            if link_elem:
-                url = link_elem['href']
-                title = link_elem.get_text(strip=True)
-                article_links.append({'title': title, 'url': url})
-        
-        print(f"  Found {len(article_links)} recent articles")
-        
-        all_links = []
-        
-        for article in article_links:
-            article_key = article['url']
-            
-            if article_key in source_log["scraped_articles"]:
-                print(f"  [OK] Already scraped: {article['title'][:50]}...")
-                continue
-            
-            print(f"  -> Scraping: {article['title'][:50]}...")
-            
-            try:
-                article_response = session.get(article['url'], headers=HEADERS, timeout=15)
-                article_html = article_response.text
-                
-                links = extract_m3u_links(article_html)
-                print(f"    Found {len(links)} links")
-                all_links.extend(links)
-                
-                
-                source_log["scraped_articles"][article_key] = {
-                    "title": article['title'],
-                    "scraped_at": dt.now().strftime("%Y-%m-%d %H:%M:%S"),
-                    "links_found": len(links)
-                }
-                
-            except Exception as e:
-                print(f"    Error: {str(e)}")
-        
-        
-        log_data["sources"][source_name] = source_log
-        
-        print(f"  Total links extracted: {len(all_links)}")
-        return all_links
-        
-    except Exception as e:
-        print(f"  Error: {str(e)}")
-        return []
+    """Scrape iptvcodes.online using Blogger JSON feed."""
+    return scrape_blogger_feed(
+        session=session,
+        log_data=log_data,
+        source_name="iptvcodes",
+        display_name="iptvcodes.online",
+        feed_url="https://www.iptvcodes.online/feeds/posts/default?alt=json&max-results=12",
+        article_fallback_limit=1,
+    )
 
 
 def scrape_m3umax(session, log_data):
-    """Scrape m3umax.blogspot.com"""
-    print("\n[SCRAPING] m3umax.blogspot.com...")
-    
-    source_name = "m3umax"
-    source_log = log_data["sources"].get(source_name, {"scraped_articles": {}})
-    
+    """Scrape m3umax.blogspot.com using Blogger JSON feed."""
+    return scrape_blogger_feed(
+        session=session,
+        log_data=log_data,
+        source_name="m3umax",
+        display_name="m3umax.blogspot.com",
+        feed_url="https://m3umax.blogspot.com/feeds/posts/default?alt=json&max-results=12",
+        article_fallback_limit=2,
+    )
+
+
+def normalize_source_log(log_data, source_name):
+    """Ensure source log structure exists and is a dict."""
+    if "sources" not in log_data or not isinstance(log_data["sources"], dict):
+        log_data["sources"] = {}
+
+    source_log = log_data["sources"].get(source_name)
+    if not isinstance(source_log, dict):
+        source_log = {}
+    scraped_articles = source_log.get("scraped_articles")
+    if not isinstance(scraped_articles, dict):
+        scraped_articles = {}
+    source_log["scraped_articles"] = scraped_articles
+    return source_log
+
+
+def safe_title_for_log(title, limit=80):
+    """Make titles log-safe across terminals with limited encodings."""
+    clean = re.sub(r"\s+", " ", str(title or "")).strip()
+    if limit and len(clean) > limit:
+        clean = clean[:limit]
+    return clean.encode("ascii", "replace").decode("ascii")
+
+
+def get_blogger_entry_url(entry):
+    """Extract Blogger alternate URL from feed entry."""
+    for link_item in entry.get("link", []):
+        if link_item.get("rel") == "alternate":
+            return link_item.get("href", "")
+    return ""
+
+
+def parse_log_timestamp(value):
+    """Parse timestamp values stored in scraper_log.json."""
+    if not value:
+        return None
+    for fmt in ("%Y-%m-%d %H:%M:%S", "%Y-%m-%dT%H:%M:%S"):
+        try:
+            return dt.strptime(value, fmt)
+        except ValueError:
+            continue
+    return None
+
+
+def should_reinspect_entry(existing_entry):
+    """Re-check previously inspected entries if they yielded zero links and are stale."""
+    if not isinstance(existing_entry, dict):
+        return True
+
     try:
-        response = session.get(SOURCES["m3umax"], headers=HEADERS, timeout=15)
-        soup = BeautifulSoup(response.content, 'html.parser')
-        
-        
-        article_links = []
-        for article in soup.find_all('h3', class_='post-title')[:1]:  
-            link_elem = article.find('a', href=True)
-            if link_elem:
-                url = link_elem['href']
-                title = link_elem.get_text(strip=True)
-                article_links.append({'title': title, 'url': url})
-        
-        print(f"  Found {len(article_links)} recent articles")
-        
-        all_links = []
-        
-        for article in article_links:
-            article_key = article['url']
-            
-            if article_key in source_log["scraped_articles"]:
-                print(f"  [OK] Already scraped: {article['title'][:50]}...")
-                continue
-            
-            print(f"  -> Scraping: {article['title'][:50]}...")
-            
-            try:
-                article_response = session.get(article['url'], headers=HEADERS, timeout=15)
-                article_html = article_response.text
-                
-                links = extract_m3u_links(article_html)
-                print(f"    Found {len(links)} links")
-                all_links.extend(links)
-                
-               
-                source_log["scraped_articles"][article_key] = {
-                    "title": article['title'],
-                    "scraped_at": dt.now().strftime("%Y-%m-%d %H:%M:%S"),
-                    "links_found": len(links)
-                }
-                
-            except Exception as e:
-                print(f"    Error: {str(e)}")
-        
-        
-        log_data["sources"][source_name] = source_log
-        
-        print(f"  Total links extracted: {len(all_links)}")
-        return all_links
-        
+        links_found = int(existing_entry.get("links_found", 0) or 0)
+    except Exception:
+        links_found = 0
+
+    if links_found > 0:
+        return False
+
+    last_time = parse_log_timestamp(existing_entry.get("scraped_at"))
+    if not last_time:
+        return True
+
+    age_hours = (dt.now() - last_time).total_seconds() / 3600.0
+    return age_hours >= ZERO_LINK_REINSPECT_HOURS
+
+
+def write_source_log_entry(source_log, entry_key, title, url, links_count, extraction, existing_entry=None):
+    """Persist per-entry inspection metadata for source feeds."""
+    previous_count = 0
+    if isinstance(existing_entry, dict):
+        try:
+            previous_count = int(existing_entry.get("inspection_count", 0) or 0)
+        except Exception:
+            previous_count = 0
+
+    source_log["scraped_articles"][entry_key] = {
+        "title": title,
+        "url": url,
+        "scraped_at": dt.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "links_found": links_count,
+        "extraction": extraction,
+        "inspection_count": previous_count + 1,
+        "last_result": "ok" if links_count > 0 else "no_links",
+    }
+
+
+def scrape_blogger_feed(session, log_data, source_name, display_name, feed_url, article_fallback_limit=0):
+    """Feed-first strategy for Blogger sources with optional article fallback."""
+    print(f"\n[SCRAPING] {display_name}...")
+    source_log = normalize_source_log(log_data, source_name)
+
+    try:
+        response = session.get(feed_url, headers=HEADERS, timeout=20)
+        print(f"  Feed status: {response.status_code}")
+        feed = response.json().get("feed", {})
+        entries = feed.get("entry", [])
     except Exception as e:
-        print(f"  Error: {str(e)}")
+        print(f"  Error loading feed: {e}")
         return []
+
+    print(f"  Feed entries fetched: {len(entries)}")
+    target_day = entries[0].get("published", {}).get("$t", "")[:10] if entries else ""
+    if target_day:
+        entries = [
+            entry for entry in entries
+            if entry.get("published", {}).get("$t", "").startswith(target_day)
+        ]
+        print(f"  Feed entries selected: {len(entries)} for {target_day}")
+
+    all_links = []
+    fallback_fetches = 0
+    new_entries = 0
+
+    for entry in entries:
+        title = entry.get("title", {}).get("$t", "Untitled")
+        article_url = get_blogger_entry_url(entry)
+        published = entry.get("published", {}).get("$t", "")
+        article_key = article_url or f"{title}|{published}"
+        existing_entry = source_log["scraped_articles"].get(article_key)
+
+        if existing_entry and not should_reinspect_entry(existing_entry):
+            continue
+
+        content_html = (entry.get("content") or {}).get("$t", "")
+        summary_html = (entry.get("summary") or {}).get("$t", "")
+        links = extract_m3u_links(f"{content_html}\n{summary_html}")
+        extraction = "feed"
+
+        if not links and article_url and fallback_fetches < article_fallback_limit:
+            try:
+                fallback_fetches += 1
+                article_response = session.get(article_url, headers=HEADERS, timeout=20)
+                links = extract_m3u_links(article_response.text)
+                extraction = "article"
+            except Exception as e:
+                print(f"  Fallback fetch failed for {safe_title_for_log(title, 50)}: {e}")
+
+        all_links.extend(links)
+        write_source_log_entry(
+            source_log=source_log,
+            entry_key=article_key,
+            title=title,
+            url=article_url,
+            links_count=len(links),
+            extraction=extraction,
+            existing_entry=existing_entry,
+        )
+        new_entries += 1
+        print(f"  -> {safe_title_for_log(title, 55)} | links={len(links)} via {extraction}")
+
+    log_data["sources"][source_name] = source_log
+
+    unique_links = len(dict.fromkeys(all_links))
+    print(f"  New entries processed: {new_entries}")
+    print(f"  Total links extracted: {len(all_links)} (unique={unique_links})")
+    return all_links
+
+
+def scrape_worldiptv(session, log_data):
+    """Scrape world-iptv.club using RSS feed."""
+    print("\n[SCRAPING] world-iptv.club...")
+    source_name = "worldiptv"
+    source_log = normalize_source_log(log_data, source_name)
+
+    feed_url = SOURCES["worldiptv"].rstrip("/") + "/feed/"
+    try:
+        response = session.get(feed_url, headers=HEADERS, timeout=20)
+        print(f"  Feed status: {response.status_code}")
+        soup = BeautifulSoup(response.content, 'xml')
+        items = soup.find_all('item')[:15]
+    except Exception as e:
+        print(f"  Error loading feed: {e}")
+        return []
+
+    print(f"  Feed items fetched: {len(items)}")
+    target_date = None
+    if items:
+        first_title = (items[0].title.text if items[0].title else "")
+        target_date = extract_date_from_title(first_title)
+    if target_date:
+        filtered_items = []
+        for item in items:
+            item_title = item.title.text if item.title else ""
+            item_date = extract_date_from_title(item_title)
+            if item_date and item_date.date() == target_date.date():
+                filtered_items.append(item)
+        items = filtered_items
+        print(f"  Feed items selected: {len(items)} for {target_date.strftime('%Y-%m-%d')}")
+
+    all_links = []
+    fallback_fetches = 0
+    new_items = 0
+
+    for item in items:
+        title = (item.title.text if item.title else "Untitled").strip()
+        item_url = (item.link.text if item.link else "").strip()
+        guid = (item.guid.text if item.guid else "").strip()
+        item_key = guid or item_url or title
+        existing_entry = source_log["scraped_articles"].get(item_key)
+
+        if existing_entry and not should_reinspect_entry(existing_entry):
+            continue
+
+        description = item.description.text if item.description else ""
+        encoded_node = item.find("content:encoded")
+        encoded = encoded_node.text if encoded_node else ""
+
+        links = extract_m3u_links(f"{description}\n{encoded}")
+        extraction = "feed"
+
+        if not links and item_url and fallback_fetches < 2:
+            try:
+                fallback_fetches += 1
+                article_response = session.get(item_url, headers=HEADERS, timeout=20)
+                links = extract_m3u_links(article_response.text)
+                extraction = "article"
+            except Exception as e:
+                print(f"  Fallback fetch failed for {safe_title_for_log(title, 50)}: {e}")
+
+        all_links.extend(links)
+        write_source_log_entry(
+            source_log=source_log,
+            entry_key=item_key,
+            title=title,
+            url=item_url,
+            links_count=len(links),
+            extraction=extraction,
+            existing_entry=existing_entry,
+        )
+        new_items += 1
+        print(f"  -> {safe_title_for_log(title, 55)} | links={len(links)} via {extraction}")
+
+    log_data["sources"][source_name] = source_log
+
+    unique_links = len(dict.fromkeys(all_links))
+    print(f"  New items processed: {new_items}")
+    print(f"  Total links extracted: {len(all_links)} (unique={unique_links})")
+    return all_links
 
 
 
@@ -738,10 +990,7 @@ def parse_runtime_config():
     parser = argparse.ArgumentParser(description="IPTV Playlist Updater")
     parser.add_argument("--validation-workers", type=int, default=None, help="Workers for existing playlist validation")
     parser.add_argument("--discovery-workers", type=int, default=None, help="Workers for discovery domain checks")
-    parser.add_argument("--source-workers", type=int, default=None, help="Workers for source scraping")
     args = parser.parse_args()
-
-    source_upper_bound = min(MAX_WORKERS_LIMIT, max(1, len(SOURCES)))
     return {
         "validation_workers": resolve_worker_count(
             args.validation_workers,
@@ -752,12 +1001,6 @@ def parse_runtime_config():
             args.discovery_workers,
             "BLUNDER_DISCOVERY_WORKERS",
             DEFAULT_DISCOVERY_WORKERS,
-        ),
-        "source_workers": resolve_worker_count(
-            args.source_workers,
-            "BLUNDER_SOURCE_WORKERS",
-            DEFAULT_SOURCE_WORKERS,
-            upper_bound=source_upper_bound,
         ),
     }
 
@@ -828,14 +1071,6 @@ def check_domain_links(domain, links):
     }
 
 
-def scrape_source_worker(source_name, scraper_fn, source_state):
-    """Worker for scraping one source with isolated session/log state."""
-    session = create_session()
-    isolated_log = {"sources": {source_name: source_state}}
-    links = scraper_fn(session, isolated_log)
-    return source_name, links, isolated_log["sources"].get(source_name, {"scraped_articles": {}})
-
-
 def main():
     print("="*70)
     print("  IPTV PLAYLIST UPDATER")
@@ -844,8 +1079,7 @@ def main():
     runtime = parse_runtime_config()
     print(
         f"[CONFIG] validation_workers={runtime['validation_workers']} | "
-        f"discovery_workers={runtime['discovery_workers']} | "
-        f"source_workers={runtime['source_workers']}"
+        f"discovery_workers={runtime['discovery_workers']}"
     )
 
     timestamp_now = dt.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -925,29 +1159,12 @@ def main():
     print("="*70)
 
     discovery_started = time.perf_counter()
+    source_session = create_session()
     new_links = []
-    source_jobs = [
-        ("ninoiptv", scrape_ninoiptv),
-        ("iptvcodes", scrape_iptvcodes),
-        ("m3umax", scrape_m3umax),
-    ]
-
-    with ThreadPoolExecutor(max_workers=runtime["source_workers"]) as executor:
-        future_map = {}
-        for source_name, scraper_fn in source_jobs:
-            source_state = dict(log_data["sources"].get(source_name, {"scraped_articles": {}}))
-            source_state["scraped_articles"] = dict(source_state.get("scraped_articles", {}))
-            future = executor.submit(scrape_source_worker, source_name, scraper_fn, source_state)
-            future_map[future] = source_name
-
-        for future in as_completed(future_map):
-            source_name = future_map[future]
-            try:
-                _, links, source_state = future.result()
-                new_links.extend(links)
-                log_data["sources"][source_name] = source_state
-            except Exception as exc:
-                print(f"[SCRAPING] {source_name} failed: {exc}")
+    new_links.extend(scrape_ninoiptv(source_session, log_data))
+    new_links.extend(scrape_worldiptv(source_session, log_data))
+    new_links.extend(scrape_iptvcodes(source_session, log_data))
+    new_links.extend(scrape_m3umax(source_session, log_data))
 
     save_scraper_log(log_data)
 
