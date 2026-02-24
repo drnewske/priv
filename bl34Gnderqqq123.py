@@ -9,9 +9,11 @@ import threading
 from html import unescape
 from bs4 import BeautifulSoup
 from urllib.parse import quote_plus, urlparse
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from collections import deque
+from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, as_completed, wait
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
+from xml.etree import ElementTree as ET
 from datetime import datetime as dt
 
 
@@ -450,21 +452,25 @@ def validate_playlist(url, session):
     """Validate if playlist is live and count channels"""
     try:
         response = session.get(url, timeout=PLAYLIST_TIMEOUT, headers=HEADERS, allow_redirects=True)
-        
-        
+
+        if response.status_code >= 400:
+            return False, f"HTTP {response.status_code}", 0
+
         content_length = len(response.content)
         if content_length < MIN_PLAYLIST_SIZE:
             return False, f"Too small ({content_length} bytes)", 0
-        
-       
+
         content = response.text
-        stream_count = content.count('#EXTINF')
-        
+        stream_count = len(re.findall(r'(?im)^#EXTINF', content))
+
+        if stream_count == 0:
+            return False, "No EXTINF entries", 0
+
         if stream_count < MIN_STREAM_COUNT:
             return False, f"Too few streams ({stream_count})", stream_count
-        
+
         return True, "Valid", stream_count
-        
+
     except requests.Timeout:
         return False, "Timeout", 0
     except Exception as e:
@@ -577,134 +583,178 @@ def rename_untitled_playlists(slot_registry):
 
 
 def scrape_ninoiptv(session, log_data):
-    """Scrape ninoiptv.com with date and version tracking"""
+    """Scrape ninoiptv.com with API/feed fallbacks for Cloudflare blocks."""
     print("\n[SCRAPING] ninoiptv.com...")
-    
+
     source_name = "ninoiptv"
-    source_log = log_data["sources"].get(source_name, {"scraped_articles": {}})
-    
+    source_log = normalize_source_log(log_data, source_name)
+    articles = []
+
+    # 1) Primary source: WordPress JSON API (fastest, richest, no HTML parsing needed).
+    wp_json_url = (
+        "https://ninoiptv.com/wp-json/wp/v2/posts"
+        "?per_page=20&_fields=date,link,title,content"
+    )
     try:
-        response = session.get(SOURCES["ninoiptv"], headers=HEADERS, timeout=15)
-        print(f"  Response status: {response.status_code}")
-        
-        soup = BeautifulSoup(response.content, 'html.parser')
-        
-        
-        all_articles = soup.find_all('article')
-        print(f"  DEBUG: Found {len(all_articles)} <article> tags")
-        
-        
-        articles = []
-        for idx, article in enumerate(all_articles):
-           
-            title_elem = article.find('h2', class_='entry-title')
-            if not title_elem:
-                title_elem = article.find('h1', class_='entry-title')
-            if not title_elem:
-               
-                title_elem = article.find('h2')
-            if not title_elem:
-                title_elem = article.find('h1')
-            
-            if title_elem:
-                link_elem = title_elem.find('a')
-                if link_elem:
-                    title = link_elem.get_text(strip=True)
-                    url = link_elem.get('href')
-                    
-                    print(f"  DEBUG Article {idx+1}: {title[:80]}")
-                    
-                   
-                    article_date = extract_date_from_title(title)
-                    if not article_date:
-                        article_date = extract_date_from_title(url)
-                    
-                    version = extract_version_from_title(title)
-                    
-                    if article_date:
-                        articles.append({
-                            'title': title,
-                            'url': url,
-                            'date': article_date,
-                            'version': version
-                        })
-                        print(f"    -> Date: {article_date.strftime('%Y-%m-%d')}, Version: V{version}")
-                    else:
-                        print(f"    -> No date found in title or URL")
-                else:
-                    print(f"  DEBUG Article {idx+1}: No link found in title")
-            else:
-                print(f"  DEBUG Article {idx+1}: No title element found")
-        
-       
-        articles.sort(key=lambda x: (x['date'], x['version']), reverse=True)
-        
-        print(f"\n  Found {len(articles)} dated articles")
-        
-        
-        if not articles:
-            print("  ERROR: No articles with dates found!")
-            return []
-        
-        latest_date = articles[0]['date']
-        latest_date_str = latest_date.strftime("%Y-%m-%d")
-        
-        
-        latest_articles = [a for a in articles if a['date'] == latest_date]
-        
-        print(f"  Latest date: {latest_date_str}")
-        versions_str = ', '.join([f'V{a["version"]}' for a in latest_articles])
-        print(f"  Versions available: {versions_str}")
-        
-        all_links = []
-        
-        for article in latest_articles:
-            article_key = f"{latest_date_str}_V{article['version']}"
-            
-            
-            if article_key in source_log["scraped_articles"]:
-                print(f"  [OK] Already scraped: {article['title']}")
-                continue
-            
-            print(f"  -> Scraping: {article['title']}")
-            
-            try:
-                article_response = session.get(article['url'], headers=HEADERS, timeout=15)
-                article_soup = BeautifulSoup(article_response.content, 'html.parser')
-                
-                
-                content = article_soup.find('div', class_='entry-content')
-                if content:
-                    html_text = str(content)
-                    links = extract_m3u_links(html_text)
-                    
-                    print(f"    Found {len(links)} links")
-                    all_links.extend(links)
-                    
-                    
-                    source_log["scraped_articles"][article_key] = {
-                        "title": article['title'],
-                        "url": article['url'],
-                        "scraped_at": dt.now().strftime("%Y-%m-%d %H:%M:%S"),
-                        "links_found": len(links)
-                    }
-                else:
-                    print(f"    ERROR: No entry-content div found")
-                    
-            except Exception as e:
-                print(f"    ERROR scraping article: {type(e).__name__}: {str(e)}")
-        
-        
-        log_data["sources"][source_name] = source_log
-        
-        print(f"  Total links extracted: {len(all_links)}")
-        return all_links
-        
+        response = session.get(wp_json_url, headers=HEADERS, timeout=20)
+        print(f"  WP JSON status: {response.status_code}")
+        if response.status_code == 200:
+            posts = response.json()
+            for post in posts:
+                title_html = (post.get("title") or {}).get("rendered", "")
+                title = BeautifulSoup(unescape(title_html), "html.parser").get_text(" ", strip=True)
+                url = post.get("link", "")
+                date_str = str(post.get("date", ""))[:10]
+                date_obj = None
+                if date_str:
+                    try:
+                        date_obj = dt.strptime(date_str, "%Y-%m-%d")
+                    except ValueError:
+                        date_obj = None
+                if not date_obj:
+                    date_obj = extract_date_from_title(title) or extract_date_from_title(url)
+                if not date_obj:
+                    continue
+
+                content_html = (post.get("content") or {}).get("rendered", "")
+                articles.append({
+                    "title": title,
+                    "url": url,
+                    "date": date_obj,
+                    "version": extract_version_from_title(title),
+                    "content_html": content_html,
+                    "source": "wp-json",
+                })
     except Exception as e:
-        print(f"  ERROR: {type(e).__name__}: {str(e)}")
-        import traceback
-        traceback.print_exc()
+        print(f"  WP JSON error: {e}")
+
+    # 2) Fallback: RSS feed.
+    if not articles:
+        feed_url = "https://ninoiptv.com/feed/"
+        try:
+            response = session.get(feed_url, headers=HEADERS, timeout=20)
+            print(f"  Feed status: {response.status_code}")
+            if response.status_code == 200:
+                soup = BeautifulSoup(response.content, "xml")
+                items = soup.find_all("item")[:20]
+                print(f"  Feed items: {len(items)}")
+                for item in items:
+                    title = (item.title.text if item.title else "").strip()
+                    url = (item.link.text if item.link else "").strip()
+                    date_obj = extract_date_from_title(title) or extract_date_from_title(url)
+                    if not date_obj:
+                        continue
+                    encoded_node = item.find("content:encoded")
+                    content_html = encoded_node.text if encoded_node else (
+                        item.description.text if item.description else ""
+                    )
+                    articles.append({
+                        "title": title,
+                        "url": url,
+                        "date": date_obj,
+                        "version": extract_version_from_title(title),
+                        "content_html": content_html,
+                        "source": "feed",
+                    })
+        except Exception as e:
+            print(f"  Feed error: {e}")
+
+    # 3) Last fallback: homepage article list (legacy path).
+    if not articles:
+        try:
+            response = session.get(SOURCES["ninoiptv"], headers=HEADERS, timeout=20)
+            print(f"  Homepage status: {response.status_code}")
+            soup = BeautifulSoup(response.content, "html.parser")
+            all_articles = soup.find_all("article")
+            print(f"  Homepage articles: {len(all_articles)}")
+            for article in all_articles:
+                title_elem = (
+                    article.find("h2", class_="entry-title")
+                    or article.find("h1", class_="entry-title")
+                    or article.find("h2")
+                    or article.find("h1")
+                )
+                if not title_elem:
+                    continue
+                link_elem = title_elem.find("a")
+                if not link_elem:
+                    continue
+                title = link_elem.get_text(strip=True)
+                url = link_elem.get("href")
+                date_obj = extract_date_from_title(title) or extract_date_from_title(url)
+                if not date_obj:
+                    continue
+                articles.append({
+                    "title": title,
+                    "url": url,
+                    "date": date_obj,
+                    "version": extract_version_from_title(title),
+                    "content_html": "",
+                    "source": "homepage",
+                })
+        except Exception as e:
+            print(f"  Homepage error: {e}")
+
+    articles.sort(key=lambda x: (x["date"], x["version"]), reverse=True)
+    print(f"  Dated articles found: {len(articles)}")
+
+    if not articles:
+        print("  ERROR: No articles with dates found!")
         return []
+
+    latest_date = articles[0]["date"]
+    latest_date_str = latest_date.strftime("%Y-%m-%d")
+    latest_articles = [a for a in articles if a["date"].date() == latest_date.date()]
+
+    print(f"  Latest date: {latest_date_str}")
+    versions_str = ", ".join([f"V{a['version']}" for a in latest_articles])
+    print(f"  Versions available: {versions_str}")
+
+    all_links = []
+    for article in latest_articles:
+        legacy_key = f"{latest_date_str}_V{article['version']}"
+        article_key = article.get("url") or legacy_key
+        existing_entry = (
+            source_log["scraped_articles"].get(article_key)
+            or source_log["scraped_articles"].get(legacy_key)
+        )
+        if existing_entry and not should_reinspect_entry(existing_entry):
+            print(f"  [OK] Already scraped: {safe_title_for_log(article['title'], 70)}")
+            continue
+
+        print(f"  -> Scraping: {safe_title_for_log(article['title'], 70)}")
+        links = extract_m3u_links(article.get("content_html", ""))
+        extraction = article.get("source", "unknown")
+
+        # If API/feed payload has no links, fetch article page once.
+        if not links and article.get("url"):
+            try:
+                article_response = session.get(article["url"], headers=HEADERS, timeout=20)
+                article_soup = BeautifulSoup(article_response.content, "html.parser")
+                content = article_soup.find("div", class_="entry-content")
+                html_text = str(content) if content else article_response.text
+                links = extract_m3u_links(html_text)
+                extraction = "article"
+            except Exception as e:
+                print(f"    Article fetch error: {e}")
+
+        print(f"    Found {len(links)} links via {extraction}")
+        all_links.extend(links)
+
+        write_source_log_entry(
+            source_log=source_log,
+            entry_key=article_key,
+            title=article["title"],
+            url=article.get("url", ""),
+            links_count=len(links),
+            extraction=extraction,
+            existing_entry=existing_entry,
+        )
+
+    log_data["sources"][source_name] = source_log
+    unique_links = len(dict.fromkeys(all_links))
+    print(f"  Total links extracted: {len(all_links)} (unique={unique_links})")
+    return all_links
 
 
 def scrape_iptvcodes(session, log_data):
@@ -894,11 +944,58 @@ def scrape_worldiptv(session, log_data):
     source_log = normalize_source_log(log_data, source_name)
 
     feed_url = SOURCES["worldiptv"].rstrip("/") + "/feed/"
+    items = []
     try:
         response = session.get(feed_url, headers=HEADERS, timeout=20)
         print(f"  Feed status: {response.status_code}")
-        soup = BeautifulSoup(response.content, 'xml')
-        items = soup.find_all('item')[:15]
+        root = ET.fromstring(response.content)
+
+        # Standard RSS path: rss/channel/item
+        for item in root.findall("./channel/item"):
+            items.append({
+                "title": item.findtext("title", default=""),
+                "link": item.findtext("link", default=""),
+                "guid": item.findtext("guid", default=""),
+                "description": item.findtext("description", default=""),
+                "encoded": item.findtext("{http://purl.org/rss/1.0/modules/content/}encoded", default=""),
+            })
+            if len(items) >= 15:
+                break
+
+        # Fallback shape: iterate any element named item.
+        if not items:
+            for item in root.iter():
+                if item.tag.split("}")[-1].lower() != "item":
+                    continue
+                fields = {}
+                for child in list(item):
+                    key = child.tag.split("}")[-1].lower()
+                    fields[key] = child.text or ""
+                items.append({
+                    "title": fields.get("title", ""),
+                    "link": fields.get("link", ""),
+                    "guid": fields.get("guid", ""),
+                    "description": fields.get("description", ""),
+                    "encoded": fields.get("encoded", ""),
+                })
+                if len(items) >= 15:
+                    break
+    except ET.ParseError:
+        # Last fallback if feed XML is malformed but HTML parser can still read it.
+        try:
+            soup = BeautifulSoup(response.content, "html.parser")
+            for item in soup.find_all("item")[:15]:
+                encoded_node = item.find("content:encoded")
+                items.append({
+                    "title": item.find("title").get_text(strip=True) if item.find("title") else "",
+                    "link": item.find("link").get_text(strip=True) if item.find("link") else "",
+                    "guid": item.find("guid").get_text(strip=True) if item.find("guid") else "",
+                    "description": item.find("description").get_text(strip=True) if item.find("description") else "",
+                    "encoded": encoded_node.get_text(strip=True) if encoded_node else "",
+                })
+        except Exception as e:
+            print(f"  Error loading feed: {e}")
+            return []
     except Exception as e:
         print(f"  Error loading feed: {e}")
         return []
@@ -906,12 +1003,12 @@ def scrape_worldiptv(session, log_data):
     print(f"  Feed items fetched: {len(items)}")
     target_date = None
     if items:
-        first_title = (items[0].title.text if items[0].title else "")
+        first_title = items[0].get("title", "")
         target_date = extract_date_from_title(first_title)
     if target_date:
         filtered_items = []
         for item in items:
-            item_title = item.title.text if item.title else ""
+            item_title = item.get("title", "")
             item_date = extract_date_from_title(item_title)
             if item_date and item_date.date() == target_date.date():
                 filtered_items.append(item)
@@ -923,18 +1020,17 @@ def scrape_worldiptv(session, log_data):
     new_items = 0
 
     for item in items:
-        title = (item.title.text if item.title else "Untitled").strip()
-        item_url = (item.link.text if item.link else "").strip()
-        guid = (item.guid.text if item.guid else "").strip()
+        title = (item.get("title", "") or "Untitled").strip()
+        item_url = (item.get("link", "") or "").strip()
+        guid = (item.get("guid", "") or "").strip()
         item_key = guid or item_url or title
         existing_entry = source_log["scraped_articles"].get(item_key)
 
         if existing_entry and not should_reinspect_entry(existing_entry):
             continue
 
-        description = item.description.text if item.description else ""
-        encoded_node = item.find("content:encoded")
-        encoded = encoded_node.text if encoded_node else ""
+        description = item.get("description", "") or ""
+        encoded = item.get("encoded", "") or ""
 
         links = extract_m3u_links(f"{description}\n{encoded}")
         extraction = "feed"
@@ -1036,37 +1132,19 @@ def validate_existing_entry(item):
     }
 
 
-def check_domain_links(domain, links):
-    """Worker for finding the first valid playlist in a domain link set."""
+def validate_discovery_link(domain, link, link_idx, links_total):
+    """Worker for validating a single discovered playlist candidate."""
     started = time.perf_counter()
     session = get_thread_session()
-
-    checked_count = 0
-    last_reason = "No links"
-    for link in links:
-        checked_count += 1
-        is_valid, reason, stream_count = validate_playlist(link, session)
-        last_reason = reason
-        if is_valid:
-            return {
-                "domain": domain,
-                "links_total": len(links),
-                "checked_count": checked_count,
-                "is_valid": True,
-                "winning_link": link,
-                "stream_count": stream_count,
-                "last_reason": "Valid",
-                "elapsed_sec": time.perf_counter() - started,
-            }
-
+    is_valid, reason, stream_count = validate_playlist(link, session)
     return {
         "domain": domain,
-        "links_total": len(links),
-        "checked_count": checked_count,
-        "is_valid": False,
-        "winning_link": None,
-        "stream_count": 0,
-        "last_reason": last_reason,
+        "link": link,
+        "link_idx": link_idx,
+        "links_total": links_total,
+        "is_valid": is_valid,
+        "stream_count": stream_count,
+        "last_reason": reason,
         "elapsed_sec": time.perf_counter() - started,
     }
 
@@ -1193,35 +1271,129 @@ def main():
 
     domain_results = {}
     if domains_to_test:
-        with ThreadPoolExecutor(max_workers=runtime["discovery_workers"]) as executor:
-            future_map = {
-                executor.submit(check_domain_links, domain, links): (domain, links)
-                for domain, links in domains_to_test
+        domain_state = {
+            domain: {
+                "links": links,
+                "next_idx": 0,
+                "checked_count": 0,
+                "done": False,
+                "last_reason": "No links",
+                "started": time.perf_counter(),
             }
-            completed = 0
-            total = len(domains_to_test)
-            for future in as_completed(future_map):
-                domain, links = future_map[future]
-                completed += 1
-                try:
-                    result = future.result()
-                except Exception as exc:
-                    result = {
-                        "domain": domain,
-                        "links_total": len(links),
-                        "checked_count": 0,
-                        "is_valid": False,
-                        "winning_link": None,
-                        "stream_count": 0,
-                        "last_reason": f"Worker error: {exc}",
-                        "elapsed_sec": 0.0,
-                    }
-                domain_results[domain] = result
-                status = "valid" if result["is_valid"] else "none"
-                print(
-                    f"[DISCOVERY PROGRESS] {completed}/{total} {domain}: {status} "
-                    f"({result['checked_count']}/{result['links_total']} checked, {result['elapsed_sec']:.1f}s)"
-                )
+            for domain, links in domains_to_test
+        }
+        pending_domains = deque([domain for domain, _ in domains_to_test])
+        inflight = {}
+        total_domains = len(domains_to_test)
+        completed_domains = 0
+        total_link_checks = sum(len(links) for _, links in domains_to_test)
+        completed_link_checks = 0
+
+        def schedule_next_link(executor, domain_name):
+            state = domain_state[domain_name]
+            if state["done"]:
+                return
+
+            links = state["links"]
+            if state["next_idx"] >= len(links):
+                state["done"] = True
+                state["result"] = {
+                    "domain": domain_name,
+                    "links_total": len(links),
+                    "checked_count": state["checked_count"],
+                    "is_valid": False,
+                    "winning_link": None,
+                    "stream_count": 0,
+                    "last_reason": state["last_reason"],
+                    "elapsed_sec": time.perf_counter() - state["started"],
+                }
+                domain_results[domain_name] = state["result"]
+                return
+
+            link_idx = state["next_idx"]
+            state["next_idx"] += 1
+            link = links[link_idx]
+            future = executor.submit(
+                validate_discovery_link,
+                domain_name,
+                link,
+                link_idx + 1,
+                len(links),
+            )
+            inflight[future] = domain_name
+
+        with ThreadPoolExecutor(max_workers=runtime["discovery_workers"]) as executor:
+            while pending_domains and len(inflight) < runtime["discovery_workers"]:
+                schedule_next_link(executor, pending_domains.popleft())
+
+            while inflight:
+                done_futures, _ = wait(list(inflight.keys()), return_when=FIRST_COMPLETED)
+                for future in done_futures:
+                    domain = inflight.pop(future)
+                    state = domain_state[domain]
+                    try:
+                        result = future.result()
+                    except Exception as exc:
+                        result = {
+                            "domain": domain,
+                            "link": None,
+                            "link_idx": state["checked_count"] + 1,
+                            "links_total": len(state["links"]),
+                            "is_valid": False,
+                            "stream_count": 0,
+                            "last_reason": f"Worker error: {exc}",
+                            "elapsed_sec": 0.0,
+                        }
+
+                    state["checked_count"] += 1
+                    completed_link_checks += 1
+
+                    if result["is_valid"]:
+                        state["done"] = True
+                        state["result"] = {
+                            "domain": domain,
+                            "links_total": len(state["links"]),
+                            "checked_count": state["checked_count"],
+                            "is_valid": True,
+                            "winning_link": result["link"],
+                            "stream_count": result["stream_count"],
+                            "last_reason": "Valid",
+                            "elapsed_sec": time.perf_counter() - state["started"],
+                        }
+                        domain_results[domain] = state["result"]
+                        completed_domains += 1
+                        print(
+                            f"[DISCOVERY PROGRESS] links {completed_link_checks}/{total_link_checks} | "
+                            f"domains {completed_domains}/{total_domains} | {domain} "
+                            f"valid on {result['link_idx']}/{result['links_total']} ({result['elapsed_sec']:.1f}s)"
+                        )
+                    else:
+                        state["last_reason"] = result["last_reason"]
+                        print(
+                            f"[DISCOVERY PROGRESS] links {completed_link_checks}/{total_link_checks} | "
+                            f"domains {completed_domains}/{total_domains} | {domain} "
+                            f"failed {result['link_idx']}/{result['links_total']}: {result['last_reason']}"
+                        )
+
+                        if state["next_idx"] < len(state["links"]):
+                            pending_domains.append(domain)
+                        else:
+                            state["done"] = True
+                            state["result"] = {
+                                "domain": domain,
+                                "links_total": len(state["links"]),
+                                "checked_count": state["checked_count"],
+                                "is_valid": False,
+                                "winning_link": None,
+                                "stream_count": 0,
+                                "last_reason": state["last_reason"],
+                                "elapsed_sec": time.perf_counter() - state["started"],
+                            }
+                            domain_results[domain] = state["result"]
+                            completed_domains += 1
+
+                while pending_domains and len(inflight) < runtime["discovery_workers"]:
+                    schedule_next_link(executor, pending_domains.popleft())
 
     for domain, links in domains_to_test:
         tested_domains += 1
