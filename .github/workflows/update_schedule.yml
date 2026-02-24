@@ -47,6 +47,10 @@ jobs:
         name: update-schedule-outputs
         path: |
           aongewach/weekly_schedule.json
+          aongewach/weekly_schedule_fanzo.json
+          aongewach/weekly_schedule_fanzo_enriched.json
+          aongewach/weekly_schedule_livesporttv.json
+          aongewach/weekly_schedule_witm.json
           aongewach/e104f869d64e3d41256d5398.json
           aongewach/channel_map.json
           aongewach/channels.json
@@ -59,6 +63,10 @@ jobs:
         BRANCH="${GITHUB_REF_NAME:-main}"
         FILES=(
           "aongewach/weekly_schedule.json"
+          "aongewach/weekly_schedule_fanzo.json"
+          "aongewach/weekly_schedule_fanzo_enriched.json"
+          "aongewach/weekly_schedule_livesporttv.json"
+          "aongewach/weekly_schedule_witm.json"
           "aongewach/e104f869d64e3d41256d5398.json"
           "aongewach/channel_map.json"
           "aongewach/channels.json"
