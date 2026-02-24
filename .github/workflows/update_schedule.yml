@@ -74,11 +74,6 @@ jobs:
         if git diff --staged --quiet; then
           echo "No changes to commit"
         else
-          git fetch origin "$BRANCH"
-          git rebase "origin/$BRANCH" || {
-            git rebase --abort || true
-            git pull --rebase origin "$BRANCH"
-          }
           git commit -m "Update weekly schedule and mappings [skip ci]"
           for attempt in 1 2 3; do
             if git push origin "HEAD:$BRANCH"; then

@@ -38,11 +38,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git fetch origin "$BRANCH"
-            git rebase "origin/$BRANCH" || {
-              git rebase --abort || true
-              git pull --rebase origin "$BRANCH"
-            }
             git commit -m "update - $(date +'%Y-%m-%d %H:%M:%S UTC')"
             for attempt in 1 2 3; do
               if git push origin "HEAD:$BRANCH"; then
