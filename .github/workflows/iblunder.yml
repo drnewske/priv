@@ -3,6 +3,19 @@ on:
   schedule:
     - cron: '0 6 * * *'
   workflow_dispatch:
+    inputs:
+      validation_workers:
+        description: Workers for existing playlist testing
+        required: false
+        default: '5'
+      discovery_workers:
+        description: Workers for per-domain discovered link testing
+        required: false
+        default: '5'
+      source_workers:
+        description: Workers for source scraping
+        required: false
+        default: '3'
 
 jobs:
   update-content:
@@ -27,7 +40,15 @@ jobs:
           pip install requests beautifulsoup4
         
       - name: Run Scraper and Cleaner
-        run: python bl34Gnderqqq123.py
+        env:
+          VALIDATION_WORKERS: ${{ github.event.inputs.validation_workers || '5' }}
+          DISCOVERY_WORKERS: ${{ github.event.inputs.discovery_workers || '5' }}
+          SOURCE_WORKERS: ${{ github.event.inputs.source_workers || '3' }}
+        run: |
+          python bl34Gnderqqq123.py \
+            --validation-workers "${VALIDATION_WORKERS}" \
+            --discovery-workers "${DISCOVERY_WORKERS}" \
+            --source-workers "${SOURCE_WORKERS}"
         
       - name: Commit and Push Changes
         run: |

@@ -1,10 +1,14 @@
 import json
+import argparse
+import os
 import requests
 import datetime
 import re
 import time
+import threading
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from datetime import datetime as dt
@@ -27,6 +31,12 @@ MIN_STREAM_COUNT = 10
 PLAYLIST_TIMEOUT = 20
 MAX_RETRIES = 3
 RETRY_DELAY = 2
+DEFAULT_VALIDATION_WORKERS = 5
+DEFAULT_DISCOVERY_WORKERS = 5
+DEFAULT_SOURCE_WORKERS = 3
+MAX_WORKERS_LIMIT = 24
+
+THREAD_LOCAL = threading.local()
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
@@ -445,7 +455,7 @@ def rename_untitled_playlists(slot_registry):
         slot_registry[new_slot_id] = item
         
         renamed_count += 1
-        print(f"  ✓ Renamed: '{old_name}' → '{new_name}' (Slot {old_slot_id} → {new_slot_id})")
+        print(f"  [OK] Renamed: '{old_name}' -> '{new_name}' (Slot {old_slot_id} -> {new_slot_id})")
     
     return renamed_count
 
@@ -504,9 +514,9 @@ def scrape_ninoiptv(session, log_data):
                             'date': article_date,
                             'version': version
                         })
-                        print(f"    → Date: {article_date.strftime('%Y-%m-%d')}, Version: V{version}")
+                        print(f"    -> Date: {article_date.strftime('%Y-%m-%d')}, Version: V{version}")
                     else:
-                        print(f"    → No date found in title or URL")
+                        print(f"    -> No date found in title or URL")
                 else:
                     print(f"  DEBUG Article {idx+1}: No link found in title")
             else:
@@ -539,10 +549,10 @@ def scrape_ninoiptv(session, log_data):
             
             
             if article_key in source_log["scraped_articles"]:
-                print(f"  ✓ Already scraped: {article['title']}")
+                print(f"  [OK] Already scraped: {article['title']}")
                 continue
             
-            print(f"  → Scraping: {article['title']}")
+            print(f"  -> Scraping: {article['title']}")
             
             try:
                 article_response = session.get(article['url'], headers=HEADERS, timeout=15)
@@ -611,10 +621,10 @@ def scrape_iptvcodes(session, log_data):
             article_key = article['url']
             
             if article_key in source_log["scraped_articles"]:
-                print(f"  ✓ Already scraped: {article['title'][:50]}...")
+                print(f"  [OK] Already scraped: {article['title'][:50]}...")
                 continue
             
-            print(f"  → Scraping: {article['title'][:50]}...")
+            print(f"  -> Scraping: {article['title'][:50]}...")
             
             try:
                 article_response = session.get(article['url'], headers=HEADERS, timeout=15)
@@ -673,10 +683,10 @@ def scrape_m3umax(session, log_data):
             article_key = article['url']
             
             if article_key in source_log["scraped_articles"]:
-                print(f"  ✓ Already scraped: {article['title'][:50]}...")
+                print(f"  [OK] Already scraped: {article['title'][:50]}...")
                 continue
             
-            print(f"  → Scraping: {article['title'][:50]}...")
+            print(f"  -> Scraping: {article['title'][:50]}...")
             
             try:
                 article_response = session.get(article['url'], headers=HEADERS, timeout=15)
@@ -709,190 +719,367 @@ def scrape_m3umax(session, log_data):
 
 
 
+def resolve_worker_count(cli_value, env_name, default_value, upper_bound=MAX_WORKERS_LIMIT):
+    """Resolve worker count from CLI first, then env var, then default."""
+    if cli_value is not None:
+        value = cli_value
+    else:
+        raw = os.getenv(env_name)
+        try:
+            value = int(raw) if raw is not None else default_value
+        except ValueError:
+            value = default_value
+
+    return max(1, min(value, upper_bound))
+
+
+def parse_runtime_config():
+    """Read runtime worker configuration."""
+    parser = argparse.ArgumentParser(description="IPTV Playlist Updater")
+    parser.add_argument("--validation-workers", type=int, default=None, help="Workers for existing playlist validation")
+    parser.add_argument("--discovery-workers", type=int, default=None, help="Workers for discovery domain checks")
+    parser.add_argument("--source-workers", type=int, default=None, help="Workers for source scraping")
+    args = parser.parse_args()
+
+    source_upper_bound = min(MAX_WORKERS_LIMIT, max(1, len(SOURCES)))
+    return {
+        "validation_workers": resolve_worker_count(
+            args.validation_workers,
+            "BLUNDER_VALIDATION_WORKERS",
+            DEFAULT_VALIDATION_WORKERS,
+        ),
+        "discovery_workers": resolve_worker_count(
+            args.discovery_workers,
+            "BLUNDER_DISCOVERY_WORKERS",
+            DEFAULT_DISCOVERY_WORKERS,
+        ),
+        "source_workers": resolve_worker_count(
+            args.source_workers,
+            "BLUNDER_SOURCE_WORKERS",
+            DEFAULT_SOURCE_WORKERS,
+            upper_bound=source_upper_bound,
+        ),
+    }
+
+
+def get_thread_session():
+    """Create one requests session per worker thread."""
+    session = getattr(THREAD_LOCAL, "session", None)
+    if session is None:
+        session = create_session()
+        THREAD_LOCAL.session = session
+    return session
+
+
+def validate_existing_entry(item):
+    """Worker for validating a single existing playlist entry."""
+    slot_id = item.get("slot_id")
+    url = item.get("url")
+    domain = get_domain(url)
+    name = item.get("name")
+    started = time.perf_counter()
+    is_valid, reason, stream_count = validate_playlist(url, get_thread_session())
+    elapsed_sec = time.perf_counter() - started
+    return {
+        "slot_id": slot_id,
+        "url": url,
+        "domain": domain,
+        "name": name,
+        "item": item,
+        "is_valid": is_valid,
+        "reason": reason,
+        "stream_count": stream_count,
+        "elapsed_sec": elapsed_sec,
+    }
+
+
+def check_domain_links(domain, links):
+    """Worker for finding the first valid playlist in a domain link set."""
+    started = time.perf_counter()
+    session = get_thread_session()
+
+    checked_count = 0
+    last_reason = "No links"
+    for link in links:
+        checked_count += 1
+        is_valid, reason, stream_count = validate_playlist(link, session)
+        last_reason = reason
+        if is_valid:
+            return {
+                "domain": domain,
+                "links_total": len(links),
+                "checked_count": checked_count,
+                "is_valid": True,
+                "winning_link": link,
+                "stream_count": stream_count,
+                "last_reason": "Valid",
+                "elapsed_sec": time.perf_counter() - started,
+            }
+
+    return {
+        "domain": domain,
+        "links_total": len(links),
+        "checked_count": checked_count,
+        "is_valid": False,
+        "winning_link": None,
+        "stream_count": 0,
+        "last_reason": last_reason,
+        "elapsed_sec": time.perf_counter() - started,
+    }
+
+
+def scrape_source_worker(source_name, scraper_fn, source_state):
+    """Worker for scraping one source with isolated session/log state."""
+    session = create_session()
+    isolated_log = {"sources": {source_name: source_state}}
+    links = scraper_fn(session, isolated_log)
+    return source_name, links, isolated_log["sources"].get(source_name, {"scraped_articles": {}})
+
+
 def main():
     print("="*70)
     print("  IPTV PLAYLIST UPDATER")
     print("="*70)
-    
-    session = create_session()
+
+    runtime = parse_runtime_config()
+    print(
+        f"[CONFIG] validation_workers={runtime['validation_workers']} | "
+        f"discovery_workers={runtime['discovery_workers']} | "
+        f"source_workers={runtime['source_workers']}"
+    )
+
     timestamp_now = dt.now().strftime("%Y-%m-%d %H:%M:%S")
-    
-    
+
     try:
         with open(JSON_FILE, 'r', encoding='utf-8') as f:
             data = json.load(f)
     except FileNotFoundError:
         data = {"featured_content": []}
-    
-    
+
     log_data = load_scraper_log()
-    
     existing_slots = data.get("featured_content", [])
-    
-   
+
     print("\n" + "="*70)
     print("  VALIDATION PHASE - CHECKING ALL EXISTING PLAYLISTS")
     print("="*70)
     print(f"\n[VALIDATION] Checking {len(existing_slots)} existing playlists...")
-    
+
     live_playlists = {}
     live_domains = set()
     available_slots = set()
-    
-    for idx, item in enumerate(existing_slots, 1):
-        slot_id = item.get("slot_id")
-        url = item.get("url")
-        domain = get_domain(url)
-        name = item.get("name")
-        
+
+    validation_started = time.perf_counter()
+    validation_results = []
+    if existing_slots:
+        with ThreadPoolExecutor(max_workers=runtime["validation_workers"]) as executor:
+            future_map = {
+                executor.submit(validate_existing_entry, item): idx
+                for idx, item in enumerate(existing_slots, 1)
+            }
+            for future in as_completed(future_map):
+                idx = future_map[future]
+                result = future.result()
+                result["idx"] = idx
+                validation_results.append(result)
+
+        validation_results.sort(key=lambda x: x["idx"])
+
+    for result in validation_results:
+        idx = result["idx"]
+        slot_id = result["slot_id"]
+        url = result["url"]
+        domain = result["domain"]
+        name = result["name"]
+        item = result["item"]
+        is_valid = result["is_valid"]
+        reason = result["reason"]
+        stream_count = result["stream_count"]
+        elapsed_sec = result["elapsed_sec"]
+
+        url_preview = f"{url[:80]}..." if isinstance(url, str) else str(url)
         print(f"[{idx}/{len(existing_slots)}] TESTING: {name}")
         print(f"  Domain: {domain}")
-        print(f"  URL: {url[:80]}...")
-        
-        is_valid, reason, stream_count = validate_playlist(url, session)
-        
+        print(f"  URL: {url_preview}")
+
         if is_valid:
-            
             item["channel_count"] = stream_count
             item["last_validated"] = timestamp_now
             item["logo_url"] = get_logo_for_slot(slot_id)
-            
             live_playlists[slot_id] = item
             live_domains.add(domain)
-            
-            print(f"  ✓ ALIVE | Channels: {stream_count:,}\n")
+            print(f"  [OK] ALIVE | Channels: {stream_count:,} | {elapsed_sec:.1f}s\n")
         else:
-            
             available_slots.add(slot_id)
-            print(f"  ✗ DEAD: {reason} | Slot {slot_id} cleared\n")
-    
+            print(f"  [FAIL] DEAD: {reason} | Slot {slot_id} cleared | {elapsed_sec:.1f}s\n")
+
+    validation_elapsed = time.perf_counter() - validation_started
+
     print(f"\n[VALIDATION SUMMARY]")
     print(f"  Live Playlists: {len(live_playlists)}")
     print(f"  Dead Playlists: {len(available_slots)}")
     print(f"  Live Domains: {', '.join(sorted(live_domains))}")
-    
-    
+    print(f"  Duration: {validation_elapsed:.1f}s")
+
     print("\n" + "="*70)
     print("  DISCOVERY PHASE - SCRAPING NEW PLAYLISTS")
     print("="*70)
-    
+
+    discovery_started = time.perf_counter()
     new_links = []
-    new_links.extend(scrape_ninoiptv(session, log_data))
-    new_links.extend(scrape_iptvcodes(session, log_data))
-    new_links.extend(scrape_m3umax(session, log_data))
-    
-    
+    source_jobs = [
+        ("ninoiptv", scrape_ninoiptv),
+        ("iptvcodes", scrape_iptvcodes),
+        ("m3umax", scrape_m3umax),
+    ]
+
+    with ThreadPoolExecutor(max_workers=runtime["source_workers"]) as executor:
+        future_map = {}
+        for source_name, scraper_fn in source_jobs:
+            source_state = dict(log_data["sources"].get(source_name, {"scraped_articles": {}}))
+            source_state["scraped_articles"] = dict(source_state.get("scraped_articles", {}))
+            future = executor.submit(scrape_source_worker, source_name, scraper_fn, source_state)
+            future_map[future] = source_name
+
+        for future in as_completed(future_map):
+            source_name = future_map[future]
+            try:
+                _, links, source_state = future.result()
+                new_links.extend(links)
+                log_data["sources"][source_name] = source_state
+            except Exception as exc:
+                print(f"[SCRAPING] {source_name} failed: {exc}")
+
     save_scraper_log(log_data)
-    
-    
+
     new_links = list(dict.fromkeys(new_links))
-    
     print(f"\n[TESTING] Found {len(new_links)} unique new links")
-    
-    
+
     domain_links = {}
     for link in new_links:
         domain = get_domain(link)
         if domain not in domain_links:
             domain_links[domain] = []
         domain_links[domain].append(link)
-    
+
     print(f"[TESTING] Grouped into {len(domain_links)} unique domains")
-    
+
     added_count = 0
     skipped_domains = 0
     tested_domains = 0
-    
-    
+    domains_to_test = []
     for domain, links in domain_links.items():
-        
         if domain in live_domains:
             skipped_domains += 1
             print(f"\n[SKIP] Domain already live: {domain} ({len(links)} links skipped)")
             continue
-        
+        domains_to_test.append((domain, links))
+
+    domain_results = {}
+    if domains_to_test:
+        with ThreadPoolExecutor(max_workers=runtime["discovery_workers"]) as executor:
+            future_map = {
+                executor.submit(check_domain_links, domain, links): (domain, links)
+                for domain, links in domains_to_test
+            }
+            completed = 0
+            total = len(domains_to_test)
+            for future in as_completed(future_map):
+                domain, links = future_map[future]
+                completed += 1
+                try:
+                    result = future.result()
+                except Exception as exc:
+                    result = {
+                        "domain": domain,
+                        "links_total": len(links),
+                        "checked_count": 0,
+                        "is_valid": False,
+                        "winning_link": None,
+                        "stream_count": 0,
+                        "last_reason": f"Worker error: {exc}",
+                        "elapsed_sec": 0.0,
+                    }
+                domain_results[domain] = result
+                status = "valid" if result["is_valid"] else "none"
+                print(
+                    f"[DISCOVERY PROGRESS] {completed}/{total} {domain}: {status} "
+                    f"({result['checked_count']}/{result['links_total']} checked, {result['elapsed_sec']:.1f}s)"
+                )
+
+    for domain, links in domains_to_test:
         tested_domains += 1
+        result = domain_results[domain]
         print(f"\n[NEW DOMAIN {tested_domains}] TESTING: {domain} ({len(links)} links)")
-        
-        
-        found_valid = False
-        for link_idx, link in enumerate(links, 1):
-            print(f"  [{link_idx}/{len(links)}] Testing: {link[:80]}...")
-            
-            is_valid, reason, stream_count = validate_playlist(link, session)
-            
-            if is_valid:
-                
-                found_valid = True
-                
-                
-                if available_slots:
-                    
-                    target_id = min(available_slots)
-                    available_slots.remove(target_id)
-                    slot_type = "reused"
-                else:
-                    
-                    target_id, slot_type = find_available_slot(set(live_playlists.keys()))
-                
-                name = get_name_for_slot(target_id, domain)
-                logo = get_logo_for_slot(target_id)
-                
-                new_entry = {
-                    "slot_id": target_id,
-                    "name": name,
-                    "domain": domain,
-                    "channel_count": stream_count,
-                    "logo_url": logo,
-                    "type": "m3u",
-                    "url": link,
-                    "server_url": None,
-                    "id": f"slot_{str(target_id).zfill(3)}",
-                    "last_changed": timestamp_now,
-                    "last_validated": timestamp_now,
-                    "change_log": f"Added via scraper on {timestamp_now}"
-                }
-                
-                live_playlists[target_id] = new_entry
-                live_domains.add(domain)
-                added_count += 1
-                
-                slot_info = f"Slot {target_id} ({slot_type})"
-                print(f"    ✓✓✓ SUCCESS! Added to {slot_info} | Channels: {stream_count:,}")
-                print(f"    Skipping remaining {len(links) - link_idx} links for domain {domain}\n")
-                break
+
+        if result["is_valid"]:
+            link = result["winning_link"]
+            stream_count = result["stream_count"]
+            checked_count = result["checked_count"]
+
+            if available_slots:
+                target_id = min(available_slots)
+                available_slots.remove(target_id)
+                slot_type = "reused"
             else:
-                print(f"    ✗ Failed: {reason}")
-        
-        if not found_valid:
-            print(f"  ✗ No valid playlist found for domain {domain}\n")
-    
-   
+                target_id, slot_type = find_available_slot(set(live_playlists.keys()))
+
+            name = get_name_for_slot(target_id, domain)
+            logo = get_logo_for_slot(target_id)
+            new_entry = {
+                "slot_id": target_id,
+                "name": name,
+                "domain": domain,
+                "channel_count": stream_count,
+                "logo_url": logo,
+                "type": "m3u",
+                "url": link,
+                "server_url": None,
+                "id": f"slot_{str(target_id).zfill(3)}",
+                "last_changed": timestamp_now,
+                "last_validated": timestamp_now,
+                "change_log": f"Added via scraper on {timestamp_now}",
+            }
+
+            live_playlists[target_id] = new_entry
+            live_domains.add(domain)
+            added_count += 1
+            slot_info = f"Slot {target_id} ({slot_type})"
+            print(
+                f"  [OK] SUCCESS! Added to {slot_info} | Channels: {stream_count:,} "
+                f"| checked {checked_count}/{len(links)} links"
+            )
+        else:
+            print(
+                f"  [FAIL] No valid playlist found "
+                f"(checked {result['checked_count']}/{len(links)}): {result['last_reason']}"
+            )
+
     renamed_count = rename_untitled_playlists(live_playlists)
-    
-    
+    discovery_elapsed = time.perf_counter() - discovery_started
+
     print("\n" + "="*70)
     print("  FINALIZING")
     print("="*70)
-    
-    
+
     final_list = [live_playlists[sid] for sid in sorted(live_playlists.keys())]
     data["featured_content"] = final_list
-    
+
     with open(JSON_FILE, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
-    
+
     total_channels = sum(x['channel_count'] for x in final_list)
-    
+
     print("\n" + "="*70)
     print("  SUMMARY")
     print("="*70)
     print(f"  Active Playlists: {len(final_list)}")
     print(f"  Newly Added: {added_count}")
+    print(f"  Domains Tested: {tested_domains}")
     print(f"  Domains Skipped (Already Live): {skipped_domains}")
     if renamed_count > 0:
-        print(f"  Renamed (Untitled → Named): {renamed_count}")
+        print(f"  Renamed (Untitled -> Named): {renamed_count}")
     print(f"  Total Channels: {total_channels:,}")
+    print(f"  Discovery Duration: {discovery_elapsed:.1f}s")
     print(f"  Updated: {timestamp_now}")
     print("="*70)
 
