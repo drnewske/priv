@@ -228,6 +228,11 @@ def map_channels(args: argparse.Namespace) -> int:
                 events_capped += 1
 
             event["channels"] = [entry["raw"] for entry in selected_entries]
+            # Keep final mapped payload simple: drop internal enrichment metadata.
+            if "channel_candidates" in event:
+                del event["channel_candidates"]
+            if "channel_country_groups" in event:
+                del event["channel_country_groups"]
             if "mapped_channels" in event:
                 del event["mapped_channels"]
 

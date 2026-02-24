@@ -6,18 +6,19 @@ This system runs automatically via GitHub Actions to keep schedules, team data, 
 Workflow: `update_schedule.yml`
 - Runs: Weekly (Mondays at 06:00 UTC)
 - What it does:
-1. Scrapes weekly schedule from LiveSportTV (`scrape_schedule_livesporttv.py`) to source soccer/football events,
-   including per-match country enrichment from the fixture page (`LIVE` + `INTERNATIONAL` rows)
-   and per-event `channel_candidates` metadata with country evidence.
-2. Scrapes FANZO non-soccer schedule (`scrape_schedule_fanzo.py`).
-3. Scrapes WITM non-soccer schedule (`scrape_schedule_witm.py`) for channel/logo reinforcement.
-4. Merges FANZO + WITM (`merge_fanzo_witm.py`) by exact event matching.
-5. Composes final `weekly_schedule.json` (`compose_weekly_schedule.py`):
+1. Scrapes weekly schedules from all sources in parallel:
+   - LiveSportTV (`scrape_schedule_livesporttv.py`) for soccer/football events,
+     including per-match country enrichment from the fixture page (`LIVE` + `INTERNATIONAL` rows)
+     and per-event `channel_candidates` metadata with country evidence.
+   - FANZO (`scrape_schedule_fanzo.py`) + WITM (`scrape_schedule_witm.py`) for non-soccer
+     channel/logo reinforcement.
+2. Merges FANZO + WITM (`merge_fanzo_witm.py`) by exact event matching.
+3. Composes final `weekly_schedule.json` (`compose_weekly_schedule.py`):
    soccer from LiveSportTV, non-soccer from FANZO/WITM.
-6. Scans IPTV playlists for channels found in the composed schedule (`scan_sports_channels.py`), tests each matched stream URL inline with ffprobe/ffmpeg, and keeps only alive streams.
-7. Maps schedule channel names to stream channel IDs (`map_channels.py`) and applies
+4. Scans IPTV playlists for channels found in the composed schedule (`scan_sports_channels.py`), tests each matched stream URL inline with ffprobe/ffmpeg, and keeps only alive streams.
+5. Maps schedule channel names to stream channel IDs (`map_channels.py`) and applies
    final per-event geo cap (max 5 mapped channels/event; UK<=2, US<=2, fill Others).
-8. Outputs final JSON to `e104f869d64e3d41256d5398.json`.
+6. Outputs final JSON to `e104f869d64e3d41256d5398.json`.
 - Manual trigger: Actions -> "Update Weekly Schedule" -> "Run workflow"
 
 ## 2. Manual Maintenance Workflows
@@ -64,9 +65,9 @@ Workflow: `update_schedule.yml`
 - `fuzzy_match.py`, `build_teams_db.py`, `build_teams_mirror.py`, `fetch_missing_teams.py`
 
 ## Pipeline Order
-1. `scrape_schedule_livesporttv.py --days 7 --geo-rules-file channel_geo_rules.json --output weekly_schedule_livesporttv.json`
-2. `scrape_schedule_fanzo.py --days 7 --output weekly_schedule_fanzo.json`
-3. `scrape_schedule_witm.py --days 7 --output weekly_schedule_witm.json`
+1. `scrape_schedule_livesporttv.py --days 7 --geo-rules-file channel_geo_rules.json --output weekly_schedule_livesporttv.json` (parallel block)
+2. `scrape_schedule_fanzo.py --days 7 --output weekly_schedule_fanzo.json` (parallel block)
+3. `scrape_schedule_witm.py --days 7 --output weekly_schedule_witm.json` (parallel block)
 4. `merge_fanzo_witm.py --fanzo weekly_schedule_fanzo.json --witm weekly_schedule_witm.json --output weekly_schedule_fanzo_enriched.json`
 5. `compose_weekly_schedule.py --livesporttv weekly_schedule_livesporttv.json --fanzo-witm weekly_schedule_fanzo_enriched.json --output weekly_schedule.json`
 6. `scan_sports_channels.py` -> updates `channels.json` using tested-alive streams (cap: 5 working streams/channel)

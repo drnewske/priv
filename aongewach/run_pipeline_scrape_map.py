@@ -3,10 +3,9 @@
 Run Pipeline (Scrape + Compose + Channel Mapper only)
 
 Flow:
-  1. Scrape LiveSportTV (soccer source)
-  2. Scrape FANZO + WITM (non-soccer sources)
-  3. Merge/compose final weekly schedule
-  4. Map schedule channels to existing IPTV channel IDs
+  1. Scrape LiveSportTV + FANZO + WITM sources in parallel
+  2. Merge/compose final weekly schedule
+  3. Map schedule channels to existing IPTV channel IDs
 """
 
 import argparse
@@ -14,6 +13,7 @@ import os
 import shutil
 import subprocess
 import sys
+import time
 
 
 def run_step(script_name, description, extra_args=None, fail_on_error=True):
@@ -38,6 +38,72 @@ def run_step(script_name, description, extra_args=None, fail_on_error=True):
         return False
     except Exception as exc:
         print(f"\n[ERROR] Failed to run {script_name}: {exc}")
+        if fail_on_error:
+            sys.exit(1)
+        return False
+
+    return True
+
+
+def run_parallel_steps(steps, description, fail_on_error=True):
+    """
+    Run independent pipeline steps in parallel.
+    Each step tuple: (script_name, step_description, extra_args_list_or_none).
+    """
+    print(f"\n{'=' * 60}")
+    print(f"STEP: {description}")
+    print(f"{'=' * 60}\n")
+
+    processes = []
+    for script_name, step_description, extra_args in steps:
+        cmd = [sys.executable, "-u", script_name]
+        if extra_args:
+            cmd.extend(extra_args)
+        print(f"[START] {step_description} ({script_name})")
+        try:
+            process = subprocess.Popen(cmd)
+        except Exception as exc:
+            print(f"\n[ERROR] Failed to start {script_name}: {exc}")
+            for _, _, running_process in processes:
+                if running_process.poll() is None:
+                    running_process.terminate()
+            if fail_on_error:
+                sys.exit(1)
+            return False
+        processes.append((script_name, step_description, process))
+
+    failures = []
+    running = processes.copy()
+    while running:
+        for entry in list(running):
+            script_name, _, process = entry
+            return_code = process.poll()
+            if return_code is None:
+                continue
+
+            running.remove(entry)
+            if return_code == 0:
+                print(f"[SUCCESS] {script_name} completed.")
+            else:
+                print(f"[ERROR] {script_name} failed with return code {return_code}.")
+                failures.append((script_name, return_code))
+
+        if failures and running:
+            print("[ERROR] Terminating remaining parallel steps due to failure.")
+            for _, _, process in running:
+                if process.poll() is None:
+                    process.terminate()
+            for _, _, process in running:
+                try:
+                    process.wait(timeout=5)
+                except subprocess.TimeoutExpired:
+                    process.kill()
+            break
+
+        if running:
+            time.sleep(0.2)
+
+    if failures:
         if fail_on_error:
             sys.exit(1)
         return False
@@ -89,12 +155,6 @@ def main() -> int:
     if args.max_tournaments > 0:
         scrape_args.extend(["--max-tournaments", str(args.max_tournaments)])
 
-    run_step(
-        "scrape_schedule_livesporttv.py",
-        "Scraping Weekly Schedule from LiveSportTV",
-        extra_args=scrape_args,
-    )
-
     fanzo_args = [
         "--days",
         str(args.days),
@@ -103,12 +163,6 @@ def main() -> int:
     ]
     if args.date:
         fanzo_args.extend(["--date", args.date])
-    run_step(
-        "scrape_schedule_fanzo.py",
-        "Scraping Weekly Non-Soccer Schedule from FANZO",
-        extra_args=fanzo_args,
-    )
-
     witm_args = [
         "--days",
         str(args.days),
@@ -117,10 +171,25 @@ def main() -> int:
     ]
     if args.date:
         witm_args.extend(["--date", args.date])
-    run_step(
-        "scrape_schedule_witm.py",
-        "Scraping Weekly Non-Soccer Schedule from WITM",
-        extra_args=witm_args,
+    run_parallel_steps(
+        [
+            (
+                "scrape_schedule_livesporttv.py",
+                "Scraping Weekly Schedule from LiveSportTV",
+                scrape_args,
+            ),
+            (
+                "scrape_schedule_fanzo.py",
+                "Scraping Weekly Non-Soccer Schedule from FANZO",
+                fanzo_args,
+            ),
+            (
+                "scrape_schedule_witm.py",
+                "Scraping Weekly Non-Soccer Schedule from WITM",
+                witm_args,
+            ),
+        ],
+        "Scraping Weekly Schedules from LiveSportTV + FANZO + WITM (Parallel)",
     )
 
     run_step(
