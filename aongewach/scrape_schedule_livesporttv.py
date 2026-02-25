@@ -1391,7 +1391,6 @@ def scrape_one_date(
         "schedule_fetch_parse": 0,
         "data_today": 0,
         "primary_tournament_api": 0,
-        "geo_profiles": 0,
         "post_process": 0,
         "match_country_enrichment": 0,
     }
@@ -1817,7 +1816,6 @@ def main() -> int:
         "schedule_fetch_parse": 0,
         "data_today": 0,
         "primary_tournament_api": 0,
-        "geo_profiles": 0,
         "post_process": 0,
         "match_country_enrichment": 0,
         "elapsed": 0,
@@ -1859,7 +1857,6 @@ def main() -> int:
             "schedule_fetch_parse",
             "data_today",
             "primary_tournament_api",
-            "geo_profiles",
             "post_process",
             "match_country_enrichment",
         ):
@@ -1943,7 +1940,6 @@ def main() -> int:
                 f"schedule={int(day_stage_times.get('schedule_fetch_parse', 0)) / 1000:.1f}s "
                 f"data_today={int(day_stage_times.get('data_today', 0)) / 1000:.1f}s "
                 f"primary_api={int(day_stage_times.get('primary_tournament_api', 0)) / 1000:.1f}s "
-                f"geo_profiles={int(day_stage_times.get('geo_profiles', 0)) / 1000:.1f}s "
                 f"match_country={int(day_stage_times.get('match_country_enrichment', 0)) / 1000:.1f}s "
                 f"post={int(day_stage_times.get('post_process', 0)) / 1000:.1f}s"
             )
