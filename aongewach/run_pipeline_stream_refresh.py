@@ -199,8 +199,6 @@ def main() -> int:
         str(args.days),
         "--max-pages",
         str(args.max_pages),
-        "--geo-rules-file",
-        "channel_geo_rules.json",
         "--output",
         "weekly_schedule_livesporttv.json",
     ]
@@ -296,7 +294,7 @@ def main() -> int:
     run_step(
         "map_channels.py",
         "Mapping Schedule Channels to Playable IPTV Streams",
-        extra_args=["--geo-rules-file", "channel_geo_rules.json"],
+        extra_args=None,
     )
 
     print(f"\n{'=' * 60}")

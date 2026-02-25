@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Map schedule channels to channel IDs and apply final per-event geo cap."""
+"""Map schedule channels to channel IDs without geo grouping/capping."""
 
 import argparse
 import json
@@ -10,9 +10,6 @@ from typing import Dict, Optional
 
 from channel_name_placeholders import is_placeholder_channel_name
 from channel_selection import (
-    index_channel_candidates,
-    load_geo_rules,
-    select_mapped_event_channels,
     split_mapped_channel_entry,
 )
 
@@ -23,7 +20,6 @@ SCHEDULE_FILE_FALLBACK = os.path.join(SCRIPT_DIR, "weekly_schedule_mapped.json")
 CHANNELS_FILE = os.path.join(SCRIPT_DIR, "channels.json")
 MAP_FILE = os.path.join(SCRIPT_DIR, "channel_map.json")
 OUTPUT_FILE = os.path.join(SCRIPT_DIR, "e104f869d64e3d41256d5398.json")
-DEFAULT_GEO_RULES_FILE = os.path.join(SCRIPT_DIR, "channel_geo_rules.json")
 
 NON_BROADCAST_WORD_RE = re.compile(r"\b(app|website|web\s*site|youtube|radio)\b", re.IGNORECASE)
 DOMAIN_RE = re.compile(
@@ -109,8 +105,26 @@ def resolve_channel_id(
     return None
 
 
+def dedupe_resolved_entries(entries):
+    out = []
+    seen = set()
+    for entry in entries:
+        if not isinstance(entry, dict):
+            continue
+        name = str(entry.get("name") or "").strip()
+        cid = entry.get("id")
+        if not name or not isinstance(cid, int):
+            continue
+        key = (name.casefold(), cid)
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append({"name": name, "id": cid, "raw": f"{name}, {cid}"})
+    return out
+
+
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Map schedule channels and enforce per-event geo cap.")
+    parser = argparse.ArgumentParser(description="Map schedule channels to stable channel IDs.")
     parser.add_argument("--schedule-file", default=SCHEDULE_FILE, help="Primary schedule file path.")
     parser.add_argument(
         "--schedule-fallback",
@@ -120,11 +134,6 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--channels-file", default=CHANNELS_FILE, help="channels.json file path.")
     parser.add_argument("--map-file", default=MAP_FILE, help="channel_map.json file path.")
     parser.add_argument("--output-file", default=OUTPUT_FILE, help="Final mapped output file path.")
-    parser.add_argument(
-        "--geo-rules-file",
-        default=DEFAULT_GEO_RULES_FILE,
-        help="Path to channel geo rules JSON (default: aongewach/channel_geo_rules.json).",
-    )
     return parser.parse_args()
 
 
@@ -137,7 +146,6 @@ def map_channels(args: argparse.Namespace) -> int:
         schedule_source = args.schedule_fallback
     channels_db = load_json(args.channels_file)
     saved_map = load_json(args.map_file)
-    geo_rules = load_geo_rules(args.geo_rules_file)
 
     if not schedule_data or not channels_db:
         print("Missing input files.")
@@ -155,13 +163,8 @@ def map_channels(args: argparse.Namespace) -> int:
     processed_channels = set()
     total_channel_entries = 0
     unresolved_entries = 0
-    events_capped = 0
-    events_with_mapped_candidates = 0
-    selected_uk = 0
-    selected_us = 0
-    selected_other = 0
-    selected_other_preferred = 0
-    selected_total = 0
+    events_with_mapped_channels = 0
+    mapped_channels_kept = 0
 
     print("Mapping channels...")
     t0 = time.time()
@@ -218,19 +221,12 @@ def map_channels(args: argparse.Namespace) -> int:
                 else:
                     unresolved_entries += 1
 
-            candidate_index = index_channel_candidates(event.get("channel_candidates", []))
+            final_entries = dedupe_resolved_entries(resolved_entries)
+            if final_entries:
+                events_with_mapped_channels += 1
+            mapped_channels_kept += len(final_entries)
 
-            selected_entries, selection_stats = select_mapped_event_channels(
-                mapped_entries=resolved_entries,
-                rules=geo_rules,
-                candidate_index=candidate_index,
-            )
-            if len(resolved_entries) > 0:
-                events_with_mapped_candidates += 1
-            if len(selected_entries) < len(resolved_entries):
-                events_capped += 1
-
-            event["channels"] = [entry["raw"] for entry in selected_entries]
+            event["channels"] = [entry["raw"] for entry in final_entries]
             # Keep final mapped payload simple: drop internal enrichment metadata.
             if "channel_candidates" in event:
                 del event["channel_candidates"]
@@ -239,13 +235,7 @@ def map_channels(args: argparse.Namespace) -> int:
             if "mapped_channels" in event:
                 del event["mapped_channels"]
 
-            selected_total += int(selection_stats.get("selected_total", 0))
-            selected_uk += int(selection_stats.get("selected_uk", 0))
-            selected_us += int(selection_stats.get("selected_us", 0))
-            selected_other += int(selection_stats.get("selected_other", 0))
-            selected_other_preferred += int(selection_stats.get("selected_other_preferred", 0))
-
-    print(f"Mapping + capping finished in {time.time() - t0:.2f}s")
+    print(f"Mapping finished in {time.time() - t0:.2f}s")
 
     save_json(args.output_file, schedule_data)
     save_json(args.map_file, saved_map)
@@ -253,13 +243,8 @@ def map_channels(args: argparse.Namespace) -> int:
     print(f"Done. Resolved {total_resolved} channel entries to stable channel IDs.")
     print(f"Unresolved channel entries (excluded from final): {unresolved_entries}/{total_channel_entries}")
     print(f"Learned {unique_channels_mapped} new ID mappings.")
-    print(f"Events with mapped channel candidates: {events_with_mapped_candidates}")
-    print(f"Events trimmed by geo cap: {events_capped}")
-    print(
-        "Final selected distribution: "
-        f"total={selected_total}, uk={selected_uk}, us={selected_us}, "
-        f"other={selected_other}, other_preferred={selected_other_preferred}"
-    )
+    print(f"Events with mapped channels: {events_with_mapped_channels}")
+    print(f"Mapped channels kept in output: {mapped_channels_kept}")
     return 0
 
 

@@ -1,0 +1,134 @@
+name: Manual Scrape And Map Only (No Scan)
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_date:
+        description: "Target date (YYYY-MM-DD). Leave blank for today UTC."
+        required: false
+        default: ""
+      days:
+        description: "Number of days to scrape (default 1)"
+        required: false
+        default: "1"
+      max_pages:
+        description: "Per-day /data-today pages"
+        required: false
+        default: "7"
+      max_tournaments:
+        description: "Tournament API cap per day (0 = no cap)"
+        required: false
+        default: "0"
+
+jobs:
+  manual-scrape-map-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    concurrency:
+      group: manual-scrape-map-only
+      cancel-in-progress: true
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.10"
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        if [ -f aongewach/requirements.txt ]; then pip install -r aongewach/requirements.txt; fi
+        pip install beautifulsoup4 requests
+
+    - name: Run scrape + map only pipeline (no scan)
+      run: |
+        cd aongewach
+
+        DAYS="${{ github.event.inputs.days }}"
+        MAX_PAGES="${{ github.event.inputs.max_pages }}"
+        MAX_TOURNAMENTS="${{ github.event.inputs.max_tournaments }}"
+
+        if [ -z "$DAYS" ]; then DAYS="1"; fi
+        if [ -z "$MAX_PAGES" ]; then MAX_PAGES="7"; fi
+        if [ -z "$MAX_TOURNAMENTS" ]; then MAX_TOURNAMENTS="0"; fi
+
+        CMD=(python run_pipeline_scrape_map.py
+          --days "$DAYS"
+          --max-pages "$MAX_PAGES"
+          --max-tournaments "$MAX_TOURNAMENTS"
+          --schedule-output weekly_schedule.json)
+
+        if [ -n "${{ github.event.inputs.run_date }}" ]; then
+          CMD+=(--date "${{ github.event.inputs.run_date }}")
+        fi
+
+        printf 'Running command:\n  '
+        printf '%q ' "${CMD[@]}"
+        echo
+        "${CMD[@]}"
+
+    - name: Upload outputs artifact
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: manual-scrape-map-only-outputs
+        path: |
+          aongewach/weekly_schedule.json
+          aongewach/weekly_schedule_fanzo.json
+          aongewach/weekly_schedule_fanzo_enriched.json
+          aongewach/weekly_schedule_livesporttv.json
+          aongewach/weekly_schedule_witm.json
+          aongewach/e104f869d64e3d41256d5398.json
+          aongewach/channel_map.json
+        if-no-files-found: warn
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name "GitHub Action"
+        git config --global user.email "action@github.com"
+        BRANCH="${GITHUB_REF_NAME:-main}"
+        FILES=(
+          "aongewach/weekly_schedule.json"
+          "aongewach/weekly_schedule_fanzo.json"
+          "aongewach/weekly_schedule_fanzo_enriched.json"
+          "aongewach/weekly_schedule_livesporttv.json"
+          "aongewach/weekly_schedule_witm.json"
+          "aongewach/e104f869d64e3d41256d5398.json"
+          "aongewach/channel_map.json"
+        )
+        for f in "${FILES[@]}"; do
+          if [ -e "$f" ]; then
+            git add "$f"
+          else
+            echo "Skipping missing file: $f"
+          fi
+        done
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "Manual scrape+map only update [skip ci]"
+          for attempt in 1 2 3; do
+            if git push origin "HEAD:$BRANCH"; then
+              echo "Push succeeded on attempt $attempt"
+              break
+            fi
+            if [ "$attempt" -eq 3 ]; then
+              echo "Push failed after 3 attempts"
+              exit 1
+            fi
+            echo "Push rejected, rebasing and retrying..."
+            git fetch origin "$BRANCH"
+            git rebase "origin/$BRANCH" || {
+              git rebase --abort || true
+              git pull --rebase origin "$BRANCH"
+            }
+          done
+        fi

@@ -8,23 +8,29 @@ Workflow: `update_schedule.yml`
 - What it does:
 1. Scrapes weekly schedules from all sources in parallel:
    - LiveSportTV (`scrape_schedule_livesporttv.py`) for soccer/football events,
-     including per-match country enrichment from the fixture page (`LIVE` + `INTERNATIONAL` rows)
-     and per-event `channel_candidates` metadata with country evidence.
+     including per-match channel enrichment from the fixture page (`LIVE` + `INTERNATIONAL` rows)
+     without geo-country filtering.
    - FANZO (`scrape_schedule_fanzo.py`) + WITM (`scrape_schedule_witm.py`) for non-soccer
      channel/logo reinforcement.
 2. Merges FANZO + WITM (`merge_fanzo_witm.py`) by exact event matching.
 3. Composes final `weekly_schedule.json` (`compose_weekly_schedule.py`):
    soccer from LiveSportTV, non-soccer from FANZO/WITM.
 4. Scans IPTV playlists for channels found in the composed schedule (`scan_sports_channels.py`), tests each matched stream URL inline with ffprobe/ffmpeg, and keeps only alive streams.
-5. Maps schedule channel names to stream channel IDs (`map_channels.py`) and applies
-   final per-event geo cap (max 5 mapped channels/event; UK<=2, US<=2, fill Others).
+5. Maps schedule channel names to stream channel IDs (`map_channels.py`) with no per-event channel cap.
 6. Outputs final JSON to `e104f869d64e3d41256d5398.json`.
 - Manual trigger: Actions -> "Update Weekly Schedule" -> "Run workflow"
 
 ## 2. Manual Maintenance Workflows
+- `daily_schedule_worker.yml`: scheduled daily worker (09:00 UTC) + manual trigger.
+  - Runs `run_pipeline_daily_worker.py` for one UTC day.
+  - Builds that day's schedule, scans playlists/external URLs for those channels, validates links
+    with stream testing workers (default: `20`), then maps to final output.
+- `manual_scrape_map_only.yml`: manual-only scrape + map worker (no stream scan).
+  - Runs `run_pipeline_scrape_map.py` directly.
+  - Does not run `scan_sports_channels.py`, so no lovestory/external stream testing is performed.
 - `scrape_and_map.yml`: manual scrape + mapper only (no channel scan).
   - Runs `run_pipeline_scrape_map.py` to run the same multi-source compose flow
-    (LiveSportTV soccer + FANZO/WITM non-soccer) and then map/cap channels
+    (LiveSportTV soccer + FANZO/WITM non-soccer) and then map channels
     against existing `channels.json`.
   - Useful when stream links are already populated and you only want fresh schedule + mapping.
 - `scan_channels.yml`: manual channel scan only.
@@ -42,15 +48,14 @@ Workflow: `update_schedule.yml`
 
 ## 3. Manual Maintenance Scripts
 - `scrape_schedule_livesporttv.py`: LiveSportTV guide scraper (HTML + data-today + tournament API)
-  with fixture-country channel enrichment controlled by `channel_geo_rules.json`.
+  returning soccer events only and enriching channels from match pages without geo filtering.
 - `scrape_schedule_fanzo.py`: FANZO guide scraper (default: non-soccer only).
 - `scrape_schedule_witm.py`: Where's The Match guide scraper (default: non-soccer only).
 - `merge_fanzo_witm.py`: exact-match FANZO/WITM merger for channel + logo reinforcement.
 - `compose_weekly_schedule.py`: final composer (LSTV soccer + FANZO/WITM non-soccer).
 - `run_pipeline_scrape_map.py`: scrape + channel map runner (no playlist scan).
-- `channel_geo_rules.json`: configurable geo profile and UK/US/Others selection rules.
-  - `country_groups`: country-driven bucketing (UK/US/preferred Others).
-  - `match_country_enrichment`: source-country extraction settings from match pages.
+- `run_pipeline_daily_worker.py`: one-day scrape + scan + map runner (daily worker core).
+- `channel_geo_rules.json`: legacy geo configuration file retained for backwards compatibility.
 - `scan_sports_channels.py`: scans sources in this order:
   1. `external_playlists.txt` (repo root, one URL per line, optional `Name|URL`)
   2. `lovestory.json` featured playlists
@@ -65,10 +70,10 @@ Workflow: `update_schedule.yml`
 - `fuzzy_match.py`, `build_teams_db.py`, `build_teams_mirror.py`, `fetch_missing_teams.py`
 
 ## Pipeline Order
-1. `scrape_schedule_livesporttv.py --days 7 --geo-rules-file channel_geo_rules.json --output weekly_schedule_livesporttv.json` (parallel block)
+1. `scrape_schedule_livesporttv.py --days 7 --output weekly_schedule_livesporttv.json` (parallel block)
 2. `scrape_schedule_fanzo.py --days 7 --output weekly_schedule_fanzo.json` (parallel block)
 3. `scrape_schedule_witm.py --days 7 --output weekly_schedule_witm.json` (parallel block)
 4. `merge_fanzo_witm.py --fanzo weekly_schedule_fanzo.json --witm weekly_schedule_witm.json --output weekly_schedule_fanzo_enriched.json`
 5. `compose_weekly_schedule.py --livesporttv weekly_schedule_livesporttv.json --fanzo-witm weekly_schedule_fanzo_enriched.json --output weekly_schedule.json`
 6. `scan_sports_channels.py` -> updates `channels.json` using tested-alive streams (cap: 5 working streams/channel)
-7. `map_channels.py --geo-rules-file channel_geo_rules.json` -> `e104f869d64e3d41256d5398.json` (final mapped + capped output)
+7. `map_channels.py` -> `e104f869d64e3d41256d5398.json` (final mapped output, uncapped)

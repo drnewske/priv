@@ -40,8 +40,6 @@ from bs4 import FeatureNotFound
 from channel_name_placeholders import is_placeholder_channel_name
 from channel_selection import (
     build_channel_candidates,
-    get_active_geo_profiles,
-    load_geo_rules,
     merge_channel_candidates,
 )
 
@@ -72,7 +70,6 @@ CHANNEL_TEXT_SPLIT_RE = re.compile(r"\s*,\s*")
 
 _PARSER = "lxml"
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-DEFAULT_GEO_RULES_FILE = os.path.join(SCRIPT_DIR, "channel_geo_rules.json")
 
 
 def parse_html(html: str) -> BeautifulSoup:
@@ -952,47 +949,14 @@ def _is_soccer_event(event: Dict) -> bool:
     return "/soccer/" in match_url
 
 
-def _normalize_country_groups(geo_rules: Dict) -> Dict[str, List[str]]:
-    country_groups = geo_rules.get("country_groups", {}) if isinstance(geo_rules, dict) else {}
-    if not isinstance(country_groups, dict):
-        country_groups = {}
-
-    normalized: Dict[str, List[str]] = {}
-    for key in ("uk", "us", "preferred_other", "watch"):
-        values = country_groups.get(key, [])
-        if isinstance(values, list):
-            normalized[key] = dedupe_strings([normalize_whitespace(value) for value in values])
-        else:
-            normalized[key] = []
-    return normalized
-
-
-def _match_country_enrichment_config(geo_rules: Dict) -> Dict[str, object]:
-    cfg = geo_rules.get("match_country_enrichment", {}) if isinstance(geo_rules, dict) else {}
-    if not isinstance(cfg, dict):
-        cfg = {}
-
-    countries = cfg.get("countries", [])
-    if not isinstance(countries, list):
-        countries = []
-    countries = dedupe_strings([normalize_whitespace(value) for value in countries])
-
-    country_groups = _normalize_country_groups(geo_rules)
-    if not countries:
-        countries = list(country_groups.get("watch", []))
-
-    max_events = 0
-    try:
-        max_events = int(cfg.get("max_events_per_day", 0))
-    except Exception:
-        max_events = 0
-
+def _match_country_enrichment_config() -> Dict[str, object]:
+    # Geo-country filtering is intentionally disabled: keep all international rows.
     return {
-        "enabled": bool(cfg.get("enabled", False)),
-        "include_live_tab": bool(cfg.get("include_live_tab", True)),
-        "include_all_international": bool(cfg.get("include_all_international", False)),
-        "countries": countries,
-        "max_events_per_day": max_events if max_events > 0 else 0,
+        "enabled": True,
+        "include_live_tab": True,
+        "include_all_international": True,
+        "countries": [],
+        "max_events_per_day": 0,
     }
 
 
@@ -1136,12 +1100,11 @@ def _extract_match_country_channel_payload(
 def enrich_events_with_match_country_channels(
     client: LiveSportTVClient,
     events: List[Dict],
-    geo_rules: Dict,
     keep_noisy_channels: bool,
     workers: int = 1,
 ) -> Dict[str, int]:
     started_at = time.perf_counter()
-    cfg = _match_country_enrichment_config(geo_rules)
+    cfg = _match_country_enrichment_config()
     if not bool(cfg.get("enabled")):
         return {
             "enabled": 0,
@@ -1419,7 +1382,6 @@ def scrape_one_date(
     max_pages: int,
     max_tournaments: Optional[int],
     keep_noisy_channels: bool,
-    geo_rules: Dict,
     match_country_workers: int,
     enable_geo_profiles: bool,
     html_override: Optional[str] = None,
@@ -1434,14 +1396,10 @@ def scrape_one_date(
         "match_country_enrichment": 0,
     }
 
-    profiles = get_active_geo_profiles(geo_rules)
-    primary_profile = next((profile for profile in profiles if profile.get("primary")), profiles[0])
-    primary_name = str(primary_profile.get("name", "default"))
-    primary_schedule_params = (
-        primary_profile.get("schedule_params", {})
-        if isinstance(primary_profile.get("schedule_params"), dict)
-        else {}
-    )
+    profiles = [{"name": "default", "primary": True, "schedule_params": {}}]
+    primary_profile = profiles[0]
+    primary_name = "default"
+    primary_schedule_params: Dict[str, str] = {}
 
     schedule_stage_started = time.perf_counter()
     html = (
@@ -1468,7 +1426,7 @@ def scrape_one_date(
             bucket_hint="",
             preferred_other=False,
         )
-        if event:
+        if event and _is_soccer_event(event):
             initial_matches.append(event)
     stage_times_ms["schedule_fetch_parse"] = int((time.perf_counter() - schedule_stage_started) * 1000)
 
@@ -1522,7 +1480,7 @@ def scrape_one_date(
                     bucket_hint="",
                     preferred_other=False,
                 )
-                if event:
+                if event and _is_soccer_event(event):
                     api_events.append(event)
             success += 1
         stage_times_ms["primary_tournament_api"] = int((time.perf_counter() - primary_api_started) * 1000)
@@ -1680,7 +1638,7 @@ def scrape_one_date(
                         bucket_hint=profile_bucket_hint,
                         preferred_other=profile_preferred_other,
                     )
-                    if event:
+                    if event and _is_soccer_event(event):
                         profile_events.append(event)
 
             profile_node["api_matches"] = len(profile_events)
@@ -1700,12 +1658,16 @@ def scrape_one_date(
     match_country_stats = enrich_events_with_match_country_channels(
         client=client,
         events=events,
-        geo_rules=geo_rules,
         keep_noisy_channels=keep_noisy_channels,
         workers=match_country_workers,
     )
     stage_times_ms["match_country_enrichment"] = int((time.perf_counter() - match_country_started) * 1000)
     events = sort_events(events)
+    events = [event for event in events if _is_soccer_event(event)]
+    for event in events:
+        if isinstance(event, dict):
+            event.pop("channel_candidates", None)
+            event.pop("channel_country_groups", None)
 
     return events, {
         "geo_profiles_enabled": 1 if enable_geo_profiles else 0,
@@ -1786,8 +1748,8 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--geo-rules-file",
-        default=DEFAULT_GEO_RULES_FILE,
-        help="Path to channel geo rules JSON (default: aongewach/channel_geo_rules.json).",
+        default=None,
+        help="Deprecated: retained for CLI compatibility and ignored.",
     )
     parser.add_argument(
         "--match-country-workers",
@@ -1798,10 +1760,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--enable-geo-profiles",
         action="store_true",
-        help=(
-            "Enable secondary geo-profile tournament expansion (uk/us/za/saudi). "
-            "Default is disabled for country-first scraping."
-        ),
+        help="Deprecated: retained for CLI compatibility and ignored.",
     )
     return parser.parse_args()
 
@@ -1837,12 +1796,12 @@ def main() -> int:
             print(f"Failed to read --html-file '{args.html_file}': {exc}", file=sys.stderr)
             return 1
 
-    geo_rules = load_geo_rules(args.geo_rules_file)
-    geo_profiles = get_active_geo_profiles(geo_rules)
-    primary_profile_name = next(
-        (str(profile.get("name")) for profile in geo_profiles if profile.get("primary")),
-        "default",
-    )
+    if args.enable_geo_profiles:
+        print("[LiveSportTV] --enable-geo-profiles is deprecated and ignored.")
+    geo_profiles_enabled = False
+
+    geo_profiles = [{"name": "default"}]
+    primary_profile_name = "default"
 
     client = LiveSportTVClient(timeout=args.timeout, retries=args.retries, backoff_seconds=args.backoff)
 
@@ -1884,9 +1843,8 @@ def main() -> int:
                 max_pages=args.max_pages,
                 max_tournaments=args.max_tournaments,
                 keep_noisy_channels=args.keep_noisy_channels,
-                geo_rules=geo_rules,
                 match_country_workers=args.match_country_workers,
-                enable_geo_profiles=args.enable_geo_profiles,
+                enable_geo_profiles=False,
                 html_override=html_override if offset == 0 else None,
             )
         except Exception as exc:
@@ -1998,7 +1956,7 @@ def main() -> int:
                 f"workers={int(day_match_country_stats.get('workers_used', 0))} "
                 f"t={int(day_match_country_stats.get('elapsed_ms', 0)) / 1000:.1f}s"
             )
-        if args.enable_geo_profiles and isinstance(day_profile_stats, dict):
+        if geo_profiles_enabled and isinstance(day_profile_stats, dict):
             for profile_name in sorted(day_profile_stats.keys()):
                 if profile_name == primary_profile_name:
                     continue
@@ -2018,7 +1976,7 @@ def main() -> int:
                     f"t={int(profile_values.get('elapsed_ms', 0)) / 1000:.1f}s"
                 )
 
-    if args.enable_geo_profiles and args.days > 1:
+    if geo_profiles_enabled and args.days > 1:
         for profile_name, profile_values in sorted(aggregate_profile_stats.items()):
             if profile_name == primary_profile_name:
                 continue
@@ -2034,7 +1992,7 @@ def main() -> int:
         "schedule": schedule,
         "extraction": {
             "mode": "schedule+data-today+tournament-api" if not args.no_data_today else "schedule-only",
-            "geo_profile_mode": "enabled" if args.enable_geo_profiles else "disabled-country-first",
+            "geo_profile_mode": "disabled",
             "max_pages": max(1, args.max_pages),
             "geo_profiles_active": [str(profile.get("name")) for profile in geo_profiles],
             "stats": aggregate_stats,
