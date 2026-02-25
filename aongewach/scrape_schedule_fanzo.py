@@ -21,6 +21,7 @@ import uuid
 from typing import Dict, List, Optional, Tuple
 
 import requests
+from channel_name_placeholders import is_placeholder_channel_name
 
 try:
     from zoneinfo import ZoneInfo
@@ -117,6 +118,8 @@ def is_soccer_sport(sport: object) -> bool:
 def is_usable_channel_name(name: str) -> bool:
     cleaned = (name or "").strip()
     if not cleaned:
+        return False
+    if is_placeholder_channel_name(cleaned):
         return False
     if NON_BROADCAST_WORD_RE.search(cleaned):
         return False

@@ -17,6 +17,7 @@ from urllib.parse import urljoin
 
 import requests
 from bs4 import BeautifulSoup
+from channel_name_placeholders import is_placeholder_channel_name
 
 
 BASE_URL = "https://www.wheresthematch.com"
@@ -37,6 +38,7 @@ UA = (
     "AppleWebKit/537.36 (KHTML, like Gecko) "
     "Chrome/123.0.0.0 Safari/537.36"
 )
+BROADCAST_EVENT_ITEMTYPE_RE = re.compile(r"schema\.org/BroadcastEvent", re.IGNORECASE)
 
 
 def parse_start_date(raw: Optional[str]) -> dt.date:
@@ -83,6 +85,8 @@ def split_match_name(name: str) -> Tuple[Optional[str], Optional[str]]:
 def is_usable_channel_name(name: str) -> bool:
     cleaned = normalize_text(name)
     if not cleaned:
+        return False
+    if is_placeholder_channel_name(cleaned):
         return False
     if NON_BROADCAST_WORD_RE.search(cleaned):
         return False
@@ -213,13 +217,14 @@ def scrape_date(target_date: dt.date, non_soccer_only: bool = True) -> List[Dict
         return []
 
     soup = BeautifulSoup(response.text, "html.parser")
-    rows = soup.find_all(
-        "tr",
-        attrs={
-            "itemscope": True,
-            "itemtype": re.compile(r"schema\.org/BroadcastEvent"),
-        },
-    )
+    rows = []
+    for row in soup.find_all("tr"):
+        if "itemscope" not in row.attrs:
+            continue
+        itemtype = normalize_text(row.get("itemtype"))
+        if not BROADCAST_EVENT_ITEMTYPE_RE.search(itemtype):
+            continue
+        rows.append(row)
 
     events: List[Dict] = []
     for row in rows:

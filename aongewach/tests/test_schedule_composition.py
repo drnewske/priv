@@ -22,7 +22,7 @@ class ScheduleCompositionTests(unittest.TestCase):
                             "name": "Soccer A v Soccer B",
                             "sport": "Soccer",
                             "time": "10:00",
-                            "channels": ["Sky Sports", "BBC Radio 5 Live"],
+                            "channels": ["Sky Sports", "BBC Radio 5 Live", "TBA"],
                         },
                         {
                             "name": "Tennis A v Tennis B",
@@ -43,7 +43,7 @@ class ScheduleCompositionTests(unittest.TestCase):
                             "name": "Cricket A v Cricket B",
                             "sport": "Cricket",
                             "time": "12:00",
-                            "channels": ["Star Sports", "TalkSport Radio"],
+                            "channels": ["Star Sports", "TalkSport Radio", "Sky Sports TBC"],
                         },
                         {
                             "name": "Football A v Football B",
@@ -70,6 +70,27 @@ class ScheduleCompositionTests(unittest.TestCase):
         self.assertEqual(["Sky Sports"], soccer["channels"])
         self.assertEqual(["Star Sports"], cricket["channels"])
 
+    def test_compose_drops_events_with_placeholder_only_channels(self):
+        livesporttv = {
+            "schedule": [
+                {
+                    "date": "2026-02-23",
+                    "events": [
+                        {
+                            "name": "Soccer A v Soccer B",
+                            "sport": "Soccer",
+                            "time": "10:00",
+                            "channels": ["TBA", "Sky Sports TBC"],
+                        }
+                    ],
+                }
+            ]
+        }
+        fanzo_witm = {"schedule": []}
+
+        composed = compose_payload(livesporttv, fanzo_witm)
+        self.assertEqual([], composed["schedule"][0]["events"])
+
     def test_merge_enriches_channels_and_sport_logo_from_witm(self):
         fanzo = {
             "schedule": [
@@ -80,7 +101,7 @@ class ScheduleCompositionTests(unittest.TestCase):
                             "name": "Player A v Player B",
                             "time": "14:00",
                             "sport": "Snooker",
-                            "channels": ["Fanzo One"],
+                            "channels": ["Fanzo One", "TBA"],
                             "sport_logo": None,
                         }
                     ],
@@ -96,7 +117,7 @@ class ScheduleCompositionTests(unittest.TestCase):
                             "name": "Player A v Player B",
                             "time": "14:00",
                             "sport": "Snooker",
-                            "channels": ["WITM Sports", "WITM Radio"],
+                            "channels": ["WITM Sports", "WITM Radio", "TBC", "Sky Sports TBC"],
                             "sport_logo": "https://cdn.example/logo.png",
                         }
                     ],

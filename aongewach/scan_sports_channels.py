@@ -21,6 +21,8 @@ import zlib
 import os
 import threading
 
+from channel_name_placeholders import is_placeholder_channel_name
+
 # Configuration
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 SCHEDULE_FILE = os.path.join(SCRIPT_DIR, 'weekly_schedule.json')
@@ -73,6 +75,8 @@ def infer_server_type(url: str, declared_type: Optional[str] = None) -> str:
 def is_usable_channel_name(name: str) -> bool:
     cleaned = (name or "").strip()
     if not cleaned:
+        return False
+    if is_placeholder_channel_name(cleaned):
         return False
     if NON_BROADCAST_WORD_RE.search(cleaned):
         return False

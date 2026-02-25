@@ -22,6 +22,8 @@ import re
 import sys
 from typing import Dict, List, Optional, Tuple
 
+from channel_name_placeholders import is_placeholder_channel_name
+
 
 WHITESPACE_RE = re.compile(r"\s+")
 VS_TOKEN_RE = re.compile(r"\s+(?:v|vs)\s+", re.IGNORECASE)
@@ -114,6 +116,8 @@ def build_name_key(day_date: str, event: Dict) -> Optional[Tuple[str, str]]:
 def is_usable_channel_name(name: str) -> bool:
     cleaned = normalize_text(name)
     if not cleaned:
+        return False
+    if is_placeholder_channel_name(cleaned):
         return False
     if NON_BROADCAST_WORD_RE.search(cleaned):
         return False

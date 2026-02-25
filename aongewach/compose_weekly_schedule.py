@@ -15,6 +15,8 @@ import re
 import sys
 from typing import Dict, List, Optional, Tuple
 
+from channel_name_placeholders import is_placeholder_channel_name
+
 
 WHITESPACE_RE = re.compile(r"\s+")
 NON_BROADCAST_WORD_RE = re.compile(
@@ -85,6 +87,8 @@ def clean_channels(channels: object) -> List[str]:
             continue
         channel = normalize_text(item)
         if not channel:
+            continue
+        if is_placeholder_channel_name(channel):
             continue
         if NON_BROADCAST_WORD_RE.search(channel):
             continue

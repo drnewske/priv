@@ -8,6 +8,7 @@ import re
 import time
 from typing import Dict, Optional
 
+from channel_name_placeholders import is_placeholder_channel_name
 from channel_selection import (
     index_channel_candidates,
     load_geo_rules,
@@ -49,6 +50,8 @@ def save_json(filepath: str, data) -> None:
 def is_usable_channel_name(name: str) -> bool:
     cleaned = " ".join(str(name or "").strip().split())
     if not cleaned:
+        return False
+    if is_placeholder_channel_name(cleaned):
         return False
     if NON_BROADCAST_WORD_RE.search(cleaned):
         return False

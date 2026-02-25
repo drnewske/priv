@@ -37,6 +37,7 @@ import cloudscraper
 from bs4 import BeautifulSoup, Tag
 from bs4 import FeatureNotFound
 
+from channel_name_placeholders import is_placeholder_channel_name
 from channel_selection import (
     build_channel_candidates,
     get_active_geo_profiles,
@@ -206,6 +207,8 @@ def extract_script_config(html: str, default_locale: str = "en") -> Dict[str, st
 def is_usable_channel_name(name: str, keep_noisy_channels: bool = False) -> bool:
     cleaned = (name or "").strip()
     if not cleaned:
+        return False
+    if is_placeholder_channel_name(cleaned):
         return False
     if keep_noisy_channels:
         return True
