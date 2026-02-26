@@ -1,27 +1,27 @@
 {
   "metadata": {
-    "scan_date": "2026-02-25 15:45:25 UTC",
+    "scan_date": "2026-02-26 10:36:59 UTC",
     "stats": {
-      "servers_total": 209,
-      "servers_success": 166,
+      "servers_total": 237,
+      "servers_success": 194,
       "servers_failed": 43,
       "categories_total": 0,
-      "streams_total": 11143737,
-      "channels_added": 1561,
-      "streams_skipped_cap": 860923,
+      "streams_total": 14056265,
+      "channels_added": 772,
+      "streams_skipped_cap": 878753,
       "channels_trimmed_to_cap": 0,
       "streams_trimmed_to_cap": 0,
-      "streams_tested": 10694,
-      "streams_alive": 2004,
-      "streams_dead": 8690,
-      "streams_cached": 97,
-      "channels_completed": 262,
-      "channels_refreshed_from_tested_streams": 386,
-      "channels_cleared_no_working_streams": 642,
+      "streams_tested": 5122,
+      "streams_alive": 1022,
+      "streams_dead": 4100,
+      "streams_cached": 38,
+      "channels_completed": 134,
+      "channels_refreshed_from_tested_streams": 188,
+      "channels_cleared_no_working_streams": 274,
       "channels_seeded_from_existing": 0,
       "streams_seeded_from_existing": 0
     },
-    "unique_channels": 1300
+    "unique_channels": 1306
   },
   "channels": {
     "Sky Sports Main Event": {
@@ -43,8 +43,8 @@
       "qualities": {
         "HD": [
           "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/1901",
+          "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/26530",
           "https://a1xs.vip/2000021",
-          "https://a1xs.vip/2000024",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/148090.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/186627.ts"
         ]
@@ -122,7 +122,7 @@
         "HD": [
           "http://fomo.re/play/AOgDGuN-dJnjxoChfrvyAYrUuLDOmlrkkXbwxDd5s1kF-uO7q4Px_8jKGepLwx44/ts",
           "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/127621",
-          "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/439267.ts",
+          "https://a1xs.vip/2000010",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/122415.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/186643.ts"
         ]
@@ -146,10 +146,10 @@
       "logo": "https://i.ibb.co/yBqH98CM/Sky-Sports-Plus.webp",
       "qualities": {
         "HD": [
+          "http://lemon.catchmeifyo.com:8000/4971131096/0964688296/158352",
+          "http://lemon.catchmeifyo.com:8000/4971131096/0964688296/158515",
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/130381.m3u8",
           "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/130382.m3u8",
-          "http://streamiptvuk.com:80/Robert63/11223344/347963",
-          "http://streamiptvuk.com:80/Robert63/11223344/347969",
-          "http://streamiptvuk.com:80/Robert63/11223344/347982",
           "https://a1xs.vip/2000012"
         ]
       }
@@ -157,15 +157,7 @@
     "TNT Sports 2": {
       "id": 433390580,
       "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/TNTS2.png",
-      "qualities": {
-        "HD": [
-          "http://io-pro.live:8080/8241899486046784/8241899486046784/397639",
-          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/10749.m3u8",
-          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/10820.m3u8",
-          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/11334.m3u8",
-          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/11677.m3u8"
-        ]
-      }
+      "qualities": {}
     },
     "TNT Sports 3": {
       "id": 433456117,
@@ -175,7 +167,15 @@
     "TNT Sports 4": {
       "id": 433521654,
       "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/TNTS4.png",
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/182689",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/20199",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/60880",
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/11160.m3u8",
+          "https://a1xs.vip/2000024"
+        ]
+      }
     },
     "BBC One": {
       "id": 123601418,
@@ -258,7 +258,15 @@
     "Premier Sports 1": {
       "id": 867829201,
       "logo": "https://i.ibb.co/Nd49Cwvc/Premier-Sports-1.png",
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/60463",
+          "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/127415",
+          "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/283015",
+          "https://a1xs.vip/8000021",
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/5029.ts"
+        ]
+      }
     },
     "Premier Sports 2": {
       "id": 867894738,
@@ -280,7 +288,7 @@
         "HD": [
           "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/172244",
           "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/172245",
-          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/172249",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/172248",
           "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/643512",
           "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/74311"
         ]
@@ -359,7 +367,7 @@
           "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/17635",
           "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/32573",
           "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/313220.ts",
-          "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/439024.ts",
+          "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/313229.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/186642.ts"
         ]
       }
@@ -444,9 +452,9 @@
         "HD": [
           "http://23.227.140.75:5050/KanishaHill440/bbBzSTjhJR/566975",
           "http://23.227.140.75:5050/KanishaHill440/bbBzSTjhJR/566976",
-          "http://23.227.140.75:5050/KanishaHill440/bbBzSTjhJR/566977",
           "http://23.227.140.75:5050/KanishaHill440/bbBzSTjhJR/566978",
-          "http://23.227.140.75:5050/KanishaHill440/bbBzSTjhJR/566979"
+          "http://23.227.140.75:5050/KanishaHill440/bbBzSTjhJR/566983",
+          "http://client.more-itv.com:8080/movie/evaristo/KfVGCBXBUNtF/47889.mp4"
         ]
       }
     },
@@ -579,18 +587,26 @@
       "logo": "http://logos.ti7an.net/logos/spain/EU_Espana_Entretenimiento/Discovery_mas.png",
       "qualities": {
         "HD": [
-          "http://fomo.re/play/AOgDGuN-dJnjxoChfrvyAYrUuLDOmlrkkXbwxDd5s1kgcG_IfbW9VZhT_440S0xz/ts",
-          "http://fomo.re/play/AOgDGuN-dJnjxoChfrvyAYrUuLDOmlrkkXbwxDd5s1lvOfGOyOi8XO96cW_6rz5r/ts",
-          "http://fomo.re/play/AOgDGuN-dJnjxoChfrvyAYrUuLDOmlrkkXbwxDd5s1myDuRsCjxH9nfs4bVRjkPk/ts",
+          "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/403104",
           "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/403329",
-          "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/445768"
+          "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/445768",
+          "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/745983.ts",
+          "http://totalplay.site:80/almacosta1/nmAMNbMftq/745983.m3u8"
         ]
       }
     },
     "Amazon Prime Video": {
       "id": 1047922331,
       "logo": "http://case2.lat:80/images/562a2ad62127a601f3308f5a622a704e.png",
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/184947",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/184948",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/184949",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/184950",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/184952"
+        ]
+      }
     },
     "STV": {
       "id": 33161470,
@@ -748,8 +764,8 @@
         "HD": [
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/18165.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/19843.ts",
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/309074.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/319304.ts",
-          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/319634.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/35714.ts"
         ]
       }
@@ -782,8 +798,8 @@
       "logo": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/stmvgLLPLLzvjzyOY2yKOO3PaVG.jpg",
       "qualities": {
         "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/64366",
           "http://ip.tvgo4.me:80/series/Toledo0903/sEtcZ2aPs4/638258.mkv",
-          "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/439777.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/121367.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/142998.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/7438.ts"
@@ -848,8 +864,8 @@
           "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/202693",
           "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/202694",
           "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/202697",
-          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/202698",
-          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/202699"
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/202699",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/203463"
         ]
       }
     },
@@ -951,7 +967,7 @@
           "http://canal-pro.xyz:8080/962251034tv/7t48ipxw/266975",
           "http://canal-pro.xyz:8080/962251034tv/7t48ipxw/267039",
           "http://canal-pro.xyz:8080/962251034tv/7t48ipxw/267060",
-          "http://fastream.xyz:8080/954383319tv/4t67e8/266975",
+          "http://fr.ottv.pro:8080/live/4454594703610565/4454594703610565/435559.m3u8",
           "https://d63fabad.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWVzX0ZJRkFQbHVzU3BhbmlzaF9ITFM/playlist.m3u8?ads.amznbrmid=&ads.amznregion=&ads.amznslots=&ads.app_bundle=com.rakuten.tv&ads.app_store_url=rakuten.tv&ads.app_version=&ads.brand_name=&ads.content_classification=0&ads.device_lmt=1&ads.device_make=&ads.device_model=&ads.device_type=web&ads.device_year=&ads.env=prod&ads.gam_correlator=&ads.gdpr_consent=&ads.market=es&ads.os_language=&ads.player_height=&ads.player_width=&ads.pod_type=playerpage_midroll&ads.ppid=&ads.rtv_content_id=6128&ads.rtv_content_language=spa&ads.rtvid=271859&ads.streaming_id=32ac6101-ee3f-4b5f-a393-a383ab527789&ads.tivo_devcountry=&ads.tivo_devmakedate=&ads.tivo_mvpd=&ads.tivo_platform=&ads.tivo_usid=&ads.tivo_uxloc=&ads.user_type=visitor&ads.wurl_channel=1780"
         ]
       }
@@ -961,11 +977,11 @@
       "logo": "http://starapk1.com/logo/rugby.png",
       "qualities": {
         "HD": [
-          "https://a1xs.vip/700032",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/23565.ts",
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/23998.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/285.ts",
-          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/55.ts",
-          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/564.ts"
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/325.ts",
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/55.ts"
         ]
       }
     },
@@ -1010,8 +1026,8 @@
         "HD": [
           "http://filex.me:8080/movie/MAS101A/MAS101AABB/168941.mkv",
           "http://filex.me:8080/movie/MAS101A/MAS101AABB/921540.mkv",
+          "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/115738",
           "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/391",
-          "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/412313",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/660759.ts"
         ]
       }
@@ -1080,27 +1096,35 @@
       "logo": "http://starapk1.com/logo/football.png",
       "qualities": {
         "HD": [
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/98096.m3u8",
           "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/98098.m3u8",
           "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/98099.m3u8",
           "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/98100.m3u8",
-          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/138713.ts",
-          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/652345.ts"
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/138713.ts"
         ]
       }
     },
     "Arena Sport 1": {
       "id": 543360113,
       "logo": null,
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/2505",
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/210597.ts",
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/210598.ts",
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/210600.ts",
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/210647.ts"
+        ]
+      }
     },
     "Tubi": {
       "id": 65012117,
       "logo": "https://deadline.com/wp-content/uploads/2021/04/Fox-and-Tubi-logo.png?crop=1508px%2C863px%2C4680px%2C2625px&resize=681%2C383",
       "qualities": {
         "HD": [
-          "http://ip.tvgo4.me:80/series/Toledo0903/sEtcZ2aPs4/75714.mp4",
           "http://rey-premium.ddns.net:80/movie/DPVEduardoEspa/Espa020828/459323.mp4",
           "http://sinlimitestv.com:8080/Jamespuyqet56/uFqQFY45Fb/492689",
+          "http://totalplay.site:80/movie/almacosta1/nmAMNbMftq/459323.mp4",
           "http://ultrontv.xyz:80/MB447793gr55/MB793447gr55/268998"
         ]
       }
@@ -1130,8 +1154,8 @@
       "logo": "https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blt37afb73ea6a565b3/62463aaf0c8230128a03e18d/descarga.jpg?auto=webp&format=pjpg&width=3840&quality=60",
       "qualities": {
         "HD": [
-          "http://filex.me:8080/movie/MAS101A/MAS101AABB/949400.mkv",
-          "http://ip.tvgo4.me:80/series/Toledo0903/sEtcZ2aPs4/192480.mp4",
+          "http://chavedelta.site:80/movie/696307678795/767648388963/16104188.mp4",
+          "http://chavedelta.site:80/movie/696307678795/767648388963/16138009.mp4",
           "https://starshare.net:443/movie/CVCVCVCV/CV1CV1CV1/190238.mkv",
           "https://starshare.net:443/movie/CVCVCVCV/CV1CV1CV1/465005.mp4",
           "https://starshare.net:443/movie/CVCVCVCV/CV1CV1CV1/470685.mp4"
@@ -1156,8 +1180,8 @@
       "logo": "https://stream.mediastreamx.net:443/images/CYK3OWLr7Br2KeXGa_jlzQpDv5QuoLWBpiDMkjQN7zSP4SMXMQjmELRof_FqLToshMnfVIQ0h8rzaWSHc3VfrA.png",
       "qualities": {
         "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/150543",
           "http://sinlimitestv.com:8080/Jamespuyqet56/uFqQFY45Fb/524499",
-          "http://sinlimitestv.com:8080/Jamespuyqet56/uFqQFY45Fb/524500",
           "http://sinlimitestv.com:8080/Jamespuyqet56/uFqQFY45Fb/524501",
           "http://sinlimitestv.com:8080/Jamespuyqet56/uFqQFY45Fb/526726",
           "http://sinlimitestv.com:8080/Jamespuyqet56/uFqQFY45Fb/526727"
@@ -1184,8 +1208,16 @@
     },
     "Sportdigital FUSSBALL 2": {
       "id": 1745160133,
-      "logo": null,
-      "qualities": {}
+      "logo": "https://docdog.top/logo/countries/germany/new/SPORTDIGITAL_FUSSBALL_2_HD.png",
+      "qualities": {
+        "HD": [
+          "http://fastrunner.live:8080/LXdVGQ2ulN/2YV8Pnu7e9/133389",
+          "http://noprnsbwobb.top:8080/8561767661717/nj2r7g2he52n/61461",
+          "http://nordsohzace.top:8080/91770902797/30c3d2dcbff7/61461",
+          "http://nordsohzace.top:8080/9611758046068686/f4c111d0b650/61461",
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/133389.m3u8"
+        ]
+      }
     },
     "Tring Sport 4": {
       "id": 566166673,
@@ -1216,11 +1248,11 @@
       "logo": "https://i.imgur.com/HCd7qlu.png",
       "qualities": {
         "HD": [
-          "http://veloxultratop.com:80/Paulohenrique85/743848224/149909.ts",
-          "http://veloxultratop.com:80/Paulohenrique85/743848224/149910.ts",
-          "http://veloxultratop.com:80/Paulohenrique85/743848224/150082.ts",
-          "http://veloxultratop.com:80/series/Paulohenrique85/743848224/2205924.mp4",
-          "http://veloxultratop.com:80/series/Paulohenrique85/743848224/2205939.mp4"
+          "http://chavedelta.site:80/series/696307678795/767648388963/16290711.mp4",
+          "http://chavedelta.site:80/series/696307678795/767648388963/16290712.mp4",
+          "http://chavedelta.site:80/series/696307678795/767648388963/16290713.mp4",
+          "http://chavedelta.site:80/series/696307678795/767648388963/16290714.mp4",
+          "http://chavedelta.site:80/series/696307678795/767648388963/16290715.mp4"
         ]
       }
     },
@@ -1229,11 +1261,11 @@
       "logo": "[",
       "qualities": {
         "HD": [
-          "http://io-pro.live:8080/8241899486046784/8241899486046784/195138",
-          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/123830.m3u8",
-          "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/600436.ts",
-          "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/600437.ts",
-          "http://sinlimitestv.com:8080/Jamespuyqet56/uFqQFY45Fb/412747"
+          "http://4yzvds.revfor.com:80/live/amy1_nwxhqd/8en8zuxz/189.m3u8",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/190726",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/5671",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/80519",
+          "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/541573"
         ]
       }
     },
@@ -1242,11 +1274,11 @@
       "logo": "http://hellosky.fun:8080/images/e654671f90c96a57bac51fc233fbf526.png",
       "qualities": {
         "HD": [
-          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/119876.ts",
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/119874.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/119878.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/154546.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/154654.ts",
-          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/659021.ts"
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/659020.ts"
         ]
       }
     },
@@ -1407,8 +1439,8 @@
       "logo": "https://github.com/Log20202/Germ/blob/main/DE.sky.sport.austria.2.png?raw=true",
       "qualities": {
         "HD": [
-          "http://europe.siriusfiber.xyz:80/live/srf1616/5eXeZw4tak/861824.ts",
-          "http://europe.siriusfiber.xyz:80/live/srf1616/5eXeZw4tak/861825.ts",
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/187626.m3u8",
+          "http://fr.ottv.pro:8080/live/4454594703610565/4454594703610565/397798.m3u8",
           "http://io-pro.live:8080/8241899486046784/8241899486046784/397798",
           "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/439433.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/659449.ts"
@@ -1420,7 +1452,7 @@
       "logo": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/tmHzY2zbS10P13stPu2ClI7K7Mg.jpg",
       "qualities": {
         "HD": [
-          "http://couchguy.club/series/Joshua754/Vk8KJG6VqFN3/357385.mkv",
+          "http://couchguy.club/series/Joshua754/Vk8KJG6VqFN3/357387.mkv",
           "http://couchguy.club/series/Joshua754/Vk8KJG6VqFN3/357388.mkv",
           "http://couchguy.club/series/Joshua754/Vk8KJG6VqFN3/357389.mkv",
           "http://couchguy.club/series/Joshua754/Vk8KJG6VqFN3/357390.mkv",
@@ -1433,10 +1465,11 @@
       "logo": null,
       "qualities": {
         "HD": [
-          "http://4kplus.info:80/30634808816548058196/8gnf7ng3hq/1549874",
-          "http://4kplus.info:80/30634808816548058196/8gnf7ng3hq/1597570",
-          "http://4kplus.info:80/30634808816548058196/8gnf7ng3hq/1597571",
-          "http://4kplus.info:80/30634808816548058196/8gnf7ng3hq/1844761"
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/199777",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/201474",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/204898",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/230483",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/230484"
         ]
       }
     },
@@ -1445,27 +1478,37 @@
       "logo": "https://foliog.shop/dll/logo/Canal%2B_Live.png",
       "qualities": {
         "HD": [
-          "http://europe.siriusfiber.xyz:80/live/srf1616/5eXeZw4tak/863994.ts",
-          "http://fantome.vip:9798/gorwk5d5p/4y3t2tmtd/7116",
-          "http://io-pro.live:8080/8241899486046784/8241899486046784/398666",
-          "http://nordsohzace.top:8080/91770902797/30c3d2dcbff7/57571",
-          "http://nordsohzace.top:8080/9611758046068686/f4c111d0b650/57571"
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/173324",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/175854",
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/203686.m3u8",
+          "http://fr.ottv.pro:8080/live/4454594703610565/4454594703610565/398666.m3u8",
+          "http://io-pro.live:8080/8241899486046784/8241899486046784/398666"
         ]
       }
     },
     "Canal+ Live 3": {
       "id": 500630542,
       "logo": "https://foliog.shop/dll/logo/Canal%2B_Live.png",
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/112324",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/173327",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/175857",
+          "http://fr.ottv.pro:8080/live/4454594703610565/4454594703610565/398663.m3u8",
+          "http://fr.ottv.pro:8080/live/4454594703610565/4454594703610565/398682.m3u8"
+        ]
+      }
     },
     "tabii": {
       "id": 103678474,
       "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw1UIRnqhpt8AXCt_9hng8iW5u_lTIzbHxYw&s",
       "qualities": {
         "HD": [
-          "http://europe.siriusfiber.xyz:80/live/srf1616/5eXeZw4tak/865050.ts",
-          "http://europe.siriusfiber.xyz:80/live/srf1616/5eXeZw4tak/865739.ts",
-          "http://europe.siriusfiber.xyz:80/live/srf1616/5eXeZw4tak/866493.ts"
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/176054",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/176055",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/176056",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/176057",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/176058"
         ]
       }
     },
@@ -1474,19 +1517,15 @@
       "logo": "https://static.wikia.nocookie.net/logopedia/images/1/13/ESPN_5.svg/revision/latest/scale-to-width-down/250?cb=20211120193957",
       "qualities": {
         "HD": [
-          "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/591994.ts"
+          "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/591994.ts",
+          "http://totalplay.site:80/almacosta1/nmAMNbMftq/591994.m3u8"
         ]
       }
     },
     "Cosmote Sport 3 HD": {
       "id": 1055393298,
       "logo": "https://img-cdn.curl.pk/channels_icon/56663231881.png",
-      "qualities": {
-        "HD": [
-          "http://io-pro.live:8080/8241899486046784/8241899486046784/311658",
-          "http://streamiptvuk.com:80/Robert63/11223344/112516"
-        ]
-      }
+      "qualities": {}
     },
     "5 Live": {
       "id": 94372326,
@@ -1519,11 +1558,11 @@
       "logo": "[",
       "qualities": {
         "HD": [
-          "http://lemon.catchmeifyo.com:8000/4971131096/0964688296/101581",
-          "http://lemon.catchmeifyo.com:8000/4971131096/0964688296/194674",
-          "http://live.iptvtotaal.com:8000/ronaldvan3333/eUaRuHrHgv/194674",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/5391",
           "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/595869.ts",
-          "http://sinlimitestv.com:8080/Jamespuyqet56/uFqQFY45Fb/459969"
+          "http://sinlimitestv.com:8080/Jamespuyqet56/uFqQFY45Fb/459969",
+          "http://streamiptvuk.com:80/Robert63/11223344/64496",
+          "http://totalplay.site:80/almacosta1/nmAMNbMftq/595869.m3u8"
         ]
       }
     },
@@ -1540,7 +1579,11 @@
     "Al Iraqiya Sports": {
       "id": 889390665,
       "logo": null,
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/225071"
+        ]
+      }
     },
     "CRTV Sports": {
       "id": 355664875,
@@ -1576,7 +1619,7 @@
         "HD": [
           "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/127681",
           "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/131817",
-          "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/1168962",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/29936",
           "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/642984",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/5480.ts"
         ]
@@ -1619,9 +1662,9 @@
       "logo": "https://www.xexelogo.com/vip/UEFA.png",
       "qualities": {
         "HD": [
-          "http://energyxxi.livrexs.xyz:80/Ahteam587/wPebnZx4SSA6/106359",
-          "http://europe.siriusfiber.xyz:80/live/srf1616/5eXeZw4tak/861826.ts",
-          "http://io-pro.live:8080/8241899486046784/8241899486046784/397797",
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/105163.m3u8",
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/187627.m3u8",
+          "http://fr.ottv.pro:8080/live/4454594703610565/4454594703610565/397797.m3u8",
           "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/439432.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/659450.ts"
         ]
@@ -1632,7 +1675,9 @@
       "logo": "https://i.imgur.com/L8oHDqJ.png",
       "qualities": {
         "HD": [
-          "http://io-pro.live:8080/8241899486046784/8241899486046784/281671",
+          "http://fr.ottv.pro:8080/live/4454594703610565/4454594703610565/281671.m3u8",
+          "http://fr.ottv.pro:8080/live/4454594703610565/4454594703610565/281672.m3u8",
+          "http://fr.ottv.pro:8080/live/4454594703610565/4454594703610565/281673.m3u8",
           "http://io-pro.live:8080/8241899486046784/8241899486046784/281672",
           "http://io-pro.live:8080/8241899486046784/8241899486046784/281673"
         ]
@@ -1663,7 +1708,15 @@
     "Arena Sport 5": {
       "id": 543622261,
       "logo": "[",
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/13590",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/2497",
+          "http://streamiptvuk.com:80/Robert63/11223344/2156",
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/210607.ts",
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/210608.ts"
+        ]
+      }
     },
     "ART Sport 4": {
       "id": 346424180,
@@ -1683,6 +1736,7 @@
       "logo": null,
       "qualities": {
         "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/191977",
           "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/23478"
         ]
       }
@@ -1721,7 +1775,15 @@
     "ERT Sports 2": {
       "id": 424477673,
       "logo": "https://docdog.top/logo/countries/greece/ertsports.png",
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://fr.ottv.pro:8080/live/4454594703610565/4454594703610565/311710.m3u8",
+          "http://io-pro.live:8080/8241899486046784/8241899486046784/311710",
+          "http://nordsohzace.top:8080/91770902797/30c3d2dcbff7/4670",
+          "http://nordsohzace.top:8080/9611758046068686/f4c111d0b650/4670",
+          "http://streamiptvuk.com:80/Robert63/11223344/112481"
+        ]
+      }
     },
     "VeikkausTV": {
       "id": 364512238,
@@ -1733,10 +1795,10 @@
       "logo": "https://docdog.top/logo/countries/bulgaria/maxsport4.png",
       "qualities": {
         "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/26353",
           "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/98421",
-          "http://europe.siriusfiber.xyz:80/live/srf1616/5eXeZw4tak/866651.ts",
-          "http://io-pro.live:8080/8241899486046784/8241899486046784/323033",
-          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/75409.m3u8",
+          "http://fr.ottv.pro:8080/live/4454594703610565/4454594703610565/323033.m3u8",
+          "http://streamiptvuk.com:80/Robert63/11223344/202514",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/661364.ts"
         ]
       }
@@ -1756,7 +1818,15 @@
     "Canal+ Live 4": {
       "id": 500696079,
       "logo": "https://foliog.shop/dll/logo/Canal%2B_Live.png",
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/112325",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/173326",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/175856",
+          "http://fr.ottv.pro:8080/live/4454594703610565/4454594703610565/398664.m3u8",
+          "http://fr.ottv.pro:8080/live/4454594703610565/4454594703610565/398683.m3u8"
+        ]
+      }
     },
     "SportItalia": {
       "id": 445908077,
@@ -1786,11 +1856,11 @@
       "logo": "http://tugapt.com/picons/movistarligadecampeones.png",
       "qualities": {
         "HD": [
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/18816.m3u8",
           "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/18817.m3u8",
           "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/18818.m3u8",
           "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/18819.m3u8",
-          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/18820.m3u8",
-          "http://tv.diablotv.net:8080/live/ccaceres5/zATJSA4R2Z/162019.m3u8"
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/18820.m3u8"
         ]
       }
     },
@@ -1832,11 +1902,7 @@
     "sooka": {
       "id": 109314590,
       "logo": null,
-      "qualities": {
-        "HD": [
-          "https://xc.adultiptv.net/live/veronica3/a302060bv/652077.m3u8"
-        ]
-      }
+      "qualities": {}
     },
     "FAST TV": {
       "id": 130286073,
@@ -1845,8 +1911,8 @@
         "HD": [
           "http://kalitemedya45.xyz:8080/nrr0770/nr.99/468691",
           "http://kalitemedya45.xyz:8080/nrr0770/nr.99/551236",
-          "http://tanzanyanuh.xyz:8080/cm1202/cm00xyy/468691",
-          "http://tanzanyanuh.xyz:8080/cm1202/cm00xyy/551236",
+          "http://nuhproxtv.shop:8080/zkn1887/cn.1908/468691",
+          "http://nuhproxtv.shop:8080/zkn1887/cn.1908/551236",
           "https://stitcher.pluto.tv/stitch/hls/channel/6400f731d200410008f9b339/master.m3u8?deviceType=web&servertSideAds=false&deviceMake=safari&deviceVersion=1&deviceId=spencer&appVersion=1&deviceDNT=0&deviceModel=web&sid=66fdda05-62bc-11ef-b7b7-72aa874ccba6"
         ]
       }
@@ -1861,9 +1927,11 @@
       "logo": "https://i.ibb.co/LS29sRf/tycsportinterna.png",
       "qualities": {
         "HD": [
+          "http://1000digital.pw:8080/play/YvD8uLZs45fDjadTxm5MT46KWRxVaUlXEDrnMlrJezoni2XCmc4IaJxva-Gcp049/m3u8",
           "http://23.227.140.75:5050/KanishaHill440/bbBzSTjhJR/691841",
           "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/1903",
-          "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/722820.ts"
+          "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/722820.ts",
+          "http://totalplay.site:80/almacosta1/nmAMNbMftq/722820.m3u8"
         ]
       }
     },
@@ -1874,9 +1942,9 @@
         "HD": [
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/389243.ts",
           "https://starshare.net:443/movie/CVCVCVCV/CV1CV1CV1/163715.mp4",
-          "https://starshare.net:443/movie/CVCVCVCV/CV1CV1CV1/544909.mp4",
           "https://starshare.net:443/movie/CVCVCVCV/CV1CV1CV1/60727.mp4",
-          "https://starshare.net:443/series/CVCVCVCV/CV1CV1CV1/364747.mp4"
+          "https://starshare.net:443/series/CVCVCVCV/CV1CV1CV1/364750.mp4",
+          "https://starshare.net:443/series/CVCVCVCV/CV1CV1CV1/364751.mp4"
         ]
       }
     },
@@ -1911,11 +1979,11 @@
       "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/RCN_Nuestra_Tele_logo.svg/800px-RCN_Nuestra_Tele_logo.svg.png",
       "qualities": {
         "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/27643",
           "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/107090",
           "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/60585",
           "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/13784.ts",
-          "http://sinlimitestv.com:8080/Jamespuyqet56/uFqQFY45Fb/409040",
-          "http://tv.diablotv.net:8080/live/ccaceres5/zATJSA4R2Z/8496.m3u8"
+          "http://totalplay.site:80/almacosta1/nmAMNbMftq/13784.m3u8"
         ]
       }
     },
@@ -2008,15 +2076,7 @@
     "MAX Sport 3": {
       "id": 346227570,
       "logo": "http://www.vod-logo.net/photos/721791428ed45d684c2e15e7b7cbf982.jpg",
-      "qualities": {
-        "HD": [
-          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/20341",
-          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/98420",
-          "http://io-pro.live:8080/8241899486046784/8241899486046784/323032",
-          "http://sinlimitestv.com:8080/Jamespuyqet56/uFqQFY45Fb/385184",
-          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/661363.ts"
-        ]
-      }
+      "qualities": {}
     },
     "Nova Sports 4": {
       "id": 558630036,
@@ -2069,10 +2129,10 @@
       "logo": "http://starapk1.com/logo/rugby.png",
       "qualities": {
         "HD": [
-          "https://a1xs.vip/140004",
-          "https://a1xs.vip/700034",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/1138.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/186630.ts",
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/1980.ts",
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/24000.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/255259.ts"
         ]
       }
@@ -2082,9 +2142,11 @@
       "logo": "https://i.postimg.cc/tCQMdVbL/FOX-ONE-2025-(1).png",
       "qualities": {
         "HD": [
-          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/194174",
-          "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/592015.ts",
-          "http://sinlimitestv.com:8080/Jamespuyqet56/uFqQFY45Fb/522626"
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/239561",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/239562",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/239563",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/239564",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/239566"
         ]
       }
     },
@@ -2102,15 +2164,7 @@
     "Vamos 2": {
       "id": 172950105,
       "logo": "https://estatico.emisiondof6.com/recorte/m-DP/wpepg/VAM2SD",
-      "qualities": {
-        "HD": [
-          "http://cableiptv.xyz:8080/mdprime86dhs21Srs/AEuhVA5GxFnh/995959",
-          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/96254.m3u8",
-          "http://xplatinmedia.com:8080/Elko/mhj8LHTJJC/141668",
-          "http://xplatinmedia.com:8080/Elko/mhj8LHTJJC/141669",
-          "http://xplatinmedia.com:8080/Elko/mhj8LHTJJC/141670"
-        ]
-      }
+      "qualities": {}
     },
     "DAZN Japan": {
       "id": 270730040,
@@ -2196,7 +2250,7 @@
       "logo": "https://static.sky.co.nz/sky/channel-logos/051_sky_sport_3_logo_stack_rgb.png",
       "qualities": {
         "HD": [
-          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/148559.ts",
+          "https://a1xs.vip/700033",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/23999.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/24018.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/283.ts",
@@ -2262,15 +2316,7 @@
     "TNT Sports Ultimate": {
       "id": 1115031303,
       "logo": "http://xplatinmedia.com:8080/images/3f19e0c1da0ef48b6f1fbb66879fd1bd.png",
-      "qualities": {
-        "HD": [
-          "http://lemon.catchmeifyo.com:8000/4971131096/0964688296/157982",
-          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/131354.m3u8",
-          "http://vipbhbiss.top:8080/VIP018151741441714365/a0c16ea1db1b/146585",
-          "http://vipqutnnapi.top:8080/VIP0155169513131921/51696769842064/146585",
-          "http://vipwettbornwet.top:8080/VIP019961765302530157/983f6c19d52b/146585"
-        ]
-      }
+      "qualities": {}
     },
     "Nova Sport 6": {
       "id": 472384547,
@@ -2314,7 +2360,7 @@
       "qualities": {
         "HD": [
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/145187.ts",
-          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/210542.ts",
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/154630.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/223812.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/224189.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/581320.ts"
@@ -2326,7 +2372,11 @@
       "logo": "https://www.lyngsat.com/logo/tv/vv/vamos-es.png",
       "qualities": {
         "HD": [
-          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/79808.m3u8"
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/179287",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/179288",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/179289",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/179290",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/179292"
         ]
       }
     },
@@ -2385,7 +2435,15 @@
     "Prima Sport 1": {
       "id": 558367875,
       "logo": "[",
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/20525",
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/54518.m3u8",
+          "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/534206",
+          "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/534207",
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/791.m3u8"
+        ]
+      }
     },
     "Diema Sport": {
       "id": 393282585,
@@ -2398,10 +2456,10 @@
       "qualities": {
         "HD": [
           "https://starshare.net:443/movie/CVCVCVCV/CV1CV1CV1/165625.mp4",
-          "https://starshare.net:443/movie/CVCVCVCV/CV1CV1CV1/490788.mp4",
           "https://starshare.net:443/movie/CVCVCVCV/CV1CV1CV1/62711.mp4",
           "https://starshare.net:443/movie/CVCVCVCV/CV1CV1CV1/63239.mp4",
-          "https://starshare.net:443/series/CVCVCVCV/CV1CV1CV1/19809.mkv"
+          "https://starshare.net:443/series/CVCVCVCV/CV1CV1CV1/19809.mkv",
+          "https://starshare.net:443/series/CVCVCVCV/CV1CV1CV1/19810.mkv"
         ]
       }
     },
@@ -2493,15 +2551,7 @@
     "Ziggo Sport 5": {
       "id": 562955406,
       "logo": "[",
-      "qualities": {
-        "HD": [
-          "http://lemon.catchmeifyo.com:8000/4971131096/0964688296/16276",
-          "http://live.iptvtotaal.com:8000/ronaldvan3333/eUaRuHrHgv/16276",
-          "http://nordsohzace.top:8080/91770902797/30c3d2dcbff7/58307",
-          "http://nordsohzace.top:8080/9611758046068686/f4c111d0b650/58307",
-          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/659537.ts"
-        ]
-      }
+      "qualities": {}
     },
     "SuperSport PSL": {
       "id": 693765431,
@@ -2617,11 +2667,11 @@
       "logo": "http://img-cdn.curl.pk:8880/channels_icon/62783331421.png",
       "qualities": {
         "HD": [
-          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/102594.ts",
-          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/309211.ts",
-          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/389141.ts",
-          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/389142.ts",
-          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/638691.ts"
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/102594.ts",
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/309211.ts",
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/389141.ts",
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/389142.ts",
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/638691.ts"
         ]
       }
     },
@@ -2766,11 +2816,11 @@
       "logo": "[",
       "qualities": {
         "HD": [
-          "http://io-pro.live:8080/8241899486046784/8241899486046784/397795",
-          "http://io-pro.live:8080/8241899486046784/8241899486046784/397805",
-          "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/414799",
-          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/1189.m3u8",
-          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/4397.m3u8"
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/160860",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/40244",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/40249",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/83696",
+          "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/414798"
         ]
       }
     },
@@ -2806,7 +2856,15 @@
     "Canal+ Live 8": {
       "id": 500958227,
       "logo": "https://foliog.shop/dll/logo/Canal%2B_Live.png",
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/173323",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/175852",
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/203691.m3u8",
+          "http://fr.ottv.pro:8080/live/4454594703610565/4454594703610565/398668.m3u8",
+          "http://fr.ottv.pro:8080/live/4454594703610565/4454594703610565/398687.m3u8"
+        ]
+      }
     },
     "Sky Sport Bundesliga 2": {
       "id": 1555105760,
@@ -2826,9 +2884,9 @@
       "logo": "http://www.camdserver.com/sb_data/files/logo/la-deux.jpg",
       "qualities": {
         "HD": [
-          "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/731022",
-          "http://lemon.catchmeifyo.com:8000/4971131096/0964688296/16357",
-          "http://live.iptvtotaal.com:8000/ronaldvan3333/eUaRuHrHgv/16357",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/379",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/61994",
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/175625.m3u8",
           "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/128336.m3u8",
           "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/2494.m3u8"
         ]
@@ -2839,8 +2897,11 @@
       "logo": "https://shoof.alkass.net/assets/images/shoof2.png",
       "qualities": {
         "HD": [
-          "https://liveeu-gcp.alkassdigital.net/shooflive/main.m3u8",
-          "https://liveeu-gcp.alkassdigital.net/shooflive2/main.m3u8"
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/161043",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/161044",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/161045",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/161046",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/161047"
         ]
       }
     },
@@ -2878,7 +2939,11 @@
       "logo": "http://landiptv.vip:2095/images/HjwEu7iTOqkLhxl1ITLIBUxVLsfOKYt2uHV62-pHvm5wo-o2vcV2zsqo1x4NTMoyy4gAUNMXWojoEqoidl7VyQ.jpeg",
       "qualities": {
         "HD": [
-          "http://lunar.pm:8080/KylaW22/Watkins/120951"
+          "http://fikoltv.info:25461/xLAVeksqxa/UjvNucnYgV/131721",
+          "http://fikoltv.info:25461/xLAVeksqxa/UjvNucnYgV/196523",
+          "http://fikoltv.info:25461/xLAVeksqxa/UjvNucnYgV/196524",
+          "http://fikoltv.info:25461/xLAVeksqxa/UjvNucnYgV/196525",
+          "http://fikoltv.info:25461/xLAVeksqxa/UjvNucnYgV/196526"
         ]
       }
     },
@@ -2887,9 +2952,9 @@
       "logo": "https://docdog.top/logo/countries/iran/IRIBVARZESH.png",
       "qualities": {
         "HD": [
-          "http://nordsohzace.top:8080/91770902797/30c3d2dcbff7/53778",
-          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/107148.m3u8",
-          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/619.m3u8",
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/141715.m3u8",
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/15123.m3u8",
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/28721.m3u8",
           "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/7605.m3u8",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/638706.ts"
         ]
@@ -2951,8 +3016,15 @@
     },
     "WOWOW": {
       "id": 82706852,
-      "logo": null,
-      "qualities": {}
+      "logo": "https://i.imgur.com/jPAYT5F.png",
+      "qualities": {
+        "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/161177",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/161178",
+          "http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=bs07",
+          "http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=bs20"
+        ]
+      }
     },
     "SRF zwei": {
       "id": 195166923,
@@ -3066,11 +3138,11 @@
       "logo": "[",
       "qualities": {
         "HD": [
-          "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/439684.ts",
           "https://a1xs.vip/140001",
+          "https://a1xs.vip/140002",
+          "https://a1xs.vip/140004",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/511.ts",
-          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/659533.ts",
-          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/659538.ts"
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/659533.ts"
         ]
       }
     },
@@ -3092,11 +3164,11 @@
       "logo": "https://iili.io/DZHe4V.md.png",
       "qualities": {
         "HD": [
-          "http://23.227.140.75:5050/KanishaHill440/bbBzSTjhJR/567142",
-          "http://23.227.140.75:5050/KanishaHill440/bbBzSTjhJR/567143",
-          "http://23.227.140.75:5050/KanishaHill440/bbBzSTjhJR/567152",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/20713",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/35341",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/84428",
           "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/85640",
-          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/85645"
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/85642"
         ]
       }
     },
@@ -3144,11 +3216,11 @@
       "logo": "https://admin.senderinfo.de/images/ekVMs6.png",
       "qualities": {
         "HD": [
-          "http://noprnsbwobb.top:8080/8561767661717/nj2r7g2he52n/61399",
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/11303.m3u8",
+          "http://io-pro.live:8080/8241899486046784/8241899486046784/396079",
           "http://nordsohzace.top:8080/91770902797/30c3d2dcbff7/61399",
           "http://nordsohzace.top:8080/91770902797/30c3d2dcbff7/61430",
-          "http://nordsohzace.top:8080/9611758046068686/f4c111d0b650/61399",
-          "http://nordsohzace.top:8080/9611758046068686/f4c111d0b650/61430"
+          "http://nordsohzace.top:8080/9611758046068686/f4c111d0b650/61399"
         ]
       }
     },
@@ -3157,9 +3229,9 @@
       "logo": "https://admin.senderinfo.de/images/VAskpF.png",
       "qualities": {
         "HD": [
-          "http://live.iptvtotaal.com:8000/ronaldvan3333/eUaRuHrHgv/157790",
-          "http://nordsohzace.top:8080/91770902797/30c3d2dcbff7/61461",
-          "http://nordsohzace.top:8080/91770902797/30c3d2dcbff7/61462",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/191406",
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/11217.m3u8",
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/190993.m3u8",
           "http://sinlimitestv.com:8080/Jamespuyqet56/uFqQFY45Fb/384149",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/659341.ts"
         ]
@@ -3224,10 +3296,8 @@
       "logo": "http://logo.kll1ll120qazwed.site/logo/turkeyT/360.png",
       "qualities": {
         "HD": [
-          "http://io-pro.live:8080/8241899486046784/8241899486046784/280463",
-          "http://vipbhbiss.top:8080/VIP018151741441714365/a0c16ea1db1b/141284",
-          "http://vipqutnnapi.top:8080/VIP0155169513131921/51696769842064/141284",
-          "http://vipwettbornwet.top:8080/VIP019961765302530157/983f6c19d52b/141284"
+          "http://fr.ottv.pro:8080/live/4454594703610565/4454594703610565/280463.m3u8",
+          "http://io-pro.live:8080/8241899486046784/8241899486046784/280463"
         ]
       }
     },
@@ -3236,6 +3306,8 @@
       "logo": "[",
       "qualities": {
         "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/22424",
+          "http://fr.ottv.pro:8080/live/4454594703610565/4454594703610565/311666.m3u8",
           "http://io-pro.live:8080/8241899486046784/8241899486046784/311666"
         ]
       }
@@ -3256,17 +3328,25 @@
     "beIN SPORTS XTRA en Español": {
       "id": 2124417460,
       "logo": "https://s12.gifyu.com/images/Sr7Dg.webp",
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://kalitemedya45.xyz:8080/nrr0770/nr.99/468513",
+          "http://nuhproxtv.shop:8080/zkn1887/cn.1908/468513",
+          "http://tanzanyanuh.xyz:8080/cm1202/cm00xyy/468513",
+          "http://yrtds0911.xyz:8080/mhm7451/bh.14032025/468513",
+          "https://stitcher.pluto.tv/stitch/hls/channel/60492fdd9989d30007ccd30a/master.m3u8?deviceType=web&servertSideAds=false&deviceMake=safari&deviceVersion=1&deviceId=spencer&appVersion=1&deviceDNT=0&deviceModel=web&sid=66fdda05-62bc-11ef-b7b7-72aa874ccba6"
+        ]
+      }
     },
     "Sky Sport Austria 4": {
       "id": 1161955005,
       "logo": "https://www.xexelogo.com/vip/UEFA.png",
       "qualities": {
         "HD": [
-          "http://4kplus.info:80/30634808816548058196/8gnf7ng3hq/49724",
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/187934.m3u8",
           "http://client.newborne.xyz:8080/ZP2MD4iCsIx/9TWnl5pFhL/80295",
           "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/439431.ts",
-          "http://yn83wvfx.k2sfsc.xyz:80/live/Ange830X/Aapaeywtt122/1220630.ts",
+          "http://totalplay.site:80/almacosta1/nmAMNbMftq/439431.m3u8",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/659451.ts"
         ]
       }
@@ -3276,10 +3356,10 @@
       "logo": "[",
       "qualities": {
         "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/12568",
           "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/164664",
           "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/279204",
           "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/115801",
-          "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/595879.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/154365.ts"
         ]
       }
@@ -3342,9 +3422,9 @@
       "logo": "http://case2.lat:80/images/6e77344ba58b07641ce121d1dc1f01d7.png",
       "qualities": {
         "HD": [
-          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/202288",
-          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/202289",
-          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/202290",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/210677",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/210678",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/210679",
           "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/643514",
           "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/817021"
         ]
@@ -3356,9 +3436,9 @@
       "qualities": {
         "HD": [
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/120863.ts",
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/137642.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/158078.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/20925.ts",
-          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/319284.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/31944.ts"
         ]
       }
@@ -3457,11 +3537,11 @@
       "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB5S7MklYBZAI8AyfAjeQWuybm5tliXrRlcg&s",
       "qualities": {
         "HD": [
-          "http://filex.me:8080/movie/MAS101A/MAS101AABB/914256.mp4",
-          "http://filex.me:8080/movie/MAS101A/MAS101AABB/930237.mkv",
-          "http://filex.me:8080/movie/MAS101A/MAS101AABB/930626.mp4",
-          "http://filex.me:8080/movie/MAS101A/MAS101AABB/931758.mkv",
-          "http://filex.me:8080/movie/MAS101A/MAS101AABB/931966.mp4"
+          "http://chavedelta.site:80/movie/696307678795/767648388963/16095090.mp4",
+          "http://chavedelta.site:80/movie/696307678795/767648388963/16095369.mp4",
+          "http://chavedelta.site:80/movie/696307678795/767648388963/16095407.mp4",
+          "http://chavedelta.site:80/movie/696307678795/767648388963/16095489.mp4",
+          "http://chavedelta.site:80/movie/696307678795/767648388963/16095492.mp4"
         ]
       }
     },
@@ -3480,13 +3560,13 @@
     },
     "SuperSport Laliga": {
       "id": 1008141970,
-      "logo": null,
+      "logo": "https://supersport.azureedge.net/web-assets/channels/hos/supersport-laliga.png",
       "qualities": {
         "HD": [
           "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/237491",
           "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/237495",
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/11180.m3u8",
           "http://vipbhbiss.top:8080/VIP018151741441714365/a0c16ea1db1b/147073",
-          "http://vipneeene.top:8080/VIP018641761287366102/f76c1d0de886/147073",
           "http://vipwettbornwet.top:8080/VIP019961765302530157/983f6c19d52b/147073"
         ]
       }
@@ -3549,15 +3629,7 @@
     "Cytavision Sports 3": {
       "id": 1258686248,
       "logo": "https://static.epg.best/gr/ERT1.gr.png",
-      "qualities": {
-        "HD": [
-          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/74863.m3u8",
-          "http://vipbhbiss.top:8080/VIP018151741441714365/a0c16ea1db1b/154461",
-          "http://vipneeene.top:8080/VIP018641761287366102/f76c1d0de886/154461",
-          "http://vipqutnnapi.top:8080/VIP0155169513131921/51696769842064/154461",
-          "http://vipwettbornwet.top:8080/VIP019961765302530157/983f6c19d52b/154461"
-        ]
-      }
+      "qualities": {}
     },
     "CDN Deportes": {
       "id": 408355900,
@@ -3645,7 +3717,7 @@
       "logo": "http://img-cdn.curl.pk:8880/channels_icon/31291444621.png",
       "qualities": {
         "HD": [
-          "http://veloxultratop.com:80/Paulohenrique85/743848224/149837.ts",
+          "http://veloxultratop.com:80/Paulohenrique85/743848224/150771.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/423846.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/423847.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/423848.ts",
@@ -3748,10 +3820,10 @@
       "qualities": {
         "HD": [
           "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/38448",
-          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/85619",
-          "http://bigballs.ddns.net:8383/samanthamay/T9IaO2UAeNN/339101",
-          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/105341.m3u8",
-          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/124409.m3u8"
+          "http://kalitemedya45.xyz:8080/nrr0770/nr.99/169138",
+          "http://nuhproxtv.shop:8080/zkn1887/cn.1908/169138",
+          "http://nuhproxtv.shop:8080/zkn1887/cn.1908/202037",
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/105341.m3u8"
         ]
       }
     },
@@ -3773,6 +3845,7 @@
       "logo": null,
       "qualities": {
         "HD": [
+          "http://fr.ottv.pro:8080/live/4454594703610565/4454594703610565/311657.m3u8",
           "http://io-pro.live:8080/8241899486046784/8241899486046784/311657"
         ]
       }
@@ -3822,9 +3895,9 @@
       "qualities": {
         "HD": [
           "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/32837",
-          "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/451756",
           "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/451757",
           "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/94453",
+          "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/2363.ts",
           "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/2365.ts"
         ]
       }
@@ -4006,9 +4079,9 @@
       "logo": "http://fomo.re:80/images/UK_sky_sports_mix.png",
       "qualities": {
         "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/28990",
           "http://fomo.re/play/AOgDGuN-dJnjxoChfrvyAYrUuLDOmlrkkXbwxDd5s1mofegCpTyCgEn07xQc8ybY/ts",
-          "http://sinlimitestv.com:8080/Jamespuyqet56/uFqQFY45Fb/384185",
-          "http://sinlimitestv.com:8080/Jamespuyqet56/uFqQFY45Fb/384186",
+          "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/662942",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/659429.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/659468.ts"
         ]
@@ -4083,7 +4156,7 @@
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/154260.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/154261.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/154262.ts",
-          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/154265.ts"
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/154263.ts"
         ]
       }
     },
@@ -4142,11 +4215,11 @@
       "logo": "[",
       "qualities": {
         "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/10671",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/210402",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/22015",
           "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/234375",
-          "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/591999.ts",
-          "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/595878.ts",
-          "http://sinlimitestv.com:8080/Jamespuyqet56/uFqQFY45Fb/169919",
-          "http://sinlimitestv.com:8080/Jamespuyqet56/uFqQFY45Fb/195771"
+          "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/591999.ts"
         ]
       }
     },
@@ -4155,11 +4228,11 @@
       "logo": "https://docdog.top/logo/countries/ar/IRAQIA_SYRIAC.png",
       "qualities": {
         "HD": [
-          "http://20012.xyz:2086/live/07XJwOyG0Z/5417828008/253986.ts",
-          "http://abtvab@starshare.net:80/live/CVCVCVCV/CV1CV1CV1/309167.ts",
-          "http://main.isppak.eu:80/live/Dani12/Dani12/1690752.ts",
-          "http://vipbhbiss.top:8080/live/VIP018151741441714365/a0c16ea1db1b/130382.ts",
-          "http://vipwettbornwet.top:8080/live/VIP019961765302530157/983f6c19d52b/130382.ts"
+          "http://fr.ottv.pro:8080/live/4454594703610565/4454594703610565/285015.m3u8",
+          "http://io-pro.live:8080/8241899486046784/8241899486046784/285015",
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/118293.m3u8",
+          "http://yn83wvfx.k2sfsc.xyz:80/live/Ange830X/Aapaeywtt122/1217339.ts",
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/309167.ts"
         ]
       }
     },
@@ -4194,11 +4267,11 @@
       "logo": "[",
       "qualities": {
         "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/30991",
           "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/542247.ts",
           "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/592014.ts",
           "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/595868.ts",
-          "http://sinlimitestv.com:8080/Jamespuyqet56/uFqQFY45Fb/113990",
-          "http://sinlimitestv.com:8080/Jamespuyqet56/uFqQFY45Fb/195798"
+          "http://totalplay.site:80/almacosta1/nmAMNbMftq/592014.m3u8"
         ]
       }
     },
@@ -4210,7 +4283,7 @@
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/147743.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/147749.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/147751.ts",
-          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/157987.ts",
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/319449.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/3801.ts"
         ]
       }
@@ -4233,11 +4306,11 @@
       "logo": "https://www.xexelogo.com/deutschalnd/dazn-de.png",
       "qualities": {
         "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/133956",
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/55480.m3u8",
           "http://europe.siriusfiber.xyz:80/live/srf1616/5eXeZw4tak/861779.ts",
-          "http://noprnsbwobb.top:8080/8561767661717/nj2r7g2he52n/61420",
           "http://nordsohzace.top:8080/91770902797/30c3d2dcbff7/61420",
-          "http://nordsohzace.top:8080/9611758046068686/f4c111d0b650/61420",
-          "http://vipneeene.top:8080/VIP018641761287366102/f76c1d0de886/135421"
+          "http://nordsohzace.top:8080/9611758046068686/f4c111d0b650/61420"
         ]
       }
     },
@@ -4287,15 +4360,7 @@
     "Cytavision Sports 7": {
       "id": 1258948396,
       "logo": "https://4.bp.blogspot.com/--4qIaLnBzG0/W9iY_Y_8FbI/AAAAAAAAfLE/cKax4IM7g28Fk2d31XtZ0Mhp02-A3FwSACLcBGAs/s1600/xalastra%2Btv.jpg",
-      "qualities": {
-        "HD": [
-          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/32673.m3u8",
-          "http://vipbhbiss.top:8080/VIP018151741441714365/a0c16ea1db1b/154465",
-          "http://vipneeene.top:8080/VIP018641761287366102/f76c1d0de886/154465",
-          "http://vipqutnnapi.top:8080/VIP0155169513131921/51696769842064/154465",
-          "http://vipwettbornwet.top:8080/VIP019961765302530157/983f6c19d52b/154465"
-        ]
-      }
+      "qualities": {}
     },
     "DAZN Brasil": {
       "id": 333185963,
@@ -4311,10 +4376,10 @@
       "logo": "http://live.phenixiptv.com:8080/images/M93xvYxi2uZNKkK0Lijik9shqWPKGc5zfW6GkyqP_Xc0yAdqGXkbtz1DMZU1Gocsf9leNG5za2YuxOifv6aaQg.png",
       "qualities": {
         "HD": [
-          "http://europe.siriusfiber.xyz:80/live/srf1616/5eXeZw4tak/861821.ts",
-          "http://europe.siriusfiber.xyz:80/live/srf1616/5eXeZw4tak/861823.ts",
-          "http://io-pro.live:8080/8241899486046784/8241899486046784/397799",
+          "http://4yzvds.revfor.com:80/live/amy1_nwxhqd/8en8zuxz/454454.m3u8",
+          "http://fr.ottv.pro:8080/live/4454594703610565/4454594703610565/397799.m3u8",
           "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/439434.ts",
+          "http://totalplay.site:80/almacosta1/nmAMNbMftq/439434.m3u8",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/659433.ts"
         ]
       }
@@ -4400,9 +4465,9 @@
       "logo": "https://estatico.emisiondof6.com/recorte/m-DPBLAN/wpmos/MPLUS2",
       "qualities": {
         "HD": [
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/191407.m3u8",
           "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/797867",
           "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/797868",
-          "http://nordsohzace.top:8080/91770902797/30c3d2dcbff7/57285",
           "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/118896.m3u8",
           "http://sinlimitestv.com:8080/Jamespuyqet56/uFqQFY45Fb/526655"
         ]
@@ -4411,15 +4476,7 @@
     "Cytavision Sports 4": {
       "id": 1258751785,
       "logo": "https://greektv.org/wp-content/uploads/2020/01/faros-on-air-tv-cyprus.jpg",
-      "qualities": {
-        "HD": [
-          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/32720.m3u8",
-          "http://vipbhbiss.top:8080/VIP018151741441714365/a0c16ea1db1b/154462",
-          "http://vipneeene.top:8080/VIP018641761287366102/f76c1d0de886/154462",
-          "http://vipqutnnapi.top:8080/VIP0155169513131921/51696769842064/154462",
-          "http://vipwettbornwet.top:8080/VIP019961765302530157/983f6c19d52b/154462"
-        ]
-      }
+      "qualities": {}
     },
     "Go3 Sport Open": {
       "id": 574031060,
@@ -4444,9 +4501,9 @@
       "logo": "http://img-cdn.curl.pk:8880/channels_icon/57078792581.png",
       "qualities": {
         "HD": [
-          "http://europe.siriusfiber.xyz:80/live/srf1616/5eXeZw4tak/865015.ts",
-          "http://europe.siriusfiber.xyz:80/live/srf1616/5eXeZw4tak/865016.ts",
-          "http://io-pro.live:8080/8241899486046784/8241899486046784/280464",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/15274",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/3704",
+          "http://fr.ottv.pro:8080/live/4454594703610565/4454594703610565/280464.m3u8",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/423712.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/423713.ts"
         ]
@@ -4484,7 +4541,7 @@
       "qualities": {
         "HD": [
           "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/119721",
-          "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/7671",
+          "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/6807",
           "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/8336",
           "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/93747",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/389114.ts"
@@ -4638,9 +4695,9 @@
       "logo": "[\"\"]",
       "qualities": {
         "HD": [
-          "http://io-pro.live:8080/8241899486046784/8241899486046784/395685",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/26019",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/26021",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/660411.ts",
-          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/660412.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/660413.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/660414.ts"
         ]
@@ -4662,33 +4719,25 @@
     "BandSports": {
       "id": 348259329,
       "logo": "http://case2.lat:80/images/9e890cd8121d33cd2044773fbc6df47d.png",
-      "qualities": {
-        "HD": [
-          "https://watch.startecmedia.xyz:443/live/SeanK22/9Sz5cGPbTWhS/669810.m3u8"
-        ]
-      }
+      "qualities": {}
     },
     "Sky Sport Arena": {
       "id": 725091703,
       "logo": "https://maltaip.com/logos/Italy/skysportarena.png",
       "qualities": {
         "HD": [
-          "http://io-pro.live:8080/8241899486046784/8241899486046784/195099",
-          "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/541576",
-          "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/600413.ts",
-          "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/600414.ts",
-          "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/600415.ts"
+          "http://4yzvds.revfor.com:80/live/amy1_nwxhqd/8en8zuxz/184.m3u8",
+          "http://4yzvds.revfor.com:80/live/amy1_nwxhqd/8en8zuxz/452137.m3u8",
+          "http://4yzvds.revfor.com:80/live/amy1_nwxhqd/8en8zuxz/452200.m3u8",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/80490",
+          "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/541576"
         ]
       }
     },
     "Sport TV2": {
       "id": 281477909,
       "logo": "https://i.imgur.com/JqmlWlV.png",
-      "qualities": {
-        "HD": [
-          "http://io-pro.live:8080/8241899486046784/8241899486046784/281663"
-        ]
-      }
+      "qualities": {}
     },
     "V Sport Extra": {
       "id": 521733299,
@@ -4721,9 +4770,10 @@
       "logo": "https://thumbs2.imgbox.com/50/bc/IVEZKlQJ_t.png",
       "qualities": {
         "HD": [
-          "http://lunar.pm:8080/KylaW22/Watkins/132121",
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/11309.m3u8",
           "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/3524.m3u8",
-          "http://supersonictv.live:8080/Keyonna123/Keyonna123/84118",
+          "http://yn83wvfx.k2sfsc.xyz:80/live/Ange830X/Aapaeywtt122/1195926.ts",
+          "https://admn-live-cdn-lb.starzplayarabia.com/out/v1/admn_tv_enc/abudhabi_sports_1/abudhabi_sports_1_hls_nd/index.m3u8",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/309006.ts"
         ]
       }
@@ -5063,11 +5113,11 @@
       "logo": "data:image/png;base64,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",
       "qualities": {
         "HD": [
-          "http://kalitemedya45.xyz:8080/nrr0770/nr.99/137716",
-          "http://nordsohzace.top:8080/91770902797/30c3d2dcbff7/62872",
-          "http://nordsohzace.top:8080/91770902797/30c3d2dcbff7/62873",
-          "http://nuhproxtv.shop:8080/zkn1887/cn.1908/137716",
-          "http://tanzanyanuh.xyz:8080/cm1202/cm00xyy/137716"
+          "http://kalitemedya45.xyz:8080/nrr0770/nr.99/137713",
+          "http://kalitemedya45.xyz:8080/nrr0770/nr.99/137714",
+          "http://nuhproxtv.shop:8080/zkn1887/cn.1908/137713",
+          "http://nuhproxtv.shop:8080/zkn1887/cn.1908/137714",
+          "http://tanzanyanuh.xyz:8080/cm1202/cm00xyy/137714"
         ]
       }
     },
@@ -5265,6 +5315,8 @@
       "logo": "https://img.sport-tv-guide.live/images/tv-station-sport-tv-6-2619.png",
       "qualities": {
         "HD": [
+          "http://fr.ottv.pro:8080/live/4454594703610565/4454594703610565/281674.m3u8",
+          "http://fr.ottv.pro:8080/live/4454594703610565/4454594703610565/281675.m3u8",
           "http://io-pro.live:8080/8241899486046784/8241899486046784/281674",
           "http://io-pro.live:8080/8241899486046784/8241899486046784/281675"
         ]
@@ -5488,9 +5540,13 @@
       "qualities": {}
     },
     "myCANAL": {
-      "id": null,
+      "id": 165872198,
       "logo": null,
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/104971.m3u8"
+        ]
+      }
     },
     "SCTV 22": {
       "id": null,
@@ -5545,11 +5601,7 @@
     "Canal GOAT": {
       "id": 305070891,
       "logo": null,
-      "qualities": {
-        "HD": [
-          "http://veloxultratop.com:80/Paulohenrique85/743848224/1305307.ts"
-        ]
-      }
+      "qualities": {}
     },
     "Singtel TV GO": {
       "id": null,
@@ -5627,9 +5679,13 @@
       "qualities": {}
     },
     "ESPN Argentina": {
-      "id": null,
-      "logo": null,
-      "qualities": {}
+      "id": 568001776,
+      "logo": "https://i.postimg.cc/sD3nVdTx/espn.jpg",
+      "qualities": {
+        "HD": [
+          "http://jumangis.com:2082/live/AnaOrellana/zBv5jqtRKX/117715.m3u8"
+        ]
+      }
     },
     "SuperSport Action Africa": {
       "id": null,
@@ -5729,9 +5785,13 @@
       "qualities": {}
     },
     "Blue Sport 5 Live": {
-      "id": null,
+      "id": 878314950,
       "logo": null,
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/198708.m3u8"
+        ]
+      }
     },
     "Nova Sport 4": {
       "id": 472253473,
@@ -5845,12 +5905,24 @@
     "Sky Sport 257": {
       "id": 534119470,
       "logo": "http://www.tmsimg.com/assets/s83722_ll_h3_ab.png",
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/151030",
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/181693.m3u8",
+          "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/600407.ts",
+          "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/600408.ts",
+          "http://totalplay.site:80/almacosta1/nmAMNbMftq/600408.m3u8"
+        ]
+      }
     },
     "Onefootball": {
-      "id": null,
-      "logo": null,
-      "qualities": {}
+      "id": 441386102,
+      "logo": "https://logo.m3uassets.com/onfootball.png",
+      "qualities": {
+        "HD": [
+          "http://skiload.vip:8080/live/rodriguestiago/vuvw4zkJ3Mup/160057.m3u8"
+        ]
+      }
     },
     "Arena Sport 10 Serbia": {
       "id": null,
@@ -5931,9 +6003,16 @@
       "qualities": {}
     },
     "SportyNet": {
-      "id": null,
+      "id": 309920697,
       "logo": null,
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://veloxultratop.com:80/Paulohenrique85/743848224/2206453.ts",
+          "http://veloxultratop.com:80/Paulohenrique85/743848224/2206455.ts",
+          "http://veloxultratop.com:80/Paulohenrique85/743848224/2206456.ts",
+          "http://veloxultratop.com:80/Paulohenrique85/743848224/2206457.ts"
+        ]
+      }
     },
     "Fubo Sports Network 5 Canada": {
       "id": null,
@@ -5964,11 +6043,11 @@
       "logo": "http://logos.ti7an.net/logos/usa/cbs_sports_network.png",
       "qualities": {
         "HD": [
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/13943.m3u8",
           "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/30924",
-          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/79739.m3u8",
-          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/79740.m3u8",
-          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/95231.m3u8",
-          "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/595874.ts"
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/126074.m3u8",
+          "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/595874.ts",
+          "http://totalplay.site:80/almacosta1/nmAMNbMftq/595874.m3u8"
         ]
       }
     },
@@ -5998,9 +6077,13 @@
       "qualities": null
     },
     "Blue Sport D 2": {
-      "id": null,
-      "logo": null,
-      "qualities": {}
+      "id": 609944695,
+      "logo": "https://cdn-0.tvprofil.com/img/kanali-logo/Blue_Sport_1_CH_logo.png",
+      "qualities": {
+        "HD": [
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/15233.m3u8"
+        ]
+      }
     },
     "Azam Sports HD": {
       "id": null,
@@ -6118,9 +6201,13 @@
       "qualities": {}
     },
     "Blue Sport 4 Live": {
-      "id": null,
+      "id": 877921733,
       "logo": null,
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/198707.m3u8"
+        ]
+      }
     },
     "Oneplay Sport 3": {
       "id": 761988452,
@@ -6139,7 +6226,15 @@
     "Sky Sport 255": {
       "id": 533988396,
       "logo": "http://www.tmsimg.com/assets/s83722_ll_h3_ab.png",
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/151028",
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/181691.m3u8",
+          "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/600403.ts",
+          "http://sinlimitestv.com:8080/Jamespuyqet56/uFqQFY45Fb/412719",
+          "http://totalplay.site:80/almacosta1/nmAMNbMftq/600403.m3u8"
+        ]
+      }
     },
     "Sport 24 Extra": {
       "id": null,
@@ -6166,9 +6261,9 @@
       "logo": "http://logos.ti7an.net/logos/brasil/espn_extra.png",
       "qualities": {
         "HD": [
-          "http://io-pro.live:8080/8241899486046784/8241899486046784/320083",
           "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/713502",
           "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/195673.ts",
+          "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/2378.ts",
           "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/2379.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/423853.ts"
         ]
@@ -6348,9 +6443,13 @@
       "qualities": {}
     },
     "Blue Sport 7 Live": {
-      "id": null,
+      "id": 879101384,
       "logo": null,
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/198710.m3u8"
+        ]
+      }
     },
     "GO TV Anywhere": {
       "id": null,
@@ -6400,15 +6499,7 @@
     "Ziggo Sport 2": {
       "id": 562758795,
       "logo": "https://i.ibb.co/hxTy5fJw/Ziggo-Sport2.png",
-      "qualities": {
-        "HD": [
-          "http://lemon.catchmeifyo.com:8000/4971131096/0964688296/16335",
-          "http://lemon.catchmeifyo.com:8000/4971131096/0964688296/29760",
-          "http://sinlimitestv.com:8080/Jamespuyqet56/uFqQFY45Fb/481098",
-          "https://a1xs.vip/140002",
-          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/659534.ts"
-        ]
-      }
+      "qualities": {}
     },
     "Arena Sport 8 Croatia": {
       "id": null,
@@ -6426,9 +6517,13 @@
       "qualities": {}
     },
     "Blue Sport 6 Live": {
-      "id": null,
+      "id": 878708167,
       "logo": null,
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/198709.m3u8"
+        ]
+      }
     },
     "True Premier Football HD 5": {
       "id": null,
@@ -6453,7 +6548,8 @@
           "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/661117.ts",
           "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/668131.ts",
           "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/745925.ts",
-          "http://sinlimitestv.com:8080/Jamespuyqet56/uFqQFY45Fb/377234"
+          "http://totalplay.site:80/almacosta1/nmAMNbMftq/661117.m3u8",
+          "http://totalplay.site:80/almacosta1/nmAMNbMftq/668131.m3u8"
         ]
       }
     },
@@ -6477,9 +6573,11 @@
       "logo": null,
       "qualities": {
         "HD": [
-          "http://ip.xtremetv.eu:8000/hizirarkadashollanda/V39WCmGCgSp8/108517",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/159165",
           "http://kalitemedya45.xyz:8080/nrr0770/nr.99/201467",
-          "http://tanzanyanuh.xyz:8080/cm1202/cm00xyy/201467"
+          "http://nuhproxtv.shop:8080/zkn1887/cn.1908/201467",
+          "http://tanzanyanuh.xyz:8080/cm1202/cm00xyy/201467",
+          "http://yrtds0911.xyz:8080/mhm7451/bh.14032025/201467"
         ]
       }
     },
@@ -6650,9 +6748,13 @@
       "qualities": {}
     },
     "Fox Sports Argentina": {
-      "id": null,
-      "logo": null,
-      "qualities": {}
+      "id": 1292634002,
+      "logo": "https://i.postimg.cc/nryQxyk5/fox-sport.jpg",
+      "qualities": {
+        "HD": [
+          "http://jumangis.com:2082/live/AnaOrellana/zBv5jqtRKX/117727.m3u8"
+        ]
+      }
     },
     "Arena 4 Premium": {
       "id": null,
@@ -6669,8 +6771,8 @@
       "logo": "https://forounivers.com/uploads/monthly_2024_02/large.ESPN4.png.eb49e6eecab0c1a9e2c758279e2a6784.png",
       "qualities": {
         "HD": [
-          "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/865734",
-          "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/591990.ts"
+          "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/591990.ts",
+          "http://totalplay.site:80/almacosta1/nmAMNbMftq/591990.m3u8"
         ]
       }
     },
@@ -6702,7 +6804,12 @@
     "ESPN Colombia": {
       "id": 485426301,
       "logo": "https://i.ibb.co/WWWx5WMG/Eventos-Futbol.png",
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://jumangis.com:2082/live/AnaOrellana/zBv5jqtRKX/117721.m3u8",
+          "http://jumangis.com:2082/live/AnaOrellana/zBv5jqtRKX/522596.m3u8"
+        ]
+      }
     },
     "beIN Sports 1 Philippines": {
       "id": null,
@@ -6817,9 +6924,17 @@
       "qualities": {}
     },
     "Canal+ Live 5": {
-      "id": null,
-      "logo": null,
-      "qualities": {}
+      "id": 500761616,
+      "logo": "http://91.208.162.66/clive/canallive.png",
+      "qualities": {
+        "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/173325",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/175855",
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/203684.m3u8",
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/203685.m3u8",
+          "http://fr.ottv.pro:8080/live/4454594703610565/4454594703610565/398684.m3u8"
+        ]
+      }
     },
     "ELTA Sports 2": {
       "id": 477824036,
@@ -6884,12 +6999,28 @@
     "Canal+ Live 2": {
       "id": 500565005,
       "logo": "http://91.208.162.66/clive/canallive.png",
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/112323",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/173328",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/175858",
+          "http://fr.ottv.pro:8080/live/4454594703610565/4454594703610565/398662.m3u8",
+          "http://fr.ottv.pro:8080/live/4454594703610565/4454594703610565/398681.m3u8"
+        ]
+      }
     },
     "Canal+ Foot": {
-      "id": null,
-      "logo": null,
-      "qualities": {}
+      "id": 367592387,
+      "logo": "http://icon.guard447.cyou/logos/france/Canal+Foot.png",
+      "qualities": {
+        "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/119412",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/120097",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/125950",
+          "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/598929",
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/659024.ts"
+        ]
+      }
     },
     "MaxTV Go": {
       "id": null,
@@ -7011,9 +7142,13 @@
       }
     },
     "DIRECTV Sports Argentina": {
-      "id": null,
-      "logo": null,
-      "qualities": {}
+      "id": 1645414518,
+      "logo": "https://i.postimg.cc/2S7XXQx4/directv-sport.jpg",
+      "qualities": {
+        "HD": [
+          "http://jumangis.com:2082/live/AnaOrellana/zBv5jqtRKX/117705.m3u8"
+        ]
+      }
     },
     "Viaplay Netherlands": {
       "id": null,
@@ -7030,11 +7165,11 @@
       "logo": "https://docdog.top/logo/countries/caribbean/espncaribbean.png",
       "qualities": {
         "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/279112",
           "http://noprnsbwobb.top:8080/8561767661717/nj2r7g2he52n/52626",
           "http://nordsohzace.top:8080/91770902797/30c3d2dcbff7/52626",
           "http://nordsohzace.top:8080/9611758046068686/f4c111d0b650/52626",
-          "http://vipneeene.top:8080/VIP018641761287366102/f76c1d0de886/5341",
-          "http://vipwettbornwet.top:8080/VIP019961765302530157/983f6c19d52b/5341"
+          "http://vipneeene.top:8080/VIP018641761287366102/f76c1d0de886/5341"
         ]
       }
     },
@@ -7108,7 +7243,15 @@
     "Canal+ Live 1": {
       "id": 500499468,
       "logo": "http://91.208.162.66/clive/canallive.png",
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/173317",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/173319",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/173329",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/175848",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/175859"
+        ]
+      }
     },
     "BBC Northern Ireland": {
       "id": null,
@@ -7196,7 +7339,15 @@
     "TUDN USA": {
       "id": 176095813,
       "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcZyQtmrfHPxBcH9v8kcV6ZEqJkeHYSG7LMg&s",
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://bipoplan.net:8080/javier100825/uSGnaTueAG/275253.m3u8",
+          "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/592018.ts",
+          "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/592019.ts",
+          "http://totalplay.site:80/almacosta1/nmAMNbMftq/592018.m3u8",
+          "http://totalplay.site:80/almacosta1/nmAMNbMftq/592019.m3u8"
+        ]
+      }
     },
     "Sky Sports Norte": {
       "id": null,
@@ -7475,10 +7626,10 @@
       "logo": "https://www.nowtv.now.com/media/logo/621-dbg-c.png",
       "qualities": {
         "HD": [
-          "http://23.227.140.75:5050/KanishaHill440/bbBzSTjhJR/695940",
           "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/60466",
           "http://bigballs.ddns.net:8383/samanthamay/T9IaO2UAeNN/346725",
           "http://cdn4.skygo.mn/live/disk1/SPSFight/HLS-FTA/SPSFight.m3u8",
+          "http://fastrunner.live:8080/LXdVGQ2ulN/2YV8Pnu7e9/112198",
           "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/112198.m3u8"
         ]
       }
@@ -7561,7 +7712,11 @@
       "logo": "https://www.nowtv.now.com/media/logo/621-dbg-c.png",
       "qualities": {
         "HD": [
-          "http://4kplus.info:80/30634808816548058196/8gnf7ng3hq/54885"
+          "http://23.227.140.75:5050/KanishaHill440/bbBzSTjhJR/695939",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/60465",
+          "http://bigballs.ddns.net:8383/samanthamay/T9IaO2UAeNN/346724",
+          "http://fastrunner.live:8080/LXdVGQ2ulN/2YV8Pnu7e9/112199",
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/112199.m3u8"
         ]
       }
     },
@@ -7583,7 +7738,15 @@
     "Prima Sport 2": {
       "id": 558433412,
       "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Logo_LookSport_%282018%29.svg/1200px-Logo_LookSport_%282018%29.svg.png",
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/20526",
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/54519.m3u8",
+          "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/534209",
+          "http://ip.tvgo4.me:80/Toledo0903/sEtcZ2aPs4/534210",
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/95053.m3u8"
+        ]
+      }
     },
     "NIFL TV": {
       "id": null,
@@ -7673,7 +7836,12 @@
     "SÝN Sport Viaplay": {
       "id": 1169491760,
       "logo": "https://varnish.tv.c.is/images/fb19a54276931f9f195aedfc27c8cddd938737e0.png",
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/125498",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/274954"
+        ]
+      }
     },
     "Ekstraklasa TV": {
       "id": null,
@@ -7893,15 +8061,7 @@
     "RTL+": {
       "id": 51052830,
       "logo": "[",
-      "qualities": {
-        "HD": [
-          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/129052",
-          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/14567",
-          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/176767",
-          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/176769",
-          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/176771"
-        ]
-      }
+      "qualities": {}
     },
     "Sportklub 2 Slovenia": {
       "id": null,
@@ -7913,6 +8073,7 @@
       "logo": "https://mondrian.claro.com.br/channels/inverse/clarotvplus4k.png",
       "qualities": {
         "HD": [
+          "http://fr.ottv.pro:8080/live/4454594703610565/4454594703610565/423724.m3u8",
           "http://io-pro.live:8080/8241899486046784/8241899486046784/423724"
         ]
       }
@@ -7922,11 +8083,11 @@
       "logo": "http://135.125.239.110/icon/126785.png",
       "qualities": {
         "HD": [
-          "http://europe.siriusfiber.xyz:80/live/srf1616/5eXeZw4tak/863995.ts",
-          "http://noprnsbwobb.top:8080/8561767661717/nj2r7g2he52n/57572",
-          "http://nordsohzace.top:8080/91770902797/30c3d2dcbff7/57572",
-          "http://nordsohzace.top:8080/9611758046068686/f4c111d0b650/57572",
-          "http://vipneeene.top:8080/VIP018641761287366102/f76c1d0de886/129003"
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/173322",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/175853",
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/203688.m3u8",
+          "http://fr.ottv.pro:8080/live/4454594703610565/4454594703610565/398667.m3u8",
+          "http://fr.ottv.pro:8080/live/4454594703610565/4454594703610565/398686.m3u8"
         ]
       }
     },
@@ -7935,9 +8096,9 @@
       "logo": "https://i.ibb.co/JF0cRyBQ/Ziggo-Sport3.png",
       "qualities": {
         "HD": [
-          "http://lemon.catchmeifyo.com:8000/4971131096/0964688296/16336",
-          "http://lemon.catchmeifyo.com:8000/4971131096/0964688296/29761",
-          "http://live.iptvtotaal.com:8000/ronaldvan3333/eUaRuHrHgv/29761",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/172007",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/891",
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/11290.m3u8",
           "https://a1xs.vip/140003",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/659535.ts"
         ]
@@ -7978,6 +8139,7 @@
       "logo": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjN5L5zez8WRPAlcegFJx8FSLsDfDXIdewKcu1mIeb33PbQvbQAN2Nwu9PlzM9tTx6ephBWKNUU4qIX6Q2lRUM6nzsryEwa443XOalfgfrem0FlF66Lwh2tB_q0IvIyvewExyEq1HHFDbrYdASKp40ZdDk-ffLftg8-SMsLQ9PVrwwswzG8ws3FYI-3/s1600/espn1-chile.png",
       "qualities": {
         "HD": [
+          "http://jumangis.com:2082/live/AnaOrellana/zBv5jqtRKX/28478.m3u8",
           "http://sinlimitestv.com:8080/Jamespuyqet56/uFqQFY45Fb/374714"
         ]
       }
@@ -8038,7 +8200,11 @@
     "Arena Sport 1 Croatia": {
       "id": 1336543060,
       "logo": "https://raw.githubusercontent.com/pigzillaaaaa/iptv-scraper/refs/heads/main/logos/arena-sport-1.png",
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://sinlimitestv.com:8080/Jamespuyqet56/uFqQFY45Fb/465779"
+        ]
+      }
     },
     "Spíler2": {
       "id": null,
@@ -8120,9 +8286,13 @@
       "qualities": {}
     },
     "Tigo Sports Paraguay": {
-      "id": null,
-      "logo": null,
-      "qualities": {}
+      "id": 1301022617,
+      "logo": "https://i.postimg.cc/d15Yv5N2/tigo-sport.jpg",
+      "qualities": {
+        "HD": [
+          "http://jumangis.com:2082/live/AnaOrellana/zBv5jqtRKX/28536.m3u8"
+        ]
+      }
     },
     "Fubo Sports Network 6 Canada": {
       "id": null,
@@ -8289,10 +8459,10 @@
       "logo": "[",
       "qualities": {
         "HD": [
-          "http://europe.siriusfiber.xyz:80/live/srf1616/5eXeZw4tak/849302.ts",
-          "http://europe.siriusfiber.xyz:80/live/srf1616/5eXeZw4tak/849303.ts",
-          "http://kalitemedya45.xyz:8080/nrr0770/nr.99/6276",
-          "http://nuhproxtv.shop:8080/zkn1887/cn.1908/6276",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/12868",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/15285",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/3711",
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/141825.m3u8",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/660244.ts"
         ]
       }
@@ -8328,9 +8498,13 @@
       "qualities": {}
     },
     "Blue Sport 8 Live": {
-      "id": null,
+      "id": 879494601,
       "logo": null,
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/198711.m3u8"
+        ]
+      }
     },
     "ŠTV 2": {
       "id": null,
@@ -8372,12 +8546,13 @@
     },
     "Abu Dhabi Sports 2": {
       "id": 963184142,
-      "logo": null,
+      "logo": "https://i.imgur.com/9q8gFsq.png",
       "qualities": {
         "HD": [
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/11311.m3u8",
           "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/3523.m3u8",
-          "http://supersonictv.live:8080/Keyonna123/Keyonna123/84119",
-          "http://supersonictv.live:8080/Ramsey123/Ramsey123/84119",
+          "http://yn83wvfx.k2sfsc.xyz:80/live/Ange830X/Aapaeywtt122/1227511.ts",
+          "https://admn-live-cdn-lb.starzplayarabia.com/out/v1/admn_tv_enc/abudhabi_sports_2/abudhabi_sports_2_hls_nd/index.m3u8",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/309007.ts"
         ]
       }
@@ -8436,9 +8611,13 @@
       "qualities": {}
     },
     "Blue Sport 1 Live": {
-      "id": null,
+      "id": 876742082,
       "logo": null,
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/198704.m3u8"
+        ]
+      }
     },
     "on.cc": {
       "id": null,
@@ -8472,8 +8651,8 @@
         "HD": [
           "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/3269",
           "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/98396",
-          "http://io-pro.live:8080/8241899486046784/8241899486046784/322989",
-          "http://sinlimitestv.com:8080/Jamespuyqet56/uFqQFY45Fb/385226",
+          "http://streamiptvuk.com:80/Robert63/11223344/202493",
+          "http://streamiptvuk.com:80/Robert63/11223344/202531",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/661248.ts"
         ]
       }
@@ -8494,9 +8673,17 @@
       "qualities": {}
     },
     "Arena Sport 1 Premium": {
-      "id": null,
-      "logo": null,
-      "qualities": {}
+      "id": 1342572400,
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtj8IG8apiPX1Ji-FTmv_LVr4QXDaD3msVmGqu286FypubvKxnKBW55Ko1pXL8endnXo4&usqp=CAU",
+      "qualities": {
+        "HD": [
+          "http://4yzvds.revfor.com:80/live/amy1_nwxhqd/8en8zuxz/454420.m3u8",
+          "http://bntvs.com:2052/dejanm/302841048/8597",
+          "http://client.newborne.xyz:8080/ZP2MD4iCsIx/9TWnl5pFhL/85191",
+          "http://ip.xtremetv.eu:8000/hizirarkadashollanda/V39WCmGCgSp8/111995",
+          "http://sinlimitestv.com:8080/Jamespuyqet56/uFqQFY45Fb/465780"
+        ]
+      }
     },
     "DAZN USA": {
       "id": null,
@@ -8652,13 +8839,13 @@
     },
     "Dubai Sports 1": {
       "id": 633996514,
-      "logo": null,
+      "logo": "https://statres.cdn.mgmlcdn.com/analytics/uploads/71/5d934e3b33.png",
       "qualities": {
         "HD": [
-          "http://4kplus.info:80/30634808816548058196/8gnf7ng3hq/170303",
-          "http://4kplus.info:80/30634808816548058196/8gnf7ng3hq/50186",
-          "http://4kplus.info:80/30634808816548058196/8gnf7ng3hq/625806",
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/11327.m3u8",
+          "http://supersonictv.live:8080/Keyonna123/Keyonna123/84123",
           "http://supersonictv.live:8080/Ramsey123/Ramsey123/84123",
+          "http://yn83wvfx.k2sfsc.xyz:80/live/Ange830X/Aapaeywtt122/1217294.ts",
           "http://yn83wvfx.k2sfsc.xyz:80/live/Ange830X/Aapaeywtt122/781295.ts"
         ]
       }
@@ -8803,9 +8990,14 @@
       "qualities": {}
     },
     "Dubai Sports 2": {
-      "id": null,
-      "logo": null,
-      "qualities": null
+      "id": 634062051,
+      "logo": "https://statres.cdn.mgmlcdn.com/analytics/uploads/71/5d934d8aa9.png",
+      "qualities": {
+        "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/6625",
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/11328.m3u8"
+        ]
+      }
     },
     "MAX Sport 2": {
       "id": 346162033,
@@ -8873,18 +9065,25 @@
     "Play Sports 4": {
       "id": 558564502,
       "logo": null,
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://fastrunner.live:8080/LXdVGQ2ulN/2YV8Pnu7e9/128271",
+          "http://fastrunner.live:8080/LXdVGQ2ulN/2YV8Pnu7e9/128272",
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/128271.m3u8",
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/128272.m3u8"
+        ]
+      }
     },
     "ON Sports": {
       "id": 246350665,
       "logo": null,
       "qualities": {
         "HD": [
-          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/279405",
-          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/32713.m3u8",
-          "http://vipneeene.top:8080/VIP018641761287366102/f76c1d0de886/154464",
-          "http://vipwettbornwet.top:8080/VIP019961765302530157/983f6c19d52b/154464",
-          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/638024.ts"
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/145266",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/145267",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/145268",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/149893",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/149899"
         ]
       }
     },
@@ -8893,11 +9092,11 @@
       "logo": "https://raw.githubusercontent.com/a1xmedia/m3u/refs/heads/main/img/TNTS1.png",
       "qualities": {
         "HD": [
-          "https://a1xs.vip/8000021",
-          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/148.ts",
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/177843.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/211.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/9399.ts",
-          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/9722.ts"
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/9722.ts",
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/98866.ts"
         ]
       }
     },
@@ -8950,10 +9149,9 @@
       "logo": "https://docdog.top/logo/countries/germany/new/SKY_SPORT_AUSTRIA_5_HD.png",
       "qualities": {
         "HD": [
-          "http://europe.siriusfiber.xyz:80/live/srf1616/5eXeZw4tak/861830.ts",
-          "http://europe.siriusfiber.xyz:80/live/srf1616/5eXeZw4tak/861831.ts",
-          "http://europe.siriusfiber.xyz:80/live/srf1616/5eXeZw4tak/863375.ts",
-          "http://noprnsbwobb.top:8080/8561767661717/nj2r7g2he52n/61455",
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/105165.m3u8",
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/231999.m3u8",
+          "http://roi-tv.net:9000/live/total.iptv/Skype-18-11-2019-TOTAL.TV/7630.m3u",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/659452.ts"
         ]
       }
@@ -8968,11 +9166,11 @@
       "logo": null,
       "qualities": {
         "HD": [
-          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/169989",
           "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/229950",
           "http://kalitemedya45.xyz:8080/nrr0770/nr.99/201076",
           "http://nuhproxtv.shop:8080/zkn1887/cn.1908/201076",
-          "http://tanzanyanuh.xyz:8080/cm1202/cm00xyy/201076"
+          "http://tanzanyanuh.xyz:8080/cm1202/cm00xyy/201076",
+          "http://yrtds0911.xyz:8080/mhm7451/bh.14032025/201076"
         ]
       }
     },
@@ -8992,7 +9190,14 @@
     "Polsat Sport Extra 2": {
       "id": 1317013282,
       "logo": "[",
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/26022",
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/285653.m3u8",
+          "http://client.more-itv.com:8080/live/evaristo/KfVGCBXBUNtF/46158.m3u8",
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/660412.ts"
+        ]
+      }
     },
     "KTV Sport": {
       "id": 241828654,
@@ -9056,6 +9261,8 @@
       "logo": "[",
       "qualities": {
         "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/3670",
+          "http://fastrunner.live:8080/LXdVGQ2ulN/2YV8Pnu7e9/128381",
           "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/128381.m3u8",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/659508.ts"
         ]
@@ -9105,11 +9312,11 @@
       "logo": "http://live.phenixiptv.com:8080/images/M93xvYxi2uZNKkK0Lijik9shqWPKGc5zfW6GkyqP_Xf5g-d9bHFpdtsS6uKsxDNV8kVVCynOC_sbjB0YeaVKug.png",
       "qualities": {
         "HD": [
-          "http://europe.siriusfiber.xyz:80/live/srf1616/5eXeZw4tak/862268.ts",
-          "http://europe.siriusfiber.xyz:80/live/srf1616/5eXeZw4tak/863295.ts",
-          "http://europe.siriusfiber.xyz:80/live/srf1616/5eXeZw4tak/863296.ts",
-          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/73829.m3u8",
-          "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/439493.ts"
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/190986",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/190987",
+          "http://rey-premium.ddns.net:80/DPVEduardoEspa/Espa020828/439493.ts",
+          "http://streamiptvuk.com:80/Robert63/11223344/128651",
+          "http://totalplay.site:80/almacosta1/nmAMNbMftq/439493.m3u8"
         ]
       }
     },
@@ -9122,7 +9329,7 @@
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/224078.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/224475.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/415364.ts",
-          "https://starshare.net:443/movie/CVCVCVCV/CV1CV1CV1/10492.mp4"
+          "https://starshare.net:443/movie/CVCVCVCV/CV1CV1CV1/57493.mp4"
         ]
       }
     },
@@ -9147,7 +9354,11 @@
     "JOJ Sport": {
       "id": 233112348,
       "logo": null,
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/166015"
+        ]
+      }
     },
     "Premier Sport 2": {
       "id": 760546655,
@@ -9203,7 +9414,7 @@
       "logo": "[",
       "qualities": {
         "HD": [
-          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/145316",
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/10667",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/145118.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/4058.ts",
           "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/423724.ts",
@@ -9320,11 +9531,11 @@
       "logo": "https://i.ibb.co/HK8zTCf/tabii-logo-D1-B3-E86673-seeklogo-com.png",
       "qualities": {
         "HD": [
-          "http://europe.siriusfiber.xyz:80/live/srf1616/5eXeZw4tak/866494.ts",
-          "http://europe.siriusfiber.xyz:80/live/srf1616/5eXeZw4tak/866495.ts",
-          "http://europe.siriusfiber.xyz:80/live/srf1616/5eXeZw4tak/866497.ts",
-          "http://europe.siriusfiber.xyz:80/live/srf1616/5eXeZw4tak/866503.ts",
-          "http://europe.siriusfiber.xyz:80/live/srf1616/5eXeZw4tak/866505.ts"
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/125274.m3u8",
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/125276.m3u8",
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/125277.m3u8",
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/125278.m3u8",
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/125282.m3u8"
         ]
       }
     },
@@ -9550,9 +9761,14 @@
       "qualities": {}
     },
     "Play Sports 5": {
-      "id": null,
+      "id": 558630039,
       "logo": null,
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://fastrunner.live:8080/LXdVGQ2ulN/2YV8Pnu7e9/128270",
+          "http://plus.newdns.world:8080/live/OduLarge/UtKalQ6Vc7/128270.m3u8"
+        ]
+      }
     },
     "Nova Sport 2 CZ": {
       "id": null,
@@ -9570,9 +9786,13 @@
       "qualities": null
     },
     "WOWOW Prime": {
-      "id": null,
+      "id": 358089665,
       "logo": null,
-      "qualities": {}
+      "qualities": {
+        "HD": [
+          "http://akselis.club:8080/eh4E44eHA6WM/a5JAzgdeFPAE/161179"
+        ]
+      }
     },
     "WOWOW Cinema": {
       "id": null,
@@ -9882,7 +10102,7 @@
     "Campeones TV": {
       "id": null,
       "logo": null,
-      "qualities": null
+      "qualities": {}
     },
     "Sky Sport 1/HD": {
       "id": null,
@@ -9932,7 +10152,7 @@
     "NicaSports": {
       "id": null,
       "logo": null,
-      "qualities": null
+      "qualities": {}
     },
     "113 mio Sports 3": {
       "id": null,
@@ -9975,6 +10195,52 @@
       "qualities": null
     },
     "SporTV 3": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Flow Sports": {
+      "id": 408093764,
+      "logo": null,
+      "qualities": {
+        "HD": [
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/154099.ts",
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/154267.ts",
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/154268.ts",
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/154269.ts",
+          "https://starshare.net:443/live/CVCVCVCV/CV1CV1CV1/154270.ts"
+        ]
+      }
+    },
+    "Vamos": {
+      "id": 97452551,
+      "logo": "https://image.tmdb.org/t/p/w300/yPMRsLakrUzyD4NFs5faJCtyCHM.jpg",
+      "qualities": {
+        "HD": [
+          "http://chavedelta.site:80/movie/696307678795/767648388963/16095859.mp4",
+          "http://chavedelta.site:80/movie/696307678795/767648388963/16098465.mp4",
+          "http://chavedelta.site:80/movie/696307678795/767648388963/16106262.mp4",
+          "http://chavedelta.site:80/movie/696307678795/767648388963/16108803.mp4",
+          "http://chavedelta.site:80/movie/696307678795/767648388963/16108804.mp4"
+        ]
+      }
+    },
+    "Movistar Liga de Campeones 11": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "We Sport Moldova": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Blue Sport 13 Live": {
+      "id": null,
+      "logo": null,
+      "qualities": null
+    },
+    "Cosmote Sport 6 HD": {
       "id": null,
       "logo": null,
       "qualities": null
