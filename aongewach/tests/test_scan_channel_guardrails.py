@@ -42,7 +42,39 @@ class ScanChannelGuardrailsTests(unittest.TestCase):
         self.assertIsNone(scanner._find_target_match("Foxtel Sports"))
         self.assertIsNone(scanner._find_target_match("Zone Premium HD"))
         self.assertEqual("fox", scanner._find_target_match("FOX HD"))
-        self.assertEqual("one", scanner._find_target_match("One Sports"))
+        self.assertEqual("one", scanner._find_target_match("One HD"))
+        self.assertIsNone(scanner._find_target_match("One Sports"))
+
+    @mock.patch("scan_sports_channels.shutil.which", return_value="ffprobe")
+    def test_geo_prefix_is_ignored_but_numeric_suffix_is_not(self, _which):
+        scanner = SportsScanner(target_channels=["Canal+ Sport", "RTL"], allow_ffmpeg_fallback=False)
+        self.assertEqual("canal+ sport", scanner._find_target_match("AF - CANAL+ SPORT FHD"))
+        self.assertEqual("rtl", scanner._find_target_match("NL - RTL 4K"))
+        self.assertIsNone(scanner._find_target_match("AF - CANAL+ SPORT 2"))
+        self.assertIsNone(scanner._find_target_match("NL - RTL 7 4K"))
+
+    @mock.patch("scan_sports_channels.shutil.which", return_value="ffprobe")
+    def test_sport24_and_sky_sport24_do_not_cross_match(self, _which):
+        scanner = SportsScanner(
+            target_channels=["Sport 24", "Sky Sport 24"],
+            allow_ffmpeg_fallback=False,
+        )
+        self.assertEqual("sky sport 24", scanner._find_target_match("IT - SKY SPORT 24 UHD"))
+        self.assertEqual("sport 24", scanner._find_target_match("UK - SPORT 24 HD"))
+        scanner_only_short = SportsScanner(target_channels=["Sport 24"], allow_ffmpeg_fallback=False)
+        self.assertIsNone(scanner_only_short._find_target_match("IT - SKY SPORT 24 UHD"))
+
+    @mock.patch("scan_sports_channels.shutil.which", return_value="ffprobe")
+    def test_event_only_feed_names_are_rejected(self, _which):
+        scanner = SportsScanner(
+            target_channels=["Vidio", "TNT Sports", "Sky Sports Main Event"],
+            allow_ffmpeg_fallback=False,
+        )
+        self.assertIsNone(scanner._find_target_match("UK - VIDIO LIVE EVENTS | 15"))
+        self.assertIsNone(
+            scanner._find_target_match("D+ (UK) Events 47: TNT Sports Reload | Wed 31 Jul 20:45")
+        )
+        self.assertEqual("sky sports main event", scanner._find_target_match("UK: SKY SPORTS MAIN EVENT UHD"))
 
     def test_min_target_length_guard(self):
         payload = {

@@ -62,6 +62,147 @@ VOD_NAME_RE = re.compile(
     re.IGNORECASE,
 )
 MIN_TARGET_LENGTH = 3
+MATCH_TOKEN_RE = re.compile(r"[a-z0-9]+")
+QUALITY_PLUS_SUFFIX_RE = re.compile(r"\b(4k|uhd|fhd|hd|sd)\+", re.IGNORECASE)
+GEO_TAG_PREFIX_RE = re.compile(r"^\s*\[\s*(?P<code>[A-Za-z]{2,4})\s*\]\s*")
+GEO_DELIM_PREFIX_RE = re.compile(
+    r"^\s*(?P<code1>[A-Za-z]{2,4})(?:\s*:\s*(?P<code2>[A-Za-z]{2,4}))?\s*[-:|]\s*"
+)
+
+GEO_PREFIX_CODES = frozenset(
+    {
+        "ae",
+        "af",
+        "al",
+        "alb",
+        "ar",
+        "at",
+        "au",
+        "ba",
+        "bd",
+        "be",
+        "bg",
+        "bh",
+        "br",
+        "ca",
+        "ch",
+        "cl",
+        "cn",
+        "co",
+        "cr",
+        "cy",
+        "cz",
+        "de",
+        "dk",
+        "do",
+        "dz",
+        "ec",
+        "eg",
+        "epl",
+        "es",
+        "fi",
+        "fr",
+        "gb",
+        "gh",
+        "gr",
+        "hk",
+        "hn",
+        "hr",
+        "hu",
+        "id",
+        "ie",
+        "il",
+        "in",
+        "iq",
+        "ir",
+        "it",
+        "jm",
+        "jo",
+        "jp",
+        "ke",
+        "kh",
+        "kr",
+        "kw",
+        "kz",
+        "la",
+        "lat",
+        "lb",
+        "lk",
+        "lt",
+        "lu",
+        "ly",
+        "ma",
+        "mk",
+        "mm",
+        "mx",
+        "my",
+        "ng",
+        "nl",
+        "no",
+        "np",
+        "nz",
+        "om",
+        "pa",
+        "pe",
+        "ph",
+        "pk",
+        "pl",
+        "psl",
+        "pt",
+        "py",
+        "qa",
+        "ro",
+        "rs",
+        "ru",
+        "sa",
+        "sd",
+        "se",
+        "sg",
+        "si",
+        "sk",
+        "sv",
+        "sy",
+        "th",
+        "tn",
+        "tr",
+        "tt",
+        "tw",
+        "tz",
+        "ua",
+        "ug",
+        "uk",
+        "us",
+        "uy",
+        "ve",
+        "vn",
+        "za",
+    }
+)
+
+QUALITY_SUFFIX_TOKENS = frozenset(
+    {
+        "4k",
+        "uhd",
+        "fhd",
+        "hd",
+        "sd",
+        "2160p",
+        "1080p",
+        "720p",
+        "576p",
+        "540p",
+        "480p",
+        "360p",
+        "hevc",
+        "h264",
+        "h265",
+        "raw",
+        "ultra",
+        "hq",
+        "lq",
+    }
+)
+BACKUP_SUFFIX_TOKENS = frozenset({"backup", "bkp", "alt", "server", "srv", "feed", "link", "multi", "test"})
 
 
 def is_non_live_m3u_entry(group_title: str, channel_name: str, url: str) -> bool:
@@ -90,6 +231,62 @@ def is_probable_live_stream_url(url: str) -> bool:
     if NON_LIVE_URL_RE.search(cleaned):
         return False
     return True
+
+
+def _strip_geo_prefixes(stream_name: str) -> str:
+    """Drop leading geo tags like '[UK]' or 'NL -' before channel-name matching."""
+    cleaned = (stream_name or "").strip()
+    if not cleaned:
+        return ""
+
+    while cleaned:
+        tag_match = GEO_TAG_PREFIX_RE.match(cleaned)
+        if tag_match:
+            code = tag_match.group("code").lower()
+            if code in GEO_PREFIX_CODES:
+                cleaned = cleaned[tag_match.end():].lstrip()
+                continue
+
+        delim_match = GEO_DELIM_PREFIX_RE.match(cleaned)
+        if delim_match:
+            code1 = delim_match.group("code1").lower()
+            code2 = (delim_match.group("code2") or "").lower()
+            if code1 in GEO_PREFIX_CODES and (not code2 or code2 in GEO_PREFIX_CODES):
+                cleaned = cleaned[delim_match.end():].lstrip()
+                continue
+
+        break
+
+    return cleaned
+
+
+def _channel_match_tokens(name: str, strip_geo_prefix: bool = False) -> Tuple[str, ...]:
+    """Tokenize channel names into strict alnum tokens with '+' normalized."""
+    cleaned = _strip_geo_prefixes(name) if strip_geo_prefix else (name or "").strip()
+    if not cleaned:
+        return tuple()
+
+    cleaned = QUALITY_PLUS_SUFFIX_RE.sub(r"\1", cleaned)
+    cleaned = cleaned.replace("+", " plus ")
+    return tuple(MATCH_TOKEN_RE.findall(cleaned.lower()))
+
+
+def _has_only_allowed_suffix_tokens(tokens: Tuple[str, ...]) -> bool:
+    """Allow only quality or backup-style suffixes after an exact channel-name match."""
+    idx = 0
+    while idx < len(tokens):
+        token = tokens[idx]
+        if token in QUALITY_SUFFIX_TOKENS:
+            idx += 1
+            continue
+        if token in BACKUP_SUFFIX_TOKENS:
+            idx += 1
+            while idx < len(tokens) and tokens[idx].isdigit():
+                idx += 1
+            continue
+        return False
+    return True
+
 
 def infer_server_type(url: str, declared_type: Optional[str] = None) -> str:
     """Infer server scan mode from URL + optional declared type."""
@@ -448,12 +645,14 @@ class SportsScanner:
 
         # Pre-compile target patterns with non-alnum boundaries.
         self.target_patterns: Dict[str, re.Pattern] = {}
+        self.target_tokens: Dict[str, Tuple[str, ...]] = {}
         for target in self.targets:
             escaped = re.escape(target)
             self.target_patterns[target] = re.compile(
                 r"(?<![a-z0-9])" + escaped + r"(?![a-z0-9])",
                 re.IGNORECASE,
             )
+            self.target_tokens[target] = _channel_match_tokens(target, strip_geo_prefix=False)
 
         # Fast target-matching index:
         # - targets length < 3 are checked directly
@@ -555,36 +754,54 @@ class SportsScanner:
 
     def _find_target_match(self, stream_name: str) -> Optional[str]:
         """
-        Check if stream name contains any target channel using boundary-aware regex matching.
+        Match using strict channel-name rules:
+        - ignore leading geo prefixes in stream labels
+        - require target to match from token 0
+        - allow only quality/backup suffix tokens
+
+        We still use boundary regex + trigram indexing as fast prefilters.
         This is the inner loop hot-path.
         """
         name_lower = stream_name.lower()
         if not name_lower:
             return None
 
-        if not self.use_indexed_target_match:
-            for target in self.targets:
-                if self.target_patterns[target].search(name_lower):
-                    return target
-            return None
+        if self.use_indexed_target_match:
+            candidate_indices = set(self.short_target_indices)
 
-        candidate_indices = set(self.short_target_indices)
+            # Gather candidates for targets length >= 3 via trigram anchors.
+            if len(name_lower) >= 3:
+                for i in range(len(name_lower) - 2):
+                    gram = name_lower[i:i + 3]
+                    anchored = self.anchor_to_target_indices.get(gram)
+                    if anchored:
+                        candidate_indices.update(anchored)
 
-        # Gather candidates for targets length >= 3 via trigram anchors.
-        if len(name_lower) >= 3:
-            for i in range(len(name_lower) - 2):
-                gram = name_lower[i:i + 3]
-                anchored = self.anchor_to_target_indices.get(gram)
-                if anchored:
-                    candidate_indices.update(anchored)
+            if not candidate_indices:
+                return None
+            candidate_order = sorted(candidate_indices)
+        else:
+            candidate_order = range(self.total_targets)
 
-        if not candidate_indices:
+        stream_tokens = _channel_match_tokens(stream_name, strip_geo_prefix=True)
+        if not stream_tokens:
             return None
 
         # Preserve existing behavior: return first target by original target order.
-        for idx in sorted(candidate_indices):
+        for idx in candidate_order:
             target = self.targets[idx]
-            if self.target_patterns[target].search(name_lower):
+            if not self.target_patterns[target].search(name_lower):
+                continue
+
+            target_tokens = self.target_tokens.get(target)
+            if not target_tokens:
+                continue
+            if len(stream_tokens) < len(target_tokens):
+                continue
+            if stream_tokens[:len(target_tokens)] != target_tokens:
+                continue
+            suffix_tokens = stream_tokens[len(target_tokens):]
+            if _has_only_allowed_suffix_tokens(suffix_tokens):
                 return target
         return None
 
