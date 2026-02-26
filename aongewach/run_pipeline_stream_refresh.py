@@ -271,6 +271,7 @@ def main() -> int:
     scan_args = [
         args.channels_file,
         "--preserve-existing-streams",
+        "--prune-non-target-channels",
         "--max-working-streams-per-channel",
         str(args.max_working_streams_per_channel),
         "--test-workers",

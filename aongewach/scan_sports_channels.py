@@ -49,6 +49,47 @@ DOMAIN_RE = re.compile(
     r"\b[a-z0-9][a-z0-9.-]{0,251}\.(com|net|org|io|tv|co|app|gg|me|fm|uk|us|au|de|fr)\b",
     re.IGNORECASE,
 )
+NON_LIVE_URL_RE = re.compile(r"/(?:movie|series|vod)/", re.IGNORECASE)
+GROUP_TITLE_RE = re.compile(r'group-title="([^"]*)"', re.IGNORECASE)
+VOD_GROUP_RE = re.compile(
+    r"\b(vod|movie|movies|film|films|cinema|series|episode|episodes|"
+    r"season|seasons|archive|catchup|replay|ppv\s+archive)\b",
+    re.IGNORECASE,
+)
+VOD_URL_PATH_RE = re.compile(r"^/(?:movie|series|vod)/", re.IGNORECASE)
+VOD_NAME_RE = re.compile(
+    r"(S\d{1,2}E\d{1,2}|Season\s+\d+|Episode\s+\d+|\(\d{4}\))",
+    re.IGNORECASE,
+)
+MIN_TARGET_LENGTH = 3
+
+
+def is_non_live_m3u_entry(group_title: str, channel_name: str, url: str) -> bool:
+    group_text = str(group_title or "").strip()
+    if group_text and VOD_GROUP_RE.search(group_text):
+        return True
+
+    parsed_path = urlparse(str(url or "").strip()).path
+    if parsed_path and VOD_URL_PATH_RE.search(parsed_path):
+        return True
+
+    name_text = str(channel_name or "").strip()
+    if not group_text and name_text and VOD_NAME_RE.search(name_text):
+        return True
+
+    return False
+
+
+def is_probable_live_stream_url(url: str) -> bool:
+    cleaned = (url or "").strip()
+    if not cleaned:
+        return False
+    parsed_path = urlparse(cleaned).path
+    if parsed_path and VOD_URL_PATH_RE.search(parsed_path):
+        return False
+    if NON_LIVE_URL_RE.search(cleaned):
+        return False
+    return True
 
 def infer_server_type(url: str, declared_type: Optional[str] = None) -> str:
     """Infer server scan mode from URL + optional declared type."""
@@ -57,6 +98,11 @@ def infer_server_type(url: str, declared_type: Optional[str] = None) -> str:
     path = (parsed.path or "").lower()
     params = parse_qs(parsed.query)
     query_type = ((params.get("type") or [""])[0] or "").strip().lower()
+    has_xtream_creds = "username" in params and "password" in params
+
+    # Prefer API mode whenever Xtream credentials are available so we query live streams only.
+    if has_xtream_creds or declared in {"api", "xtream"}:
+        return "api"
 
     if path.endswith((".m3u", ".m3u8")):
         return "direct"
@@ -66,9 +112,6 @@ def infer_server_type(url: str, declared_type: Optional[str] = None) -> str:
         return "direct"
     if "githubusercontent.com" in (parsed.netloc or "").lower():
         return "direct"
-
-    if "username" in params and "password" in params:
-        return "api"
     return "direct"
 
 
@@ -289,6 +332,10 @@ class ChannelNormalizer:
     def __init__(self, similarity_threshold: float = 0.85):
         """Initialize with similarity threshold (0-1)."""
         self.similarity_threshold = similarity_threshold
+        self.quality_4k_re = re.compile(r"\b(4k|uhd|2160p?)\b", re.IGNORECASE)
+        self.quality_fhd_re = re.compile(r"\b(fhd|full\s*hd|1080p?)\b", re.IGNORECASE)
+        self.quality_hd_re = re.compile(r"\b(hd|720p?)\b", re.IGNORECASE)
+        self.quality_sd_re = re.compile(r"\b(sd|480p?|360p?)\b", re.IGNORECASE)
         
         # Quality patterns
         self.quality_regex = re.compile(
@@ -312,13 +359,13 @@ class ChannelNormalizer:
         """Extract quality tier from channel name."""
         name_lower = name.lower()
         
-        if re.search(r'\\b(4k|uhd|2160p?)\\b', name_lower):
+        if self.quality_4k_re.search(name_lower):
             return '4K'
-        elif re.search(r'\\b(fhd|1080p?)\\b', name_lower):
+        elif self.quality_fhd_re.search(name_lower):
             return 'FHD'
-        elif re.search(r'\\b(hd|720p?)\\b', name_lower):
+        elif self.quality_hd_re.search(name_lower):
             return 'HD'
-        elif re.search(r'\\b(sd|480p?|360p?)\\b', name_lower):
+        elif self.quality_sd_re.search(name_lower):
             return 'SD'
         else:
             return 'HD'  # Default
@@ -336,10 +383,10 @@ class ChannelNormalizer:
             cleaned = pattern.sub(' ', cleaned)
         
         # Clean whitespace
-        cleaned = re.sub(r'\\s+', ' ', cleaned).strip()
+        cleaned = re.sub(r'\s+', ' ', cleaned).strip()
         
         # Remove empty brackets
-        cleaned = re.sub(r'\\[\\s*\\]|\\(\\s*\\)|\\{\\s*\\}', '', cleaned)
+        cleaned = re.sub(r'\[\s*\]|\(\s*\)|\{\s*\}', '', cleaned)
         
         # Final trim of special chars
         cleaned = cleaned.strip(' -_#|:;*+=~()[]{}.,\'"\\/')
@@ -399,6 +446,15 @@ class SportsScanner:
         self.total_targets = len(self.targets)
         self.use_indexed_target_match = self.total_targets > 128
 
+        # Pre-compile target patterns with non-alnum boundaries.
+        self.target_patterns: Dict[str, re.Pattern] = {}
+        for target in self.targets:
+            escaped = re.escape(target)
+            self.target_patterns[target] = re.compile(
+                r"(?<![a-z0-9])" + escaped + r"(?![a-z0-9])",
+                re.IGNORECASE,
+            )
+
         # Fast target-matching index:
         # - targets length < 3 are checked directly
         # - targets length >= 3 use a selected trigram anchor
@@ -452,6 +508,8 @@ class SportsScanner:
             'channels_cleared_no_working_streams': 0,
             'channels_seeded_from_existing': 0,
             'streams_seeded_from_existing': 0,
+            'streams_skipped_non_live_url': 0,
+            'channels_pruned_non_target': 0,
         }
 
         if self.preserve_existing_streams:
@@ -497,7 +555,7 @@ class SportsScanner:
 
     def _find_target_match(self, stream_name: str) -> Optional[str]:
         """
-        Check if stream name contains any target channel (Substring Match).
+        Check if stream name contains any target channel using boundary-aware regex matching.
         This is the inner loop hot-path.
         """
         name_lower = stream_name.lower()
@@ -506,7 +564,7 @@ class SportsScanner:
 
         if not self.use_indexed_target_match:
             for target in self.targets:
-                if target in name_lower:
+                if self.target_patterns[target].search(name_lower):
                     return target
             return None
 
@@ -526,7 +584,7 @@ class SportsScanner:
         # Preserve existing behavior: return first target by original target order.
         for idx in sorted(candidate_indices):
             target = self.targets[idx]
-            if target in name_lower:
+            if self.target_patterns[target].search(name_lower):
                 return target
         return None
 
@@ -581,6 +639,9 @@ class SportsScanner:
 
                     url = raw_url.strip()
                     if not url:
+                        continue
+                    if not is_probable_live_stream_url(url):
+                        self.stats['streams_skipped_non_live_url'] += 1
                         continue
                     if url in self.channel_urls[display_name]:
                         continue
@@ -821,6 +882,10 @@ class SportsScanner:
             url = url.strip()
             if not url:
                 continue
+            if not is_probable_live_stream_url(url):
+                with self.lock:
+                    self.stats['streams_skipped_non_live_url'] += 1
+                continue
 
             with self.lock:
                 if url in self.channel_urls[final_name]:
@@ -940,10 +1005,32 @@ class SportsScanner:
                     name_match = re.search(r',([^,]*)$', line)
                     if name_match:
                         current_info['name'] = name_match.group(1).strip()
+
+                    group_title = ""
+                    group_match = GROUP_TITLE_RE.search(line)
+                    if group_match:
+                        group_title = group_match.group(1).strip()
+                        if group_title:
+                            current_info['group_title'] = group_title
+
+                    if is_non_live_m3u_entry(
+                        group_title=group_title,
+                        channel_name=current_info.get('name', ''),
+                        url="",
+                    ):
+                        current_info = {}
+                        continue
                 
                 elif not line.startswith('#'):
                     # It's a URL
                     if 'name' in current_info:
+                        if is_non_live_m3u_entry(
+                            group_title=current_info.get('group_title', ''),
+                            channel_name=current_info.get('name', ''),
+                            url=line,
+                        ):
+                            current_info = {}
+                            continue
                         current_info['url'] = line
                         parsed_streams.append(current_info)
                         current_info = {} # Reset
@@ -1053,7 +1140,7 @@ class SportsScanner:
                     
         print(f"--- Scan complete. ---", flush=True)
 
-    def save(self, output_path: str) -> None:
+    def save(self, output_path: str, prune_non_target_channels: bool = False) -> None:
         """Save results to JSON (Merge with existing)."""
         
         # 1. Load Existing Data to preserve Manual/Previous entries
@@ -1143,8 +1230,21 @@ class SportsScanner:
         self.stats['channels_refreshed_from_tested_streams'] = refreshed_channels
         self.stats['channels_cleared_no_working_streams'] = emptied_channels
 
+        pruned_non_target = 0
+        if prune_non_target_channels:
+            target_set = set(self.targets)
+            to_remove = [
+                channel_name
+                for channel_name in list(output['channels'].keys())
+                if channel_name.lower() not in target_set
+            ]
+            for channel_name in to_remove:
+                del output['channels'][channel_name]
+            pruned_non_target = len(to_remove)
+            existing_name_by_lower = {name.lower(): name for name in output['channels'].keys()}
+        self.stats['channels_pruned_non_target'] = pruned_non_target
+
         # 3. Add missing channels from the current schedule as placeholders.
-        # Existing channels are never removed.
         found_names_lower = set(existing_name_by_lower.keys())
         
         missing_count = 0
@@ -1182,6 +1282,8 @@ class SportsScanner:
         print(f"  Channels completed at cap: {self.stats['channels_completed']}", flush=True)
         print(f"  Channels refreshed with tested streams: {self.stats['channels_refreshed_from_tested_streams']}", flush=True)
         print(f"  Channels cleared (no working streams): {self.stats['channels_cleared_no_working_streams']}", flush=True)
+        print(f"  Streams skipped as non-live URLs: {self.stats['streams_skipped_non_live_url']}", flush=True)
+        print(f"  Channels pruned as non-target: {self.stats['channels_pruned_non_target']}", flush=True)
         print(f"  Streams skipped during scan due to cap: {self.stats['streams_skipped_cap']}", flush=True)
         print(f"  Channels trimmed to cap in final output: {trimmed_channels}", flush=True)
         print(f"  Streams trimmed to cap in final output: {trimmed_urls}", flush=True)
@@ -1200,6 +1302,8 @@ def load_target_channels(schedule_file):
                 for channel in event.get('channels', []):
                     if channel:
                         clean_name = channel.strip()
+                        if len(clean_name) < MIN_TARGET_LENGTH:
+                            continue
                         if not is_usable_channel_name(clean_name):
                             continue
                         if clean_name.lower() == 'laligatv': clean_name = 'Laliga Tv'
@@ -1232,6 +1336,11 @@ def main():
     parser.add_argument('--test-retry-delay', type=float, default=TEST_RETRY_DELAY_SECONDS, help='Delay between ffprobe retries')
     parser.add_argument('--no-ffmpeg-fallback', action='store_true', help='Disable ffmpeg fallback test')
     parser.add_argument('--test-user-agent', default=DEFAULT_USER_AGENT, help='HTTP User-Agent for ffprobe/ffmpeg')
+    parser.add_argument(
+        '--prune-non-target-channels',
+        action='store_true',
+        help='Remove channels from output DB that are not present in current schedule targets.',
+    )
     args = parser.parse_args()
     
     # 1. Load Targets
@@ -1275,7 +1384,7 @@ def main():
     scanner.scan_all(servers)
     
     # 5. Save
-    scanner.save(args.output_file)
+    scanner.save(args.output_file, prune_non_target_channels=args.prune_non_target_channels)
 
 
 if __name__ == '__main__':

@@ -215,6 +215,7 @@ def main() -> int:
         "Refreshing Working Links for Today's Schedule Channels",
         extra_args=[
             "channels.json",
+            "--prune-non-target-channels",
             "--max-working-streams-per-channel",
             str(args.max_working_streams_per_channel),
             "--test-workers",

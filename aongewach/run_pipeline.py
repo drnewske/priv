@@ -184,6 +184,7 @@ def main():
         "Scanning Playlists for Channels in Schedule (Inline Stream Validation)",
         extra_args=[
             "channels.json",
+            "--prune-non-target-channels",
             "--max-working-streams-per-channel",
             "5",
             "--test-workers",

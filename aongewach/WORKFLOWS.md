@@ -15,7 +15,7 @@ Workflow: `update_schedule.yml`
 2. Merges FANZO + WITM (`merge_fanzo_witm.py`) by exact event matching.
 3. Composes final `weekly_schedule.json` (`compose_weekly_schedule.py`):
    soccer from LiveSportTV, non-soccer from FANZO/WITM.
-4. Scans IPTV playlists for channels found in the composed schedule (`scan_sports_channels.py`), tests each matched stream URL inline with ffprobe/ffmpeg, and keeps only alive streams.
+4. Scans IPTV playlists for channels found in the composed schedule (`scan_sports_channels.py`), uses boundary-aware target matching, prefers Xtream live API endpoints when credentials are present, tests each matched stream URL inline with ffprobe/ffmpeg, rejects non-live VOD/series URL paths (group title + URL path + name heuristics for direct M3U), and prunes non-target channels from `channels.json`.
 5. Maps schedule channel names to stream channel IDs (`map_channels.py`) with no per-event channel cap.
 6. Outputs final JSON to `e104f869d64e3d41256d5398.json`.
 - Manual trigger: Actions -> "Update Weekly Schedule" -> "Run workflow"
@@ -75,5 +75,5 @@ Workflow: `update_schedule.yml`
 3. `scrape_schedule_witm.py --days 7 --output weekly_schedule_witm.json` (parallel block)
 4. `merge_fanzo_witm.py --fanzo weekly_schedule_fanzo.json --witm weekly_schedule_witm.json --output weekly_schedule_fanzo_enriched.json`
 5. `compose_weekly_schedule.py --livesporttv weekly_schedule_livesporttv.json --fanzo-witm weekly_schedule_fanzo_enriched.json --output weekly_schedule.json`
-6. `scan_sports_channels.py` -> updates `channels.json` using tested-alive streams (cap: 5 working streams/channel)
+6. `scan_sports_channels.py` -> updates `channels.json` using boundary-aware name matching + tested-alive streams (cap: 5 working streams/channel), skips non-live VOD/series URLs, and prunes non-target channels
 7. `map_channels.py` -> `e104f869d64e3d41256d5398.json` (final mapped output, uncapped)
