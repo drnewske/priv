@@ -666,6 +666,8 @@ class SportsScanner:
         # Channel storage: {original_target_name: {qualities: {quality: set()}, logo: str}}
         self.channels = defaultdict(lambda: {'qualities': defaultdict(set), 'logo': None})
         self.channel_urls = defaultdict(set)
+        self.channel_domains = defaultdict(set)
+        self.channel_quality_domains = defaultdict(lambda: defaultdict(set))
         self.channel_ids = {}
         self.normalizer = ChannelNormalizer(0)
         self.max_streams_per_channel = max(1, int(max_streams_per_channel))
@@ -814,6 +816,22 @@ class SportsScanner:
             self.completed_targets.add(channel_name)
             self.stats['channels_completed'] += 1
 
+    def _domain_key(self, url: str) -> str:
+        parsed = urlparse(url or "")
+        host = (parsed.hostname or parsed.netloc or "").strip().lower()
+        if host:
+            return host
+        cleaned = (url or "").strip().lower()
+        return f"url:{cleaned}" if cleaned else "url:unknown"
+
+    def _can_accept_domain_locked(self, channel_name: str, domain: str) -> bool:
+        domains = self.channel_domains[channel_name]
+        return domain in domains or len(domains) < self.max_streams_per_channel
+
+    def _can_accept_domain(self, channel_name: str, domain: str) -> bool:
+        with self.lock:
+            return self._can_accept_domain_locked(channel_name, domain)
+
     def _seed_existing_channels(self, existing_channels: Dict[str, Dict]) -> None:
         """Preload existing URLs so scans add/refill instead of rebuilding from scratch."""
         if not isinstance(existing_channels, dict) or not existing_channels:
@@ -849,8 +867,6 @@ class SportsScanner:
                     continue
 
                 for raw_url in raw_urls:
-                    if len(self.channel_urls[display_name]) >= self.max_streams_per_channel:
-                        break
                     if not isinstance(raw_url, str):
                         continue
 
@@ -863,13 +879,19 @@ class SportsScanner:
                     if url in self.channel_urls[display_name]:
                         continue
 
+                    domain = self._domain_key(url)
+                    if not self._can_accept_domain_locked(display_name, domain):
+                        self.stats['streams_skipped_cap'] += 1
+                        continue
+                    if domain in self.channel_quality_domains[display_name][quality]:
+                        continue
+
                     self.channel_urls[display_name].add(url)
+                    self.channel_domains[display_name].add(domain)
+                    self.channel_quality_domains[display_name][quality].add(domain)
                     self.channels[display_name]['qualities'][quality].add(url)
                     seeded_streams += 1
                     had_any = True
-
-                if len(self.channel_urls[display_name]) >= self.max_streams_per_channel:
-                    break
 
             if not had_any:
                 continue
@@ -881,7 +903,7 @@ class SportsScanner:
                 if logo and not self.channels[display_name]['logo']:
                     self.channels[display_name]['logo'] = logo
 
-            if len(self.channel_urls[display_name]) >= self.max_streams_per_channel:
+            if len(self.channel_domains[display_name]) >= self.max_streams_per_channel:
                 with self.lock:
                     self._mark_channel_complete_locked(display_name)
 
@@ -896,8 +918,8 @@ class SportsScanner:
 
     def _is_channel_complete(self, channel_name: str) -> bool:
         with self.lock:
-            urls = self.channel_urls.get(channel_name)
-            return len(urls) >= self.max_streams_per_channel if urls is not None else False
+            domains = self.channel_domains.get(channel_name)
+            return len(domains) >= self.max_streams_per_channel if domains is not None else False
 
     def _all_targets_complete(self) -> bool:
         with self.lock:
@@ -1019,14 +1041,15 @@ class SportsScanner:
         return ok
 
     def _apply_channel_cap(self, qualities: Dict[str, List[str]]) -> Tuple[Dict[str, List[str]], int]:
-        """Ensure no channel exceeds max_streams_per_channel across all qualities."""
+        """Ensure no channel exceeds max_streams_per_channel unique domains."""
         if not isinstance(qualities, dict):
             return {}, 0
 
         limited = {}
         seen_urls = set()
+        kept_domains = set()
+        kept_domain_by_quality = defaultdict(set)
         dropped = 0
-        kept_count = 0
         ordered_keys = [q for q in QUALITY_PRIORITY if q in qualities]
         ordered_keys.extend(sorted(q for q in qualities.keys() if q not in QUALITY_PRIORITY))
 
@@ -1043,12 +1066,18 @@ class SportsScanner:
                 if not url or url in seen_urls:
                     continue
 
-                if kept_count >= self.max_streams_per_channel:
+                domain = self._domain_key(url)
+                if domain in kept_domain_by_quality[quality]:
+                    dropped += 1
+                    continue
+
+                if domain not in kept_domains and len(kept_domains) >= self.max_streams_per_channel:
                     dropped += 1
                     continue
 
                 seen_urls.add(url)
-                kept_count += 1
+                kept_domains.add(domain)
+                kept_domain_by_quality[quality].add(domain)
                 limited_urls.append(url)
 
             if limited_urls:
@@ -1081,10 +1110,6 @@ class SportsScanner:
                 continue
 
             final_name = self._get_display_name(matched_target_lower)
-            if self._is_channel_complete(final_name):
-                with self.lock:
-                    self.stats['streams_skipped_cap'] += 1
-                continue
 
             if api_instance:
                 stream_id = stream.get('stream_id')
@@ -1104,8 +1129,16 @@ class SportsScanner:
                     self.stats['streams_skipped_non_live_url'] += 1
                 continue
 
+            quality = self.normalizer.extract_quality(stream_name)
+            domain = self._domain_key(url)
+
             with self.lock:
                 if url in self.channel_urls[final_name]:
+                    continue
+                if not self._can_accept_domain_locked(final_name, domain):
+                    self.stats['streams_skipped_cap'] += 1
+                    continue
+                if domain in self.channel_quality_domains[final_name][quality]:
                     continue
 
             key = (final_name, url)
@@ -1117,7 +1150,8 @@ class SportsScanner:
                 {
                     'channel': final_name,
                     'stream_name': stream_name,
-                    'quality': self.normalizer.extract_quality(stream_name),
+                    'quality': quality,
+                    'domain': domain,
                     'logo': stream.get('stream_icon') or stream.get('logo'),
                     'url': url,
                 }
@@ -1133,7 +1167,8 @@ class SportsScanner:
 
         def _test_candidate(candidate: Dict[str, str]) -> Optional[Dict[str, str]]:
             channel_name = candidate['channel']
-            if self._is_channel_complete(channel_name):
+            domain = candidate['domain']
+            if not self._can_accept_domain(channel_name, domain):
                 with self.lock:
                     self.stats['streams_skipped_cap'] += 1
                 return None
@@ -1160,28 +1195,33 @@ class SportsScanner:
                 channel_name = candidate['channel']
                 url = candidate['url']
                 quality = candidate['quality']
+                domain = candidate['domain']
                 stream_logo = candidate['logo']
 
                 with self.lock:
                     channel_urls = self.channel_urls[channel_name]
                     if url in channel_urls:
                         continue
-                    if len(channel_urls) >= self.max_streams_per_channel:
+                    if not self._can_accept_domain_locked(channel_name, domain):
                         self.stats['streams_skipped_cap'] += 1
+                        continue
+                    if domain in self.channel_quality_domains[channel_name][quality]:
                         continue
 
                     self.channels[channel_name]['qualities'][quality].add(url)
                     channel_urls.add(url)
+                    self.channel_domains[channel_name].add(domain)
+                    self.channel_quality_domains[channel_name][quality].add(domain)
                     found_in_batch += 1
                     self.stats['channels_added'] += 1
 
                     if not self.channels[channel_name]['logo'] and stream_logo:
                         self.channels[channel_name]['logo'] = stream_logo
 
-                    if len(channel_urls) == self.max_streams_per_channel:
+                    if len(self.channel_domains[channel_name]) == self.max_streams_per_channel:
                         self._mark_channel_complete_locked(channel_name)
                         print(
-                            f"[CAP] Channel '{channel_name}' reached {self.max_streams_per_channel} working streams.",
+                            f"[CAP] Channel '{channel_name}' reached {self.max_streams_per_channel} source domains.",
                             flush=True,
                         )
 
@@ -1488,7 +1528,7 @@ class SportsScanner:
         print(f"  Total Channels in DB: {len(output['channels'])}", flush=True)
         print(f"  New/Updated in this scan: {len(self.channels)}", flush=True)
         print(f"  Missing (Added as null): {missing_count}", flush=True)
-        print(f"  Max streams/channel cap: {self.max_streams_per_channel}", flush=True)
+        print(f"  Max source domains/channel cap: {self.max_streams_per_channel}", flush=True)
         if self.preserve_existing_streams:
             print(f"  Seeded channels from existing DB: {self.stats['channels_seeded_from_existing']}", flush=True)
             print(f"  Seeded streams from existing DB: {self.stats['streams_seeded_from_existing']}", flush=True)
@@ -1545,7 +1585,7 @@ def main():
         '--max-working-streams-per-channel',
         type=int,
         default=MAX_STREAMS_PER_CHANNEL,
-        help='Hard cap of working streams to keep per channel',
+        help='Hard cap of source domains per channel (one domain can carry multiple quality variants)',
     )
     parser.add_argument('--test-workers', type=int, default=TEST_WORKERS, help='Parallel workers per playlist for stream testing')
     parser.add_argument('--test-timeout', type=int, default=TEST_TIMEOUT_SECONDS, help='Per-stream ffprobe timeout in seconds')

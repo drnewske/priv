@@ -76,6 +76,37 @@ class ScanChannelGuardrailsTests(unittest.TestCase):
         )
         self.assertEqual("sky sports main event", scanner._find_target_match("UK: SKY SPORTS MAIN EVENT UHD"))
 
+    @mock.patch("scan_sports_channels.shutil.which", return_value="ffprobe")
+    def test_domain_cap_allows_quality_children_from_same_domain(self, _which):
+        scanner = SportsScanner(
+            target_channels=["Sky Sports Main Event"],
+            max_streams_per_channel=2,  # cap is 2 domains
+            allow_ffmpeg_fallback=False,
+        )
+        streams = [
+            {"name": "Sky Sports Main Event HD", "url": "https://a.example/live/1.ts"},
+            {"name": "Sky Sports Main Event FHD", "url": "https://a.example/live/2.ts"},
+            {"name": "Sky Sports Main Event UHD", "url": "https://b.example/live/3.ts"},
+            {"name": "Sky Sports Main Event 4K", "url": "https://c.example/live/4.ts"},
+            {"name": "Sky Sports Main Event HD Backup 1", "url": "https://a.example/live/5.ts"},
+        ]
+
+        with mock.patch.object(scanner, "_validate_stream_url", return_value=True):
+            added = scanner.process_streams(streams, api_instance=None, source_label="unit")
+
+        self.assertEqual(3, added)  # a: HD + FHD, b: UHD/4K
+        self.assertEqual(2, len(scanner.channel_domains["Sky Sports Main Event"]))
+        self.assertTrue(scanner._is_channel_complete("Sky Sports Main Event"))
+
+        kept_urls = set()
+        for urls in scanner.channels["Sky Sports Main Event"]["qualities"].values():
+            kept_urls.update(urls)
+        self.assertIn("https://a.example/live/1.ts", kept_urls)
+        self.assertIn("https://a.example/live/2.ts", kept_urls)
+        self.assertIn("https://b.example/live/3.ts", kept_urls)
+        self.assertNotIn("https://c.example/live/4.ts", kept_urls)
+        self.assertNotIn("https://a.example/live/5.ts", kept_urls)
+
     def test_min_target_length_guard(self):
         payload = {
             "schedule": [
