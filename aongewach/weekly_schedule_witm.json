@@ -1,67 +1,11 @@
 {
-  "generated_at": "2026-02-26T12:55:13Z",
+  "generated_at": "2026-02-26T16:31:51Z",
   "source": "wheresthematch.com",
   "schedule": [
     {
       "date": "2026-02-26",
       "day": "Thursday",
       "events": [
-        {
-          "name": "West Indies v South Africa",
-          "start_time_iso": "2026-02-26T09:30:00Z",
-          "time": "09:30",
-          "sport": "Cricket",
-          "competition": "ICC T20 World Cup",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/cricket.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/cricket.gif",
-          "channels": [
-            "Sky Sports Cricket",
-            "Sky Sports Main Event",
-            "Sky Sports Ultra HDR"
-          ],
-          "home_team": "West Indies",
-          "away_team": "South Africa",
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Dubai Duty Free Tennis Championships",
-          "start_time_iso": "2026-02-26T10:00:00Z",
-          "time": "10:00",
-          "sport": "Tennis",
-          "competition": "ATP World Tour",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/tennis.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/tennis.gif",
-          "channels": [
-            "Sky Sports Tennis"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "South African Open",
-          "start_time_iso": "2026-02-26T10:30:00Z",
-          "time": "10:30",
-          "sport": "Golf",
-          "competition": "DP World Tour",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
-          "channels": [
-            "Sky Sports Golf"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
         {
           "name": "Cognizant Classic",
           "start_time_iso": "2026-02-26T11:45:00Z",
