@@ -37,6 +37,24 @@
           "extraction": "feed",
           "inspection_count": 1,
           "last_result": "ok"
+        },
+        "https://www.iptvcodes.online/2026/02/xtream-codes-iptv-m3u-playlists-27022026.html": {
+          "title": "XTREAM CODES & IPTV M3U PLAYLISTS 27/02/2026",
+          "url": "https://www.iptvcodes.online/2026/02/xtream-codes-iptv-m3u-playlists-27022026.html",
+          "scraped_at": "2026-02-27 06:48:38",
+          "links_found": 350,
+          "extraction": "feed",
+          "inspection_count": 1,
+          "last_result": "ok"
+        },
+        "https://www.iptvcodes.online/2026/02/xtream-codes-iptv-m3u-playlists-26022026_0542056013.html": {
+          "title": "XTREAM CODES & IPTV M3U PLAYLISTS 26/02/2026",
+          "url": "https://www.iptvcodes.online/2026/02/xtream-codes-iptv-m3u-playlists-26022026_0542056013.html",
+          "scraped_at": "2026-02-27 06:48:39",
+          "links_found": 267,
+          "extraction": "feed",
+          "inspection_count": 1,
+          "last_result": "ok"
         }
       }
     },
@@ -54,10 +72,10 @@
         "https://m3umax.blogspot.com/2026/02/m3u-link-iptv-25022026-list-of-32-m3u.html": {
           "title": "M3U Link IPTV 25/02/2026 – List of 32 M3U Link random host for Free",
           "url": "https://m3umax.blogspot.com/2026/02/m3u-link-iptv-25022026-list-of-32-m3u.html",
-          "scraped_at": "2026-02-26 06:57:23",
+          "scraped_at": "2026-02-27 06:48:39",
           "links_found": 128,
           "extraction": "feed",
-          "inspection_count": 1,
+          "inspection_count": 2,
           "last_result": "ok"
         }
       }
