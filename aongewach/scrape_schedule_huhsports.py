@@ -612,6 +612,49 @@ def build_payload(
     }
 
 
+def build_empty_fallback_payload(
+    url: str,
+    requested_start_date: dt.date,
+    requested_days: int,
+    attempted_urls: List[str],
+    fallback_source: str,
+    fallback_reason: str,
+) -> Dict[str, object]:
+    requested_dates = [requested_start_date + dt.timedelta(days=offset) for offset in range(max(1, requested_days))]
+    return {
+        "generated_at": dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
+        "source": "huhsports.com/tv-guide",
+        "url": url,
+        "league_count": 0,
+        "match_count": 0,
+        "match_count_with_channels": 0,
+        "unique_team_count": 0,
+        "unique_tv_name_count": 0,
+        "available_dates": [],
+        "requested_window": {
+            "start_date": requested_start_date.isoformat(),
+            "end_date": (requested_start_date + dt.timedelta(days=max(1, requested_days) - 1)).isoformat(),
+            "days": max(1, requested_days),
+        },
+        "date_probe": {
+            "week_window_exposed": False,
+            "base_available_dates": [],
+            "urls_attempted_count": len(attempted_urls),
+            "urls_attempted": attempted_urls,
+            "requested_dates_found": [],
+            "requested_dates_not_found": [date.isoformat() for date in requested_dates],
+            "probe_requests_used": 0,
+            "probe_rate_limit_hits": 0,
+            "probe_truncated": True,
+            "fallback_used": True,
+            "fallback_mode": "empty",
+            "fallback_source": fallback_source,
+            "fallback_reason": fallback_reason,
+        },
+        "matches": [],
+    }
+
+
 def load_fallback_payload(path: str) -> Optional[Dict[str, object]]:
     if not path or not os.path.exists(path):
         return None
@@ -749,22 +792,42 @@ def run(
             min_interval_seconds=min_request_interval_seconds,
         )
     except Exception as exc:
-        fallback_payload = load_fallback_payload(fallback_path)
-        if fallback_payload is None:
+        # Fail-open for transient fetch/rate-limit issues so the wider pipeline can proceed.
+        recoverable = isinstance(exc, (FetchError, requests.RequestException))
+        if not recoverable:
             raise
-        fallback_payload["generated_at"] = dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace(
-            "+00:00", "Z"
+
+        fallback_payload = load_fallback_payload(fallback_path)
+        if fallback_payload is not None:
+            fallback_payload["generated_at"] = dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace(
+                "+00:00", "Z"
+            )
+            fallback_probe = fallback_payload.get("date_probe")
+            if not isinstance(fallback_probe, dict):
+                fallback_probe = {}
+                fallback_payload["date_probe"] = fallback_probe
+            fallback_probe["fallback_used"] = True
+            fallback_probe["fallback_mode"] = "cached"
+            fallback_probe["fallback_source"] = fallback_path
+            fallback_probe["fallback_reason"] = normalize_text(exc)
+            persist_payload(output, fallback_payload)
+            print(
+                f"[HuhSports] base scrape unavailable ({exc}). Reused fallback data from {fallback_path} and wrote {output}.",
+                flush=True,
+            )
+            return 0
+
+        empty_payload = build_empty_fallback_payload(
+            url=url,
+            requested_start_date=start_date,
+            requested_days=days,
+            attempted_urls=[url],
+            fallback_source=fallback_path,
+            fallback_reason=normalize_text(exc),
         )
-        fallback_probe = fallback_payload.get("date_probe")
-        if not isinstance(fallback_probe, dict):
-            fallback_probe = {}
-            fallback_payload["date_probe"] = fallback_probe
-        fallback_probe["fallback_used"] = True
-        fallback_probe["fallback_source"] = fallback_path
-        fallback_probe["fallback_reason"] = normalize_text(exc)
-        persist_payload(output, fallback_payload)
+        persist_payload(output, empty_payload)
         print(
-            f"[HuhSports] base scrape unavailable ({exc}). Reused fallback data from {fallback_path} and wrote {output}.",
+            f"[HuhSports] base scrape unavailable ({exc}). No cached fallback found; wrote empty fallback payload to {output}.",
             flush=True,
         )
         return 0
