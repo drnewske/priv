@@ -1,0 +1,85 @@
+{
+  "generated_at": "2026-03-02T13:55:48Z",
+  "source": "huhsports.com/tv-guide",
+  "url": "https://www.huhsports.com/tv-guide",
+  "league_count": 1,
+  "match_count": 1,
+  "match_count_with_channels": 1,
+  "unique_team_count": 2,
+  "unique_tv_name_count": 1,
+  "available_dates": [
+    "2026-03-02"
+  ],
+  "requested_window": {
+    "start_date": "2026-03-02",
+    "end_date": "2026-03-08",
+    "days": 7
+  },
+  "date_probe": {
+    "week_window_exposed": false,
+    "base_available_dates": [
+      "2026-03-02"
+    ],
+    "urls_attempted_count": 15,
+    "urls_attempted": [
+      "https://www.huhsports.com/tv-guide",
+      "https://www.huhsports.com/tv-guide?date=2026-03-02",
+      "https://www.huhsports.com/tv-guide?date=2026-03-03",
+      "https://www.huhsports.com/tv-guide?showdatestart=20260303",
+      "https://www.huhsports.com/tv-guide?startDate=2026-03-03&endDate=2026-03-03",
+      "https://www.huhsports.com/tv-guide?from=2026-03-03&to=2026-03-03",
+      "https://www.huhsports.com/tv-guide?day=2026-03-03",
+      "https://www.huhsports.com/tv-guide?date=2026-03-04",
+      "https://www.huhsports.com/tv-guide?showdatestart=20260304",
+      "https://www.huhsports.com/tv-guide?startDate=2026-03-04&endDate=2026-03-04",
+      "https://www.huhsports.com/tv-guide?from=2026-03-04&to=2026-03-04",
+      "https://www.huhsports.com/tv-guide?day=2026-03-04",
+      "https://www.huhsports.com/tv-guide?date=2026-03-05",
+      "https://www.huhsports.com/tv-guide?showdatestart=20260305",
+      "https://www.huhsports.com/tv-guide?startDate=2026-03-05&endDate=2026-03-05"
+    ],
+    "requested_dates_found": [
+      "2026-03-02"
+    ],
+    "requested_dates_not_found": [
+      "2026-03-03",
+      "2026-03-04",
+      "2026-03-05",
+      "2026-03-06",
+      "2026-03-07",
+      "2026-03-08"
+    ],
+    "probe_requests_used": 14,
+    "probe_rate_limit_hits": 0,
+    "probe_truncated": true,
+    "fallback_used": false
+  },
+  "matches": [
+    {
+      "id": "pred-14081798",
+      "match_id": 14081798,
+      "date": "2026-03-02",
+      "time": "20:00",
+      "start_time": 1772481600,
+      "league_id": 8,
+      "league": "LaLiga",
+      "league_slug": "laliga",
+      "home_team": "Real Madrid",
+      "away_team": "Getafe",
+      "home_team_id": 2829,
+      "away_team_id": 2859,
+      "home_team_logo": "https://flwvkgyqubvqipqkkqmo.supabase.co/storage/v1/object/public/icons/team/2829.png",
+      "away_team_logo": "https://flwvkgyqubvqipqkkqmo.supabase.co/storage/v1/object/public/icons/team/2859.png",
+      "tv_names": [
+        "Premier Sports 1 HD"
+      ],
+      "channels": [
+        {
+          "id": 351,
+          "name": "Premier Sports 1 HD",
+          "country_code": "GB"
+        }
+      ]
+    }
+  ]
+}

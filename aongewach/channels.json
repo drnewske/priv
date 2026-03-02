@@ -24,10 +24,10 @@
       "channels_pruned_non_target": 241
     },
     "unique_channels": 1104,
-    "updated_at": "2026-03-02T12:03:09Z",
+    "updated_at": "2026-03-02T13:55:48Z",
     "schedule_channel_sync": {
-      "added_channels": 17,
-      "assigned_missing_ids": 534
+      "added_channels": 0,
+      "assigned_missing_ids": 0
     }
   },
   "channels": {

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-02T12:02:38Z",
+  "generated_at": "2026-03-02T13:52:45Z",
   "source": "fanzo.com",
   "schedule": [
     {
@@ -396,6 +396,24 @@
       "date": "2026-03-03",
       "day": "Tuesday",
       "events": [
+        {
+          "name": "Los Angeles vs New York",
+          "start_time_iso": "2026-03-03T00:00:00Z",
+          "time": "00:00",
+          "sport": "Golf",
+          "competition": "TGL",
+          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/default.png",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
+          "channels": [
+            "Sky Sports Golf"
+          ],
+          "home_team": "Los Angeles",
+          "away_team": "New York",
+          "home_team_id": 28470,
+          "away_team_id": 28890,
+          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/no-logo.png",
+          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/no-logo.png"
+        },
         {
           "name": "Washington Wizards vs Houston Rockets",
           "start_time_iso": "2026-03-03T00:05:00Z",
@@ -989,7 +1007,7 @@
           "away_team_logo": null
         },
         {
-          "name": "TBC vs TBC",
+          "name": "New Zealand vs South Africa",
           "start_time_iso": "2026-03-04T13:30:00Z",
           "time": "13:30",
           "sport": "Cricket",
@@ -999,12 +1017,12 @@
           "channels": [
             "Sky Sports Cricket"
           ],
-          "home_team": "TBC",
-          "away_team": "TBC",
-          "home_team_id": 18906,
-          "away_team_id": 18906,
-          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/no-logo.png",
-          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/no-logo.png"
+          "home_team": "New Zealand",
+          "away_team": "South Africa",
+          "home_team_id": 13981,
+          "away_team_id": 13982,
+          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2015-11/13981-new_zealand_cricket_logo.png",
+          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/13982/logo_1618161100.png"
         },
         {
           "name": "Southwell",
@@ -1420,6 +1438,42 @@
       "day": "Thursday",
       "events": [
         {
+          "name": "New York Knicks vs Oklahoma City Thunder",
+          "start_time_iso": "2026-03-05T00:05:00Z",
+          "time": "00:05",
+          "sport": "Basketball",
+          "competition": "NBA",
+          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/8/competition_logo_1675352476.jpeg",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
+          "channels": [
+            "NBA League Pass"
+          ],
+          "home_team": "New York Knicks",
+          "away_team": "Oklahoma City Thunder",
+          "home_team_id": 14666,
+          "away_team_id": 14064,
+          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/14666/logo_1698312535.png",
+          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2018-10/14064-okc_thunder_2018.png"
+        },
+        {
+          "name": "Philadelphia 76ers vs Utah Jazz",
+          "start_time_iso": "2026-03-05T00:35:00Z",
+          "time": "00:35",
+          "sport": "Basketball",
+          "competition": "NBA",
+          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/8/competition_logo_1675352476.jpeg",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
+          "channels": [
+            "NBA League Pass"
+          ],
+          "home_team": "Philadelphia 76ers",
+          "away_team": "Utah Jazz",
+          "home_team_id": 14661,
+          "away_team_id": 14063,
+          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/14661/logo_1698312347.png",
+          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2018-10/14063-utah_jazz_2018.png"
+        },
+        {
           "name": "Sydney Swans vs Carlton Blues",
           "start_time_iso": "2026-03-05T08:30:00Z",
           "time": "08:30",
@@ -1496,6 +1550,27 @@
           "away_team_logo": null
         },
         {
+          "name": "Arnold Palmer Invitational 2026",
+          "start_time_iso": "2026-03-05T12:30:00Z",
+          "time": "12:30",
+          "sport": "Golf",
+          "competition": "PGA Tour",
+          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/62/competition_logo_1687188176.jpeg",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
+          "channels": [
+            "Sky Sports Golf",
+            "Sky Sports+",
+            "Sky Sports Main Event",
+            "Sky Sports Ultra HDR"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
           "name": "Saint Cloud",
           "start_time_iso": "2026-03-05T12:55:00Z",
           "time": "12:55",
@@ -1514,7 +1589,7 @@
           "away_team_logo": null
         },
         {
-          "name": "TBC vs TBC",
+          "name": "India vs England",
           "start_time_iso": "2026-03-05T13:30:00Z",
           "time": "13:30",
           "sport": "Cricket",
@@ -1524,12 +1599,12 @@
           "channels": [
             "Sky Sports Cricket"
           ],
-          "home_team": "TBC",
-          "away_team": "TBC",
-          "home_team_id": 18906,
-          "away_team_id": 18906,
-          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/no-logo.png",
-          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/no-logo.png"
+          "home_team": "India",
+          "away_team": "England",
+          "home_team_id": 13984,
+          "away_team_id": 13978,
+          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2018-06/13984-india_cricket-2018.png",
+          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2017-11/13978-englandcricket201718.png"
         },
         {
           "name": "Wincanton",
@@ -1604,6 +1679,24 @@
           "away_team_logo": null
         },
         {
+          "name": "Ski Jumping",
+          "start_time_iso": "2026-03-05T14:00:00Z",
+          "time": "14:00",
+          "sport": "Winter Sports",
+          "competition": "Ski Jumping",
+          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/323/competition_logo_1702034871.jpeg",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "channels": [
+            "TNT Sports 1"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
           "name": "Valley",
           "start_time_iso": "2026-03-05T14:30:00Z",
           "time": "14:30",
@@ -1622,15 +1715,15 @@
           "away_team_logo": null
         },
         {
-          "name": "Puerto Rico Open 2026",
-          "start_time_iso": "2026-03-05T15:00:00Z",
-          "time": "15:00",
-          "sport": "Golf",
-          "competition": "PGA Tour",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/62/competition_logo_1687188176.jpeg",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
+          "name": "Biathlon",
+          "start_time_iso": "2026-03-05T15:45:00Z",
+          "time": "15:45",
+          "sport": "Winter Sports",
+          "competition": "Biathlon",
+          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/251/competition_logo_1702026273.jpeg",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
           "channels": [
-            "Sky Sports+"
+            "TNT Sports 1"
           ],
           "home_team": null,
           "away_team": null,
@@ -1783,27 +1876,6 @@
           ],
           "home_team": "Premier League",
           "away_team": "Cardiff",
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Arnold Palmer Invitational 2026",
-          "start_time_iso": "2026-03-05T19:00:00Z",
-          "time": "19:00",
-          "sport": "Golf",
-          "competition": "PGA Tour",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/62/competition_logo_1687188176.jpeg",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
-          "channels": [
-            "Sky Sports Golf",
-            "Sky Sports+",
-            "Sky Sports Main Event",
-            "Sky Sports Ultra HDR"
-          ],
-          "home_team": null,
-          "away_team": null,
           "home_team_id": null,
           "away_team_id": null,
           "home_team_logo": null,
@@ -2423,6 +2495,24 @@
           "away_team_logo": null
         },
         {
+          "name": "Nordic Combined",
+          "start_time_iso": "2026-03-06T10:45:00Z",
+          "time": "10:45",
+          "sport": "Winter Sports",
+          "competition": "Nordic Combined",
+          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/329/competition_logo_1706693882.jpeg",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "channels": [
+            "TNT Sports 4"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
           "name": "Central Park",
           "start_time_iso": "2026-03-06T11:05:00Z",
           "time": "11:05",
@@ -2433,6 +2523,24 @@
           "channels": [
             "ATR Player",
             "Sky Sports Racing"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "UK Open Darts 2026",
+          "start_time_iso": "2026-03-06T12:00:00Z",
+          "time": "12:00",
+          "sport": "Darts",
+          "competition": "UK Open",
+          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/default.png",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/darts.gif",
+          "channels": [
+            "ITV 4"
           ],
           "home_team": null,
           "away_team": null,
@@ -2486,7 +2594,8 @@
           "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/323/competition_logo_1702034871.jpeg",
           "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
           "channels": [
-            "TNT Sports 1"
+            "TNT Sports 1",
+            "TNT Sports 4"
           ],
           "home_team": null,
           "away_team": null,
@@ -2559,24 +2668,6 @@
           "sport_logo": "https://www.wheresthematch.com/images/sports/horseracing.gif",
           "channels": [
             "Racing TV"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Puerto Rico Open 2026",
-          "start_time_iso": "2026-03-06T15:00:00Z",
-          "time": "15:00",
-          "sport": "Golf",
-          "competition": "PGA Tour",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/62/competition_logo_1687188176.jpeg",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
-          "channels": [
-            "Sky Sports+"
           ],
           "home_team": null,
           "away_team": null,
@@ -2817,9 +2908,9 @@
           "sport_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
           "channels": [
             "Sky Sports Golf",
+            "Sky Sports+",
             "Sky Sports Main Event",
-            "Sky Sports Ultra HDR",
-            "Sky Sports+"
+            "Sky Sports Ultra HDR"
           ],
           "home_team": null,
           "away_team": null,
@@ -2881,24 +2972,6 @@
           "away_team_id": 5484,
           "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/24548/logo_1694515252.png",
           "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/5484/logo_1694515288.png"
-        },
-        {
-          "name": "UK Open Darts 2026",
-          "start_time_iso": "2026-03-06T19:00:00Z",
-          "time": "19:00",
-          "sport": "Darts",
-          "competition": "UK Open",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/default.png",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/darts.gif",
-          "channels": [
-            "ITV 4"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
         },
         {
           "name": "Olympiacos vs Panathinaikos",
@@ -3103,6 +3176,24 @@
           "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2016-07/7478-oxford_united_fc.svg.png"
         },
         {
+          "name": "Leigh Leopards vs Catalan Dragons",
+          "start_time_iso": "2026-03-06T20:00:00Z",
+          "time": "20:00",
+          "sport": "Rugby League",
+          "competition": "English Super League",
+          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/82/competition_logo_1732541777.jpeg",
+          "sport_logo": null,
+          "channels": [
+            "Sky Sports+"
+          ],
+          "home_team": "Leigh Leopards",
+          "away_team": "Catalan Dragons",
+          "home_team_id": 13774,
+          "away_team_id": 14012,
+          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/13774/logo_1689841546.jpeg",
+          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2019-07/14012-catalansdragons201920.png"
+        },
+        {
           "name": "York City Knights vs Warrington Wolves",
           "start_time_iso": "2026-03-06T20:00:00Z",
           "time": "20:00",
@@ -3269,6 +3360,43 @@
           "away_team_logo": null
         },
         {
+          "name": "Australian Women's Classic 2026",
+          "start_time_iso": "2026-03-07T00:00:00Z",
+          "time": "00:00",
+          "sport": "Golf",
+          "competition": "Ladies European Tour",
+          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/default.png",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
+          "channels": [
+            "Sky Sports Golf"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Boston Celtics vs Dallas Mavericks",
+          "start_time_iso": "2026-03-07T00:05:00Z",
+          "time": "00:05",
+          "sport": "Basketball",
+          "competition": "NBA",
+          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/8/competition_logo_1675352476.jpeg",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
+          "channels": [
+            "NBA League Pass",
+            "Sky Sports+"
+          ],
+          "home_team": "Boston Celtics",
+          "away_team": "Dallas Mavericks",
+          "home_team_id": 14687,
+          "away_team_id": 14663,
+          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/14687/logo_1698312185.png",
+          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2018-07/14663-dallas_mavs_2018.png"
+        },
+        {
           "name": "Sam Houston",
           "start_time_iso": "2026-03-07T00:30:00Z",
           "time": "00:30",
@@ -3286,6 +3414,24 @@
           "away_team_id": null,
           "home_team_logo": null,
           "away_team_logo": null
+        },
+        {
+          "name": "Houston Rockets vs Portland Trail Blazers",
+          "start_time_iso": "2026-03-07T01:05:00Z",
+          "time": "01:05",
+          "sport": "Basketball",
+          "competition": "NBA",
+          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/8/competition_logo_1675352476.jpeg",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
+          "channels": [
+            "NBA League Pass"
+          ],
+          "home_team": "Houston Rockets",
+          "away_team": "Portland Trail Blazers",
+          "home_team_id": 14060,
+          "away_team_id": 14670,
+          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2018-10/14060-houston_rockets_2018.png",
+          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2018-07/14670-portland_trailblazers_2018.png"
         },
         {
           "name": "Australian Grand Prix - Practice 3",
@@ -3314,7 +3460,7 @@
           "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/3359/competition_logo_1709607970.jpeg",
           "sport_logo": null,
           "channels": [
-            "Sky Sports+"
+            "Sky Sports Action"
           ],
           "home_team": "Otago Highlanders",
           "away_team": "Western Force",
@@ -3332,7 +3478,8 @@
           "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/default.png",
           "sport_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
           "channels": [
-            "Sky Sports Golf"
+            "Sky Sports Golf",
+            "Sky Sports Mix"
           ],
           "home_team": null,
           "away_team": null,
@@ -3434,6 +3581,24 @@
           "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/13609/logo_1712289470.png"
         },
         {
+          "name": "Alpine Skiing",
+          "start_time_iso": "2026-03-07T08:15:00Z",
+          "time": "08:15",
+          "sport": "Winter Sports",
+          "competition": "Alpine Skiing",
+          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/283/competition_logo_1702026703.jpeg",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "channels": [
+            "TNT Sports 4"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
           "name": "Manly Sea Eagles vs Canberra Raiders",
           "start_time_iso": "2026-03-07T08:35:00Z",
           "time": "08:35",
@@ -3461,7 +3626,7 @@
           "sport_logo": null,
           "channels": [
             "TNT Sports",
-            "TNT Sports 4"
+            "TNT Sports Extra"
           ],
           "home_team": "Brisbane Lions",
           "away_team": "Western Bulldogs",
@@ -3613,6 +3778,24 @@
           "away_team_id": 10503,
           "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/5792/logo_1744180973.png",
           "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/10503/logo_1762506512.png"
+        },
+        {
+          "name": "Hull City vs Millwall",
+          "start_time_iso": "2026-03-07T12:30:00Z",
+          "time": "12:30",
+          "sport": "Football",
+          "competition": "EFL Championship",
+          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/default.png",
+          "sport_logo": null,
+          "channels": [
+            "Sky Sports+"
+          ],
+          "home_team": "Hull City",
+          "away_team": "Millwall",
+          "home_team_id": 6795,
+          "away_team_id": 7238,
+          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2016-07/6795-1410464880_fc-hull-city.png",
+          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2018-01/7238-millwallfc2018.png"
         },
         {
           "name": "England (W) vs Iceland (W)",
@@ -3783,6 +3966,25 @@
           "away_team_logo": null
         },
         {
+          "name": "Strade Bianche Men's Race 2026",
+          "start_time_iso": "2026-03-07T14:45:00Z",
+          "time": "14:45",
+          "sport": "Cycling",
+          "competition": "World Cycling",
+          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/1700/competition_logo_1687189303.jpeg",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/cycling.gif",
+          "channels": [
+            "TNT Sports 1",
+            "TNT Sports 3"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
           "name": "Levante vs Girona",
           "start_time_iso": "2026-03-07T15:15:00Z",
           "time": "15:15",
@@ -3872,6 +4074,24 @@
           "away_team_id": 18830,
           "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/9924/logo_1679569373.png",
           "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/18830/logo_1679579148.png"
+        },
+        {
+          "name": "Ski Jumping",
+          "start_time_iso": "2026-03-07T16:00:00Z",
+          "time": "16:00",
+          "sport": "Winter Sports",
+          "competition": "Ski Jumping",
+          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/323/competition_logo_1702034871.jpeg",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "channels": [
+            "TNT Sports 4"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
         },
         {
           "name": "Italy vs England",
@@ -4541,6 +4761,60 @@
           "away_team_logo": null
         },
         {
+          "name": "Atlanta Hawks vs Philadelphia 76ers",
+          "start_time_iso": "2026-03-08T00:35:00Z",
+          "time": "00:35",
+          "sport": "Basketball",
+          "competition": "NBA",
+          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/8/competition_logo_1675352476.jpeg",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
+          "channels": [
+            "NBA League Pass"
+          ],
+          "home_team": "Atlanta Hawks",
+          "away_team": "Philadelphia 76ers",
+          "home_team_id": 14669,
+          "away_team_id": 14661,
+          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/14669/logo_1698312559.png",
+          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/14661/logo_1698312347.png"
+        },
+        {
+          "name": "USA vs Great Britain",
+          "start_time_iso": "2026-03-08T01:00:00Z",
+          "time": "01:00",
+          "sport": "Baseball",
+          "competition": "World Baseball Classic",
+          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/default.png",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/baseball.gif",
+          "channels": [
+            "TNT Sports 3"
+          ],
+          "home_team": "USA",
+          "away_team": "Great Britain",
+          "home_team_id": 23120,
+          "away_team_id": 23121,
+          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/no-logo.png",
+          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/no-logo.png"
+        },
+        {
+          "name": "Memphis Grizzlies vs Los Angeles Clippers",
+          "start_time_iso": "2026-03-08T01:05:00Z",
+          "time": "01:05",
+          "sport": "Basketball",
+          "competition": "NBA",
+          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/8/competition_logo_1675352476.jpeg",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
+          "channels": [
+            "NBA League Pass"
+          ],
+          "home_team": "Memphis Grizzlies",
+          "away_team": "Los Angeles Clippers",
+          "home_team_id": 15469,
+          "away_team_id": 14672,
+          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/15469/logo_1698418660.png",
+          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2018-07/14672-la_clippers_2018.png"
+        },
+        {
           "name": "Holloway vs Oliveira",
           "start_time_iso": "2026-03-08T02:00:00Z",
           "time": "02:00",
@@ -4603,7 +4877,7 @@
           "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/default.png",
           "sport_logo": "https://www.wheresthematch.com/images/sports/cricket.gif",
           "channels": [
-            "TNT Sports 2",
+            "TNT Sports 4",
             "Discovery+ Premium"
           ],
           "home_team": "Australia (W)",
@@ -4631,6 +4905,24 @@
           "away_team_id": 14145,
           "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/14250/logo_1750735492.png",
           "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/14145/logo_1581507415.png"
+        },
+        {
+          "name": "Snowboarding",
+          "start_time_iso": "2026-03-08T09:00:00Z",
+          "time": "09:00",
+          "sport": "Winter Sports",
+          "competition": "Snowboarding",
+          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/565/competition_logo_1705989529.jpeg",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "channels": [
+            "TNT Sports 2"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
         },
         {
           "name": "Joburg Open Championship 2026",
@@ -4758,6 +5050,25 @@
           "away_team_id": 9452,
           "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/7012/logo_1697803712.png",
           "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/9452/logo_1758633852.png"
+        },
+        {
+          "name": "Arnold Palmer Invitational 2026",
+          "start_time_iso": "2026-03-08T13:00:00Z",
+          "time": "13:00",
+          "sport": "Golf",
+          "competition": "PGA Tour",
+          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/62/competition_logo_1687188176.jpeg",
+          "sport_logo": null,
+          "channels": [
+            "Sky Sports Golf",
+            "Sky Sports+"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
         },
         {
           "name": "Rangers vs Celtic",
@@ -4982,6 +5293,24 @@
           "away_team_logo": null
         },
         {
+          "name": "Paris-Nice 2026",
+          "start_time_iso": "2026-03-08T14:30:00Z",
+          "time": "14:30",
+          "sport": "Cycling",
+          "competition": "World Cycling",
+          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/1700/competition_logo_1687189303.jpeg",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/cycling.gif",
+          "channels": [
+            "TNT Sports 4"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
           "name": "Bristol Flyers vs Newcastle Eagles",
           "start_time_iso": "2026-03-08T15:00:00Z",
           "time": "15:00",
@@ -5092,6 +5421,24 @@
           "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2019-05/16318-14142-tipperarygaa.png"
         },
         {
+          "name": "Biathlon",
+          "start_time_iso": "2026-03-08T15:45:00Z",
+          "time": "15:45",
+          "sport": "Winter Sports",
+          "competition": "Biathlon",
+          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/251/competition_logo_1702026273.jpeg",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "channels": [
+            "TNT Sports 2"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
           "name": "Glasgow Rocks vs Cheshire Phoenix",
           "start_time_iso": "2026-03-08T16:00:00Z",
           "time": "16:00",
@@ -5106,24 +5453,6 @@
           "away_team": "Cheshire Phoenix",
           "home_team_id": 16321,
           "away_team_id": 16285,
-          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/no-logo.png",
-          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/no-logo.png"
-        },
-        {
-          "name": "Nottingham Forest vs Birmingham Panthers",
-          "start_time_iso": "2026-03-08T16:00:00Z",
-          "time": "16:00",
-          "sport": "Netball",
-          "competition": "Superleague",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/default.png",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/netball.gif",
-          "channels": [
-            "Sky Sports Mix"
-          ],
-          "home_team": "Nottingham Forest",
-          "away_team": "Birmingham Panthers",
-          "home_team_id": 28882,
-          "away_team_id": 28893,
           "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/no-logo.png",
           "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/no-logo.png"
         },
@@ -5385,6 +5714,24 @@
           "away_team_logo": null
         },
         {
+          "name": "Italy vs Great Britain",
+          "start_time_iso": "2026-03-08T18:00:00Z",
+          "time": "18:00",
+          "sport": "Baseball",
+          "competition": "World Baseball Classic",
+          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/default.png",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/baseball.gif",
+          "channels": [
+            "TNT Sports 2"
+          ],
+          "home_team": "Italy",
+          "away_team": "Great Britain",
+          "home_team_id": 23105,
+          "away_team_id": 23121,
+          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/no-logo.png",
+          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/no-logo.png"
+        },
+        {
           "name": "Sunland Park",
           "start_time_iso": "2026-03-08T18:25:00Z",
           "time": "18:25",
@@ -5395,24 +5742,6 @@
           "channels": [
             "ATR Player",
             "Sky Sports Racing"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Arnold Palmer Invitational 2026",
-          "start_time_iso": "2026-03-08T19:00:00Z",
-          "time": "19:00",
-          "sport": "Golf",
-          "competition": "PGA Tour",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/62/competition_logo_1687188176.jpeg",
-          "sport_logo": null,
-          "channels": [
-            "Sky Sports Golf"
           ],
           "home_team": null,
           "away_team": null,
@@ -5591,17 +5920,17 @@
     }
   ],
   "channel_enrichment": {
-    "merged_at": "2026-03-02T12:03:09Z",
+    "merged_at": "2026-03-02T13:55:48Z",
     "sources": [
       "fanzo.com",
       "wheresthematch.com"
     ],
     "match_mode": "canonical-name-with-time-disambiguation",
-    "matched_events": 46,
+    "matched_events": 49,
     "channels_added_from_witm": 48,
-    "logos_added_from_witm": 173,
-    "matched_by_name_and_time": 19,
-    "matched_by_name_only": 27,
+    "logos_added_from_witm": 189,
+    "matched_by_name_and_time": 17,
+    "matched_by_name_only": 32,
     "ambiguous_match_keys_skipped": 1
   }
 }
