@@ -3,7 +3,7 @@
 Run Daily Schedule Worker
 
 Flow (single UTC day):
-  1. Scrape LiveSportTV + FANZO + WITM in parallel
+  1. Scrape FANZO + WITM + HuhSports in parallel
   2. Merge/compose today's schedule
   3. Scan playlists/external URLs for today's channel list (validate working links)
   4. Map today's schedule channels to channel IDs
@@ -113,12 +113,17 @@ def parse_args() -> argparse.Namespace:
         )
     )
     parser.add_argument("--date", default=None, help="Target date (YYYY-MM-DD). Default: today UTC.")
-    parser.add_argument("--max-pages", type=int, default=7, help="Per-day /data-today pages.")
+    parser.add_argument(
+        "--max-pages",
+        type=int,
+        default=7,
+        help="Legacy compatibility option (unused after LiveSportTV retirement).",
+    )
     parser.add_argument(
         "--max-tournaments",
         type=int,
         default=0,
-        help="Tournament API cap for the day (0 = no cap).",
+        help="Legacy compatibility option (unused after LiveSportTV retirement).",
     )
     parser.add_argument(
         "--max-working-streams-per-channel",
@@ -134,59 +139,61 @@ def parse_args() -> argparse.Namespace:
         default=1,
         help="Additional retries for failed stream tests.",
     )
+    parser.add_argument(
+        "--test-retry-delay",
+        type=float,
+        default=0.35,
+        help="Delay between retries for stream tests.",
+    )
+    parser.add_argument(
+        "--no-ffmpeg-fallback",
+        action="store_true",
+        help="Disable ffmpeg fallback for stream tests.",
+    )
     return parser.parse_args()
 
 
 def main() -> int:
     args = parse_args()
 
-    lsv_output = "weekly_schedule_livesporttv.json"
     fanzo_output = "weekly_schedule_fanzo.json"
     witm_output = "weekly_schedule_witm.json"
+    huhsports_output = "weekly_schedule_huhsports.json"
     fanzo_witm_output = "weekly_schedule_fanzo_enriched.json"
     schedule_output = "weekly_schedule.json"
 
-    lsv_args = [
-        "--days",
-        "1",
-        "--max-pages",
-        str(args.max_pages),
-        "--output",
-        lsv_output,
-    ]
-    fanzo_args = ["--days", "1", "--output", fanzo_output]
+    fanzo_args = ["--days", "1", "--include-soccer", "--output", fanzo_output]
     witm_args = ["--days", "1", "--output", witm_output]
+    huhsports_args = ["--days", "1", "--output", huhsports_output]
     if args.date:
-        lsv_args.extend(["--date", args.date])
         fanzo_args.extend(["--date", args.date])
         witm_args.extend(["--date", args.date])
-    if args.max_tournaments > 0:
-        lsv_args.extend(["--max-tournaments", str(args.max_tournaments)])
+        huhsports_args.extend(["--start-date", args.date])
 
     run_parallel_steps(
         [
             (
-                "scrape_schedule_livesporttv.py",
-                "Scraping Daily Schedule from LiveSportTV",
-                lsv_args,
-            ),
-            (
                 "scrape_schedule_fanzo.py",
-                "Scraping Daily Non-Soccer Schedule from FANZO",
+                "Scraping Daily FANZO Schedule (including soccer/football)",
                 fanzo_args,
             ),
             (
                 "scrape_schedule_witm.py",
-                "Scraping Daily Non-Soccer Schedule from WITM",
+                "Scraping Daily WITM Schedule (non-soccer reinforcement)",
                 witm_args,
             ),
+            (
+                "scrape_schedule_huhsports.py",
+                "Scraping Daily HuhSports Football Schedule",
+                huhsports_args,
+            ),
         ],
-        "Scraping Daily Schedules from LiveSportTV + FANZO + WITM (Parallel)",
+        "Scraping Daily Schedules from FANZO + WITM + HuhSports (Parallel)",
     )
 
     run_step(
         "merge_fanzo_witm.py",
-        "Merging Daily FANZO + WITM Non-Soccer Schedule",
+        "Merging Daily FANZO + WITM Schedule",
         extra_args=[
             "--fanzo",
             fanzo_output,
@@ -199,14 +206,31 @@ def main() -> int:
 
     run_step(
         "compose_weekly_schedule.py",
-        "Composing Daily Schedule (LSTV Soccer + FANZO/WITM Non-Soccer)",
+        "Composing Daily Schedule (FANZO Primary + HuhSports Football)",
         extra_args=[
-            "--livesporttv",
-            lsv_output,
             "--fanzo-witm",
             fanzo_witm_output,
+            "--huhsports",
+            huhsports_output,
             "--output",
             schedule_output,
+        ],
+    )
+
+    run_step(
+        "stream_tester.py",
+        "Testing Existing channels.json Streams and Pruning Dead URLs",
+        extra_args=[
+            "channels.json",
+            "--workers",
+            str(args.test_workers),
+            "--timeout",
+            str(args.test_timeout),
+            "--retry-failed",
+            str(args.test_retry_failed),
+            "--retry-delay",
+            str(args.test_retry_delay),
+            *(["--no-ffmpeg-fallback"] if args.no_ffmpeg_fallback else []),
         ],
     )
 
@@ -215,6 +239,7 @@ def main() -> int:
         "Refreshing Working Links for Today's Schedule Channels",
         extra_args=[
             "channels.json",
+            "--preserve-existing-streams",
             "--prune-non-target-channels",
             "--max-working-streams-per-channel",
             str(args.max_working_streams_per_channel),
@@ -224,6 +249,9 @@ def main() -> int:
             str(args.test_timeout),
             "--test-retry-failed",
             str(args.test_retry_failed),
+            "--test-retry-delay",
+            str(args.test_retry_delay),
+            *(["--no-ffmpeg-fallback"] if args.no_ffmpeg_fallback else []),
         ],
     )
 

@@ -1575,6 +1575,7 @@ def load_target_channels(schedule_file):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('output_file', nargs='?', default='channels.json', help='Output JSON file')
+    parser.add_argument('--schedule-file', default=SCHEDULE_FILE, help='Schedule JSON file used to load target channels')
     parser.add_argument('--verify', action='store_true', help='Use only first 3 servers for verification')
     parser.add_argument(
         '--preserve-existing-streams',
@@ -1601,7 +1602,7 @@ def main():
     args = parser.parse_args()
     
     # 1. Load Targets
-    targets = load_target_channels(SCHEDULE_FILE)
+    targets = load_target_channels(args.schedule_file)
     if not targets:
         print("No target channels found. Exiting.")
         sys.exit(1)

@@ -3,10 +3,10 @@
 Run Pipeline - Orchestrates the full schedule processing pipeline.
 
 Steps:
-  1. Scrape LiveSportTV + FANZO + WITM schedules in parallel
+  1. Scrape FANZO + WITM + HuhSports schedules in parallel
   2. Merge/compose final weekly schedule
-  3. Scan/update channels.json from configured playlists/providers
-  4. Map schedule channels to IPTV stream URLs
+  3. Sync schedule channels into channels.json with stable IDs
+  4. Map schedule channels to channel IDs in final output
 """
 
 import subprocess
@@ -114,30 +114,19 @@ def main():
     run_parallel_steps(
         [
             (
-                "scrape_schedule_livesporttv.py",
-                "Scraping Weekly Schedule from LiveSportTV",
-                [
-                    "--days",
-                    "7",
-                    "--max-pages",
-                    "7",
-                    "--output",
-                    "weekly_schedule_livesporttv.json",
-                ],
-            ),
-            (
                 "scrape_schedule_fanzo.py",
-                "Scraping Weekly Non-Soccer Schedule from FANZO",
+                "Scraping Weekly FANZO Schedule (including soccer/football)",
                 [
                     "--days",
                     "7",
+                    "--include-soccer",
                     "--output",
                     "weekly_schedule_fanzo.json",
                 ],
             ),
             (
                 "scrape_schedule_witm.py",
-                "Scraping Weekly Non-Soccer Schedule from WITM",
+                "Scraping Weekly WITM Schedule (non-soccer reinforcement)",
                 [
                     "--days",
                     "7",
@@ -145,14 +134,24 @@ def main():
                     "weekly_schedule_witm.json",
                 ],
             ),
+            (
+                "scrape_schedule_huhsports.py",
+                "Scraping Weekly HuhSports Football Schedule",
+                [
+                    "--days",
+                    "7",
+                    "--output",
+                    "weekly_schedule_huhsports.json",
+                ],
+            ),
         ],
-        "Scraping Weekly Schedules from LiveSportTV + FANZO + WITM (Parallel)",
+        "Scraping Weekly Schedules from FANZO + WITM + HuhSports (Parallel)",
     )
 
     # 4. Merge FANZO with WITM (exact match enrichment).
     run_step(
         "merge_fanzo_witm.py",
-        "Merging FANZO + WITM Non-Soccer Schedule",
+        "Merging FANZO + WITM (non-soccer reinforcement + logos)",
         extra_args=[
             "--fanzo",
             "weekly_schedule_fanzo.json",
@@ -164,42 +163,35 @@ def main():
     )
 
     # 5. Compose final weekly schedule:
-    #    soccer from LiveSportTV + non-soccer from FANZO/WITM.
+    #    FANZO(+WITM enrichment) + HuhSports football.
     run_step(
         "compose_weekly_schedule.py",
-        "Composing Final Weekly Schedule (LSTV Soccer + FANZO/WITM Non-Soccer)",
+        "Composing Final Weekly Schedule (FANZO Primary + HuhSports Football)",
         extra_args=[
-            "--livesporttv",
-            "weekly_schedule_livesporttv.json",
             "--fanzo-witm",
             "weekly_schedule_fanzo_enriched.json",
+            "--huhsports",
+            "weekly_schedule_huhsports.json",
             "--output",
             "weekly_schedule.json",
         ],
     )
 
-    # 6. Scan Sports Channels (Update channels.json based on composed schedule).
     run_step(
-        "scan_sports_channels.py",
-        "Scanning Playlists for Channels in Schedule (Inline Stream Validation)",
+        "sync_schedule_channels.py",
+        "Syncing Schedule Channels into channels.json (stable IDs, no stream testing)",
         extra_args=[
+            "--schedule",
+            "weekly_schedule.json",
+            "--channels",
             "channels.json",
-            "--prune-non-target-channels",
-            "--max-working-streams-per-channel",
-            "5",
-            "--test-workers",
-            "20",
-            "--test-timeout",
-            "8",
-            "--test-retry-failed",
-            "1",
         ],
     )
 
-    # 7. Map Channels (Schedule Channels -> IPTV Stream URLs).
+    # 7. Map Channels (Schedule Channels -> Channel IDs).
     run_step(
         "map_channels.py",
-        "Mapping Schedule Channels to Playable IPTV Streams",
+        "Mapping Schedule Channels to Channel IDs",
         extra_args=None,
     )
 

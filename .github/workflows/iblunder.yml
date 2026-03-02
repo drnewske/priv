@@ -1,25 +1,55 @@
-name: SPECIALQUEENBLU
+name: IBLUNDER
+
 on:
   schedule:
-    - cron: '0 6 * * *'
+    - cron: "0 6 * * *"  # Daily build/mapping at 06:00 UTC
+    - cron: "0 9 * * *"  # Daily stream test/refresh at 09:00 UTC
   workflow_dispatch:
     inputs:
-      validation_workers:
-        description: Workers for existing playlist testing
+      mode:
+        description: "Which job to run"
         required: false
-        default: '10'
-      discovery_workers:
-        description: Workers for per-domain discovered link testing
+        default: "both"
+        type: choice
+        options:
+          - both
+          - build
+          - test
+      run_date:
+        description: "Target UTC date (YYYY-MM-DD). Leave blank for automatic UTC today."
         required: false
-        default: '10'
+        default: ""
+      days:
+        description: "Days ahead for schedule build"
+        required: false
+        default: "7"
+      test_workers:
+        description: "Parallel stream test workers"
+        required: false
+        default: "20"
+      test_timeout:
+        description: "ffprobe timeout (seconds)"
+        required: false
+        default: "8"
+      test_retry_failed:
+        description: "Extra retries for failed stream tests"
+        required: false
+        default: "1"
+      test_retry_delay:
+        description: "Delay between retries"
+        required: false
+        default: "0.35"
 
 jobs:
-  update-content:
+  build-schedule:
+    if: ${{ (github.event_name == 'schedule' && github.event.schedule == '0 6 * * *') || (github.event_name == 'workflow_dispatch' && (inputs.mode == 'build' || inputs.mode == 'both')) }}
     runs-on: ubuntu-latest
+    timeout-minutes: 180
     permissions:
       contents: write
+
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -27,33 +57,188 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
-          cache: 'pip' # Caches your requests/bs4 installs to save minutes
+          python-version: "3.10"
+          cache: "pip"
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          if [ -f aongewach/requirements.txt ]; then pip install -r aongewach/requirements.txt; fi
           pip install requests beautifulsoup4
-        
-      - name: Run Scraper and Cleaner
-        env:
-          VALIDATION_WORKERS: ${{ github.event.inputs.validation_workers || '10' }}
-          DISCOVERY_WORKERS: ${{ github.event.inputs.discovery_workers || '10' }}
+
+      - name: Build 7-day schedule + sync channels + map
         run: |
-          python bl34Gnderqqq123.py \
-            --validation-workers "${VALIDATION_WORKERS}" \
-            --discovery-workers "${DISCOVERY_WORKERS}"
-        
-      - name: Commit and Push Changes
+          cd aongewach
+          DAYS="${{ github.event.inputs.days }}"
+          if [ -z "$DAYS" ]; then DAYS="7"; fi
+
+          CMD=(python run_pipeline_scrape_map.py
+            --days "$DAYS"
+            --schedule-output weekly_schedule.json
+            --channels-file channels.json)
+
+          if [ -n "${{ github.event.inputs.run_date }}" ]; then
+            CMD+=(--date "${{ github.event.inputs.run_date }}")
+          fi
+
+          printf 'Running command:\n  '
+          printf '%q ' "${CMD[@]}"
+          echo
+          "${CMD[@]}"
+
+      - name: Upload build artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iblunder-build-outputs
+          path: |
+            aongewach/weekly_schedule.json
+            aongewach/weekly_schedule_fanzo.json
+            aongewach/weekly_schedule_fanzo_enriched.json
+            aongewach/weekly_schedule_huhsports.json
+            aongewach/weekly_schedule_witm.json
+            aongewach/channels.json
+            aongewach/channel_map.json
+            aongewach/e104f869d64e3d41256d5398.json
+          if-no-files-found: warn
+
+      - name: Commit and push build outputs
         run: |
-          git config --global user.name "Runner"
-          git config --global user.email "bot@github.com"
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
           BRANCH="${GITHUB_REF_NAME:-main}"
-          git add lovestory.json scraper_log.json
+          FILES=(
+            "aongewach/weekly_schedule.json"
+            "aongewach/weekly_schedule_fanzo.json"
+            "aongewach/weekly_schedule_fanzo_enriched.json"
+            "aongewach/weekly_schedule_huhsports.json"
+            "aongewach/weekly_schedule_witm.json"
+            "aongewach/channels.json"
+            "aongewach/channel_map.json"
+            "aongewach/e104f869d64e3d41256d5398.json"
+          )
+          for f in "${FILES[@]}"; do
+            if [ -e "$f" ]; then
+              git add "$f"
+            else
+              echo "Skipping missing file: $f"
+            fi
+          done
+
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "update - $(date +'%Y-%m-%d %H:%M:%S UTC')"
+            git commit -m "IBLUNDER 06:00 UTC schedule build [skip ci]"
+            for attempt in 1 2 3; do
+              if git push origin "HEAD:$BRANCH"; then
+                echo "Push succeeded on attempt $attempt"
+                break
+              fi
+              if [ "$attempt" -eq 3 ]; then
+                echo "Push failed after 3 attempts"
+                exit 1
+              fi
+              echo "Push rejected, rebasing and retrying..."
+              git fetch origin "$BRANCH"
+              git rebase "origin/$BRANCH" || {
+                git rebase --abort || true
+                git pull --rebase origin "$BRANCH"
+              }
+            done
+          fi
+
+  test-channels:
+    if: ${{ (github.event_name == 'schedule' && github.event.schedule == '0 9 * * *') || (github.event_name == 'workflow_dispatch' && (inputs.mode == 'test' || inputs.mode == 'both')) }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          if [ -f aongewach/requirements.txt ]; then pip install -r aongewach/requirements.txt; fi
+          pip install requests beautifulsoup4
+          if command -v ffprobe >/dev/null 2>&1; then
+            echo "ffprobe already available."
+          else
+            sudo apt-get update
+            sudo apt-get install -y ffmpeg
+          fi
+
+      - name: Run daily channel tests (today UTC events only)
+        run: |
+          cd aongewach
+          WORKERS="${{ github.event.inputs.test_workers }}"
+          TIMEOUT="${{ github.event.inputs.test_timeout }}"
+          RETRY_FAILED="${{ github.event.inputs.test_retry_failed }}"
+          RETRY_DELAY="${{ github.event.inputs.test_retry_delay }}"
+
+          if [ -z "$WORKERS" ]; then WORKERS="20"; fi
+          if [ -z "$TIMEOUT" ]; then TIMEOUT="8"; fi
+          if [ -z "$RETRY_FAILED" ]; then RETRY_FAILED="1"; fi
+          if [ -z "$RETRY_DELAY" ]; then RETRY_DELAY="0.35"; fi
+
+          CMD=(python run_daily_channel_tests.py
+            --workers "$WORKERS"
+            --timeout "$TIMEOUT"
+            --retry-failed "$RETRY_FAILED"
+            --retry-delay "$RETRY_DELAY")
+
+          if [ -n "${{ github.event.inputs.run_date }}" ]; then
+            CMD+=(--date "${{ github.event.inputs.run_date }}")
+          fi
+
+          printf 'Running command:\n  '
+          printf '%q ' "${CMD[@]}"
+          echo
+          "${CMD[@]}"
+
+      - name: Upload test artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iblunder-test-outputs
+          path: |
+            aongewach/channels.json
+            aongewach/weekly_schedule.json
+            aongewach/_schedule_today.json
+          if-no-files-found: warn
+
+      - name: Commit and push channels updates
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          BRANCH="${GITHUB_REF_NAME:-main}"
+          FILES=(
+            "aongewach/channels.json"
+          )
+          for f in "${FILES[@]}"; do
+            if [ -e "$f" ]; then
+              git add "$f"
+            else
+              echo "Skipping missing file: $f"
+            fi
+          done
+
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "IBLUNDER 09:00 UTC channel tests [skip ci]"
             for attempt in 1 2 3; do
               if git push origin "HEAD:$BRANCH"; then
                 echo "Push succeeded on attempt $attempt"

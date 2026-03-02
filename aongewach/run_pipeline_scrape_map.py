@@ -3,14 +3,13 @@
 Run Pipeline (Scrape + Compose + Channel Mapper only)
 
 Flow:
-  1. Scrape LiveSportTV + FANZO + WITM sources in parallel
+  1. Scrape FANZO + WITM + HuhSports sources in parallel
   2. Merge/compose final weekly schedule
-  3. Map schedule channels to existing IPTV channel IDs
+  3. Sync all schedule channels into channels.json with stable IDs
+  4. Map schedule channels to existing channel IDs
 """
 
 import argparse
-import os
-import shutil
 import subprocess
 import sys
 import time
@@ -113,21 +112,31 @@ def run_parallel_steps(steps, description, fail_on_error=True):
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Build composed schedule (LSTV soccer + FANZO/WITM non-soccer) and map channels without scanning playlists."
+        description="Build composed schedule (FANZO primary + HuhSports football) and map channels without scanning playlists."
     )
     parser.add_argument("--date", default=None, help="Start date (YYYY-MM-DD). Default: today UTC.")
     parser.add_argument("--days", type=int, default=7, help="Number of days to scrape.")
-    parser.add_argument("--max-pages", type=int, default=7, help="How many /data-today pages per day.")
+    parser.add_argument(
+        "--max-pages",
+        type=int,
+        default=7,
+        help="Legacy compatibility option (unused after LiveSportTV retirement).",
+    )
     parser.add_argument(
         "--max-tournaments",
         type=int,
         default=0,
-        help="Cap tournament API calls per day (0 = no cap).",
+        help="Legacy compatibility option (unused after LiveSportTV retirement).",
     )
     parser.add_argument(
         "--schedule-output",
         default="weekly_schedule.json",
         help="Output schedule file path.",
+    )
+    parser.add_argument(
+        "--channels-file",
+        default="channels.json",
+        help="channels.json file to sync and use for mapping.",
     )
     return parser.parse_args()
 
@@ -135,27 +144,15 @@ def parse_args() -> argparse.Namespace:
 def main() -> int:
     args = parse_args()
 
-    lsv_output = "weekly_schedule_livesporttv.json"
     fanzo_output = "weekly_schedule_fanzo.json"
     witm_output = "weekly_schedule_witm.json"
+    huhsports_output = "weekly_schedule_huhsports.json"
     fanzo_witm_output = "weekly_schedule_fanzo_enriched.json"
-
-    scrape_args = [
-        "--days",
-        str(args.days),
-        "--max-pages",
-        str(args.max_pages),
-        "--output",
-        lsv_output,
-    ]
-    if args.date:
-        scrape_args.extend(["--date", args.date])
-    if args.max_tournaments > 0:
-        scrape_args.extend(["--max-tournaments", str(args.max_tournaments)])
 
     fanzo_args = [
         "--days",
         str(args.days),
+        "--include-soccer",
         "--output",
         fanzo_output,
     ]
@@ -169,30 +166,38 @@ def main() -> int:
     ]
     if args.date:
         witm_args.extend(["--date", args.date])
+    huhsports_args = [
+        "--days",
+        str(args.days),
+        "--output",
+        huhsports_output,
+    ]
+    if args.date:
+        huhsports_args.extend(["--start-date", args.date])
     run_parallel_steps(
         [
             (
-                "scrape_schedule_livesporttv.py",
-                "Scraping Weekly Schedule from LiveSportTV",
-                scrape_args,
-            ),
-            (
                 "scrape_schedule_fanzo.py",
-                "Scraping Weekly Non-Soccer Schedule from FANZO",
+                "Scraping Weekly FANZO Schedule (including soccer/football)",
                 fanzo_args,
             ),
             (
                 "scrape_schedule_witm.py",
-                "Scraping Weekly Non-Soccer Schedule from WITM",
+                "Scraping Weekly WITM Schedule (non-soccer reinforcement)",
                 witm_args,
             ),
+            (
+                "scrape_schedule_huhsports.py",
+                "Scraping Weekly HuhSports Football Schedule",
+                huhsports_args,
+            ),
         ],
-        "Scraping Weekly Schedules from LiveSportTV + FANZO + WITM (Parallel)",
+        "Scraping Weekly Schedules from FANZO + WITM + HuhSports (Parallel)",
     )
 
     run_step(
         "merge_fanzo_witm.py",
-        "Merging FANZO + WITM Non-Soccer Schedule",
+        "Merging FANZO + WITM (non-soccer reinforcement + logos)",
         extra_args=[
             "--fanzo",
             fanzo_output,
@@ -205,26 +210,37 @@ def main() -> int:
 
     run_step(
         "compose_weekly_schedule.py",
-        "Composing Final Weekly Schedule (LSTV Soccer + FANZO/WITM Non-Soccer)",
+        "Composing Final Weekly Schedule (FANZO Primary + HuhSports Football)",
         extra_args=[
-            "--livesporttv",
-            lsv_output,
             "--fanzo-witm",
             fanzo_witm_output,
+            "--huhsports",
+            huhsports_output,
             "--output",
             args.schedule_output,
         ],
     )
 
-    mapper_input = "weekly_schedule.json"
-    if os.path.normcase(args.schedule_output) != os.path.normcase(mapper_input):
-        shutil.copyfile(args.schedule_output, mapper_input)
-        print(f"[INFO] Copied {args.schedule_output} -> {mapper_input} for mapper input.")
+    run_step(
+        "sync_schedule_channels.py",
+        "Syncing Schedule Channels into channels.json (stable IDs, no stream testing)",
+        extra_args=[
+            "--schedule",
+            args.schedule_output,
+            "--channels",
+            args.channels_file,
+        ],
+    )
 
     run_step(
         "map_channels.py",
         "Mapping Schedule Channels to Existing Channel IDs",
-        extra_args=None,
+        extra_args=[
+            "--schedule-file",
+            args.schedule_output,
+            "--channels-file",
+            args.channels_file,
+        ],
     )
 
     print(f"\n{'=' * 60}")

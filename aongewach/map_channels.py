@@ -26,6 +26,10 @@ DOMAIN_RE = re.compile(
     r"\b[a-z0-9][a-z0-9.-]{0,251}\.(com|net|org|io|tv|co|app|gg|me|fm|uk|us|au|de|fr)\b",
     re.IGNORECASE,
 )
+NOT_TELEVISED_RE = re.compile(
+    r"\b(not\s+televised|not\s+on\s+tv|no\s+tv|no\s+broadcast)\b",
+    re.IGNORECASE,
+)
 
 
 def load_json(filepath: str):
@@ -52,6 +56,8 @@ def is_usable_channel_name(name: str) -> bool:
     if NON_BROADCAST_WORD_RE.search(cleaned):
         return False
     if DOMAIN_RE.search(cleaned):
+        return False
+    if NOT_TELEVISED_RE.search(cleaned):
         return False
     return True
 

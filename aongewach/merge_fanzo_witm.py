@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Merge FANZO non-soccer schedule with WITM enrichment.
+Merge FANZO schedule with WITM enrichment.
 
 Exact match key:
   - Same day
@@ -38,6 +38,10 @@ DOMAIN_RE = re.compile(
     r"\b[a-z0-9][a-z0-9.-]{0,251}\.(com|net|org|io|tv|co|app|gg|me|fm|uk|us|au|de|fr)\b",
     re.IGNORECASE,
 )
+NOT_TELEVISED_RE = re.compile(
+    r"\b(not\s+televised|not\s+on\s+tv|no\s+tv|no\s+broadcast)\b",
+    re.IGNORECASE,
+)
 
 
 def load_json(path: str) -> Dict:
@@ -60,6 +64,21 @@ def normalize_text(value: object) -> str:
 
 def normalize_key_text(value: object) -> str:
     return normalize_text(value).lower()
+
+
+def is_soccer_sport(sport: object) -> bool:
+    key = normalize_key_text(sport)
+    if not key:
+        return False
+    explicit_non_soccer = (
+        "american football",
+        "australian rules",
+        "gaelic football",
+        "nfl",
+    )
+    if any(token in key for token in explicit_non_soccer):
+        return False
+    return key == "soccer" or key == "football" or "soccer" in key or "football" in key
 
 
 def canonical_event_name(value: object) -> str:
@@ -123,6 +142,8 @@ def is_usable_channel_name(name: str) -> bool:
         return False
     if DOMAIN_RE.search(cleaned):
         return False
+    if NOT_TELEVISED_RE.search(cleaned):
+        return False
     return True
 
 
@@ -175,6 +196,8 @@ def build_witm_lookup(
         for event in day.get("events", []):
             if not isinstance(event, dict):
                 continue
+            if is_soccer_sport(event.get("sport")):
+                continue
             name_key = build_name_key(day_date, event)
             if not name_key:
                 continue
@@ -215,6 +238,8 @@ def build_sport_logo_map(witm_schedule: List[Dict]) -> Dict[str, str]:
     for day in witm_schedule:
         for event in day.get("events", []) if isinstance(day.get("events"), list) else []:
             if not isinstance(event, dict):
+                continue
+            if is_soccer_sport(event.get("sport")):
                 continue
             sport_key = normalize_key_text(event.get("sport"))
             if not sport_key or sport_key in by_sport:
