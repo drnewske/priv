@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-02T13:55:48Z",
+  "generated_at": "2026-03-02T14:03:07Z",
   "source": "composed:fanzo+huhsports",
   "schema_version": "fanzo-huhsports-v2",
   "schema_fields": [
@@ -571,24 +571,6 @@
           "sport_logo": "https://www.wheresthematch.com/images/sports/horseracing.gif",
           "channels": [
             "Sky Sports Racing"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Market Rasen",
-          "start_time_iso": "2026-03-03T14:15:00Z",
-          "time": "14:15",
-          "sport": "Horse Racing",
-          "competition": "British Racing",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/88/competition_logo_1692681117.jpeg",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/horseracing.gif",
-          "channels": [
-            "Racing TV"
           ],
           "home_team": null,
           "away_team": null,
@@ -3202,6 +3184,7 @@
           "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/82/competition_logo_1732541777.jpeg",
           "sport_logo": null,
           "channels": [
+            "Sky Sports Action",
             "Sky Sports+"
           ],
           "home_team": "Leigh Leopards",
@@ -3405,6 +3388,7 @@
           "sport_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
           "channels": [
             "NBA League Pass",
+            "Sky Sports Action",
             "Sky Sports+"
           ],
           "home_team": "Boston Celtics",
@@ -4743,8 +4727,8 @@
           "sport_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
           "channels": [
             "NBA League Pass",
-            "Sky Sports Main Event",
-            "Sky Sports Action"
+            "Sky Sports Action",
+            "Sky Sports Main Event"
           ],
           "home_team": "Detroit Pistons",
           "away_team": "Brooklyn Nets",
@@ -5921,7 +5905,7 @@
   "composition": {
     "fanzo_primary_source": "fanzo.com",
     "football_secondary_source": "huhsports.com/tv-guide",
-    "fanzo_events_kept": 316,
+    "fanzo_events_kept": 315,
     "huhsports_unique_events_added": 0,
     "football_events_merged": 1,
     "fanzo_football_events_dropped_missing_huh_match": 1,

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-02T13:52:45Z",
+  "generated_at": "2026-03-02T14:03:04Z",
   "source": "fanzo.com",
   "schedule": [
     {
@@ -552,24 +552,6 @@
           "sport_logo": null,
           "channels": [
             "Sky Sports Racing"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Market Rasen",
-          "start_time_iso": "2026-03-03T14:15:00Z",
-          "time": "14:15",
-          "sport": "Horse Racing",
-          "competition": "British Racing",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/88/competition_logo_1692681117.jpeg",
-          "sport_logo": null,
-          "channels": [
-            "Racing TV"
           ],
           "home_team": null,
           "away_team": null,
@@ -3166,6 +3148,7 @@
           "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/82/competition_logo_1732541777.jpeg",
           "sport_logo": null,
           "channels": [
+            "Sky Sports Action",
             "Sky Sports+"
           ],
           "home_team": "Leigh Leopards",
@@ -3360,7 +3343,8 @@
           "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/8/competition_logo_1675352476.jpeg",
           "sport_logo": null,
           "channels": [
-            "NBA League Pass"
+            "NBA League Pass",
+            "Sky Sports Action"
           ],
           "home_team": "Boston Celtics",
           "away_team": "Dallas Mavericks",
@@ -4684,6 +4668,7 @@
           "sport_logo": null,
           "channels": [
             "NBA League Pass",
+            "Sky Sports Action",
             "Sky Sports Main Event"
           ],
           "home_team": "Detroit Pistons",
