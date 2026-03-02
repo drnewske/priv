@@ -41,6 +41,18 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--timeout", type=int, default=8, help="ffprobe timeout in seconds.")
     parser.add_argument("--retry-failed", type=int, default=1, help="Extra retries for failed stream tests.")
     parser.add_argument("--retry-delay", type=float, default=0.35, help="Delay between retries.")
+    parser.add_argument(
+        "--continuity-seconds",
+        type=int,
+        default=10,
+        help="ffmpeg continuity sample seconds for best-stream ranking.",
+    )
+    parser.add_argument(
+        "--history-days",
+        type=int,
+        default=14,
+        help="History window for best-stream availability scoring.",
+    )
     parser.add_argument("--no-ffmpeg-fallback", action="store_true", help="Disable ffmpeg fallback.")
     return parser.parse_args()
 
@@ -127,6 +139,33 @@ def main() -> int:
     if args.no_ffmpeg_fallback:
         scan_cmd.append("--no-ffmpeg-fallback")
     run_step(scan_cmd, "Test today's schedule channels and refresh channels DB")
+
+    rank_cmd = [
+        sys.executable,
+        "-u",
+        "rank_best_streams.py",
+        "--channels-file",
+        args.channels,
+        "--schedule-file",
+        args.today_schedule,
+        "--workers",
+        str(args.workers),
+        "--timeout",
+        str(args.timeout),
+        "--continuity-seconds",
+        str(args.continuity_seconds),
+        "--history-days",
+        str(args.history_days),
+        "--max-streams-per-channel",
+        "5",
+        "--max-backups",
+        "2",
+        "--max-reserve",
+        "2",
+    ]
+    if args.no_ffmpeg_fallback:
+        rank_cmd.append("--disable-continuity")
+    run_step(rank_cmd, "Rank best streams and select primary/backups")
 
     print(f"[DONE] Daily channel tests completed for UTC date {date_iso}")
     return 0

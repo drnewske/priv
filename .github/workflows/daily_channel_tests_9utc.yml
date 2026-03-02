@@ -95,6 +95,7 @@ jobs:
             aongewach/channels.json
             aongewach/weekly_schedule.json
             aongewach/_schedule_today.json
+            aongewach/stream_health_log.jsonl
           if-no-files-found: warn
 
       - name: Commit and push channels updates
@@ -102,9 +103,15 @@ jobs:
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
           BRANCH="${GITHUB_REF_NAME:-main}"
-          if [ -e "aongewach/channels.json" ]; then
-            git add "aongewach/channels.json"
-          fi
+          FILES=(
+            "aongewach/channels.json"
+            "aongewach/stream_health_log.jsonl"
+          )
+          for f in "${FILES[@]}"; do
+            if [ -e "$f" ]; then
+              git add "$f"
+            fi
+          done
 
           if git diff --staged --quiet; then
             echo "No changes to commit"
