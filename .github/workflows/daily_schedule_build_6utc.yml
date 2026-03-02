@@ -1,0 +1,122 @@
+name: Daily Schedule Build (06:00 UTC)
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+    inputs:
+      run_date:
+        description: "Target UTC date (YYYY-MM-DD). Leave blank for UTC today."
+        required: false
+        default: ""
+      days:
+        description: "Days ahead to scrape/build"
+        required: false
+        default: "7"
+
+jobs:
+  build-schedule:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          if [ -f aongewach/requirements.txt ]; then pip install -r aongewach/requirements.txt; fi
+          pip install requests beautifulsoup4
+
+      - name: Build 7-day schedule + sync channels + map
+        run: |
+          cd aongewach
+          DAYS="${{ github.event.inputs.days }}"
+          if [ -z "$DAYS" ]; then DAYS="7"; fi
+
+          CMD=(python run_pipeline_scrape_map.py
+            --days "$DAYS"
+            --schedule-output weekly_schedule.json
+            --channels-file channels.json)
+
+          if [ -n "${{ github.event.inputs.run_date }}" ]; then
+            CMD+=(--date "${{ github.event.inputs.run_date }}")
+          fi
+
+          printf 'Running command:\n  '
+          printf '%q ' "${CMD[@]}"
+          echo
+          "${CMD[@]}"
+
+      - name: Upload build artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-build-outputs
+          path: |
+            aongewach/weekly_schedule.json
+            aongewach/weekly_schedule_fanzo.json
+            aongewach/weekly_schedule_fanzo_enriched.json
+            aongewach/weekly_schedule_huhsports.json
+            aongewach/weekly_schedule_witm.json
+            aongewach/channels.json
+            aongewach/channel_map.json
+            aongewach/e104f869d64e3d41256d5398.json
+          if-no-files-found: warn
+
+      - name: Commit and push build outputs
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          BRANCH="${GITHUB_REF_NAME:-main}"
+          FILES=(
+            "aongewach/weekly_schedule.json"
+            "aongewach/weekly_schedule_fanzo.json"
+            "aongewach/weekly_schedule_fanzo_enriched.json"
+            "aongewach/weekly_schedule_huhsports.json"
+            "aongewach/weekly_schedule_witm.json"
+            "aongewach/channels.json"
+            "aongewach/channel_map.json"
+            "aongewach/e104f869d64e3d41256d5398.json"
+          )
+          for f in "${FILES[@]}"; do
+            if [ -e "$f" ]; then
+              git add "$f"
+            else
+              echo "Skipping missing file: $f"
+            fi
+          done
+
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Daily 06:00 UTC schedule build [skip ci]"
+            for attempt in 1 2 3; do
+              if git push origin "HEAD:$BRANCH"; then
+                echo "Push succeeded on attempt $attempt"
+                break
+              fi
+              if [ "$attempt" -eq 3 ]; then
+                echo "Push failed after 3 attempts"
+                exit 1
+              fi
+              echo "Push rejected, rebasing and retrying..."
+              git fetch origin "$BRANCH"
+              git rebase "origin/$BRANCH" || {
+                git rebase --abort || true
+                git pull --rebase origin "$BRANCH"
+              }
+            done
+          fi

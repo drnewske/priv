@@ -1,0 +1,129 @@
+name: Daily Channel Tests (09:00 UTC)
+
+on:
+  schedule:
+    - cron: "0 9 * * *"
+  workflow_dispatch:
+    inputs:
+      run_date:
+        description: "Target UTC date (YYYY-MM-DD). Leave blank for UTC today."
+        required: false
+        default: ""
+      workers:
+        description: "Parallel stream test workers"
+        required: false
+        default: "20"
+      timeout:
+        description: "ffprobe timeout (seconds)"
+        required: false
+        default: "8"
+      retry_failed:
+        description: "Extra retries for failed stream tests"
+        required: false
+        default: "1"
+      retry_delay:
+        description: "Delay between retries"
+        required: false
+        default: "0.35"
+
+jobs:
+  test-channels:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          if [ -f aongewach/requirements.txt ]; then pip install -r aongewach/requirements.txt; fi
+          pip install requests beautifulsoup4
+          if command -v ffprobe >/dev/null 2>&1; then
+            echo "ffprobe already available."
+          else
+            sudo apt-get update
+            sudo apt-get install -y ffmpeg
+          fi
+
+      - name: Run daily channel tests (today UTC events only)
+        run: |
+          cd aongewach
+          WORKERS="${{ github.event.inputs.workers }}"
+          TIMEOUT="${{ github.event.inputs.timeout }}"
+          RETRY_FAILED="${{ github.event.inputs.retry_failed }}"
+          RETRY_DELAY="${{ github.event.inputs.retry_delay }}"
+
+          if [ -z "$WORKERS" ]; then WORKERS="20"; fi
+          if [ -z "$TIMEOUT" ]; then TIMEOUT="8"; fi
+          if [ -z "$RETRY_FAILED" ]; then RETRY_FAILED="1"; fi
+          if [ -z "$RETRY_DELAY" ]; then RETRY_DELAY="0.35"; fi
+
+          CMD=(python run_daily_channel_tests.py
+            --workers "$WORKERS"
+            --timeout "$TIMEOUT"
+            --retry-failed "$RETRY_FAILED"
+            --retry-delay "$RETRY_DELAY")
+
+          if [ -n "${{ github.event.inputs.run_date }}" ]; then
+            CMD+=(--date "${{ github.event.inputs.run_date }}")
+          fi
+
+          printf 'Running command:\n  '
+          printf '%q ' "${CMD[@]}"
+          echo
+          "${CMD[@]}"
+
+      - name: Upload test artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-test-outputs
+          path: |
+            aongewach/channels.json
+            aongewach/weekly_schedule.json
+            aongewach/_schedule_today.json
+          if-no-files-found: warn
+
+      - name: Commit and push channels updates
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          BRANCH="${GITHUB_REF_NAME:-main}"
+          if [ -e "aongewach/channels.json" ]; then
+            git add "aongewach/channels.json"
+          fi
+
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Daily 09:00 UTC channel tests [skip ci]"
+            for attempt in 1 2 3; do
+              if git push origin "HEAD:$BRANCH"; then
+                echo "Push succeeded on attempt $attempt"
+                break
+              fi
+              if [ "$attempt" -eq 3 ]; then
+                echo "Push failed after 3 attempts"
+                exit 1
+              fi
+              echo "Push rejected, rebasing and retrying..."
+              git fetch origin "$BRANCH"
+              git rebase "origin/$BRANCH" || {
+                git rebase --abort || true
+                git pull --rebase origin "$BRANCH"
+              }
+            done
+          fi
