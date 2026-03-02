@@ -7,9 +7,13 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import email.utils
 import json
+import os
+import random
 import re
 import sys
+import time
 from typing import Dict, Iterable, List, Optional, Set, Tuple
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
@@ -21,6 +25,12 @@ DEFAULT_OUTPUT = "weekly_schedule_huhsports.json"
 DEFAULT_TIMEOUT = 30
 DEFAULT_DAYS = 7
 DEFAULT_LOGO_PREFIX = "https://flwvkgyqubvqipqkkqmo.supabase.co/storage/v1/object/public"
+DEFAULT_HTTP_RETRIES = 6
+DEFAULT_HTTP_BACKOFF_SECONDS = 2.0
+DEFAULT_HTTP_MAX_BACKOFF_SECONDS = 90.0
+DEFAULT_MIN_REQUEST_INTERVAL_SECONDS = 1.0
+DEFAULT_MAX_PROBE_REQUESTS = 14
+DEFAULT_STOP_PROBING_AFTER_RATE_LIMITS = 2
 
 UA = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -427,9 +437,113 @@ def unique_league_count(matches: Iterable[Dict]) -> int:
     return len(leagues)
 
 
-def scrape_page(session: requests.Session, url: str, timeout: int) -> Tuple[List[Dict], List[Dict], str]:
-    response = session.get(url, headers={"User-Agent": UA}, timeout=max(1, timeout))
-    response.raise_for_status()
+class FetchError(RuntimeError):
+    def __init__(self, message: str, status_code: Optional[int] = None):
+        super().__init__(message)
+        self.status_code = status_code
+
+
+def parse_retry_after_seconds(value: object) -> Optional[float]:
+    text = normalize_text(value)
+    if not text:
+        return None
+    if text.isdigit():
+        seconds = int(text)
+        return max(0.0, float(seconds))
+    try:
+        target = email.utils.parsedate_to_datetime(text)
+    except Exception:
+        return None
+    if target.tzinfo is None:
+        target = target.replace(tzinfo=dt.timezone.utc)
+    now = dt.datetime.now(dt.timezone.utc)
+    delay = (target - now).total_seconds()
+    return max(0.0, delay)
+
+
+def _enforce_request_spacing(session: requests.Session, min_interval_seconds: float) -> None:
+    if min_interval_seconds <= 0:
+        return
+    last_ts = float(getattr(session, "_last_request_monotonic", 0.0))
+    now = time.monotonic()
+    wait_for = (last_ts + min_interval_seconds) - now
+    if wait_for > 0:
+        time.sleep(wait_for)
+
+
+def _mark_request_time(session: requests.Session) -> None:
+    setattr(session, "_last_request_monotonic", time.monotonic())
+
+
+def fetch_url(
+    session: requests.Session,
+    url: str,
+    timeout: int,
+    retries: int,
+    backoff_seconds: float,
+    max_backoff_seconds: float,
+    min_interval_seconds: float,
+) -> requests.Response:
+    max_attempts = max(1, int(retries))
+
+    for attempt in range(1, max_attempts + 1):
+        _enforce_request_spacing(session, min_interval_seconds)
+        try:
+            response = session.get(url, timeout=max(1, timeout))
+        except requests.RequestException as exc:
+            _mark_request_time(session)
+            if attempt >= max_attempts:
+                raise FetchError(f"Request error for {url}: {exc}") from exc
+            delay = min(max_backoff_seconds, backoff_seconds * (2 ** (attempt - 1))) + random.uniform(0.15, 0.85)
+            print(
+                f"[HuhSports] request error on attempt {attempt}/{max_attempts} for {url}; retrying in {delay:.1f}s...",
+                flush=True,
+            )
+            time.sleep(delay)
+            continue
+
+        _mark_request_time(session)
+        status = int(response.status_code)
+        if 200 <= status < 300:
+            return response
+
+        retryable = status in {429, 500, 502, 503, 504}
+        if retryable and attempt < max_attempts:
+            retry_after = parse_retry_after_seconds(response.headers.get("Retry-After"))
+            if retry_after is not None:
+                delay = min(max_backoff_seconds, retry_after)
+            else:
+                delay = min(max_backoff_seconds, backoff_seconds * (2 ** (attempt - 1))) + random.uniform(0.15, 0.85)
+            print(
+                f"[HuhSports] HTTP {status} on attempt {attempt}/{max_attempts} for {url}; retrying in {delay:.1f}s...",
+                flush=True,
+            )
+            time.sleep(delay)
+            continue
+
+        raise FetchError(f"HTTP {status} for {url}", status_code=status)
+
+    raise FetchError(f"Exhausted retries for {url}")
+
+
+def scrape_page(
+    session: requests.Session,
+    url: str,
+    timeout: int,
+    retries: int,
+    backoff_seconds: float,
+    max_backoff_seconds: float,
+    min_interval_seconds: float,
+) -> Tuple[List[Dict], List[Dict], str]:
+    response = fetch_url(
+        session=session,
+        url=url,
+        timeout=timeout,
+        retries=retries,
+        backoff_seconds=backoff_seconds,
+        max_backoff_seconds=max_backoff_seconds,
+        min_interval_seconds=min_interval_seconds,
+    )
     html = response.text
 
     decoded_chunks = decode_next_flight_chunks(html)
@@ -498,13 +612,74 @@ def build_payload(
     }
 
 
+def load_fallback_payload(path: str) -> Optional[Dict[str, object]]:
+    if not path or not os.path.exists(path):
+        return None
+    try:
+        with open(path, "r", encoding="utf-8") as handle:
+            payload = json.load(handle)
+    except Exception:
+        return None
+    if not isinstance(payload, dict):
+        return None
+    if not isinstance(payload.get("matches"), list):
+        return None
+    return payload
+
+
+def persist_payload(path: str, payload: Dict[str, object]) -> None:
+    with open(path, "w", encoding="utf-8") as fh:
+        json.dump(payload, fh, ensure_ascii=False, indent=2)
+
+
 def parse_cli_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Scrape teams, team logos, and TV names from HuhSports TV Guide."
     )
     parser.add_argument("--url", default=DEFAULT_URL, help="TV guide URL.")
     parser.add_argument("--output", default=DEFAULT_OUTPUT, help="Output JSON path.")
+    parser.add_argument(
+        "--fallback-file",
+        default="",
+        help="Fallback JSON path to use when HuhSports is temporarily unavailable (default: output path).",
+    )
     parser.add_argument("--timeout", type=int, default=DEFAULT_TIMEOUT, help="HTTP timeout in seconds.")
+    parser.add_argument(
+        "--http-retries",
+        type=int,
+        default=DEFAULT_HTTP_RETRIES,
+        help="Total HTTP attempts per request (retries with backoff for 429/5xx).",
+    )
+    parser.add_argument(
+        "--http-backoff-seconds",
+        type=float,
+        default=DEFAULT_HTTP_BACKOFF_SECONDS,
+        help="Base exponential backoff seconds.",
+    )
+    parser.add_argument(
+        "--http-max-backoff-seconds",
+        type=float,
+        default=DEFAULT_HTTP_MAX_BACKOFF_SECONDS,
+        help="Max backoff cap in seconds.",
+    )
+    parser.add_argument(
+        "--min-request-interval-seconds",
+        type=float,
+        default=DEFAULT_MIN_REQUEST_INTERVAL_SECONDS,
+        help="Minimum spacing between HTTP requests to reduce rate-limit pressure.",
+    )
+    parser.add_argument(
+        "--max-probe-requests",
+        type=int,
+        default=DEFAULT_MAX_PROBE_REQUESTS,
+        help="Maximum date-probe requests after base page fetch.",
+    )
+    parser.add_argument(
+        "--stop-probing-after-rate-limits",
+        type=int,
+        default=DEFAULT_STOP_PROBING_AFTER_RATE_LIMITS,
+        help="Stop additional probe calls after this many 429 probe failures.",
+    )
     parser.add_argument(
         "--start-date",
         type=str,
@@ -526,11 +701,74 @@ def parse_cli_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def run(url: str, output: str, timeout: int, start_date: dt.date, days: int, sample: int) -> int:
+def run(
+    url: str,
+    output: str,
+    timeout: int,
+    start_date: dt.date,
+    days: int,
+    sample: int,
+    fallback_file: str,
+    http_retries: int,
+    http_backoff_seconds: float,
+    http_max_backoff_seconds: float,
+    min_request_interval_seconds: float,
+    max_probe_requests: int,
+    stop_probing_after_rate_limits: int,
+) -> int:
     days = max(1, int(days))
-    session = requests.Session()
+    http_retries = max(1, int(http_retries))
+    http_backoff_seconds = max(0.25, float(http_backoff_seconds))
+    http_max_backoff_seconds = max(1.0, float(http_max_backoff_seconds))
+    min_request_interval_seconds = max(0.0, float(min_request_interval_seconds))
+    max_probe_requests = max(0, int(max_probe_requests))
+    stop_probing_after_rate_limits = max(0, int(stop_probing_after_rate_limits))
 
-    base_leagues, base_matches, final_base_url = scrape_page(session, url, timeout)
+    session = requests.Session()
+    session.headers.update(
+        {
+            "User-Agent": UA,
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "en-US,en;q=0.9",
+            "Cache-Control": "no-cache",
+            "Pragma": "no-cache",
+            "Connection": "keep-alive",
+        }
+    )
+
+    fallback_path = normalize_text(fallback_file) or output
+
+    try:
+        base_leagues, base_matches, final_base_url = scrape_page(
+            session=session,
+            url=url,
+            timeout=timeout,
+            retries=http_retries,
+            backoff_seconds=http_backoff_seconds,
+            max_backoff_seconds=http_max_backoff_seconds,
+            min_interval_seconds=min_request_interval_seconds,
+        )
+    except Exception as exc:
+        fallback_payload = load_fallback_payload(fallback_path)
+        if fallback_payload is None:
+            raise
+        fallback_payload["generated_at"] = dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace(
+            "+00:00", "Z"
+        )
+        fallback_probe = fallback_payload.get("date_probe")
+        if not isinstance(fallback_probe, dict):
+            fallback_probe = {}
+            fallback_payload["date_probe"] = fallback_probe
+        fallback_probe["fallback_used"] = True
+        fallback_probe["fallback_source"] = fallback_path
+        fallback_probe["fallback_reason"] = normalize_text(exc)
+        persist_payload(output, fallback_payload)
+        print(
+            f"[HuhSports] base scrape unavailable ({exc}). Reused fallback data from {fallback_path} and wrote {output}.",
+            flush=True,
+        )
+        return 0
+
     combined_matches: List[Dict] = list(base_matches)
     base_available_dates = extract_match_dates(base_matches)
 
@@ -540,20 +778,49 @@ def run(url: str, output: str, timeout: int, start_date: dt.date, days: int, sam
     attempted_urls: List[str] = [url]
     attempted_url_set: Set[str] = {url}
     probe_hits: Dict[str, Optional[str]] = {}
+    probe_requests_used = 0
+    probe_rate_limit_hits = 0
+    stop_probing = False
 
     for target_date in requested_dates:
         target_iso = target_date.isoformat()
         hit_url: Optional[str] = None
 
+        if stop_probing:
+            probe_hits[target_iso] = None
+            continue
+
         for probe_url in build_probe_urls_for_date(url, target_date):
+            if probe_requests_used >= max_probe_requests:
+                stop_probing = True
+                break
             if probe_url in attempted_url_set:
                 continue
             attempted_url_set.add(probe_url)
             attempted_urls.append(probe_url)
+            probe_requests_used += 1
 
             try:
-                _, probe_matches, _ = scrape_page(session, probe_url, timeout)
-            except Exception:
+                _, probe_matches, _ = scrape_page(
+                    session=session,
+                    url=probe_url,
+                    timeout=timeout,
+                    retries=http_retries,
+                    backoff_seconds=http_backoff_seconds,
+                    max_backoff_seconds=http_max_backoff_seconds,
+                    min_interval_seconds=min_request_interval_seconds,
+                )
+            except Exception as exc:
+                status_code = getattr(exc, "status_code", None)
+                if status_code == 429:
+                    probe_rate_limit_hits += 1
+                    if stop_probing_after_rate_limits > 0 and probe_rate_limit_hits >= stop_probing_after_rate_limits:
+                        print(
+                            "[HuhSports] probe rate-limited repeatedly; stopping extra probe requests for this run.",
+                            flush=True,
+                        )
+                        stop_probing = True
+                        break
                 continue
 
             combined_matches.extend(probe_matches)
@@ -583,9 +850,16 @@ def run(url: str, output: str, timeout: int, start_date: dt.date, days: int, sam
         probe_attempted_urls=attempted_urls,
         probe_hits=probe_hits,
     )
+    probe_meta = payload.get("date_probe")
+    if not isinstance(probe_meta, dict):
+        probe_meta = {}
+        payload["date_probe"] = probe_meta
+    probe_meta["probe_requests_used"] = probe_requests_used
+    probe_meta["probe_rate_limit_hits"] = probe_rate_limit_hits
+    probe_meta["probe_truncated"] = stop_probing
+    probe_meta["fallback_used"] = False
 
-    with open(output, "w", encoding="utf-8") as fh:
-        json.dump(payload, fh, ensure_ascii=False, indent=2)
+    persist_payload(output, payload)
 
     unique_tv_count = int(payload.get("unique_tv_name_count", 0))
     unique_team_count = int(payload.get("unique_team_count", 0))
@@ -624,6 +898,13 @@ def main() -> int:
             start_date=start_date,
             days=max(1, int(args.days)),
             sample=max(0, int(args.sample)),
+            fallback_file=args.fallback_file,
+            http_retries=max(1, int(args.http_retries)),
+            http_backoff_seconds=max(0.25, float(args.http_backoff_seconds)),
+            http_max_backoff_seconds=max(1.0, float(args.http_max_backoff_seconds)),
+            min_request_interval_seconds=max(0.0, float(args.min_request_interval_seconds)),
+            max_probe_requests=max(0, int(args.max_probe_requests)),
+            stop_probing_after_rate_limits=max(0, int(args.stop_probing_after_rate_limits)),
         )
     except ValueError as exc:
         print(f"Invalid argument: {exc}", file=sys.stderr)
