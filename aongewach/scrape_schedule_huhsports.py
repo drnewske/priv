@@ -32,6 +32,7 @@ DEFAULT_MIN_REQUEST_INTERVAL_SECONDS = 1.0
 DEFAULT_MAX_PROBE_REQUESTS = 14
 DEFAULT_STOP_PROBING_AFTER_RATE_LIMITS = 2
 DEFAULT_PROXY_MODE = "round_robin"
+DEFAULT_PROBE_HTTP_RETRIES = 1
 
 UA = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -53,6 +54,26 @@ URL_CREDENTIAL_RE = re.compile(r"(https?://)([^/@\s]+)@", re.IGNORECASE)
 
 def normalize_text(value: object) -> str:
     return " ".join(str(value or "").strip().split())
+
+
+def env_int(name: str, default: int) -> int:
+    raw = os.getenv(name, "")
+    if not raw:
+        return default
+    try:
+        return int(raw)
+    except (TypeError, ValueError):
+        return default
+
+
+def env_float(name: str, default: float) -> float:
+    raw = os.getenv(name, "")
+    if not raw:
+        return default
+    try:
+        return float(raw)
+    except (TypeError, ValueError):
+        return default
 
 
 def sanitize_error_text(value: object) -> str:
@@ -820,41 +841,52 @@ def parse_cli_args() -> argparse.Namespace:
         default="",
         help="Fallback JSON path to use when HuhSports is temporarily unavailable (default: output path).",
     )
-    parser.add_argument("--timeout", type=int, default=DEFAULT_TIMEOUT, help="HTTP timeout in seconds.")
+    parser.add_argument(
+        "--timeout",
+        type=int,
+        default=env_int("HUHSPORTS_TIMEOUT", DEFAULT_TIMEOUT),
+        help="HTTP timeout in seconds.",
+    )
     parser.add_argument(
         "--http-retries",
         type=int,
-        default=DEFAULT_HTTP_RETRIES,
+        default=env_int("HUHSPORTS_HTTP_RETRIES", DEFAULT_HTTP_RETRIES),
         help="Total HTTP attempts per request (retries with backoff for 429/5xx).",
+    )
+    parser.add_argument(
+        "--probe-http-retries",
+        type=int,
+        default=env_int("HUHSPORTS_PROBE_HTTP_RETRIES", DEFAULT_PROBE_HTTP_RETRIES),
+        help="HTTP attempts per probe URL (keep low to avoid long 429 loops).",
     )
     parser.add_argument(
         "--http-backoff-seconds",
         type=float,
-        default=DEFAULT_HTTP_BACKOFF_SECONDS,
+        default=env_float("HUHSPORTS_HTTP_BACKOFF_SECONDS", DEFAULT_HTTP_BACKOFF_SECONDS),
         help="Base exponential backoff seconds.",
     )
     parser.add_argument(
         "--http-max-backoff-seconds",
         type=float,
-        default=DEFAULT_HTTP_MAX_BACKOFF_SECONDS,
+        default=env_float("HUHSPORTS_HTTP_MAX_BACKOFF_SECONDS", DEFAULT_HTTP_MAX_BACKOFF_SECONDS),
         help="Max backoff cap in seconds.",
     )
     parser.add_argument(
         "--min-request-interval-seconds",
         type=float,
-        default=DEFAULT_MIN_REQUEST_INTERVAL_SECONDS,
+        default=env_float("HUHSPORTS_MIN_REQUEST_INTERVAL_SECONDS", DEFAULT_MIN_REQUEST_INTERVAL_SECONDS),
         help="Minimum spacing between HTTP requests to reduce rate-limit pressure.",
     )
     parser.add_argument(
         "--max-probe-requests",
         type=int,
-        default=DEFAULT_MAX_PROBE_REQUESTS,
+        default=env_int("HUHSPORTS_MAX_PROBE_REQUESTS", DEFAULT_MAX_PROBE_REQUESTS),
         help="Maximum date-probe requests after base page fetch.",
     )
     parser.add_argument(
         "--stop-probing-after-rate-limits",
         type=int,
-        default=DEFAULT_STOP_PROBING_AFTER_RATE_LIMITS,
+        default=env_int("HUHSPORTS_STOP_PROBING_AFTER_RATE_LIMITS", DEFAULT_STOP_PROBING_AFTER_RATE_LIMITS),
         help="Stop additional probe calls after this many 429 probe failures.",
     )
     parser.add_argument(
@@ -890,6 +922,7 @@ def run(
     proxy_mode: str,
     fallback_file: str,
     http_retries: int,
+    probe_http_retries: int,
     http_backoff_seconds: float,
     http_max_backoff_seconds: float,
     min_request_interval_seconds: float,
@@ -898,6 +931,7 @@ def run(
 ) -> int:
     days = max(1, int(days))
     http_retries = max(1, int(http_retries))
+    probe_http_retries = max(1, int(probe_http_retries))
     http_backoff_seconds = max(0.25, float(http_backoff_seconds))
     http_max_backoff_seconds = max(1.0, float(http_max_backoff_seconds))
     min_request_interval_seconds = max(0.0, float(min_request_interval_seconds))
@@ -1011,7 +1045,7 @@ def run(
                     session=session,
                     url=probe_url,
                     timeout=timeout,
-                    retries=http_retries,
+                    retries=probe_http_retries,
                     backoff_seconds=http_backoff_seconds,
                     max_backoff_seconds=http_max_backoff_seconds,
                     min_interval_seconds=min_request_interval_seconds,
@@ -1111,6 +1145,7 @@ def main() -> int:
             proxy_mode=args.proxy_mode,
             fallback_file=args.fallback_file,
             http_retries=max(1, int(args.http_retries)),
+            probe_http_retries=max(1, int(args.probe_http_retries)),
             http_backoff_seconds=max(0.25, float(args.http_backoff_seconds)),
             http_max_backoff_seconds=max(1.0, float(args.http_max_backoff_seconds)),
             min_request_interval_seconds=max(0.0, float(args.min_request_interval_seconds)),
