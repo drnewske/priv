@@ -31,6 +31,7 @@ DEFAULT_HTTP_MAX_BACKOFF_SECONDS = 90.0
 DEFAULT_MIN_REQUEST_INTERVAL_SECONDS = 1.0
 DEFAULT_MAX_PROBE_REQUESTS = 14
 DEFAULT_STOP_PROBING_AFTER_RATE_LIMITS = 2
+DEFAULT_PROXY_MODE = "round_robin"
 
 UA = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -47,10 +48,114 @@ TEAM_LOGO_URL_RE = re.compile(
     r"(https://[^\"'\s]+/storage/v1/object/public)/icons/team/(\d+)\.(png|webp|jpg|jpeg|svg)",
     re.IGNORECASE,
 )
+URL_CREDENTIAL_RE = re.compile(r"(https?://)([^/@\s]+)@", re.IGNORECASE)
 
 
 def normalize_text(value: object) -> str:
     return " ".join(str(value or "").strip().split())
+
+
+def sanitize_error_text(value: object) -> str:
+    text = normalize_text(value)
+    if not text:
+        return ""
+    return URL_CREDENTIAL_RE.sub(r"\1***@", text)
+
+
+def normalize_proxy_url(raw: object) -> str:
+    text = normalize_text(raw)
+    if not text:
+        return ""
+
+    if "://" in text:
+        parsed = urlsplit(text)
+        if parsed.scheme and parsed.netloc:
+            return text
+        return ""
+
+    if text.count(":") == 3:
+        host, port, username, password = text.split(":", 3)
+        if host and port and username and password:
+            return f"http://{username}:{password}@{host}:{port}"
+        return ""
+
+    if "@" in text:
+        return f"http://{text}"
+
+    if text.count(":") == 1:
+        host, port = text.split(":", 1)
+        if host and port:
+            return f"http://{host}:{port}"
+    return ""
+
+
+def _read_proxy_tokens_from_text(raw: str) -> List[str]:
+    tokens: List[str] = []
+    if not raw:
+        return tokens
+    normalized_lines = raw.replace(",", "\n").replace(";", "\n").splitlines()
+    for line in normalized_lines:
+        token = normalize_text(line)
+        if not token or token.startswith("#"):
+            continue
+        tokens.append(token)
+    return tokens
+
+
+def load_proxy_pool(proxy_file: str, proxy_list: str) -> List[str]:
+    pool: List[str] = []
+    seen = set()
+
+    for token in _read_proxy_tokens_from_text(proxy_list):
+        proxy_url = normalize_proxy_url(token)
+        if not proxy_url:
+            continue
+        key = proxy_url.casefold()
+        if key in seen:
+            continue
+        seen.add(key)
+        pool.append(proxy_url)
+
+    file_path = normalize_text(proxy_file)
+    if file_path and os.path.exists(file_path):
+        try:
+            with open(file_path, "r", encoding="utf-8") as handle:
+                text = handle.read()
+        except Exception:
+            text = ""
+        for token in _read_proxy_tokens_from_text(text):
+            proxy_url = normalize_proxy_url(token)
+            if not proxy_url:
+                continue
+            key = proxy_url.casefold()
+            if key in seen:
+                continue
+            seen.add(key)
+            pool.append(proxy_url)
+
+    return pool
+
+
+def proxy_label(proxy_url: str) -> str:
+    parsed = urlsplit(proxy_url)
+    host = parsed.hostname or "proxy"
+    port = parsed.port
+    if port:
+        return f"{host}:{port}"
+    return host
+
+
+def choose_proxy(session: requests.Session, proxy_pool: List[str], proxy_mode: str) -> Optional[str]:
+    if not proxy_pool:
+        return None
+    mode = normalize_text(proxy_mode).lower()
+    if mode == "random":
+        return random.choice(proxy_pool)
+
+    idx = int(getattr(session, "_proxy_index", 0))
+    selected = proxy_pool[idx % len(proxy_pool)]
+    setattr(session, "_proxy_index", idx + 1)
+    return selected
 
 
 def parse_start_date(raw: Optional[str]) -> dt.date:
@@ -483,20 +588,28 @@ def fetch_url(
     backoff_seconds: float,
     max_backoff_seconds: float,
     min_interval_seconds: float,
+    proxy_pool: List[str],
+    proxy_mode: str,
 ) -> requests.Response:
     max_attempts = max(1, int(retries))
 
     for attempt in range(1, max_attempts + 1):
         _enforce_request_spacing(session, min_interval_seconds)
+        proxy_url = choose_proxy(session, proxy_pool, proxy_mode)
+        request_kwargs = {}
+        if proxy_url:
+            request_kwargs["proxies"] = {"http": proxy_url, "https": proxy_url}
+
         try:
-            response = session.get(url, timeout=max(1, timeout))
+            response = session.get(url, timeout=max(1, timeout), **request_kwargs)
         except requests.RequestException as exc:
             _mark_request_time(session)
             if attempt >= max_attempts:
-                raise FetchError(f"Request error for {url}: {exc}") from exc
+                raise FetchError(f"Request error for {url}: {sanitize_error_text(exc)}") from exc
             delay = min(max_backoff_seconds, backoff_seconds * (2 ** (attempt - 1))) + random.uniform(0.15, 0.85)
+            proxy_suffix = f" via {proxy_label(proxy_url)}" if proxy_url else ""
             print(
-                f"[HuhSports] request error on attempt {attempt}/{max_attempts} for {url}; retrying in {delay:.1f}s...",
+                f"[HuhSports] request error on attempt {attempt}/{max_attempts} for {url}{proxy_suffix}; retrying in {delay:.1f}s...",
                 flush=True,
             )
             time.sleep(delay)
@@ -514,8 +627,9 @@ def fetch_url(
                 delay = min(max_backoff_seconds, retry_after)
             else:
                 delay = min(max_backoff_seconds, backoff_seconds * (2 ** (attempt - 1))) + random.uniform(0.15, 0.85)
+            proxy_suffix = f" via {proxy_label(proxy_url)}" if proxy_url else ""
             print(
-                f"[HuhSports] HTTP {status} on attempt {attempt}/{max_attempts} for {url}; retrying in {delay:.1f}s...",
+                f"[HuhSports] HTTP {status} on attempt {attempt}/{max_attempts} for {url}{proxy_suffix}; retrying in {delay:.1f}s...",
                 flush=True,
             )
             time.sleep(delay)
@@ -534,6 +648,8 @@ def scrape_page(
     backoff_seconds: float,
     max_backoff_seconds: float,
     min_interval_seconds: float,
+    proxy_pool: List[str],
+    proxy_mode: str,
 ) -> Tuple[List[Dict], List[Dict], str]:
     response = fetch_url(
         session=session,
@@ -543,6 +659,8 @@ def scrape_page(
         backoff_seconds=backoff_seconds,
         max_backoff_seconds=max_backoff_seconds,
         min_interval_seconds=min_interval_seconds,
+        proxy_pool=proxy_pool,
+        proxy_mode=proxy_mode,
     )
     html = response.text
 
@@ -682,6 +800,22 @@ def parse_cli_args() -> argparse.Namespace:
     parser.add_argument("--url", default=DEFAULT_URL, help="TV guide URL.")
     parser.add_argument("--output", default=DEFAULT_OUTPUT, help="Output JSON path.")
     parser.add_argument(
+        "--proxy-file",
+        default=os.getenv("HUHSPORTS_PROXY_FILE", ""),
+        help="Optional proxy file path (one proxy per line). Supports ip:port:user:pass format.",
+    )
+    parser.add_argument(
+        "--proxy-list",
+        default=os.getenv("HUHSPORTS_PROXY_LIST", ""),
+        help="Optional inline proxy list (env-friendly; newline/comma/semicolon separated).",
+    )
+    parser.add_argument(
+        "--proxy-mode",
+        choices=["round_robin", "random"],
+        default=os.getenv("HUHSPORTS_PROXY_MODE", DEFAULT_PROXY_MODE),
+        help="Proxy rotation strategy when multiple proxies are supplied.",
+    )
+    parser.add_argument(
         "--fallback-file",
         default="",
         help="Fallback JSON path to use when HuhSports is temporarily unavailable (default: output path).",
@@ -751,6 +885,9 @@ def run(
     start_date: dt.date,
     days: int,
     sample: int,
+    proxy_file: str,
+    proxy_list: str,
+    proxy_mode: str,
     fallback_file: str,
     http_retries: int,
     http_backoff_seconds: float,
@@ -766,6 +903,7 @@ def run(
     min_request_interval_seconds = max(0.0, float(min_request_interval_seconds))
     max_probe_requests = max(0, int(max_probe_requests))
     stop_probing_after_rate_limits = max(0, int(stop_probing_after_rate_limits))
+    proxy_mode = normalize_text(proxy_mode).lower() or DEFAULT_PROXY_MODE
 
     session = requests.Session()
     session.headers.update(
@@ -780,6 +918,9 @@ def run(
     )
 
     fallback_path = normalize_text(fallback_file) or output
+    proxy_pool = load_proxy_pool(proxy_file=proxy_file, proxy_list=proxy_list)
+    if proxy_pool:
+        print(f"[HuhSports] Using {len(proxy_pool)} proxies (mode={proxy_mode}).", flush=True)
 
     try:
         base_leagues, base_matches, final_base_url = scrape_page(
@@ -790,6 +931,8 @@ def run(
             backoff_seconds=http_backoff_seconds,
             max_backoff_seconds=http_max_backoff_seconds,
             min_interval_seconds=min_request_interval_seconds,
+            proxy_pool=proxy_pool,
+            proxy_mode=proxy_mode,
         )
     except Exception as exc:
         # Fail-open for transient fetch/rate-limit issues so the wider pipeline can proceed.
@@ -809,10 +952,10 @@ def run(
             fallback_probe["fallback_used"] = True
             fallback_probe["fallback_mode"] = "cached"
             fallback_probe["fallback_source"] = fallback_path
-            fallback_probe["fallback_reason"] = normalize_text(exc)
+            fallback_probe["fallback_reason"] = sanitize_error_text(exc)
             persist_payload(output, fallback_payload)
             print(
-                f"[HuhSports] base scrape unavailable ({exc}). Reused fallback data from {fallback_path} and wrote {output}.",
+                f"[HuhSports] base scrape unavailable ({sanitize_error_text(exc)}). Reused fallback data from {fallback_path} and wrote {output}.",
                 flush=True,
             )
             return 0
@@ -823,11 +966,11 @@ def run(
             requested_days=days,
             attempted_urls=[url],
             fallback_source=fallback_path,
-            fallback_reason=normalize_text(exc),
+            fallback_reason=sanitize_error_text(exc),
         )
         persist_payload(output, empty_payload)
         print(
-            f"[HuhSports] base scrape unavailable ({exc}). No cached fallback found; wrote empty fallback payload to {output}.",
+            f"[HuhSports] base scrape unavailable ({sanitize_error_text(exc)}). No cached fallback found; wrote empty fallback payload to {output}.",
             flush=True,
         )
         return 0
@@ -872,6 +1015,8 @@ def run(
                     backoff_seconds=http_backoff_seconds,
                     max_backoff_seconds=http_max_backoff_seconds,
                     min_interval_seconds=min_request_interval_seconds,
+                    proxy_pool=proxy_pool,
+                    proxy_mode=proxy_mode,
                 )
             except Exception as exc:
                 status_code = getattr(exc, "status_code", None)
@@ -961,6 +1106,9 @@ def main() -> int:
             start_date=start_date,
             days=max(1, int(args.days)),
             sample=max(0, int(args.sample)),
+            proxy_file=args.proxy_file,
+            proxy_list=args.proxy_list,
+            proxy_mode=args.proxy_mode,
             fallback_file=args.fallback_file,
             http_retries=max(1, int(args.http_retries)),
             http_backoff_seconds=max(0.25, float(args.http_backoff_seconds)),

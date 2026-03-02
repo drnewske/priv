@@ -20,6 +20,9 @@ jobs:
     timeout-minutes: 180
     permissions:
       contents: write
+    env:
+      HUHSPORTS_PROXY_LIST: ${{ secrets.HUHSPORTS_PROXY_LIST }}
+      HUHSPORTS_PROXY_MODE: round_robin
 
     steps:
       - name: Checkout repository
