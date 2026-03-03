@@ -109,6 +109,24 @@
           "extraction": "feed",
           "inspection_count": 1,
           "last_result": "ok"
+        },
+        "https://www.iptvcodes.online/2026/03/xtream-codes-iptv-m3u-playlists-03032026.html": {
+          "title": "XTREAM CODES & IPTV M3U PLAYLISTS 03/03/2026",
+          "url": "https://www.iptvcodes.online/2026/03/xtream-codes-iptv-m3u-playlists-03032026.html",
+          "scraped_at": "2026-03-03 06:49:27",
+          "links_found": 46,
+          "extraction": "feed",
+          "inspection_count": 1,
+          "last_result": "ok"
+        },
+        "https://www.iptvcodes.online/2026/03/xtream-codes-iptv-m3u-playlists-02032026_0170261258.html": {
+          "title": "XTREAM CODES & IPTV M3U PLAYLISTS 02/03/2026",
+          "url": "https://www.iptvcodes.online/2026/03/xtream-codes-iptv-m3u-playlists-02032026_0170261258.html",
+          "scraped_at": "2026-03-03 06:49:27",
+          "links_found": 94,
+          "extraction": "feed",
+          "inspection_count": 1,
+          "last_result": "ok"
         }
       }
     },
@@ -144,10 +162,10 @@
         "https://m3umax.blogspot.com/2026/03/xtream-iptv-02032026-table-of-31.html": {
           "title": "XTREAM IPTV 02/03/2026 – Table of 31 Account Working for Free",
           "url": "https://m3umax.blogspot.com/2026/03/xtream-iptv-02032026-table-of-31.html",
-          "scraped_at": "2026-03-02 06:55:21",
+          "scraped_at": "2026-03-03 06:49:28",
           "links_found": 2,
           "extraction": "article",
-          "inspection_count": 1,
+          "inspection_count": 2,
           "last_result": "ok"
         }
       }
@@ -274,19 +292,19 @@
         "https://world-iptv.club/?p=7903": {
           "title": "World Iptv: free popular iptv playlist M3u 27/02/2026",
           "url": "https://world-iptv.club/world-iptv-free-popular-iptv-playlist-m3u-27-02-2026/",
-          "scraped_at": "2026-03-02 06:55:20",
+          "scraped_at": "2026-03-03 06:49:26",
           "links_found": 20,
           "extraction": "feed",
-          "inspection_count": 3,
+          "inspection_count": 4,
           "last_result": "ok"
         },
         "https://world-iptv.club/?p=7901": {
           "title": "World Iptv: Xtream Codes Daily Lists 27/02/2026",
           "url": "https://world-iptv.club/world-iptv-xtream-codes-daily-lists-27-02-2026/",
-          "scraped_at": "2026-03-02 06:55:20",
+          "scraped_at": "2026-03-03 06:49:26",
           "links_found": 16,
           "extraction": "feed",
-          "inspection_count": 3,
+          "inspection_count": 4,
           "last_result": "ok"
         },
         "https://world-iptv.club/?p=7899": {
@@ -301,37 +319,37 @@
         "https://world-iptv.club/?p=7971": {
           "title": "IPTV Works — If You Set It Up Right (List IPTV 28_02_2026)",
           "url": "https://world-iptv.club/iptv-works-if-you-set-it-up-right-list-iptv-28_02_2026/",
-          "scraped_at": "2026-03-02 06:55:20",
+          "scraped_at": "2026-03-03 06:49:26",
           "links_found": 0,
           "extraction": "feed",
-          "inspection_count": 2,
+          "inspection_count": 3,
           "last_result": "no_links"
         },
         "https://world-iptv.club/?p=7928": {
           "title": "Free Popular iptv Playlist M3u World Iptv: 28/02/2026",
           "url": "https://world-iptv.club/free-popular-iptv-playlist-m3u-world-iptv-28-02-2026/",
-          "scraped_at": "2026-03-02 06:55:20",
+          "scraped_at": "2026-03-03 06:49:26",
           "links_found": 208,
           "extraction": "feed",
-          "inspection_count": 2,
+          "inspection_count": 3,
           "last_result": "ok"
         },
         "https://world-iptv.club/?p=7925": {
           "title": "Xtream Codes Daily Lists World Iptv: 28/02/2026",
           "url": "https://world-iptv.club/xtream-codes-daily-lists-world-iptv-27-02-2026/",
-          "scraped_at": "2026-03-02 06:55:20",
+          "scraped_at": "2026-03-03 06:49:26",
           "links_found": 210,
           "extraction": "feed",
-          "inspection_count": 2,
+          "inspection_count": 3,
           "last_result": "ok"
         },
         "https://world-iptv.club/?p=7923": {
           "title": "World Iptv:STBEMU CODES DAİLY LİSTS 28/02/2026",
           "url": "https://world-iptv.club/world-iptvstbemu-codes-daily-lists-28-02-2026/",
-          "scraped_at": "2026-03-02 06:55:20",
+          "scraped_at": "2026-03-03 06:49:26",
           "links_found": 0,
           "extraction": "feed",
-          "inspection_count": 2,
+          "inspection_count": 3,
           "last_result": "no_links"
         },
         "https://world-iptv.club/?p=7844": {
@@ -346,36 +364,81 @@
         "https://world-iptv.club/?p=8049": {
           "title": "IPTV In 2026: IPTV Works If You Set It Up Right (List IPTV 01_03_2026)",
           "url": "https://world-iptv.club/iptv-in-2026-iptv-works-if-you-set-it-up-right-list-iptv-01_03_2026/",
-          "scraped_at": "2026-03-02 06:55:18",
+          "scraped_at": "2026-03-03 06:49:26",
           "links_found": 0,
-          "extraction": "article",
-          "inspection_count": 1,
+          "extraction": "feed",
+          "inspection_count": 2,
           "last_result": "no_links"
         },
         "https://world-iptv.club/?p=8015": {
           "title": "Free Popular iptv Playlist M3u World Iptv 01/03/2026",
           "url": "https://world-iptv.club/free-popular-iptv-playlist-m3u-world-iptv-01-03-2026/",
-          "scraped_at": "2026-03-02 06:55:18",
+          "scraped_at": "2026-03-03 06:49:26",
           "links_found": 249,
           "extraction": "feed",
-          "inspection_count": 1,
+          "inspection_count": 2,
           "last_result": "ok"
         },
         "https://world-iptv.club/?p=8013": {
           "title": "Xtream Codes Daily Lists World Iptv 01/03/2026",
           "url": "https://world-iptv.club/xtream-codes-daily-lists-world-iptv-01-03-2026/",
-          "scraped_at": "2026-03-02 06:55:18",
+          "scraped_at": "2026-03-03 06:49:26",
           "links_found": 250,
           "extraction": "feed",
-          "inspection_count": 1,
+          "inspection_count": 2,
           "last_result": "ok"
         },
         "https://world-iptv.club/?p=8011": {
           "title": "STBEMU CODES DAİLY LİSTS World Iptv: 01/03/2026",
           "url": "https://world-iptv.club/stbemu-codes-daily-lists-world-iptv-01-03-2026/",
-          "scraped_at": "2026-03-02 06:55:20",
+          "scraped_at": "2026-03-03 06:49:26",
+          "links_found": 0,
+          "extraction": "feed",
+          "inspection_count": 2,
+          "last_result": "no_links"
+        },
+        "https://world-iptv.club/?p=8795": {
+          "title": "Download Ottplayer SA TV Premium IPTV APK Full Activated",
+          "url": "https://world-iptv.club/download-ottplayer-sa-tv-premium-iptv-apk-full-activated/",
+          "scraped_at": "2026-03-03 06:49:24",
           "links_found": 0,
           "extraction": "article",
+          "inspection_count": 1,
+          "last_result": "no_links"
+        },
+        "https://world-iptv.club/?p=8793": {
+          "title": "IPTV In 2026: IPTV Works If You Set It Up Right (List IPTV 03_03_2026)",
+          "url": "https://world-iptv.club/iptv-in-2026-iptv-works-if-you-set-it-up-right-list-iptv-03_03_2026/",
+          "scraped_at": "2026-03-03 06:49:26",
+          "links_found": 0,
+          "extraction": "article",
+          "inspection_count": 1,
+          "last_result": "no_links"
+        },
+        "https://world-iptv.club/?p=8743": {
+          "title": "Free Popular iptv Playlist M3u World Iptv 03/03/2026",
+          "url": "https://world-iptv.club/free-popular-iptv-playlist-m3u-world-iptv-03-03-2026/",
+          "scraped_at": "2026-03-03 06:49:26",
+          "links_found": 320,
+          "extraction": "feed",
+          "inspection_count": 1,
+          "last_result": "ok"
+        },
+        "https://world-iptv.club/?p=8740": {
+          "title": "Xtream Codes Daily Lists World Iptv 03/03/2026",
+          "url": "https://world-iptv.club/xtream-codes-daily-lists-world-iptv-03-03-2026/",
+          "scraped_at": "2026-03-03 06:49:26",
+          "links_found": 322,
+          "extraction": "feed",
+          "inspection_count": 1,
+          "last_result": "ok"
+        },
+        "https://world-iptv.club/?p=8737": {
+          "title": "STBEMU CODES DAİLY LİSTS World Iptv: 03/03/2026",
+          "url": "https://world-iptv.club/stbemu-codes-daily-lists-world-iptv-03-03-2026/",
+          "scraped_at": "2026-03-03 06:49:26",
+          "links_found": 0,
+          "extraction": "feed",
           "inspection_count": 1,
           "last_result": "no_links"
         }
