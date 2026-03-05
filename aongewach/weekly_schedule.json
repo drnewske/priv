@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-05T17:48:52Z",
+  "generated_at": "2026-03-05T21:49:29Z",
   "source": "composed:fanzo+football-secondary",
   "schema_version": "fanzo-football-secondary-v3",
   "schema_fields": [
@@ -24,132 +24,6 @@
       "day": "Thursday",
       "events": [
         {
-          "name": "Saint Cloud",
-          "start_time_iso": "2026-03-05T12:55:00Z",
-          "time": "12:55",
-          "sport": "Horse Racing",
-          "competition": "French Racing",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/99/competition_logo_1687199743.jpeg",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/horseracing.gif",
-          "channels": [
-            "Sky Sports Racing"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Wincanton",
-          "start_time_iso": "2026-03-05T13:35:00Z",
-          "time": "13:35",
-          "sport": "Horse Racing",
-          "competition": "British Racing",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/88/competition_logo_1692681117.jpeg",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/horseracing.gif",
-          "channels": [
-            "Racing TV"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Haydock",
-          "start_time_iso": "2026-03-05T13:45:00Z",
-          "time": "13:45",
-          "sport": "Horse Racing",
-          "competition": "British Racing",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/88/competition_logo_1692681117.jpeg",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/horseracing.gif",
-          "channels": [
-            "Racing TV"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Lingfield",
-          "start_time_iso": "2026-03-05T13:50:00Z",
-          "time": "13:50",
-          "sport": "Horse Racing",
-          "competition": "British Racing",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/88/competition_logo_1692681117.jpeg",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/horseracing.gif",
-          "channels": [
-            "Sky Sports Racing"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Thurles",
-          "start_time_iso": "2026-03-05T13:55:00Z",
-          "time": "13:55",
-          "sport": "Horse Racing",
-          "competition": "Irish Racing",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/default.png",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/horseracing.gif",
-          "channels": [
-            "Racing TV"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Valley",
-          "start_time_iso": "2026-03-05T13:55:00Z",
-          "time": "13:55",
-          "sport": "Greyhound Racing",
-          "competition": "GB Greyhound Racing",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/default.png",
-          "sport_logo": null,
-          "channels": [
-            "SIS Greyhounds"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Newcastle",
-          "start_time_iso": "2026-03-05T16:55:00Z",
-          "time": "16:55",
-          "sport": "Horse Racing",
-          "competition": "British Racing",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/88/competition_logo_1692681117.jpeg",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/horseracing.gif",
-          "channels": [
-            "Sky Sports Racing"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
           "name": "Mahoning Valley",
           "start_time_iso": "2026-03-05T17:15:00Z",
           "time": "17:15",
@@ -168,24 +42,6 @@
           "away_team_logo": null
         },
         {
-          "name": "Fenerbahce v Monaco",
-          "start_time_iso": "2026-03-05T17:45:00Z",
-          "time": "17:45",
-          "sport": "Basketball",
-          "competition": "Euro League (M)",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/default.png",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "channels": [
-            "EuroLeague TV"
-          ],
-          "home_team": "Fenerbahce",
-          "away_team": "Monaco",
-          "home_team_id": 14079,
-          "away_team_id": 14107,
-          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/14079/logo_1613402922.png",
-          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/14107/logo_1698857833.png"
-        },
-        {
           "name": "Gulfstream Park",
           "start_time_iso": "2026-03-05T17:50:00Z",
           "time": "17:50",
@@ -202,24 +58,6 @@
           "away_team_id": null,
           "home_team_logo": null,
           "away_team_logo": null
-        },
-        {
-          "name": "HV 71 v Linkopings HC",
-          "start_time_iso": "2026-03-05T18:00:00Z",
-          "time": "18:00",
-          "sport": "Ice Hockey",
-          "competition": "Swedish Division 1",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/default.png",
-          "sport_logo": null,
-          "channels": [
-            "Premier Sports 1"
-          ],
-          "home_team": "HV 71",
-          "away_team": "Linkopings HC",
-          "home_team_id": 15093,
-          "away_team_id": 15088,
-          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/no-logo.png",
-          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/no-logo.png"
         },
         {
           "name": "Hove",
@@ -370,96 +208,6 @@
           "away_team_logo": null
         },
         {
-          "name": "Michael van Gerwen v Luke Humphries",
-          "start_time_iso": "2026-03-05T19:10:00Z",
-          "time": "19:10",
-          "sport": "Darts",
-          "competition": "Premier League Darts",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/1245/competition_logo_1683642229.jpeg",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/darts.gif",
-          "channels": [
-            "Sky Sports Action"
-          ],
-          "home_team": "Michael van Gerwen",
-          "away_team": "Luke Humphries",
-          "home_team_id": 14605,
-          "away_team_id": 16001,
-          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/14605/logo_1743991689.png",
-          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/16001/logo_1743992351.png"
-        },
-        {
-          "name": "Emporio Armani Milano v FC Barcelona",
-          "start_time_iso": "2026-03-05T19:30:00Z",
-          "time": "19:30",
-          "sport": "Basketball",
-          "competition": "Euro League (M)",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/default.png",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "channels": [
-            "EuroLeague TV"
-          ],
-          "home_team": "Emporio Armani Milano",
-          "away_team": "FC Barcelona",
-          "home_team_id": 15338,
-          "away_team_id": 15206,
-          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/15338/logo_1599988608.png",
-          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/15206/logo_1602220895.png"
-        },
-        {
-          "name": "Valencia BC v Zalgiris",
-          "start_time_iso": "2026-03-05T19:30:00Z",
-          "time": "19:30",
-          "sport": "Basketball",
-          "competition": "Euro League (M)",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/default.png",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "channels": [
-            "EuroLeague TV"
-          ],
-          "home_team": "Valencia BC",
-          "away_team": "Zalgiris",
-          "home_team_id": 15286,
-          "away_team_id": 14072,
-          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/15286/logo_1601559594.png",
-          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/14072/logo_1605605897.png"
-        },
-        {
-          "name": "Gian van Veen v Jonny Clayton",
-          "start_time_iso": "2026-03-05T19:40:00Z",
-          "time": "19:40",
-          "sport": "Darts",
-          "competition": "Premier League Darts",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/1245/competition_logo_1683642229.jpeg",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/darts.gif",
-          "channels": [
-            "Sky Sports Action"
-          ],
-          "home_team": "Gian van Veen",
-          "away_team": "Jonny Clayton",
-          "home_team_id": 22786,
-          "away_team_id": 14628,
-          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/no-logo.png",
-          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/14628/logo_1743991274.png"
-        },
-        {
-          "name": "Real Madrid v Segafredo Virtus Bologna",
-          "start_time_iso": "2026-03-05T19:45:00Z",
-          "time": "19:45",
-          "sport": "Basketball",
-          "competition": "Euro League (M)",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/default.png",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "channels": [
-            "EuroLeague TV"
-          ],
-          "home_team": "Real Madrid",
-          "away_team": "Segafredo Virtus Bologna",
-          "home_team_id": 14103,
-          "away_team_id": 15503,
-          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/14103/logo_1679294905.png",
-          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/15503/logo_1728473815.png"
-        },
-        {
           "name": "Tottenham v Crystal Palace",
           "start_time_iso": "2026-03-05T20:00:00Z",
           "time": "20:00",
@@ -469,9 +217,9 @@
           "sport_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/60/competition_logo_1681726287.jpeg",
           "channels": [
             "TNT Sports 1",
-            "NBC Universo (Usa)",
-            "CANAL+ Sport 3 (Afr)",
-            "beIN Sports MENA 1 (Ara)"
+            "NBC Universo",
+            "SuperSport 2",
+            "beIN Sports MENA 1"
           ],
           "home_team": "Tottenham",
           "away_team": "Crystal Palace",
@@ -517,24 +265,6 @@
           "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/14109/logo_1687866364.png"
         },
         {
-          "name": "Gerwyn Price v Stephen Bunting",
-          "start_time_iso": "2026-03-05T20:10:00Z",
-          "time": "20:10",
-          "sport": "Darts",
-          "competition": "Premier League Darts",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/1245/competition_logo_1683642229.jpeg",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/darts.gif",
-          "channels": [
-            "Sky Sports Action"
-          ],
-          "home_team": "Gerwyn Price",
-          "away_team": "Stephen Bunting",
-          "home_team_id": 14601,
-          "away_team_id": 14637,
-          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/14601/logo_1743990595.png",
-          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/14637/logo_1743992287.png"
-        },
-        {
           "name": "Lyon v Lens",
           "start_time_iso": "2026-03-05T20:10:00Z",
           "time": "20:10",
@@ -543,10 +273,10 @@
           "competition_logo": null,
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
-            "Fox Deportes (Usa)",
-            "New World Sport 1 (Afr)",
-            "beIN Sports MENA 3 (Ara)",
-            "Nova Sport 3 (Cze)"
+            "Fox Deportes",
+            "SuperSport 3",
+            "beIN Sports MENA 3",
+            "Nova Sport 3"
           ],
           "home_team": "Lyon",
           "away_team": "Lens",
@@ -574,25 +304,7 @@
           "away_team_logo": null
         },
         {
-          "name": "Luke Littler v Josh Rock",
-          "start_time_iso": "2026-03-05T20:40:00Z",
-          "time": "20:40",
-          "sport": "Darts",
-          "competition": "Premier League Darts",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/1245/competition_logo_1683642229.jpeg",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/darts.gif",
-          "channels": [
-            "Sky Sports Action"
-          ],
-          "home_team": "Luke Littler",
-          "away_team": "Josh Rock",
-          "home_team_id": 20585,
-          "away_team_id": 22639,
-          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/20585/logo_1743992207.png",
-          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/no-logo.png"
-        },
-        {
-          "name": "TBC v TBC",
+          "name": "Luke Humphries v Jonny Clayton",
           "start_time_iso": "2026-03-05T21:00:00Z",
           "time": "21:00",
           "sport": "Darts",
@@ -602,15 +314,15 @@
           "channels": [
             "Sky Sports Action"
           ],
-          "home_team": "TBC",
-          "away_team": "TBC",
-          "home_team_id": 19991,
-          "away_team_id": 19991,
-          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/no-logo.png",
-          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/no-logo.png"
+          "home_team": "Luke Humphries",
+          "away_team": "Jonny Clayton",
+          "home_team_id": 16001,
+          "away_team_id": 14628,
+          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/16001/logo_1743992351.png",
+          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/14628/logo_1743991274.png"
         },
         {
-          "name": "TBC v TBC",
+          "name": "Gerwyn Price v Luke Littler",
           "start_time_iso": "2026-03-05T21:30:00Z",
           "time": "21:30",
           "sport": "Darts",
@@ -620,12 +332,12 @@
           "channels": [
             "Sky Sports Action"
           ],
-          "home_team": "TBC",
-          "away_team": "TBC",
-          "home_team_id": 19991,
-          "away_team_id": 19991,
-          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/no-logo.png",
-          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/no-logo.png"
+          "home_team": "Gerwyn Price",
+          "away_team": "Luke Littler",
+          "home_team_id": 14601,
+          "away_team_id": 20585,
+          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/14601/logo_1743990595.png",
+          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/20585/logo_1743992207.png"
         },
         {
           "name": "TBC v TBC",
@@ -1071,6 +783,42 @@
           "away_team_logo": null
         },
         {
+          "name": "Mullingar",
+          "start_time_iso": "2026-03-06T11:10:00Z",
+          "time": "11:10",
+          "sport": "Greyhound Racing",
+          "competition": "Irish Greyhounds",
+          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/default.png",
+          "sport_logo": null,
+          "channels": [
+            "SIS Greyhounds"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Stefan Bellmont v Charlie Manby",
+          "start_time_iso": "2026-03-06T12:00:00Z",
+          "time": "12:00",
+          "sport": "Darts",
+          "competition": "UK Open",
+          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/default.png",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/darts.gif",
+          "channels": [
+            "ITV 4"
+          ],
+          "home_team": "Stefan Bellmont",
+          "away_team": "Charlie Manby",
+          "home_team_id": 23502,
+          "away_team_id": 31056,
+          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/no-logo.png",
+          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/no-logo.png"
+        },
+        {
           "name": "Fontainebleau",
           "start_time_iso": "2026-03-06T13:00:00Z",
           "time": "13:00",
@@ -1476,10 +1224,10 @@
           "competition_logo": null,
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
-            "Fox Soccer Plus (Usa)",
-            "beIN Sports MENA (Ara)",
-            "BandSports (Bra)",
-            "COSMOTE Sport 8 (Gre)"
+            "Fox Soccer Plus",
+            "beIN Sports MENA",
+            "BandSports",
+            "COSMOTE Sport 8"
           ],
           "home_team": "Al Ahli SC",
           "away_team": "Al Ittihad",
@@ -1682,10 +1430,10 @@
           "competition_logo": null,
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
-            "CANAL+ Sport 1 (Afr)",
-            "BBC Sport (Gbr)",
-            "DAZN 2 (Por)",
-            "Eleven Sports 1 (Pol)"
+            "BBC Sport",
+            "CANAL+ Sport 1",
+            "DAZN 2",
+            "Eleven Sports 1"
           ],
           "home_team": "Bayern Munich",
           "away_team": "B. Monchengladbach",
@@ -1777,10 +1525,10 @@
           "competition_logo": null,
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
-            "SuperSport Football (Afr)",
-            "DAZN 1 (Ita)",
-            "Eleven Sports 2 (Pol)",
-            "Sport 1 (Cze)"
+            "SuperSport Football",
+            "DAZN 1",
+            "Eleven Sports 2",
+            "Sport 1"
           ],
           "home_team": "Napoli",
           "away_team": "Torino",
@@ -1798,10 +1546,10 @@
           "competition_logo": null,
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
-            "beIN Sports (Usa)",
-            "CANAL+ Sport 2 (Afr)",
-            "beIN Sports MENA 1 (Ara)",
-            "Eleven Sports 3 (Pol)"
+            "SuperSport GOtv Football",
+            "beIN Sports MENA 1",
+            "beIN Sports US Espanol",
+            "Eleven Sports 3"
           ],
           "home_team": "PSG",
           "away_team": "Monaco",
@@ -1821,9 +1569,9 @@
           "channels": [
             "LaLigaTV",
             "Premier Sports 1",
-            "ESPN Deportes (Usa)",
-            "Azam Sports 4 (Afr)",
-            "beIN Sports MENA 2 (Ara)"
+            "ESPN Deportes",
+            "SuperSport 2",
+            "beIN Sports MENA 2"
           ],
           "home_team": "Celta Vigo",
           "away_team": "Real Madrid",
@@ -1881,9 +1629,9 @@
             "BBC One",
             "BBCi",
             "TNT Sports 1",
-            "SuperSport Premier League (Afr)",
-            "Nova Sport 1 (Cze)",
-            "Arena Premium 1 (Bih)"
+            "SuperSport Premier League",
+            "Nova Sport 1",
+            "Arena Premium 1"
           ],
           "home_team": "Wolves",
           "away_team": "Liverpool",
@@ -2481,9 +2229,9 @@
           "sport_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/293/competition_logo_1683207589.jpeg",
           "channels": [
             "TNT Sports 1",
-            "ESPN 2 (Usa)",
-            "SuperSport MaXimo 1 (Afr)",
-            "beIN Sports MENA English 1 (Ara)"
+            "ESPN 2",
+            "SuperSport MaXimo 1",
+            "beIN Sports MENA English 1"
           ],
           "home_team": "Mansfield",
           "away_team": "Arsenal",
@@ -2559,9 +2307,9 @@
           "channels": [
             "LaLigaTV",
             "Premier Sports 2",
-            "ESPN Deportes (Usa)",
-            "Azam Sports 4 (Afr)",
-            "beIN Sports MENA 3 (Ara)"
+            "ESPN Deportes",
+            "SuperSport 3",
+            "beIN Sports MENA 3"
           ],
           "home_team": "Osasuna",
           "away_team": "Mallorca",
@@ -2689,10 +2437,10 @@
           "competition_logo": null,
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
-            "ESPN 2 (Mex)",
-            "SuperSport Football (Afr)",
-            "DAZN 1 (Ita)",
-            "Eleven Sports 3 (Pol)"
+            "ESPN 2",
+            "SuperSport Football",
+            "DAZN 1",
+            "Eleven Sports 3"
           ],
           "home_team": "Cagliari",
           "away_team": "Como",
@@ -2750,10 +2498,10 @@
           "competition_logo": null,
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
-            "ZAP (Afr)",
-            "Premier Sports 4 (Mon)",
-            "MBC Action (Ara)",
-            "DAZN 2 (Por)"
+            "Premier Sports 4",
+            "MBC Action",
+            "ZAP",
+            "DAZN 2"
           ],
           "home_team": "Freiburg",
           "away_team": "Bayer Leverkusen",
@@ -2772,9 +2520,9 @@
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
             "Sky Sports Norte",
-            "Nova Sport 3 (Cze)",
-            "beIN Sports MAX 8 (Fra)",
-            "beIN SPORTS MAX (Hkg)"
+            "Nova Sport 3",
+            "beIN Sports MAX 8",
+            "beIN SPORTS MAX"
           ],
           "home_team": "Heidenheim",
           "away_team": "Hoffenheim",
@@ -2792,10 +2540,10 @@
           "competition_logo": null,
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
-            "Premier Sports 5 (Mon)",
-            "Eleven Sports 2 (Pol)",
-            "Arena Sport 1 (Srb)",
-            "beIN Sports MAX 6 (Fra)"
+            "Premier Sports 5",
+            "Eleven Sports 2",
+            "Arena Sport 1",
+            "beIN Sports MAX 6"
           ],
           "home_team": "Mainz",
           "away_team": "Stuttgart",
@@ -2814,9 +2562,9 @@
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
             "Sky Sports Norte",
-            "DAZN 3 (Por)",
-            "Arena 4 (Hun)",
-            "Arena Sport 3 (Srb)"
+            "DAZN 3",
+            "Arena 4",
+            "Arena Sport 3"
           ],
           "home_team": "RB Leipzig",
           "away_team": "Augsburg",
@@ -2835,9 +2583,9 @@
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
             "Sky Sports Norte",
-            "See (Den)",
-            "Arena Sport 8 (Srb)",
-            "beIN Sports MAX 7 (Fra)"
+            "See",
+            "Arena Sport 8",
+            "beIN Sports MAX 7"
           ],
           "home_team": "Wolfsburg",
           "away_team": "Hamburger SV",
@@ -2874,9 +2622,10 @@
           "sport_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/146/competition_logo_1684334002.jpeg",
           "channels": [
             "LaLigaTV",
-            "ESPN 2 (Arg)",
-            "Azam Sports 4 (Afr)",
-            "beIN Sports MENA French 1 (Ara)"
+            "ESPN 2",
+            "SuperSport GOtv Football",
+            "beIN Sports MENA French 1",
+            "LaLiga TV"
           ],
           "home_team": "Levante",
           "away_team": "Girona",
@@ -2913,9 +2662,9 @@
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
             "5 PLUS Israel",
-            "Arena Sport 1x2 (Srb)",
-            "Arena Sport 3 (Cro)",
-            "Arena Sport 3 (Slo)"
+            "Arena Sport 1x2",
+            "Arena Sport 3",
+            "Arena Sport 5"
           ],
           "home_team": "Nantes",
           "away_team": "Angers",
@@ -2992,10 +2741,10 @@
           "competition_logo": null,
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
-            "SuperSport Football (Afr)",
-            "DAZN 1 (Ita)",
-            "Eleven Sports 2 (Pol)",
-            "Sport 1 (Cze)"
+            "SuperSport Football",
+            "DAZN 1",
+            "Eleven Sports 2",
+            "Sport 1"
           ],
           "home_team": "Atalanta",
           "away_team": "Udinese",
@@ -3069,9 +2818,10 @@
           "sport_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/146/competition_logo_1684334002.jpeg",
           "channels": [
             "LaLigaTV",
-            "ESPN Deportes (Usa)",
-            "Azam Sports 4 (Afr)",
-            "beIN Sports MENA French 1 (Ara)"
+            "ESPN Deportes",
+            "SuperSport GOtv LaLiga",
+            "beIN Sports MENA French 1",
+            "LaLiga TV"
           ],
           "home_team": "Atl Madrid",
           "away_team": "Sociedad",
@@ -3143,10 +2893,10 @@
           "competition_logo": null,
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
-            "ESPN 2 (Arg)",
-            "Sporty TV (Afr)",
-            "NOW (Irl)",
-            "MBC Action (Ara)"
+            "ESPN 2",
+            "MBC Action",
+            "Sporty TV",
+            "NOW"
           ],
           "home_team": "FC Koln",
           "away_team": "Dortmund",
@@ -3204,9 +2954,9 @@
             "BBC One",
             "BBCi",
             "TNT Sports 2",
-            "SuperSport GOtv Football (Afr)",
-            "beIN Sports MENA English 1 (Ara)",
-            "DAZN 2 (Ger)"
+            "SuperSport GOtv Football",
+            "beIN Sports MENA English 1",
+            "DAZN 2"
           ],
           "home_team": "Wrexham",
           "away_team": "Chelsea",
@@ -3224,9 +2974,9 @@
           "competition_logo": null,
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
-            "beIN Sports (Usa)",
-            "beIN Sports MENA 4 (Ara)",
-            "Eleven Sports 3 (Pol)",
+            "beIN Sports MENA 4",
+            "beIN Sports US Espanol",
+            "Eleven Sports 3",
             "5 PLUS Israel"
           ],
           "home_team": "Auxerre",
@@ -3317,7 +3067,7 @@
           "competition_logo": null,
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
-            "SporTV (Bra)"
+            "SporTV"
           ],
           "home_team": "Al Ettifaq",
           "away_team": "Al Shabab",
@@ -3335,10 +3085,10 @@
           "competition_logo": null,
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
-            "Fox Soccer Plus (Usa)",
-            "Sporty TV (Afr)",
-            "BandSports (Bra)",
-            "FanCode (Ind)"
+            "Fox Soccer Plus",
+            "Sporty TV",
+            "BandSports",
+            "FanCode"
           ],
           "home_team": "Al Kholood",
           "away_team": "Al Qadsiah",
@@ -3356,10 +3106,10 @@
           "competition_logo": null,
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
-            "Fox Deportes (Usa)",
-            "Sporty TV (Afr)",
-            "BandSports (Bra)",
-            "Channel 10 (Aus)"
+            "Fox Deportes",
+            "Sporty TV",
+            "BandSports",
+            "Channel 10"
           ],
           "home_team": "Al Nassr",
           "away_team": "Neom SC",
@@ -3526,10 +3276,10 @@
           "competition_logo": null,
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
-            "ESPN 2 (Arg)",
-            "SuperSport Football (Afr)",
-            "Eleven Sports 2 (Pol)",
-            "Sport 1 (Cze)"
+            "ESPN 2",
+            "SuperSport Football",
+            "Eleven Sports 2",
+            "Sport 1"
           ],
           "home_team": "Juventus",
           "away_team": "Pisa",
@@ -3548,9 +3298,9 @@
           "sport_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/146/competition_logo_1684334002.jpeg",
           "channels": [
             "LaLigaTV",
-            "ESPN Deportes (Usa)",
-            "Azam Sports 4 (Afr)",
-            "DAZN 1 (Por)"
+            "ESPN Deportes",
+            "SuperSport 2",
+            "DAZN 1"
           ],
           "home_team": "Ath Bilbao",
           "away_team": "Barcelona",
@@ -3604,10 +3354,10 @@
           "competition_logo": null,
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
-            "SuperSport 3 (Alb)",
-            "TNT Sports 1 (Gbr)",
-            "beIN Sports MENA English 1 (Ara)",
-            "DAZN 2 (Ger)"
+            "SuperSport 3",
+            "TNT Sports 1",
+            "beIN Sports MENA English 1",
+            "DAZN 2"
           ],
           "home_team": "Newcastle",
           "away_team": "Manchester City",
@@ -3662,10 +3412,10 @@
           "competition_logo": null,
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
-            "SuperSport Variety 4 (Afr)",
-            "beIN Sports MENA 3 (Ara)",
-            "Eleven Sports 3 (Pol)",
-            "Nova Sport 3 (Cze)"
+            "SuperSport Variety 4",
+            "beIN Sports MENA 3",
+            "Eleven Sports 3",
+            "Nova Sport 3"
           ],
           "home_team": "Toulouse",
           "away_team": "Marseille",
@@ -3907,7 +3657,7 @@
           "competition_logo": null,
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
-            "SPOTV Now (Kor)"
+            "SPOTV Now"
           ],
           "home_team": "Los Angeles FC",
           "away_team": "FC Dallas",
@@ -3925,8 +3675,8 @@
           "competition_logo": null,
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
-            "RDS Info (Can)",
-            "TSN 1 (Can)"
+            "RDS Info",
+            "TSN 1"
           ],
           "home_team": "Portland Timbers",
           "away_team": "Vancouver Whitecaps",
@@ -4145,10 +3895,10 @@
           "competition_logo": null,
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
-            "SuperSport Football (Afr)",
-            "DAZN 1 (Ita)",
-            "DAZN 2 (Ger)",
-            "Eleven Sports 1 (Pol)"
+            "SuperSport Football",
+            "DAZN 1",
+            "DAZN 2",
+            "Eleven Sports 1"
           ],
           "home_team": "Lecce",
           "away_team": "Cremonese",
@@ -4167,9 +3917,9 @@
           "sport_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/293/competition_logo_1683207589.jpeg",
           "channels": [
             "TNT Sports 2",
-            "ESPN 2 (Usa)",
-            "SuperSport GOtv Football (Afr)",
-            "beIN Sports MENA English 1 (Ara)"
+            "ESPN 2",
+            "SuperSport GOtv Football",
+            "beIN Sports MENA English 1"
           ],
           "home_team": "Fulham",
           "away_team": "Southampton",
@@ -4261,9 +4011,9 @@
           "channels": [
             "LaLigaTV",
             "Premier Sports 2",
-            "ESPN Deportes (Usa)",
-            "Azam Sports 4 (Afr)",
-            "beIN Sports MENA French 1 (Ara)"
+            "ESPN Deportes",
+            "SuperSport GOtv LaLiga",
+            "beIN Sports MENA French 1"
           ],
           "home_team": "Villarreal",
           "away_team": "Elche",
@@ -4320,9 +4070,9 @@
           "channels": [
             "TNT Sports",
             "TNT Sports 1",
-            "SuperSport Premier League (Afr)",
-            "Nova Sport 1 (Cze)",
-            "Arena Premium 1 (Bih)"
+            "SuperSport Premier League",
+            "Nova Sport 1",
+            "Arena Premium 1"
           ],
           "home_team": "Port Vale",
           "away_team": "Sunderland",
@@ -4358,10 +4108,10 @@
           "competition_logo": null,
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
-            "DAZN 1 (Ita)",
-            "Eleven Sports 4 (Pol)",
-            "214 DAZN Zona (Ita)",
-            "Arena Premium 4 (Kos)"
+            "DAZN 1",
+            "Eleven Sports 4",
+            "Sport 1",
+            "214 DAZN Zona"
           ],
           "home_team": "Bologna",
           "away_team": "Verona",
@@ -4379,10 +4129,10 @@
           "competition_logo": null,
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
-            "Eleven Sports 3 (Pol)",
-            "215 DAZN Zona (Ita)",
-            "Arena Premium 2 (Bih)",
-            "Arena Sport 1 (Cro)"
+            "Eleven Sports 3",
+            "215 DAZN Zona",
+            "Arena Premium 2",
+            "Arena Sport 1"
           ],
           "home_team": "Fiorentina",
           "away_team": "Parma",
@@ -4400,10 +4150,10 @@
           "competition_logo": null,
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
-            "beIN Sports (Usa)",
-            "Supersport Action (Afr)",
-            "beIN Sports MENA 3 (Ara)",
-            "Nova Sport 5 (Cze)"
+            "Supersport Action",
+            "beIN Sports MENA 3",
+            "beIN Sports US Espanol",
+            "Nova Sport 5"
           ],
           "home_team": "Lens",
           "away_team": "Metz",
@@ -4511,10 +4261,10 @@
           "competition_logo": null,
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
-            "ESPN 2 (Arg)",
-            "Startimes World Football (Afr)",
-            "Premier Sports 5 (Mon)",
-            "MBC Action (Ara)"
+            "ESPN 2",
+            "Premier Sports 5",
+            "MBC Action",
+            "Startimes World Football"
           ],
           "home_team": "St. Pauli",
           "away_team": "Eintracht Frankfurt",
@@ -4589,9 +4339,9 @@
           "channels": [
             "LaLigaTV",
             "Premier Sports 2",
-            "ESPN Deportes (Usa)",
-            "Azam Sports 4 (Afr)",
-            "CANAL+ Sport (Pol)"
+            "ESPN Deportes",
+            "SuperSport 1",
+            "CANAL+ Sport"
           ],
           "home_team": "Getafe",
           "away_team": "Betis",
@@ -4683,10 +4433,10 @@
           "competition_logo": null,
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
-            "Arena Sport 9 (Cro)",
-            "beIN SPORTS MAX (Hkg)",
-            "Fast Sports (Arm)",
-            "MAXtv To Go (Cro)"
+            "Arena Sport 9",
+            "beIN SPORTS MAX",
+            "Fast Sports",
+            "MAXtv To Go"
           ],
           "home_team": "Brest",
           "away_team": "Le Havre",
@@ -4704,10 +4454,10 @@
           "competition_logo": null,
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
-            "beIN Sports (Usa)",
-            "beIN Sports MENA 4 (Ara)",
-            "Arena Sport 10 (Cro)",
-            "Arena Sport 5 (Bih)"
+            "beIN Sports MENA 4",
+            "beIN Sports US Espanol",
+            "Arena Sport 10",
+            "Arena Sport 5"
           ],
           "home_team": "Lille",
           "away_team": "Lorient",
@@ -4725,10 +4475,10 @@
           "competition_logo": null,
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
-            "beIN Sports MENA 3 (Ara)",
-            "Eleven Sports 4 (Pol)",
-            "Arena Sport 1x2 (Srb)",
-            "Arena Sport 6 (Cro)"
+            "beIN Sports MENA 3",
+            "Eleven Sports 4",
+            "Arena Sport 1x2",
+            "Arena Sport 6"
           ],
           "home_team": "Nice",
           "away_team": "Rennes",
@@ -4747,9 +4497,9 @@
           "sport_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/293/competition_logo_1683207589.jpeg",
           "channels": [
             "TNT Sports 1",
-            "SuperSport MaXimo 1 (Afr)",
-            "beIN Sports MENA English 1 (Ara)",
-            "Nova Sport 5 (Cze)"
+            "SuperSport MaXimo 1",
+            "beIN Sports MENA English 1",
+            "Nova Sport 5"
           ],
           "home_team": "Leeds",
           "away_team": "Norwich",
@@ -4785,10 +4535,10 @@
           "competition_logo": null,
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
-            "Startimes World Football (Afr)",
-            "Premier Sports 4 (Mon)",
-            "DAZN 2 (Por)",
-            "Eleven Sports 3 (Pol)"
+            "Premier Sports 4",
+            "Startimes World Football",
+            "DAZN 2",
+            "Eleven Sports 3"
           ],
           "home_team": "Union Berlin",
           "away_team": "Werder Bremen",
@@ -4824,10 +4574,10 @@
           "competition_logo": null,
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
-            "SuperSport Football (Afr)",
-            "TNT Sports 2 (Gbr)",
-            "DAZN 2 (Ger)",
-            "Eleven Sports 1 (Pol)"
+            "SuperSport Football",
+            "TNT Sports 2",
+            "DAZN 2",
+            "Eleven Sports 1"
           ],
           "home_team": "Genoa",
           "away_team": "AS Roma",
@@ -4956,9 +4706,9 @@
           "channels": [
             "LaLigaTV",
             "Premier Sports 1",
-            "ESPN Deportes (Usa)",
-            "Azam Sports 4 (Afr)",
-            "CANAL+ Sport (Pol)"
+            "ESPN Deportes",
+            "SuperSport GOtv LaLiga",
+            "CANAL+ Sport"
           ],
           "home_team": "Sevilla FC",
           "away_team": "Rayo Vallecano",
@@ -5125,9 +4875,9 @@
           "sport_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/147/competition_logo_1684334159.jpeg",
           "channels": [
             "TNT Sports 1",
-            "Fox Deportes (Usa)",
-            "SuperSport Football (Afr)",
-            "DAZN 1 (Ita)"
+            "Fox Deportes",
+            "SuperSport Football",
+            "DAZN 1"
           ],
           "home_team": "AC Milan",
           "away_team": "Inter",
@@ -5145,10 +4895,10 @@
           "competition_logo": null,
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
-            "beIN Sports (Usa)",
-            "beIN Sports MENA 3 (Ara)",
-            "Eleven Sports 3 (Pol)",
-            "Nova Sport 3 (Cze)"
+            "beIN Sports MENA 3",
+            "beIN Sports US Espanol",
+            "Eleven Sports 3",
+            "Nova Sport 3"
           ],
           "home_team": "Lyon",
           "away_team": "Paris FC",
@@ -5222,9 +4972,9 @@
           "channels": [
             "LaLigaTV",
             "Premier Sports 1",
-            "ESPN Deportes (Usa)",
-            "Azam Sports 4 (Afr)",
-            "beIN Sports MENA English 1 (Ara)"
+            "ESPN Deportes",
+            "SuperSport 2",
+            "beIN Sports MENA English 1"
           ],
           "home_team": "Valencia",
           "away_team": "Alaves",
@@ -5460,6 +5210,24 @@
           "away_team_logo": null
         },
         {
+          "name": "Youghal",
+          "start_time_iso": "2026-03-09T11:10:00Z",
+          "time": "11:10",
+          "sport": "Greyhound Racing",
+          "competition": "Irish Greyhounds",
+          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/default.png",
+          "sport_logo": null,
+          "channels": [
+            "SIS Greyhounds"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
           "name": "Plumpton",
           "start_time_iso": "2026-03-09T14:00:00Z",
           "time": "14:00",
@@ -5631,9 +5399,9 @@
           "sport_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/293/competition_logo_1683207589.jpeg",
           "channels": [
             "TNT Sports 1",
-            "SuperSport MaXimo 1 (Afr)",
-            "DAZN 2 (Ger)",
-            "Nova Sport 1 (Cze)"
+            "SuperSport MaXimo 1",
+            "DAZN 2",
+            "Nova Sport 1"
           ],
           "home_team": "West Ham",
           "away_team": "Brentford",
@@ -5651,10 +5419,10 @@
           "competition_logo": null,
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
-            "Fox Deportes (Usa)",
-            "SuperSport Football (Afr)",
-            "Eleven Sports 1 (Pol)",
-            "Sport 1 (Cze)"
+            "Fox Deportes",
+            "SuperSport Football",
+            "Eleven Sports 1",
+            "Sport 1"
           ],
           "home_team": "Lazio",
           "away_team": "Sassuolo",
@@ -5672,10 +5440,10 @@
           "competition_logo": null,
           "sport_logo": "https://www.wheresthematch.com/images/sports/football.gif",
           "channels": [
-            "ESPN Deportes (Usa)",
-            "Azam Sports 4 (Afr)",
-            "Premier Sports 1 (Gbr)",
-            "beIN Sports MENA 3 (Ara)"
+            "ESPN Deportes",
+            "SuperSport GOtv LaLiga",
+            "Premier Sports 1",
+            "beIN Sports MENA 3"
           ],
           "home_team": "Espanyol",
           "away_team": "Oviedo",
@@ -6514,7 +6282,7 @@
   "composition": {
     "fanzo_primary_source": "fanzo.com",
     "football_secondary_source": "flashscore.com",
-    "fanzo_events_kept": 289,
+    "fanzo_events_kept": 276,
     "football_secondary_unique_events_added": 37,
     "huhsports_unique_events_added": 37,
     "football_events_merged": 18,
