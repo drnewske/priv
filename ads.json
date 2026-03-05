@@ -1,6 +1,7 @@
 {
   "enabled": true,
   "interval_seconds": 1800,
+  "global_min_gap_seconds": 300,
   "fallback_no_inventory_seconds": 1800,
   "fallback_error_seconds": 300,
   "placements": {
@@ -8,10 +9,31 @@
       "interval_seconds": 1800
     },
     "native_event_player": {
-      "interval_seconds": 1200
+      "interval_seconds": 900
+    },
+    "native_event_player_related": {
+      "interval_seconds": 600
     },
     "iptv_player_entry": {
       "interval_seconds": 1800
+    },
+    "iptv_series_entry": {
+      "interval_seconds": 1500
+    },
+    "iptv_vod_detail_entry": {
+      "interval_seconds": 1200
+    },
+    "predictions_entry": {
+      "interval_seconds": 1200
+    },
+    "predictions_bet_link": {
+      "interval_seconds": 900
+    },
+    "league_tables_entry": {
+      "interval_seconds": 1500
+    },
+    "league_tables_open": {
+      "interval_seconds": 900
     },
     "match_replays": {
       "interval_seconds": 1200
