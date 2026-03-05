@@ -1,5 +1,27 @@
 {
-  "type": "links",
-  "link1": "https://otieu.com/4/10546385",
-  "link2": "https://periodnecklacetrained.com/d13vbw30e?key=996545c3fb8d502657a0c0900f44cf50",
+  "enabled": true,
+  "interval_seconds": 1800,
+  "fallback_no_inventory_seconds": 1800,
+  "fallback_error_seconds": 300,
+  "placements": {
+    "global": {
+      "interval_seconds": 1800
+    },
+    "native_event_player": {
+      "interval_seconds": 1200
+    },
+    "iptv_player_entry": {
+      "interval_seconds": 1800
+    },
+    "match_replays": {
+      "interval_seconds": 1200
+    },
+    "free_playlists": {
+      "interval_seconds": 900
+    }
+  },
+  "links": [
+    "https://otieu.com/4/10546385",
+    "https://periodnecklacetrained.com/d13vbw30e?key=996545c3fb8d502657a0c0900f44cf50"
+  ]
 }

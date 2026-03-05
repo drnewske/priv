@@ -37,6 +37,11 @@
       "continuity_seconds": 10,
       "history_days": 14,
       "log_file": "stream_health_log.jsonl"
+    },
+    "updated_at": "2026-03-02T13:10:40Z",
+    "schedule_channel_sync": {
+      "added_channels": 0,
+      "assigned_missing_ids": 0
     }
   },
   "channels": {

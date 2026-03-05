@@ -1,5 +1,14 @@
 {
   "version": "2.5.0",
   "update_url": "https://your-download-link.com/app-release.apk",
-  "mandatory": true
+  "mandatory": true,
+  "announcement": {
+    "id": "home_ticker_2026_03_05",
+    "enabled": true,
+    "message": "Welcome to Orstreams. Put your breaking updates or promos here.",
+    "persistent": false,
+    "dismissible": true,
+    "show_every_seconds": 21600,
+    "ticker_cycle_seconds": 16
+  }
 }

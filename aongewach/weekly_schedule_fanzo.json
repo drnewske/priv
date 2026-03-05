@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-02T14:03:04Z",
+  "generated_at": "2026-03-02T13:09:50Z",
   "source": "fanzo.com",
   "schedule": [
     {
@@ -552,6 +552,24 @@
           "sport_logo": null,
           "channels": [
             "Sky Sports Racing"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Market Rasen",
+          "start_time_iso": "2026-03-03T14:15:00Z",
+          "time": "14:15",
+          "sport": "Horse Racing",
+          "competition": "British Racing",
+          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/88/competition_logo_1692681117.jpeg",
+          "sport_logo": null,
+          "channels": [
+            "Racing TV"
           ],
           "home_team": null,
           "away_team": null,
@@ -1526,25 +1544,6 @@
           "away_team_logo": null
         },
         {
-          "name": "Arnold Palmer Invitational 2026",
-          "start_time_iso": "2026-03-05T12:30:00Z",
-          "time": "12:30",
-          "sport": "Golf",
-          "competition": "PGA Tour",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/62/competition_logo_1687188176.jpeg",
-          "sport_logo": null,
-          "channels": [
-            "Sky Sports Golf",
-            "Sky Sports+"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
           "name": "Saint Cloud",
           "start_time_iso": "2026-03-05T12:55:00Z",
           "time": "12:55",
@@ -1680,6 +1679,24 @@
           "sport_logo": null,
           "channels": [
             "SIS Greyhounds"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Puerto Rico Open 2026",
+          "start_time_iso": "2026-03-05T15:00:00Z",
+          "time": "15:00",
+          "sport": "Golf",
+          "competition": "PGA Tour",
+          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/62/competition_logo_1687188176.jpeg",
+          "sport_logo": null,
+          "channels": [
+            "Sky Sports+"
           ],
           "home_team": null,
           "away_team": null,
@@ -1850,6 +1867,25 @@
           ],
           "home_team": "Premier League",
           "away_team": "Cardiff",
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Arnold Palmer Invitational 2026",
+          "start_time_iso": "2026-03-05T19:00:00Z",
+          "time": "19:00",
+          "sport": "Golf",
+          "competition": "PGA Tour",
+          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/62/competition_logo_1687188176.jpeg",
+          "sport_logo": null,
+          "channels": [
+            "Sky Sports Golf",
+            "Sky Sports+"
+          ],
+          "home_team": null,
+          "away_team": null,
           "home_team_id": null,
           "away_team_id": null,
           "home_team_logo": null,
@@ -2646,6 +2682,24 @@
           "away_team_logo": null
         },
         {
+          "name": "Puerto Rico Open 2026",
+          "start_time_iso": "2026-03-06T15:00:00Z",
+          "time": "15:00",
+          "sport": "Golf",
+          "competition": "PGA Tour",
+          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/62/competition_logo_1687188176.jpeg",
+          "sport_logo": null,
+          "channels": [
+            "Sky Sports+"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
           "name": "Biathlon",
           "start_time_iso": "2026-03-06T16:00:00Z",
           "time": "16:00",
@@ -2875,8 +2929,7 @@
           "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/62/competition_logo_1687188176.jpeg",
           "sport_logo": null,
           "channels": [
-            "Sky Sports Golf",
-            "Sky Sports+"
+            "Sky Sports Golf"
           ],
           "home_team": null,
           "away_team": null,
@@ -3140,25 +3193,6 @@
           "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2016-07/7478-oxford_united_fc.svg.png"
         },
         {
-          "name": "Leigh Leopards vs Catalan Dragons",
-          "start_time_iso": "2026-03-06T20:00:00Z",
-          "time": "20:00",
-          "sport": "Rugby League",
-          "competition": "English Super League",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/82/competition_logo_1732541777.jpeg",
-          "sport_logo": null,
-          "channels": [
-            "Sky Sports Action",
-            "Sky Sports+"
-          ],
-          "home_team": "Leigh Leopards",
-          "away_team": "Catalan Dragons",
-          "home_team_id": 13774,
-          "away_team_id": 14012,
-          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/13774/logo_1689841546.jpeg",
-          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2019-07/14012-catalansdragons201920.png"
-        },
-        {
           "name": "York City Knights vs Warrington Wolves",
           "start_time_iso": "2026-03-06T20:00:00Z",
           "time": "20:00",
@@ -3343,8 +3377,7 @@
           "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/8/competition_logo_1675352476.jpeg",
           "sport_logo": null,
           "channels": [
-            "NBA League Pass",
-            "Sky Sports Action"
+            "NBA League Pass"
           ],
           "home_team": "Boston Celtics",
           "away_team": "Dallas Mavericks",
@@ -3417,7 +3450,7 @@
           "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/3359/competition_logo_1709607970.jpeg",
           "sport_logo": null,
           "channels": [
-            "Sky Sports Action"
+            "Sky Sports+"
           ],
           "home_team": "Otago Highlanders",
           "away_team": "Western Force",
@@ -3435,8 +3468,7 @@
           "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/default.png",
           "sport_logo": null,
           "channels": [
-            "Sky Sports Golf",
-            "Sky Sports Mix"
+            "Sky Sports Golf"
           ],
           "home_team": null,
           "away_team": null,
@@ -3734,24 +3766,6 @@
           "away_team_id": 10503,
           "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/5792/logo_1744180973.png",
           "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/10503/logo_1762506512.png"
-        },
-        {
-          "name": "Hull City vs Millwall",
-          "start_time_iso": "2026-03-07T12:30:00Z",
-          "time": "12:30",
-          "sport": "Football",
-          "competition": "EFL Championship",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/default.png",
-          "sport_logo": null,
-          "channels": [
-            "Sky Sports+"
-          ],
-          "home_team": "Hull City",
-          "away_team": "Millwall",
-          "home_team_id": 6795,
-          "away_team_id": 7238,
-          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2016-07/6795-1410464880_fc-hull-city.png",
-          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2018-01/7238-millwallfc2018.png"
         },
         {
           "name": "England (W) vs Iceland (W)",
@@ -4668,7 +4682,6 @@
           "sport_logo": null,
           "channels": [
             "NBA League Pass",
-            "Sky Sports Action",
             "Sky Sports Main Event"
           ],
           "home_team": "Detroit Pistons",
@@ -4992,25 +5005,6 @@
           "away_team_id": 9452,
           "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/7012/logo_1697803712.png",
           "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/9452/logo_1758633852.png"
-        },
-        {
-          "name": "Arnold Palmer Invitational 2026",
-          "start_time_iso": "2026-03-08T13:00:00Z",
-          "time": "13:00",
-          "sport": "Golf",
-          "competition": "PGA Tour",
-          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/62/competition_logo_1687188176.jpeg",
-          "sport_logo": null,
-          "channels": [
-            "Sky Sports Golf",
-            "Sky Sports+"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
         },
         {
           "name": "Rangers vs Celtic",
@@ -5395,6 +5389,24 @@
           "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/no-logo.png"
         },
         {
+          "name": "Nottingham Forest vs Birmingham Panthers",
+          "start_time_iso": "2026-03-08T16:00:00Z",
+          "time": "16:00",
+          "sport": "Netball",
+          "competition": "Superleague",
+          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/default.png",
+          "sport_logo": null,
+          "channels": [
+            "Sky Sports Mix"
+          ],
+          "home_team": "Nottingham Forest",
+          "away_team": "Birmingham Panthers",
+          "home_team_id": 28882,
+          "away_team_id": 28893,
+          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/no-logo.png",
+          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/no-logo.png"
+        },
+        {
           "name": "Nice vs Rennes",
           "start_time_iso": "2026-03-08T16:15:00Z",
           "time": "16:15",
@@ -5680,6 +5692,24 @@
           "channels": [
             "ATR Player",
             "Sky Sports Racing"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Arnold Palmer Invitational 2026",
+          "start_time_iso": "2026-03-08T19:00:00Z",
+          "time": "19:00",
+          "sport": "Golf",
+          "competition": "PGA Tour",
+          "competition_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/competitions/62/competition_logo_1687188176.jpeg",
+          "sport_logo": null,
+          "channels": [
+            "Sky Sports Golf"
           ],
           "home_team": null,
           "away_team": null,
