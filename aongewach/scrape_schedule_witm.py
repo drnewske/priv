@@ -17,7 +17,10 @@ from urllib.parse import urljoin
 
 import requests
 from bs4 import BeautifulSoup
-from channel_filters import is_usable_channel_name as is_usable_broadcast_channel_name
+from channel_filters import (
+    is_usable_channel_name as is_usable_broadcast_channel_name,
+    normalize_channel_name,
+)
 from channel_name_placeholders import is_placeholder_channel_name
 
 
@@ -180,7 +183,10 @@ def extract_event(row, non_soccer_only: bool = True) -> Optional[Dict]:
                 continue
             if not is_usable_channel_name(label):
                 continue
-            channels_raw.append(label)
+            normalized = normalize_channel_name(label)
+            if not normalized:
+                continue
+            channels_raw.append(normalized)
 
     channels = dedupe_strings(channels_raw)
     if not channels:

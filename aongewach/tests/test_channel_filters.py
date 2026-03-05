@@ -14,6 +14,7 @@ from channel_filters import (  # noqa: E402
     REGION_ZA,
     detect_channel_region,
     is_usable_channel_name,
+    normalize_channel_name,
     select_regional_channel_names,
 )
 
@@ -32,6 +33,11 @@ class ChannelFilterTests(unittest.TestCase):
         self.assertEqual(REGION_UK, detect_channel_region("TNT Sports 1 (Gbr)"))
         self.assertEqual(REGION_ME, detect_channel_region("beIN Sports MENA 1 (Ara)"))
 
+    def test_normalize_channel_name_strips_country_suffix(self):
+        self.assertEqual("CANAL+ Sport 1", normalize_channel_name("CANAL+ Sport 1 (Afr)"))
+        self.assertEqual("BBC Sport", normalize_channel_name("BBC Sport (Gbr)"))
+        self.assertEqual("DAZN 2", normalize_channel_name("DAZN 2 (Por)"))
+
     def test_regional_selection_prefers_target_mix(self):
         selected = select_regional_channel_names(
             [
@@ -45,10 +51,10 @@ class ChannelFilterTests(unittest.TestCase):
             include_uk=True,
         )
         self.assertEqual(4, len(selected))
-        self.assertIn("NBC (Usa)", selected)
-        self.assertIn("SuperSport Premier League (Rsa)", selected)
-        self.assertIn("TNT Sports 1 (Gbr)", selected)
-        self.assertIn("beIN Sports MENA 1 (Ara)", selected)
+        self.assertIn("NBC", selected)
+        self.assertIn("SuperSport Premier League", selected)
+        self.assertIn("TNT Sports 1", selected)
+        self.assertIn("beIN Sports MENA 1", selected)
 
         selected_no_uk = select_regional_channel_names(
             [
@@ -60,7 +66,19 @@ class ChannelFilterTests(unittest.TestCase):
             max_channels=4,
             include_uk=False,
         )
-        self.assertNotIn("TNT Sports 1 (Gbr)", selected_no_uk)
+        self.assertNotIn("TNT Sports 1", selected_no_uk)
+
+    def test_africa_slot_prefers_supersport_then_canal(self):
+        selected = select_regional_channel_names(
+            [
+                "Azam Sports 4 (Afr)",
+                "CANAL+ Sport 1 (Afr)",
+                "SuperSport Football (Afr)",
+            ],
+            max_channels=1,
+            include_uk=False,
+        )
+        self.assertEqual(["SuperSport Football"], selected)
 
 
 if __name__ == "__main__":

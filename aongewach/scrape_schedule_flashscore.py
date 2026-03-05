@@ -21,6 +21,7 @@ from urllib.parse import urljoin
 import requests
 from channel_filters import (
     is_usable_channel_name,
+    normalize_channel_name,
     select_regional_channel_dicts,
 )
 
@@ -277,9 +278,10 @@ def parse_channel_payload(raw: str) -> Tuple[List[str], List[Dict[str, object]],
     for item in payload.get("1", []):
         if not isinstance(item, dict):
             continue
-        name = normalize_text(item.get("BN"))
-        if not is_usable_channel_name(name):
+        raw_name = normalize_text(item.get("BN"))
+        if not is_usable_channel_name(raw_name):
             continue
+        name = normalize_channel_name(raw_name)
         url = normalize_channel_url(item.get("BU"))
         tv_id = item.get("TVI")
         key = name.casefold()
@@ -289,6 +291,7 @@ def parse_channel_payload(raw: str) -> Tuple[List[str], List[Dict[str, object]],
         candidates.append(
             {
                 "name": name,
+                "raw_name": raw_name,
                 "url": url,
                 "tv_id": tv_id,
             }

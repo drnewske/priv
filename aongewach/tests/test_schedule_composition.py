@@ -280,7 +280,7 @@ class ScheduleCompositionTests(unittest.TestCase):
         self.assertEqual("Arsenal v Chelsea", events[0]["name"])
         self.assertEqual("2026-03-02T16:30:00Z", events[0]["start_time_iso"])
         self.assertEqual("16:30", events[0]["time"])
-        self.assertEqual(["NBC (Usa)"], events[0]["channels"])
+        self.assertEqual(["NBC"], events[0]["channels"])
 
     def test_compose_fanzo_overlap_keeps_fanzo_and_drops_flashscore_uk_channel(self):
         fanzo = {
@@ -325,10 +325,10 @@ class ScheduleCompositionTests(unittest.TestCase):
         self.assertEqual(1, len(events))
         channels = events[0]["channels"]
         self.assertIn("Sky Sports Main Event", channels)
-        self.assertIn("NBC (Usa)", channels)
-        self.assertIn("SuperSport Premier League (Rsa)", channels)
-        self.assertIn("beIN Sports MENA 1 (Ara)", channels)
-        self.assertNotIn("TNT Sports 1 (Gbr)", channels)
+        self.assertIn("NBC", channels)
+        self.assertIn("SuperSport Premier League", channels)
+        self.assertIn("beIN Sports MENA 1", channels)
+        self.assertNotIn("TNT Sports 1", channels)
 
     def test_merge_enriches_channels_and_sport_logo_from_witm(self):
         fanzo = {

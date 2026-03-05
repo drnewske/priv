@@ -26,6 +26,7 @@ from typing import Dict, Iterable, List, Optional, Set, Tuple
 
 from channel_filters import (
     is_usable_channel_name as is_usable_broadcast_channel_name,
+    normalize_channel_name,
     select_regional_channel_names,
 )
 from channel_name_placeholders import is_placeholder_channel_name
@@ -205,12 +206,15 @@ def clean_channels(channels: object) -> List[str]:
     seen = set()
     for item in channels:
         if isinstance(item, dict):
-            value = normalize_text(item.get("name"))
+            raw_value = normalize_text(item.get("name"))
         else:
-            value = normalize_text(item)
-        if not value:
+            raw_value = normalize_text(item)
+        if not raw_value:
             continue
-        if not is_usable_channel_name(value):
+        if not is_usable_channel_name(raw_value):
+            continue
+        value = normalize_channel_name(raw_value)
+        if not value:
             continue
         key = value.casefold()
         if key in seen:
@@ -490,7 +494,7 @@ def merge_channels(first: Iterable[str], second: Iterable[str]) -> List[str]:
     out: List[str] = []
     seen = set()
     for raw in list(first) + list(second):
-        value = normalize_text(raw)
+        value = normalize_channel_name(raw)
         if not value:
             continue
         key = value.casefold()

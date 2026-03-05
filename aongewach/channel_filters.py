@@ -22,6 +22,7 @@ NOT_TELEVISED_RE = re.compile(
     re.IGNORECASE,
 )
 PAREN_CONTENT_RE = re.compile(r"\(([^)]+)\)")
+TRAILING_PAREN_RE = re.compile(r"(?:\s*\([^()]*\)\s*)+$")
 DAZN_LINEAR_RE = re.compile(r"\bdazn\s+\d+\b", re.IGNORECASE)
 
 STREAMING_PREFIXES = (
@@ -92,6 +93,14 @@ def normalize_key(value: object) -> str:
     text = normalize_text(value).casefold()
     text = re.sub(r"[^a-z0-9]+", " ", text)
     return " ".join(text.split())
+
+
+def normalize_channel_name(name: object) -> str:
+    text = normalize_text(name)
+    if not text:
+        return ""
+    stripped = TRAILING_PAREN_RE.sub("", text).strip()
+    return normalize_text(stripped or text)
 
 
 def _tag_tokens(name: str) -> List[str]:
@@ -213,8 +222,11 @@ def _dedupe_channel_dicts(channels: Sequence[Dict[str, object]]) -> List[Dict[st
     out: List[Dict[str, object]] = []
     seen = set()
     for row in channels:
-        name = normalize_text(row.get("name"))
+        raw_name = normalize_text(row.get("raw_name") or row.get("name"))
+        name = normalize_channel_name(row.get("name") or raw_name)
         if not name:
+            name = normalize_channel_name(raw_name)
+        if not raw_name or not name:
             continue
         key = name.casefold()
         if key in seen:
@@ -223,6 +235,7 @@ def _dedupe_channel_dicts(channels: Sequence[Dict[str, object]]) -> List[Dict[st
         out.append(
             {
                 "name": name,
+                "raw_name": raw_name,
                 "url": normalize_text(row.get("url")),
                 "tv_id": row.get("tv_id"),
             }
@@ -251,9 +264,21 @@ def select_regional_channel_dicts(
     }
 
     for idx, row in enumerate(deduped):
-        region = detect_channel_region(str(row.get("name", "")))
+        region = detect_channel_region(str(row.get("raw_name") or row.get("name", "")))
         bucket_key = region if region in buckets else "other"
         buckets[bucket_key].append((idx, row))
+
+    # Prefer SuperSport/CANAL+ options for African slot.
+    buckets[REGION_ZA].sort(
+        key=lambda item: (
+            0
+            if "supersport" in normalize_key(item[1].get("name"))
+            else 1
+            if "canal" in normalize_key(item[1].get("name"))
+            else 2,
+            item[0],
+        )
+    )
 
     # Prefer beIN channels for the Middle East slot.
     buckets[REGION_ME].sort(
@@ -291,7 +316,7 @@ def select_regional_channel_dicts(
     for _, row in leftovers:
         if len(selected) >= max_channels:
             break
-        if not include_uk and detect_channel_region(str(row.get("name", ""))) == REGION_UK:
+        if not include_uk and detect_channel_region(str(row.get("raw_name") or row.get("name", ""))) == REGION_UK:
             continue
         name_key = normalize_text(row.get("name")).casefold()
         if not name_key or name_key in seen:

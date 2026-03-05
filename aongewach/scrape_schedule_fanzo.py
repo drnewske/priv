@@ -21,7 +21,10 @@ import uuid
 from typing import Dict, List, Optional, Tuple
 
 import requests
-from channel_filters import is_usable_channel_name as is_usable_broadcast_channel_name
+from channel_filters import (
+    is_usable_channel_name as is_usable_broadcast_channel_name,
+    normalize_channel_name,
+)
 from channel_name_placeholders import is_placeholder_channel_name
 
 try:
@@ -315,10 +318,13 @@ def transform_event(raw_event: Dict, non_soccer_only: bool = True) -> Optional[D
     for channel in raw_event.get("channels") or []:
         if not isinstance(channel, dict):
             continue
-        channel_name = (channel.get("name") or "").strip()
-        if not channel_name:
+        raw_channel_name = normalize_text(channel.get("name"))
+        if not raw_channel_name:
             continue
-        if not is_usable_channel_name(channel_name):
+        if not is_usable_channel_name(raw_channel_name):
+            continue
+        channel_name = normalize_channel_name(raw_channel_name)
+        if not channel_name:
             continue
         key = channel_name.lower()
         if key in seen:
