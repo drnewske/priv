@@ -17,6 +17,7 @@ from urllib.parse import urljoin
 
 import requests
 from bs4 import BeautifulSoup
+from channel_filters import is_usable_channel_name as is_usable_broadcast_channel_name
 from channel_name_placeholders import is_placeholder_channel_name
 
 
@@ -90,15 +91,9 @@ def is_usable_channel_name(name: str) -> bool:
     cleaned = normalize_text(name)
     if not cleaned:
         return False
-    if is_placeholder_channel_name(cleaned):
-        return False
-    if NON_BROADCAST_WORD_RE.search(cleaned):
-        return False
-    if DOMAIN_RE.search(cleaned):
-        return False
     if NOT_TELEVISED_RE.search(cleaned):
         return False
-    return True
+    return is_usable_broadcast_channel_name(cleaned, placeholder_checker=is_placeholder_channel_name)
 
 
 def parse_iso_datetime(value: object) -> Optional[dt.datetime]:

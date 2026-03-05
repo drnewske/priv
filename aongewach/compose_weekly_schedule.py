@@ -24,6 +24,10 @@ import unicodedata
 from difflib import SequenceMatcher
 from typing import Dict, Iterable, List, Optional, Set, Tuple
 
+from channel_filters import (
+    is_usable_channel_name as is_usable_broadcast_channel_name,
+    select_regional_channel_names,
+)
 from channel_name_placeholders import is_placeholder_channel_name
 
 
@@ -32,14 +36,6 @@ VS_TOKEN_RE = re.compile(r"\s+(?:v|vs)\s+", re.IGNORECASE)
 NON_WORD_RE = re.compile(r"[^a-z0-9\s]")
 YEAR_TOKEN_RE = re.compile(r"\b20\d{2}\b")
 
-NON_BROADCAST_WORD_RE = re.compile(
-    r"\b(app|website|web\s*site|youtube|radio)\b",
-    re.IGNORECASE,
-)
-DOMAIN_RE = re.compile(
-    r"\b[a-z0-9][a-z0-9.-]{0,251}\.(com|net|org|io|tv|co|app|gg|me|fm|uk|us|au|de|fr)\b",
-    re.IGNORECASE,
-)
 NOT_TELEVISED_RE = re.compile(
     r"\b(not\s+televised|not\s+on\s+tv|no\s+tv|no\s+broadcast|broadcast\s+tbc)\b",
     re.IGNORECASE,
@@ -197,15 +193,9 @@ def is_usable_channel_name(name: str) -> bool:
     cleaned = normalize_text(name)
     if not cleaned:
         return False
-    if is_placeholder_channel_name(cleaned):
-        return False
-    if NON_BROADCAST_WORD_RE.search(cleaned):
-        return False
-    if DOMAIN_RE.search(cleaned):
-        return False
     if NOT_TELEVISED_RE.search(cleaned):
         return False
-    return True
+    return is_usable_broadcast_channel_name(cleaned, placeholder_checker=is_placeholder_channel_name)
 
 
 def clean_channels(channels: object) -> List[str]:
@@ -324,6 +314,9 @@ def normalize_event(
         return None
 
     channels = channels_from_raw(raw_event)
+    source_key = normalize_key_text(source)
+    if "flashscore" in source_key:
+        channels = select_regional_channel_names(channels, max_channels=4, include_uk=True)
     if not allow_empty_channels and not channels:
         return None
 
@@ -518,7 +511,18 @@ def choose_value(primary: object, secondary: object) -> object:
 
 def merge_event(primary: Dict, secondary: Dict, keep_primary_teams: bool) -> Dict:
     merged = dict(primary)
-    merged["channels"] = merge_channels(primary.get("channels", []), secondary.get("channels", []))
+    primary_channels = clean_channels(primary.get("channels", []))
+    secondary_channels = clean_channels(secondary.get("channels", []))
+
+    primary_source = normalize_key_text(primary.get("_source"))
+    secondary_source = normalize_key_text(secondary.get("_source"))
+    if primary_source == "fanzo" and "flashscore" in secondary_source:
+        # If FANZO matched Flashscore for football, keep FANZO channels and
+        # add only US/ZA/ME channels from Flashscore (no UK duplicate).
+        secondary_channels = select_regional_channel_names(secondary_channels, max_channels=4, include_uk=False)
+        merged["channels"] = merge_channels(primary_channels, secondary_channels)
+    else:
+        merged["channels"] = merge_channels(primary_channels, secondary_channels)
 
     # Non-team metadata: prefer primary when available.
     for field in ("start_time_iso", "time", "sport", "competition", "competition_logo", "sport_logo"):

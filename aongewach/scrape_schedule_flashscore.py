@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Scrape soccer schedules and TV channel listings from Flashscore USA.
+Scrape soccer schedules and TV channel listings from Flashscore.
 
-This script uses the same internal feed as the Flashscore USA web client.
+This script uses the same internal feed as the Flashscore web client.
 It exports schedule data to JSON and CSV.
 """
 
@@ -19,14 +19,13 @@ from typing import Dict, List, Optional, Tuple
 from urllib.parse import urljoin
 
 import requests
+from channel_filters import (
+    is_usable_channel_name,
+    select_regional_channel_dicts,
+)
 
-try:
-    from zoneinfo import ZoneInfo
-except Exception:  # pragma: no cover
-    ZoneInfo = None  # type: ignore
 
-
-DEFAULT_BASE_PAGE = "https://www.flashscoreusa.com/"
+DEFAULT_BASE_PAGE = "https://www.flashscore.com/"
 DEFAULT_DAYS = 7
 DEFAULT_DAY_START = 0
 DEFAULT_TIMEOUT = 30
@@ -39,8 +38,7 @@ UA = (
     "Chrome/123.0.0.0 Safari/537.36"
 )
 
-MAX_CHANNELS_PER_EVENT = 3
-CHANNEL_BLOCK_WORD_RE = re.compile(r"(^|\W)(youtube|app)(\W|$)", re.IGNORECASE)
+MAX_CHANNELS_PER_EVENT = 4
 
 TOP_COMPETITION_EXACT = {
     "england premier league",
@@ -48,8 +46,11 @@ TOP_COMPETITION_EXACT = {
     "italy serie a",
     "germany bundesliga",
     "france ligue 1",
+    "france ligue 1 uber eats",
     "saudi arabia saudi professional league",
+    "saudi arabia saudi pro league",
     "usa mls",
+    "usa major league soccer",
     "england fa cup",
     "england efl cup",
     "england carabao cup",
@@ -68,24 +69,6 @@ TOP_COMPETITION_PREFIX = (
 )
 
 TEAM_LOGO_BASE = "https://static.flashscore.com/res/image/data/"
-US_CHANNEL_HINTS = (
-    "usa",
-    "nbc",
-    "peacock",
-    "espn",
-    "fox",
-    "cbs",
-    "abc",
-    "univision",
-    "tudn",
-    "fubo",
-    "paramount",
-    "apple tv",
-    "mls season pass",
-    "usa network",
-    "universo",
-    "bein sports us",
-)
 
 
 @dataclass
@@ -145,20 +128,6 @@ def normalize_channel_url(raw: str) -> str:
     return urljoin(DEFAULT_BASE_PAGE, url)
 
 
-def is_allowed_channel_name(name: str) -> bool:
-    cleaned = normalize_text(name)
-    if not cleaned:
-        return False
-    return CHANNEL_BLOCK_WORD_RE.search(cleaned) is None
-
-
-def is_us_channel(name: str) -> bool:
-    key = normalize_key(name)
-    if not key:
-        return False
-    return any(hint in key for hint in US_CHANNEL_HINTS)
-
-
 def normalize_logo_url(raw: object) -> str:
     value = normalize_text(raw)
     if not value:
@@ -168,6 +137,16 @@ def normalize_logo_url(raw: object) -> str:
     if value.startswith("/"):
         return urljoin(DEFAULT_BASE_PAGE, value)
     return urljoin(TEAM_LOGO_BASE, value)
+
+
+def clean_competition_name(value: object) -> str:
+    text = normalize_text(value)
+    if ":" in text:
+        _, suffix = text.split(":", 1)
+        cleaned = normalize_text(suffix)
+        if cleaned:
+            return cleaned
+    return text
 
 
 def extract_core_script_url(base_page: str, html: str) -> str:
@@ -299,7 +278,7 @@ def parse_channel_payload(raw: str) -> Tuple[List[str], List[Dict[str, object]],
         if not isinstance(item, dict):
             continue
         name = normalize_text(item.get("BN"))
-        if not is_allowed_channel_name(name):
+        if not is_usable_channel_name(name):
             continue
         url = normalize_channel_url(item.get("BU"))
         tv_id = item.get("TVI")
@@ -315,8 +294,7 @@ def parse_channel_payload(raw: str) -> Tuple[List[str], List[Dict[str, object]],
             }
         )
 
-    usa_candidates = [item for item in candidates if is_us_channel(str(item.get("name", "")))]
-    selected = usa_candidates if usa_candidates else candidates
+    selected = select_regional_channel_dicts(candidates, max_channels=MAX_CHANNELS_PER_EVENT, include_uk=True)
     channel_links = selected[:MAX_CHANNELS_PER_EVENT]
     channels = [normalize_text(item.get("name")) for item in channel_links if normalize_text(item.get("name"))]
 
@@ -332,14 +310,6 @@ def parse_channel_payload(raw: str) -> Tuple[List[str], List[Dict[str, object]],
         )
 
     return channels, channel_links, highlights
-
-
-def to_new_york_iso(ts: int) -> str:
-    dt_utc = dt.datetime.fromtimestamp(ts, tz=dt.timezone.utc)
-    if ZoneInfo is None:
-        return dt_utc.isoformat().replace("+00:00", "Z")
-    return dt_utc.astimezone(ZoneInfo("America/New_York")).isoformat()
-
 
 def parse_feed_events(feed_text: str, day_offset: int) -> List[Dict[str, object]]:
     events: List[Dict[str, object]] = []
@@ -377,7 +347,6 @@ def parse_feed_events(feed_text: str, day_offset: int) -> List[Dict[str, object]
                 if start_ts > 0
                 else ""
             ),
-            "start_time_new_york": to_new_york_iso(start_ts) if start_ts > 0 else "",
             "home_team": normalize_text(row.get("AE")),
             "away_team": normalize_text(row.get("AF")),
             "home_team_short": normalize_text(row.get("WM")),
@@ -393,8 +362,9 @@ def parse_feed_events(feed_text: str, day_offset: int) -> List[Dict[str, object]
             "channel_links": channel_links,
             "highlight_providers": highlight_providers,
             "has_channels": bool(channels),
-            "event_url": f"https://www.flashscoreusa.com/match/{normalize_text(row.get('AA'))}/#/match-summary",
-            "competition": current_league.get("competition", ""),
+            "event_url": f"https://www.flashscore.com/match/{normalize_text(row.get('AA'))}/#/match-summary",
+            "competition": clean_competition_name(current_league.get("competition", "")),
+            "competition_full": normalize_text(current_league.get("competition", "")),
             "country": current_league.get("country", ""),
             "competition_id": current_league.get("competition_id", ""),
             "competition_url": current_league.get("competition_url", ""),
@@ -547,7 +517,11 @@ def main() -> int:
         feed_text = fetch_feed_text(session, cfg, day_offset, args.timeout)
         raw_events = parse_feed_events(feed_text, day_offset)
         if top_only:
-            events = [event for event in raw_events if is_top_competition(str(event.get("competition", "")))]
+            events = [
+                event
+                for event in raw_events
+                if is_top_competition(str(event.get("competition_full") or event.get("competition") or ""))
+            ]
         else:
             events = raw_events
         with_channels = sum(1 for event in events if event.get("has_channels"))
@@ -567,7 +541,7 @@ def main() -> int:
 
     payload = {
         "generated_at": iso_z_now(),
-        "source": "flashscoreusa.com",
+        "source": "flashscore.com",
         "config": {
             "host": cfg.host,
             "project_id": cfg.project_id,

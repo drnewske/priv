@@ -21,6 +21,7 @@ import uuid
 from typing import Dict, List, Optional, Tuple
 
 import requests
+from channel_filters import is_usable_channel_name as is_usable_broadcast_channel_name
 from channel_name_placeholders import is_placeholder_channel_name
 
 try:
@@ -123,15 +124,9 @@ def is_usable_channel_name(name: str) -> bool:
     cleaned = (name or "").strip()
     if not cleaned:
         return False
-    if is_placeholder_channel_name(cleaned):
-        return False
-    if NON_BROADCAST_WORD_RE.search(cleaned):
-        return False
-    if DOMAIN_RE.search(cleaned):
-        return False
     if NOT_TELEVISED_RE.search(cleaned):
         return False
-    return True
+    return is_usable_broadcast_channel_name(cleaned, placeholder_checker=is_placeholder_channel_name)
 
 
 def build_jwt(uid: int = DEFAULT_UID) -> Tuple[str, int]:

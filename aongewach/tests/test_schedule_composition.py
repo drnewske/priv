@@ -79,7 +79,7 @@ class ScheduleCompositionTests(unittest.TestCase):
 
         merged_football = by_name["Arsenal v Chelsea"]
         self.assertEqual(
-            ["Sky Sports Main Event", "Peacock"],
+            ["Sky Sports Main Event"],
             merged_football["channels"],
         )
         self.assertEqual(42, merged_football["home_team_id"])
@@ -259,7 +259,7 @@ class ScheduleCompositionTests(unittest.TestCase):
     def test_compose_reads_flashscore_events_payload(self):
         fanzo = {"schedule": [{"date": "2026-03-02", "events": []}]}
         flashscore = {
-            "source": "flashscoreusa.com",
+            "source": "flashscore.com",
             "events": [
                 {
                     "home_team": "Arsenal",
@@ -269,18 +269,66 @@ class ScheduleCompositionTests(unittest.TestCase):
                     "start_date": "2026-03-02",
                     "start_time": "16:30",
                     "start_time_utc": "2026-03-02T16:30:00Z",
-                    "channels": [{"name": "Peacock", "url": "https://www.peacocktv.com/"}],
+                    "channels": [{"name": "NBC (Usa)", "url": "https://example.com/nbc"}],
                 }
             ],
         }
 
-        composed = compose_payload(fanzo, flashscore, secondary_source="flashscoreusa.com")
+        composed = compose_payload(fanzo, flashscore, secondary_source="flashscore.com")
         events = composed["schedule"][0]["events"]
         self.assertEqual(1, len(events))
         self.assertEqual("Arsenal v Chelsea", events[0]["name"])
         self.assertEqual("2026-03-02T16:30:00Z", events[0]["start_time_iso"])
         self.assertEqual("16:30", events[0]["time"])
-        self.assertEqual(["Peacock"], events[0]["channels"])
+        self.assertEqual(["NBC (Usa)"], events[0]["channels"])
+
+    def test_compose_fanzo_overlap_keeps_fanzo_and_drops_flashscore_uk_channel(self):
+        fanzo = {
+            "schedule": [
+                {
+                    "date": "2026-03-02",
+                    "events": [
+                        {
+                            "name": "Arsenal v Chelsea",
+                            "sport": "Football",
+                            "time": "16:30",
+                            "start_time_iso": "2026-03-02T16:30:00Z",
+                            "channels": ["Sky Sports Main Event"],
+                            "home_team": "Arsenal",
+                            "away_team": "Chelsea",
+                        }
+                    ],
+                }
+            ]
+        }
+        flashscore = {
+            "source": "flashscore.com",
+            "events": [
+                {
+                    "home_team": "Arsenal",
+                    "away_team": "Chelsea",
+                    "start_date": "2026-03-02",
+                    "start_time": "16:30",
+                    "start_time_utc": "2026-03-02T16:30:00Z",
+                    "channels": [
+                        {"name": "NBC (Usa)", "url": "https://example.com/nbc"},
+                        {"name": "SuperSport Premier League (Rsa)", "url": "https://example.com/ss"},
+                        {"name": "beIN Sports MENA 1 (Ara)", "url": "https://example.com/bein"},
+                        {"name": "TNT Sports 1 (Gbr)", "url": "https://example.com/tnt"},
+                    ],
+                }
+            ],
+        }
+
+        composed = compose_payload(fanzo, flashscore, secondary_source="flashscore.com")
+        events = composed["schedule"][0]["events"]
+        self.assertEqual(1, len(events))
+        channels = events[0]["channels"]
+        self.assertIn("Sky Sports Main Event", channels)
+        self.assertIn("NBC (Usa)", channels)
+        self.assertIn("SuperSport Premier League (Rsa)", channels)
+        self.assertIn("beIN Sports MENA 1 (Ara)", channels)
+        self.assertNotIn("TNT Sports 1 (Gbr)", channels)
 
     def test_merge_enriches_channels_and_sport_logo_from_witm(self):
         fanzo = {
