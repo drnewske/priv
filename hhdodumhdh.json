@@ -1,0 +1,252 @@
+{
+  "updated_at_utc": "2026-03-05T00:00:00Z",
+  "links": [
+    {
+      "id": "buy_me_a_coffee",
+      "title": "Buy Me a Coffee",
+      "subtitle": "Tap to open",
+      "url": "https://buymeacoffee.com/orstreamsofficial"
+    },
+    {
+      "id": "liberapay",
+      "title": "Liberapay",
+      "subtitle": "Tap to open",
+      "url": "https://liberapay.com/orstreams/"
+    },
+    {
+      "id": "patreon",
+      "title": "Patreon",
+      "subtitle": "Tap to open",
+      "url": "https://www.patreon.com/c/orstreams/membership"
+    },
+    {
+      "id": "kofi",
+      "title": "Ko-fi",
+      "subtitle": "Tap to open",
+      "url": null
+    },
+    {
+      "id": "paypal",
+      "title": "PayPal",
+      "subtitle": "Tap to open",
+      "url": null
+    },
+    {
+      "id": "github_sponsors",
+      "title": "GitHub Sponsors",
+      "subtitle": "Tap to open",
+      "url": null
+    },
+    {
+      "id": "open_collective",
+      "title": "Open Collective",
+      "subtitle": "Tap to open",
+      "url": null
+    }
+  ],
+  "coins": [
+    {
+      "id": "btc",
+      "name": "Bitcoin",
+      "symbol": "BTC",
+      "network": "Bitcoin",
+      "address": "bc1qz24nsf4kwj0ru82g4ve4kkhnmzk85f20dmhczc"
+    },
+    {
+      "id": "eth",
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "network": "Ethereum",
+      "address": "0x952d9f19442ad7ee1c5370bf29562fd9808d7699"
+    },
+    {
+      "id": "usdt",
+      "name": "Tether",
+      "symbol": "USDT",
+      "network": "ERC20",
+      "address": "0x952d9f19442ad7ee1c5370bf29562fd9808d7699"
+    },
+    {
+      "id": "doge",
+      "name": "Dogecoin",
+      "symbol": "DOGE",
+      "network": "Dogecoin",
+      "address": "DTDZuG1X5KUdhz7PrXtzg8U2hGU3jM4Pug"
+    },
+    {
+      "id": "usdc",
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "network": "ERC20",
+      "address": null
+    },
+    {
+      "id": "bnb",
+      "name": "BNB",
+      "symbol": "BNB",
+      "network": "BNB Smart Chain",
+      "address": null
+    },
+    {
+      "id": "sol",
+      "name": "Solana",
+      "symbol": "SOL",
+      "network": "Solana",
+      "address": null
+    },
+    {
+      "id": "xrp",
+      "name": "XRP",
+      "symbol": "XRP",
+      "network": "XRP Ledger",
+      "address": null
+    },
+    {
+      "id": "ada",
+      "name": "Cardano",
+      "symbol": "ADA",
+      "network": "Cardano",
+      "address": null
+    },
+    {
+      "id": "trx",
+      "name": "TRON",
+      "symbol": "TRX",
+      "network": "Tron",
+      "address": null
+    },
+    {
+      "id": "ton",
+      "name": "Toncoin",
+      "symbol": "TON",
+      "network": "TON",
+      "address": null
+    },
+    {
+      "id": "avax",
+      "name": "Avalanche",
+      "symbol": "AVAX",
+      "network": "Avalanche C-Chain",
+      "address": null
+    },
+    {
+      "id": "link",
+      "name": "Chainlink",
+      "symbol": "LINK",
+      "network": "Ethereum",
+      "address": null
+    },
+    {
+      "id": "dot",
+      "name": "Polkadot",
+      "symbol": "DOT",
+      "network": "Polkadot",
+      "address": null
+    },
+    {
+      "id": "near",
+      "name": "NEAR",
+      "symbol": "NEAR",
+      "network": "NEAR",
+      "address": null
+    },
+    {
+      "id": "atom",
+      "name": "Cosmos",
+      "symbol": "ATOM",
+      "network": "Cosmos",
+      "address": null
+    },
+    {
+      "id": "matic",
+      "name": "Polygon",
+      "symbol": "MATIC",
+      "network": "Polygon",
+      "address": null
+    },
+    {
+      "id": "pol",
+      "name": "Polygon Ecosystem Token",
+      "symbol": "POL",
+      "network": "Polygon",
+      "address": null
+    },
+    {
+      "id": "ltc",
+      "name": "Litecoin",
+      "symbol": "LTC",
+      "network": "Litecoin",
+      "address": null
+    },
+    {
+      "id": "bch",
+      "name": "Bitcoin Cash",
+      "symbol": "BCH",
+      "network": "Bitcoin Cash",
+      "address": null
+    },
+    {
+      "id": "xlm",
+      "name": "Stellar",
+      "symbol": "XLM",
+      "network": "Stellar",
+      "address": null
+    },
+    {
+      "id": "etc",
+      "name": "Ethereum Classic",
+      "symbol": "ETC",
+      "network": "Ethereum Classic",
+      "address": null
+    },
+    {
+      "id": "xmr",
+      "name": "Monero",
+      "symbol": "XMR",
+      "network": "Monero",
+      "address": null
+    },
+    {
+      "id": "dash",
+      "name": "Dash",
+      "symbol": "DASH",
+      "network": "Dash",
+      "address": null
+    },
+    {
+      "id": "algo",
+      "name": "Algorand",
+      "symbol": "ALGO",
+      "network": "Algorand",
+      "address": null
+    },
+    {
+      "id": "apt",
+      "name": "Aptos",
+      "symbol": "APT",
+      "network": "Aptos",
+      "address": null
+    },
+    {
+      "id": "sui",
+      "name": "Sui",
+      "symbol": "SUI",
+      "network": "Sui",
+      "address": null
+    },
+    {
+      "id": "shib",
+      "name": "Shiba Inu",
+      "symbol": "SHIB",
+      "network": "ERC20",
+      "address": null
+    },
+    {
+      "id": "pepe",
+      "name": "Pepe",
+      "symbol": "PEPE",
+      "network": "ERC20",
+      "address": null
+    }
+  ]
+}
