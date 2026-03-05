@@ -3,7 +3,7 @@
 Run Pipeline - Orchestrates the full schedule processing pipeline.
 
 Steps:
-  1. Scrape FANZO + WITM + HuhSports schedules in parallel
+  1. Scrape FANZO + WITM + Flashscore schedules in parallel
   2. Merge/compose final weekly schedule
   3. Sync schedule channels into channels.json with stable IDs
   4. Map schedule channels to channel IDs in final output
@@ -135,17 +135,19 @@ def main():
                 ],
             ),
             (
-                "scrape_schedule_huhsports.py",
-                "Scraping Weekly HuhSports Football Schedule",
+                "scrape_schedule_flashscore.py",
+                "Scraping Weekly Flashscore Football Schedule",
                 [
                     "--days",
                     "7",
-                    "--output",
-                    "weekly_schedule_huhsports.json",
+                    "--output-json",
+                    "weekly_schedule_flashscore.json",
+                    "--output-csv",
+                    "weekly_schedule_flashscore.csv",
                 ],
             ),
         ],
-        "Scraping Weekly Schedules from FANZO + WITM + HuhSports (Parallel)",
+        "Scraping Weekly Schedules from FANZO + WITM + Flashscore (Parallel)",
     )
 
     # 4. Merge FANZO with WITM (exact match enrichment).
@@ -163,15 +165,15 @@ def main():
     )
 
     # 5. Compose final weekly schedule:
-    #    FANZO(+WITM enrichment) + HuhSports football.
+    #    FANZO(+WITM enrichment) + Flashscore football.
     run_step(
         "compose_weekly_schedule.py",
-        "Composing Final Weekly Schedule (FANZO Primary + HuhSports Football)",
+        "Composing Final Weekly Schedule (FANZO Primary + Flashscore Football)",
         extra_args=[
             "--fanzo-witm",
             "weekly_schedule_fanzo_enriched.json",
-            "--huhsports",
-            "weekly_schedule_huhsports.json",
+            "--football-secondary",
+            "weekly_schedule_flashscore.json",
             "--output",
             "weekly_schedule.json",
         ],

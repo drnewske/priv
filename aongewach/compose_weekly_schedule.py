@@ -2,12 +2,12 @@
 """
 Compose final weekly schedule from:
   - FANZO(+WITM enrichment) as primary source
-  - HuhSports football schedule as additional football source
+  - Secondary football source (Flashscore/HuhSports) as additional football source
 
 Rules:
-  - Keep FANZO team data when a FANZO/HuhSports football event matches.
-  - If FANZO football teams are placeholders (e.g. TBC), recover teams from event name when possible; otherwise replace from HuhSports match data.
-  - If FANZO football event has no usable channels (e.g. "Not Televised"), keep only when matched to HuhSports.
+  - Keep FANZO team data when a FANZO/secondary football event matches.
+  - If FANZO football teams are placeholders (e.g. TBC), recover teams from event name when possible; otherwise replace from secondary match data.
+  - If FANZO football event has no usable channels (e.g. "Not Televised"), keep only when matched to secondary source.
   - Merge overlapping channels (union) and keep unique events from both sources.
   - Emit a normalized, source-agnostic schema.
 """
@@ -155,7 +155,7 @@ def parse_hhmm(value: object) -> Optional[str]:
 
 
 def derive_start_time_iso(raw_event: Dict) -> Optional[str]:
-    parsed_iso = parse_iso_datetime(raw_event.get("start_time_iso"))
+    parsed_iso = parse_iso_datetime(raw_event.get("start_time_iso") or raw_event.get("start_time_utc"))
     if parsed_iso:
         return format_iso_z(parsed_iso)
 
@@ -560,16 +560,45 @@ def day_index(payload: Dict) -> Dict[str, Dict]:
     return out
 
 
-def date_index_from_huhsports(payload: Dict) -> Dict[str, Dict]:
+def _event_date_iso(raw_event: Dict) -> str:
+    direct = normalize_text(raw_event.get("date"))
+    if direct:
+        return direct
+
+    start_date = normalize_text(raw_event.get("start_date"))
+    if start_date:
+        return start_date
+
+    parsed_iso = parse_iso_datetime(raw_event.get("start_time_iso") or raw_event.get("start_time_utc"))
+    if parsed_iso:
+        return parsed_iso.astimezone(dt.timezone.utc).date().isoformat()
+
+    return ""
+
+
+def date_index_from_football_source(payload: Dict) -> Dict[str, Dict]:
     out: Dict[str, Dict] = {}
+    source_name = normalize_text(payload.get("source")) or "football-secondary"
+
     for raw_match in payload.get("matches", []) if isinstance(payload.get("matches"), list) else []:
         if not isinstance(raw_match, dict):
             continue
-        date_iso = normalize_text(raw_match.get("date"))
+        date_iso = _event_date_iso(raw_match)
         if not date_iso:
             continue
         node = out.setdefault(date_iso, {"date": date_iso, "day": day_name(date_iso), "events": []})
-        event = normalize_event(raw_match, source="huhsports", force_sport="Football")
+        event = normalize_event(raw_match, source=source_name, force_sport="Football")
+        if event:
+            node["events"].append(event)
+
+    for raw_event in payload.get("events", []) if isinstance(payload.get("events"), list) else []:
+        if not isinstance(raw_event, dict):
+            continue
+        date_iso = _event_date_iso(raw_event)
+        if not date_iso:
+            continue
+        node = out.setdefault(date_iso, {"date": date_iso, "day": day_name(date_iso), "events": []})
+        event = normalize_event(raw_event, source=source_name, force_sport="Football")
         if event:
             node["events"].append(event)
     return out
@@ -637,7 +666,7 @@ def strip_internal_fields(event: Dict) -> Dict:
     return {field: event.get(field) for field in NORMALIZED_EVENT_FIELDS}
 
 
-def fanzo_event_requires_huh_match(event: Dict) -> bool:
+def fanzo_event_requires_secondary_match(event: Dict) -> bool:
     if not is_football_sport(event.get("sport")):
         return False
     if not event.get("channels"):
@@ -645,21 +674,24 @@ def fanzo_event_requires_huh_match(event: Dict) -> bool:
     return not has_valid_teams(event)
 
 
-def compose_payload(fanzo_payload: Dict, huhsports_payload: Dict) -> Dict:
+def compose_payload(fanzo_payload: Dict, football_secondary_payload: Dict, secondary_source: Optional[str] = None) -> Dict:
     fanzo_by_date = day_index(fanzo_payload)
-    huh_by_date = date_index_from_huhsports(huhsports_payload)
-    all_dates = sorted(set(fanzo_by_date.keys()) | set(huh_by_date.keys()))
+    secondary_by_date = date_index_from_football_source(football_secondary_payload)
+    all_dates = sorted(set(fanzo_by_date.keys()) | set(secondary_by_date.keys()))
     football_logo_map, football_fallback_logo = build_football_logo_maps(fanzo_payload)
+    secondary_source_name = normalize_text(secondary_source) or normalize_text(
+        football_secondary_payload.get("source")
+    ) or "football-secondary"
 
     schedule: List[Dict] = []
     merged_football_events = 0
     fanzo_only_events = 0
-    huhsports_only_events = 0
+    secondary_only_events = 0
     fanzo_football_dropped_no_match = 0
 
     for date_iso in all_dates:
         fanzo_raw_events = fanzo_by_date.get(date_iso, {}).get("events", [])
-        huh_raw_events = huh_by_date.get(date_iso, {}).get("events", [])
+        secondary_raw_events = secondary_by_date.get(date_iso, {}).get("events", [])
 
         fanzo_events: List[Dict] = []
         for raw_event in fanzo_raw_events if isinstance(fanzo_raw_events, list) else []:
@@ -670,12 +702,12 @@ def compose_payload(fanzo_payload: Dict, huhsports_payload: Dict) -> Dict:
             enrich_football_logos(event, football_logo_map, football_fallback_logo)
             fanzo_events.append(event)
 
-        huh_events: List[Dict] = []
-        for raw_event in huh_raw_events if isinstance(huh_raw_events, list) else []:
+        secondary_events: List[Dict] = []
+        for raw_event in secondary_raw_events if isinstance(secondary_raw_events, list) else []:
             enrich_football_logos(raw_event, football_logo_map, football_fallback_logo)
-            huh_events.append(raw_event)
+            secondary_events.append(raw_event)
 
-        used_huh_indices: Set[int] = set()
+        used_secondary_indices: Set[int] = set()
         day_events: List[Dict] = []
 
         for fanzo_event in fanzo_events:
@@ -688,13 +720,13 @@ def compose_payload(fanzo_payload: Dict, huhsports_payload: Dict) -> Dict:
             match_index, _features = find_best_huh_match(
                 day_date=date_iso,
                 fanzo_event=fanzo_event,
-                huh_events=huh_events,
-                used_indices=used_huh_indices,
+                huh_events=secondary_events,
+                used_indices=used_secondary_indices,
             )
 
             if match_index is not None:
-                used_huh_indices.add(match_index)
-                huh_event = huh_events[match_index]
+                used_secondary_indices.add(match_index)
+                huh_event = secondary_events[match_index]
                 keep_primary_teams = has_valid_teams(fanzo_event)
                 merged = merge_event(fanzo_event, huh_event, keep_primary_teams=keep_primary_teams)
                 enrich_football_logos(merged, football_logo_map, football_fallback_logo)
@@ -705,7 +737,7 @@ def compose_payload(fanzo_payload: Dict, huhsports_payload: Dict) -> Dict:
                     fanzo_football_dropped_no_match += 1
                 continue
 
-            if fanzo_event_requires_huh_match(fanzo_event):
+            if fanzo_event_requires_secondary_match(fanzo_event):
                 fanzo_football_dropped_no_match += 1
                 continue
 
@@ -715,8 +747,8 @@ def compose_payload(fanzo_payload: Dict, huhsports_payload: Dict) -> Dict:
             else:
                 fanzo_football_dropped_no_match += 1
 
-        for idx, huh_event in enumerate(huh_events):
-            if idx in used_huh_indices:
+        for idx, huh_event in enumerate(secondary_events):
+            if idx in used_secondary_indices:
                 continue
             if not is_football_sport(huh_event.get("sport")):
                 continue
@@ -725,7 +757,7 @@ def compose_payload(fanzo_payload: Dict, huhsports_payload: Dict) -> Dict:
             if not has_valid_teams(huh_event):
                 continue
             day_events.append(huh_event)
-            huhsports_only_events += 1
+            secondary_only_events += 1
 
         deduped_day_events = dedupe_events(day_events)
         normalized_day_events = [strip_internal_fields(event) for event in sorted(deduped_day_events, key=event_sort_key)]
@@ -740,16 +772,18 @@ def compose_payload(fanzo_payload: Dict, huhsports_payload: Dict) -> Dict:
 
     return {
         "generated_at": dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
-        "source": "composed:fanzo+huhsports",
-        "schema_version": "fanzo-huhsports-v2",
+        "source": "composed:fanzo+football-secondary",
+        "schema_version": "fanzo-football-secondary-v3",
         "schema_fields": list(NORMALIZED_EVENT_FIELDS),
         "schedule": schedule,
         "composition": {
             "fanzo_primary_source": "fanzo.com",
-            "football_secondary_source": "huhsports.com/tv-guide",
+            "football_secondary_source": secondary_source_name,
             "fanzo_events_kept": fanzo_only_events,
-            "huhsports_unique_events_added": huhsports_only_events,
+            "football_secondary_unique_events_added": secondary_only_events,
+            "huhsports_unique_events_added": secondary_only_events,
             "football_events_merged": merged_football_events,
+            "fanzo_football_events_dropped_missing_secondary_match": fanzo_football_dropped_no_match,
             "fanzo_football_events_dropped_missing_huh_match": fanzo_football_dropped_no_match,
             "days": len(schedule),
         },
@@ -757,17 +791,20 @@ def compose_payload(fanzo_payload: Dict, huhsports_payload: Dict) -> Dict:
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Compose normalized schedule from FANZO(+WITM) + HuhSports football.")
+    parser = argparse.ArgumentParser(
+        description="Compose normalized schedule from FANZO(+WITM) + secondary football source."
+    )
     parser.add_argument(
         "--fanzo-witm",
         default="weekly_schedule_fanzo_enriched.json",
         help="Input FANZO(+WITM enrichment) JSON.",
     )
     parser.add_argument(
-        "--huhsports",
-        default="weekly_schedule_huhsports.json",
-        help="Input HuhSports schedule JSON.",
+        "--football-secondary",
+        default="weekly_schedule_flashscore.json",
+        help="Input secondary football schedule JSON (Flashscore or HuhSports shape).",
     )
+    parser.add_argument("--huhsports", default=None, help=argparse.SUPPRESS)
     parser.add_argument("--output", default="weekly_schedule.json", help="Output composed schedule JSON.")
     return parser.parse_args()
 
@@ -775,24 +812,31 @@ def parse_args() -> argparse.Namespace:
 def main() -> int:
     args = parse_args()
     fanzo_payload = load_json(args.fanzo_witm)
-    huhsports_payload = load_json(args.huhsports)
+    football_secondary_path = args.huhsports or args.football_secondary
+    football_secondary_payload = load_json(football_secondary_path)
 
     if not isinstance(fanzo_payload.get("schedule"), list):
         print(f"Invalid FANZO payload: {args.fanzo_witm}", file=sys.stderr)
         return 1
-    if not isinstance(huhsports_payload.get("matches"), list):
-        print(f"Invalid HuhSports payload: {args.huhsports}", file=sys.stderr)
+    if not isinstance(football_secondary_payload.get("matches"), list) and not isinstance(
+        football_secondary_payload.get("events"), list
+    ):
+        print(f"Invalid secondary football payload: {football_secondary_path}", file=sys.stderr)
         return 1
 
-    payload = compose_payload(fanzo_payload, huhsports_payload)
+    payload = compose_payload(
+        fanzo_payload,
+        football_secondary_payload,
+        secondary_source=normalize_text(football_secondary_payload.get("source")),
+    )
     save_json(args.output, payload)
 
     comp = payload.get("composition", {})
     print(
         f"[COMPOSE] Wrote {args.output} | fanzo_kept={comp.get('fanzo_events_kept', 0)} "
-        f"huh_unique={comp.get('huhsports_unique_events_added', 0)} "
+        f"secondary_unique={comp.get('football_secondary_unique_events_added', 0)} "
         f"football_merged={comp.get('football_events_merged', 0)} "
-        f"dropped_missing_huh={comp.get('fanzo_football_events_dropped_missing_huh_match', 0)} "
+        f"dropped_missing_secondary={comp.get('fanzo_football_events_dropped_missing_secondary_match', 0)} "
         f"days={comp.get('days', 0)}"
     )
     return 0

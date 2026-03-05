@@ -256,6 +256,32 @@ class ScheduleCompositionTests(unittest.TestCase):
         self.assertEqual(1, len(events))
         self.assertEqual(["Sky Sports Main Event"], events[0]["channels"])
 
+    def test_compose_reads_flashscore_events_payload(self):
+        fanzo = {"schedule": [{"date": "2026-03-02", "events": []}]}
+        flashscore = {
+            "source": "flashscoreusa.com",
+            "events": [
+                {
+                    "home_team": "Arsenal",
+                    "away_team": "Chelsea",
+                    "home_team_logo": "https://static.flashscore.com/res/image/data/home.png",
+                    "away_team_logo": "https://static.flashscore.com/res/image/data/away.png",
+                    "start_date": "2026-03-02",
+                    "start_time": "16:30",
+                    "start_time_utc": "2026-03-02T16:30:00Z",
+                    "channels": [{"name": "Peacock", "url": "https://www.peacocktv.com/"}],
+                }
+            ],
+        }
+
+        composed = compose_payload(fanzo, flashscore, secondary_source="flashscoreusa.com")
+        events = composed["schedule"][0]["events"]
+        self.assertEqual(1, len(events))
+        self.assertEqual("Arsenal v Chelsea", events[0]["name"])
+        self.assertEqual("2026-03-02T16:30:00Z", events[0]["start_time_iso"])
+        self.assertEqual("16:30", events[0]["time"])
+        self.assertEqual(["Peacock"], events[0]["channels"])
+
     def test_merge_enriches_channels_and_sport_logo_from_witm(self):
         fanzo = {
             "schedule": [

@@ -3,13 +3,14 @@
 Run Daily Schedule Worker
 
 Flow (single UTC day):
-  1. Scrape FANZO + WITM + HuhSports in parallel
+  1. Scrape FANZO + WITM + Flashscore in parallel
   2. Merge/compose today's schedule
   3. Scan playlists/external URLs for today's channel list (validate working links)
   4. Map today's schedule channels to channel IDs
 """
 
 import argparse
+import datetime as dt
 import subprocess
 import sys
 import time
@@ -158,17 +159,31 @@ def main() -> int:
 
     fanzo_output = "weekly_schedule_fanzo.json"
     witm_output = "weekly_schedule_witm.json"
-    huhsports_output = "weekly_schedule_huhsports.json"
+    flashscore_output = "weekly_schedule_flashscore.json"
+    flashscore_csv_output = "weekly_schedule_flashscore.csv"
     fanzo_witm_output = "weekly_schedule_fanzo_enriched.json"
     schedule_output = "weekly_schedule.json"
 
     fanzo_args = ["--days", "1", "--include-soccer", "--output", fanzo_output]
     witm_args = ["--days", "1", "--output", witm_output]
-    huhsports_args = ["--days", "1", "--output", huhsports_output]
+    flashscore_args = [
+        "--days",
+        "1",
+        "--output-json",
+        flashscore_output,
+        "--output-csv",
+        flashscore_csv_output,
+    ]
     if args.date:
         fanzo_args.extend(["--date", args.date])
         witm_args.extend(["--date", args.date])
-        huhsports_args.extend(["--start-date", args.date])
+        try:
+            target_date = dt.datetime.strptime(args.date, "%Y-%m-%d").date()
+            utc_today = dt.datetime.now(dt.timezone.utc).date()
+            day_start = (target_date - utc_today).days
+            flashscore_args.extend(["--day-start", str(day_start)])
+        except ValueError:
+            print(f"[WARN] Invalid --date value '{args.date}'. Flashscore will use day-start=0 (UTC today).")
 
     run_parallel_steps(
         [
@@ -183,12 +198,12 @@ def main() -> int:
                 witm_args,
             ),
             (
-                "scrape_schedule_huhsports.py",
-                "Scraping Daily HuhSports Football Schedule",
-                huhsports_args,
+                "scrape_schedule_flashscore.py",
+                "Scraping Daily Flashscore Football Schedule",
+                flashscore_args,
             ),
         ],
-        "Scraping Daily Schedules from FANZO + WITM + HuhSports (Parallel)",
+        "Scraping Daily Schedules from FANZO + WITM + Flashscore (Parallel)",
     )
 
     run_step(
@@ -206,12 +221,12 @@ def main() -> int:
 
     run_step(
         "compose_weekly_schedule.py",
-        "Composing Daily Schedule (FANZO Primary + HuhSports Football)",
+        "Composing Daily Schedule (FANZO Primary + Flashscore Football)",
         extra_args=[
             "--fanzo-witm",
             fanzo_witm_output,
-            "--huhsports",
-            huhsports_output,
+            "--football-secondary",
+            flashscore_output,
             "--output",
             schedule_output,
         ],

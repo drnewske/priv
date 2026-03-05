@@ -20,12 +20,6 @@ jobs:
     timeout-minutes: 180
     permissions:
       contents: write
-    env:
-      HUHSPORTS_PROXY_LIST: ${{ secrets.HUHSPORTS_PROXY_LIST }}
-      HUHSPORTS_PROXY_MODE: round_robin
-      HUHSPORTS_MAX_PROBE_REQUESTS: "0"
-      HUHSPORTS_PROBE_HTTP_RETRIES: "1"
-      HUHSPORTS_STOP_PROBING_AFTER_RATE_LIMITS: "1"
 
     steps:
       - name: Checkout repository
@@ -75,7 +69,8 @@ jobs:
             aongewach/weekly_schedule.json
             aongewach/weekly_schedule_fanzo.json
             aongewach/weekly_schedule_fanzo_enriched.json
-            aongewach/weekly_schedule_huhsports.json
+            aongewach/weekly_schedule_flashscore.json
+            aongewach/weekly_schedule_flashscore.csv
             aongewach/weekly_schedule_witm.json
             aongewach/channels.json
             aongewach/channel_map.json
@@ -91,7 +86,8 @@ jobs:
             "aongewach/weekly_schedule.json"
             "aongewach/weekly_schedule_fanzo.json"
             "aongewach/weekly_schedule_fanzo_enriched.json"
-            "aongewach/weekly_schedule_huhsports.json"
+            "aongewach/weekly_schedule_flashscore.json"
+            "aongewach/weekly_schedule_flashscore.csv"
             "aongewach/weekly_schedule_witm.json"
             "aongewach/channels.json"
             "aongewach/channel_map.json"
