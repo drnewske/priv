@@ -66,6 +66,65 @@ TEAM_ABBREVIATION_MAP = {
     "st": "saint",
 }
 WITM_FOOTBALL_COMPETITION_LOGO_URL = "https://www.wheresthematch.com/images/sports/football.gif"
+DEFAULT_LIVESPORTTV_PATH = "weekly_schedule_livesporttv.json"
+DEFAULT_FLASHSCORE_SPORT_ASSETS_PATH = "flashscore_sport_assets.json"
+GENERIC_TEAM_LOGO_PATTERNS = (
+    "/images/team.png",
+    "images/team.png?v=",
+)
+
+TEAM_TOKEN_EXPANSIONS = {
+    "utd": "united",
+    "st": "saint",
+    "ste": "sainte",
+    "mt": "mount",
+    "man": "manchester",
+}
+TEAM_ALIAS_EXPANSIONS = {
+    "man city": ("manchester city",),
+    "manchester city": ("man city",),
+    "man utd": ("manchester united",),
+    "manchester united": ("man utd",),
+    "wolves": ("wolverhampton", "wolverhampton wanderers"),
+    "wolverhampton": ("wolves", "wolverhampton wanderers"),
+    "wolverhampton wanderers": ("wolves", "wolverhampton"),
+    "spurs": ("tottenham", "tottenham hotspur"),
+    "tottenham": ("spurs", "tottenham hotspur"),
+    "tottenham hotspur": ("spurs", "tottenham"),
+    "psg": ("paris saint germain", "paris sg"),
+    "paris sg": ("psg", "paris saint germain"),
+    "paris saint germain": ("psg", "paris sg"),
+    "mgladbach": ("monchengladbach", "borussia monchengladbach", "gladbach"),
+    "gladbach": ("monchengladbach", "borussia monchengladbach", "mgladbach"),
+    "monchengladbach": ("mgladbach", "gladbach", "borussia monchengladbach"),
+    "borussia monchengladbach": ("monchengladbach", "gladbach", "mgladbach"),
+    "dundee utd": ("dundee united",),
+    "dundee united": ("dundee utd",),
+    "oxford utd": ("oxford united",),
+    "oxford united": ("oxford utd",),
+}
+COMPETITION_ALIAS_EXPANSIONS = {
+    "fa cup": ("english fa cup",),
+    "english fa cup": ("fa cup",),
+    "efl cup": ("english efl cup", "carabao cup"),
+    "english efl cup": ("efl cup", "carabao cup"),
+    "carabao cup": ("efl cup", "english efl cup"),
+    "bundesliga": ("german bundesliga",),
+    "german bundesliga": ("bundesliga",),
+    "laliga": ("la liga", "spanish la liga"),
+    "la liga": ("laliga", "spanish la liga"),
+    "spanish la liga": ("laliga", "la liga"),
+    "ligue 1": ("french ligue 1",),
+    "french ligue 1": ("ligue 1",),
+    "serie a": ("italian serie a",),
+    "italian serie a": ("serie a",),
+    "coupe de france": ("french coupe de france",),
+    "french coupe de france": ("coupe de france",),
+    "premier league": ("english premier league",),
+    "english premier league": ("premier league",),
+    "saudi professional league": ("saudi pro league",),
+    "saudi pro league": ("saudi professional league",),
+}
 
 NORMALIZED_EVENT_FIELDS = [
     "name",
@@ -279,6 +338,148 @@ def canonical_team_name(value: object) -> str:
     return " ".join(tokens)
 
 
+def tokenize_name(value: str) -> List[str]:
+    return [token for token in value.split(" ") if token]
+
+
+def acronym_from_tokens(tokens: Iterable[str]) -> str:
+    letters = [token[0] for token in tokens if token]
+    return "".join(letters)
+
+
+def add_alias_variants(
+    out: Set[str],
+    value: object,
+    alias_map: Dict[str, Tuple[str, ...]],
+    *,
+    canonicalizer,
+    token_expansions: Optional[Dict[str, str]] = None,
+) -> None:
+    raw = normalize_text(value)
+    if not raw:
+        return
+
+    queue = [raw, raw.replace("-", " "), raw.replace("&", " and ")]
+    seen: Set[str] = set()
+
+    while queue:
+        candidate = normalize_text(queue.pop(0))
+        if not candidate:
+            continue
+        key = canonicalizer(candidate)
+        if not key or key in seen:
+            continue
+        seen.add(key)
+        out.add(key)
+
+        tokens = tokenize_name(key)
+        if tokens:
+            expanded_tokens = [token_expansions.get(token, token) for token in tokens] if token_expansions else tokens
+            expanded_key = " ".join(expanded_tokens).strip()
+            if expanded_key and expanded_key not in seen:
+                queue.append(expanded_key)
+
+            compact_key = "".join(tokens)
+            if compact_key:
+                out.add(compact_key)
+
+            initials = acronym_from_tokens(tokens)
+            if len(initials) >= 2:
+                out.add(initials)
+
+            if len(tokens) > 1:
+                without_single_letter = " ".join(token for token in tokens if len(token) > 1)
+                if without_single_letter and without_single_letter not in seen:
+                    queue.append(without_single_letter)
+
+                if canonicalizer is canonical_team_name and tokens[0] == "borussia":
+                    queue.append(" ".join(tokens[1:]))
+
+        for extra in alias_map.get(key, ()):
+            if extra:
+                queue.append(extra)
+
+
+def build_team_aliases(raw_event: Dict, side: str) -> List[str]:
+    aliases: Set[str] = set()
+    for field in (
+        f"{side}_team",
+        f"{side}_team_short",
+        f"{side}_team_slug",
+    ):
+        add_alias_variants(
+            aliases,
+            raw_event.get(field),
+            TEAM_ALIAS_EXPANSIONS,
+            canonicalizer=canonical_team_name,
+            token_expansions=TEAM_TOKEN_EXPANSIONS,
+        )
+    return sorted(aliases)
+
+
+def build_competition_aliases(raw_event: Dict) -> List[str]:
+    aliases: Set[str] = set()
+    for field in ("competition", "competition_full", "league"):
+        raw = normalize_text(raw_event.get(field))
+        if not raw:
+            continue
+        add_alias_variants(
+            aliases,
+            raw,
+            COMPETITION_ALIAS_EXPANSIONS,
+            canonicalizer=canonical_event_name,
+        )
+    return sorted(aliases)
+
+
+def variant_similarity(left: str, right: str) -> float:
+    left_key = normalize_text(left)
+    right_key = normalize_text(right)
+    if not left_key or not right_key:
+        return 0.0
+    if left_key == right_key:
+        return 1.0
+
+    sequence = similarity(left_key, right_key)
+    containment = 0.0
+    shorter, longer = sorted((left_key, right_key), key=len)
+    if len(shorter) >= 4 and shorter in longer:
+        containment = 0.92 if len(shorter) >= 6 else 0.84
+
+    left_tokens = set(tokenize_name(left_key))
+    right_tokens = set(tokenize_name(right_key))
+    intersection = left_tokens & right_tokens
+    token_score = 0.0
+    if intersection:
+        shorter_tokens = left_tokens if len(left_tokens) <= len(right_tokens) else right_tokens
+        smaller_is_subset = intersection == shorter_tokens
+        if smaller_is_subset:
+            if len(shorter_tokens) >= 2:
+                token_score = 0.94
+            elif len(shorter_tokens) == 1:
+                token = next(iter(shorter_tokens))
+                token_score = 0.90 if len(token) >= 8 else 0.65
+        else:
+            token_score = len(intersection) / max(1, min(len(left_tokens), len(right_tokens)))
+
+    return max(sequence, containment, token_score)
+
+
+def best_variant_similarity(left_variants: Iterable[str], right_variants: Iterable[str]) -> float:
+    left = [value for value in left_variants if normalize_text(value)]
+    right = [value for value in right_variants if normalize_text(value)]
+    if not left or not right:
+        return 0.0
+
+    best = 0.0
+    for left_value in left:
+        for right_value in right:
+            score = variant_similarity(left_value, right_value)
+            if score > best:
+                best = score
+    return best
+
+
 def similarity(a: str, b: str) -> float:
     if not a or not b:
         return 0.0
@@ -355,6 +556,9 @@ def normalize_event(
         "away_team_logo": normalize_text(raw_event.get("away_team_logo")) or None,
         "_date": normalize_text(raw_event.get("date")) or None,
         "_source": source,
+        "_home_team_aliases": build_team_aliases(raw_event, "home"),
+        "_away_team_aliases": build_team_aliases(raw_event, "away"),
+        "_competition_aliases": build_competition_aliases(raw_event),
     }
     return normalized
 
@@ -399,18 +603,18 @@ def time_score(day_date: str, left: Dict, right: Dict) -> Tuple[float, Optional[
 
 
 def team_pair_scores(fanzo_event: Dict, huh_event: Dict) -> Tuple[float, float]:
-    f_home = canonical_team_name(fanzo_event.get("home_team"))
-    f_away = canonical_team_name(fanzo_event.get("away_team"))
-    h_home = canonical_team_name(huh_event.get("home_team"))
-    h_away = canonical_team_name(huh_event.get("away_team"))
+    f_home = fanzo_event.get("_home_team_aliases") or [canonical_team_name(fanzo_event.get("home_team"))]
+    f_away = fanzo_event.get("_away_team_aliases") or [canonical_team_name(fanzo_event.get("away_team"))]
+    h_home = huh_event.get("_home_team_aliases") or [canonical_team_name(huh_event.get("home_team"))]
+    h_away = huh_event.get("_away_team_aliases") or [canonical_team_name(huh_event.get("away_team"))]
 
-    direct_home = similarity(f_home, h_home)
-    direct_away = similarity(f_away, h_away)
+    direct_home = best_variant_similarity(f_home, h_home)
+    direct_away = best_variant_similarity(f_away, h_away)
     direct_avg = (direct_home + direct_away) / 2.0
     direct_min = min(direct_home, direct_away)
 
-    swap_home = similarity(f_home, h_away)
-    swap_away = similarity(f_away, h_home)
+    swap_home = best_variant_similarity(f_home, h_away)
+    swap_away = best_variant_similarity(f_away, h_home)
     swap_avg = (swap_home + swap_away) / 2.0
     swap_min = min(swap_home, swap_away)
 
@@ -425,9 +629,9 @@ def event_match_features(day_date: str, fanzo_event: Dict, huh_event: Dict) -> D
         canonical_event_name(fanzo_event.get("name")),
         canonical_event_name(huh_event.get("name")),
     )
-    competition_score = similarity(
-        canonical_event_name(fanzo_event.get("competition")),
-        canonical_event_name(huh_event.get("competition")),
+    competition_score = best_variant_similarity(
+        fanzo_event.get("_competition_aliases") or [canonical_event_name(fanzo_event.get("competition"))],
+        huh_event.get("_competition_aliases") or [canonical_event_name(huh_event.get("competition"))],
     )
     ts, diff_minutes = time_score(day_date, fanzo_event, huh_event)
 
@@ -488,6 +692,24 @@ def find_best_huh_match(
     if not is_acceptable_match(best_features, fanzo_event):
         return None, None
     return best_index, best_features
+
+
+def date_index_from_schedule_payload(payload: Dict, source_name: str) -> Dict[str, Dict]:
+    out: Dict[str, Dict] = {}
+    for day in payload.get("schedule", []) if isinstance(payload.get("schedule"), list) else []:
+        if not isinstance(day, dict):
+            continue
+        date_iso = normalize_text(day.get("date"))
+        if not date_iso:
+            continue
+        node = out.setdefault(date_iso, {"date": date_iso, "day": day_name(date_iso), "events": []})
+        for raw_event in day.get("events", []) if isinstance(day.get("events"), list) else []:
+            if not isinstance(raw_event, dict):
+                continue
+            event = normalize_event(raw_event, source=source_name, allow_empty_channels=True)
+            if event:
+                node["events"].append(event)
+    return out
 
 
 def merge_channels(first: Iterable[str], second: Iterable[str]) -> List[str]:
@@ -648,6 +870,66 @@ def enrich_football_logos(event: Dict, competition_logo_map: Dict[str, str], fal
         event["sport_logo"] = mapped_logo or fallback_logo
 
 
+def is_generic_team_logo(value: object) -> bool:
+    url = normalize_key_text(value)
+    if not url:
+        return True
+    return any(pattern in url for pattern in GENERIC_TEAM_LOGO_PATTERNS)
+
+
+def is_usable_team_logo(value: object) -> bool:
+    return not is_generic_team_logo(value)
+
+
+def is_acceptable_livesporttv_logo_match(features: Dict[str, float]) -> bool:
+    if features["time_score"] < 0.82:
+        return False
+    if features["team_min"] >= 0.80 and features["competition_score"] >= 0.75:
+        return True
+    return features["confidence"] >= 0.88 and features["team_min"] >= 0.70
+
+
+def find_best_livesporttv_match(
+    day_date: str,
+    football_event: Dict,
+    livesporttv_events: List[Dict],
+    used_indices: Set[int],
+) -> Tuple[Optional[int], Optional[Dict[str, float]]]:
+    best_index: Optional[int] = None
+    best_features: Optional[Dict[str, float]] = None
+
+    for index, candidate in enumerate(livesporttv_events):
+        if index in used_indices:
+            continue
+        if event_date(day_date, candidate) != day_date:
+            continue
+        if not is_football_sport(candidate.get("sport")):
+            continue
+        if not (is_usable_team_logo(candidate.get("home_team_logo")) or is_usable_team_logo(candidate.get("away_team_logo"))):
+            continue
+
+        features = event_match_features(day_date, football_event, candidate)
+        if best_features is None or features["confidence"] > best_features["confidence"]:
+            best_index = index
+            best_features = features
+
+    if best_index is None or best_features is None:
+        return None, None
+    if not is_acceptable_livesporttv_logo_match(best_features):
+        return None, None
+    return best_index, best_features
+
+
+def apply_livesporttv_team_logos(event: Dict, livesporttv_event: Dict) -> bool:
+    updated = False
+    for field in ("home_team_logo", "away_team_logo"):
+        candidate = normalize_text(livesporttv_event.get(field)) or None
+        if candidate and is_usable_team_logo(candidate) and event.get(field) != candidate:
+            event[field] = candidate
+            updated = True
+    return updated
+
+
 def dedupe_events(events: List[Dict]) -> List[Dict]:
     merged_by_key: Dict[Tuple[str, str, str, str, str], Dict] = {}
 
@@ -682,9 +964,19 @@ def fanzo_event_requires_secondary_match(event: Dict) -> bool:
     return not has_valid_teams(event)
 
 
-def compose_payload(fanzo_payload: Dict, football_secondary_payload: Dict, secondary_source: Optional[str] = None) -> Dict:
+def compose_payload(
+    fanzo_payload: Dict,
+    football_secondary_payload: Dict,
+    secondary_source: Optional[str] = None,
+    livesporttv_payload: Optional[Dict] = None,
+    sport_assets_payload: Optional[Dict] = None,
+) -> Dict:
     fanzo_by_date = day_index(fanzo_payload)
     secondary_by_date = date_index_from_football_source(football_secondary_payload)
+    livesporttv_by_date = date_index_from_schedule_payload(
+        livesporttv_payload or {},
+        source_name=normalize_text((livesporttv_payload or {}).get("source")) or "livesporttv.com",
+    )
     all_dates = sorted(set(fanzo_by_date.keys()) | set(secondary_by_date.keys()))
     football_logo_map, football_fallback_logo = build_football_logo_maps(fanzo_payload)
     secondary_source_name = normalize_text(secondary_source) or normalize_text(
@@ -696,10 +988,12 @@ def compose_payload(fanzo_payload: Dict, football_secondary_payload: Dict, secon
     fanzo_only_events = 0
     secondary_only_events = 0
     fanzo_football_dropped_no_match = 0
+    football_secondary_logo_upgrades = 0
 
     for date_iso in all_dates:
         fanzo_raw_events = fanzo_by_date.get(date_iso, {}).get("events", [])
         secondary_raw_events = secondary_by_date.get(date_iso, {}).get("events", [])
+        livesporttv_events = livesporttv_by_date.get(date_iso, {}).get("events", [])
 
         fanzo_events: List[Dict] = []
         for raw_event in fanzo_raw_events if isinstance(fanzo_raw_events, list) else []:
@@ -716,6 +1010,7 @@ def compose_payload(fanzo_payload: Dict, football_secondary_payload: Dict, secon
             secondary_events.append(raw_event)
 
         used_secondary_indices: Set[int] = set()
+        used_livesporttv_indices: Set[int] = set()
         day_events: List[Dict] = []
 
         for fanzo_event in fanzo_events:
@@ -764,6 +1059,16 @@ def compose_payload(fanzo_payload: Dict, football_secondary_payload: Dict, secon
                 continue
             if not has_valid_teams(huh_event):
                 continue
+            livesporttv_index, _logo_features = find_best_livesporttv_match(
+                day_date=date_iso,
+                football_event=huh_event,
+                livesporttv_events=livesporttv_events,
+                used_indices=used_livesporttv_indices,
+            )
+            if livesporttv_index is not None:
+                used_livesporttv_indices.add(livesporttv_index)
+                if apply_livesporttv_team_logos(huh_event, livesporttv_events[livesporttv_index]):
+                    football_secondary_logo_upgrades += 1
             day_events.append(huh_event)
             secondary_only_events += 1
 
@@ -778,10 +1083,10 @@ def compose_payload(fanzo_payload: Dict, football_secondary_payload: Dict, secon
             }
         )
 
-    return {
+    output = {
         "generated_at": dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
         "source": "composed:fanzo+football-secondary",
-        "schema_version": "fanzo-football-secondary-v3",
+        "schema_version": "fanzo-football-secondary-v4",
         "schema_fields": list(NORMALIZED_EVENT_FIELDS),
         "schedule": schedule,
         "composition": {
@@ -793,9 +1098,13 @@ def compose_payload(fanzo_payload: Dict, football_secondary_payload: Dict, secon
             "football_events_merged": merged_football_events,
             "fanzo_football_events_dropped_missing_secondary_match": fanzo_football_dropped_no_match,
             "fanzo_football_events_dropped_missing_huh_match": fanzo_football_dropped_no_match,
+            "football_secondary_events_logo_enriched_from_livesporttv": football_secondary_logo_upgrades,
             "days": len(schedule),
         },
     }
+    if isinstance(sport_assets_payload, dict) and sport_assets_payload:
+        output["sport_assets"] = sport_assets_payload
+    return output
 
 
 def parse_args() -> argparse.Namespace:
@@ -813,6 +1122,16 @@ def parse_args() -> argparse.Namespace:
         help="Input secondary football schedule JSON (Flashscore or HuhSports shape).",
     )
     parser.add_argument("--huhsports", default=None, help=argparse.SUPPRESS)
+    parser.add_argument(
+        "--livesporttv",
+        default=DEFAULT_LIVESPORTTV_PATH,
+        help="Optional LiveSportTV schedule JSON for sharper fallback football team logos.",
+    )
+    parser.add_argument(
+        "--flashscore-sport-assets",
+        default=DEFAULT_FLASHSCORE_SPORT_ASSETS_PATH,
+        help="Static Flashscore sport SVG payload to embed in final schedule JSON when available.",
+    )
     parser.add_argument("--output", default="weekly_schedule.json", help="Output composed schedule JSON.")
     return parser.parse_args()
 
@@ -822,6 +1141,8 @@ def main() -> int:
     fanzo_payload = load_json(args.fanzo_witm)
     football_secondary_path = args.huhsports or args.football_secondary
     football_secondary_payload = load_json(football_secondary_path)
+    livesporttv_payload = load_json(args.livesporttv)
+    sport_assets_payload = load_json(args.flashscore_sport_assets)
 
     if not isinstance(fanzo_payload.get("schedule"), list):
         print(f"Invalid FANZO payload: {args.fanzo_witm}", file=sys.stderr)
@@ -836,6 +1157,8 @@ def main() -> int:
         fanzo_payload,
         football_secondary_payload,
         secondary_source=normalize_text(football_secondary_payload.get("source")),
+        livesporttv_payload=livesporttv_payload,
+        sport_assets_payload=sport_assets_payload,
     )
     save_json(args.output, payload)
 
@@ -844,6 +1167,7 @@ def main() -> int:
         f"[COMPOSE] Wrote {args.output} | fanzo_kept={comp.get('fanzo_events_kept', 0)} "
         f"secondary_unique={comp.get('football_secondary_unique_events_added', 0)} "
         f"football_merged={comp.get('football_events_merged', 0)} "
+        f"logo_upgrades={comp.get('football_secondary_events_logo_enriched_from_livesporttv', 0)} "
         f"dropped_missing_secondary={comp.get('fanzo_football_events_dropped_missing_secondary_match', 0)} "
         f"days={comp.get('days', 0)}"
     )

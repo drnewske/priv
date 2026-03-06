@@ -330,6 +330,129 @@ class ScheduleCompositionTests(unittest.TestCase):
         self.assertIn("beIN Sports MENA 1", channels)
         self.assertNotIn("TNT Sports 1", channels)
 
+    def test_compose_matches_alias_style_overlap_without_team_database(self):
+        fanzo = {
+            "schedule": [
+                {
+                    "date": "2026-03-07",
+                    "events": [
+                        {
+                            "name": "Newcastle vs Man City",
+                            "sport": "Football",
+                            "time": "20:00",
+                            "start_time_iso": "2026-03-07T20:00:00Z",
+                            "competition": "English FA Cup",
+                            "channels": ["Sky Sports Main Event"],
+                            "home_team": "Newcastle",
+                            "away_team": "Man City",
+                            "home_team_logo": "fanzo-newcastle.png",
+                            "away_team_logo": "fanzo-mancity.png",
+                        }
+                    ],
+                }
+            ]
+        }
+        flashscore = {
+            "source": "flashscore.com",
+            "events": [
+                {
+                    "home_team": "Newcastle",
+                    "away_team": "Manchester City",
+                    "away_team_slug": "manchester-city",
+                    "competition": "FA Cup",
+                    "competition_full": "England: FA Cup",
+                    "start_date": "2026-03-07",
+                    "start_time": "20:00",
+                    "start_time_utc": "2026-03-07T20:00:00Z",
+                    "channels": [{"name": "NBC (Usa)", "url": "https://example.com/nbc"}],
+                }
+            ],
+        }
+
+        composed = compose_payload(fanzo, flashscore, secondary_source="flashscore.com")
+        events = composed["schedule"][0]["events"]
+        self.assertEqual(1, len(events))
+        event = events[0]
+        self.assertEqual("fanzo-newcastle.png", event["home_team_logo"])
+        self.assertEqual("fanzo-mancity.png", event["away_team_logo"])
+        self.assertIn("NBC", event["channels"])
+
+    def test_compose_upgrades_flashscore_only_logos_from_livesporttv(self):
+        fanzo = {"schedule": [{"date": "2026-03-06", "events": []}]}
+        flashscore = {
+            "source": "flashscore.com",
+            "events": [
+                {
+                    "home_team": "Wolves",
+                    "home_team_slug": "wolverhampton",
+                    "away_team": "Liverpool",
+                    "away_team_slug": "liverpool",
+                    "competition": "FA Cup",
+                    "competition_full": "England: FA Cup",
+                    "start_date": "2026-03-06",
+                    "start_time": "20:00",
+                    "start_time_utc": "2026-03-06T20:00:00Z",
+                    "home_team_logo": "https://static.flashscore.com/res/image/data/wolves-small.png",
+                    "away_team_logo": "https://static.flashscore.com/res/image/data/liverpool-small.png",
+                    "channels": [{"name": "NBC (Usa)", "url": "https://example.com/nbc"}],
+                }
+            ],
+        }
+        livesporttv = {
+            "source": "livesporttv.com",
+            "schedule": [
+                {
+                    "date": "2026-03-06",
+                    "events": [
+                        {
+                            "name": "Wolverhampton Wanderers v Liverpool",
+                            "sport": "Soccer",
+                            "competition": "English FA Cup",
+                            "time": "20:00",
+                            "start_time_iso": "2026-03-06T20:00:00Z",
+                            "home_team": "Wolverhampton Wanderers",
+                            "away_team": "Liverpool",
+                            "home_team_logo": "https://www.livesporttv.com/uploads/teams/wolves.png",
+                            "away_team_logo": "https://www.livesporttv.com/uploads/teams/liverpool.png",
+                        }
+                    ],
+                }
+            ],
+        }
+
+        composed = compose_payload(
+            fanzo,
+            flashscore,
+            secondary_source="flashscore.com",
+            livesporttv_payload=livesporttv,
+        )
+        event = composed["schedule"][0]["events"][0]
+        self.assertEqual("https://www.livesporttv.com/uploads/teams/wolves.png", event["home_team_logo"])
+        self.assertEqual("https://www.livesporttv.com/uploads/teams/liverpool.png", event["away_team_logo"])
+        self.assertEqual(1, composed["composition"]["football_secondary_events_logo_enriched_from_livesporttv"])
+
+    def test_compose_embeds_static_sport_assets_payload(self):
+        fanzo = {"schedule": [{"date": "2026-03-02", "events": []}]}
+        flashscore = {"source": "flashscore.com", "events": []}
+        sport_assets = {
+            "generated_at": "2026-03-06T12:00:00Z",
+            "source": "flashscore.com",
+            "sports": {
+                "soccer": {
+                    "label": "Football",
+                    "svg_data_uri": "data:image/svg+xml;utf8,<svg></svg>",
+                }
+            },
+        }
+
+        composed = compose_payload(
+            fanzo,
+            flashscore,
+            secondary_source="flashscore.com",
+            sport_assets_payload=sport_assets,
+        )
+        self.assertEqual(sport_assets, composed["sport_assets"])
+
     def test_merge_enriches_channels_and_sport_logo_from_witm(self):
         fanzo = {
             "schedule": [

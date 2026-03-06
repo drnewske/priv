@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-06T06:39:57Z",
+  "generated_at": "2026-03-06T11:31:01Z",
   "source": "flashscore.com",
   "config": {
     "host": "https://global.flashscore.ninja",
@@ -14,36 +14,36 @@
     "top_competitions_only": true,
     "max_channels_per_event": 4,
     "total_events": 73,
-    "total_events_with_channels": 53
+    "total_events_with_channels": 59
   },
   "day_summaries": [
     {
       "day_offset": 0,
-      "events_before_competition_filter": 457,
+      "events_before_competition_filter": 456,
       "events": 9,
       "events_with_channels": 7
     },
     {
       "day_offset": 1,
-      "events_before_competition_filter": 1644,
+      "events_before_competition_filter": 1649,
       "events": 26,
-      "events_with_channels": 22
+      "events_with_channels": 24
     },
     {
       "day_offset": 2,
-      "events_before_competition_filter": 1181,
+      "events_before_competition_filter": 1184,
       "events": 31,
-      "events_with_channels": 21
+      "events_with_channels": 24
     },
     {
       "day_offset": 3,
-      "events_before_competition_filter": 203,
+      "events_before_competition_filter": 205,
       "events": 4,
-      "events_with_channels": 3
+      "events_with_channels": 4
     },
     {
       "day_offset": 4,
-      "events_before_competition_filter": 244,
+      "events_before_competition_filter": 245,
       "events": 0,
       "events_with_channels": 0
     },
@@ -64,9 +64,14 @@
     {
       "home_team": "Wolves",
       "away_team": "Liverpool",
+      "home_team_short": "WOL",
+      "away_team_short": "LIV",
+      "home_team_slug": "wolves",
+      "away_team_slug": "liverpool",
       "home_team_logo": "https://static.flashscore.com/res/image/data/MV7MiUmC-ABWS7fBq.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/nBClzyne-KCp4zq5F.png",
       "competition": "FA Cup",
+      "competition_full": "ENGLAND: FA Cup",
       "country": "England",
       "competition_id": "lYQtaqPQ",
       "competition_url": "https://www.flashscore.com/football/england/fa-cup/",
@@ -95,9 +100,14 @@
     {
       "home_team": "PSG",
       "away_team": "Monaco",
+      "home_team_short": "PSG",
+      "away_team_short": "MON",
+      "home_team_slug": "psg",
+      "away_team_slug": "monaco",
       "home_team_logo": "https://static.flashscore.com/res/image/data/fJgGn26k-A7UDDuOO.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/n3jLkyne-0SFGJsPk.png",
       "competition": "Ligue 1",
+      "competition_full": "FRANCE: Ligue 1",
       "country": "France",
       "competition_id": "KIShoMk3",
       "competition_url": "https://www.flashscore.com/football/france/ligue-1/",
@@ -126,9 +136,14 @@
     {
       "home_team": "Bayern Munich",
       "away_team": "B. Monchengladbach",
+      "home_team_short": "BAY",
+      "away_team_short": "MON",
+      "home_team_slug": "bayern-munich",
+      "away_team_slug": "b-monchengladbach",
       "home_team_logo": "https://static.flashscore.com/res/image/data/lWGBVoA6-SvLFaVNH.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/tjlAHwhT-84sATBUR.png",
       "competition": "Bundesliga",
+      "competition_full": "GERMANY: Bundesliga",
       "country": "Germany",
       "competition_id": "W6BOzpK2",
       "competition_url": "https://www.flashscore.com/football/germany/bundesliga/",
@@ -157,9 +172,14 @@
     {
       "home_team": "Napoli",
       "away_team": "Torino",
+      "home_team_short": "NAP",
+      "away_team_short": "TOR",
+      "home_team_slug": "napoli",
+      "away_team_slug": "torino",
       "home_team_logo": "https://static.flashscore.com/res/image/data/tSuMfRjT-Stb48WaO.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/dhGobOA6-0lwy4Ij1.png",
       "competition": "Serie A",
+      "competition_full": "ITALY: Serie A",
       "country": "Italy",
       "competition_id": "COuk57Ci",
       "competition_url": "https://www.flashscore.com/football/italy/serie-a/",
@@ -188,9 +208,14 @@
     {
       "home_team": "Al Ahli SC",
       "away_team": "Al Ittihad",
+      "home_team_short": "AHL",
+      "away_team_short": "AL",
+      "home_team_slug": "al-ahli-sc",
+      "away_team_slug": "al-ittihad",
       "home_team_logo": "https://static.flashscore.com/res/image/data/YFt73dQq-tjD2oGGi.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/zTFRZ8ne-jeFu6Qy4.png",
       "competition": "Saudi Professional League",
+      "competition_full": "SAUDI ARABIA: Saudi Professional League",
       "country": "Saudi Arabia",
       "competition_id": "tUxUbLR2",
       "competition_url": "https://www.flashscore.com/football/saudi-arabia/saudi-professional-league/",
@@ -219,9 +244,14 @@
     {
       "home_team": "Al Hilal",
       "away_team": "Al Najma",
+      "home_team_short": "ALH",
+      "away_team_short": "NAJ",
+      "home_team_slug": "al-hilal",
+      "away_team_slug": "al-najma",
       "home_team_logo": "https://static.flashscore.com/res/image/data/EVoO06R0-joUWHZ1t.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/M96hs86k-lQBgfCk0.png",
       "competition": "Saudi Professional League",
+      "competition_full": "SAUDI ARABIA: Saudi Professional League",
       "country": "Saudi Arabia",
       "competition_id": "tUxUbLR2",
       "competition_url": "https://www.flashscore.com/football/saudi-arabia/saudi-professional-league/",
@@ -238,9 +268,14 @@
     {
       "home_team": "Al Khaleej",
       "away_team": "Al Hazem",
+      "home_team_short": "KHA",
+      "away_team_short": "HAZ",
+      "home_team_slug": "al-khaleej",
+      "away_team_slug": "al-hazem-rass",
       "home_team_logo": "https://static.flashscore.com/res/image/data/Yqqphp96-W6U2Bfuk.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/ziLCjVoe-YDmGqAgC.png",
       "competition": "Saudi Professional League",
+      "competition_full": "SAUDI ARABIA: Saudi Professional League",
       "country": "Saudi Arabia",
       "competition_id": "tUxUbLR2",
       "competition_url": "https://www.flashscore.com/football/saudi-arabia/saudi-professional-league/",
@@ -252,9 +287,14 @@
     {
       "home_team": "Al Taawon",
       "away_team": "Al Fateh",
+      "home_team_short": "TAA",
+      "away_team_short": "FAT",
+      "home_team_slug": "al-taawon",
+      "away_team_slug": "al-fateh",
       "home_team_logo": "https://static.flashscore.com/res/image/data/WpJmtIVH-zwr48VYG.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/t6XzCy7k-ll4pyUYI.png",
       "competition": "Saudi Professional League",
+      "competition_full": "SAUDI ARABIA: Saudi Professional League",
       "country": "Saudi Arabia",
       "competition_id": "tUxUbLR2",
       "competition_url": "https://www.flashscore.com/football/saudi-arabia/saudi-professional-league/",
@@ -266,9 +306,14 @@
     {
       "home_team": "Celta Vigo",
       "away_team": "Real Madrid",
+      "home_team_short": "CEL",
+      "away_team_short": "RMA",
+      "home_team_slug": "celta-vigo",
+      "away_team_slug": "real-madrid",
       "home_team_logo": "https://static.flashscore.com/res/image/data/INW8oRBN-SOY3p1Si.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/CGPhnpne-ttfpEDUq.png",
       "competition": "LaLiga",
+      "competition_full": "SPAIN: LaLiga",
       "country": "Spain",
       "competition_id": "QVmLl54o",
       "competition_url": "https://www.flashscore.com/football/spain/laliga/",
@@ -297,9 +342,14 @@
     {
       "home_team": "Mansfield",
       "away_team": "Arsenal",
+      "home_team_short": "MAN",
+      "away_team_short": "ARS",
+      "home_team_slug": "mansfield",
+      "away_team_slug": "arsenal",
       "home_team_logo": "https://static.flashscore.com/res/image/data/be5DZHCN-tYqwR1Mb.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/0n1ffK6k-vcNAdtF9.png",
       "competition": "FA Cup",
+      "competition_full": "ENGLAND: FA Cup",
       "country": "England",
       "competition_id": "lYQtaqPQ",
       "competition_url": "https://www.flashscore.com/football/england/fa-cup/",
@@ -320,7 +370,7 @@
           "url": "https://www.tntsports.co.uk/"
         },
         {
-          "name": "beIN Sports MENA English 1",
+          "name": "beIN Sports MENA 1",
           "url": "https://www.beinsports.com/en-mena"
         }
       ]
@@ -328,9 +378,14 @@
     {
       "home_team": "Wrexham",
       "away_team": "Chelsea",
+      "home_team_short": "WRE",
+      "away_team_short": "CHE",
+      "home_team_slug": "wrexham",
+      "away_team_slug": "chelsea",
       "home_team_logo": "https://static.flashscore.com/res/image/data/bHt6w87k-OxoAKHbA.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/lMxEQ8me-IROrZEJb.png",
       "competition": "FA Cup",
+      "competition_full": "ENGLAND: FA Cup",
       "country": "England",
       "competition_id": "lYQtaqPQ",
       "competition_url": "https://www.flashscore.com/football/england/fa-cup/",
@@ -359,9 +414,14 @@
     {
       "home_team": "Newcastle",
       "away_team": "Manchester City",
+      "home_team_short": "NEW",
+      "away_team_short": "MCI",
+      "home_team_slug": "newcastle-utd",
+      "away_team_slug": "manchester-city",
       "home_team_logo": "https://static.flashscore.com/res/image/data/UXo7VXPq-ImMEe0UF.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/0vgscFU0-lQuhqN8N.png",
       "competition": "FA Cup",
+      "competition_full": "ENGLAND: FA Cup",
       "country": "England",
       "competition_id": "lYQtaqPQ",
       "competition_url": "https://www.flashscore.com/football/england/fa-cup/",
@@ -378,7 +438,7 @@
           "url": "https://www.tntsports.co.uk/"
         },
         {
-          "name": "beIN Sports MENA English 1",
+          "name": "beIN Sports MENA 1",
           "url": "https://www.beinsports.com/en-mena"
         },
         {
@@ -390,9 +450,14 @@
     {
       "home_team": "Nantes",
       "away_team": "Angers",
+      "home_team_short": "NAN",
+      "away_team_short": "ANG",
+      "home_team_slug": "nantes",
+      "away_team_slug": "angers",
       "home_team_logo": "https://static.flashscore.com/res/image/data/vTVURLne-YBWLmubi.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/IN9Ib7jT-z9nPuk2r.png",
       "competition": "Ligue 1",
+      "competition_full": "FRANCE: Ligue 1",
       "country": "France",
       "competition_id": "KIShoMk3",
       "competition_url": "https://www.flashscore.com/football/france/ligue-1/",
@@ -400,6 +465,10 @@
       "start_time": "16:00",
       "start_time_utc": "2026-03-07T16:00:00Z",
       "channels": [
+        {
+          "name": "beIN Sports MENA 5",
+          "url": "https://www.beinsports.com/en-mena"
+        },
         {
           "name": "5 PLUS Israel",
           "url": "https://www.sport5.co.il/"
@@ -411,19 +480,20 @@
         {
           "name": "Arena Sport 3",
           "url": "http://www.tvarenasport.hr/"
-        },
-        {
-          "name": "Arena Sport 5",
-          "url": "http://www.tvarenasport.com/"
         }
       ]
     },
     {
       "home_team": "Auxerre",
       "away_team": "Strasbourg",
+      "home_team_short": "AUX",
+      "away_team_short": "STR",
+      "home_team_slug": "auxerre",
+      "away_team_slug": "strasbourg",
       "home_team_logo": "https://static.flashscore.com/res/image/data/4tdLdYlC-tY3UBVrm.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/2XOhzSQq-lAc5wKNp.png",
       "competition": "Ligue 1",
+      "competition_full": "FRANCE: Ligue 1",
       "country": "France",
       "competition_id": "KIShoMk3",
       "competition_url": "https://www.flashscore.com/football/france/ligue-1/",
@@ -452,9 +522,14 @@
     {
       "home_team": "Toulouse",
       "away_team": "Marseille",
+      "home_team_short": "TOU",
+      "away_team_short": "MAR",
+      "home_team_slug": "toulouse",
+      "away_team_slug": "marseille",
       "home_team_logo": "https://static.flashscore.com/res/image/data/AskYUH8k-COxgbCEm.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/t6Kb5X76-voNnDKJK.png",
       "competition": "Ligue 1",
+      "competition_full": "FRANCE: Ligue 1",
       "country": "France",
       "competition_id": "KIShoMk3",
       "competition_url": "https://www.flashscore.com/football/france/ligue-1/",
@@ -483,9 +558,14 @@
     {
       "home_team": "Freiburg",
       "away_team": "Bayer Leverkusen",
+      "home_team_short": "FRE",
+      "away_team_short": "LEV",
+      "home_team_slug": "freiburg",
+      "away_team_slug": "bayer-leverkusen",
       "home_team_logo": "https://static.flashscore.com/res/image/data/0pdxCFiT-86lnAaq9.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/dWZYQIPq-WrjrBuU2.png",
       "competition": "Bundesliga",
+      "competition_full": "GERMANY: Bundesliga",
       "country": "Germany",
       "competition_id": "W6BOzpK2",
       "competition_url": "https://www.flashscore.com/football/germany/bundesliga/",
@@ -514,9 +594,14 @@
     {
       "home_team": "Heidenheim",
       "away_team": "Hoffenheim",
+      "home_team_short": "HEI",
+      "away_team_short": "HOF",
+      "home_team_slug": "heidenheim",
+      "away_team_slug": "hoffenheim",
       "home_team_logo": "https://static.flashscore.com/res/image/data/UH4XQKBN-bNiAN2lt.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/IyZBMF7k-n7lWn9DL.png",
       "competition": "Bundesliga",
+      "competition_full": "GERMANY: Bundesliga",
       "country": "Germany",
       "competition_id": "W6BOzpK2",
       "competition_url": "https://www.flashscore.com/football/germany/bundesliga/",
@@ -545,9 +630,14 @@
     {
       "home_team": "Mainz",
       "away_team": "Stuttgart",
+      "home_team_short": "MAI",
+      "away_team_short": "STU",
+      "home_team_slug": "mainz",
+      "away_team_slug": "vfb-stuttgart",
       "home_team_logo": "https://static.flashscore.com/res/image/data/tbR3gUTH-EoYxhN5r.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/fgQWGn86-f1Z3XxZa.png",
       "competition": "Bundesliga",
+      "competition_full": "GERMANY: Bundesliga",
       "country": "Germany",
       "competition_id": "W6BOzpK2",
       "competition_url": "https://www.flashscore.com/football/germany/bundesliga/",
@@ -576,9 +666,14 @@
     {
       "home_team": "RB Leipzig",
       "away_team": "Augsburg",
+      "home_team_short": "RBL",
+      "away_team_short": "AUG",
+      "home_team_slug": "rb-leipzig",
+      "away_team_slug": "augsburg",
       "home_team_logo": "https://static.flashscore.com/res/image/data/fNS5fTmC-WvvSE8Dm.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/Qgbz4piC-Qmnf8wEL.png",
       "competition": "Bundesliga",
+      "competition_full": "GERMANY: Bundesliga",
       "country": "Germany",
       "competition_id": "W6BOzpK2",
       "competition_url": "https://www.flashscore.com/football/germany/bundesliga/",
@@ -607,9 +702,14 @@
     {
       "home_team": "Wolfsburg",
       "away_team": "Hamburger SV",
+      "home_team_short": "WOL",
+      "away_team_short": "HAM",
+      "home_team_slug": "wolfsburg",
+      "away_team_slug": "hamburger",
       "home_team_logo": "https://static.flashscore.com/res/image/data/2cDrWAS0-KjF1j4v3.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/dWB5gKjC-86lnAaq9.png",
       "competition": "Bundesliga",
+      "competition_full": "GERMANY: Bundesliga",
       "country": "Germany",
       "competition_id": "W6BOzpK2",
       "competition_url": "https://www.flashscore.com/football/germany/bundesliga/",
@@ -638,9 +738,14 @@
     {
       "home_team": "FC Koln",
       "away_team": "Dortmund",
+      "home_team_short": "KOL",
+      "away_team_short": "DOR",
+      "home_team_slug": "1-fc-koln",
+      "away_team_slug": "dortmund",
       "home_team_logo": "https://static.flashscore.com/res/image/data/KMphsCCN-86lnAaq9.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/xSfDCO76-WrjrBuU2.png",
       "competition": "Bundesliga",
+      "competition_full": "GERMANY: Bundesliga",
       "country": "Germany",
       "competition_id": "W6BOzpK2",
       "competition_url": "https://www.flashscore.com/football/germany/bundesliga/",
@@ -669,9 +774,14 @@
     {
       "home_team": "Cagliari",
       "away_team": "Como",
+      "home_team_short": "CAG",
+      "away_team_short": "COM",
+      "home_team_slug": "cagliari",
+      "away_team_slug": "como",
       "home_team_logo": "https://static.flashscore.com/res/image/data/tSQII3hT-McvX4bye.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/4pxypIS0-hpmw8K1h.png",
       "competition": "Serie A",
+      "competition_full": "ITALY: Serie A",
       "country": "Italy",
       "competition_id": "COuk57Ci",
       "competition_url": "https://www.flashscore.com/football/italy/serie-a/",
@@ -700,9 +810,14 @@
     {
       "home_team": "Atalanta",
       "away_team": "Udinese",
+      "home_team_short": "ATA",
+      "away_team_short": "UDI",
+      "home_team_slug": "atalanta",
+      "away_team_slug": "udinese",
       "home_team_logo": "https://static.flashscore.com/res/image/data/z3aHqFBN-rg6usZns.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/277EtfPq-SYw7EcY6.png",
       "competition": "Serie A",
+      "competition_full": "ITALY: Serie A",
       "country": "Italy",
       "competition_id": "COuk57Ci",
       "competition_url": "https://www.flashscore.com/football/italy/serie-a/",
@@ -731,9 +846,14 @@
     {
       "home_team": "Juventus",
       "away_team": "Pisa",
+      "home_team_short": "JUV",
+      "away_team_short": "PIS",
+      "home_team_slug": "juventus",
+      "away_team_slug": "pisa",
       "home_team_logo": "https://static.flashscore.com/res/image/data/AufWJrhT-0nz5yHcE.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/vPrevkT0-GMOw3SI3.png",
       "competition": "Serie A",
+      "competition_full": "ITALY: Serie A",
       "country": "Italy",
       "competition_id": "COuk57Ci",
       "competition_url": "https://www.flashscore.com/football/italy/serie-a/",
@@ -762,9 +882,14 @@
     {
       "home_team": "Al Ettifaq",
       "away_team": "Al Shabab",
+      "home_team_short": "ETT",
+      "away_team_short": "AL",
+      "home_team_slug": "al-ettifaq-fc",
+      "away_team_slug": "al-shabab",
       "home_team_logo": "https://static.flashscore.com/res/image/data/Uwfm9V6k-ve6EavVg.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/OzbyAZmC-S4ItXNi7.png",
       "competition": "Saudi Professional League",
+      "competition_full": "SAUDI ARABIA: Saudi Professional League",
       "country": "Saudi Arabia",
       "competition_id": "tUxUbLR2",
       "competition_url": "https://www.flashscore.com/football/saudi-arabia/saudi-professional-league/",
@@ -781,9 +906,14 @@
     {
       "home_team": "Al Kholood",
       "away_team": "Al Qadsiah",
+      "home_team_short": "AL",
+      "away_team_short": "AL",
+      "home_team_slug": "al-kholood",
+      "away_team_slug": "al-qadsiah",
       "home_team_logo": "https://static.flashscore.com/res/image/data/WM6Wtcme-WO9RbMlH.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/fm8umblC-OvCAgTwF.png",
       "competition": "Saudi Professional League",
+      "competition_full": "SAUDI ARABIA: Saudi Professional League",
       "country": "Saudi Arabia",
       "competition_id": "tUxUbLR2",
       "competition_url": "https://www.flashscore.com/football/saudi-arabia/saudi-professional-league/",
@@ -812,9 +942,14 @@
     {
       "home_team": "Al Nassr",
       "away_team": "Neom SC",
+      "home_team_short": "NAS",
+      "away_team_short": "NEO",
+      "home_team_slug": "al-nassr",
+      "away_team_slug": "neom-sc",
       "home_team_logo": "https://static.flashscore.com/res/image/data/ny6quoU0-dr3R7wGl.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/Ols4HzkC-hjWUhSZq.png",
       "competition": "Saudi Professional League",
+      "competition_full": "SAUDI ARABIA: Saudi Professional League",
       "country": "Saudi Arabia",
       "competition_id": "tUxUbLR2",
       "competition_url": "https://www.flashscore.com/football/saudi-arabia/saudi-professional-league/",
@@ -843,9 +978,14 @@
     {
       "home_team": "Al Okhdood",
       "away_team": "Al Fayha",
+      "home_team_short": "AKH",
+      "away_team_short": "FAY",
+      "home_team_slug": "al-okhdood",
+      "away_team_slug": "al-fayha",
       "home_team_logo": "https://static.flashscore.com/res/image/data/Y5ea4JhT-nsNrUNVC.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/0IaWA57k-z58zJYcl.png",
       "competition": "Saudi Professional League",
+      "competition_full": "SAUDI ARABIA: Saudi Professional League",
       "country": "Saudi Arabia",
       "competition_id": "tUxUbLR2",
       "competition_url": "https://www.flashscore.com/football/saudi-arabia/saudi-professional-league/",
@@ -857,9 +997,14 @@
     {
       "home_team": "Osasuna",
       "away_team": "Mallorca",
+      "home_team_short": "OSA",
+      "away_team_short": "MAL",
+      "home_team_slug": "osasuna",
+      "away_team_slug": "mallorca",
       "home_team_logo": "https://static.flashscore.com/res/image/data/UTfY3r86-Yu8w588N.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/WKsw8cne-rmDEjevK.png",
       "competition": "LaLiga",
+      "competition_full": "SPAIN: LaLiga",
       "country": "Spain",
       "competition_id": "QVmLl54o",
       "competition_url": "https://www.flashscore.com/football/spain/laliga/",
@@ -880,7 +1025,7 @@
           "url": "http://www.premiersports.com/"
         },
         {
-          "name": "beIN Sports MENA 3",
+          "name": "beIN Sports MENA 2",
           "url": "https://www.beinsports.com/en-mena"
         }
       ]
@@ -888,9 +1033,14 @@
     {
       "home_team": "Levante",
       "away_team": "Girona",
+      "home_team_short": "LEV",
+      "away_team_short": "GIR",
+      "home_team_slug": "levante",
+      "away_team_slug": "girona",
       "home_team_logo": "https://static.flashscore.com/res/image/data/0dmWDDBN-QqzX7amJ.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/6mZj79BN-vPm0hQMN.png",
       "competition": "LaLiga",
+      "competition_full": "SPAIN: LaLiga",
       "country": "Spain",
       "competition_id": "QVmLl54o",
       "competition_url": "https://www.flashscore.com/football/spain/laliga/",
@@ -911,17 +1061,22 @@
           "url": "https://www.laliga.com/en-GB/broadcasters/laligatv"
         },
         {
-          "name": "beIN Sports MENA French 1",
-          "url": "http://www.beinsports.com/france/"
+          "name": "beIN Sports MENA 2",
+          "url": "https://www.beinsports.com/en-mena"
         }
       ]
     },
     {
       "home_team": "Atl. Madrid",
       "away_team": "Real Sociedad",
+      "home_team_short": "ATM",
+      "away_team_short": "RSO",
+      "home_team_slug": "atl-madrid",
+      "away_team_slug": "real-sociedad",
       "home_team_logo": "https://static.flashscore.com/res/image/data/Kv2QSkhT-GhHiNvXF.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/rcAkl5le-vJb36ZBF.png",
       "competition": "LaLiga",
+      "competition_full": "SPAIN: LaLiga",
       "country": "Spain",
       "competition_id": "QVmLl54o",
       "competition_url": "https://www.flashscore.com/football/spain/laliga/",
@@ -942,17 +1097,22 @@
           "url": "https://www.laliga.com/en-GB/broadcasters/laligatv"
         },
         {
-          "name": "beIN Sports MENA French 1",
-          "url": "http://www.beinsports.com/france/"
+          "name": "beIN Sports MENA 2",
+          "url": "https://www.beinsports.com/en-mena"
         }
       ]
     },
     {
       "home_team": "Ath Bilbao",
       "away_team": "Barcelona",
+      "home_team_short": "BIL",
+      "away_team_short": "BAR",
+      "home_team_slug": "ath-bilbao",
+      "away_team_slug": "barcelona",
       "home_team_logo": "https://static.flashscore.com/res/image/data/GUtNYAWH-vJb36ZBF.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/jZ8dSYS0-fcDVLdrL.png",
       "competition": "LaLiga",
+      "competition_full": "SPAIN: LaLiga",
       "country": "Spain",
       "competition_id": "QVmLl54o",
       "competition_url": "https://www.flashscore.com/football/spain/laliga/",
@@ -973,17 +1133,22 @@
           "url": "http://www.premiersports.com/"
         },
         {
-          "name": "DAZN 1",
-          "url": "https://dazn.prf.hn/click/camref:1100lLrMj"
+          "name": "beIN Sports MENA 2",
+          "url": "https://www.beinsports.com/en-mena"
         }
       ]
     },
     {
       "home_team": "New England Revolution",
       "away_team": "Houston Dynamo",
+      "home_team_short": "ENG",
+      "away_team_short": "HOU",
+      "home_team_slug": "new-england-revolution",
+      "away_team_slug": "houston-dynamo",
       "home_team_logo": "https://static.flashscore.com/res/image/data/dUopT5UH-KI53uaQC.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/8tadnzRq-YLT3ZeZm.png",
       "competition": "MLS",
+      "competition_full": "USA: MLS",
       "country": "USA",
       "competition_id": "CQv5qrFt",
       "competition_url": "https://www.flashscore.com/football/usa/mls/",
@@ -995,37 +1160,62 @@
     {
       "home_team": "New York City",
       "away_team": "Orlando City",
+      "home_team_short": "NYC",
+      "away_team_short": "ORL",
+      "home_team_slug": "new-york-city",
+      "away_team_slug": "orlando-city",
       "home_team_logo": "https://static.flashscore.com/res/image/data/0GgDTRle-GxTXAzv3.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/hQpmY0Qq-AFpqya1j.png",
       "competition": "MLS",
+      "competition_full": "USA: MLS",
       "country": "USA",
       "competition_id": "CQv5qrFt",
       "competition_url": "https://www.flashscore.com/football/usa/mls/",
       "start_date": "2026-03-07",
       "start_time": "19:30",
       "start_time_utc": "2026-03-07T19:30:00Z",
-      "channels": []
+      "channels": [
+        {
+          "name": "Veikkaus TV",
+          "url": "https://www.veikkaus.fi/"
+        }
+      ]
     },
     {
       "home_team": "DC United",
       "away_team": "Inter Miami",
+      "home_team_short": "UNI",
+      "away_team_short": "MIA",
+      "home_team_slug": "dc-united",
+      "away_team_slug": "inter-miami",
       "home_team_logo": "https://static.flashscore.com/res/image/data/h4rRBzU0-M1jIRGkS.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/z94JGZTH-UwKTVGeG.png",
       "competition": "MLS",
+      "competition_full": "USA: MLS",
       "country": "USA",
       "competition_id": "CQv5qrFt",
       "competition_url": "https://www.flashscore.com/football/usa/mls/",
       "start_date": "2026-03-07",
       "start_time": "21:30",
       "start_time_utc": "2026-03-07T21:30:00Z",
-      "channels": []
+      "channels": [
+        {
+          "name": "Veikkaus TV",
+          "url": "https://www.veikkaus.fi/"
+        }
+      ]
     },
     {
       "home_team": "Fulham",
       "away_team": "Southampton",
+      "home_team_short": "FUL",
+      "away_team_short": "SOU",
+      "home_team_slug": "fulham",
+      "away_team_slug": "southampton",
       "home_team_logo": "https://static.flashscore.com/res/image/data/fkbYUWme-ImMEe0UF.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/2VvVDtSq-raLYxovi.png",
       "competition": "FA Cup",
+      "competition_full": "ENGLAND: FA Cup",
       "country": "England",
       "competition_id": "lYQtaqPQ",
       "competition_url": "https://www.flashscore.com/football/england/fa-cup/",
@@ -1046,7 +1236,7 @@
           "url": "https://www.tntsports.co.uk/"
         },
         {
-          "name": "beIN Sports MENA English 1",
+          "name": "beIN Sports MENA 1",
           "url": "https://www.beinsports.com/en-mena"
         }
       ]
@@ -1054,9 +1244,14 @@
     {
       "home_team": "Port Vale",
       "away_team": "Sunderland",
+      "home_team_short": "POR",
+      "away_team_short": "SUN",
+      "home_team_slug": "port-vale",
+      "away_team_slug": "sunderland",
       "home_team_logo": "https://static.flashscore.com/res/image/data/OvhRMHme-hE2XjgkL.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/rPPdotBN-0d34NJCO.png",
       "competition": "FA Cup",
+      "competition_full": "ENGLAND: FA Cup",
       "country": "England",
       "competition_id": "lYQtaqPQ",
       "competition_url": "https://www.flashscore.com/football/england/fa-cup/",
@@ -1073,21 +1268,26 @@
           "url": "https://www.psn.mn/"
         },
         {
-          "name": "Nova Sport 1",
-          "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
+          "name": "beIN Sports MENA 5",
+          "url": "https://www.beinsports.com/en-mena"
         },
         {
-          "name": "Arena Premium 1",
-          "url": "https://www.tvarenasport.com/"
+          "name": "Nova Sport 1",
+          "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
         }
       ]
     },
     {
       "home_team": "Leeds",
       "away_team": "Norwich",
+      "home_team_short": "LEE",
+      "away_team_short": "NOR",
+      "home_team_slug": "leeds",
+      "away_team_slug": "norwich",
       "home_team_logo": "https://static.flashscore.com/res/image/data/lvs4WW5k-MTp25XgE.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/GvTpbCjC-tCGtX12c.png",
       "competition": "FA Cup",
+      "competition_full": "ENGLAND: FA Cup",
       "country": "England",
       "competition_id": "lYQtaqPQ",
       "competition_url": "https://www.flashscore.com/football/england/fa-cup/",
@@ -1104,7 +1304,7 @@
           "url": "https://www.tntsports.co.uk/"
         },
         {
-          "name": "beIN Sports MENA English 1",
+          "name": "beIN Sports MENA 1",
           "url": "https://www.beinsports.com/en-mena"
         },
         {
@@ -1116,9 +1316,14 @@
     {
       "home_team": "Lens",
       "away_team": "Metz",
+      "home_team_short": "LEN",
+      "away_team_short": "MET",
+      "home_team_slug": "lens",
+      "away_team_slug": "metz",
       "home_team_logo": "https://static.flashscore.com/res/image/data/tAec9KQq-rTEFAmVL.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/SCdF7fjT-pztT5vMl.png",
       "competition": "Ligue 1",
+      "competition_full": "FRANCE: Ligue 1",
       "country": "France",
       "competition_id": "KIShoMk3",
       "competition_url": "https://www.flashscore.com/football/france/ligue-1/",
@@ -1147,9 +1352,14 @@
     {
       "home_team": "Brest",
       "away_team": "Le Havre",
+      "home_team_short": "BRE",
+      "away_team_short": "HAV",
+      "home_team_slug": "brest",
+      "away_team_slug": "le-havre",
       "home_team_logo": "https://static.flashscore.com/res/image/data/lWu2w4ne-Q15G9lAm.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/SdQTDNR0-4v5cIBqb.png",
       "competition": "Ligue 1",
+      "competition_full": "FRANCE: Ligue 1",
       "country": "France",
       "competition_id": "KIShoMk3",
       "competition_url": "https://www.flashscore.com/football/france/ligue-1/",
@@ -1157,6 +1367,10 @@
       "start_time": "16:15",
       "start_time_utc": "2026-03-08T16:15:00Z",
       "channels": [
+        {
+          "name": "beIN Sports MENA 6",
+          "url": "https://www.beinsports.com/en-mena"
+        },
         {
           "name": "Arena Sport 9",
           "url": "http://www.tvarenasport.hr/"
@@ -1168,19 +1382,20 @@
         {
           "name": "Fast Sports",
           "url": "https://fasttv.am/"
-        },
-        {
-          "name": "MAXtv To Go",
-          "url": "https://maxtv.hrvatskitelekom.hr/#/home"
         }
       ]
     },
     {
       "home_team": "Lille",
       "away_team": "Lorient",
+      "home_team_short": "LIL",
+      "away_team_short": "LOR",
+      "home_team_slug": "lille",
+      "away_team_slug": "lorient",
       "home_team_logo": "https://static.flashscore.com/res/image/data/Q34pXImC-UDticXKP.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/0r9EzUS0-GU4hlIMk.png",
       "competition": "Ligue 1",
+      "competition_full": "FRANCE: Ligue 1",
       "country": "France",
       "competition_id": "KIShoMk3",
       "competition_url": "https://www.flashscore.com/football/france/ligue-1/",
@@ -1209,9 +1424,14 @@
     {
       "home_team": "Nice",
       "away_team": "Rennes",
+      "home_team_short": "NIC",
+      "away_team_short": "REN",
+      "home_team_slug": "nice",
+      "away_team_slug": "rennes",
       "home_team_logo": "https://static.flashscore.com/res/image/data/bJCGymle-00sqJmg8.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/pnrF2X76-Y5eozcI6.png",
       "competition": "Ligue 1",
+      "competition_full": "FRANCE: Ligue 1",
       "country": "France",
       "competition_id": "KIShoMk3",
       "competition_url": "https://www.flashscore.com/football/france/ligue-1/",
@@ -1240,9 +1460,14 @@
     {
       "home_team": "Lyon",
       "away_team": "Paris FC",
+      "home_team_short": "LYO",
+      "away_team_short": "PAR",
+      "home_team_slug": "lyon",
+      "away_team_slug": "paris-fc",
       "home_team_logo": "https://static.flashscore.com/res/image/data/bkuX6RS0-GU4hlIMk.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/S85qoCiT-AelKXger.png",
       "competition": "Ligue 1",
+      "competition_full": "FRANCE: Ligue 1",
       "country": "France",
       "competition_id": "KIShoMk3",
       "competition_url": "https://www.flashscore.com/football/france/ligue-1/",
@@ -1271,9 +1496,14 @@
     {
       "home_team": "St. Pauli",
       "away_team": "Eintracht Frankfurt",
+      "home_team_short": "PAU",
+      "away_team_short": "EIN",
+      "home_team_slug": "st-pauli",
+      "away_team_slug": "eintracht-frankfurt",
       "home_team_logo": "https://static.flashscore.com/res/image/data/QHdIUX96-lrmFNGea.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/2aegVtQq-86lnAaq9.png",
       "competition": "Bundesliga",
+      "competition_full": "GERMANY: Bundesliga",
       "country": "Germany",
       "competition_id": "W6BOzpK2",
       "competition_url": "https://www.flashscore.com/football/germany/bundesliga/",
@@ -1302,9 +1532,14 @@
     {
       "home_team": "Union Berlin",
       "away_team": "Werder Bremen",
+      "home_team_short": "UNI",
+      "away_team_short": "WER",
+      "home_team_slug": "union-berlin",
+      "away_team_slug": "werder-bremen",
       "home_team_logo": "https://static.flashscore.com/res/image/data/0OMJUule-ncmj9JbF.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/pIavfLS0-EVomMG4o.png",
       "competition": "Bundesliga",
+      "competition_full": "GERMANY: Bundesliga",
       "country": "Germany",
       "competition_id": "W6BOzpK2",
       "competition_url": "https://www.flashscore.com/football/germany/bundesliga/",
@@ -1333,9 +1568,14 @@
     {
       "home_team": "Lecce",
       "away_team": "Cremonese",
+      "home_team_short": "LEC",
+      "away_team_short": "CRE",
+      "home_team_slug": "lecce",
+      "away_team_slug": "cremonese",
       "home_team_logo": "https://static.flashscore.com/res/image/data/fPabg0DN-McvX4bye.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/bwCjhwB6-8b0QRXR3.png",
       "competition": "Serie A",
+      "competition_full": "ITALY: Serie A",
       "country": "Italy",
       "competition_id": "COuk57Ci",
       "competition_url": "https://www.flashscore.com/football/italy/serie-a/",
@@ -1364,9 +1604,14 @@
     {
       "home_team": "Bologna",
       "away_team": "Verona",
+      "home_team_short": "BOL",
+      "away_team_short": "VER",
+      "home_team_slug": "bologna",
+      "away_team_slug": "verona",
       "home_team_logo": "https://static.flashscore.com/res/image/data/6ovaa9T0-McvX4bye.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/YDLnjflC-Kxh373f3.png",
       "competition": "Serie A",
+      "competition_full": "ITALY: Serie A",
       "country": "Italy",
       "competition_id": "COuk57Ci",
       "competition_url": "https://www.flashscore.com/football/italy/serie-a/",
@@ -1374,6 +1619,10 @@
       "start_time": "14:00",
       "start_time_utc": "2026-03-08T14:00:00Z",
       "channels": [
+        {
+          "name": "BBC Alba",
+          "url": "http://www.bbc.co.uk/iplayer/schedules/bbcalba"
+        },
         {
           "name": "DAZN 1",
           "url": "https://prf.hn/click/camref:1100lfjaZ"
@@ -1385,19 +1634,20 @@
         {
           "name": "Sport 1",
           "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
-        },
-        {
-          "name": "214 DAZN Zona",
-          "url": "https://www.dazn.com/"
         }
       ]
     },
     {
       "home_team": "Fiorentina",
       "away_team": "Parma",
+      "home_team_short": "FIO",
+      "away_team_short": "PAR",
+      "home_team_slug": "fiorentina",
+      "away_team_slug": "parma",
       "home_team_logo": "https://static.flashscore.com/res/image/data/fZhEFLjT-6XKdgOM6.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/WI9nVggT-fydXzLY6.png",
       "competition": "Serie A",
+      "competition_full": "ITALY: Serie A",
       "country": "Italy",
       "competition_id": "COuk57Ci",
       "competition_url": "https://www.flashscore.com/football/italy/serie-a/",
@@ -1426,9 +1676,14 @@
     {
       "home_team": "Genoa",
       "away_team": "AS Roma",
+      "home_team_short": "GEN",
+      "away_team_short": "ROM",
+      "home_team_slug": "genoa",
+      "away_team_slug": "as-roma",
       "home_team_logo": "https://static.flashscore.com/res/image/data/S48z3Poe-hCD6m1R3.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/j31Z1pne-GtNb9h2q.png",
       "competition": "Serie A",
+      "competition_full": "ITALY: Serie A",
       "country": "Italy",
       "competition_id": "COuk57Ci",
       "competition_url": "https://www.flashscore.com/football/italy/serie-a/",
@@ -1457,9 +1712,14 @@
     {
       "home_team": "AC Milan",
       "away_team": "Inter",
+      "home_team_short": "ACM",
+      "away_team_short": "INT",
+      "home_team_slug": "ac-milan",
+      "away_team_slug": "inter",
       "home_team_logo": "https://static.flashscore.com/res/image/data/WOOHTbSq-KtCfnbWp.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/fLNbBiQq-O8c8nWOb.png",
       "competition": "Serie A",
+      "competition_full": "ITALY: Serie A",
       "country": "Italy",
       "competition_id": "COuk57Ci",
       "competition_url": "https://www.flashscore.com/football/italy/serie-a/",
@@ -1488,9 +1748,14 @@
     {
       "home_team": "Villarreal",
       "away_team": "Elche",
+      "home_team_short": "VIL",
+      "away_team_short": "ELC",
+      "home_team_slug": "villarreal",
+      "away_team_slug": "elche",
       "home_team_logo": "https://static.flashscore.com/res/image/data/EBxZSOjT-GSuwY3p9.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/EVxB82BN-YmCZKGcR.png",
       "competition": "LaLiga",
+      "competition_full": "SPAIN: LaLiga",
       "country": "Spain",
       "competition_id": "QVmLl54o",
       "competition_url": "https://www.flashscore.com/football/spain/laliga/",
@@ -1511,17 +1776,22 @@
           "url": "http://www.premiersports.com/"
         },
         {
-          "name": "beIN Sports MENA French 1",
-          "url": "http://www.beinsports.com/france/"
+          "name": "beIN Sports MENA 2",
+          "url": "https://www.beinsports.com/en-mena"
         }
       ]
     },
     {
       "home_team": "Getafe",
       "away_team": "Betis",
+      "home_team_short": "GET",
+      "away_team_short": "BET",
+      "home_team_slug": "getafe",
+      "away_team_slug": "betis",
       "home_team_logo": "https://static.flashscore.com/res/image/data/hGMWMdT0-YmCZKGcR.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/YV7lpDU0-zkU5wiAr.png",
       "competition": "LaLiga",
+      "competition_full": "SPAIN: LaLiga",
       "country": "Spain",
       "competition_id": "QVmLl54o",
       "competition_url": "https://www.flashscore.com/football/spain/laliga/",
@@ -1542,17 +1812,22 @@
           "url": "http://www.premiersports.com/"
         },
         {
-          "name": "CANAL+ Sport",
-          "url": "https://r9kgpx.dashboard.wedare.pl/ts/96026/tsc?typ=r&amc=con.wedare.541078.561994.CRTJTPi7-7-"
+          "name": "beIN Sports MENA 2",
+          "url": "https://www.beinsports.com/en-mena"
         }
       ]
     },
     {
       "home_team": "Sevilla",
       "away_team": "Rayo Vallecano",
+      "home_team_short": "SEV",
+      "away_team_short": "RAY",
+      "home_team_slug": "sevilla",
+      "away_team_slug": "rayo-vallecano",
       "home_team_logo": "https://static.flashscore.com/res/image/data/EcTGi086-tIT0KyhE.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/QyKcNfhT-EPWyZtpb.png",
       "competition": "LaLiga",
+      "competition_full": "SPAIN: LaLiga",
       "country": "Spain",
       "competition_id": "QVmLl54o",
       "competition_url": "https://www.flashscore.com/football/spain/laliga/",
@@ -1573,17 +1848,22 @@
           "url": "http://www.premiersports.com/"
         },
         {
-          "name": "CANAL+ Sport",
-          "url": "https://r9kgpx.dashboard.wedare.pl/ts/96026/tsc?typ=r&amc=con.wedare.541078.561994.CRTJTPi7-7-"
+          "name": "beIN Sports MENA 2",
+          "url": "https://www.beinsports.com/en-mena"
         }
       ]
     },
     {
       "home_team": "Valencia",
       "away_team": "Alaves",
+      "home_team_short": "VAL",
+      "away_team_short": "ALA",
+      "home_team_slug": "valencia",
+      "away_team_slug": "alaves",
       "home_team_logo": "https://static.flashscore.com/res/image/data/8Cqphq8k-MHrRLNUo.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/4rBxR4R0-4U3vjZKk.png",
       "competition": "LaLiga",
+      "competition_full": "SPAIN: LaLiga",
       "country": "Spain",
       "competition_id": "QVmLl54o",
       "competition_url": "https://www.flashscore.com/football/spain/laliga/",
@@ -1604,7 +1884,7 @@
           "url": "http://www.premiersports.com/"
         },
         {
-          "name": "beIN Sports MENA English 1",
+          "name": "beIN Sports MENA 2",
           "url": "https://www.beinsports.com/en-mena"
         }
       ]
@@ -1612,9 +1892,14 @@
     {
       "home_team": "Atlanta Utd",
       "away_team": "Real Salt Lake",
+      "home_team_short": "ATL",
+      "away_team_short": "SAL",
+      "home_team_slug": "atlanta-united",
+      "away_team_slug": "real-salt-lake",
       "home_team_logo": "https://static.flashscore.com/res/image/data/bZSq12Pq-MeFN3n19.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/4EKWEn8k-vgy39tSd.png",
       "competition": "MLS",
+      "competition_full": "USA: MLS",
       "country": "USA",
       "competition_id": "CQv5qrFt",
       "competition_url": "https://www.flashscore.com/football/usa/mls/",
@@ -1626,9 +1911,14 @@
     {
       "home_team": "Charlotte",
       "away_team": "Austin FC",
+      "home_team_short": "CHA",
+      "away_team_short": "AUS",
+      "home_team_slug": "charlotte-fc",
+      "away_team_slug": "austin-fc",
       "home_team_logo": "https://static.flashscore.com/res/image/data/rwIBORWH-bePDAcBO.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/KObgAQjT-AP3GsSz8.png",
       "competition": "MLS",
+      "competition_full": "USA: MLS",
       "country": "USA",
       "competition_id": "CQv5qrFt",
       "competition_url": "https://www.flashscore.com/football/usa/mls/",
@@ -1640,23 +1930,38 @@
     {
       "home_team": "Columbus Crew",
       "away_team": "Chicago Fire",
+      "home_team_short": "COL",
+      "away_team_short": "CHI",
+      "home_team_slug": "columbus-crew",
+      "away_team_slug": "chicago-fire",
       "home_team_logo": "https://static.flashscore.com/res/image/data/UiThDkme-EgOLyoyn.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/YHLXh45k-0lw00xPr.png",
       "competition": "MLS",
+      "competition_full": "USA: MLS",
       "country": "USA",
       "competition_id": "CQv5qrFt",
       "competition_url": "https://www.flashscore.com/football/usa/mls/",
       "start_date": "2026-03-08",
       "start_time": "00:30",
       "start_time_utc": "2026-03-08T00:30:00Z",
-      "channels": []
+      "channels": [
+        {
+          "name": "Veikkaus TV",
+          "url": "https://www.veikkaus.fi/"
+        }
+      ]
     },
     {
       "home_team": "Philadelphia Union",
       "away_team": "San Jose Earthquakes",
+      "home_team_short": "PHI",
+      "away_team_short": "JOS",
+      "home_team_slug": "philadelphia-union",
+      "away_team_slug": "san-jose-earthquakes",
       "home_team_logo": "https://static.flashscore.com/res/image/data/0UCoIkgT-juuH5vx4.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/4zKyyJBN-GpqxHjf5.png",
       "competition": "MLS",
+      "competition_full": "USA: MLS",
       "country": "USA",
       "competition_id": "CQv5qrFt",
       "competition_url": "https://www.flashscore.com/football/usa/mls/",
@@ -1668,9 +1973,14 @@
     {
       "home_team": "Nashville SC",
       "away_team": "Minnesota United",
+      "home_team_short": "NAS",
+      "away_team_short": "MIN",
+      "home_team_slug": "nashville-sc",
+      "away_team_slug": "minnesota-united",
       "home_team_logo": "https://static.flashscore.com/res/image/data/viMd0CQq-6JqXhTSA.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/zP5RaY76-Y5BuxdGt.png",
       "competition": "MLS",
+      "competition_full": "USA: MLS",
       "country": "USA",
       "competition_id": "CQv5qrFt",
       "competition_url": "https://www.flashscore.com/football/usa/mls/",
@@ -1682,9 +1992,14 @@
     {
       "home_team": "Sporting Kansas City",
       "away_team": "San Diego FC",
+      "home_team_short": "KAN",
+      "away_team_short": "SDI",
+      "home_team_slug": "sporting-kansas-city",
+      "away_team_slug": "san-diego-fc",
       "home_team_logo": "https://static.flashscore.com/res/image/data/AVAdquCN-88w2wUnG.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/hzGDoHUH-b7NYdTs6.png",
       "competition": "MLS",
+      "competition_full": "USA: MLS",
       "country": "USA",
       "competition_id": "CQv5qrFt",
       "competition_url": "https://www.flashscore.com/football/usa/mls/",
@@ -1696,9 +2011,14 @@
     {
       "home_team": "St. Louis City",
       "away_team": "Seattle Sounders",
+      "home_team_short": "SLC",
+      "away_team_short": "SEA",
+      "home_team_slug": "st-louis-city",
+      "away_team_slug": "seattle-sounders",
       "home_team_logo": "https://static.flashscore.com/res/image/data/OAtXEIVH-jmLPWdtA.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/zZNaLM86-Q7Ql2Qbi.png",
       "competition": "MLS",
+      "competition_full": "USA: MLS",
       "country": "USA",
       "competition_id": "CQv5qrFt",
       "competition_url": "https://www.flashscore.com/football/usa/mls/",
@@ -1710,23 +2030,38 @@
     {
       "home_team": "Colorado Rapids",
       "away_team": "Los Angeles Galaxy",
+      "home_team_short": "COL",
+      "away_team_short": "LAG",
+      "home_team_slug": "colorado-rapids",
+      "away_team_slug": "los-angeles-galaxy",
       "home_team_logo": "https://static.flashscore.com/res/image/data/MwKFeQ86-fyzFgPy8.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/AV3qcsDN-nqhLBCKD.png",
       "competition": "MLS",
+      "competition_full": "USA: MLS",
       "country": "USA",
       "competition_id": "CQv5qrFt",
       "competition_url": "https://www.flashscore.com/football/usa/mls/",
       "start_date": "2026-03-08",
       "start_time": "02:30",
       "start_time_utc": "2026-03-08T02:30:00Z",
-      "channels": []
+      "channels": [
+        {
+          "name": "Veikkaus TV",
+          "url": "https://www.veikkaus.fi/"
+        }
+      ]
     },
     {
       "home_team": "Los Angeles FC",
       "away_team": "FC Dallas",
+      "home_team_short": "LAF",
+      "away_team_short": "DAL",
+      "home_team_slug": "los-angeles-fc",
+      "away_team_slug": "fc-dallas",
       "home_team_logo": "https://static.flashscore.com/res/image/data/jHAzzjXH-h6S6xFbF.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/GWHoAYCN-08eoEXKh.png",
       "competition": "MLS",
+      "competition_full": "USA: MLS",
       "country": "USA",
       "competition_id": "CQv5qrFt",
       "competition_url": "https://www.flashscore.com/football/usa/mls/",
@@ -1743,9 +2078,14 @@
     {
       "home_team": "Portland Timbers",
       "away_team": "Vancouver Whitecaps",
+      "home_team_short": "POR",
+      "away_team_short": "VAN",
+      "home_team_slug": "portland-timbers",
+      "away_team_slug": "vancouver-whitecaps",
       "home_team_logo": "https://static.flashscore.com/res/image/data/6ZJJvliC-xf2WUeO1.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/KbDi358k-nJrkMuTE.png",
       "competition": "MLS",
+      "competition_full": "USA: MLS",
       "country": "USA",
       "competition_id": "CQv5qrFt",
       "competition_url": "https://www.flashscore.com/football/usa/mls/",
@@ -1766,9 +2106,14 @@
     {
       "home_team": "New York Red Bulls",
       "away_team": "CF Montreal",
+      "home_team_short": "NYR",
+      "away_team_short": "CFM",
+      "home_team_slug": "new-york-red-bulls",
+      "away_team_slug": "cf-montreal",
       "home_team_logo": "https://static.flashscore.com/res/image/data/YgNOxC96-KEuupwHt.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/CEqcFQlC-APghxIAJ.png",
       "competition": "MLS",
+      "competition_full": "USA: MLS",
       "country": "USA",
       "competition_id": "CQv5qrFt",
       "competition_url": "https://www.flashscore.com/football/usa/mls/",
@@ -1780,23 +2125,38 @@
     {
       "home_team": "FC Cincinnati",
       "away_team": "Toronto FC",
+      "home_team_short": "FCC",
+      "away_team_short": "TOR",
+      "home_team_slug": "fc-cincinnati",
+      "away_team_slug": "toronto-fc",
       "home_team_logo": "https://static.flashscore.com/res/image/data/vwHVLET0-hfMSf4LN.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/0n9oUmiT-tnwDCzLD.png",
       "competition": "MLS",
+      "competition_full": "USA: MLS",
       "country": "USA",
       "competition_id": "CQv5qrFt",
       "competition_url": "https://www.flashscore.com/football/usa/mls/",
       "start_date": "2026-03-08",
       "start_time": "23:00",
       "start_time_utc": "2026-03-08T23:00:00Z",
-      "channels": []
+      "channels": [
+        {
+          "name": "Max Sport 3",
+          "url": "https://maxsport.live/"
+        }
+      ]
     },
     {
       "home_team": "West Ham",
       "away_team": "Brentford",
+      "home_team_short": "WHU",
+      "away_team_short": "BRE",
+      "home_team_slug": "west-ham",
+      "away_team_slug": "brentford",
       "home_team_logo": "https://static.flashscore.com/res/image/data/YeSfKGlC-Q9DJHs4l.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/SjSCLv86-r9Mudk7j.png",
       "competition": "FA Cup",
+      "competition_full": "ENGLAND: FA Cup",
       "country": "England",
       "competition_id": "lYQtaqPQ",
       "competition_url": "https://www.flashscore.com/football/england/fa-cup/",
@@ -1813,21 +2173,26 @@
           "url": "https://www.tntsports.co.uk/"
         },
         {
-          "name": "DAZN 2",
-          "url": "https://prf.hn/click/camref:1011lfsUi"
+          "name": "beIN Sports MENA 2",
+          "url": "https://www.beinsports.com/en-mena"
         },
         {
-          "name": "Nova Sport 1",
-          "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
+          "name": "DAZN 2",
+          "url": "https://prf.hn/click/camref:1011lfsUi"
         }
       ]
     },
     {
       "home_team": "Lazio",
       "away_team": "Sassuolo",
+      "home_team_short": "LAZ",
+      "away_team_short": "SAS",
+      "home_team_slug": "lazio",
+      "away_team_slug": "sassuolo",
       "home_team_logo": "https://static.flashscore.com/res/image/data/4CLpo27k-EaFfQ9z6.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/QckzxM7k-6ZDR6zEL.png",
       "competition": "Serie A",
+      "competition_full": "ITALY: Serie A",
       "country": "Italy",
       "competition_id": "COuk57Ci",
       "competition_url": "https://www.flashscore.com/football/italy/serie-a/",
@@ -1856,9 +2221,14 @@
     {
       "home_team": "Espanyol",
       "away_team": "Oviedo",
+      "home_team_short": "ESP",
+      "away_team_short": "OVI",
+      "home_team_slug": "espanyol",
+      "away_team_slug": "real-oviedo",
       "home_team_logo": "https://static.flashscore.com/res/image/data/QeCoIpXH-Msjm1Bq4.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/8CuFFxlC-Y7pkY0PJ.png",
       "competition": "LaLiga",
+      "competition_full": "SPAIN: LaLiga",
       "country": "Spain",
       "competition_id": "QVmLl54o",
       "competition_url": "https://www.flashscore.com/football/spain/laliga/",
@@ -1887,23 +2257,38 @@
     {
       "home_team": "FC Cincinnati",
       "away_team": "Toronto FC",
+      "home_team_short": "FCC",
+      "away_team_short": "TOR",
+      "home_team_slug": "fc-cincinnati",
+      "away_team_slug": "toronto-fc",
       "home_team_logo": "https://static.flashscore.com/res/image/data/vwHVLET0-hfMSf4LN.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/0n9oUmiT-tnwDCzLD.png",
       "competition": "MLS",
+      "competition_full": "USA: MLS",
       "country": "USA",
       "competition_id": "CQv5qrFt",
       "competition_url": "https://www.flashscore.com/football/usa/mls/",
       "start_date": "2026-03-08",
       "start_time": "23:00",
       "start_time_utc": "2026-03-08T23:00:00Z",
-      "channels": []
+      "channels": [
+        {
+          "name": "Max Sport 3",
+          "url": "https://maxsport.live/"
+        }
+      ]
     },
     {
       "home_team": "Al Hazem",
       "away_team": "Al Kholood",
+      "home_team_short": "HAZ",
+      "away_team_short": "AL",
+      "home_team_slug": "al-hazem-rass",
+      "away_team_slug": "al-kholood",
       "home_team_logo": "https://static.flashscore.com/res/image/data/ziLCjVoe-YDmGqAgC.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/WM6Wtcme-WO9RbMlH.png",
       "competition": "Saudi Professional League",
+      "competition_full": "SAUDI ARABIA: Saudi Professional League",
       "country": "Saudi Arabia",
       "competition_id": "tUxUbLR2",
       "competition_url": "https://www.flashscore.com/football/saudi-arabia/saudi-professional-league/",
@@ -1915,9 +2300,14 @@
     {
       "home_team": "Al Najma",
       "away_team": "Damac",
+      "home_team_short": "NAJ",
+      "away_team_short": "DAM",
+      "home_team_slug": "al-najma",
+      "away_team_slug": "damac",
       "home_team_logo": "https://static.flashscore.com/res/image/data/M96hs86k-lQBgfCk0.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/M7LnES86-29Hb7UEa.png",
       "competition": "Saudi Professional League",
+      "competition_full": "SAUDI ARABIA: Saudi Professional League",
       "country": "Saudi Arabia",
       "competition_id": "tUxUbLR2",
       "competition_url": "https://www.flashscore.com/football/saudi-arabia/saudi-professional-league/",
@@ -1929,9 +2319,14 @@
     {
       "home_team": "Neom SC",
       "away_team": "Al Taawon",
+      "home_team_short": "NEO",
+      "away_team_short": "TAA",
+      "home_team_slug": "neom-sc",
+      "away_team_slug": "al-taawon",
       "home_team_logo": "https://static.flashscore.com/res/image/data/Ols4HzkC-hjWUhSZq.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/WpJmtIVH-zwr48VYG.png",
       "competition": "Saudi Professional League",
+      "competition_full": "SAUDI ARABIA: Saudi Professional League",
       "country": "Saudi Arabia",
       "competition_id": "tUxUbLR2",
       "competition_url": "https://www.flashscore.com/football/saudi-arabia/saudi-professional-league/",
