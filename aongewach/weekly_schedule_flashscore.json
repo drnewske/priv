@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-06T11:31:01Z",
+  "generated_at": "2026-03-06T11:50:28Z",
   "source": "flashscore.com",
   "config": {
     "host": "https://global.flashscore.ninja",
@@ -1260,7 +1260,7 @@
       "start_time_utc": "2026-03-08T13:30:00Z",
       "channels": [
         {
-          "name": "SuperSport Premier League",
+          "name": "SuperSport MaXimo 2",
           "url": "https://supersport.com/"
         },
         {
@@ -1296,8 +1296,8 @@
       "start_time_utc": "2026-03-08T16:30:00Z",
       "channels": [
         {
-          "name": "SuperSport MaXimo 1",
-          "url": "https://supersport.com/"
+          "name": "SuperSport 2",
+          "url": "https://top-channel.tv/sport/?utm_source=supersport&utm_campaign=supersport_redirect"
         },
         {
           "name": "TNT Sports 1",
@@ -2094,6 +2094,10 @@
       "start_time_utc": "2026-03-08T03:30:00Z",
       "channels": [
         {
+          "name": "RDS 2",
+          "url": "https://www.rds.ca/"
+        },
+        {
           "name": "RDS Info",
           "url": "https://www.rds.ca/"
         },
@@ -2165,8 +2169,8 @@
       "start_time_utc": "2026-03-09T19:30:00Z",
       "channels": [
         {
-          "name": "SuperSport MaXimo 1",
-          "url": "https://supersport.com/"
+          "name": "SuperSport 2",
+          "url": "https://top-channel.tv/sport/?utm_source=supersport&utm_campaign=supersport_redirect"
         },
         {
           "name": "TNT Sports 1",
