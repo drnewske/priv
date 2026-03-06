@@ -68,9 +68,14 @@ TEAM_ABBREVIATION_MAP = {
 WITM_FOOTBALL_COMPETITION_LOGO_URL = "https://www.wheresthematch.com/images/sports/football.gif"
 DEFAULT_LIVESPORTTV_PATH = "weekly_schedule_livesporttv.json"
 DEFAULT_FLASHSCORE_SPORT_ASSETS_PATH = "flashscore_sport_assets.json"
+DEFAULT_TEAM_LOGO_REGISTRY_PATH = "priv-boring-hole.json"
+TEAM_LOGO_REGISTRY_SCHEMA_VERSION = "fanzo-team-logo-registry-v1"
 GENERIC_TEAM_LOGO_PATTERNS = (
     "/images/team.png",
     "images/team.png?v=",
+)
+LOW_QUALITY_TEAM_LOGO_PATTERNS = (
+    "flashscore.com/res/image",
 )
 
 TEAM_TOKEN_EXPANSIONS = {
@@ -400,6 +405,103 @@ def add_alias_variants(
                 queue.append(extra)
 
 
+def add_registry_alias_variants(
+    out: Set[str],
+    value: object,
+    alias_map: Dict[str, Tuple[str, ...]],
+    *,
+    canonicalizer,
+    token_expansions: Optional[Dict[str, str]] = None,
+) -> None:
+    raw = normalize_text(value)
+    if not raw:
+        return
+
+    queue = [raw, raw.replace("-", " "), raw.replace("&", " and ")]
+    seen: Set[str] = set()
+
+    while queue:
+        candidate = normalize_text(queue.pop(0))
+        if not candidate:
+            continue
+        key = canonicalizer(candidate)
+        if not key or key in seen:
+            continue
+        seen.add(key)
+        out.add(key)
+
+        tokens = tokenize_name(key)
+        if tokens:
+            expanded_tokens = [token_expansions.get(token, token) for token in tokens] if token_expansions else tokens
+            expanded_key = " ".join(expanded_tokens).strip()
+            if expanded_key and expanded_key not in seen:
+                queue.append(expanded_key)
+
+            if len(tokens) > 1:
+                without_single_letter = " ".join(token for token in tokens if len(token) > 1)
+                if without_single_letter and without_single_letter not in seen:
+                    queue.append(without_single_letter)
+
+                if canonicalizer is canonical_team_name and tokens[0] == "borussia":
+                    queue.append(" ".join(tokens[1:]))
+
+        for extra in alias_map.get(key, ()):
+            if extra:
+                queue.append(extra)
+
+
+def unique_text_values(values: Iterable[object]) -> List[str]:
+    out: List[str] = []
+    seen: Set[str] = set()
+    for value in values:
+        text = normalize_text(value)
+        if not text:
+            continue
+        key = text.casefold()
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(text)
+    return out
+
+
+def unique_int_values(values: Iterable[object]) -> List[int]:
+    out: List[int] = []
+    seen: Set[int] = set()
+    for value in values:
+        parsed = to_int_or_none(value)
+        if parsed is None or parsed in seen:
+            continue
+        seen.add(parsed)
+        out.append(parsed)
+    return out
+
+
+def build_team_alias_inputs(raw_event: Dict, side: str) -> List[str]:
+    primary_key = canonical_team_name(raw_event.get(f"{side}_team"))
+    values: List[object] = [raw_event.get(f"{side}_team")]
+
+    short_name = normalize_text(raw_event.get(f"{side}_team_short"))
+    short_key = canonical_team_name(short_name)
+    if short_name and (short_key == primary_key or len(short_key) >= 4):
+        values.append(short_name)
+
+    values.append(raw_event.get(f"{side}_team_slug"))
+    return unique_text_values(values)
+
+
+def filter_registry_alias_values(primary_name: object, values: Iterable[object]) -> List[str]:
+    primary_key = canonical_team_name(primary_name)
+    filtered: List[str] = []
+    for text in unique_text_values(values):
+        key = canonical_team_name(text)
+        if not key:
+            continue
+        if key == primary_key or " " in key or len(key) >= 5:
+            filtered.append(text)
+    return filtered
+
+
 def build_team_aliases(raw_event: Dict, side: str) -> List[str]:
     aliases: Set[str] = set()
     for field in (
@@ -556,6 +658,8 @@ def normalize_event(
         "away_team_logo": normalize_text(raw_event.get("away_team_logo")) or None,
         "_date": normalize_text(raw_event.get("date")) or None,
         "_source": source,
+        "_home_team_alias_inputs": build_team_alias_inputs(raw_event, "home"),
+        "_away_team_alias_inputs": build_team_alias_inputs(raw_event, "away"),
         "_home_team_aliases": build_team_aliases(raw_event, "home"),
         "_away_team_aliases": build_team_aliases(raw_event, "away"),
         "_competition_aliases": build_competition_aliases(raw_event),
@@ -881,6 +985,413 @@ def is_usable_team_logo(value: object) -> bool:
     return not is_generic_team_logo(value)
 
 
+def needs_team_logo_upgrade(value: object) -> bool:
+    url = normalize_key_text(value)
+    if not url:
+        return True
+    if is_generic_team_logo(url):
+        return True
+    return any(pattern in url for pattern in LOW_QUALITY_TEAM_LOGO_PATTERNS)
+
+
+def empty_team_logo_registry_payload() -> Dict:
+    return {
+        "generated_at": None,
+        "source": "fanzo.com",
+        "schema_version": TEAM_LOGO_REGISTRY_SCHEMA_VERSION,
+        "teams": [],
+    }
+
+
+def create_team_logo_registry_state(payload: Optional[Dict]) -> Dict[str, object]:
+    raw_payload = payload if isinstance(payload, dict) else {}
+    metadata = empty_team_logo_registry_payload()
+    raw_source = normalize_text(raw_payload.get("source"))
+    if raw_source:
+        metadata["source"] = raw_source
+    raw_generated_at = normalize_text(raw_payload.get("generated_at"))
+    if raw_generated_at:
+        metadata["generated_at"] = raw_generated_at
+
+    state: Dict[str, object] = {
+        "metadata": metadata,
+        "entries": {},
+        "alias_index": {},
+        "entry_variants": {},
+        "dirty": True,
+    }
+
+    raw_teams = raw_payload.get("teams")
+    if isinstance(raw_teams, dict):
+        raw_teams = list(raw_teams.values())
+    if not isinstance(raw_teams, list):
+        raw_teams = []
+
+    for raw_entry in raw_teams:
+        if not isinstance(raw_entry, dict):
+            continue
+        upsert_team_logo_registry_entry(
+            state,
+            team_name=raw_entry.get("name") or raw_entry.get("team") or raw_entry.get("team_key"),
+            logo=raw_entry.get("logo"),
+            fanzo_ids=raw_entry.get("fanzo_ids") if isinstance(raw_entry.get("fanzo_ids"), list) else [],
+            alias_values=raw_entry.get("aliases") if isinstance(raw_entry.get("aliases"), list) else [],
+            source_values=raw_entry.get("sources") if isinstance(raw_entry.get("sources"), list) else [],
+            preferred_key=raw_entry.get("team_key"),
+            track_stats=False,
+        )
+
+    return state
+
+
+def serialize_team_logo_registry_state(state: Dict[str, object]) -> Dict:
+    metadata = state.get("metadata") if isinstance(state.get("metadata"), dict) else empty_team_logo_registry_payload()
+    entries = state.get("entries") if isinstance(state.get("entries"), dict) else {}
+    teams: List[Dict] = []
+    for team_key in sorted(entries.keys()):
+        entry = entries[team_key]
+        if not isinstance(entry, dict):
+            continue
+        team_name = normalize_text(entry.get("name")) or team_key
+        teams.append(
+            {
+                "team_key": team_key,
+                "name": team_name,
+                "logo": normalize_text(entry.get("logo")) or None,
+                "fanzo_ids": unique_int_values(entry.get("fanzo_ids") or []),
+                "aliases": unique_text_values(entry.get("aliases") or [team_name]),
+                "sources": unique_text_values(entry.get("sources") or []),
+            }
+        )
+
+    return {
+        "generated_at": dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
+        "source": normalize_text(metadata.get("source")) or "fanzo.com",
+        "schema_version": TEAM_LOGO_REGISTRY_SCHEMA_VERSION,
+        "teams": teams,
+    }
+
+
+def sync_team_logo_registry_payload(payload: Dict, state: Dict[str, object]) -> None:
+    serialized = serialize_team_logo_registry_state(state)
+    payload.clear()
+    payload.update(serialized)
+
+
+def team_logo_registry_entry_variants(entry: Dict) -> Set[str]:
+    variants: Set[str] = set()
+    for value in [entry.get("name")] + list(entry.get("aliases") or []):
+        add_registry_alias_variants(
+            variants,
+            value,
+            TEAM_ALIAS_EXPANSIONS,
+            canonicalizer=canonical_team_name,
+            token_expansions=TEAM_TOKEN_EXPANSIONS,
+        )
+    return variants
+
+
+def build_team_query_variants(values: Iterable[object]) -> Set[str]:
+    variants: Set[str] = set()
+    for value in unique_text_values(values):
+        add_registry_alias_variants(
+            variants,
+            value,
+            TEAM_ALIAS_EXPANSIONS,
+            canonicalizer=canonical_team_name,
+            token_expansions=TEAM_TOKEN_EXPANSIONS,
+        )
+    return variants
+
+
+def rebuild_team_logo_registry_lookup(state: Dict[str, object]) -> None:
+    entries = state.get("entries") if isinstance(state.get("entries"), dict) else {}
+    alias_index: Dict[str, Set[str]] = {}
+    entry_variants: Dict[str, Set[str]] = {}
+
+    for team_key, entry in entries.items():
+        if not isinstance(entry, dict):
+            continue
+        variants = team_logo_registry_entry_variants(entry)
+        if team_key:
+            variants.add(team_key)
+        entry_variants[team_key] = variants
+        for variant in variants:
+            alias_index.setdefault(variant, set()).add(team_key)
+
+    state["alias_index"] = alias_index
+    state["entry_variants"] = entry_variants
+    state["dirty"] = False
+
+
+def find_team_logo_registry_key_by_variants(
+    state: Dict[str, object],
+    query_variants: Set[str],
+) -> Optional[str]:
+    if not query_variants:
+        return None
+    if state.get("dirty"):
+        rebuild_team_logo_registry_lookup(state)
+
+    alias_index = state.get("alias_index") if isinstance(state.get("alias_index"), dict) else {}
+    entry_variants = state.get("entry_variants") if isinstance(state.get("entry_variants"), dict) else {}
+
+    candidate_keys: Set[str] = set()
+    for variant in query_variants:
+        candidate_keys.update(alias_index.get(variant, set()))
+    if not candidate_keys:
+        return None
+
+    best_key: Optional[str] = None
+    best_hits = -1
+    best_similarity = 0.0
+    for candidate_key in sorted(candidate_keys):
+        candidate_variants = entry_variants.get(candidate_key) or set()
+        exact_hits = len(query_variants & candidate_variants)
+        similarity_score = best_variant_similarity(query_variants, candidate_variants)
+        if exact_hits > best_hits or (exact_hits == best_hits and similarity_score > best_similarity):
+            best_key = candidate_key
+            best_hits = exact_hits
+            best_similarity = similarity_score
+
+    if best_key is None or best_hits <= 0:
+        return None
+    return best_key
+
+
+def derive_team_logo_registry_key(
+    *,
+    team_name: object,
+    alias_values: Iterable[object] = (),
+    preferred_key: object = None,
+) -> str:
+    variants = build_team_query_variants([preferred_key, team_name, *list(alias_values or [])])
+    if not variants:
+        return canonical_team_name(preferred_key or team_name)
+
+    word_variants = [variant for variant in variants if " " in variant]
+    candidates = word_variants or [variant for variant in variants if len(variant) >= 4] or list(variants)
+    return max(candidates, key=lambda value: (len(tokenize_name(value)), len(value), value))
+
+
+def upsert_team_logo_registry_entry(
+    state: Dict[str, object],
+    *,
+    team_name: object,
+    logo: object = None,
+    fanzo_ids: Iterable[object] = (),
+    alias_values: Iterable[object] = (),
+    source_values: Iterable[object] = (),
+    preferred_key: object = None,
+    track_stats: bool = True,
+) -> Dict[str, int]:
+    entries = state.get("entries") if isinstance(state.get("entries"), dict) else {}
+    name = normalize_text(team_name) or None
+    normalized_logo = normalize_text(logo) or None
+    normalized_aliases = filter_registry_alias_values(name, [name, *list(alias_values or [])])
+    normalized_sources = unique_text_values(source_values or [])
+    normalized_fanzo_ids = unique_int_values(fanzo_ids or [])
+    direct_key = canonical_team_name(preferred_key)
+    if direct_key and direct_key in entries:
+        team_key = direct_key
+    else:
+        query_variants = build_team_query_variants([preferred_key, name, *normalized_aliases])
+        matched_key = find_team_logo_registry_key_by_variants(state, query_variants)
+        team_key = matched_key or derive_team_logo_registry_key(
+            team_name=name,
+            alias_values=normalized_aliases,
+            preferred_key=preferred_key,
+        )
+    if not team_key:
+        return {"entries_added": 0, "entries_updated": 0, "aliases_added": 0}
+
+    stats = {"entries_added": 0, "entries_updated": 0, "aliases_added": 0}
+    changed = False
+
+    existing = entries.get(team_key)
+    if existing is None:
+        entries[team_key] = {
+            "team_key": team_key,
+            "name": name or (normalized_aliases[0] if normalized_aliases else team_key),
+            "logo": normalized_logo,
+            "fanzo_ids": normalized_fanzo_ids,
+            "aliases": normalized_aliases or ([name] if name else []),
+            "sources": normalized_sources,
+        }
+        state["dirty"] = True
+        if track_stats:
+            stats["entries_added"] = 1
+        return stats
+
+    existing_name = normalize_text(existing.get("name")) or None
+    if name and (not existing_name or len(name) > len(existing_name)):
+        existing["name"] = name
+        changed = True
+
+    existing_logo = normalize_text(existing.get("logo")) or None
+    if normalized_logo and (
+        not existing_logo or (needs_team_logo_upgrade(existing_logo) and not needs_team_logo_upgrade(normalized_logo))
+    ):
+        existing["logo"] = normalized_logo
+        changed = True
+
+    merged_fanzo_ids = unique_int_values(list(existing.get("fanzo_ids") or []) + normalized_fanzo_ids)
+    if merged_fanzo_ids != list(existing.get("fanzo_ids") or []):
+        existing["fanzo_ids"] = merged_fanzo_ids
+        changed = True
+
+    prior_aliases = unique_text_values(existing.get("aliases") or [])
+    merged_aliases = unique_text_values(prior_aliases + normalized_aliases)
+    aliases_added = max(0, len(merged_aliases) - len(prior_aliases))
+    if merged_aliases != prior_aliases:
+        existing["aliases"] = merged_aliases
+        changed = True
+
+    prior_sources = unique_text_values(existing.get("sources") or [])
+    merged_sources = unique_text_values(prior_sources + normalized_sources)
+    if merged_sources != prior_sources:
+        existing["sources"] = merged_sources
+        changed = True
+
+    if changed:
+        state["dirty"] = True
+        if track_stats:
+            stats["entries_updated"] = 1
+            stats["aliases_added"] = aliases_added
+    return stats
+
+
+def team_logo_registry_query_values(event: Dict, side: str) -> List[str]:
+    return filter_registry_alias_values(
+        event.get(f"{side}_team"),
+        [
+            event.get(f"{side}_team"),
+            *(event.get(f"_{side}_team_alias_inputs") or []),
+        ],
+    )
+
+
+def find_team_logo_registry_match(
+    state: Dict[str, object],
+    *,
+    event: Dict,
+    side: str,
+) -> Optional[Tuple[str, Dict]]:
+    entries = state.get("entries") if isinstance(state.get("entries"), dict) else {}
+    query_variants = build_team_query_variants(team_logo_registry_query_values(event, side))
+    if not query_variants:
+        return None
+    best_key = find_team_logo_registry_key_by_variants(state, query_variants)
+    if best_key is None:
+        return None
+    entry = entries.get(best_key)
+    if not isinstance(entry, dict):
+        return None
+    return best_key, entry
+
+
+def seed_team_logo_registry_from_fanzo_payload(
+    fanzo_payload: Dict,
+    state: Dict[str, object],
+) -> Dict[str, int]:
+    stats = {"entries_added": 0, "entries_updated": 0, "aliases_added": 0}
+    for day in fanzo_payload.get("schedule", []) if isinstance(fanzo_payload.get("schedule"), list) else []:
+        if not isinstance(day, dict):
+            continue
+        for raw_event in day.get("events", []) if isinstance(day.get("events"), list) else []:
+            if not isinstance(raw_event, dict):
+                continue
+            if not is_football_sport(raw_event.get("sport")):
+                continue
+            event = normalize_event(raw_event, source="fanzo", allow_empty_channels=True)
+            if not event or not has_valid_teams(event):
+                continue
+            for side in ("home", "away"):
+                team_name = event.get(f"{side}_team")
+                if is_placeholder_team_name(team_name):
+                    continue
+                result = upsert_team_logo_registry_entry(
+                    state,
+                    team_name=team_name,
+                    logo=event.get(f"{side}_team_logo"),
+                    fanzo_ids=[event.get(f"{side}_team_id")],
+                    alias_values=event.get(f"_{side}_team_alias_inputs") or [team_name],
+                    source_values=["fanzo"],
+                )
+                for key in stats:
+                    stats[key] += result.get(key, 0)
+    return stats
+
+
+def add_secondary_aliases_to_team_logo_registry(
+    state: Dict[str, object],
+    *,
+    primary_event: Dict,
+    secondary_event: Dict,
+    secondary_source_name: str,
+) -> Dict[str, int]:
+    stats = {"entries_added": 0, "entries_updated": 0, "aliases_added": 0}
+    if not has_valid_teams(primary_event):
+        return stats
+
+    for side in ("home", "away"):
+        team_name = primary_event.get(f"{side}_team")
+        if is_placeholder_team_name(team_name):
+            continue
+        result = upsert_team_logo_registry_entry(
+            state,
+            team_name=team_name,
+            logo=primary_event.get(f"{side}_team_logo"),
+            fanzo_ids=[primary_event.get(f"{side}_team_id")],
+            alias_values=[
+                *(primary_event.get(f"_{side}_team_alias_inputs") or []),
+                *(secondary_event.get(f"_{side}_team_alias_inputs") or []),
+            ],
+            source_values=["fanzo", secondary_source_name],
+        )
+        for key in stats:
+            stats[key] += result.get(key, 0)
+    return stats
+
+
+def apply_team_logo_registry(
+    event: Dict,
+    state: Dict[str, object],
+    *,
+    secondary_source_name: str,
+) -> Tuple[bool, Dict[str, int]]:
+    updated = False
+    stats = {"entries_added": 0, "entries_updated": 0, "aliases_added": 0}
+    for side in ("home", "away"):
+        logo_field = f"{side}_team_logo"
+        current_logo = normalize_text(event.get(logo_field)) or None
+        if not needs_team_logo_upgrade(current_logo):
+            continue
+
+        matched = find_team_logo_registry_match(state, event=event, side=side)
+        if matched is None:
+            continue
+        team_key, entry = matched
+        candidate_logo = normalize_text(entry.get("logo")) or None
+        if candidate_logo and is_usable_team_logo(candidate_logo) and candidate_logo != current_logo:
+            event[logo_field] = candidate_logo
+            updated = True
+
+        result = upsert_team_logo_registry_entry(
+            state,
+            team_name=entry.get("name") or event.get(f"{side}_team"),
+            logo=entry.get("logo"),
+            fanzo_ids=entry.get("fanzo_ids") or [],
+            alias_values=team_logo_registry_query_values(event, side),
+            source_values=["fanzo", secondary_source_name],
+            preferred_key=team_key,
+        )
+        for key in stats:
+            stats[key] += result.get(key, 0)
+
+    return updated, stats
+
+
 def is_acceptable_livesporttv_logo_match(features: Dict[str, float]) -> bool:
     if features["time_score"] < 0.82:
         return False
@@ -923,6 +1434,9 @@ def find_best_livesporttv_match(
 def apply_livesporttv_team_logos(event: Dict, livesporttv_event: Dict) -> bool:
     updated = False
     for field in ("home_team_logo", "away_team_logo"):
+        current_logo = normalize_text(event.get(field)) or None
+        if not needs_team_logo_upgrade(current_logo):
+            continue
         candidate = normalize_text(livesporttv_event.get(field)) or None
         if candidate and is_usable_team_logo(candidate) and event.get(field) != candidate:
             event[field] = candidate
@@ -970,6 +1484,7 @@ def compose_payload(
     secondary_source: Optional[str] = None,
     livesporttv_payload: Optional[Dict] = None,
     sport_assets_payload: Optional[Dict] = None,
+    team_logo_registry: Optional[Dict] = None,
 ) -> Dict:
     fanzo_by_date = day_index(fanzo_payload)
     secondary_by_date = date_index_from_football_source(football_secondary_payload)
@@ -982,12 +1497,15 @@ def compose_payload(
     secondary_source_name = normalize_text(secondary_source) or normalize_text(
         football_secondary_payload.get("source")
     ) or "football-secondary"
+    team_logo_registry_state = create_team_logo_registry_state(team_logo_registry)
+    registry_seed_stats = seed_team_logo_registry_from_fanzo_payload(fanzo_payload, team_logo_registry_state)
 
     schedule: List[Dict] = []
     merged_football_events = 0
     fanzo_only_events = 0
     secondary_only_events = 0
     fanzo_football_dropped_no_match = 0
+    football_secondary_registry_logo_upgrades = 0
     football_secondary_logo_upgrades = 0
 
     for date_iso in all_dates:
@@ -1030,6 +1548,14 @@ def compose_payload(
             if match_index is not None:
                 used_secondary_indices.add(match_index)
                 huh_event = secondary_events[match_index]
+                alias_stats = add_secondary_aliases_to_team_logo_registry(
+                    team_logo_registry_state,
+                    primary_event=fanzo_event,
+                    secondary_event=huh_event,
+                    secondary_source_name=secondary_source_name,
+                )
+                for key in registry_seed_stats:
+                    registry_seed_stats[key] += alias_stats.get(key, 0)
                 keep_primary_teams = has_valid_teams(fanzo_event)
                 merged = merge_event(fanzo_event, huh_event, keep_primary_teams=keep_primary_teams)
                 enrich_football_logos(merged, football_logo_map, football_fallback_logo)
@@ -1059,6 +1585,15 @@ def compose_payload(
                 continue
             if not has_valid_teams(huh_event):
                 continue
+            registry_updated, registry_alias_stats = apply_team_logo_registry(
+                huh_event,
+                team_logo_registry_state,
+                secondary_source_name=secondary_source_name,
+            )
+            for key in registry_seed_stats:
+                registry_seed_stats[key] += registry_alias_stats.get(key, 0)
+            if registry_updated:
+                football_secondary_registry_logo_upgrades += 1
             livesporttv_index, _logo_features = find_best_livesporttv_match(
                 day_date=date_iso,
                 football_event=huh_event,
@@ -1098,12 +1633,18 @@ def compose_payload(
             "football_events_merged": merged_football_events,
             "fanzo_football_events_dropped_missing_secondary_match": fanzo_football_dropped_no_match,
             "fanzo_football_events_dropped_missing_huh_match": fanzo_football_dropped_no_match,
+            "football_secondary_events_logo_enriched_from_registry": football_secondary_registry_logo_upgrades,
             "football_secondary_events_logo_enriched_from_livesporttv": football_secondary_logo_upgrades,
+            "team_logo_registry_entries_added": registry_seed_stats["entries_added"],
+            "team_logo_registry_entries_updated": registry_seed_stats["entries_updated"],
+            "team_logo_registry_aliases_added": registry_seed_stats["aliases_added"],
             "days": len(schedule),
         },
     }
     if isinstance(sport_assets_payload, dict) and sport_assets_payload:
         output["sport_assets"] = sport_assets_payload
+    if isinstance(team_logo_registry, dict):
+        sync_team_logo_registry_payload(team_logo_registry, team_logo_registry_state)
     return output
 
 
@@ -1132,6 +1673,11 @@ def parse_args() -> argparse.Namespace:
         default=DEFAULT_FLASHSCORE_SPORT_ASSETS_PATH,
         help="Static Flashscore sport SVG payload to embed in final schedule JSON when available.",
     )
+    parser.add_argument(
+        "--team-logo-registry",
+        default=DEFAULT_TEAM_LOGO_REGISTRY_PATH,
+        help="Persistent Fanzo-first football team logo registry JSON.",
+    )
     parser.add_argument("--output", default="weekly_schedule.json", help="Output composed schedule JSON.")
     return parser.parse_args()
 
@@ -1143,6 +1689,7 @@ def main() -> int:
     football_secondary_payload = load_json(football_secondary_path)
     livesporttv_payload = load_json(args.livesporttv)
     sport_assets_payload = load_json(args.flashscore_sport_assets)
+    team_logo_registry = load_json(args.team_logo_registry)
 
     if not isinstance(fanzo_payload.get("schedule"), list):
         print(f"Invalid FANZO payload: {args.fanzo_witm}", file=sys.stderr)
@@ -1159,15 +1706,20 @@ def main() -> int:
         secondary_source=normalize_text(football_secondary_payload.get("source")),
         livesporttv_payload=livesporttv_payload,
         sport_assets_payload=sport_assets_payload,
+        team_logo_registry=team_logo_registry,
     )
     save_json(args.output, payload)
+    save_json(args.team_logo_registry, team_logo_registry)
 
     comp = payload.get("composition", {})
     print(
         f"[COMPOSE] Wrote {args.output} | fanzo_kept={comp.get('fanzo_events_kept', 0)} "
         f"secondary_unique={comp.get('football_secondary_unique_events_added', 0)} "
         f"football_merged={comp.get('football_events_merged', 0)} "
+        f"registry_logo_upgrades={comp.get('football_secondary_events_logo_enriched_from_registry', 0)} "
         f"logo_upgrades={comp.get('football_secondary_events_logo_enriched_from_livesporttv', 0)} "
+        f"registry_entries_added={comp.get('team_logo_registry_entries_added', 0)} "
+        f"registry_aliases_added={comp.get('team_logo_registry_aliases_added', 0)} "
         f"dropped_missing_secondary={comp.get('fanzo_football_events_dropped_missing_secondary_match', 0)} "
         f"days={comp.get('days', 0)}"
     )

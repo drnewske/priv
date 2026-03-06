@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-06T11:50:45Z",
+  "generated_at": "2026-03-06T14:23:26Z",
   "source": "composed:fanzo+football-secondary",
   "schema_version": "fanzo-football-secondary-v4",
   "schema_fields": [
@@ -1911,7 +1911,7 @@
           "away_team": "Bayer Leverkusen",
           "home_team_id": null,
           "away_team_id": null,
-          "home_team_logo": "https://www.livesporttv.com/resize/width/40/uploads/teams/switzerland/logos/fribourg-1525065103.png?v=102",
+          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/6508/logo_1697808372.png",
           "away_team_logo": "https://www.livesporttv.com/resize/width/40/uploads/teams/germany/logos/bayer-leverkusen-1525065902.png?v=102"
         },
         {
@@ -1953,8 +1953,8 @@
           "away_team": "Stuttgart",
           "home_team_id": null,
           "away_team_id": null,
-          "home_team_logo": "https://www.livesporttv.com/resize/width/40/uploads/teams/germany/logos/mainz-05-1525066303.png?v=102",
-          "away_team_logo": "https://www.livesporttv.com/resize/width/40/uploads/teams/germany/logos/vfb-stuttgart-1525066496.png?v=102"
+          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/7164/logo_1697812609.png",
+          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/8051/logo_1697806683.png"
         },
         {
           "name": "RB Leipzig v Augsburg",
@@ -2154,7 +2154,7 @@
           "away_team": "Udinese",
           "home_team_id": null,
           "away_team_id": null,
-          "home_team_logo": "https://www.livesporttv.com/resize/width/40/uploads/teams/italy/logos/atalanta-1525066079.png?v=102",
+          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/5568/logo_1698054632.png",
           "away_team_logo": "https://www.livesporttv.com/resize/width/40/uploads/teams/italy/logos/udinese-1525066117.png?v=102"
         },
         {
@@ -2371,7 +2371,7 @@
           "home_team_id": null,
           "away_team_id": null,
           "home_team_logo": "https://www.livesporttv.com/resize/width/40/uploads/teams/france/logos/auxerre-1525066110.png?v=102",
-          "away_team_logo": "https://www.livesporttv.com/resize/width/40/uploads/teams/france/logos/strasbourg-1525066266.png?v=102"
+          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/8041/logo_1679287678.png"
         },
         {
           "name": "Hove",
@@ -3595,7 +3595,7 @@
           "away_team": "Verona",
           "home_team_id": null,
           "away_team_id": null,
-          "home_team_logo": "https://www.livesporttv.com/resize/width/40/uploads/teams/italy/logos/bologna-1525066271.png?v=102",
+          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/5776/logo_1698054788.png",
           "away_team_logo": "https://www.livesporttv.com/resize/width/40/uploads/teams/italy/logos/hellas-verona-1525066284.png?v=102"
         },
         {
@@ -3616,7 +3616,7 @@
           "away_team": "Parma",
           "home_team_id": null,
           "away_team_id": null,
-          "home_team_logo": "https://www.livesporttv.com/resize/width/40/uploads/teams/italy/logos/fiorentina-1525066083.png?v=102",
+          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/6456/logo_1698054496.png",
           "away_team_logo": "https://www.livesporttv.com/resize/width/40/uploads/teams/italy/logos/parma-1525066448.png?v=102"
         },
         {
@@ -3941,7 +3941,7 @@
           "away_team": "Lorient",
           "home_team_id": null,
           "away_team_id": null,
-          "home_team_logo": "https://www.livesporttv.com/resize/width/40/uploads/teams/france/logos/lille-1525066143.png?v=102",
+          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/7063/logo_1679287466.png",
           "away_team_logo": "https://www.livesporttv.com/resize/width/40/uploads/teams/france/logos/lorient-1525066167.png?v=102"
         },
         {
@@ -4381,8 +4381,8 @@
           "away_team": "Paris FC",
           "home_team_id": null,
           "away_team_id": null,
-          "home_team_logo": "https://www.livesporttv.com/resize/width/40/uploads/teams/france/logos/lyon-1525066206.png?v=102",
-          "away_team_logo": "https://www.livesporttv.com/resize/width/40/uploads/teams/france/logos/paris-fc-1525065610.png?v=102"
+          "home_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/7150/logo_1679287564.png",
+          "away_team_logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/7501/logo_1678290850.png"
         },
         {
           "name": "Deportivo v Granada",
@@ -6710,7 +6710,11 @@
     "football_events_merged": 22,
     "fanzo_football_events_dropped_missing_secondary_match": 0,
     "fanzo_football_events_dropped_missing_huh_match": 0,
-    "football_secondary_events_logo_enriched_from_livesporttv": 29,
+    "football_secondary_events_logo_enriched_from_registry": 8,
+    "football_secondary_events_logo_enriched_from_livesporttv": 27,
+    "team_logo_registry_entries_added": 124,
+    "team_logo_registry_entries_updated": 55,
+    "team_logo_registry_aliases_added": 28,
     "days": 7
   },
   "sport_assets": {

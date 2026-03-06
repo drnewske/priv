@@ -377,6 +377,168 @@ class ScheduleCompositionTests(unittest.TestCase):
         self.assertEqual("fanzo-mancity.png", event["away_team_logo"])
         self.assertIn("NBC", event["channels"])
 
+    def test_compose_persists_fanzo_team_logos_and_flashscore_aliases_in_registry(self):
+        fanzo = {
+            "schedule": [
+                {
+                    "date": "2026-03-07",
+                    "events": [
+                        {
+                            "name": "Newcastle vs Man City",
+                            "sport": "Football",
+                            "time": "20:00",
+                            "start_time_iso": "2026-03-07T20:00:00Z",
+                            "competition": "English FA Cup",
+                            "channels": ["Sky Sports Main Event"],
+                            "home_team": "Newcastle",
+                            "away_team": "Man City",
+                            "home_team_id": 9001,
+                            "away_team_id": 9002,
+                            "home_team_logo": "fanzo-newcastle.png",
+                            "away_team_logo": "fanzo-mancity.png",
+                        }
+                    ],
+                }
+            ]
+        }
+        flashscore = {
+            "source": "flashscore.com",
+            "events": [
+                {
+                    "home_team": "Newcastle United",
+                    "home_team_slug": "newcastle-united",
+                    "away_team": "Manchester City",
+                    "away_team_short": "Man City",
+                    "away_team_slug": "manchester-city",
+                    "competition": "FA Cup",
+                    "competition_full": "England: FA Cup",
+                    "start_date": "2026-03-07",
+                    "start_time": "20:00",
+                    "start_time_utc": "2026-03-07T20:00:00Z",
+                    "channels": [{"name": "NBC (Usa)", "url": "https://example.com/nbc"}],
+                }
+            ],
+        }
+        registry = {}
+
+        compose_payload(
+            fanzo,
+            flashscore,
+            secondary_source="flashscore.com",
+            team_logo_registry=registry,
+        )
+
+        registry_teams = {entry["team_key"]: entry for entry in registry["teams"]}
+        self.assertEqual("fanzo-mancity.png", registry_teams["manchester city"]["logo"])
+        self.assertEqual([9002], registry_teams["manchester city"]["fanzo_ids"])
+        self.assertIn("Man City", registry_teams["manchester city"]["aliases"])
+        self.assertIn("Manchester City", registry_teams["manchester city"]["aliases"])
+        self.assertIn("manchester-city", registry_teams["manchester city"]["aliases"])
+        self.assertIn("flashscore.com", registry_teams["manchester city"]["sources"])
+
+    def test_compose_dedupes_existing_team_logo_registry_entries(self):
+        fanzo = {
+            "schedule": [
+                {
+                    "date": "2026-03-02",
+                    "events": [
+                        {
+                            "name": "Arsenal v Chelsea",
+                            "sport": "Football",
+                            "time": "16:30",
+                            "channels": ["Sky Sports Main Event"],
+                            "home_team": "Arsenal",
+                            "away_team": "Chelsea",
+                            "home_team_id": 42,
+                            "home_team_logo": "fanzo-arsenal.png",
+                            "away_team_logo": "fanzo-chelsea.png",
+                        }
+                    ],
+                }
+            ]
+        }
+        flashscore = {"source": "flashscore.com", "events": []}
+        registry = {
+            "teams": [
+                {
+                    "team_key": "arsenal",
+                    "name": "Arsenal",
+                    "logo": "fanzo-arsenal.png",
+                    "fanzo_ids": [42],
+                    "aliases": ["Arsenal"],
+                    "sources": ["fanzo"],
+                }
+            ]
+        }
+
+        compose_payload(
+            fanzo,
+            flashscore,
+            secondary_source="flashscore.com",
+            team_logo_registry=registry,
+        )
+
+        arsenal_entries = [entry for entry in registry["teams"] if entry["team_key"] == "arsenal"]
+        self.assertEqual(1, len(arsenal_entries))
+        self.assertEqual([42], arsenal_entries[0]["fanzo_ids"])
+
+    def test_compose_registry_avoids_short_alias_cross_contamination(self):
+        fanzo = {
+            "schedule": [
+                {
+                    "date": "2026-03-02",
+                    "events": [
+                        {
+                            "name": "AEK Larnaca v Omonia",
+                            "sport": "Football",
+                            "time": "16:30",
+                            "channels": ["Sky Sports Main Event"],
+                            "home_team": "AEK Larnaca",
+                            "away_team": "Omonia",
+                            "home_team_logo": "fanzo-aek-larnaca.png",
+                            "away_team_logo": "fanzo-omonia.png",
+                        }
+                    ],
+                }
+            ]
+        }
+        flashscore = {
+            "source": "flashscore.com",
+            "events": [
+                {
+                    "home_team": "Al Ittihad",
+                    "home_team_short": "AL",
+                    "home_team_slug": "al-ittihad",
+                    "away_team": "Al Shabab",
+                    "away_team_slug": "al-shabab",
+                    "competition": "Saudi Pro League",
+                    "competition_full": "Saudi Arabia: Saudi Professional League",
+                    "start_date": "2026-03-02",
+                    "start_time": "20:00",
+                    "start_time_utc": "2026-03-02T20:00:00Z",
+                    "home_team_logo": "https://static.flashscore.com/res/image/data/al-ittihad-small.png",
+                    "away_team_logo": "https://static.flashscore.com/res/image/data/al-shabab-small.png",
+                    "channels": [{"name": "SSC 1 (Sau)", "url": "https://example.com/ssc1"}],
+                }
+            ],
+        }
+        registry = {}
+
+        composed = compose_payload(
+            fanzo,
+            flashscore,
+            secondary_source="flashscore.com",
+            team_logo_registry=registry,
+        )
+
+        registry_teams = {entry["team_key"]: entry for entry in registry["teams"]}
+        self.assertEqual(["AEK Larnaca"], registry_teams["aek larnaca"]["aliases"])
+        flashscore_event = composed["schedule"][0]["events"][1]
+        self.assertEqual(
+            "https://static.flashscore.com/res/image/data/al-ittihad-small.png",
+            flashscore_event["home_team_logo"],
+        )
+
     def test_compose_upgrades_flashscore_only_logos_from_livesporttv(self):
         fanzo = {"schedule": [{"date": "2026-03-06", "events": []}]}
         flashscore = {
@@ -430,6 +592,93 @@ class ScheduleCompositionTests(unittest.TestCase):
         self.assertEqual("https://www.livesporttv.com/uploads/teams/wolves.png", event["home_team_logo"])
         self.assertEqual("https://www.livesporttv.com/uploads/teams/liverpool.png", event["away_team_logo"])
         self.assertEqual(1, composed["composition"]["football_secondary_events_logo_enriched_from_livesporttv"])
+
+    def test_compose_uses_registry_before_livesporttv_for_flashscore_only_logos(self):
+        fanzo = {
+            "schedule": [
+                {
+                    "date": "2026-03-05",
+                    "events": [
+                        {
+                            "name": "Wolverhampton Wanderers v Chelsea",
+                            "sport": "Football",
+                            "time": "18:00",
+                            "start_time_iso": "2026-03-05T18:00:00Z",
+                            "competition": "Premier League",
+                            "channels": ["Sky Sports Main Event"],
+                            "home_team": "Wolverhampton Wanderers",
+                            "away_team": "Chelsea",
+                            "home_team_logo": "fanzo-wolves.png",
+                            "away_team_logo": "fanzo-chelsea.png",
+                        }
+                    ],
+                },
+                {
+                    "date": "2026-03-06",
+                    "events": [],
+                },
+            ]
+        }
+        flashscore = {
+            "source": "flashscore.com",
+            "events": [
+                {
+                    "home_team": "Wolves",
+                    "home_team_slug": "wolverhampton",
+                    "away_team": "Liverpool",
+                    "away_team_slug": "liverpool",
+                    "competition": "FA Cup",
+                    "competition_full": "England: FA Cup",
+                    "start_date": "2026-03-06",
+                    "start_time": "20:00",
+                    "start_time_utc": "2026-03-06T20:00:00Z",
+                    "home_team_logo": "https://static.flashscore.com/res/image/data/wolves-small.png",
+                    "away_team_logo": "https://static.flashscore.com/res/image/data/liverpool-small.png",
+                    "channels": [{"name": "NBC (Usa)", "url": "https://example.com/nbc"}],
+                }
+            ],
+        }
+        livesporttv = {
+            "source": "livesporttv.com",
+            "schedule": [
+                {
+                    "date": "2026-03-06",
+                    "events": [
+                        {
+                            "name": "Wolverhampton Wanderers v Liverpool",
+                            "sport": "Soccer",
+                            "competition": "English FA Cup",
+                            "time": "20:00",
+                            "start_time_iso": "2026-03-06T20:00:00Z",
+                            "home_team": "Wolverhampton Wanderers",
+                            "away_team": "Liverpool",
+                            "home_team_logo": "https://www.livesporttv.com/uploads/teams/wolves.png",
+                            "away_team_logo": "https://www.livesporttv.com/uploads/teams/liverpool.png",
+                        }
+                    ],
+                }
+            ],
+        }
+        registry = {}
+
+        composed = compose_payload(
+            fanzo,
+            flashscore,
+            secondary_source="flashscore.com",
+            livesporttv_payload=livesporttv,
+            team_logo_registry=registry,
+        )
+
+        march_6 = next(day for day in composed["schedule"] if day["date"] == "2026-03-06")
+        event = march_6["events"][0]
+        self.assertEqual("fanzo-wolves.png", event["home_team_logo"])
+        self.assertEqual("https://www.livesporttv.com/uploads/teams/liverpool.png", event["away_team_logo"])
+        self.assertEqual(1, composed["composition"]["football_secondary_events_logo_enriched_from_registry"])
+        self.assertEqual(1, composed["composition"]["football_secondary_events_logo_enriched_from_livesporttv"])
+
+        registry_teams = {entry["team_key"]: entry for entry in registry["teams"]}
+        self.assertIn("Wolves", registry_teams["wolverhampton wanderers"]["aliases"])
+        self.assertIn("wolverhampton", registry_teams["wolverhampton wanderers"]["aliases"])
 
     def test_compose_embeds_static_sport_assets_payload(self):
         fanzo = {"schedule": [{"date": "2026-03-02", "events": []}]}

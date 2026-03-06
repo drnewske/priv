@@ -1,0 +1,1826 @@
+{
+  "generated_at": "2026-03-06T14:23:26Z",
+  "source": "fanzo.com",
+  "schema_version": "fanzo-team-logo-registry-v1",
+  "teams": [
+    {
+      "team_key": "aberdeen",
+      "name": "Aberdeen",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2018-07/5425-aberdeenfc_2018.png",
+      "fanzo_ids": [
+        5425
+      ],
+      "aliases": [
+        "Aberdeen"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "aek",
+      "name": "AEK",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2018-08/5446-aek-athens-2018.png",
+      "fanzo_ids": [
+        5446
+      ],
+      "aliases": [
+        "AEK"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "aek larnaca",
+      "name": "AEK Larnaca",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/5447/logo_1678377567.png",
+      "fanzo_ids": [
+        5447
+      ],
+      "aliases": [
+        "AEK Larnaca"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "alaves",
+      "name": "Alaves",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/5468/logo_1697804028.png",
+      "fanzo_ids": [
+        5468
+      ],
+      "aliases": [
+        "Alaves"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "albacete",
+      "name": "Albacete",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/5469/logo_1707131732.png",
+      "fanzo_ids": [
+        5469
+      ],
+      "aliases": [
+        "Albacete"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "andorra",
+      "name": "FC Andorra",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/17439/logo_1709681696.png",
+      "fanzo_ids": [
+        17439
+      ],
+      "aliases": [
+        "FC Andorra"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "arsenal",
+      "name": "Arsenal",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/5552/logo_1692694905.png",
+      "fanzo_ids": [
+        5552
+      ],
+      "aliases": [
+        "Arsenal"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "aston villa",
+      "name": "Aston Villa",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/5567/logo_1692694922.png",
+      "fanzo_ids": [
+        5567
+      ],
+      "aliases": [
+        "Aston Villa"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "atalanta",
+      "name": "Atalanta",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/5568/logo_1698054632.png",
+      "fanzo_ids": [
+        5568
+      ],
+      "aliases": [
+        "Atalanta"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "ath bilbao",
+      "name": "Ath Bilbao",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/1/5573.png",
+      "fanzo_ids": [
+        5573
+      ],
+      "aliases": [
+        "Ath Bilbao",
+        "ath-bilbao"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "atl madrid",
+      "name": "Atl Madrid",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/5581/logo_1697712650.png",
+      "fanzo_ids": [
+        5581
+      ],
+      "aliases": [
+        "Atl Madrid",
+        "Atl. Madrid",
+        "atl-madrid"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "auckland",
+      "name": "Auckland FC",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/27668/logo_1728968124.png",
+      "fanzo_ids": [
+        27668
+      ],
+      "aliases": [
+        "Auckland FC"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "az alkmaar",
+      "name": "AZ Alkmaar",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/1/5607.png",
+      "fanzo_ids": [
+        5607
+      ],
+      "aliases": [
+        "AZ Alkmaar"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "barcelona",
+      "name": "Barcelona",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/5644/logo_1698152936.png",
+      "fanzo_ids": [
+        5644
+      ],
+      "aliases": [
+        "Barcelona"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "bayern munich",
+      "name": "Bayern Munich",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/14045/logo_1697806754.png",
+      "fanzo_ids": [
+        14045
+      ],
+      "aliases": [
+        "Bayern Munich",
+        "bayern-munich"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "betis",
+      "name": "Betis",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/5722/logo_1697803515.png",
+      "fanzo_ids": [
+        5722
+      ],
+      "aliases": [
+        "Betis"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "bodo glimt",
+      "name": "Bodo/Glimt",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/5769/logo_1633695096.png",
+      "fanzo_ids": [
+        5769
+      ],
+      "aliases": [
+        "Bodo/Glimt"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "bologna",
+      "name": "Bologna",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/5776/logo_1698054788.png",
+      "fanzo_ids": [
+        5776
+      ],
+      "aliases": [
+        "Bologna"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "borussia dortmund",
+      "name": "Borussia Dortmund",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/5794/logo_1697806937.png",
+      "fanzo_ids": [
+        5794
+      ],
+      "aliases": [
+        "Borussia Dortmund",
+        "Dortmund"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "borussia monchengladbach",
+      "name": "Mgladbach",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/1/5795.png",
+      "fanzo_ids": [
+        5795
+      ],
+      "aliases": [
+        "Mgladbach",
+        "B. Monchengladbach",
+        "b-monchengladbach"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "braga",
+      "name": "Braga",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/5809/logo_1692700359.png",
+      "fanzo_ids": [
+        5809
+      ],
+      "aliases": [
+        "Braga"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "brentford",
+      "name": "Brentford",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/5823/logo_1692694960.png",
+      "fanzo_ids": [
+        5823
+      ],
+      "aliases": [
+        "Brentford"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "burgos",
+      "name": "Burgos",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/8648/logo_1633686288.png",
+      "fanzo_ids": [
+        8648
+      ],
+      "aliases": [
+        "Burgos"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "cadiz",
+      "name": "Cadiz",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/9276/logo_1697803809.png",
+      "fanzo_ids": [
+        9276
+      ],
+      "aliases": [
+        "Cadiz"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "castellon",
+      "name": "Castellon",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/27426/logo_1743997067.png",
+      "fanzo_ids": [
+        27426
+      ],
+      "aliases": [
+        "Castellon"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "celta vigo",
+      "name": "Celta Vigo",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/5962/logo_1697804079.png",
+      "fanzo_ids": [
+        5962
+      ],
+      "aliases": [
+        "Celta Vigo",
+        "celta-vigo"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "celtic",
+      "name": "Celtic",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/5963/logo_1724928619.png",
+      "fanzo_ids": [
+        5963
+      ],
+      "aliases": [
+        "Celtic"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "ceuta",
+      "name": "Ceuta",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/9452/logo_1758633852.png",
+      "fanzo_ids": [
+        9452
+      ],
+      "aliases": [
+        "Ceuta"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "chelsea",
+      "name": "Chelsea",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/5986/logo_1692694990.png",
+      "fanzo_ids": [
+        5986
+      ],
+      "aliases": [
+        "Chelsea"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "cordoba",
+      "name": "Cordoba",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/1/8525.png",
+      "fanzo_ids": [
+        8525
+      ],
+      "aliases": [
+        "Cordoba"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "coventry",
+      "name": "Coventry",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/1/6100.png",
+      "fanzo_ids": [
+        6100
+      ],
+      "aliases": [
+        "Coventry"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "crystal palace",
+      "name": "Crystal Palace",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/5897/logo_1692695007.png",
+      "fanzo_ids": [
+        5897
+      ],
+      "aliases": [
+        "Crystal Palace"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "deportivo",
+      "name": "Deportivo",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/1/6194.png",
+      "fanzo_ids": [
+        6194
+      ],
+      "aliases": [
+        "Deportivo"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "dundee united",
+      "name": "Dundee Utd",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2015-11/6275-dundeeutd.png",
+      "fanzo_ids": [
+        6275
+      ],
+      "aliases": [
+        "Dundee Utd"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "dunfermline",
+      "name": "Dunfermline",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/1/6278.png",
+      "fanzo_ids": [
+        6278
+      ],
+      "aliases": [
+        "Dunfermline"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "eibar",
+      "name": "Eibar",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2015-03/SD_Eibar_logo.png",
+      "fanzo_ids": [
+        6342
+      ],
+      "aliases": [
+        "Eibar"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "elche",
+      "name": "Elche",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/8520/logo_1606995503.png",
+      "fanzo_ids": [
+        8520
+      ],
+      "aliases": [
+        "Elche"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "england w",
+      "name": "England (W)",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/9923/logo_1679568725.png",
+      "fanzo_ids": [
+        9923
+      ],
+      "aliases": [
+        "England (W)"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "espanyol",
+      "name": "Espanyol",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/1/6374.png",
+      "fanzo_ids": [
+        6374
+      ],
+      "aliases": [
+        "Espanyol"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "falkirk",
+      "name": "Falkirk",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2015-03/Falkirk-FC.png",
+      "fanzo_ids": [
+        6396
+      ],
+      "aliases": [
+        "Falkirk"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "ferencvaros",
+      "name": "Ferencvaros",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/6444/logo_1598255931.png",
+      "fanzo_ids": [
+        6444
+      ],
+      "aliases": [
+        "Ferencvaros"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "fiorentina",
+      "name": "Fiorentina",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/6456/logo_1698054496.png",
+      "fanzo_ids": [
+        6456
+      ],
+      "aliases": [
+        "Fiorentina"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "freiburg",
+      "name": "Freiburg",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/6508/logo_1697808372.png",
+      "fanzo_ids": [
+        6508
+      ],
+      "aliases": [
+        "Freiburg"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "fulham",
+      "name": "Fulham",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/6515/logo_1692695037.png",
+      "fanzo_ids": [
+        6515
+      ],
+      "aliases": [
+        "Fulham"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "galatasaray",
+      "name": "Galatasaray",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/6524/logo_1759142401.png",
+      "fanzo_ids": [
+        6524
+      ],
+      "aliases": [
+        "Galatasaray"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "genk",
+      "name": "Genk",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/6538/logo_1633700339.png",
+      "fanzo_ids": [
+        6538
+      ],
+      "aliases": [
+        "Genk"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "genoa",
+      "name": "Genoa",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/6539/logo_1698066554.png",
+      "fanzo_ids": [
+        6539
+      ],
+      "aliases": [
+        "Genoa"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "getafe",
+      "name": "Getafe",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/8521/logo_1697803739.png",
+      "fanzo_ids": [
+        8521
+      ],
+      "aliases": [
+        "Getafe"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "gijon",
+      "name": "Gijon",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/1/7953.png",
+      "fanzo_ids": [
+        7953
+      ],
+      "aliases": [
+        "Gijon"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "girona",
+      "name": "Girona",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/9832/logo_1697712352.png",
+      "fanzo_ids": [
+        9832
+      ],
+      "aliases": [
+        "Girona"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "granada",
+      "name": "Granada",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/10585/logo_1697804105.png",
+      "fanzo_ids": [
+        10585
+      ],
+      "aliases": [
+        "Granada"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "huesca",
+      "name": "Huesca",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/10579/logo_1599851180.png",
+      "fanzo_ids": [
+        10579
+      ],
+      "aliases": [
+        "Huesca"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "hull city",
+      "name": "Hull City",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2016-07/6795-1410464880_fc-hull-city.png",
+      "fanzo_ids": [
+        6795
+      ],
+      "aliases": [
+        "Hull City"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "iceland w",
+      "name": "Iceland (W)",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/11397/logo_1679578079.png",
+      "fanzo_ids": [
+        11397
+      ],
+      "aliases": [
+        "Iceland (W)"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "inter",
+      "name": "Inter",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/6839/logo_1698054351.png",
+      "fanzo_ids": [
+        6839
+      ],
+      "aliases": [
+        "Inter"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "ipswich",
+      "name": "Ipswich",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2018-02/6850-ipswichfc.png",
+      "fanzo_ids": [
+        6850
+      ],
+      "aliases": [
+        "Ipswich"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "koln",
+      "name": "FC Koln",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/6066/logo_1697812638.png",
+      "fanzo_ids": [
+        6066
+      ],
+      "aliases": [
+        "FC Koln",
+        "1-fc-koln"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "las palmas",
+      "name": "Las Palmas",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/7012/logo_1697803712.png",
+      "fanzo_ids": [
+        7012
+      ],
+      "aliases": [
+        "Las Palmas"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "lech poznan",
+      "name": "Lech Poznan",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/7024/logo_1764292392.png",
+      "fanzo_ids": [
+        7024
+      ],
+      "aliases": [
+        "Lech Poznan"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "leeds",
+      "name": "Leeds",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2018-02/7026-leedsunited201.png",
+      "fanzo_ids": [
+        7026
+      ],
+      "aliases": [
+        "Leeds"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "leganes",
+      "name": "Leganes",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2016-07/8523-leganes1617.png",
+      "fanzo_ids": [
+        8523
+      ],
+      "aliases": [
+        "Leganes"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "levante",
+      "name": "Levante",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/1/8516.png",
+      "fanzo_ids": [
+        8516
+      ],
+      "aliases": [
+        "Levante"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "leverkusen",
+      "name": "Leverkusen",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/5675/logo_1697806629.png",
+      "fanzo_ids": [
+        5675
+      ],
+      "aliases": [
+        "Leverkusen"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "lille",
+      "name": "Lille",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/7063/logo_1679287466.png",
+      "fanzo_ids": [
+        7063
+      ],
+      "aliases": [
+        "Lille"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "liverpool",
+      "name": "Liverpool",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/7086/logo_1692695064.png",
+      "fanzo_ids": [
+        7086
+      ],
+      "aliases": [
+        "Liverpool"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "luxembourg w",
+      "name": "Luxembourg (W)",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/18830/logo_1679579148.png",
+      "fanzo_ids": [
+        18830
+      ],
+      "aliases": [
+        "Luxembourg (W)"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "lyon",
+      "name": "Lyon",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/7150/logo_1679287564.png",
+      "fanzo_ids": [
+        7150
+      ],
+      "aliases": [
+        "Lyon"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "mainz",
+      "name": "Mainz",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/7164/logo_1697812609.png",
+      "fanzo_ids": [
+        7164
+      ],
+      "aliases": [
+        "Mainz"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "malaga",
+      "name": "Malaga",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/1/8527.png",
+      "fanzo_ids": [
+        8527
+      ],
+      "aliases": [
+        "Malaga"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "mallorca",
+      "name": "Mallorca",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/8528/logo_1697803936.png",
+      "fanzo_ids": [
+        8528
+      ],
+      "aliases": [
+        "Mallorca"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "manchester city",
+      "name": "Man City",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/7172/logo_1692695085.png",
+      "fanzo_ids": [
+        7172
+      ],
+      "aliases": [
+        "Man City",
+        "Manchester City",
+        "manchester-city"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "mansfield",
+      "name": "Mansfield",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/7178/logo_1652864815.png",
+      "fanzo_ids": [
+        7178
+      ],
+      "aliases": [
+        "Mansfield"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "melbourne victory",
+      "name": "Melbourne Victory",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/10009/logo_1581507115.png",
+      "fanzo_ids": [
+        10009
+      ],
+      "aliases": [
+        "Melbourne Victory"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "midtjylland",
+      "name": "FC Midtjylland",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2016-02/6429-fc_midtjylland.png",
+      "fanzo_ids": [
+        6429
+      ],
+      "aliases": [
+        "FC Midtjylland"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "milan",
+      "name": "AC Milan",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/5432/logo_1698054376.png",
+      "fanzo_ids": [
+        5432
+      ],
+      "aliases": [
+        "AC Milan",
+        "ac-milan"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "millwall",
+      "name": "Millwall",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2018-01/7238-millwallfc2018.png",
+      "fanzo_ids": [
+        7238
+      ],
+      "aliases": [
+        "Millwall"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "mirandes",
+      "name": "Mirandes",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/9454/logo_1633685134.png",
+      "fanzo_ids": [
+        9454
+      ],
+      "aliases": [
+        "Mirandes"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "newcastle",
+      "name": "Newcastle",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/7341/logo_1692695130.png",
+      "fanzo_ids": [
+        7341
+      ],
+      "aliases": [
+        "Newcastle",
+        "newcastle-utd"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "newcastle jets",
+      "name": "Newcastle Jets",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/10006/logo_1581507125.png",
+      "fanzo_ids": [
+        10006
+      ],
+      "aliases": [
+        "Newcastle Jets"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "nk celje",
+      "name": "NK Celje",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/27811/logo_1743989768.png",
+      "fanzo_ids": [
+        27811
+      ],
+      "aliases": [
+        "NK Celje"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "norwich",
+      "name": "Norwich",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2018-02/7393-norwich.png",
+      "fanzo_ids": [
+        7393
+      ],
+      "aliases": [
+        "Norwich"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "nottingham forest",
+      "name": "Nottingham Forest",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/7395/logo_1692695156.png",
+      "fanzo_ids": [
+        7395
+      ],
+      "aliases": [
+        "Nottingham Forest"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "osasuna",
+      "name": "Osasuna",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/7459/logo_1697803776.png",
+      "fanzo_ids": [
+        7459
+      ],
+      "aliases": [
+        "Osasuna"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "oxford united",
+      "name": "Oxford Utd",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2016-07/7478-oxford_united_fc.svg.png",
+      "fanzo_ids": [
+        7478
+      ],
+      "aliases": [
+        "Oxford Utd"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "panathinaikos",
+      "name": "Panathinaikos",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/24415/logo_1691596216.png",
+      "fanzo_ids": [
+        24414
+      ],
+      "aliases": [
+        "Panathinaikos"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "paris",
+      "name": "Paris",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/7501/logo_1678290850.png",
+      "fanzo_ids": [
+        7501
+      ],
+      "aliases": [
+        "Paris",
+        "Paris FC",
+        "paris-fc"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "partick",
+      "name": "Partick",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2015-11/7507-partick_thistle_fc_logo.png",
+      "fanzo_ids": [
+        7507
+      ],
+      "aliases": [
+        "Partick"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "perth glory",
+      "name": "Perth Glory",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/7529/logo_1581507133.png",
+      "fanzo_ids": [
+        7529
+      ],
+      "aliases": [
+        "Perth Glory"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "port vale",
+      "name": "Port Vale",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/1/7581.png",
+      "fanzo_ids": [
+        7581
+      ],
+      "aliases": [
+        "Port Vale",
+        "port-vale"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "porto",
+      "name": "Porto",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/7589/logo_1721363643.png",
+      "fanzo_ids": [
+        7589
+      ],
+      "aliases": [
+        "Porto"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "preston",
+      "name": "Preston",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2016-07/7601-preston_north_end_fc_logo_(125th_anniversary).png",
+      "fanzo_ids": [
+        7601
+      ],
+      "aliases": [
+        "Preston"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "psv",
+      "name": "PSV",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/7608/logo_1692700584.png",
+      "fanzo_ids": [
+        7608
+      ],
+      "aliases": [
+        "PSV"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "rakow",
+      "name": "Rakow",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/9319/logo_1692700474.png",
+      "fanzo_ids": [
+        9319
+      ],
+      "aliases": [
+        "Rakow"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "rangers",
+      "name": "Rangers",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/7639/logo_1724928696.png",
+      "fanzo_ids": [
+        7639
+      ],
+      "aliases": [
+        "Rangers"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "rayo vallecano",
+      "name": "Rayo Vallecano",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/10939/logo_1697803565.png",
+      "fanzo_ids": [
+        10939
+      ],
+      "aliases": [
+        "Rayo Vallecano",
+        "rayo-vallecano"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "real madrid",
+      "name": "Real Madrid",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/7654/logo_1697712291.png",
+      "fanzo_ids": [
+        7654
+      ],
+      "aliases": [
+        "Real Madrid",
+        "real-madrid"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "real oviedo",
+      "name": "Real Oviedo",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/7476/logo_1633695450.png",
+      "fanzo_ids": [
+        7476
+      ],
+      "aliases": [
+        "Real Oviedo",
+        "Oviedo",
+        "real-oviedo"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "rijeka",
+      "name": "Rijeka",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/24645/logo_1693389822.png",
+      "fanzo_ids": [
+        24644
+      ],
+      "aliases": [
+        "Rijeka"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "roma",
+      "name": "Roma",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/7706/logo_1698054691.png",
+      "fanzo_ids": [
+        7706
+      ],
+      "aliases": [
+        "Roma",
+        "AS Roma",
+        "as-roma"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "saint mirren",
+      "name": "St Mirren",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2018-08/7980-stmirrenfc2018.png",
+      "fanzo_ids": [
+        7980
+      ],
+      "aliases": [
+        "St Mirren"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "samsunspor",
+      "name": "Samsunspor",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/24540/logo_1762508409.png",
+      "fanzo_ids": [
+        24540
+      ],
+      "aliases": [
+        "Samsunspor"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "santander",
+      "name": "Santander",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/1/7624.png",
+      "fanzo_ids": [
+        7624
+      ],
+      "aliases": [
+        "Santander"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "scotland w",
+      "name": "Scotland (W)",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/9924/logo_1679569373.png",
+      "fanzo_ids": [
+        9924
+      ],
+      "aliases": [
+        "Scotland (W)"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "sevilla",
+      "name": "Sevilla FC",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/7818/logo_1753883655.png",
+      "fanzo_ids": [
+        7818
+      ],
+      "aliases": [
+        "Sevilla FC",
+        "Sevilla"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "shakhtar",
+      "name": "Shakhtar",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/7822/logo_1698152953.png",
+      "fanzo_ids": [
+        7822
+      ],
+      "aliases": [
+        "Shakhtar"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "sigma olomouc",
+      "name": "Sigma Olomouc",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/7859/logo_1762508361.png",
+      "fanzo_ids": [
+        7859
+      ],
+      "aliases": [
+        "Sigma Olomouc"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "sociedad b",
+      "name": "Sociedad B",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/1/7656.png",
+      "fanzo_ids": [
+        10568,
+        7656
+      ],
+      "aliases": [
+        "Sociedad B",
+        "Sociedad",
+        "Real Sociedad",
+        "real-sociedad"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "southampton",
+      "name": "Southampton",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/7922/logo_1673615729.png",
+      "fanzo_ids": [
+        7922
+      ],
+      "aliases": [
+        "Southampton"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "sparta prague",
+      "name": "Sparta Prague",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2016-09/7938-1024px-sparta_prague_logo.svg.png",
+      "fanzo_ids": [
+        7938
+      ],
+      "aliases": [
+        "Sparta Prague"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "sporting lisbon",
+      "name": "Sporting Lisbon",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2018-09/7954-sportinglisbon2018.png",
+      "fanzo_ids": [
+        7954
+      ],
+      "aliases": [
+        "Sporting Lisbon"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "stoke",
+      "name": "Stoke",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2017-08/8029-stoke_city2017.png",
+      "fanzo_ids": [
+        8029
+      ],
+      "aliases": [
+        "Stoke"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "strasbourg",
+      "name": "Strasbourg",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/8041/logo_1679287678.png",
+      "fanzo_ids": [
+        8041
+      ],
+      "aliases": [
+        "Strasbourg"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "stuttgart",
+      "name": "Stuttgart",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/8051/logo_1697806683.png",
+      "fanzo_ids": [
+        8051
+      ],
+      "aliases": [
+        "Stuttgart",
+        "vfb-stuttgart"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "sunderland",
+      "name": "Sunderland",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/2018-07/8058-sunderlandfc2018.png",
+      "fanzo_ids": [
+        8058
+      ],
+      "aliases": [
+        "Sunderland"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "sydney",
+      "name": "Sydney FC",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/10005/logo_1581507145.png",
+      "fanzo_ids": [
+        10005
+      ],
+      "aliases": [
+        "Sydney FC"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "tottenham hotspur",
+      "name": "Tottenham",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/8151/logo_1755008089.png",
+      "fanzo_ids": [
+        8151
+      ],
+      "aliases": [
+        "Tottenham"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "valencia",
+      "name": "Valencia",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/8251/logo_1697803630.png",
+      "fanzo_ids": [
+        8251
+      ],
+      "aliases": [
+        "Valencia"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "valladolid",
+      "name": "Valladolid",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/1/8253.png",
+      "fanzo_ids": [
+        8253
+      ],
+      "aliases": [
+        "Valladolid"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "villarreal",
+      "name": "Villarreal",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/8288/logo_1697803971.png",
+      "fanzo_ids": [
+        8288
+      ],
+      "aliases": [
+        "Villarreal"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "west ham",
+      "name": "West Ham",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/8372/logo_1692695201.png",
+      "fanzo_ids": [
+        8372
+      ],
+      "aliases": [
+        "West Ham",
+        "west-ham"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "west sydney wanderers",
+      "name": "West Sydney Wanderers",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/15363/logo_1613602278.png",
+      "fanzo_ids": [
+        15363
+      ],
+      "aliases": [
+        "West Sydney Wanderers"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    },
+    {
+      "team_key": "wolverhampton wanderers",
+      "name": "Wolves",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/8451/logo_1692695218.png",
+      "fanzo_ids": [
+        8451
+      ],
+      "aliases": [
+        "Wolves"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "wrexham",
+      "name": "Wrexham",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/8467/logo_1675689204.png",
+      "fanzo_ids": [
+        8467
+      ],
+      "aliases": [
+        "Wrexham"
+      ],
+      "sources": [
+        "fanzo",
+        "flashscore.com"
+      ]
+    },
+    {
+      "team_key": "zaragoza",
+      "name": "Zaragoza",
+      "logo": "https://matchpint-cdn.matchpint.cloud/shared/imagenes/teams/1/7657.png",
+      "fanzo_ids": [
+        7657
+      ],
+      "aliases": [
+        "Zaragoza"
+      ],
+      "sources": [
+        "fanzo"
+      ]
+    }
+  ]
+}
