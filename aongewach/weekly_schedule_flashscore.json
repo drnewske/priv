@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-06T11:50:28Z",
+  "generated_at": "2026-03-07T06:32:08Z",
   "source": "flashscore.com",
   "config": {
     "host": "https://global.flashscore.ninja",
@@ -13,332 +13,54 @@
     "day_start": 0,
     "top_competitions_only": true,
     "max_channels_per_event": 4,
-    "total_events": 73,
-    "total_events_with_channels": 59
+    "total_events": 71,
+    "total_events_with_channels": 57
   },
   "day_summaries": [
     {
       "day_offset": 0,
-      "events_before_competition_filter": 456,
-      "events": 9,
-      "events_with_channels": 7
-    },
-    {
-      "day_offset": 1,
-      "events_before_competition_filter": 1649,
+      "events_before_competition_filter": 1644,
       "events": 26,
       "events_with_channels": 24
     },
     {
-      "day_offset": 2,
+      "day_offset": 1,
       "events_before_competition_filter": 1184,
       "events": 31,
       "events_with_channels": 24
     },
     {
-      "day_offset": 3,
-      "events_before_competition_filter": 205,
+      "day_offset": 2,
+      "events_before_competition_filter": 207,
       "events": 4,
       "events_with_channels": 4
     },
     {
+      "day_offset": 3,
+      "events_before_competition_filter": 249,
+      "events": 0,
+      "events_with_channels": 0
+    },
+    {
       "day_offset": 4,
-      "events_before_competition_filter": 245,
+      "events_before_competition_filter": 283,
       "events": 0,
       "events_with_channels": 0
     },
     {
       "day_offset": 5,
-      "events_before_competition_filter": 289,
-      "events": 0,
+      "events_before_competition_filter": 199,
+      "events": 3,
       "events_with_channels": 0
     },
     {
       "day_offset": 6,
-      "events_before_competition_filter": 180,
-      "events": 3,
-      "events_with_channels": 0
+      "events_before_competition_filter": 459,
+      "events": 7,
+      "events_with_channels": 5
     }
   ],
   "events": [
-    {
-      "home_team": "Wolves",
-      "away_team": "Liverpool",
-      "home_team_short": "WOL",
-      "away_team_short": "LIV",
-      "home_team_slug": "wolves",
-      "away_team_slug": "liverpool",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/MV7MiUmC-ABWS7fBq.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/nBClzyne-KCp4zq5F.png",
-      "competition": "FA Cup",
-      "competition_full": "ENGLAND: FA Cup",
-      "country": "England",
-      "competition_id": "lYQtaqPQ",
-      "competition_url": "https://www.flashscore.com/football/england/fa-cup/",
-      "start_date": "2026-03-06",
-      "start_time": "20:00",
-      "start_time_utc": "2026-03-06T20:00:00Z",
-      "channels": [
-        {
-          "name": "SuperSport MaXimo 2",
-          "url": "https://supersport.com/"
-        },
-        {
-          "name": "BBC One",
-          "url": "http://www.bbc.co.uk/iplayer/schedules/bbcone"
-        },
-        {
-          "name": "beIN Sports MENA English 1",
-          "url": "https://www.beinsports.com/en-mena"
-        },
-        {
-          "name": "DAZN 2",
-          "url": "https://prf.hn/click/camref:1011lfsUi"
-        }
-      ]
-    },
-    {
-      "home_team": "PSG",
-      "away_team": "Monaco",
-      "home_team_short": "PSG",
-      "away_team_short": "MON",
-      "home_team_slug": "psg",
-      "away_team_slug": "monaco",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/fJgGn26k-A7UDDuOO.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/n3jLkyne-0SFGJsPk.png",
-      "competition": "Ligue 1",
-      "competition_full": "FRANCE: Ligue 1",
-      "country": "France",
-      "competition_id": "KIShoMk3",
-      "competition_url": "https://www.flashscore.com/football/france/ligue-1/",
-      "start_date": "2026-03-06",
-      "start_time": "19:45",
-      "start_time_utc": "2026-03-06T19:45:00Z",
-      "channels": [
-        {
-          "name": "beIN Sports US Espanol",
-          "url": "https://www.beinxtraespanol.com/us-es/index.html"
-        },
-        {
-          "name": "SuperSport GOtv Football",
-          "url": "https://www.gotvafrica.com/en-ng"
-        },
-        {
-          "name": "beIN Sports MENA 1",
-          "url": "https://www.beinsports.com/en-mena"
-        },
-        {
-          "name": "Eleven Sports 3",
-          "url": "https://w14i16.dashboard.wedare.pl/ts/96114/tsc?typ=r&amc=con.wedare.541078.561994.CRTCUUBzSos"
-        }
-      ]
-    },
-    {
-      "home_team": "Bayern Munich",
-      "away_team": "B. Monchengladbach",
-      "home_team_short": "BAY",
-      "away_team_short": "MON",
-      "home_team_slug": "bayern-munich",
-      "away_team_slug": "b-monchengladbach",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/lWGBVoA6-SvLFaVNH.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/tjlAHwhT-84sATBUR.png",
-      "competition": "Bundesliga",
-      "competition_full": "GERMANY: Bundesliga",
-      "country": "Germany",
-      "competition_id": "W6BOzpK2",
-      "competition_url": "https://www.flashscore.com/football/germany/bundesliga/",
-      "start_date": "2026-03-06",
-      "start_time": "19:30",
-      "start_time_utc": "2026-03-06T19:30:00Z",
-      "channels": [
-        {
-          "name": "CANAL+ Sport 1",
-          "url": "https://www.canalplus-afrique.com/"
-        },
-        {
-          "name": "BBC Sport",
-          "url": "https://www.bbc.co.uk/iplayer/categories/sport/featured"
-        },
-        {
-          "name": "DAZN 2",
-          "url": "https://dazn.prf.hn/click/camref:1100lLrMj"
-        },
-        {
-          "name": "Eleven Sports 1",
-          "url": "https://w14i16.dashboard.wedare.pl/ts/96114/tsc?typ=r&amc=con.wedare.541078.561994.CRTCUUBzSos"
-        }
-      ]
-    },
-    {
-      "home_team": "Napoli",
-      "away_team": "Torino",
-      "home_team_short": "NAP",
-      "away_team_short": "TOR",
-      "home_team_slug": "napoli",
-      "away_team_slug": "torino",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/tSuMfRjT-Stb48WaO.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/dhGobOA6-0lwy4Ij1.png",
-      "competition": "Serie A",
-      "competition_full": "ITALY: Serie A",
-      "country": "Italy",
-      "competition_id": "COuk57Ci",
-      "competition_url": "https://www.flashscore.com/football/italy/serie-a/",
-      "start_date": "2026-03-06",
-      "start_time": "19:45",
-      "start_time_utc": "2026-03-06T19:45:00Z",
-      "channels": [
-        {
-          "name": "CBS Sports Golazo",
-          "url": "https://www.cbssports.com/"
-        },
-        {
-          "name": "SuperSport Football",
-          "url": "https://supersport.com/"
-        },
-        {
-          "name": "DAZN 1",
-          "url": "https://prf.hn/click/camref:1100lfjaZ"
-        },
-        {
-          "name": "Eleven Sports 2",
-          "url": "https://w14i16.dashboard.wedare.pl/ts/96114/tsc?typ=r&amc=con.wedare.541078.561994.CRTCUUBzSos"
-        }
-      ]
-    },
-    {
-      "home_team": "Al Ahli SC",
-      "away_team": "Al Ittihad",
-      "home_team_short": "AHL",
-      "away_team_short": "AL",
-      "home_team_slug": "al-ahli-sc",
-      "away_team_slug": "al-ittihad",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/YFt73dQq-tjD2oGGi.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/zTFRZ8ne-jeFu6Qy4.png",
-      "competition": "Saudi Professional League",
-      "competition_full": "SAUDI ARABIA: Saudi Professional League",
-      "country": "Saudi Arabia",
-      "competition_id": "tUxUbLR2",
-      "competition_url": "https://www.flashscore.com/football/saudi-arabia/saudi-professional-league/",
-      "start_date": "2026-03-06",
-      "start_time": "19:00",
-      "start_time_utc": "2026-03-06T19:00:00Z",
-      "channels": [
-        {
-          "name": "Fox Soccer Plus",
-          "url": "https://www.foxsports.com/soccer/plus"
-        },
-        {
-          "name": "beIN Sports MENA",
-          "url": "https://www.beinsports.com/en-mena"
-        },
-        {
-          "name": "BandSports",
-          "url": "http://bandsports.band.uol.com.br/"
-        },
-        {
-          "name": "COSMOTE Sport 8",
-          "url": "https://www.cosmotetv.gr/"
-        }
-      ]
-    },
-    {
-      "home_team": "Al Hilal",
-      "away_team": "Al Najma",
-      "home_team_short": "ALH",
-      "away_team_short": "NAJ",
-      "home_team_slug": "al-hilal",
-      "away_team_slug": "al-najma",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/EVoO06R0-joUWHZ1t.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/M96hs86k-lQBgfCk0.png",
-      "competition": "Saudi Professional League",
-      "competition_full": "SAUDI ARABIA: Saudi Professional League",
-      "country": "Saudi Arabia",
-      "competition_id": "tUxUbLR2",
-      "competition_url": "https://www.flashscore.com/football/saudi-arabia/saudi-professional-league/",
-      "start_date": "2026-03-06",
-      "start_time": "19:00",
-      "start_time_utc": "2026-03-06T19:00:00Z",
-      "channels": [
-        {
-          "name": "Sport 24",
-          "url": "https://sport24live.com/"
-        }
-      ]
-    },
-    {
-      "home_team": "Al Khaleej",
-      "away_team": "Al Hazem",
-      "home_team_short": "KHA",
-      "away_team_short": "HAZ",
-      "home_team_slug": "al-khaleej",
-      "away_team_slug": "al-hazem-rass",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/Yqqphp96-W6U2Bfuk.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/ziLCjVoe-YDmGqAgC.png",
-      "competition": "Saudi Professional League",
-      "competition_full": "SAUDI ARABIA: Saudi Professional League",
-      "country": "Saudi Arabia",
-      "competition_id": "tUxUbLR2",
-      "competition_url": "https://www.flashscore.com/football/saudi-arabia/saudi-professional-league/",
-      "start_date": "2026-03-06",
-      "start_time": "19:00",
-      "start_time_utc": "2026-03-06T19:00:00Z",
-      "channels": []
-    },
-    {
-      "home_team": "Al Taawon",
-      "away_team": "Al Fateh",
-      "home_team_short": "TAA",
-      "away_team_short": "FAT",
-      "home_team_slug": "al-taawon",
-      "away_team_slug": "al-fateh",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/WpJmtIVH-zwr48VYG.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/t6XzCy7k-ll4pyUYI.png",
-      "competition": "Saudi Professional League",
-      "competition_full": "SAUDI ARABIA: Saudi Professional League",
-      "country": "Saudi Arabia",
-      "competition_id": "tUxUbLR2",
-      "competition_url": "https://www.flashscore.com/football/saudi-arabia/saudi-professional-league/",
-      "start_date": "2026-03-06",
-      "start_time": "19:00",
-      "start_time_utc": "2026-03-06T19:00:00Z",
-      "channels": []
-    },
-    {
-      "home_team": "Celta Vigo",
-      "away_team": "Real Madrid",
-      "home_team_short": "CEL",
-      "away_team_short": "RMA",
-      "home_team_slug": "celta-vigo",
-      "away_team_slug": "real-madrid",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/INW8oRBN-SOY3p1Si.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/CGPhnpne-ttfpEDUq.png",
-      "competition": "LaLiga",
-      "competition_full": "SPAIN: LaLiga",
-      "country": "Spain",
-      "competition_id": "QVmLl54o",
-      "competition_url": "https://www.flashscore.com/football/spain/laliga/",
-      "start_date": "2026-03-06",
-      "start_time": "20:00",
-      "start_time_utc": "2026-03-06T20:00:00Z",
-      "channels": [
-        {
-          "name": "ESPN Deportes",
-          "url": "https://espndeportes.espn.com/"
-        },
-        {
-          "name": "SuperSport 2",
-          "url": "https://top-channel.tv/sport/?utm_source=supersport&utm_campaign=supersport_redirect"
-        },
-        {
-          "name": "Premier Sports 1",
-          "url": "http://www.premiersports.com/"
-        },
-        {
-          "name": "beIN Sports MENA 2",
-          "url": "https://www.beinsports.com/en-mena"
-        }
-      ]
-    },
     {
       "home_team": "Mansfield",
       "away_team": "Arsenal",
@@ -362,8 +84,8 @@
           "url": "http://www.espn.com/"
         },
         {
-          "name": "SuperSport MaXimo 1",
-          "url": "https://supersport.com/"
+          "name": "SuperSport 2",
+          "url": "https://top-channel.tv/sport/?utm_source=supersport&utm_campaign=supersport_redirect"
         },
         {
           "name": "TNT Sports 1",
@@ -394,20 +116,20 @@
       "start_time_utc": "2026-03-07T17:45:00Z",
       "channels": [
         {
-          "name": "SuperSport GOtv Football",
-          "url": "https://www.gotvafrica.com/en-ng"
+          "name": "ZNBC 1",
+          "url": "http://www.znbc.co.zm/"
+        },
+        {
+          "name": "SuperSport 1",
+          "url": "https://top-channel.tv/sport/?utm_source=supersport&utm_campaign=supersport_redirect"
         },
         {
           "name": "BBC One",
           "url": "http://www.bbc.co.uk/iplayer/schedules/bbcone"
         },
         {
-          "name": "beIN Sports MENA English 1",
+          "name": "beIN Sports MENA 3",
           "url": "https://www.beinsports.com/en-mena"
-        },
-        {
-          "name": "DAZN 2",
-          "url": "https://prf.hn/click/camref:1011lfsUi"
         }
       ]
     },
@@ -434,8 +156,8 @@
           "url": "https://top-channel.tv/sport/?utm_source=supersport&utm_campaign=supersport_redirect"
         },
         {
-          "name": "TNT Sports 1",
-          "url": "https://www.tntsports.co.uk/"
+          "name": "Premier Sports 1",
+          "url": "https://www.psn.mn/"
         },
         {
           "name": "beIN Sports MENA 1",
@@ -466,6 +188,10 @@
       "start_time_utc": "2026-03-07T16:00:00Z",
       "channels": [
         {
+          "name": "CANAL+ Sport 2",
+          "url": "https://www.canalplus-afrique.com/"
+        },
+        {
           "name": "beIN Sports MENA 5",
           "url": "https://www.beinsports.com/en-mena"
         },
@@ -476,10 +202,6 @@
         {
           "name": "Arena Sport 1x2",
           "url": "http://www.tvarenasport.com/"
-        },
-        {
-          "name": "Arena Sport 3",
-          "url": "http://www.tvarenasport.hr/"
         }
       ]
     },
@@ -506,16 +228,16 @@
           "url": "https://www.beinxtraespanol.com/us-es/index.html"
         },
         {
+          "name": "CANAL+ Sport 2",
+          "url": "https://www.canalplus-afrique.com/"
+        },
+        {
           "name": "beIN Sports MENA 4",
           "url": "https://www.beinsports.com/en-mena"
         },
         {
           "name": "Eleven Sports 3",
           "url": "https://w14i16.dashboard.wedare.pl/ts/96114/tsc?typ=r&amc=con.wedare.541078.561994.CRTCUUBzSos"
-        },
-        {
-          "name": "5 PLUS Israel",
-          "url": "https://www.sport5.co.il/"
         }
       ]
     },
@@ -538,8 +260,12 @@
       "start_time_utc": "2026-03-07T20:05:00Z",
       "channels": [
         {
-          "name": "SuperSport Variety 4",
-          "url": "https://supersport.com/"
+          "name": "beIN Sports US Espanol",
+          "url": "https://www.beinxtraespanol.com/us-es/index.html"
+        },
+        {
+          "name": "SuperSport GOtv Football",
+          "url": "https://www.gotvafrica.com/en-ng"
         },
         {
           "name": "beIN Sports MENA 3",
@@ -548,10 +274,6 @@
         {
           "name": "Eleven Sports 3",
           "url": "https://w14i16.dashboard.wedare.pl/ts/96114/tsc?typ=r&amc=con.wedare.541078.561994.CRTCUUBzSos"
-        },
-        {
-          "name": "Nova Sport 3",
-          "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
         }
       ]
     },
@@ -646,6 +368,10 @@
       "start_time_utc": "2026-03-07T14:30:00Z",
       "channels": [
         {
+          "name": "Startimes Sports Arena",
+          "url": "https://www.flashscore.com/startimestv.com/browser/liveDetail?channelId=445"
+        },
+        {
           "name": "Premier Sports 5",
           "url": "https://www.psn.mn/"
         },
@@ -656,10 +382,6 @@
         {
           "name": "Eleven Sports 2",
           "url": "https://w14i16.dashboard.wedare.pl/ts/96114/tsc?typ=r&amc=con.wedare.541078.561994.CRTCUUBzSos"
-        },
-        {
-          "name": "Arena Sport 1",
-          "url": "http://www.tvarenasport.com/"
         }
       ]
     },
@@ -718,6 +440,10 @@
       "start_time_utc": "2026-03-07T14:30:00Z",
       "channels": [
         {
+          "name": "Startimes Sports Focus",
+          "url": "https://www.startimestv.com"
+        },
+        {
           "name": "Sky Sports Norte",
           "url": "https://www.skycostarica.com/"
         },
@@ -728,10 +454,6 @@
         {
           "name": "Arena Sport 8",
           "url": "https://www.tvarenasport.com/"
-        },
-        {
-          "name": "beIN Sports MAX 7",
-          "url": "http://www.beinsports.com/france"
         }
       ]
     },
@@ -758,8 +480,8 @@
           "url": "https://www.espn.com.ar/"
         },
         {
-          "name": "Sporty TV",
-          "url": "https://sporty.com/"
+          "name": "CANAL+ Sport 1",
+          "url": "https://www.canalplus-afrique.com/"
         },
         {
           "name": "NOW",
@@ -862,8 +584,8 @@
       "start_time_utc": "2026-03-07T19:45:00Z",
       "channels": [
         {
-          "name": "ESPN 2",
-          "url": "https://www.espn.com.ar/"
+          "name": "CBS Sports Golazo",
+          "url": "https://www.cbssports.com/"
         },
         {
           "name": "SuperSport Football",
@@ -898,6 +620,10 @@
       "start_time_utc": "2026-03-07T19:00:00Z",
       "channels": [
         {
+          "name": "BandSports",
+          "url": "http://bandsports.band.uol.com.br/"
+        },
+        {
           "name": "SporTV",
           "url": "https://ge.globo.com/sportv/"
         }
@@ -930,12 +656,12 @@
           "url": "https://sporty.com/"
         },
         {
-          "name": "BandSports",
-          "url": "http://bandsports.band.uol.com.br/"
-        },
-        {
           "name": "FanCode",
           "url": "https://www.fancode.com/"
+        },
+        {
+          "name": "Fox Sports",
+          "url": "https://www.foxsports.com.mx/"
         }
       ]
     },
@@ -966,12 +692,12 @@
           "url": "https://sporty.com/"
         },
         {
-          "name": "BandSports",
-          "url": "http://bandsports.band.uol.com.br/"
-        },
-        {
           "name": "Channel 10",
           "url": "https://10play.com.au/"
+        },
+        {
+          "name": "Claro TV+",
+          "url": "https://www.clarotvmais.com.br/"
         }
       ]
     },
@@ -1228,8 +954,8 @@
           "url": "http://www.espn.com/"
         },
         {
-          "name": "SuperSport GOtv Football",
-          "url": "https://www.gotvafrica.com/en-ng"
+          "name": "SuperSport 2",
+          "url": "https://top-channel.tv/sport/?utm_source=supersport&utm_campaign=supersport_redirect"
         },
         {
           "name": "TNT Sports 2",
@@ -1548,8 +1274,8 @@
       "start_time_utc": "2026-03-08T16:30:00Z",
       "channels": [
         {
-          "name": "Startimes World Football",
-          "url": "https://www.startimestv.com/"
+          "name": "Azam Sports 2",
+          "url": "https://sports.azamtv.co.tz/"
         },
         {
           "name": "Premier Sports 4",
@@ -1656,20 +1382,20 @@
       "start_time_utc": "2026-03-08T14:00:00Z",
       "channels": [
         {
+          "name": "SuperSport Football",
+          "url": "https://en.wikipedia.org/wiki/SuperSport_(South_African_broadcaster)"
+        },
+        {
           "name": "Eleven Sports 3",
           "url": "https://w14i16.dashboard.wedare.pl/ts/96114/tsc?typ=r&amc=con.wedare.541078.561994.CRTCUUBzSos"
         },
         {
+          "name": "214 DAZN Zona",
+          "url": "https://www.dazn.com/"
+        },
+        {
           "name": "215 DAZN Zona",
           "url": "https://www.dazn.com/en-CZ/home"
-        },
-        {
-          "name": "Arena Premium 2",
-          "url": "https://www.tvarenasport.com/"
-        },
-        {
-          "name": "Arena Sport 1",
-          "url": "http://www.tvarenasport.hr/"
         }
       ]
     },
@@ -2338,6 +2064,212 @@
       "start_time": "19:00",
       "start_time_utc": "2026-03-12T19:00:00Z",
       "channels": []
+    },
+    {
+      "home_team": "Marseille",
+      "away_team": "Auxerre",
+      "home_team_short": "MAR",
+      "away_team_short": "AUX",
+      "home_team_slug": "marseille",
+      "away_team_slug": "auxerre",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/t6Kb5X76-voNnDKJK.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/4tdLdYlC-tY3UBVrm.png",
+      "competition": "Ligue 1",
+      "competition_full": "FRANCE: Ligue 1",
+      "country": "France",
+      "competition_id": "KIShoMk3",
+      "competition_url": "https://www.flashscore.com/football/france/ligue-1/",
+      "start_date": "2026-03-13",
+      "start_time": "19:45",
+      "start_time_utc": "2026-03-13T19:45:00Z",
+      "channels": [
+        {
+          "name": "beIN Sports MENA 3",
+          "url": "https://www.beinsports.com/en-mena"
+        },
+        {
+          "name": "Nova Sport 4",
+          "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
+        },
+        {
+          "name": "Arena Sport 3",
+          "url": "http://www.tvarenasport.hr/"
+        },
+        {
+          "name": "Oneplay",
+          "url": "https://www.oneplay.cz/"
+        }
+      ]
+    },
+    {
+      "home_team": "B. Monchengladbach",
+      "away_team": "St. Pauli",
+      "home_team_short": "MON",
+      "away_team_short": "PAU",
+      "home_team_slug": "b-monchengladbach",
+      "away_team_slug": "st-pauli",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/tjlAHwhT-84sATBUR.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/QHdIUX96-lrmFNGea.png",
+      "competition": "Bundesliga",
+      "competition_full": "GERMANY: Bundesliga",
+      "country": "Germany",
+      "competition_id": "W6BOzpK2",
+      "competition_url": "https://www.flashscore.com/football/germany/bundesliga/",
+      "start_date": "2026-03-13",
+      "start_time": "19:30",
+      "start_time_utc": "2026-03-13T19:30:00Z",
+      "channels": [
+        {
+          "name": "BBC Sport",
+          "url": "https://www.bbc.co.uk/iplayer/categories/sport/featured"
+        },
+        {
+          "name": "Nova Sport 3",
+          "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
+        },
+        {
+          "name": "beIN Sports 2",
+          "url": "https://www.beinsports.com/fr-fr"
+        },
+        {
+          "name": "ESPN 5",
+          "url": "https://www.espn.com/"
+        }
+      ]
+    },
+    {
+      "home_team": "Torino",
+      "away_team": "Parma",
+      "home_team_short": "TOR",
+      "away_team_short": "PAR",
+      "home_team_slug": "torino",
+      "away_team_slug": "parma",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/dhGobOA6-0lwy4Ij1.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/WI9nVggT-fydXzLY6.png",
+      "competition": "Serie A",
+      "competition_full": "ITALY: Serie A",
+      "country": "Italy",
+      "competition_id": "COuk57Ci",
+      "competition_url": "https://www.flashscore.com/football/italy/serie-a/",
+      "start_date": "2026-03-13",
+      "start_time": "19:45",
+      "start_time_utc": "2026-03-13T19:45:00Z",
+      "channels": [
+        {
+          "name": "Eleven Sports 1",
+          "url": "https://w14i16.dashboard.wedare.pl/ts/96114/tsc?typ=r&amc=con.wedare.541078.561994.CRTCUUBzSos"
+        },
+        {
+          "name": "Arena Sport 4",
+          "url": "http://www.tvarenasport.hr/"
+        },
+        {
+          "name": "ESPN",
+          "url": "https://www.espn.com.ar/"
+        },
+        {
+          "name": "Fast Sports",
+          "url": "https://fasttv.am/"
+        }
+      ]
+    },
+    {
+      "home_team": "Al Fayha",
+      "away_team": "Al Ettifaq",
+      "home_team_short": "FAY",
+      "away_team_short": "ETT",
+      "home_team_slug": "al-fayha",
+      "away_team_slug": "al-ettifaq-fc",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/0IaWA57k-z58zJYcl.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/Uwfm9V6k-ve6EavVg.png",
+      "competition": "Saudi Professional League",
+      "competition_full": "SAUDI ARABIA: Saudi Professional League",
+      "country": "Saudi Arabia",
+      "competition_id": "tUxUbLR2",
+      "competition_url": "https://www.flashscore.com/football/saudi-arabia/saudi-professional-league/",
+      "start_date": "2026-03-13",
+      "start_time": "19:00",
+      "start_time_utc": "2026-03-13T19:00:00Z",
+      "channels": []
+    },
+    {
+      "home_team": "Al Qadsiah",
+      "away_team": "Al Ahli SC",
+      "home_team_short": "AL",
+      "away_team_short": "AHL",
+      "home_team_slug": "al-qadsiah",
+      "away_team_slug": "al-ahli-sc",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/fm8umblC-OvCAgTwF.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/YFt73dQq-tjD2oGGi.png",
+      "competition": "Saudi Professional League",
+      "competition_full": "SAUDI ARABIA: Saudi Professional League",
+      "country": "Saudi Arabia",
+      "competition_id": "tUxUbLR2",
+      "competition_url": "https://www.flashscore.com/football/saudi-arabia/saudi-professional-league/",
+      "start_date": "2026-03-13",
+      "start_time": "19:00",
+      "start_time_utc": "2026-03-13T19:00:00Z",
+      "channels": [
+        {
+          "name": "Sport TV1",
+          "url": "https://www.sporttv.pt/"
+        }
+      ]
+    },
+    {
+      "home_team": "Al Riyadh",
+      "away_team": "Al Ittihad",
+      "home_team_short": "RIY",
+      "away_team_short": "AL",
+      "home_team_slug": "al-riyadh",
+      "away_team_slug": "al-ittihad",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/zw6o9aAN-0tD8wfLu.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/zTFRZ8ne-jeFu6Qy4.png",
+      "competition": "Saudi Professional League",
+      "competition_full": "SAUDI ARABIA: Saudi Professional League",
+      "country": "Saudi Arabia",
+      "competition_id": "tUxUbLR2",
+      "competition_url": "https://www.flashscore.com/football/saudi-arabia/saudi-professional-league/",
+      "start_date": "2026-03-13",
+      "start_time": "19:00",
+      "start_time_utc": "2026-03-13T19:00:00Z",
+      "channels": []
+    },
+    {
+      "home_team": "Alaves",
+      "away_team": "Villarreal",
+      "home_team_short": "ALA",
+      "away_team_short": "VIL",
+      "home_team_slug": "alaves",
+      "away_team_slug": "villarreal",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/4rBxR4R0-4U3vjZKk.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/EBxZSOjT-GSuwY3p9.png",
+      "competition": "LaLiga",
+      "competition_full": "SPAIN: LaLiga",
+      "country": "Spain",
+      "competition_id": "QVmLl54o",
+      "competition_url": "https://www.flashscore.com/football/spain/laliga/",
+      "start_date": "2026-03-13",
+      "start_time": "20:00",
+      "start_time_utc": "2026-03-13T20:00:00Z",
+      "channels": [
+        {
+          "name": "ESPN Deportes",
+          "url": "https://espndeportes.espn.com/"
+        },
+        {
+          "name": "SuperSport LaLiga",
+          "url": "https://supersport.com/"
+        },
+        {
+          "name": "Premier Sports 1",
+          "url": "http://www.premiersports.com/"
+        },
+        {
+          "name": "beIN Sports MENA 2",
+          "url": "https://www.beinsports.com/en-mena"
+        }
+      ]
     }
   ]
 }
