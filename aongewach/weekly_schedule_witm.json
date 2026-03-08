@@ -1,1274 +1,11 @@
 {
-  "generated_at": "2026-03-07T06:32:10Z",
+  "generated_at": "2026-03-08T06:35:45Z",
   "source": "wheresthematch.com",
   "schedule": [
-    {
-      "date": "2026-03-07",
-      "day": "Saturday",
-      "events": [
-        {
-          "name": "Houston Rockets v Portland Trail Blazers",
-          "start_time_iso": "2026-03-07T01:00:00Z",
-          "time": "01:00",
-          "sport": "Basketball",
-          "competition": "NBA",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "channels": [
-            "NBA League Pass"
-          ],
-          "home_team": "Houston Rockets",
-          "away_team": "Portland Trail Blazers",
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Australian Grand Prix",
-          "start_time_iso": "2026-03-07T01:30:00Z",
-          "time": "01:30",
-          "sport": "Formula 1",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/f1.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/f1.gif",
-          "channels": [
-            "Sky Sports Main Event",
-            "Sky Sports F1",
-            "Sky Sports Ultra HDR"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Carolina Hurricanes v Edmonton Oilers",
-          "start_time_iso": "2026-03-07T02:00:00Z",
-          "time": "02:00",
-          "sport": "Ice-Hockey",
-          "competition": "NHL",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/icehockey.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/icehockey.gif",
-          "channels": [
-            "Premier Sports 1"
-          ],
-          "home_team": "Carolina Hurricanes",
-          "away_team": "Edmonton Oilers",
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Denver Nuggets v New York Knicks",
-          "start_time_iso": "2026-03-07T02:00:00Z",
-          "time": "02:00",
-          "sport": "Basketball",
-          "competition": "NBA",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "channels": [
-            "NBA League Pass"
-          ],
-          "home_team": "Denver Nuggets",
-          "away_team": "New York Knicks",
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Phoenix Suns v New Orleans Pelicans",
-          "start_time_iso": "2026-03-07T02:00:00Z",
-          "time": "02:00",
-          "sport": "Basketball",
-          "competition": "NBA",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "channels": [
-            "NBA League Pass"
-          ],
-          "home_team": "Phoenix Suns",
-          "away_team": "New Orleans Pelicans",
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "San Antonio Spurs v Los Angeles Clippers",
-          "start_time_iso": "2026-03-07T02:30:00Z",
-          "time": "02:30",
-          "sport": "Basketball",
-          "competition": "NBA",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "channels": [
-            "NBA League Pass"
-          ],
-          "home_team": "San Antonio Spurs",
-          "away_team": "Los Angeles Clippers",
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Formula 2 Series Australia",
-          "start_time_iso": "2026-03-07T03:10:00Z",
-          "time": "03:10",
-          "sport": "Motorsport",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/motorsport.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/motorsport.gif",
-          "channels": [
-            "Sky Sports Main Event",
-            "Sky Sports F1",
-            "Sky Sports Ultra HDR"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Los Angeles Lakers v Indiana Pacers",
-          "start_time_iso": "2026-03-07T03:30:00Z",
-          "time": "03:30",
-          "sport": "Basketball",
-          "competition": "NBA",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "channels": [
-            "NBA League Pass"
-          ],
-          "home_team": "Los Angeles Lakers",
-          "away_team": "Indiana Pacers",
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Highlanders v Western Force",
-          "start_time_iso": "2026-03-07T03:35:00Z",
-          "time": "03:35",
-          "sport": "Rugby-Union",
-          "competition": "Super Rugby Pacific",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
-          "channels": [
-            "Sky Sports Action"
-          ],
-          "home_team": "Highlanders",
-          "away_team": "Western Force",
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Blue Bay LPGA",
-          "start_time_iso": "2026-03-07T04:00:00Z",
-          "time": "04:00",
-          "sport": "Golf",
-          "competition": "Ladies PGA Tour",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
-          "channels": [
-            "Sky Sports Golf"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Ford Women's NSW Open Championship",
-          "start_time_iso": "2026-03-07T04:00:00Z",
-          "time": "04:00",
-          "sport": "Golf",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
-          "channels": [
-            "Sky Sports Mix"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Tokyo Sungoliath v Sagamihara DynaBoars",
-          "start_time_iso": "2026-03-07T04:00:00Z",
-          "time": "04:00",
-          "sport": "Rugby-Union",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
-          "channels": [
-            "Premier Sports Rugby"
-          ],
-          "home_team": "Tokyo Sungoliath",
-          "away_team": "Sagamihara DynaBoars",
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "LIV Golf Hong Kong",
-          "start_time_iso": "2026-03-07T04:30:00Z",
-          "time": "04:30",
-          "sport": "Golf",
-          "competition": "LIV Golf Series",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
-          "channels": [
-            "TNT Sports 1"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Australian Grand Prix",
-          "start_time_iso": "2026-03-07T05:00:00Z",
-          "time": "05:00",
-          "sport": "Formula 1",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/f1.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/f1.gif",
-          "channels": [
-            "Sky Sports Main Event",
-            "Sky Sports F1",
-            "Sky Sports Ultra HDR"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "GWS Giants v Hawthorn",
-          "start_time_iso": "2026-03-07T05:15:00Z",
-          "time": "05:15",
-          "sport": "Australian-Rules-Football",
-          "competition": "AFL",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/aussierules.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/aussierules.gif",
-          "channels": [
-            "TNT Sports 4",
-            "Watch AFL"
-          ],
-          "home_team": "GWS Giants",
-          "away_team": "Hawthorn",
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Australia Women v India Women",
-          "start_time_iso": "2026-03-07T05:30:00Z",
-          "time": "05:30",
-          "sport": "Cricket",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/cricket.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/cricket.gif",
-          "channels": [
-            "TNT Sports 2",
-            "TNT Sports Extra"
-          ],
-          "home_team": "Australia Women",
-          "away_team": "India Women",
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Blues v Crusaders",
-          "start_time_iso": "2026-03-07T06:05:00Z",
-          "time": "06:05",
-          "sport": "Rugby-Union",
-          "competition": "Super Rugby Pacific",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
-          "channels": [
-            "Sky Sports+"
-          ],
-          "home_team": "Blues",
-          "away_team": "Crusaders",
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Cronulla Sharks v Gold Coast Titans",
-          "start_time_iso": "2026-03-07T06:30:00Z",
-          "time": "06:30",
-          "sport": "Rugby-League",
-          "competition": "NRL",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/rugbyleague.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/rugbyleague.gif",
-          "channels": [
-            "Watch NRL"
-          ],
-          "home_team": "Cronulla Sharks",
-          "away_team": "Gold Coast Titans",
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Freestyle Skiing World Cup",
-          "start_time_iso": "2026-03-07T06:45:00Z",
-          "time": "06:45",
-          "sport": "Winter Sports",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "channels": [
-            "TNT Sports Extra"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Luge World Cup",
-          "start_time_iso": "2026-03-07T07:45:00Z",
-          "time": "07:45",
-          "sport": "Winter Sports",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "channels": [
-            "TNT Sports Extra"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Snowboarding World Cup",
-          "start_time_iso": "2026-03-07T08:00:00Z",
-          "time": "08:00",
-          "sport": "Winter Sports",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "channels": [
-            "TNT Sports Extra"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Cross Country Skiing World Cup",
-          "start_time_iso": "2026-03-07T08:00:00Z",
-          "time": "08:00",
-          "sport": "Winter Sports",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "channels": [
-            "TNT Sports Extra"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Alpine Skiing World Cup",
-          "start_time_iso": "2026-03-07T08:15:00Z",
-          "time": "08:15",
-          "sport": "Winter Sports",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "channels": [
-            "TNT Sports 4",
-            "TNT Sports Extra"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Manly Warrinagh Sea Eagles v Canberra Raiders",
-          "start_time_iso": "2026-03-07T08:30:00Z",
-          "time": "08:30",
-          "sport": "Rugby-League",
-          "competition": "NRL",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/rugbyleague.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/rugbyleague.gif",
-          "channels": [
-            "Sky Sports Action",
-            "Watch NRL"
-          ],
-          "home_team": "Manly Warrinagh Sea Eagles",
-          "away_team": "Canberra Raiders",
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Brumbies v Reds",
-          "start_time_iso": "2026-03-07T08:35:00Z",
-          "time": "08:35",
-          "sport": "Rugby-Union",
-          "competition": "Super Rugby Pacific",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
-          "channels": [
-            "Sky Sports+"
-          ],
-          "home_team": "Brumbies",
-          "away_team": "Reds",
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Brisbane Lions v Western Bulldogs",
-          "start_time_iso": "2026-03-07T08:35:00Z",
-          "time": "08:35",
-          "sport": "Australian-Rules-Football",
-          "competition": "AFL",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/aussierules.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/aussierules.gif",
-          "channels": [
-            "TNT Sports Extra",
-            "Watch AFL"
-          ],
-          "home_team": "Brisbane Lions",
-          "away_team": "Western Bulldogs",
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Luge World Cup",
-          "start_time_iso": "2026-03-07T09:00:00Z",
-          "time": "09:00",
-          "sport": "Winter Sports",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "channels": [
-            "TNT Sports Extra"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Alpine Skiing World Cup",
-          "start_time_iso": "2026-03-07T09:45:00Z",
-          "time": "09:45",
-          "sport": "Winter Sports",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "channels": [
-            "TNT Sports 4"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Joburg Open",
-          "start_time_iso": "2026-03-07T10:00:00Z",
-          "time": "10:00",
-          "sport": "Golf",
-          "competition": "DP World Tour",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
-          "channels": [
-            "Sky Sports Golf"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Luge World Cup",
-          "start_time_iso": "2026-03-07T10:15:00Z",
-          "time": "10:15",
-          "sport": "Winter Sports",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "channels": [
-            "TNT Sports Extra"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "UCI Strade Bianche",
-          "start_time_iso": "2026-03-07T10:30:00Z",
-          "time": "10:30",
-          "sport": "Cycling",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/cycling.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/cycling.gif",
-          "channels": [
-            "TNT Sports 3"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Cross Country Skiing World Cup",
-          "start_time_iso": "2026-03-07T10:30:00Z",
-          "time": "10:30",
-          "sport": "Winter Sports",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "channels": [
-            "TNT Sports Extra"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Alpine Skiing World Cup",
-          "start_time_iso": "2026-03-07T11:15:00Z",
-          "time": "11:15",
-          "sport": "Winter Sports",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "channels": [
-            "TNT Sports 4"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Luge World Cup",
-          "start_time_iso": "2026-03-07T11:30:00Z",
-          "time": "11:30",
-          "sport": "Winter Sports",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "channels": [
-            "TNT Sports Extra"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Snowboarding World Cup",
-          "start_time_iso": "2026-03-07T12:00:00Z",
-          "time": "12:00",
-          "sport": "Winter Sports",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "channels": [
-            "TNT Sports Extra"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Harlequins Ladies v Saracens Women",
-          "start_time_iso": "2026-03-07T12:15:00Z",
-          "time": "12:15",
-          "sport": "Rugby-Union",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
-          "channels": [
-            "TNT Sports 2"
-          ],
-          "home_team": "Harlequins Ladies",
-          "away_team": "Saracens Women",
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Biathlon World Cup",
-          "start_time_iso": "2026-03-07T12:30:00Z",
-          "time": "12:30",
-          "sport": "Winter Sports",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "channels": [
-            "TNT Sports 4"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Ladbrokes UK Open",
-          "start_time_iso": "2026-03-07T13:00:00Z",
-          "time": "13:00",
-          "sport": "Darts",
-          "competition": "PDC Darts Schedule",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/darts.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/darts.gif",
-          "channels": [
-            "ITV4",
-            "ITVX"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Raceday Live",
-          "start_time_iso": "2026-03-07T13:00:00Z",
-          "time": "13:00",
-          "sport": "Horse Racing",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/horseracing.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/horseracing.gif",
-          "channels": [
-            "Sky Sports Racing"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "UCI Strade Bianche",
-          "start_time_iso": "2026-03-07T13:00:00Z",
-          "time": "13:00",
-          "sport": "Cycling",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/cycling.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/cycling.gif",
-          "channels": [
-            "TNT Sports 3"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Luge World Cup",
-          "start_time_iso": "2026-03-07T13:00:00Z",
-          "time": "13:00",
-          "sport": "Winter Sports",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "channels": [
-            "TNT Sports Extra"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Live Racing",
-          "start_time_iso": "2026-03-07T13:30:00Z",
-          "time": "13:30",
-          "sport": "Horse Racing",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/horseracing.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/horseracing.gif",
-          "channels": [
-            "ITV3",
-            "ITVX"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Nordic Skiing World Cup",
-          "start_time_iso": "2026-03-07T13:30:00Z",
-          "time": "13:30",
-          "sport": "Winter Sports",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "channels": [
-            "TNT Sports 4"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Luge World Cup",
-          "start_time_iso": "2026-03-07T14:00:00Z",
-          "time": "14:00",
-          "sport": "Winter Sports",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "channels": [
-            "TNT Sports Extra"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Scotland v France",
-          "start_time_iso": "2026-03-07T14:10:00Z",
-          "time": "14:10",
-          "sport": "Rugby-Union",
-          "competition": "Six Nations 2026",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
-          "channels": [
-            "BBC1",
-            "Premier Sports 1"
-          ],
-          "home_team": "Scotland",
-          "away_team": "France",
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Biathlon World Cup",
-          "start_time_iso": "2026-03-07T14:15:00Z",
-          "time": "14:15",
-          "sport": "Winter Sports",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "channels": [
-            "TNT Sports 4"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "UCI Strade Bianche",
-          "start_time_iso": "2026-03-07T14:45:00Z",
-          "time": "14:45",
-          "sport": "Cycling",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/cycling.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/cycling.gif",
-          "channels": [
-            "TNT Sports 1"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Irish Wolfhounds v Clovers",
-          "start_time_iso": "2026-03-07T15:00:00Z",
-          "time": "15:00",
-          "sport": "Rugby-Union",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
-          "channels": [
-            "TG4"
-          ],
-          "home_team": "Irish Wolfhounds",
-          "away_team": "Clovers",
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Arnold Palmer Invitational",
-          "start_time_iso": "2026-03-07T15:00:00Z",
-          "time": "15:00",
-          "sport": "Golf",
-          "competition": "US PGA Tour",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
-          "channels": [
-            "Sky Sports Golf",
-            "Sky Sports Main Event",
-            "Sky Sports Ultra HDR"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Ski Jumping World Cup",
-          "start_time_iso": "2026-03-07T16:00:00Z",
-          "time": "16:00",
-          "sport": "Winter Sports",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
-          "channels": [
-            "TNT Sports 4"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Italy v England",
-          "start_time_iso": "2026-03-07T16:40:00Z",
-          "time": "16:40",
-          "sport": "Rugby-Union",
-          "competition": "Six Nations 2026",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
-          "channels": [
-            "ITV1",
-            "ITVX",
-            "STV"
-          ],
-          "home_team": "Italy",
-          "away_team": "England",
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Manchester Thunder v London Mavericks",
-          "start_time_iso": "2026-03-07T17:00:00Z",
-          "time": "17:00",
-          "sport": "Netball",
-          "competition": "Netball Superleague",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/netball.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/netball.gif",
-          "channels": [
-            "BBC Red Button"
-          ],
-          "home_team": "Manchester Thunder",
-          "away_team": "London Mavericks",
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Galway v Kilkenny",
-          "start_time_iso": "2026-03-07T17:15:00Z",
-          "time": "17:15",
-          "sport": "GAA",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/gaa.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/gaa.gif",
-          "channels": [
-            "GAA+",
-            "RTE 2"
-          ],
-          "home_team": "Galway",
-          "away_team": "Kilkenny",
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "St Helens v Bradford Bulls",
-          "start_time_iso": "2026-03-07T17:30:00Z",
-          "time": "17:30",
-          "sport": "Rugby-League",
-          "competition": "Super League",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/rugbyleague.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/rugbyleague.gif",
-          "channels": [
-            "Sky Sports+",
-            "SuperLeague+"
-          ],
-          "home_team": "St Helens",
-          "away_team": "Bradford Bulls",
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Toulouse Olympique v Wigan Warriors",
-          "start_time_iso": "2026-03-07T18:00:00Z",
-          "time": "18:00",
-          "sport": "Rugby-League",
-          "competition": "Super League",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/rugbyleague.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/rugbyleague.gif",
-          "channels": [
-            "Sky Sports+",
-            "SuperLeague+"
-          ],
-          "home_team": "Toulouse Olympique",
-          "away_team": "Wigan Warriors",
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Ladbrokes UK Open",
-          "start_time_iso": "2026-03-07T19:00:00Z",
-          "time": "19:00",
-          "sport": "Darts",
-          "competition": "PDC Darts Schedule",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/darts.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/darts.gif",
-          "channels": [
-            "ITV4",
-            "ITVX"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "BNP Paribas Open",
-          "start_time_iso": "2026-03-07T19:00:00Z",
-          "time": "19:00",
-          "sport": "Tennis",
-          "competition": "ATP World Tour",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/tennis.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/tennis.gif",
-          "channels": [
-            "Sky Sports Tennis",
-            "Sky Sports+"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Limerick v Cork",
-          "start_time_iso": "2026-03-07T19:00:00Z",
-          "time": "19:00",
-          "sport": "GAA",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/gaa.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/gaa.gif",
-          "channels": [
-            "GAA+",
-            "TG4"
-          ],
-          "home_team": "Limerick",
-          "away_team": "Cork",
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Ireland U20 v Wales U20",
-          "start_time_iso": "2026-03-07T19:45:00Z",
-          "time": "19:45",
-          "sport": "Rugby-Union",
-          "competition": "U20s Six Nations",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
-          "channels": [
-            "BBC Red Button",
-            "S4C",
-            "S4C Online"
-          ],
-          "home_team": "Ireland U20",
-          "away_team": "Wales U20",
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "IndyCar Phoenix Grand Prix",
-          "start_time_iso": "2026-03-07T20:00:00Z",
-          "time": "20:00",
-          "sport": "Motorsport",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/motorsport.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/motorsport.gif",
-          "channels": [
-            "Sky Sports F1",
-            "Sky Sports Mix",
-            "Sky Sports Ultra HDR"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Formula 3 Series Australia",
-          "start_time_iso": "2026-03-07T21:50:00Z",
-          "time": "21:50",
-          "sport": "Motorsport",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/motorsport.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/motorsport.gif",
-          "channels": [
-            "Sky Sports F1",
-            "Sky Sports Ultra HDR"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "New Zealand Women v Zimbabwe Women",
-          "start_time_iso": "2026-03-07T22:00:00Z",
-          "time": "22:00",
-          "sport": "Cricket",
-          "competition": "One Day International",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/cricket.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/cricket.gif",
-          "channels": [
-            "TNT Sports 4"
-          ],
-          "home_team": "New Zealand Women",
-          "away_team": "Zimbabwe Women",
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Atlanta Hawks v Philadelphia 76ers",
-          "start_time_iso": "2026-03-07T23:00:00Z",
-          "time": "23:00",
-          "sport": "Basketball",
-          "competition": "NBA",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "channels": [
-            "NBA League Pass"
-          ],
-          "home_team": "Atlanta Hawks",
-          "away_team": "Philadelphia 76ers",
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Detroit Pistons v Brooklyn Nets",
-          "start_time_iso": "2026-03-07T23:00:00Z",
-          "time": "23:00",
-          "sport": "Basketball",
-          "competition": "NBA",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
-          "channels": [
-            "Sky Sports Action"
-          ],
-          "home_team": "Detroit Pistons",
-          "away_team": "Brooklyn Nets",
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "BNP Paribas Open",
-          "start_time_iso": "2026-03-07T23:00:00Z",
-          "time": "23:00",
-          "sport": "Tennis",
-          "competition": "ATP World Tour",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/tennis.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/tennis.gif",
-          "channels": [
-            "Sky Sports Tennis",
-            "Sky Sports Main Event",
-            "Sky Sports Ultra HDR",
-            "Sky Sports+"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Montreal Canadiens v Los Angeles Kings",
-          "start_time_iso": "2026-03-08T00:00:00Z",
-          "time": "00:00",
-          "sport": "Ice-Hockey",
-          "competition": "NHL",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/icehockey.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/icehockey.gif",
-          "channels": [
-            "Premier Sports 2"
-          ],
-          "home_team": "Montreal Canadiens",
-          "away_team": "Los Angeles Kings",
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        }
-      ]
-    },
     {
       "date": "2026-03-08",
       "day": "Sunday",
       "events": [
-        {
-          "name": "Montreal Canadiens v Los Angeles Kings",
-          "start_time_iso": "2026-03-08T00:00:00Z",
-          "time": "00:00",
-          "sport": "Ice-Hockey",
-          "competition": "NHL",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/icehockey.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/icehockey.gif",
-          "channels": [
-            "Premier Sports 2"
-          ],
-          "home_team": "Montreal Canadiens",
-          "away_team": "Los Angeles Kings",
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
-        {
-          "name": "Formula 2 Series Australia",
-          "start_time_iso": "2026-03-08T00:25:00Z",
-          "time": "00:25",
-          "sport": "Motorsport",
-          "competition": "",
-          "competition_logo": "https://www.wheresthematch.com/images/sports/motorsport.gif",
-          "sport_logo": "https://www.wheresthematch.com/images/sports/motorsport.gif",
-          "channels": [
-            "Sky Sports F1",
-            "Sky Sports Ultra HDR"
-          ],
-          "home_team": null,
-          "away_team": null,
-          "home_team_id": null,
-          "away_team_id": null,
-          "home_team_logo": null,
-          "away_team_logo": null
-        },
         {
           "name": "Memphis Grizzlies v Los Angeles Clippers",
           "start_time_iso": "2026-03-08T01:00:00Z",
@@ -1407,8 +144,8 @@
           "competition_logo": "https://www.wheresthematch.com/images/sports/f1.gif",
           "sport_logo": "https://www.wheresthematch.com/images/sports/f1.gif",
           "channels": [
-            "Sky Sports Main Event",
             "Sky Sports F1",
+            "Sky Sports Main Event",
             "Sky Sports Ultra HDR"
           ],
           "home_team": null,
@@ -1528,6 +265,24 @@
           "away_team_logo": null
         },
         {
+          "name": "Winter Paralympics",
+          "start_time_iso": "2026-03-08T08:00:00Z",
+          "time": "08:00",
+          "sport": "Winter Sports",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "channels": [
+            "Channel 4"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
           "name": "Alpine Skiing World Cup",
           "start_time_iso": "2026-03-08T08:15:00Z",
           "time": "08:15",
@@ -1629,6 +384,24 @@
           "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
           "channels": [
             "TNT Sports 1"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Winter Paralympics",
+          "start_time_iso": "2026-03-08T10:30:00Z",
+          "time": "10:30",
+          "sport": "Winter Sports",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "channels": [
+            "Channel 4"
           ],
           "home_team": null,
           "away_team": null,
@@ -1830,8 +603,8 @@
           "competition_logo": "https://www.wheresthematch.com/images/sports/cricket.gif",
           "sport_logo": "https://www.wheresthematch.com/images/sports/cricket.gif",
           "channels": [
-            "Sky Sports Cricket",
             "Sky Sports Main Event",
+            "Sky Sports Cricket",
             "Sky Sports Ultra HDR"
           ],
           "home_team": "New Zealand",
@@ -2089,8 +862,8 @@
           "competition_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
           "sport_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
           "channels": [
-            "Sky Sports Main Event",
             "Sky Sports Golf",
+            "Sky Sports Main Event",
             "Sky Sports Ultra HDR"
           ],
           "home_team": null,
@@ -2478,6 +1251,42 @@
           "away_team_logo": null
         },
         {
+          "name": "Winter Paralympics",
+          "start_time_iso": "2026-03-09T10:30:00Z",
+          "time": "10:30",
+          "sport": "Winter Sports",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "channels": [
+            "Channel 4"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Winter Paralympics",
+          "start_time_iso": "2026-03-09T10:30:00Z",
+          "time": "10:30",
+          "sport": "Winter Sports",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "channels": [
+            "Channel 4"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
           "name": "UCI Tirreno to Adriatico",
           "start_time_iso": "2026-03-09T12:00:00Z",
           "time": "12:00",
@@ -2505,6 +1314,24 @@
           "sport_logo": "https://www.wheresthematch.com/images/sports/horseracing.gif",
           "channels": [
             "Sky Sports Racing"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Winter Paralympics",
+          "start_time_iso": "2026-03-09T13:00:00Z",
+          "time": "13:00",
+          "sport": "Winter Sports",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "channels": [
+            "Channel 4"
           ],
           "home_team": null,
           "away_team": null,
@@ -2731,8 +1558,8 @@
           "competition_logo": "https://www.wheresthematch.com/images/sports/tennis.gif",
           "sport_logo": "https://www.wheresthematch.com/images/sports/tennis.gif",
           "channels": [
-            "Sky Sports Tennis",
             "Sky Sports Main Event",
+            "Sky Sports Tennis",
             "Sky Sports Ultra HDR",
             "Sky Sports+"
           ],
@@ -2763,6 +1590,42 @@
           "away_team_logo": null
         },
         {
+          "name": "Winter Paralympics",
+          "start_time_iso": "2026-03-10T08:00:00Z",
+          "time": "08:00",
+          "sport": "Winter Sports",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "channels": [
+            "Channel 4"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Winter Paralympics",
+          "start_time_iso": "2026-03-10T10:30:00Z",
+          "time": "10:30",
+          "sport": "Winter Sports",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "channels": [
+            "Channel 4"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
           "name": "UCI Tirreno to Adriatico",
           "start_time_iso": "2026-03-10T12:00:00Z",
           "time": "12:00",
@@ -2772,6 +1635,24 @@
           "sport_logo": "https://www.wheresthematch.com/images/sports/cycling.gif",
           "channels": [
             "TNT Sports 1"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Winter Paralympics",
+          "start_time_iso": "2026-03-10T12:00:00Z",
+          "time": "12:00",
+          "sport": "Winter Sports",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "channels": [
+            "Channel 4"
           ],
           "home_team": null,
           "away_team": null,
@@ -2845,8 +1726,8 @@
           "competition_logo": "https://www.wheresthematch.com/images/sports/cycling.gif",
           "sport_logo": "https://www.wheresthematch.com/images/sports/cycling.gif",
           "channels": [
-            "TNT Sports 2",
-            "TNT Sports 1"
+            "TNT Sports 1",
+            "TNT Sports 2"
           ],
           "home_team": null,
           "away_team": null,
@@ -3230,6 +2111,24 @@
           "away_team_logo": null
         },
         {
+          "name": "Winter Paralympics",
+          "start_time_iso": "2026-03-11T08:00:00Z",
+          "time": "08:00",
+          "sport": "Winter Sports",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "channels": [
+            "Channel 4"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
           "name": "Player Auction",
           "start_time_iso": "2026-03-11T10:00:00Z",
           "time": "10:00",
@@ -3238,9 +2137,27 @@
           "competition_logo": "https://www.wheresthematch.com/images/sports/cricket.gif",
           "sport_logo": "https://www.wheresthematch.com/images/sports/cricket.gif",
           "channels": [
-            "Sky Sports Cricket",
             "Sky Sports Main Event",
+            "Sky Sports Cricket",
             "Sky Sports Ultra HDR"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Winter Paralympics",
+          "start_time_iso": "2026-03-11T10:30:00Z",
+          "time": "10:30",
+          "sport": "Winter Sports",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "channels": [
+            "Channel 4"
           ],
           "home_team": null,
           "away_team": null,
@@ -3259,6 +2176,24 @@
           "sport_logo": "https://www.wheresthematch.com/images/sports/cycling.gif",
           "channels": [
             "TNT Sports 1"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Winter Paralympics",
+          "start_time_iso": "2026-03-11T12:00:00Z",
+          "time": "12:00",
+          "sport": "Winter Sports",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "channels": [
+            "Channel 4"
           ],
           "home_team": null,
           "away_team": null,
@@ -3324,6 +2259,24 @@
           "away_team_logo": null
         },
         {
+          "name": "Winter Paralympics",
+          "start_time_iso": "2026-03-11T14:00:00Z",
+          "time": "14:00",
+          "sport": "Winter Sports",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "channels": [
+            "Channel 4"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
           "name": "UCI Paris to Nice",
           "start_time_iso": "2026-03-11T14:15:00Z",
           "time": "14:15",
@@ -3332,8 +2285,8 @@
           "competition_logo": "https://www.wheresthematch.com/images/sports/cycling.gif",
           "sport_logo": "https://www.wheresthematch.com/images/sports/cycling.gif",
           "channels": [
-            "TNT Sports 2",
-            "TNT Sports 1"
+            "TNT Sports 1",
+            "TNT Sports 2"
           ],
           "home_team": null,
           "away_team": null,
@@ -3370,8 +2323,8 @@
           "competition_logo": "https://www.wheresthematch.com/images/sports/tennis.gif",
           "sport_logo": "https://www.wheresthematch.com/images/sports/tennis.gif",
           "channels": [
-            "Sky Sports Tennis",
             "Sky Sports Main Event",
+            "Sky Sports Tennis",
             "Sky Sports Ultra HDR",
             "Sky Sports+"
           ],
@@ -3581,6 +2534,24 @@
           ],
           "home_team": "Los Angeles Clippers",
           "away_team": "Minnesota Timberwolves",
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Winter Paralympics",
+          "start_time_iso": "2026-03-12T08:00:00Z",
+          "time": "08:00",
+          "sport": "Winter Sports",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "channels": [
+            "Channel 4"
+          ],
+          "home_team": null,
+          "away_team": null,
           "home_team_id": null,
           "away_team_id": null,
           "home_team_logo": null,
@@ -3878,8 +2849,8 @@
           "competition_logo": "https://www.wheresthematch.com/images/sports/tennis.gif",
           "sport_logo": "https://www.wheresthematch.com/images/sports/tennis.gif",
           "channels": [
-            "Sky Sports Main Event",
             "Sky Sports Tennis",
+            "Sky Sports Main Event",
             "Sky Sports Ultra HDR"
           ],
           "home_team": null,
@@ -4157,8 +3128,8 @@
           "competition_logo": "https://www.wheresthematch.com/images/sports/f1.gif",
           "sport_logo": "https://www.wheresthematch.com/images/sports/f1.gif",
           "channels": [
-            "Sky Sports Main Event",
             "Sky Sports F1",
+            "Sky Sports Main Event",
             "Sky Sports Ultra HDR"
           ],
           "home_team": null,
@@ -4264,6 +3235,24 @@
           "away_team_logo": null
         },
         {
+          "name": "Winter Paralympics",
+          "start_time_iso": "2026-03-13T08:00:00Z",
+          "time": "08:00",
+          "sport": "Winter Sports",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "channels": [
+            "Channel 4"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
           "name": "Essendon v Hawthorn",
           "start_time_iso": "2026-03-13T08:40:00Z",
           "time": "08:40",
@@ -4329,8 +3318,8 @@
           "competition_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
           "sport_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
           "channels": [
-            "Sky Sports Golf",
             "Sky Sports Main Event",
+            "Sky Sports Golf",
             "Sky Sports Ultra HDR"
           ],
           "home_team": null,
@@ -4669,6 +3658,1054 @@
           ],
           "home_team": "Houston Rockets",
           "away_team": "New Orleans Pelicans",
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        }
+      ]
+    },
+    {
+      "date": "2026-03-14",
+      "day": "Saturday",
+      "events": [
+        {
+          "name": "Edmonton Oilers v St Louis Blues",
+          "start_time_iso": "2026-03-14T00:00:00Z",
+          "time": "00:00",
+          "sport": "Ice-Hockey",
+          "competition": "NHL",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/icehockey.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/icehockey.gif",
+          "channels": [
+            "Premier Sports 1"
+          ],
+          "home_team": "Edmonton Oilers",
+          "away_team": "St Louis Blues",
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Houston Rockets v New Orleans Pelicans",
+          "start_time_iso": "2026-03-14T00:00:00Z",
+          "time": "00:00",
+          "sport": "Basketball",
+          "competition": "NBA",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
+          "channels": [
+            "NBA League Pass"
+          ],
+          "home_team": "Houston Rockets",
+          "away_team": "New Orleans Pelicans",
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "LIV Golf Singapore",
+          "start_time_iso": "2026-03-14T01:00:00Z",
+          "time": "01:00",
+          "sport": "Golf",
+          "competition": "LIV Golf Series",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
+          "channels": [
+            "TNT Sports 1"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Portland Trail Blazers v Utah Jazz",
+          "start_time_iso": "2026-03-14T02:00:00Z",
+          "time": "02:00",
+          "sport": "Basketball",
+          "competition": "NBA",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
+          "channels": [
+            "NBA League Pass"
+          ],
+          "home_team": "Portland Trail Blazers",
+          "away_team": "Utah Jazz",
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Los Angeles Clippers v Chicago Bulls",
+          "start_time_iso": "2026-03-14T02:30:00Z",
+          "time": "02:30",
+          "sport": "Basketball",
+          "competition": "NBA",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
+          "channels": [
+            "NBA League Pass"
+          ],
+          "home_team": "Los Angeles Clippers",
+          "away_team": "Chicago Bulls",
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Chinese Grand Prix",
+          "start_time_iso": "2026-03-14T03:00:00Z",
+          "time": "03:00",
+          "sport": "Formula 1",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/f1.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/f1.gif",
+          "channels": [
+            "Sky Sports F1",
+            "Sky Sports Ultra HDR"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Spears Tokyo Bay v Saitama Wild Knights",
+          "start_time_iso": "2026-03-14T03:00:00Z",
+          "time": "03:00",
+          "sport": "Rugby-Union",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
+          "channels": [
+            "Premier Sports Rugby"
+          ],
+          "home_team": "Spears Tokyo Bay",
+          "away_team": "Saitama Wild Knights",
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Fijian Drua v Brumbies",
+          "start_time_iso": "2026-03-14T03:35:00Z",
+          "time": "03:35",
+          "sport": "Rugby-Union",
+          "competition": "Super Rugby Pacific",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
+          "channels": [
+            "Sky Sports+"
+          ],
+          "home_team": "Fijian Drua",
+          "away_team": "Brumbies",
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Wests Tigers v North Queensland Cowboys",
+          "start_time_iso": "2026-03-14T04:00:00Z",
+          "time": "04:00",
+          "sport": "Rugby-League",
+          "competition": "NRL",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/rugbyleague.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/rugbyleague.gif",
+          "channels": [
+            "Watch NRL"
+          ],
+          "home_team": "Wests Tigers",
+          "away_team": "North Queensland Cowboys",
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Geelong Cats v Fremantle",
+          "start_time_iso": "2026-03-14T05:15:00Z",
+          "time": "05:15",
+          "sport": "Australian-Rules-Football",
+          "competition": "AFL",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/aussierules.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/aussierules.gif",
+          "channels": [
+            "TNT Sports 3",
+            "Watch AFL"
+          ],
+          "home_team": "Geelong Cats",
+          "away_team": "Fremantle",
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "F1 Academy",
+          "start_time_iso": "2026-03-14T05:45:00Z",
+          "time": "05:45",
+          "sport": "Formula 1",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/f1.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/f1.gif",
+          "channels": [
+            "Sky Sports Main Event",
+            "Sky Sports F1",
+            "Sky Sports Ultra HDR"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Crusaders v Highlanders",
+          "start_time_iso": "2026-03-14T06:05:00Z",
+          "time": "06:05",
+          "sport": "Rugby-Union",
+          "competition": "Super Rugby Pacific",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
+          "channels": [
+            "Sky Sports+"
+          ],
+          "home_team": "Crusaders",
+          "away_team": "Highlanders",
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "St George Illawarra Dragons v Melbourne Storm",
+          "start_time_iso": "2026-03-14T06:30:00Z",
+          "time": "06:30",
+          "sport": "Rugby-League",
+          "competition": "NRL",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/rugbyleague.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/rugbyleague.gif",
+          "channels": [
+            "Watch NRL"
+          ],
+          "home_team": "St George Illawarra Dragons",
+          "away_team": "Melbourne Storm",
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "World Rally Championship Kenya",
+          "start_time_iso": "2026-03-14T06:30:00Z",
+          "time": "06:30",
+          "sport": "Motorsport",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/motorsport.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/motorsport.gif",
+          "channels": [
+            "TNT Sports Extra",
+            "TNT Sports 4"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Chinese Grand Prix",
+          "start_time_iso": "2026-03-14T07:00:00Z",
+          "time": "07:00",
+          "sport": "Formula 1",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/f1.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/f1.gif",
+          "channels": [
+            "Sky Sports F1",
+            "Sky Sports Ultra HDR"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "World Rally Championship Kenya",
+          "start_time_iso": "2026-03-14T07:00:00Z",
+          "time": "07:00",
+          "sport": "Motorsport",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/motorsport.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/motorsport.gif",
+          "channels": [
+            "TNT Sports 1"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Winter Paralympics",
+          "start_time_iso": "2026-03-14T08:00:00Z",
+          "time": "08:00",
+          "sport": "Winter Sports",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "channels": [
+            "Channel 4"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Sydney Swans v Brisbane Lions",
+          "start_time_iso": "2026-03-14T08:10:00Z",
+          "time": "08:10",
+          "sport": "Australian-Rules-Football",
+          "competition": "AFL",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/aussierules.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/aussierules.gif",
+          "channels": [
+            "TNT Sports Extra",
+            "Watch AFL"
+          ],
+          "home_team": "Sydney Swans",
+          "away_team": "Brisbane Lions",
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Penrith Panthers v Cronulla Sharks",
+          "start_time_iso": "2026-03-14T08:30:00Z",
+          "time": "08:30",
+          "sport": "Rugby-League",
+          "competition": "NRL",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/rugbyleague.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/rugbyleague.gif",
+          "channels": [
+            "Sky Sports Action",
+            "Watch NRL"
+          ],
+          "home_team": "Penrith Panthers",
+          "away_team": "Cronulla Sharks",
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Reds v Waratahs",
+          "start_time_iso": "2026-03-14T08:35:00Z",
+          "time": "08:35",
+          "sport": "Rugby-Union",
+          "competition": "Super Rugby Pacific",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
+          "channels": [
+            "Sky Sports+"
+          ],
+          "home_team": "Reds",
+          "away_team": "Waratahs",
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Collingwood v Adelaide Crows",
+          "start_time_iso": "2026-03-14T08:35:00Z",
+          "time": "08:35",
+          "sport": "Australian-Rules-Football",
+          "competition": "AFL",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/aussierules.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/aussierules.gif",
+          "channels": [
+            "TNT Sports 3",
+            "Watch AFL"
+          ],
+          "home_team": "Collingwood",
+          "away_team": "Adelaide Crows",
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Alpine Skiing World Cup",
+          "start_time_iso": "2026-03-14T08:45:00Z",
+          "time": "08:45",
+          "sport": "Winter Sports",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "channels": [
+            "TNT Sports 2",
+            "TNT Sports Extra"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Cross Country Skiing World Cup",
+          "start_time_iso": "2026-03-14T08:45:00Z",
+          "time": "08:45",
+          "sport": "Winter Sports",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "channels": [
+            "TNT Sports 4",
+            "TNT Sports Extra"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Cross Country Skiing World Cup",
+          "start_time_iso": "2026-03-14T09:30:00Z",
+          "time": "09:30",
+          "sport": "Winter Sports",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "channels": [
+            "TNT Sports Extra"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Freestyle Skiing World Cup",
+          "start_time_iso": "2026-03-14T09:50:00Z",
+          "time": "09:50",
+          "sport": "Winter Sports",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "channels": [
+            "TNT Sports Extra"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Alpine Skiing World Cup",
+          "start_time_iso": "2026-03-14T10:00:00Z",
+          "time": "10:00",
+          "sport": "Winter Sports",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "channels": [
+            "TNT Sports 2"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "World Rally Championship Kenya",
+          "start_time_iso": "2026-03-14T11:30:00Z",
+          "time": "11:30",
+          "sport": "Motorsport",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/motorsport.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/motorsport.gif",
+          "channels": [
+            "TNT Sports 3",
+            "TNT Sports Extra"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Alpine Skiing World Cup",
+          "start_time_iso": "2026-03-14T11:45:00Z",
+          "time": "11:45",
+          "sport": "Winter Sports",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "channels": [
+            "TNT Sports 2"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Bulls v Stormers",
+          "start_time_iso": "2026-03-14T12:00:00Z",
+          "time": "12:00",
+          "sport": "Rugby-Union",
+          "competition": "United Rugby Championship",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
+          "channels": [
+            "Premier Sports 1"
+          ],
+          "home_team": "Bulls",
+          "away_team": "Stormers",
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "UCI Tirreno to Adriatico",
+          "start_time_iso": "2026-03-14T12:00:00Z",
+          "time": "12:00",
+          "sport": "Cycling",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/cycling.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/cycling.gif",
+          "channels": [
+            "TNT Sports Extra",
+            "TNT Sports 4"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Western Bulldogs v GWS Giants",
+          "start_time_iso": "2026-03-14T12:15:00Z",
+          "time": "12:15",
+          "sport": "Australian-Rules-Football",
+          "competition": "AFL",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/aussierules.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/aussierules.gif",
+          "channels": [
+            "TNT Sports 3",
+            "Watch AFL"
+          ],
+          "home_team": "Western Bulldogs",
+          "away_team": "GWS Giants",
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Exeter Chiefs Women v Ealing Trailfinders Women",
+          "start_time_iso": "2026-03-14T12:30:00Z",
+          "time": "12:30",
+          "sport": "Rugby-Union",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
+          "channels": [
+            "BBC Red Button"
+          ],
+          "home_team": "Exeter Chiefs Women",
+          "away_team": "Ealing Trailfinders Women",
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Biathlon World Cup",
+          "start_time_iso": "2026-03-14T12:30:00Z",
+          "time": "12:30",
+          "sport": "Winter Sports",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "channels": [
+            "TNT Sports Extra"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Ski Jumping World Cup",
+          "start_time_iso": "2026-03-14T13:15:00Z",
+          "time": "13:15",
+          "sport": "Winter Sports",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "channels": [
+            "TNT Sports 2"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "IndyCar Texas 600",
+          "start_time_iso": "2026-03-14T13:30:00Z",
+          "time": "13:30",
+          "sport": "Motorsport",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/motorsport.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/motorsport.gif",
+          "channels": [
+            "Sky Sports F1",
+            "Sky Sports Ultra HDR"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Live Racing",
+          "start_time_iso": "2026-03-14T13:30:00Z",
+          "time": "13:30",
+          "sport": "Horse Racing",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/horseracing.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/horseracing.gif",
+          "channels": [
+            "ITV4",
+            "ITVX"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Ireland v Scotland",
+          "start_time_iso": "2026-03-14T14:10:00Z",
+          "time": "14:10",
+          "sport": "Rugby-Union",
+          "competition": "Six Nations 2026",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
+          "channels": [
+            "ITV1",
+            "ITVX",
+            "STV"
+          ],
+          "home_team": "Ireland",
+          "away_team": "Scotland",
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "THE PLAYERS Championship",
+          "start_time_iso": "2026-03-14T15:00:00Z",
+          "time": "15:00",
+          "sport": "Golf",
+          "competition": "US PGA Tour",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
+          "channels": [
+            "Sky Sports Golf",
+            "Sky Sports Main Event",
+            "Sky Sports Ultra HDR"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Biathlon World Cup",
+          "start_time_iso": "2026-03-14T15:00:00Z",
+          "time": "15:00",
+          "sport": "Winter Sports",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "channels": [
+            "TNT Sports 3"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Ski Jumping World Cup",
+          "start_time_iso": "2026-03-14T15:45:00Z",
+          "time": "15:45",
+          "sport": "Winter Sports",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "channels": [
+            "TNT Sports 2"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Birmingham Panthers v London Mavericks",
+          "start_time_iso": "2026-03-14T16:00:00Z",
+          "time": "16:00",
+          "sport": "Netball",
+          "competition": "Netball Superleague",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/netball.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/netball.gif",
+          "channels": [
+            "Sky Sports Mix",
+            "Sky Sports+"
+          ],
+          "home_team": "Birmingham Panthers",
+          "away_team": "London Mavericks",
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Wales v Italy",
+          "start_time_iso": "2026-03-14T16:40:00Z",
+          "time": "16:40",
+          "sport": "Rugby-Union",
+          "competition": "Six Nations 2026",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
+          "channels": [
+            "BBC1",
+            "Premier Sports 1",
+            "Premier Sports Rugby",
+            "S4C",
+            "S4C Online"
+          ],
+          "home_team": "Wales",
+          "away_team": "Italy",
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Philadelphia 76ers v Brooklyn Nets",
+          "start_time_iso": "2026-03-14T17:00:00Z",
+          "time": "17:00",
+          "sport": "Basketball",
+          "competition": "NBA",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
+          "channels": [
+            "NBA League Pass"
+          ],
+          "home_team": "Philadelphia 76ers",
+          "away_team": "Brooklyn Nets",
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Snowboarding World Cup",
+          "start_time_iso": "2026-03-14T17:45:00Z",
+          "time": "17:45",
+          "sport": "Winter Sports",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/wintersports.gif",
+          "channels": [
+            "TNT Sports 4"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Loughborough Lightning v London Pulse",
+          "start_time_iso": "2026-03-14T18:00:00Z",
+          "time": "18:00",
+          "sport": "Netball",
+          "competition": "Netball Superleague",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/netball.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/netball.gif",
+          "channels": [
+            "Sky Sports Mix",
+            "Sky Sports+"
+          ],
+          "home_team": "Loughborough Lightning",
+          "away_team": "London Pulse",
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "IndyCar Texas 600",
+          "start_time_iso": "2026-03-14T18:30:00Z",
+          "time": "18:30",
+          "sport": "Motorsport",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/motorsport.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/motorsport.gif",
+          "channels": [
+            "Sky Sports F1",
+            "Sky Sports Ultra HDR"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Atlanta Hawks v Milwaukee Bucks",
+          "start_time_iso": "2026-03-14T19:00:00Z",
+          "time": "19:00",
+          "sport": "Basketball",
+          "competition": "NBA",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
+          "channels": [
+            "NBA League Pass"
+          ],
+          "home_team": "Atlanta Hawks",
+          "away_team": "Milwaukee Bucks",
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "BNP Paribas Open",
+          "start_time_iso": "2026-03-14T19:30:00Z",
+          "time": "19:30",
+          "sport": "Tennis",
+          "competition": "ATP World Tour",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/tennis.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/tennis.gif",
+          "channels": [
+            "Sky Sports Tennis",
+            "Sky Sports+"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "France v England",
+          "start_time_iso": "2026-03-14T20:10:00Z",
+          "time": "20:10",
+          "sport": "Rugby-Union",
+          "competition": "Six Nations 2026",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/rugbyunion.gif",
+          "channels": [
+            "ITV1",
+            "ITVX",
+            "STV"
+          ],
+          "home_team": "France",
+          "away_team": "England",
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "THE PLAYERS Championship",
+          "start_time_iso": "2026-03-14T20:30:00Z",
+          "time": "20:30",
+          "sport": "Golf",
+          "competition": "US PGA Tour",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/golf.gif",
+          "channels": [
+            "Sky Sports Main Event",
+            "Sky Sports Golf",
+            "Sky Sports Ultra HDR"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "MMA",
+          "start_time_iso": "2026-03-14T20:30:00Z",
+          "time": "20:30",
+          "sport": "UFC",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/ufc.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/ufc.gif",
+          "channels": [
+            "UFC Fight Pass"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Boston Celtics v Washington Wizards",
+          "start_time_iso": "2026-03-14T22:00:00Z",
+          "time": "22:00",
+          "sport": "Basketball",
+          "competition": "NBA",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
+          "channels": [
+            "NBA League Pass"
+          ],
+          "home_team": "Boston Celtics",
+          "away_team": "Washington Wizards",
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "BNP Paribas Open",
+          "start_time_iso": "2026-03-14T23:00:00Z",
+          "time": "23:00",
+          "sport": "Tennis",
+          "competition": "ATP World Tour",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/tennis.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/tennis.gif",
+          "channels": [
+            "Sky Sports Main Event",
+            "Sky Sports Tennis",
+            "Sky Sports Ultra HDR"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Los Angeles Kings v New Jersey Devils",
+          "start_time_iso": "2026-03-14T23:00:00Z",
+          "time": "23:00",
+          "sport": "Ice-Hockey",
+          "competition": "NHL",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/icehockey.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/icehockey.gif",
+          "channels": [
+            "Premier Sports 1"
+          ],
+          "home_team": "Los Angeles Kings",
+          "away_team": "New Jersey Devils",
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "UFC Fight Night",
+          "start_time_iso": "2026-03-15T00:00:00Z",
+          "time": "00:00",
+          "sport": "UFC",
+          "competition": "",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/ufc.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/ufc.gif",
+          "channels": [
+            "TNT Sports 2"
+          ],
+          "home_team": null,
+          "away_team": null,
+          "home_team_id": null,
+          "away_team_id": null,
+          "home_team_logo": null,
+          "away_team_logo": null
+        },
+        {
+          "name": "Miami Heat v Orlando Magic",
+          "start_time_iso": "2026-03-15T00:00:00Z",
+          "time": "00:00",
+          "sport": "Basketball",
+          "competition": "NBA",
+          "competition_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
+          "sport_logo": "https://www.wheresthematch.com/images/sports/basketball.gif",
+          "channels": [
+            "NBA League Pass"
+          ],
+          "home_team": "Miami Heat",
+          "away_team": "Orlando Magic",
           "home_team_id": null,
           "away_team_id": null,
           "home_team_logo": null,
