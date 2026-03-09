@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-08T06:35:44Z",
+  "generated_at": "2026-03-09T06:54:33Z",
   "source": "flashscore.com",
   "config": {
     "host": "https://global.flashscore.ninja",
@@ -13,971 +13,54 @@
     "day_start": 0,
     "top_competitions_only": true,
     "max_channels_per_event": 4,
-    "total_events": 74,
-    "total_events_with_channels": 50
+    "total_events": 77,
+    "total_events_with_channels": 49
   },
   "day_summaries": [
     {
       "day_offset": 0,
-      "events_before_competition_filter": 1197,
-      "events": 31,
-      "events_with_channels": 20
+      "events_before_competition_filter": 202,
+      "events": 4,
+      "events_with_channels": 3
     },
     {
       "day_offset": 1,
-      "events_before_competition_filter": 206,
-      "events": 4,
-      "events_with_channels": 4
+      "events_before_competition_filter": 253,
+      "events": 0,
+      "events_with_channels": 0
     },
     {
       "day_offset": 2,
-      "events_before_competition_filter": 249,
+      "events_before_competition_filter": 285,
       "events": 0,
       "events_with_channels": 0
     },
     {
       "day_offset": 3,
-      "events_before_competition_filter": 286,
-      "events": 0,
-      "events_with_channels": 0
-    },
-    {
-      "day_offset": 4,
-      "events_before_competition_filter": 206,
+      "events_before_competition_filter": 210,
       "events": 3,
       "events_with_channels": 0
     },
     {
-      "day_offset": 5,
-      "events_before_competition_filter": 457,
+      "day_offset": 4,
+      "events_before_competition_filter": 468,
       "events": 7,
       "events_with_channels": 5
     },
     {
-      "day_offset": 6,
-      "events_before_competition_filter": 1776,
+      "day_offset": 5,
+      "events_before_competition_filter": 1788,
       "events": 29,
       "events_with_channels": 21
+    },
+    {
+      "day_offset": 6,
+      "events_before_competition_filter": 1234,
+      "events": 34,
+      "events_with_channels": 20
     }
   ],
   "events": [
-    {
-      "home_team": "Fulham",
-      "away_team": "Southampton",
-      "home_team_short": "FUL",
-      "away_team_short": "SOU",
-      "home_team_slug": "fulham",
-      "away_team_slug": "southampton",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/fkbYUWme-ImMEe0UF.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/2VvVDtSq-raLYxovi.png",
-      "competition": "FA Cup",
-      "competition_full": "ENGLAND: FA Cup",
-      "country": "England",
-      "competition_id": "lYQtaqPQ",
-      "competition_url": "https://www.flashscore.com/football/england/fa-cup/",
-      "start_date": "2026-03-08",
-      "start_time": "12:00",
-      "start_time_utc": "2026-03-08T12:00:00Z",
-      "channels": [
-        {
-          "name": "ESPN 2",
-          "url": "http://www.espn.com/"
-        },
-        {
-          "name": "SuperSport 2",
-          "url": "https://top-channel.tv/sport/?utm_source=supersport&utm_campaign=supersport_redirect"
-        },
-        {
-          "name": "TNT Sports 2",
-          "url": "https://www.tntsports.co.uk/"
-        },
-        {
-          "name": "beIN Sports MENA 1",
-          "url": "https://www.beinsports.com/en-mena"
-        }
-      ]
-    },
-    {
-      "home_team": "Port Vale",
-      "away_team": "Sunderland",
-      "home_team_short": "POR",
-      "away_team_short": "SUN",
-      "home_team_slug": "port-vale",
-      "away_team_slug": "sunderland",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/OvhRMHme-hE2XjgkL.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/rPPdotBN-0d34NJCO.png",
-      "competition": "FA Cup",
-      "competition_full": "ENGLAND: FA Cup",
-      "country": "England",
-      "competition_id": "lYQtaqPQ",
-      "competition_url": "https://www.flashscore.com/football/england/fa-cup/",
-      "start_date": "2026-03-08",
-      "start_time": "13:30",
-      "start_time_utc": "2026-03-08T13:30:00Z",
-      "channels": [
-        {
-          "name": "SuperSport MaXimo 2",
-          "url": "https://supersport.com/"
-        },
-        {
-          "name": "Premier Sports 1",
-          "url": "https://www.psn.mn/"
-        },
-        {
-          "name": "beIN Sports MENA 5",
-          "url": "https://www.beinsports.com/en-mena"
-        },
-        {
-          "name": "Nova Sport 1",
-          "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
-        }
-      ]
-    },
-    {
-      "home_team": "Leeds",
-      "away_team": "Norwich",
-      "home_team_short": "LEE",
-      "away_team_short": "NOR",
-      "home_team_slug": "leeds",
-      "away_team_slug": "norwich",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/lvs4WW5k-MTp25XgE.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/GvTpbCjC-tCGtX12c.png",
-      "competition": "FA Cup",
-      "competition_full": "ENGLAND: FA Cup",
-      "country": "England",
-      "competition_id": "lYQtaqPQ",
-      "competition_url": "https://www.flashscore.com/football/england/fa-cup/",
-      "start_date": "2026-03-08",
-      "start_time": "16:30",
-      "start_time_utc": "2026-03-08T16:30:00Z",
-      "channels": [
-        {
-          "name": "SuperSport 2",
-          "url": "https://top-channel.tv/sport/?utm_source=supersport&utm_campaign=supersport_redirect"
-        },
-        {
-          "name": "TNT Sports 1",
-          "url": "https://www.tntsports.co.uk/"
-        },
-        {
-          "name": "beIN Sports MENA 1",
-          "url": "https://www.beinsports.com/en-mena"
-        },
-        {
-          "name": "Nova Sport 5",
-          "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
-        }
-      ]
-    },
-    {
-      "home_team": "Lens",
-      "away_team": "Metz",
-      "home_team_short": "LEN",
-      "away_team_short": "MET",
-      "home_team_slug": "lens",
-      "away_team_slug": "metz",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/tAec9KQq-rTEFAmVL.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/SCdF7fjT-pztT5vMl.png",
-      "competition": "Ligue 1",
-      "competition_full": "FRANCE: Ligue 1",
-      "country": "France",
-      "competition_id": "KIShoMk3",
-      "competition_url": "https://www.flashscore.com/football/france/ligue-1/",
-      "start_date": "2026-03-08",
-      "start_time": "14:00",
-      "start_time_utc": "2026-03-08T14:00:00Z",
-      "channels": [
-        {
-          "name": "beIN Sports US Espanol",
-          "url": "https://www.beinxtraespanol.com/us-es/index.html"
-        },
-        {
-          "name": "Supersport Action",
-          "url": "https://supersport.com/"
-        },
-        {
-          "name": "beIN Sports MENA 3",
-          "url": "https://www.beinsports.com/en-mena"
-        },
-        {
-          "name": "Nova Sport 5",
-          "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
-        }
-      ]
-    },
-    {
-      "home_team": "Brest",
-      "away_team": "Le Havre",
-      "home_team_short": "BRE",
-      "away_team_short": "HAV",
-      "home_team_slug": "brest",
-      "away_team_slug": "le-havre",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/lWu2w4ne-Q15G9lAm.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/SdQTDNR0-4v5cIBqb.png",
-      "competition": "Ligue 1",
-      "competition_full": "FRANCE: Ligue 1",
-      "country": "France",
-      "competition_id": "KIShoMk3",
-      "competition_url": "https://www.flashscore.com/football/france/ligue-1/",
-      "start_date": "2026-03-08",
-      "start_time": "16:15",
-      "start_time_utc": "2026-03-08T16:15:00Z",
-      "channels": [
-        {
-          "name": "beIN Sports MENA 6",
-          "url": "https://www.beinsports.com/en-mena"
-        },
-        {
-          "name": "Arena Sport 9",
-          "url": "http://www.tvarenasport.hr/"
-        },
-        {
-          "name": "beIN Sports 1 MAX",
-          "url": "https://www.beinsports.com.tr/"
-        },
-        {
-          "name": "beIN SPORTS MAX",
-          "url": "https://connect-hk.beinsports.com/"
-        }
-      ]
-    },
-    {
-      "home_team": "Lille",
-      "away_team": "Lorient",
-      "home_team_short": "LIL",
-      "away_team_short": "LOR",
-      "home_team_slug": "lille",
-      "away_team_slug": "lorient",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/Q34pXImC-UDticXKP.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/0r9EzUS0-GU4hlIMk.png",
-      "competition": "Ligue 1",
-      "competition_full": "FRANCE: Ligue 1",
-      "country": "France",
-      "competition_id": "KIShoMk3",
-      "competition_url": "https://www.flashscore.com/football/france/ligue-1/",
-      "start_date": "2026-03-08",
-      "start_time": "16:15",
-      "start_time_utc": "2026-03-08T16:15:00Z",
-      "channels": [
-        {
-          "name": "beIN Sports US Espanol",
-          "url": "https://www.beinxtraespanol.com/us-es/index.html"
-        },
-        {
-          "name": "CANAL+ Sport 2",
-          "url": "https://www.canalplus-afrique.com/"
-        },
-        {
-          "name": "beIN Sports MENA 4",
-          "url": "https://www.beinsports.com/en-mena"
-        },
-        {
-          "name": "Arena Sport 10",
-          "url": "http://www.tvarenasport.hr/"
-        }
-      ]
-    },
-    {
-      "home_team": "Nice",
-      "away_team": "Rennes",
-      "home_team_short": "NIC",
-      "away_team_short": "REN",
-      "home_team_slug": "nice",
-      "away_team_slug": "rennes",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/bJCGymle-00sqJmg8.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/pnrF2X76-Y5eozcI6.png",
-      "competition": "Ligue 1",
-      "competition_full": "FRANCE: Ligue 1",
-      "country": "France",
-      "competition_id": "KIShoMk3",
-      "competition_url": "https://www.flashscore.com/football/france/ligue-1/",
-      "start_date": "2026-03-08",
-      "start_time": "16:15",
-      "start_time_utc": "2026-03-08T16:15:00Z",
-      "channels": [
-        {
-          "name": "beIN Sports MENA 3",
-          "url": "https://www.beinsports.com/en-mena"
-        },
-        {
-          "name": "Eleven Sports 4",
-          "url": "https://w14i16.dashboard.wedare.pl/ts/96114/tsc?typ=r&amc=con.wedare.541078.561994.CRTCUUBzSos"
-        },
-        {
-          "name": "Arena Sport 1x2",
-          "url": "http://www.tvarenasport.com/"
-        },
-        {
-          "name": "Arena Sport 6",
-          "url": "http://www.tvarenasport.hr/"
-        }
-      ]
-    },
-    {
-      "home_team": "Lyon",
-      "away_team": "Paris FC",
-      "home_team_short": "LYO",
-      "away_team_short": "PAR",
-      "home_team_slug": "lyon",
-      "away_team_slug": "paris-fc",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/bkuX6RS0-GU4hlIMk.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/S85qoCiT-AelKXger.png",
-      "competition": "Ligue 1",
-      "competition_full": "FRANCE: Ligue 1",
-      "country": "France",
-      "competition_id": "KIShoMk3",
-      "competition_url": "https://www.flashscore.com/football/france/ligue-1/",
-      "start_date": "2026-03-08",
-      "start_time": "19:45",
-      "start_time_utc": "2026-03-08T19:45:00Z",
-      "channels": [
-        {
-          "name": "beIN Sports US Espanol",
-          "url": "https://www.beinxtraespanol.com/us-es/index.html"
-        },
-        {
-          "name": "CANAL+ Sport 2",
-          "url": "https://www.canalplus-afrique.com/"
-        },
-        {
-          "name": "beIN Sports MENA 3",
-          "url": "https://www.beinsports.com/en-mena"
-        },
-        {
-          "name": "Eleven Sports 3",
-          "url": "https://w14i16.dashboard.wedare.pl/ts/96114/tsc?typ=r&amc=con.wedare.541078.561994.CRTCUUBzSos"
-        }
-      ]
-    },
-    {
-      "home_team": "St. Pauli",
-      "away_team": "Eintracht Frankfurt",
-      "home_team_short": "PAU",
-      "away_team_short": "EIN",
-      "home_team_slug": "st-pauli",
-      "away_team_slug": "eintracht-frankfurt",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/QHdIUX96-lrmFNGea.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/2aegVtQq-86lnAaq9.png",
-      "competition": "Bundesliga",
-      "competition_full": "GERMANY: Bundesliga",
-      "country": "Germany",
-      "competition_id": "W6BOzpK2",
-      "competition_url": "https://www.flashscore.com/football/germany/bundesliga/",
-      "start_date": "2026-03-08",
-      "start_time": "14:30",
-      "start_time_utc": "2026-03-08T14:30:00Z",
-      "channels": [
-        {
-          "name": "ESPN 2",
-          "url": "https://www.espn.com.ar/"
-        },
-        {
-          "name": "CANAL+ Sport 1",
-          "url": "https://www.canalplus-afrique.com/"
-        },
-        {
-          "name": "Premier Sports 5",
-          "url": "https://www.psn.mn/"
-        },
-        {
-          "name": "MBC Action",
-          "url": "https://www.mbc.net/"
-        }
-      ]
-    },
-    {
-      "home_team": "Union Berlin",
-      "away_team": "Werder Bremen",
-      "home_team_short": "UNI",
-      "away_team_short": "WER",
-      "home_team_slug": "union-berlin",
-      "away_team_slug": "werder-bremen",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/0OMJUule-ncmj9JbF.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/pIavfLS0-EVomMG4o.png",
-      "competition": "Bundesliga",
-      "competition_full": "GERMANY: Bundesliga",
-      "country": "Germany",
-      "competition_id": "W6BOzpK2",
-      "competition_url": "https://www.flashscore.com/football/germany/bundesliga/",
-      "start_date": "2026-03-08",
-      "start_time": "16:30",
-      "start_time_utc": "2026-03-08T16:30:00Z",
-      "channels": [
-        {
-          "name": "Azam Sports 2",
-          "url": "https://sports.azamtv.co.tz/"
-        },
-        {
-          "name": "Premier Sports 4",
-          "url": "https://www.psn.mn/"
-        },
-        {
-          "name": "DAZN 2",
-          "url": "https://dazn.prf.hn/click/camref:1100lLrMj"
-        },
-        {
-          "name": "Eleven Sports 3",
-          "url": "https://w14i16.dashboard.wedare.pl/ts/96114/tsc?typ=r&amc=con.wedare.541078.561994.CRTCUUBzSos"
-        }
-      ]
-    },
-    {
-      "home_team": "Lecce",
-      "away_team": "Cremonese",
-      "home_team_short": "LEC",
-      "away_team_short": "CRE",
-      "home_team_slug": "lecce",
-      "away_team_slug": "cremonese",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/fPabg0DN-McvX4bye.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/bwCjhwB6-8b0QRXR3.png",
-      "competition": "Serie A",
-      "competition_full": "ITALY: Serie A",
-      "country": "Italy",
-      "competition_id": "COuk57Ci",
-      "competition_url": "https://www.flashscore.com/football/italy/serie-a/",
-      "start_date": "2026-03-08",
-      "start_time": "11:30",
-      "start_time_utc": "2026-03-08T11:30:00Z",
-      "channels": [
-        {
-          "name": "SuperSport Football",
-          "url": "https://supersport.com/"
-        },
-        {
-          "name": "DAZN 1",
-          "url": "https://prf.hn/click/camref:1100lfjaZ"
-        },
-        {
-          "name": "DAZN 2",
-          "url": "https://prf.hn/click/camref:1011lfsUi"
-        },
-        {
-          "name": "Eleven Sports 1",
-          "url": "https://w14i16.dashboard.wedare.pl/ts/96114/tsc?typ=r&amc=con.wedare.541078.561994.CRTCUUBzSos"
-        }
-      ]
-    },
-    {
-      "home_team": "Bologna",
-      "away_team": "Verona",
-      "home_team_short": "BOL",
-      "away_team_short": "VER",
-      "home_team_slug": "bologna",
-      "away_team_slug": "verona",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/6ovaa9T0-McvX4bye.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/YDLnjflC-Kxh373f3.png",
-      "competition": "Serie A",
-      "competition_full": "ITALY: Serie A",
-      "country": "Italy",
-      "competition_id": "COuk57Ci",
-      "competition_url": "https://www.flashscore.com/football/italy/serie-a/",
-      "start_date": "2026-03-08",
-      "start_time": "14:00",
-      "start_time_utc": "2026-03-08T14:00:00Z",
-      "channels": [
-        {
-          "name": "BBC Alba",
-          "url": "http://www.bbc.co.uk/iplayer/schedules/bbcalba"
-        },
-        {
-          "name": "DAZN 1",
-          "url": "https://prf.hn/click/camref:1100lfjaZ"
-        },
-        {
-          "name": "Eleven Sports 4",
-          "url": "https://w14i16.dashboard.wedare.pl/ts/96114/tsc?typ=r&amc=con.wedare.541078.561994.CRTCUUBzSos"
-        },
-        {
-          "name": "Sport 1",
-          "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
-        }
-      ]
-    },
-    {
-      "home_team": "Fiorentina",
-      "away_team": "Parma",
-      "home_team_short": "FIO",
-      "away_team_short": "PAR",
-      "home_team_slug": "fiorentina",
-      "away_team_slug": "parma",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/fZhEFLjT-6XKdgOM6.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/WI9nVggT-fydXzLY6.png",
-      "competition": "Serie A",
-      "competition_full": "ITALY: Serie A",
-      "country": "Italy",
-      "competition_id": "COuk57Ci",
-      "competition_url": "https://www.flashscore.com/football/italy/serie-a/",
-      "start_date": "2026-03-08",
-      "start_time": "14:00",
-      "start_time_utc": "2026-03-08T14:00:00Z",
-      "channels": [
-        {
-          "name": "SuperSport Football",
-          "url": "https://en.wikipedia.org/wiki/SuperSport_(South_African_broadcaster)"
-        },
-        {
-          "name": "Eleven Sports 3",
-          "url": "https://w14i16.dashboard.wedare.pl/ts/96114/tsc?typ=r&amc=con.wedare.541078.561994.CRTCUUBzSos"
-        },
-        {
-          "name": "214 DAZN Zona",
-          "url": "https://www.dazn.com/"
-        },
-        {
-          "name": "215 DAZN Zona",
-          "url": "https://www.dazn.com/en-CZ/home"
-        }
-      ]
-    },
-    {
-      "home_team": "Genoa",
-      "away_team": "AS Roma",
-      "home_team_short": "GEN",
-      "away_team_short": "ROM",
-      "home_team_slug": "genoa",
-      "away_team_slug": "as-roma",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/S48z3Poe-hCD6m1R3.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/j31Z1pne-GtNb9h2q.png",
-      "competition": "Serie A",
-      "competition_full": "ITALY: Serie A",
-      "country": "Italy",
-      "competition_id": "COuk57Ci",
-      "competition_url": "https://www.flashscore.com/football/italy/serie-a/",
-      "start_date": "2026-03-08",
-      "start_time": "17:00",
-      "start_time_utc": "2026-03-08T17:00:00Z",
-      "channels": [
-        {
-          "name": "SuperSport Football",
-          "url": "https://supersport.com/"
-        },
-        {
-          "name": "TNT Sports 2",
-          "url": "https://www.tntsports.co.uk/"
-        },
-        {
-          "name": "DAZN 2",
-          "url": "https://prf.hn/click/camref:1011lfsUi"
-        },
-        {
-          "name": "Eleven Sports 1",
-          "url": "https://w14i16.dashboard.wedare.pl/ts/96114/tsc?typ=r&amc=con.wedare.541078.561994.CRTCUUBzSos"
-        }
-      ]
-    },
-    {
-      "home_team": "AC Milan",
-      "away_team": "Inter",
-      "home_team_short": "ACM",
-      "away_team_short": "INT",
-      "home_team_slug": "ac-milan",
-      "away_team_slug": "inter",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/WOOHTbSq-KtCfnbWp.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/fLNbBiQq-O8c8nWOb.png",
-      "competition": "Serie A",
-      "competition_full": "ITALY: Serie A",
-      "country": "Italy",
-      "competition_id": "COuk57Ci",
-      "competition_url": "https://www.flashscore.com/football/italy/serie-a/",
-      "start_date": "2026-03-08",
-      "start_time": "19:45",
-      "start_time_utc": "2026-03-08T19:45:00Z",
-      "channels": [
-        {
-          "name": "Fox Deportes",
-          "url": "https://www.foxsports.com/presspass/networks/deportes/"
-        },
-        {
-          "name": "SuperSport Football",
-          "url": "https://supersport.com/"
-        },
-        {
-          "name": "TNT Sports 1",
-          "url": "https://www.tntsports.co.uk/"
-        },
-        {
-          "name": "DAZN 1",
-          "url": "https://prf.hn/click/camref:1100lfjaZ"
-        }
-      ]
-    },
-    {
-      "home_team": "Villarreal",
-      "away_team": "Elche",
-      "home_team_short": "VIL",
-      "away_team_short": "ELC",
-      "home_team_slug": "villarreal",
-      "away_team_slug": "elche",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/EBxZSOjT-GSuwY3p9.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/EVxB82BN-YmCZKGcR.png",
-      "competition": "LaLiga",
-      "competition_full": "SPAIN: LaLiga",
-      "country": "Spain",
-      "competition_id": "QVmLl54o",
-      "competition_url": "https://www.flashscore.com/football/spain/laliga/",
-      "start_date": "2026-03-08",
-      "start_time": "13:00",
-      "start_time_utc": "2026-03-08T13:00:00Z",
-      "channels": [
-        {
-          "name": "ESPN Deportes",
-          "url": "https://espndeportes.espn.com/"
-        },
-        {
-          "name": "SuperSport GOtv LaLiga",
-          "url": "https://www.gotvafrica.com/en-ng"
-        },
-        {
-          "name": "Premier Sports 1",
-          "url": "http://www.premiersports.com/"
-        },
-        {
-          "name": "beIN Sports MENA 2",
-          "url": "https://www.beinsports.com/en-mena"
-        }
-      ]
-    },
-    {
-      "home_team": "Getafe",
-      "away_team": "Betis",
-      "home_team_short": "GET",
-      "away_team_short": "BET",
-      "home_team_slug": "getafe",
-      "away_team_slug": "betis",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/hGMWMdT0-YmCZKGcR.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/YV7lpDU0-zkU5wiAr.png",
-      "competition": "LaLiga",
-      "competition_full": "SPAIN: LaLiga",
-      "country": "Spain",
-      "competition_id": "QVmLl54o",
-      "competition_url": "https://www.flashscore.com/football/spain/laliga/",
-      "start_date": "2026-03-08",
-      "start_time": "15:15",
-      "start_time_utc": "2026-03-08T15:15:00Z",
-      "channels": [
-        {
-          "name": "ESPN Deportes",
-          "url": "https://espndeportes.espn.com/"
-        },
-        {
-          "name": "SuperSport 1",
-          "url": "https://top-channel.tv/sport/?utm_source=supersport&utm_campaign=supersport_redirect"
-        },
-        {
-          "name": "Premier Sports 1",
-          "url": "http://www.premiersports.com/"
-        },
-        {
-          "name": "beIN Sports MENA 2",
-          "url": "https://www.beinsports.com/en-mena"
-        }
-      ]
-    },
-    {
-      "home_team": "Sevilla",
-      "away_team": "Rayo Vallecano",
-      "home_team_short": "SEV",
-      "away_team_short": "RAY",
-      "home_team_slug": "sevilla",
-      "away_team_slug": "rayo-vallecano",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/EcTGi086-tIT0KyhE.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/QyKcNfhT-EPWyZtpb.png",
-      "competition": "LaLiga",
-      "competition_full": "SPAIN: LaLiga",
-      "country": "Spain",
-      "competition_id": "QVmLl54o",
-      "competition_url": "https://www.flashscore.com/football/spain/laliga/",
-      "start_date": "2026-03-08",
-      "start_time": "17:30",
-      "start_time_utc": "2026-03-08T17:30:00Z",
-      "channels": [
-        {
-          "name": "ESPN Deportes",
-          "url": "https://espndeportes.espn.com/"
-        },
-        {
-          "name": "SuperSport GOtv LaLiga",
-          "url": "https://www.gotvafrica.com/en-ng"
-        },
-        {
-          "name": "Premier Sports 1",
-          "url": "http://www.premiersports.com/"
-        },
-        {
-          "name": "beIN Sports MENA 2",
-          "url": "https://www.beinsports.com/en-mena"
-        }
-      ]
-    },
-    {
-      "home_team": "Valencia",
-      "away_team": "Alaves",
-      "home_team_short": "VAL",
-      "away_team_short": "ALA",
-      "home_team_slug": "valencia",
-      "away_team_slug": "alaves",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/8Cqphq8k-MHrRLNUo.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/4rBxR4R0-4U3vjZKk.png",
-      "competition": "LaLiga",
-      "competition_full": "SPAIN: LaLiga",
-      "country": "Spain",
-      "competition_id": "QVmLl54o",
-      "competition_url": "https://www.flashscore.com/football/spain/laliga/",
-      "start_date": "2026-03-08",
-      "start_time": "20:00",
-      "start_time_utc": "2026-03-08T20:00:00Z",
-      "channels": [
-        {
-          "name": "ESPN Deportes",
-          "url": "https://espndeportes.espn.com/"
-        },
-        {
-          "name": "SuperSport 2",
-          "url": "https://top-channel.tv/sport/?utm_source=supersport&utm_campaign=supersport_redirect"
-        },
-        {
-          "name": "Premier Sports 1",
-          "url": "http://www.premiersports.com/"
-        },
-        {
-          "name": "beIN Sports MENA 2",
-          "url": "https://www.beinsports.com/en-mena"
-        }
-      ]
-    },
-    {
-      "home_team": "Atlanta Utd",
-      "away_team": "Real Salt Lake",
-      "home_team_short": "ATL",
-      "away_team_short": "SAL",
-      "home_team_slug": "atlanta-united",
-      "away_team_slug": "real-salt-lake",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/bZSq12Pq-MeFN3n19.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/4EKWEn8k-vgy39tSd.png",
-      "competition": "MLS",
-      "competition_full": "USA: MLS",
-      "country": "USA",
-      "competition_id": "CQv5qrFt",
-      "competition_url": "https://www.flashscore.com/football/usa/mls/",
-      "start_date": "2026-03-08",
-      "start_time": "00:30",
-      "start_time_utc": "2026-03-08T00:30:00Z",
-      "channels": []
-    },
-    {
-      "home_team": "Charlotte",
-      "away_team": "Austin FC",
-      "home_team_short": "CHA",
-      "away_team_short": "AUS",
-      "home_team_slug": "charlotte-fc",
-      "away_team_slug": "austin-fc",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/rwIBORWH-bePDAcBO.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/KObgAQjT-AP3GsSz8.png",
-      "competition": "MLS",
-      "competition_full": "USA: MLS",
-      "country": "USA",
-      "competition_id": "CQv5qrFt",
-      "competition_url": "https://www.flashscore.com/football/usa/mls/",
-      "start_date": "2026-03-08",
-      "start_time": "00:30",
-      "start_time_utc": "2026-03-08T00:30:00Z",
-      "channels": []
-    },
-    {
-      "home_team": "Columbus Crew",
-      "away_team": "Chicago Fire",
-      "home_team_short": "COL",
-      "away_team_short": "CHI",
-      "home_team_slug": "columbus-crew",
-      "away_team_slug": "chicago-fire",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/UiThDkme-EgOLyoyn.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/YHLXh45k-0lw00xPr.png",
-      "competition": "MLS",
-      "competition_full": "USA: MLS",
-      "country": "USA",
-      "competition_id": "CQv5qrFt",
-      "competition_url": "https://www.flashscore.com/football/usa/mls/",
-      "start_date": "2026-03-08",
-      "start_time": "00:30",
-      "start_time_utc": "2026-03-08T00:30:00Z",
-      "channels": []
-    },
-    {
-      "home_team": "Philadelphia Union",
-      "away_team": "San Jose Earthquakes",
-      "home_team_short": "PHI",
-      "away_team_short": "JOS",
-      "home_team_slug": "philadelphia-union",
-      "away_team_slug": "san-jose-earthquakes",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/0UCoIkgT-juuH5vx4.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/4zKyyJBN-GpqxHjf5.png",
-      "competition": "MLS",
-      "competition_full": "USA: MLS",
-      "country": "USA",
-      "competition_id": "CQv5qrFt",
-      "competition_url": "https://www.flashscore.com/football/usa/mls/",
-      "start_date": "2026-03-08",
-      "start_time": "00:30",
-      "start_time_utc": "2026-03-08T00:30:00Z",
-      "channels": []
-    },
-    {
-      "home_team": "Nashville SC",
-      "away_team": "Minnesota United",
-      "home_team_short": "NAS",
-      "away_team_short": "MIN",
-      "home_team_slug": "nashville-sc",
-      "away_team_slug": "minnesota-united",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/viMd0CQq-6JqXhTSA.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/zP5RaY76-Y5BuxdGt.png",
-      "competition": "MLS",
-      "competition_full": "USA: MLS",
-      "country": "USA",
-      "competition_id": "CQv5qrFt",
-      "competition_url": "https://www.flashscore.com/football/usa/mls/",
-      "start_date": "2026-03-08",
-      "start_time": "01:30",
-      "start_time_utc": "2026-03-08T01:30:00Z",
-      "channels": []
-    },
-    {
-      "home_team": "Sporting Kansas City",
-      "away_team": "San Diego FC",
-      "home_team_short": "KAN",
-      "away_team_short": "SDI",
-      "home_team_slug": "sporting-kansas-city",
-      "away_team_slug": "san-diego-fc",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/AVAdquCN-88w2wUnG.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/hzGDoHUH-b7NYdTs6.png",
-      "competition": "MLS",
-      "competition_full": "USA: MLS",
-      "country": "USA",
-      "competition_id": "CQv5qrFt",
-      "competition_url": "https://www.flashscore.com/football/usa/mls/",
-      "start_date": "2026-03-08",
-      "start_time": "01:30",
-      "start_time_utc": "2026-03-08T01:30:00Z",
-      "channels": []
-    },
-    {
-      "home_team": "St. Louis City",
-      "away_team": "Seattle Sounders",
-      "home_team_short": "SLC",
-      "away_team_short": "SEA",
-      "home_team_slug": "st-louis-city",
-      "away_team_slug": "seattle-sounders",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/OAtXEIVH-jmLPWdtA.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/zZNaLM86-Q7Ql2Qbi.png",
-      "competition": "MLS",
-      "competition_full": "USA: MLS",
-      "country": "USA",
-      "competition_id": "CQv5qrFt",
-      "competition_url": "https://www.flashscore.com/football/usa/mls/",
-      "start_date": "2026-03-08",
-      "start_time": "01:30",
-      "start_time_utc": "2026-03-08T01:30:00Z",
-      "channels": []
-    },
-    {
-      "home_team": "Colorado Rapids",
-      "away_team": "Los Angeles Galaxy",
-      "home_team_short": "COL",
-      "away_team_short": "LAG",
-      "home_team_slug": "colorado-rapids",
-      "away_team_slug": "los-angeles-galaxy",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/MwKFeQ86-fyzFgPy8.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/AV3qcsDN-nqhLBCKD.png",
-      "competition": "MLS",
-      "competition_full": "USA: MLS",
-      "country": "USA",
-      "competition_id": "CQv5qrFt",
-      "competition_url": "https://www.flashscore.com/football/usa/mls/",
-      "start_date": "2026-03-08",
-      "start_time": "02:30",
-      "start_time_utc": "2026-03-08T02:30:00Z",
-      "channels": []
-    },
-    {
-      "home_team": "Los Angeles FC",
-      "away_team": "FC Dallas",
-      "home_team_short": "LAF",
-      "away_team_short": "DAL",
-      "home_team_slug": "los-angeles-fc",
-      "away_team_slug": "fc-dallas",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/jHAzzjXH-h6S6xFbF.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/GWHoAYCN-08eoEXKh.png",
-      "competition": "MLS",
-      "competition_full": "USA: MLS",
-      "country": "USA",
-      "competition_id": "CQv5qrFt",
-      "competition_url": "https://www.flashscore.com/football/usa/mls/",
-      "start_date": "2026-03-08",
-      "start_time": "03:30",
-      "start_time_utc": "2026-03-08T03:30:00Z",
-      "channels": []
-    },
-    {
-      "home_team": "Portland Timbers",
-      "away_team": "Vancouver Whitecaps",
-      "home_team_short": "POR",
-      "away_team_short": "VAN",
-      "home_team_slug": "portland-timbers",
-      "away_team_slug": "vancouver-whitecaps",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/6ZJJvliC-xf2WUeO1.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/KbDi358k-nJrkMuTE.png",
-      "competition": "MLS",
-      "competition_full": "USA: MLS",
-      "country": "USA",
-      "competition_id": "CQv5qrFt",
-      "competition_url": "https://www.flashscore.com/football/usa/mls/",
-      "start_date": "2026-03-08",
-      "start_time": "03:30",
-      "start_time_utc": "2026-03-08T03:30:00Z",
-      "channels": []
-    },
-    {
-      "home_team": "New York Red Bulls",
-      "away_team": "CF Montreal",
-      "home_team_short": "NYR",
-      "away_team_short": "CFM",
-      "home_team_slug": "new-york-red-bulls",
-      "away_team_slug": "cf-montreal",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/YgNOxC96-KEuupwHt.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/CEqcFQlC-APghxIAJ.png",
-      "competition": "MLS",
-      "competition_full": "USA: MLS",
-      "country": "USA",
-      "competition_id": "CQv5qrFt",
-      "competition_url": "https://www.flashscore.com/football/usa/mls/",
-      "start_date": "2026-03-08",
-      "start_time": "20:30",
-      "start_time_utc": "2026-03-08T20:30:00Z",
-      "channels": []
-    },
-    {
-      "home_team": "FC Cincinnati",
-      "away_team": "Toronto FC",
-      "home_team_short": "FCC",
-      "away_team_short": "TOR",
-      "home_team_slug": "fc-cincinnati",
-      "away_team_slug": "toronto-fc",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/vwHVLET0-hfMSf4LN.png",
-      "away_team_logo": "https://static.flashscore.com/res/image/data/0n9oUmiT-tnwDCzLD.png",
-      "competition": "MLS",
-      "competition_full": "USA: MLS",
-      "country": "USA",
-      "competition_id": "CQv5qrFt",
-      "competition_url": "https://www.flashscore.com/football/usa/mls/",
-      "start_date": "2026-03-08",
-      "start_time": "23:00",
-      "start_time_utc": "2026-03-08T23:00:00Z",
-      "channels": [
-        {
-          "name": "Max Sport 3",
-          "url": "https://maxsport.live/"
-        }
-      ]
-    },
     {
       "home_team": "West Ham",
       "away_team": "Brentford",
@@ -997,6 +80,10 @@
       "start_time_utc": "2026-03-09T19:30:00Z",
       "channels": [
         {
+          "name": "SiriusXM FC",
+          "url": "https://www.siriusxm.com/"
+        },
+        {
           "name": "SuperSport 2",
           "url": "https://top-channel.tv/sport/?utm_source=supersport&utm_campaign=supersport_redirect"
         },
@@ -1007,10 +94,6 @@
         {
           "name": "beIN Sports MENA 1",
           "url": "https://www.beinsports.com/en-mena"
-        },
-        {
-          "name": "DAZN 2",
-          "url": "https://prf.hn/click/camref:1011lfsUi"
         }
       ]
     },
@@ -1033,8 +116,8 @@
       "start_time_utc": "2026-03-09T19:45:00Z",
       "channels": [
         {
-          "name": "Fox Deportes",
-          "url": "https://www.foxsports.com/presspass/networks/deportes/"
+          "name": "CBS Sports Golazo",
+          "url": "https://www.cbssports.com/"
         },
         {
           "name": "SuperSport Football",
@@ -1073,8 +156,8 @@
           "url": "https://espndeportes.espn.com/"
         },
         {
-          "name": "SuperSport GOtv LaLiga",
-          "url": "https://www.gotvafrica.com/en-ng"
+          "name": "SuperSport 3",
+          "url": "https://top-channel.tv/sport/?utm_source=supersport&utm_campaign=supersport_redirect"
         },
         {
           "name": "Premier Sports 1",
@@ -1103,12 +186,7 @@
       "start_date": "2026-03-08",
       "start_time": "23:00",
       "start_time_utc": "2026-03-08T23:00:00Z",
-      "channels": [
-        {
-          "name": "Max Sport 3",
-          "url": "https://maxsport.live/"
-        }
-      ]
+      "channels": []
     },
     {
       "home_team": "Al Hazem",
@@ -1198,8 +276,8 @@
           "url": "https://www.beinsports.com/en-mena"
         },
         {
-          "name": "Nova Sport 4",
-          "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
+          "name": "Eleven Sports 4",
+          "url": "https://w14i16.dashboard.wedare.pl/ts/96114/tsc?typ=r&amc=con.wedare.541078.561994.CRTCUUBzSos"
         }
       ]
     },
@@ -1234,8 +312,8 @@
           "url": "https://dazn.prf.hn/click/camref:1100lLrMj"
         },
         {
-          "name": "Nova Sport 3",
-          "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
+          "name": "Eleven Sports 3",
+          "url": "https://w14i16.dashboard.wedare.pl/ts/96114/tsc?typ=r&amc=con.wedare.541078.561994.CRTCUUBzSos"
         }
       ]
     },
@@ -1258,20 +336,20 @@
       "start_time_utc": "2026-03-13T19:45:00Z",
       "channels": [
         {
+          "name": "ESPN 2 Caribbean",
+          "url": "https://www.espn.co.uk/caribbean/"
+        },
+        {
+          "name": "SuperSport Football",
+          "url": "https://en.wikipedia.org/wiki/SuperSport_(South_African_broadcaster)"
+        },
+        {
           "name": "Eleven Sports 1",
           "url": "https://w14i16.dashboard.wedare.pl/ts/96114/tsc?typ=r&amc=con.wedare.541078.561994.CRTCUUBzSos"
         },
         {
-          "name": "Arena Sport 4",
-          "url": "http://www.tvarenasport.hr/"
-        },
-        {
-          "name": "ESPN",
-          "url": "https://www.espn.com.ar/"
-        },
-        {
-          "name": "Fast Sports",
-          "url": "https://fasttv.am/"
+          "name": "Sport 1",
+          "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
         }
       ]
     },
@@ -1317,16 +395,16 @@
           "url": "https://www.foxsports.com/presspass/networks/deportes/"
         },
         {
+          "name": "COSMOTE Sport 3",
+          "url": "https://www.cosmotetv.gr/"
+        },
+        {
           "name": "Fox Soccer Plus",
           "url": "https://www.foxsports.com/soccer/plus"
         },
         {
           "name": "Fox",
           "url": "http://www.fox.com/"
-        },
-        {
-          "name": "Sportdigital FUSSBALL 2",
-          "url": "https://start.sportdigital.de/"
         }
       ]
     },
@@ -1832,6 +910,10 @@
       "start_time_utc": "2026-03-14T17:30:00Z",
       "channels": [
         {
+          "name": "Sky Sports Football",
+          "url": "http://www.skysports.com/"
+        },
+        {
           "name": "Nova Sport 3",
           "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
         },
@@ -1842,10 +924,6 @@
         {
           "name": "Sky Sport Bundesliga 1",
           "url": "https://www.sky.at/sport"
-        },
-        {
-          "name": "Sky Sport Bundesliga UHD",
-          "url": "https://www.sky.de/"
         }
       ]
     },
@@ -2011,7 +1089,7 @@
       "away_team_short": "AKH",
       "home_team_slug": "al-shabab",
       "away_team_slug": "al-okhdood",
-      "home_team_logo": "https://static.flashscore.com/res/image/data/OzbyAZmC-S4ItXNi7.png",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/OzbyAZmC-EHxCXeIg.png",
       "away_team_logo": "https://static.flashscore.com/res/image/data/Y5ea4JhT-nsNrUNVC.png",
       "competition": "Saudi Professional League",
       "competition_full": "SAUDI ARABIA: Saudi Professional League",
@@ -2279,6 +1357,980 @@
       "start_date": "2026-03-14",
       "start_time": "23:30",
       "start_time_utc": "2026-03-14T23:30:00Z",
+      "channels": []
+    },
+    {
+      "home_team": "Crystal Palace",
+      "away_team": "Leeds",
+      "home_team_short": "CRY",
+      "away_team_short": "LEE",
+      "home_team_slug": "crystal-palace",
+      "away_team_slug": "leeds",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/GfkvlLmC-drybTCiH.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/lvs4WW5k-MTp25XgE.png",
+      "competition": "Premier League",
+      "competition_full": "ENGLAND: Premier League",
+      "country": "England",
+      "competition_id": "dYlOSQOD",
+      "competition_url": "https://www.flashscore.com/football/england/premier-league/",
+      "start_date": "2026-03-15",
+      "start_time": "14:00",
+      "start_time_utc": "2026-03-15T14:00:00Z",
+      "channels": [
+        {
+          "name": "NBC",
+          "url": "http://www.nbc.com/"
+        },
+        {
+          "name": "Sky Sports Cricket",
+          "url": "http://www.skysports.com/"
+        },
+        {
+          "name": "CANAL+ Sport 5",
+          "url": "https://www.tkqlhce.com/click-101204424-15323932"
+        },
+        {
+          "name": "CANAL+ Sport",
+          "url": "https://www.tkqlhce.com/click-101204424-15323932"
+        }
+      ]
+    },
+    {
+      "home_team": "Manchester Utd",
+      "away_team": "Aston Villa",
+      "home_team_short": "MNU",
+      "away_team_short": "AST",
+      "home_team_slug": "manchester-united",
+      "away_team_slug": "aston-villa",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/GhGV3qjT-h2pPXz3k.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/UHchCEVH-jwz95gs0.png",
+      "competition": "Premier League",
+      "competition_full": "ENGLAND: Premier League",
+      "country": "England",
+      "competition_id": "dYlOSQOD",
+      "competition_url": "https://www.flashscore.com/football/england/premier-league/",
+      "start_date": "2026-03-15",
+      "start_time": "14:00",
+      "start_time_utc": "2026-03-15T14:00:00Z",
+      "channels": [
+        {
+          "name": "NBC",
+          "url": "http://www.nbc.com/"
+        },
+        {
+          "name": "Sky Sports Main Event",
+          "url": "http://www.skysports.com/"
+        },
+        {
+          "name": "Canal+ Extra 1",
+          "url": "https://r9kgpx.dashboard.wedare.pl/ts/96026/tsc?typ=r&amc=con.wedare.541078.561994.CRTJTPi7-7-"
+        },
+        {
+          "name": "CANAL+ Sport",
+          "url": "https://www.tkqlhce.com/click-101204424-15323932"
+        }
+      ]
+    },
+    {
+      "home_team": "Nottingham",
+      "away_team": "Fulham",
+      "home_team_short": "NOT",
+      "away_team_short": "FUL",
+      "home_team_slug": "nottingham",
+      "away_team_slug": "fulham",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/86ODdyle-ImKwLTtA.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/fkbYUWme-ImMEe0UF.png",
+      "competition": "Premier League",
+      "competition_full": "ENGLAND: Premier League",
+      "country": "England",
+      "competition_id": "dYlOSQOD",
+      "competition_url": "https://www.flashscore.com/football/england/premier-league/",
+      "start_date": "2026-03-15",
+      "start_time": "14:00",
+      "start_time_utc": "2026-03-15T14:00:00Z",
+      "channels": [
+        {
+          "name": "NBC",
+          "url": "http://www.nbc.com/"
+        },
+        {
+          "name": "Sky Sports Premier League",
+          "url": "http://www.skysports.com/"
+        },
+        {
+          "name": "CANAL+ Sport 6",
+          "url": "https://www.tkqlhce.com/click-101204424-15323932"
+        },
+        {
+          "name": "CANAL+ Sport",
+          "url": "https://www.tkqlhce.com/click-101204424-15323932"
+        }
+      ]
+    },
+    {
+      "home_team": "Liverpool",
+      "away_team": "Tottenham",
+      "home_team_short": "LIV",
+      "away_team_short": "TOT",
+      "home_team_slug": "liverpool",
+      "away_team_slug": "tottenham",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/nBClzyne-KCp4zq5F.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/v3SzDxVH-Ig5FKJZ5.png",
+      "competition": "Premier League",
+      "competition_full": "ENGLAND: Premier League",
+      "country": "England",
+      "competition_id": "dYlOSQOD",
+      "competition_url": "https://www.flashscore.com/football/england/premier-league/",
+      "start_date": "2026-03-15",
+      "start_time": "16:30",
+      "start_time_utc": "2026-03-15T16:30:00Z",
+      "channels": [
+        {
+          "name": "NBC",
+          "url": "http://www.nbc.com/"
+        },
+        {
+          "name": "Sky Sports Main Event",
+          "url": "http://www.skysports.com/"
+        },
+        {
+          "name": "Canal+ Extra 1",
+          "url": "https://r9kgpx.dashboard.wedare.pl/ts/96026/tsc?typ=r&amc=con.wedare.541078.561994.CRTJTPi7-7-"
+        },
+        {
+          "name": "CANAL+ Sport",
+          "url": "https://www.tkqlhce.com/click-101204424-15323932"
+        }
+      ]
+    },
+    {
+      "home_team": "Strasbourg",
+      "away_team": "Paris FC",
+      "home_team_short": "STR",
+      "away_team_short": "PAR",
+      "home_team_slug": "strasbourg",
+      "away_team_slug": "paris-fc",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/2XOhzSQq-lAc5wKNp.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/S85qoCiT-AelKXger.png",
+      "competition": "Ligue 1",
+      "competition_full": "FRANCE: Ligue 1",
+      "country": "France",
+      "competition_id": "KIShoMk3",
+      "competition_url": "https://www.flashscore.com/football/france/ligue-1/",
+      "start_date": "2026-03-15",
+      "start_time": "14:00",
+      "start_time_utc": "2026-03-15T14:00:00Z",
+      "channels": [
+        {
+          "name": "Nova Sport 2",
+          "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
+        },
+        {
+          "name": "Arena Sport 2",
+          "url": "http://www.tvarenasport.hr/"
+        },
+        {
+          "name": "Oneplay",
+          "url": "https://www.oneplay.cz/"
+        }
+      ]
+    },
+    {
+      "home_team": "PSG",
+      "away_team": "Nantes",
+      "home_team_short": "PSG",
+      "away_team_short": "NAN",
+      "home_team_slug": "psg",
+      "away_team_slug": "nantes",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/fJgGn26k-A7UDDuOO.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/vTVURLne-YBWLmubi.png",
+      "competition": "Ligue 1",
+      "competition_full": "FRANCE: Ligue 1",
+      "country": "France",
+      "competition_id": "KIShoMk3",
+      "competition_url": "https://www.flashscore.com/football/france/ligue-1/",
+      "start_date": "2026-03-15",
+      "start_time": "16:00",
+      "start_time_utc": "2026-03-15T16:00:00Z",
+      "channels": []
+    },
+    {
+      "home_team": "Le Havre",
+      "away_team": "Lyon",
+      "home_team_short": "HAV",
+      "away_team_short": "LYO",
+      "home_team_slug": "le-havre",
+      "away_team_slug": "lyon",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/SdQTDNR0-4v5cIBqb.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/bkuX6RS0-GU4hlIMk.png",
+      "competition": "Ligue 1",
+      "competition_full": "FRANCE: Ligue 1",
+      "country": "France",
+      "competition_id": "KIShoMk3",
+      "competition_url": "https://www.flashscore.com/football/france/ligue-1/",
+      "start_date": "2026-03-15",
+      "start_time": "16:15",
+      "start_time_utc": "2026-03-15T16:15:00Z",
+      "channels": [
+        {
+          "name": "Nova Sport 5",
+          "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
+        },
+        {
+          "name": "Arena Sport 5",
+          "url": "http://www.tvarenasport.hr/"
+        },
+        {
+          "name": "Oneplay",
+          "url": "https://www.oneplay.cz/"
+        }
+      ]
+    },
+    {
+      "home_team": "Metz",
+      "away_team": "Toulouse",
+      "home_team_short": "MET",
+      "away_team_short": "TOU",
+      "home_team_slug": "metz",
+      "away_team_slug": "toulouse",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/SCdF7fjT-pztT5vMl.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/AskYUH8k-COxgbCEm.png",
+      "competition": "Ligue 1",
+      "competition_full": "FRANCE: Ligue 1",
+      "country": "France",
+      "competition_id": "KIShoMk3",
+      "competition_url": "https://www.flashscore.com/football/france/ligue-1/",
+      "start_date": "2026-03-15",
+      "start_time": "16:15",
+      "start_time_utc": "2026-03-15T16:15:00Z",
+      "channels": [
+        {
+          "name": "beIN Sports MENA",
+          "url": "https://www.beinsports.com/en-mena"
+        },
+        {
+          "name": "Nova Sport 6",
+          "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
+        },
+        {
+          "name": "Arena Sport 8",
+          "url": "http://www.tvarenasport.hr/"
+        },
+        {
+          "name": "Oneplay",
+          "url": "https://www.oneplay.cz/"
+        }
+      ]
+    },
+    {
+      "home_team": "Rennes",
+      "away_team": "Lille",
+      "home_team_short": "REN",
+      "away_team_short": "LIL",
+      "home_team_slug": "rennes",
+      "away_team_slug": "lille",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/pnrF2X76-Y5eozcI6.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/Q34pXImC-UDticXKP.png",
+      "competition": "Ligue 1",
+      "competition_full": "FRANCE: Ligue 1",
+      "country": "France",
+      "competition_id": "KIShoMk3",
+      "competition_url": "https://www.flashscore.com/football/france/ligue-1/",
+      "start_date": "2026-03-15",
+      "start_time": "19:45",
+      "start_time_utc": "2026-03-15T19:45:00Z",
+      "channels": [
+        {
+          "name": "Nova Sport 3",
+          "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
+        },
+        {
+          "name": "Arena Sport 2",
+          "url": "http://www.tvarenasport.hr/"
+        },
+        {
+          "name": "Oneplay",
+          "url": "https://www.oneplay.cz/"
+        }
+      ]
+    },
+    {
+      "home_team": "Werder Bremen",
+      "away_team": "Mainz",
+      "home_team_short": "WER",
+      "away_team_short": "MAI",
+      "home_team_slug": "werder-bremen",
+      "away_team_slug": "mainz",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/pIavfLS0-EVomMG4o.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/tbR3gUTH-EoYxhN5r.png",
+      "competition": "Bundesliga",
+      "competition_full": "GERMANY: Bundesliga",
+      "country": "Germany",
+      "competition_id": "W6BOzpK2",
+      "competition_url": "https://www.flashscore.com/football/germany/bundesliga/",
+      "start_date": "2026-03-15",
+      "start_time": "14:30",
+      "start_time_utc": "2026-03-15T14:30:00Z",
+      "channels": [
+        {
+          "name": "Nova Sport 3",
+          "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
+        },
+        {
+          "name": "beIN Sports 1",
+          "url": "https://www.beinsports.com/au/"
+        },
+        {
+          "name": "beIN Sports MAX 7",
+          "url": "http://www.beinsports.com/france"
+        },
+        {
+          "name": "Oneplay",
+          "url": "https://www.oneplay.cz/"
+        }
+      ]
+    },
+    {
+      "home_team": "Freiburg",
+      "away_team": "Union Berlin",
+      "home_team_short": "FRE",
+      "away_team_short": "UNI",
+      "home_team_slug": "freiburg",
+      "away_team_slug": "union-berlin",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/0pdxCFiT-86lnAaq9.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/0OMJUule-ncmj9JbF.png",
+      "competition": "Bundesliga",
+      "competition_full": "GERMANY: Bundesliga",
+      "country": "Germany",
+      "competition_id": "W6BOzpK2",
+      "competition_url": "https://www.flashscore.com/football/germany/bundesliga/",
+      "start_date": "2026-03-15",
+      "start_time": "16:30",
+      "start_time_utc": "2026-03-15T16:30:00Z",
+      "channels": [
+        {
+          "name": "Nova Sport 3",
+          "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
+        },
+        {
+          "name": "Oneplay",
+          "url": "https://www.oneplay.cz/"
+        },
+        {
+          "name": "Sky Sport",
+          "url": "https://www.sky.com.mx/"
+        },
+        {
+          "name": "Sony LIV",
+          "url": "http://www.sonyliv.com/"
+        }
+      ]
+    },
+    {
+      "home_team": "Stuttgart",
+      "away_team": "RB Leipzig",
+      "home_team_short": "STU",
+      "away_team_short": "RBL",
+      "home_team_slug": "vfb-stuttgart",
+      "away_team_slug": "rb-leipzig",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/fgQWGn86-f1Z3XxZa.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/fNS5fTmC-WvvSE8Dm.png",
+      "competition": "Bundesliga",
+      "competition_full": "GERMANY: Bundesliga",
+      "country": "Germany",
+      "competition_id": "W6BOzpK2",
+      "competition_url": "https://www.flashscore.com/football/germany/bundesliga/",
+      "start_date": "2026-03-15",
+      "start_time": "18:30",
+      "start_time_utc": "2026-03-15T18:30:00Z",
+      "channels": [
+        {
+          "name": "Nova Sport 6",
+          "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
+        },
+        {
+          "name": "beIN Sports MAX 7",
+          "url": "http://www.beinsports.com/france"
+        },
+        {
+          "name": "Oneplay",
+          "url": "https://www.oneplay.cz/"
+        },
+        {
+          "name": "Sky Sport",
+          "url": "https://www.sky.com.mx/"
+        }
+      ]
+    },
+    {
+      "home_team": "Verona",
+      "away_team": "Genoa",
+      "home_team_short": "VER",
+      "away_team_short": "GEN",
+      "home_team_slug": "verona",
+      "away_team_slug": "genoa",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/YDLnjflC-Kxh373f3.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/S48z3Poe-hCD6m1R3.png",
+      "competition": "Serie A",
+      "competition_full": "ITALY: Serie A",
+      "country": "Italy",
+      "competition_id": "COuk57Ci",
+      "competition_url": "https://www.flashscore.com/football/italy/serie-a/",
+      "start_date": "2026-03-15",
+      "start_time": "11:30",
+      "start_time_utc": "2026-03-15T11:30:00Z",
+      "channels": [
+        {
+          "name": "Eleven Sports 1",
+          "url": "https://w14i16.dashboard.wedare.pl/ts/96114/tsc?typ=r&amc=con.wedare.541078.561994.CRTCUUBzSos"
+        },
+        {
+          "name": "Arena Sport 1",
+          "url": "http://www.tvarenasport.hr/"
+        },
+        {
+          "name": "ESPN",
+          "url": "https://www.espn.com.ar/"
+        },
+        {
+          "name": "Fast Sports",
+          "url": "https://fasttv.am/"
+        }
+      ]
+    },
+    {
+      "home_team": "Pisa",
+      "away_team": "Cagliari",
+      "home_team_short": "PIS",
+      "away_team_short": "CAG",
+      "home_team_slug": "pisa",
+      "away_team_slug": "cagliari",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/vPrevkT0-GMOw3SI3.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/tSQII3hT-McvX4bye.png",
+      "competition": "Serie A",
+      "competition_full": "ITALY: Serie A",
+      "country": "Italy",
+      "competition_id": "COuk57Ci",
+      "competition_url": "https://www.flashscore.com/football/italy/serie-a/",
+      "start_date": "2026-03-15",
+      "start_time": "14:00",
+      "start_time_utc": "2026-03-15T14:00:00Z",
+      "channels": [
+        {
+          "name": "Arena Sport 6",
+          "url": "http://www.tvarenasport.hr/"
+        },
+        {
+          "name": "ESPN",
+          "url": "https://www.espn.com.ar/"
+        },
+        {
+          "name": "Fast Sports",
+          "url": "https://fasttv.am/"
+        },
+        {
+          "name": "S Sport+",
+          "url": "https://ssport.tv/"
+        }
+      ]
+    },
+    {
+      "home_team": "Sassuolo",
+      "away_team": "Bologna",
+      "home_team_short": "SAS",
+      "away_team_short": "BOL",
+      "home_team_slug": "sassuolo",
+      "away_team_slug": "bologna",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/QckzxM7k-6ZDR6zEL.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/6ovaa9T0-McvX4bye.png",
+      "competition": "Serie A",
+      "competition_full": "ITALY: Serie A",
+      "country": "Italy",
+      "competition_id": "COuk57Ci",
+      "competition_url": "https://www.flashscore.com/football/italy/serie-a/",
+      "start_date": "2026-03-15",
+      "start_time": "14:00",
+      "start_time_utc": "2026-03-15T14:00:00Z",
+      "channels": [
+        {
+          "name": "Eleven Sports 1",
+          "url": "https://w14i16.dashboard.wedare.pl/ts/96114/tsc?typ=r&amc=con.wedare.541078.561994.CRTCUUBzSos"
+        },
+        {
+          "name": "Arena Sport 4",
+          "url": "http://www.tvarenasport.hr/"
+        },
+        {
+          "name": "ESPN",
+          "url": "https://www.espn.com.ar/"
+        },
+        {
+          "name": "Fast Sports",
+          "url": "https://fasttv.am/"
+        }
+      ]
+    },
+    {
+      "home_team": "Como",
+      "away_team": "AS Roma",
+      "home_team_short": "COM",
+      "away_team_short": "ROM",
+      "home_team_slug": "como",
+      "away_team_slug": "as-roma",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/4pxypIS0-hpmw8K1h.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/j31Z1pne-GtNb9h2q.png",
+      "competition": "Serie A",
+      "competition_full": "ITALY: Serie A",
+      "country": "Italy",
+      "competition_id": "COuk57Ci",
+      "competition_url": "https://www.flashscore.com/football/italy/serie-a/",
+      "start_date": "2026-03-15",
+      "start_time": "17:00",
+      "start_time_utc": "2026-03-15T17:00:00Z",
+      "channels": [
+        {
+          "name": "TNT Sports 2",
+          "url": "https://www.tntsports.co.uk/"
+        },
+        {
+          "name": "Eleven Sports 1",
+          "url": "https://w14i16.dashboard.wedare.pl/ts/96114/tsc?typ=r&amc=con.wedare.541078.561994.CRTCUUBzSos"
+        },
+        {
+          "name": "Arena Sport 2",
+          "url": "http://www.tvarenasport.hr/"
+        },
+        {
+          "name": "ESPN 3",
+          "url": "https://www.espn.com.mx/"
+        }
+      ]
+    },
+    {
+      "home_team": "Lazio",
+      "away_team": "AC Milan",
+      "home_team_short": "LAZ",
+      "away_team_short": "ACM",
+      "home_team_slug": "lazio",
+      "away_team_slug": "ac-milan",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/4CLpo27k-EaFfQ9z6.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/WOOHTbSq-KtCfnbWp.png",
+      "competition": "Serie A",
+      "competition_full": "ITALY: Serie A",
+      "country": "Italy",
+      "competition_id": "COuk57Ci",
+      "competition_url": "https://www.flashscore.com/football/italy/serie-a/",
+      "start_date": "2026-03-15",
+      "start_time": "19:45",
+      "start_time_utc": "2026-03-15T19:45:00Z",
+      "channels": [
+        {
+          "name": "TNT Sports 1",
+          "url": "https://www.tntsports.co.uk/"
+        },
+        {
+          "name": "Eleven Sports 1",
+          "url": "https://w14i16.dashboard.wedare.pl/ts/96114/tsc?typ=r&amc=con.wedare.541078.561994.CRTCUUBzSos"
+        },
+        {
+          "name": "beIN Sports 3",
+          "url": "https://www.beinsports.com/au/"
+        },
+        {
+          "name": "ESPN",
+          "url": "https://www.espn.com.ar/"
+        }
+      ]
+    },
+    {
+      "home_team": "Mallorca",
+      "away_team": "Espanyol",
+      "home_team_short": "MAL",
+      "away_team_short": "ESP",
+      "home_team_slug": "mallorca",
+      "away_team_slug": "espanyol",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/WKsw8cne-rmDEjevK.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/QeCoIpXH-Msjm1Bq4.png",
+      "competition": "LaLiga",
+      "competition_full": "SPAIN: LaLiga",
+      "country": "Spain",
+      "competition_id": "QVmLl54o",
+      "competition_url": "https://www.flashscore.com/football/spain/laliga/",
+      "start_date": "2026-03-15",
+      "start_time": "13:00",
+      "start_time_utc": "2026-03-15T13:00:00Z",
+      "channels": [
+        {
+          "name": "ESPN Deportes",
+          "url": "https://espndeportes.espn.com/"
+        },
+        {
+          "name": "SuperSport LaLiga",
+          "url": "https://supersport.com/"
+        },
+        {
+          "name": "Premier Sports 1",
+          "url": "http://www.premiersports.com/"
+        },
+        {
+          "name": "Nova Sport 4",
+          "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
+        }
+      ]
+    },
+    {
+      "home_team": "Barcelona",
+      "away_team": "Sevilla",
+      "home_team_short": "BAR",
+      "away_team_short": "SEV",
+      "home_team_slug": "barcelona",
+      "away_team_slug": "sevilla",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/jZ8dSYS0-fcDVLdrL.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/EcTGi086-tIT0KyhE.png",
+      "competition": "LaLiga",
+      "competition_full": "SPAIN: LaLiga",
+      "country": "Spain",
+      "competition_id": "QVmLl54o",
+      "competition_url": "https://www.flashscore.com/football/spain/laliga/",
+      "start_date": "2026-03-15",
+      "start_time": "15:15",
+      "start_time_utc": "2026-03-15T15:15:00Z",
+      "channels": [
+        {
+          "name": "ESPN Deportes",
+          "url": "https://espndeportes.espn.com/"
+        },
+        {
+          "name": "SuperSport LaLiga",
+          "url": "https://supersport.com/"
+        },
+        {
+          "name": "Premier Sports 1",
+          "url": "http://www.premiersports.com/"
+        },
+        {
+          "name": "CANAL+ Sport",
+          "url": "https://r9kgpx.dashboard.wedare.pl/ts/96026/tsc?typ=r&amc=con.wedare.541078.561994.CRTJTPi7-7-"
+        }
+      ]
+    },
+    {
+      "home_team": "Betis",
+      "away_team": "Celta Vigo",
+      "home_team_short": "BET",
+      "away_team_short": "CEL",
+      "home_team_slug": "betis",
+      "away_team_slug": "celta-vigo",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/YV7lpDU0-zkU5wiAr.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/INW8oRBN-SOY3p1Si.png",
+      "competition": "LaLiga",
+      "competition_full": "SPAIN: LaLiga",
+      "country": "Spain",
+      "competition_id": "QVmLl54o",
+      "competition_url": "https://www.flashscore.com/football/spain/laliga/",
+      "start_date": "2026-03-15",
+      "start_time": "17:30",
+      "start_time_utc": "2026-03-15T17:30:00Z",
+      "channels": [
+        {
+          "name": "ESPN Deportes",
+          "url": "https://espndeportes.espn.com/"
+        },
+        {
+          "name": "SuperSport LaLiga",
+          "url": "https://supersport.com/"
+        },
+        {
+          "name": "Premier Sports 1",
+          "url": "http://www.premiersports.com/"
+        },
+        {
+          "name": "Movistar Plus+",
+          "url": "https://www.awin1.com/awclick.php?gid=512151&mid=114230&awinaffid=793117&linkid=3862071&clickref="
+        }
+      ]
+    },
+    {
+      "home_team": "Real Sociedad",
+      "away_team": "Osasuna",
+      "home_team_short": "RSO",
+      "away_team_short": "OSA",
+      "home_team_slug": "real-sociedad",
+      "away_team_slug": "osasuna",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/rcAkl5le-vJb36ZBF.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/UTfY3r86-Yu8w588N.png",
+      "competition": "LaLiga",
+      "competition_full": "SPAIN: LaLiga",
+      "country": "Spain",
+      "competition_id": "QVmLl54o",
+      "competition_url": "https://www.flashscore.com/football/spain/laliga/",
+      "start_date": "2026-03-15",
+      "start_time": "20:00",
+      "start_time_utc": "2026-03-15T20:00:00Z",
+      "channels": [
+        {
+          "name": "ESPN Deportes",
+          "url": "https://espndeportes.espn.com/"
+        },
+        {
+          "name": "SuperSport LaLiga",
+          "url": "https://supersport.com/"
+        },
+        {
+          "name": "Premier Sports 1",
+          "url": "http://www.premiersports.com/"
+        },
+        {
+          "name": "Nova Sport 4",
+          "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
+        }
+      ]
+    },
+    {
+      "home_team": "Columbus Crew",
+      "away_team": "Nashville SC",
+      "home_team_short": "COL",
+      "away_team_short": "NAS",
+      "home_team_slug": "columbus-crew",
+      "away_team_slug": "nashville-sc",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/UiThDkme-EgOLyoyn.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/viMd0CQq-6JqXhTSA.png",
+      "competition": "MLS",
+      "competition_full": "USA: MLS",
+      "country": "USA",
+      "competition_id": "CQv5qrFt",
+      "competition_url": "https://www.flashscore.com/football/usa/mls/",
+      "start_date": "2026-03-14",
+      "start_time": "22:15",
+      "start_time_utc": "2026-03-14T22:15:00Z",
+      "channels": []
+    },
+    {
+      "home_team": "Charlotte",
+      "away_team": "Inter Miami",
+      "home_team_short": "CHA",
+      "away_team_short": "MIA",
+      "home_team_slug": "charlotte-fc",
+      "away_team_slug": "inter-miami",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/rwIBORWH-bePDAcBO.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/z94JGZTH-UwKTVGeG.png",
+      "competition": "MLS",
+      "competition_full": "USA: MLS",
+      "country": "USA",
+      "competition_id": "CQv5qrFt",
+      "competition_url": "https://www.flashscore.com/football/usa/mls/",
+      "start_date": "2026-03-14",
+      "start_time": "23:30",
+      "start_time_utc": "2026-03-14T23:30:00Z",
+      "channels": []
+    },
+    {
+      "home_team": "New York City",
+      "away_team": "Colorado Rapids",
+      "home_team_short": "NYC",
+      "away_team_short": "COL",
+      "home_team_slug": "new-york-city",
+      "away_team_slug": "colorado-rapids",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/0GgDTRle-GxTXAzv3.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/MwKFeQ86-fyzFgPy8.png",
+      "competition": "MLS",
+      "competition_full": "USA: MLS",
+      "country": "USA",
+      "competition_id": "CQv5qrFt",
+      "competition_url": "https://www.flashscore.com/football/usa/mls/",
+      "start_date": "2026-03-14",
+      "start_time": "23:30",
+      "start_time_utc": "2026-03-14T23:30:00Z",
+      "channels": []
+    },
+    {
+      "home_team": "Orlando City",
+      "away_team": "CF Montreal",
+      "home_team_short": "ORL",
+      "away_team_short": "CFM",
+      "home_team_slug": "orlando-city",
+      "away_team_slug": "cf-montreal",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/hQpmY0Qq-AFpqya1j.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/CEqcFQlC-APghxIAJ.png",
+      "competition": "MLS",
+      "competition_full": "USA: MLS",
+      "country": "USA",
+      "competition_id": "CQv5qrFt",
+      "competition_url": "https://www.flashscore.com/football/usa/mls/",
+      "start_date": "2026-03-14",
+      "start_time": "23:30",
+      "start_time_utc": "2026-03-14T23:30:00Z",
+      "channels": []
+    },
+    {
+      "home_team": "Chicago Fire",
+      "away_team": "DC United",
+      "home_team_short": "CHI",
+      "away_team_short": "UNI",
+      "home_team_slug": "chicago-fire",
+      "away_team_slug": "dc-united",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/YHLXh45k-0lw00xPr.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/h4rRBzU0-M1jIRGkS.png",
+      "competition": "MLS",
+      "competition_full": "USA: MLS",
+      "country": "USA",
+      "competition_id": "CQv5qrFt",
+      "competition_url": "https://www.flashscore.com/football/usa/mls/",
+      "start_date": "2026-03-15",
+      "start_time": "00:30",
+      "start_time_utc": "2026-03-15T00:30:00Z",
+      "channels": []
+    },
+    {
+      "home_team": "FC Dallas",
+      "away_team": "San Diego FC",
+      "home_team_short": "DAL",
+      "away_team_short": "SDI",
+      "home_team_slug": "fc-dallas",
+      "away_team_slug": "san-diego-fc",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/GWHoAYCN-08eoEXKh.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/hzGDoHUH-b7NYdTs6.png",
+      "competition": "MLS",
+      "competition_full": "USA: MLS",
+      "country": "USA",
+      "competition_id": "CQv5qrFt",
+      "competition_url": "https://www.flashscore.com/football/usa/mls/",
+      "start_date": "2026-03-15",
+      "start_time": "00:30",
+      "start_time_utc": "2026-03-15T00:30:00Z",
+      "channels": []
+    },
+    {
+      "home_team": "Houston Dynamo",
+      "away_team": "Portland Timbers",
+      "home_team_short": "HOU",
+      "away_team_short": "POR",
+      "home_team_slug": "houston-dynamo",
+      "away_team_slug": "portland-timbers",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/8tadnzRq-YLT3ZeZm.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/6ZJJvliC-xf2WUeO1.png",
+      "competition": "MLS",
+      "competition_full": "USA: MLS",
+      "country": "USA",
+      "competition_id": "CQv5qrFt",
+      "competition_url": "https://www.flashscore.com/football/usa/mls/",
+      "start_date": "2026-03-15",
+      "start_time": "00:30",
+      "start_time_utc": "2026-03-15T00:30:00Z",
+      "channels": []
+    },
+    {
+      "home_team": "Los Angeles Galaxy",
+      "away_team": "Sporting Kansas City",
+      "home_team_short": "LAG",
+      "away_team_short": "KAN",
+      "home_team_slug": "los-angeles-galaxy",
+      "away_team_slug": "sporting-kansas-city",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/AV3qcsDN-nqhLBCKD.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/AVAdquCN-88w2wUnG.png",
+      "competition": "MLS",
+      "competition_full": "USA: MLS",
+      "country": "USA",
+      "competition_id": "CQv5qrFt",
+      "competition_url": "https://www.flashscore.com/football/usa/mls/",
+      "start_date": "2026-03-15",
+      "start_time": "01:30",
+      "start_time_utc": "2026-03-15T01:30:00Z",
+      "channels": []
+    },
+    {
+      "home_team": "Real Salt Lake",
+      "away_team": "Austin FC",
+      "home_team_short": "SAL",
+      "away_team_short": "AUS",
+      "home_team_slug": "real-salt-lake",
+      "away_team_slug": "austin-fc",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/4EKWEn8k-vgy39tSd.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/KObgAQjT-AP3GsSz8.png",
+      "competition": "MLS",
+      "competition_full": "USA: MLS",
+      "country": "USA",
+      "competition_id": "CQv5qrFt",
+      "competition_url": "https://www.flashscore.com/football/usa/mls/",
+      "start_date": "2026-03-15",
+      "start_time": "01:30",
+      "start_time_utc": "2026-03-15T01:30:00Z",
+      "channels": []
+    },
+    {
+      "home_team": "Los Angeles FC",
+      "away_team": "St. Louis City",
+      "home_team_short": "LAF",
+      "away_team_short": "SLC",
+      "home_team_slug": "los-angeles-fc",
+      "away_team_slug": "st-louis-city",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/jHAzzjXH-h6S6xFbF.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/OAtXEIVH-jmLPWdtA.png",
+      "competition": "MLS",
+      "competition_full": "USA: MLS",
+      "country": "USA",
+      "competition_id": "CQv5qrFt",
+      "competition_url": "https://www.flashscore.com/football/usa/mls/",
+      "start_date": "2026-03-15",
+      "start_time": "02:30",
+      "start_time_utc": "2026-03-15T02:30:00Z",
+      "channels": []
+    },
+    {
+      "home_team": "New England Revolution",
+      "away_team": "FC Cincinnati",
+      "home_team_short": "ENG",
+      "away_team_short": "FCC",
+      "home_team_slug": "new-england-revolution",
+      "away_team_slug": "fc-cincinnati",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/dUopT5UH-KI53uaQC.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/vwHVLET0-hfMSf4LN.png",
+      "competition": "MLS",
+      "competition_full": "USA: MLS",
+      "country": "USA",
+      "competition_id": "CQv5qrFt",
+      "competition_url": "https://www.flashscore.com/football/usa/mls/",
+      "start_date": "2026-03-15",
+      "start_time": "18:30",
+      "start_time_utc": "2026-03-15T18:30:00Z",
+      "channels": []
+    },
+    {
+      "home_team": "Vancouver Whitecaps",
+      "away_team": "Minnesota United",
+      "home_team_short": "VAN",
+      "away_team_short": "MIN",
+      "home_team_slug": "vancouver-whitecaps",
+      "away_team_slug": "minnesota-united",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/KbDi358k-nJrkMuTE.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/zP5RaY76-Y5BuxdGt.png",
+      "competition": "MLS",
+      "competition_full": "USA: MLS",
+      "country": "USA",
+      "competition_id": "CQv5qrFt",
+      "competition_url": "https://www.flashscore.com/football/usa/mls/",
+      "start_date": "2026-03-15",
+      "start_time": "20:30",
+      "start_time_utc": "2026-03-15T20:30:00Z",
+      "channels": []
+    },
+    {
+      "home_team": "San Jose Earthquakes",
+      "away_team": "Seattle Sounders",
+      "home_team_short": "JOS",
+      "away_team_short": "SEA",
+      "home_team_slug": "san-jose-earthquakes",
+      "away_team_slug": "seattle-sounders",
+      "home_team_logo": "https://static.flashscore.com/res/image/data/4zKyyJBN-GpqxHjf5.png",
+      "away_team_logo": "https://static.flashscore.com/res/image/data/zZNaLM86-Q7Ql2Qbi.png",
+      "competition": "MLS",
+      "competition_full": "USA: MLS",
+      "country": "USA",
+      "competition_id": "CQv5qrFt",
+      "competition_url": "https://www.flashscore.com/football/usa/mls/",
+      "start_date": "2026-03-15",
+      "start_time": "23:00",
+      "start_time_utc": "2026-03-15T23:00:00Z",
       "channels": []
     }
   ]
