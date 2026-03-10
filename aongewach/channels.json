@@ -23,7 +23,7 @@
       "streams_skipped_non_live_url": 0,
       "channels_pruned_non_target": 0
     },
-    "unique_channels": 1252,
+    "unique_channels": 1260,
     "best_stream_ranker": {
       "policy_version": "best-stream-v1",
       "run_id": "20260309T100644Z",
@@ -37,6 +37,11 @@
       "continuity_seconds": 10,
       "history_days": 14,
       "log_file": "stream_health_log.jsonl"
+    },
+    "updated_at": "2026-03-10T06:40:54Z",
+    "schedule_channel_sync": {
+      "added_channels": 8,
+      "assigned_missing_ids": 0
     }
   },
   "channels": {
@@ -32303,6 +32308,46 @@
     },
     "beIN Sports 3": {
       "id": 522847325,
+      "logo": null,
+      "qualities": {}
+    },
+    "RTE 1": {
+      "id": 70189373,
+      "logo": null,
+      "qualities": {}
+    },
+    "TSN 3": {
+      "id": 72483145,
+      "logo": null,
+      "qualities": {}
+    },
+    "COSMOTE Sport 7": {
+      "id": 619054250,
+      "logo": null,
+      "qualities": {}
+    },
+    "FOX Network": {
+      "id": 360121336,
+      "logo": null,
+      "qualities": {}
+    },
+    "Triller TV": {
+      "id": 355926953,
+      "logo": null,
+      "qualities": {}
+    },
+    "beIN Sports MENA English 2": {
+      "id": 1966868615,
+      "logo": null,
+      "qualities": {}
+    },
+    "Fox Sports 1": {
+      "id": 469697578,
+      "logo": null,
+      "qualities": {}
+    },
+    "Sky Showcase": {
+      "id": 481952917,
       "logo": null,
       "qualities": {}
     }
