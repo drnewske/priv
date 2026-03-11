@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-10T06:40:46Z",
+  "generated_at": "2026-03-11T06:43:51Z",
   "source": "flashscore.com",
   "config": {
     "host": "https://global.flashscore.ninja",
@@ -14,50 +14,50 @@
     "top_competitions_only": true,
     "max_channels_per_event": 4,
     "total_events": 77,
-    "total_events_with_channels": 58
+    "total_events_with_channels": 61
   },
   "day_summaries": [
     {
       "day_offset": 0,
-      "events_before_competition_filter": 256,
+      "events_before_competition_filter": 297,
       "events": 0,
       "events_with_channels": 0
     },
     {
       "day_offset": 1,
-      "events_before_competition_filter": 293,
-      "events": 0,
-      "events_with_channels": 0
+      "events_before_competition_filter": 218,
+      "events": 3,
+      "events_with_channels": 1
     },
     {
       "day_offset": 2,
-      "events_before_competition_filter": 213,
-      "events": 3,
-      "events_with_channels": 0
-    },
-    {
-      "day_offset": 3,
-      "events_before_competition_filter": 469,
+      "events_before_competition_filter": 473,
       "events": 7,
       "events_with_channels": 5
     },
     {
-      "day_offset": 4,
-      "events_before_competition_filter": 1784,
+      "day_offset": 3,
+      "events_before_competition_filter": 1809,
       "events": 29,
       "events_with_channels": 26
     },
     {
-      "day_offset": 5,
-      "events_before_competition_filter": 1257,
+      "day_offset": 4,
+      "events_before_competition_filter": 1296,
       "events": 34,
-      "events_with_channels": 24
+      "events_with_channels": 25
+    },
+    {
+      "day_offset": 5,
+      "events_before_competition_filter": 183,
+      "events": 4,
+      "events_with_channels": 4
     },
     {
       "day_offset": 6,
-      "events_before_competition_filter": 179,
-      "events": 4,
-      "events_with_channels": 3
+      "events_before_competition_filter": 237,
+      "events": 0,
+      "events_with_channels": 0
     }
   ],
   "events": [
@@ -78,7 +78,12 @@
       "start_date": "2026-03-12",
       "start_time": "19:00",
       "start_time_utc": "2026-03-12T19:00:00Z",
-      "channels": []
+      "channels": [
+        {
+          "name": "BandSports",
+          "url": "http://bandsports.band.uol.com.br/"
+        }
+      ]
     },
     {
       "home_team": "Al Najma",
@@ -268,16 +273,16 @@
           "url": "https://www.foxsports.com/presspass/networks/deportes/"
         },
         {
+          "name": "ZAP",
+          "url": "https://www.zap.co.ao/"
+        },
+        {
+          "name": "BandSports",
+          "url": "http://bandsports.band.uol.com.br/"
+        },
+        {
           "name": "COSMOTE Sport 3",
           "url": "https://www.cosmotetv.gr/"
-        },
-        {
-          "name": "FanCode",
-          "url": "https://www.fancode.com/"
-        },
-        {
-          "name": "Fox Soccer Plus",
-          "url": "https://www.foxsports.com/soccer/plus"
         }
       ]
     },
@@ -363,12 +368,12 @@
           "url": "https://supersport.com/"
         },
         {
-          "name": "Canal+ Extra 3",
-          "url": "https://r9kgpx.dashboard.wedare.pl/ts/96026/tsc?typ=r&amc=con.wedare.541078.561994.CRTJTPi7-7-"
+          "name": "Premier Sports 1",
+          "url": "https://www.psn.mn/"
         },
         {
-          "name": "CANAL+ Sport 7",
-          "url": "https://www.tkqlhce.com/click-101204424-15323932"
+          "name": "Canal+ Extra 3",
+          "url": "https://r9kgpx.dashboard.wedare.pl/ts/96026/tsc?typ=r&amc=con.wedare.541078.561994.CRTJTPi7-7-"
         }
       ]
     },
@@ -391,20 +396,20 @@
       "start_time_utc": "2026-03-14T15:00:00Z",
       "channels": [
         {
-          "name": "NBC",
-          "url": "http://www.nbc.com/"
+          "name": "NBC Universo",
+          "url": "https://www.nbc.com/networks/nbc-universo"
         },
         {
-          "name": "TNT Sports",
-          "url": "https://tntsports.com.mx/"
+          "name": "SuperSport Blitz",
+          "url": "https://supersport.com/"
+        },
+        {
+          "name": "Premier Sports 1 ROI",
+          "url": "https://www.premiersports.com/"
         },
         {
           "name": "beIN Sports MENA English 1",
           "url": "https://www.beinsports.com/en-mena"
-        },
-        {
-          "name": "Canal+ Extra 1",
-          "url": "https://r9kgpx.dashboard.wedare.pl/ts/96026/tsc?typ=r&amc=con.wedare.541078.561994.CRTJTPi7-7-"
         }
       ]
     },
@@ -535,20 +540,20 @@
       "start_time_utc": "2026-03-14T16:00:00Z",
       "channels": [
         {
+          "name": "beIN Sports US Espanol",
+          "url": "https://www.beinxtraespanol.com/us-es/index.html"
+        },
+        {
+          "name": "CANAL+ Sport 2",
+          "url": "https://www.canalplus-afrique.com/"
+        },
+        {
           "name": "Nova Sport 2",
           "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
         },
         {
-          "name": "Arena Sport 2",
-          "url": "http://www.tvarenasport.hr/"
-        },
-        {
-          "name": "beIN Sports 1",
-          "url": "http://www.beinsports.com/france/"
-        },
-        {
-          "name": "Oneplay",
-          "url": "https://www.oneplay.cz/"
+          "name": "Arena Sport 1x2",
+          "url": "http://www.tvarenasport.com/"
         }
       ]
     },
@@ -607,20 +612,20 @@
       "start_time_utc": "2026-03-14T20:05:00Z",
       "channels": [
         {
+          "name": "beIN Sports US Espanol",
+          "url": "https://www.beinxtraespanol.com/us-es/index.html"
+        },
+        {
+          "name": "SuperSport MaXimo 1",
+          "url": "https://supersport.com/"
+        },
+        {
           "name": "TV5 Monde Maghreb-Orient",
           "url": "https://maghreb-orient.tv5monde.com/fr"
         },
         {
-          "name": "Nova Sport 3",
-          "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
-        },
-        {
-          "name": "5 PLUS Israel",
-          "url": "https://www.sport5.co.il/"
-        },
-        {
-          "name": "Arena Sport 2",
-          "url": "http://www.tvarenasport.hr/"
+          "name": "Eleven Sports 4",
+          "url": "https://w14i16.dashboard.wedare.pl/ts/96114/tsc?typ=r&amc=con.wedare.541078.561994.CRTCUUBzSos"
         }
       ]
     },
@@ -679,8 +684,8 @@
       "start_time_utc": "2026-03-14T14:30:00Z",
       "channels": [
         {
-          "name": "Sky Sports Norte",
-          "url": "https://www.skycostarica.com/"
+          "name": "Premier Sports 4",
+          "url": "https://www.psn.mn/"
         },
         {
           "name": "Eleven Sports 3",
@@ -691,8 +696,8 @@
           "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
         },
         {
-          "name": "beIN Sports MAX 5",
-          "url": "http://www.beinsports.com/france"
+          "name": "Arena Sport 3",
+          "url": "https://www.tvarenasport.com/"
         }
       ]
     },
@@ -719,16 +724,16 @@
           "url": "https://www.skycostarica.com/"
         },
         {
+          "name": "Arena Sport 4",
+          "url": "https://www.tvarenasport.com/"
+        },
+        {
           "name": "beIN Sports MAX 6",
           "url": "http://www.beinsports.com/france"
         },
         {
           "name": "beIN SPORTS MAX",
           "url": "https://connect-hk.beinsports.com/"
-        },
-        {
-          "name": "Free",
-          "url": "https://www.free.fr/freebox/"
         }
       ]
     },
@@ -755,16 +760,16 @@
           "url": "https://www.skycostarica.com/"
         },
         {
+          "name": "Arena Sport 5",
+          "url": "https://www.tvarenasport.com/"
+        },
+        {
           "name": "beIN Sports MAX 7",
           "url": "http://www.beinsports.com/france"
         },
         {
           "name": "beIN SPORTS MAX",
           "url": "https://connect-hk.beinsports.com/"
-        },
-        {
-          "name": "Free",
-          "url": "https://www.free.fr/freebox/"
         }
       ]
     },
@@ -787,6 +792,10 @@
       "start_time_utc": "2026-03-14T17:30:00Z",
       "channels": [
         {
+          "name": "Sporty TV",
+          "url": "https://sporty.com/"
+        },
+        {
           "name": "NOW",
           "url": "https://www.nowtv.com/ie"
         },
@@ -797,10 +806,6 @@
         {
           "name": "Eleven Sports 2",
           "url": "https://w14i16.dashboard.wedare.pl/ts/96114/tsc?typ=r&amc=con.wedare.541078.561994.CRTCUUBzSos"
-        },
-        {
-          "name": "Nova Sport 3",
-          "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
         }
       ]
     },
@@ -823,8 +828,8 @@
       "start_time_utc": "2026-03-14T14:00:00Z",
       "channels": [
         {
-          "name": "Fox Deportes",
-          "url": "https://www.foxsports.com/presspass/networks/deportes/"
+          "name": "CBS Sports Golazo",
+          "url": "https://www.cbssports.com/"
         },
         {
           "name": "SuperSport Football",
@@ -859,8 +864,8 @@
       "start_time_utc": "2026-03-14T17:00:00Z",
       "channels": [
         {
-          "name": "Fox Deportes",
-          "url": "https://www.foxsports.com/presspass/networks/deportes/"
+          "name": "CBS Sports Golazo",
+          "url": "https://www.cbssports.com/"
         },
         {
           "name": "SuperSport Football",
@@ -895,8 +900,8 @@
       "start_time_utc": "2026-03-14T19:45:00Z",
       "channels": [
         {
-          "name": "SiriusXM FC",
-          "url": "https://www.siriusxm.com/"
+          "name": "CBS Sports Golazo",
+          "url": "https://www.cbssports.com/"
         },
         {
           "name": "SuperSport Football",
@@ -933,6 +938,10 @@
         {
           "name": "COSMOTE Sport 7",
           "url": "https://www.cosmotetv.gr/"
+        },
+        {
+          "name": "FanCode",
+          "url": "https://www.fancode.com/"
         }
       ]
     },
@@ -959,16 +968,16 @@
           "url": "https://www.foxsports.com/soccer/plus"
         },
         {
+          "name": "ZAP",
+          "url": "https://www.zap.co.ao/"
+        },
+        {
           "name": "Polsat Sport 2",
           "url": "https://r9kgpx.dashboard.wedare.pl/ts/96026/tsc?typ=r&amc=con.wedare.541078.561994.CRTJTPi7-7-"
         },
         {
           "name": "BandSports",
           "url": "http://bandsports.band.uol.com.br/"
-        },
-        {
-          "name": "Channel 10",
-          "url": "https://10play.com.au/"
         }
       ]
     },
@@ -1388,8 +1397,8 @@
           "url": "https://www.gotvafrica.com/en-ng"
         },
         {
-          "name": "Sky Sports Premier League",
-          "url": "http://www.skysports.com/"
+          "name": "Premier Sports 3",
+          "url": "https://www.psn.mn/"
         },
         {
           "name": "Canal+ Extra 5",
@@ -1615,8 +1624,8 @@
       "start_time_utc": "2026-03-15T14:30:00Z",
       "channels": [
         {
-          "name": "Sky Sports Norte",
-          "url": "https://www.skycostarica.com/"
+          "name": "Premier Sports 5",
+          "url": "https://www.psn.mn/"
         },
         {
           "name": "DAZN 3",
@@ -1651,8 +1660,8 @@
       "start_time_utc": "2026-03-15T16:30:00Z",
       "channels": [
         {
-          "name": "Sky Sports Norte",
-          "url": "https://www.skycostarica.com/"
+          "name": "Premier Sports 4",
+          "url": "https://www.psn.mn/"
         },
         {
           "name": "DAZN 2",
@@ -1687,8 +1696,8 @@
       "start_time_utc": "2026-03-15T18:30:00Z",
       "channels": [
         {
-          "name": "Sky Sports Norte",
-          "url": "https://www.skycostarica.com/"
+          "name": "Premier Sports 5",
+          "url": "https://www.psn.mn/"
         },
         {
           "name": "MBC Action",
@@ -1723,8 +1732,8 @@
       "start_time_utc": "2026-03-15T11:30:00Z",
       "channels": [
         {
-          "name": "Fox Deportes",
-          "url": "https://www.foxsports.com/presspass/networks/deportes/"
+          "name": "CBS Sports Golazo",
+          "url": "https://www.cbssports.com/"
         },
         {
           "name": "SuperSport Football",
@@ -1795,6 +1804,10 @@
       "start_time_utc": "2026-03-15T14:00:00Z",
       "channels": [
         {
+          "name": "CBS Sports Golazo",
+          "url": "https://www.cbssports.com/"
+        },
+        {
           "name": "Eleven Sports 1",
           "url": "https://w14i16.dashboard.wedare.pl/ts/96114/tsc?typ=r&amc=con.wedare.541078.561994.CRTCUUBzSos"
         },
@@ -1805,10 +1818,6 @@
         {
           "name": "Arena Sport 2",
           "url": "http://www.tvarenasport.com/"
-        },
-        {
-          "name": "Arena Sport 4",
-          "url": "http://www.tvarenasport.hr/"
         }
       ]
     },
@@ -1831,8 +1840,8 @@
       "start_time_utc": "2026-03-15T17:00:00Z",
       "channels": [
         {
-          "name": "SiriusXM FC",
-          "url": "https://www.siriusxm.com/"
+          "name": "CBS Sports Golazo",
+          "url": "https://www.cbssports.com/"
         },
         {
           "name": "SuperSport Football",
@@ -1875,12 +1884,12 @@
           "url": "https://www.tntsports.co.uk/"
         },
         {
-          "name": "Eleven Sports 1",
-          "url": "https://w14i16.dashboard.wedare.pl/ts/96114/tsc?typ=r&amc=con.wedare.541078.561994.CRTCUUBzSos"
+          "name": "DAZN 2",
+          "url": "https://prf.hn/click/camref:1011lfsUi"
         },
         {
-          "name": "Sport 1",
-          "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
+          "name": "Eleven Sports 1",
+          "url": "https://w14i16.dashboard.wedare.pl/ts/96114/tsc?typ=r&amc=con.wedare.541078.561994.CRTCUUBzSos"
         }
       ]
     },
@@ -1903,8 +1912,8 @@
       "start_time_utc": "2026-03-15T13:00:00Z",
       "channels": [
         {
-          "name": "ESPN Deportes",
-          "url": "https://espndeportes.espn.com/"
+          "name": "ESPN 2",
+          "url": "https://www.espn.com.ar/"
         },
         {
           "name": "SuperSport GOtv LaLiga",
@@ -1939,8 +1948,8 @@
       "start_time_utc": "2026-03-15T15:15:00Z",
       "channels": [
         {
-          "name": "ESPN Deportes",
-          "url": "https://espndeportes.espn.com/"
+          "name": "ESPN 2",
+          "url": "https://www.espn.com.ar/"
         },
         {
           "name": "SuperSport GOtv LaLiga",
@@ -1979,8 +1988,8 @@
           "url": "https://espndeportes.espn.com/"
         },
         {
-          "name": "SuperSport LaLiga",
-          "url": "https://supersport.com/"
+          "name": "SuperSport GOtv Football",
+          "url": "https://www.gotvafrica.com/en-ng"
         },
         {
           "name": "Premier Sports 1",
@@ -2238,6 +2247,14 @@
         {
           "name": "SiriusXM FC",
           "url": "https://www.siriusxm.com/"
+        },
+        {
+          "name": "SPOTV Now",
+          "url": "https://www.spotvnow.com/"
+        },
+        {
+          "name": "SPOTV Prime",
+          "url": "https://www.spotvprime.co.kr/schedule?ch=prime"
         }
       ]
     },
@@ -2301,7 +2318,12 @@
       "start_date": "2026-03-15",
       "start_time": "23:00",
       "start_time_utc": "2026-03-15T23:00:00Z",
-      "channels": []
+      "channels": [
+        {
+          "name": "SiriusXM FC",
+          "url": "https://www.siriusxm.com/"
+        }
+      ]
     },
     {
       "home_team": "Brentford",
@@ -2322,20 +2344,20 @@
       "start_time_utc": "2026-03-16T20:00:00Z",
       "channels": [
         {
-          "name": "NBC",
-          "url": "http://www.nbc.com/"
+          "name": "ESPN 2",
+          "url": "https://www.espn.com.ar/"
         },
         {
-          "name": "Sky Sports Main Event",
-          "url": "http://www.skysports.com/"
+          "name": "SuperSport Grandstand",
+          "url": "https://supersport.com/"
+        },
+        {
+          "name": "NOW",
+          "url": "https://www.nowtv.com/ie"
         },
         {
           "name": "beIN Sports MENA English 1",
           "url": "https://www.beinsports.com/en-mena"
-        },
-        {
-          "name": "Canal+ Extra 1",
-          "url": "https://r9kgpx.dashboard.wedare.pl/ts/96026/tsc?typ=r&amc=con.wedare.541078.561994.CRTJTPi7-7-"
         }
       ]
     },
@@ -2358,20 +2380,20 @@
       "start_time_utc": "2026-03-16T19:45:00Z",
       "channels": [
         {
-          "name": "beIN Sports 3",
-          "url": "https://www.beinsports.com/au/"
+          "name": "Fox Deportes",
+          "url": "https://www.foxsports.com/presspass/networks/deportes/"
         },
         {
-          "name": "ESPN",
-          "url": "https://www.espn.com.ar/"
+          "name": "SuperSport Football",
+          "url": "https://en.wikipedia.org/wiki/SuperSport_(South_African_broadcaster)"
         },
         {
-          "name": "Fast Sports",
-          "url": "https://fasttv.am/"
+          "name": "DAZN 2",
+          "url": "https://prf.hn/click/camref:1011lfsUi"
         },
         {
-          "name": "S Sport 2",
-          "url": "https://ssport.tv/"
+          "name": "Sport 1",
+          "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
         }
       ]
     },
@@ -2398,16 +2420,16 @@
           "url": "https://espndeportes.espn.com/"
         },
         {
-          "name": "SuperSport LaLiga",
-          "url": "https://supersport.com/"
+          "name": "SuperSport GOtv LaLiga",
+          "url": "https://www.gotvafrica.com/en-ng"
         },
         {
           "name": "Premier Sports 1",
           "url": "http://www.premiersports.com/"
         },
         {
-          "name": "Nova Sport 4",
-          "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
+          "name": "DAZN 2",
+          "url": "https://dazn.prf.hn/click/camref:1100lLrMj"
         }
       ]
     },
@@ -2428,7 +2450,12 @@
       "start_date": "2026-03-15",
       "start_time": "23:00",
       "start_time_utc": "2026-03-15T23:00:00Z",
-      "channels": []
+      "channels": [
+        {
+          "name": "SiriusXM FC",
+          "url": "https://www.siriusxm.com/"
+        }
+      ]
     }
   ]
 }

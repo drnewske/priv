@@ -23,7 +23,7 @@
       "streams_skipped_non_live_url": 0,
       "channels_pruned_non_target": 0
     },
-    "unique_channels": 1260,
+    "unique_channels": 1265,
     "best_stream_ranker": {
       "policy_version": "best-stream-v1",
       "run_id": "20260310T095709Z",
@@ -37,6 +37,11 @@
       "continuity_seconds": 10,
       "history_days": 14,
       "log_file": "stream_health_log.jsonl"
+    },
+    "updated_at": "2026-03-11T06:44:02Z",
+    "schedule_channel_sync": {
+      "added_channels": 5,
+      "assigned_missing_ids": 0
     }
   },
   "channels": {
@@ -32439,6 +32444,31 @@
     },
     "Sky Showcase": {
       "id": 481952917,
+      "logo": null,
+      "qualities": {}
+    },
+    "Courtside 1891": {
+      "id": 660669606,
+      "logo": null,
+      "qualities": {}
+    },
+    "SuperSport Blitz": {
+      "id": 899614285,
+      "logo": null,
+      "qualities": {}
+    },
+    "Premier Sports 1 ROI": {
+      "id": 1297811163,
+      "logo": null,
+      "qualities": {}
+    },
+    "RTE One": {
+      "id": 138674734,
+      "logo": null,
+      "qualities": {}
+    },
+    "NWSL+": {
+      "id": 77791600,
       "logo": null,
       "qualities": {}
     }
