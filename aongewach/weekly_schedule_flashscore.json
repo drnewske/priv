@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-11T06:43:51Z",
+  "generated_at": "2026-03-12T06:45:45Z",
   "source": "flashscore.com",
   "config": {
     "host": "https://global.flashscore.ninja",
@@ -19,43 +19,43 @@
   "day_summaries": [
     {
       "day_offset": 0,
-      "events_before_competition_filter": 297,
-      "events": 0,
-      "events_with_channels": 0
-    },
-    {
-      "day_offset": 1,
-      "events_before_competition_filter": 218,
+      "events_before_competition_filter": 219,
       "events": 3,
       "events_with_channels": 1
     },
     {
-      "day_offset": 2,
-      "events_before_competition_filter": 473,
+      "day_offset": 1,
+      "events_before_competition_filter": 480,
       "events": 7,
       "events_with_channels": 5
     },
     {
-      "day_offset": 3,
-      "events_before_competition_filter": 1809,
+      "day_offset": 2,
+      "events_before_competition_filter": 1818,
       "events": 29,
       "events_with_channels": 26
     },
     {
-      "day_offset": 4,
-      "events_before_competition_filter": 1296,
+      "day_offset": 3,
+      "events_before_competition_filter": 1319,
       "events": 34,
       "events_with_channels": 25
     },
     {
-      "day_offset": 5,
-      "events_before_competition_filter": 183,
+      "day_offset": 4,
+      "events_before_competition_filter": 191,
       "events": 4,
       "events_with_channels": 4
     },
     {
+      "day_offset": 5,
+      "events_before_competition_filter": 246,
+      "events": 0,
+      "events_with_channels": 0
+    },
+    {
       "day_offset": 6,
-      "events_before_competition_filter": 237,
+      "events_before_competition_filter": 389,
       "events": 0,
       "events_with_channels": 0
     }
@@ -273,16 +273,16 @@
           "url": "https://www.foxsports.com/presspass/networks/deportes/"
         },
         {
-          "name": "ZAP",
-          "url": "https://www.zap.co.ao/"
+          "name": "SupeSport ESPN 1",
+          "url": "https://africa.espn.com/"
+        },
+        {
+          "name": "Movistar Plus+",
+          "url": "https://www.awin1.com/awclick.php?gid=512151&mid=114230&awinaffid=793117&linkid=3862071&clickref="
         },
         {
           "name": "BandSports",
           "url": "http://bandsports.band.uol.com.br/"
-        },
-        {
-          "name": "COSMOTE Sport 3",
-          "url": "https://www.cosmotetv.gr/"
         }
       ]
     },
@@ -444,7 +444,7 @@
           "url": "https://www.nowtv.com/ie"
         },
         {
-          "name": "beIN Sports MENA English 1",
+          "name": "beIN Sports MENA 1",
           "url": "https://www.beinsports.com/en-mena"
         }
       ]
@@ -516,7 +516,7 @@
           "url": "https://www.tntsports.co.uk/"
         },
         {
-          "name": "beIN Sports MENA English 1",
+          "name": "beIN Sports MENA 1",
           "url": "https://www.beinsports.com/en-mena"
         }
       ]
@@ -548,12 +548,12 @@
           "url": "https://www.canalplus-afrique.com/"
         },
         {
-          "name": "Nova Sport 2",
-          "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
+          "name": "beIN Sports MENA French 1",
+          "url": "http://www.beinsports.com/france/"
         },
         {
-          "name": "Arena Sport 1x2",
-          "url": "http://www.tvarenasport.com/"
+          "name": "Nova Sport 2",
+          "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
         }
       ]
     },
@@ -648,8 +648,12 @@
       "start_time_utc": "2026-03-14T14:30:00Z",
       "channels": [
         {
-          "name": "Sky Sports Norte",
-          "url": "https://www.skycostarica.com/"
+          "name": "Startimes Am'mobi",
+          "url": "https://www.startimes.com"
+        },
+        {
+          "name": "Premier Sports 5",
+          "url": "https://www.psn.mn/"
         },
         {
           "name": "MBC Action",
@@ -658,10 +662,6 @@
         {
           "name": "DAZN 3",
           "url": "https://dazn.prf.hn/click/camref:1100lLrMj"
-        },
-        {
-          "name": "Eleven Sports 2",
-          "url": "https://w14i16.dashboard.wedare.pl/ts/96114/tsc?typ=r&amc=con.wedare.541078.561994.CRTCUUBzSos"
         }
       ]
     },
@@ -936,6 +936,14 @@
       "start_time_utc": "2026-03-14T19:00:00Z",
       "channels": [
         {
+          "name": "Movistar Plus+",
+          "url": "https://www.awin1.com/awclick.php?gid=512151&mid=114230&awinaffid=793117&linkid=3862071&clickref="
+        },
+        {
+          "name": "5 PLUS Israel",
+          "url": "https://www.sport5.co.il/"
+        },
+        {
           "name": "COSMOTE Sport 7",
           "url": "https://www.cosmotetv.gr/"
         },
@@ -968,16 +976,16 @@
           "url": "https://www.foxsports.com/soccer/plus"
         },
         {
-          "name": "ZAP",
-          "url": "https://www.zap.co.ao/"
+          "name": "SupeSport ESPN 1",
+          "url": "https://africa.espn.com/"
+        },
+        {
+          "name": "Movistar Plus+",
+          "url": "https://www.awin1.com/awclick.php?gid=512151&mid=114230&awinaffid=793117&linkid=3862071&clickref="
         },
         {
           "name": "Polsat Sport 2",
           "url": "https://r9kgpx.dashboard.wedare.pl/ts/96026/tsc?typ=r&amc=con.wedare.541078.561994.CRTJTPi7-7-"
-        },
-        {
-          "name": "BandSports",
-          "url": "http://bandsports.band.uol.com.br/"
         }
       ]
     },
@@ -1031,8 +1039,8 @@
           "url": "http://www.premiersports.com/"
         },
         {
-          "name": "DAZN 1",
-          "url": "https://dazn.prf.hn/click/camref:1100lLrMj"
+          "name": "beIN Sports MENA 3",
+          "url": "https://www.beinsports.com/en-mena"
         }
       ]
     },
@@ -1067,8 +1075,8 @@
           "url": "https://www.laliga.com/en-GB/broadcasters/laligatv"
         },
         {
-          "name": "DAZN 1",
-          "url": "https://dazn.prf.hn/click/camref:1100lLrMj"
+          "name": "beIN Sports MENA 3",
+          "url": "https://www.beinsports.com/en-mena"
         }
       ]
     },
@@ -1103,8 +1111,8 @@
           "url": "http://www.premiersports.com/"
         },
         {
-          "name": "DAZN 2",
-          "url": "https://prf.hn/click/camref:1011lfsUi"
+          "name": "beIN Sports MENA 3",
+          "url": "https://www.beinsports.com/en-mena"
         }
       ]
     },
@@ -1329,8 +1337,8 @@
           "url": "https://www.nowtv.com/ie"
         },
         {
-          "name": "Canal+ Extra 3",
-          "url": "https://r9kgpx.dashboard.wedare.pl/ts/96026/tsc?typ=r&amc=con.wedare.541078.561994.CRTJTPi7-7-"
+          "name": "beIN Sports MENA 3",
+          "url": "https://www.beinsports.com/en-mena"
         }
       ]
     },
@@ -1365,7 +1373,7 @@
           "url": "https://www.nowtv.com/ie"
         },
         {
-          "name": "beIN Sports MENA English 1",
+          "name": "beIN Sports MENA 1",
           "url": "https://www.beinsports.com/en-mena"
         }
       ]
@@ -1397,8 +1405,8 @@
           "url": "https://www.gotvafrica.com/en-ng"
         },
         {
-          "name": "Premier Sports 3",
-          "url": "https://www.psn.mn/"
+          "name": "NOW",
+          "url": "https://www.nowtv.com/ie"
         },
         {
           "name": "Canal+ Extra 5",
@@ -1437,7 +1445,7 @@
           "url": "https://www.nowtv.com/ie"
         },
         {
-          "name": "beIN Sports MENA English 1",
+          "name": "beIN Sports MENA 1",
           "url": "https://www.beinsports.com/en-mena"
         }
       ]
@@ -1469,12 +1477,12 @@
           "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
         },
         {
-          "name": "Arena Sport 2",
-          "url": "http://www.tvarenasport.hr/"
+          "name": "Arena Sport 1x2",
+          "url": "http://www.tvarenasport.com/"
         },
         {
-          "name": "Arena Sport 5",
-          "url": "http://www.tvarenasport.com/"
+          "name": "Arena Sport 2",
+          "url": "http://www.tvarenasport.hr/"
         }
       ]
     },
@@ -1596,12 +1604,12 @@
           "url": "https://www.gotvafrica.com/en-ng"
         },
         {
-          "name": "Nova Sport 3",
-          "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
+          "name": "Eleven Sports 4",
+          "url": "https://w14i16.dashboard.wedare.pl/ts/96114/tsc?typ=r&amc=con.wedare.541078.561994.CRTCUUBzSos"
         },
         {
-          "name": "Arena Sport 1",
-          "url": "http://www.tvarenasport.com/"
+          "name": "Nova Sport 3",
+          "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
         }
       ]
     },
@@ -1996,7 +2004,7 @@
           "url": "http://www.premiersports.com/"
         },
         {
-          "name": "beIN Sports MENA English 2",
+          "name": "beIN Sports MENA 3",
           "url": "https://www.beinsports.com/en-mena"
         }
       ]
@@ -2032,7 +2040,7 @@
           "url": "http://www.premiersports.com/"
         },
         {
-          "name": "beIN Sports MENA English 2",
+          "name": "beIN Sports MENA 3",
           "url": "https://www.beinsports.com/en-mena"
         }
       ]
@@ -2392,8 +2400,8 @@
           "url": "https://prf.hn/click/camref:1011lfsUi"
         },
         {
-          "name": "Sport 1",
-          "url": "https://telly.cz/livesport/?utm_source=livesport&utm_medium=partner&utm_campaign=spoluprace"
+          "name": "Eleven Sports 1",
+          "url": "https://w14i16.dashboard.wedare.pl/ts/96114/tsc?typ=r&amc=con.wedare.541078.561994.CRTCUUBzSos"
         }
       ]
     },
@@ -2428,8 +2436,8 @@
           "url": "http://www.premiersports.com/"
         },
         {
-          "name": "DAZN 2",
-          "url": "https://dazn.prf.hn/click/camref:1100lLrMj"
+          "name": "beIN Sports MENA 3",
+          "url": "https://www.beinsports.com/en-mena"
         }
       ]
     },
