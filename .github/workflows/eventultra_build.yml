@@ -50,6 +50,26 @@ jobs:
           python -m pip install --upgrade pip
           pip install selenium webdriver-manager fuzzywuzzy python-Levenshtein
           if [ -f aongewach/requirements.txt ]; then pip install -r aongewach/requirements.txt; fi
+          sudo apt-get update
+          sudo apt-get install -y \
+            libnss3 \
+            libatk-bridge2.0-0 \
+            libatk1.0-0 \
+            libcups2 \
+            libxkbcommon0 \
+            libxcomposite1 \
+            libxdamage1 \
+            libxfixes3 \
+            libxrandr2 \
+            libgbm1 \
+            libasound2 \
+            libdrm2 \
+            libxshmfence1 \
+            libgtk-3-0 \
+            libpango-1.0-0 \
+            libpangocairo-1.0-0 \
+            libglib2.0-0 \
+            fonts-liberation
 
       - name: Download Chrome for Testing
         run: |
