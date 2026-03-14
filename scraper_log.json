@@ -307,6 +307,24 @@
           "extraction": "feed",
           "inspection_count": 1,
           "last_result": "ok"
+        },
+        "https://www.iptvcodes.online/2026/03/xtream-codes-iptv-m3u-playlists-14032026.html": {
+          "title": "XTREAM CODES & IPTV M3U PLAYLISTS 14/03/2026",
+          "url": "https://www.iptvcodes.online/2026/03/xtream-codes-iptv-m3u-playlists-14032026.html",
+          "scraped_at": "2026-03-14 06:46:57",
+          "links_found": 130,
+          "extraction": "feed",
+          "inspection_count": 1,
+          "last_result": "ok"
+        },
+        "https://www.iptvcodes.online/2026/03/xtream-codes-iptv-m3u-playlists-13032026_0184945591.html": {
+          "title": "XTREAM CODES & IPTV M3U PLAYLISTS 13/03/2026",
+          "url": "https://www.iptvcodes.online/2026/03/xtream-codes-iptv-m3u-playlists-13032026_0184945591.html",
+          "scraped_at": "2026-03-14 06:46:57",
+          "links_found": 116,
+          "extraction": "feed",
+          "inspection_count": 1,
+          "last_result": "ok"
         }
       }
     },
@@ -399,6 +417,15 @@
           "scraped_at": "2026-03-13 06:51:23",
           "links_found": 2,
           "extraction": "article",
+          "inspection_count": 1,
+          "last_result": "ok"
+        },
+        "https://m3umax.blogspot.com/2026/03/m3u-host-canal-proxyz-iptv-14032026.html": {
+          "title": "M3U HOST [ canal-pro.xyz ] - IPTV 14/03/2026 – List N1 of 36 M3U Link for Free",
+          "url": "https://m3umax.blogspot.com/2026/03/m3u-host-canal-proxyz-iptv-14032026.html",
+          "scraped_at": "2026-03-14 06:46:57",
+          "links_found": 72,
+          "extraction": "feed",
           "inspection_count": 1,
           "last_result": "ok"
         }
@@ -846,6 +873,33 @@
           "extraction": "feed",
           "inspection_count": 2,
           "last_result": "ok"
+        },
+        "https://world-iptv.club/?p=9071": {
+          "title": "Popular iptv Playlist M3u World Iptv 13/03/2026",
+          "url": "https://world-iptv.club/popular-iptv-playlist-m3u-world-iptv-13-03-2026/",
+          "scraped_at": "2026-03-14 06:46:56",
+          "links_found": 380,
+          "extraction": "feed",
+          "inspection_count": 1,
+          "last_result": "ok"
+        },
+        "https://world-iptv.club/?p=9069": {
+          "title": "Xtream Codes Daily Lists 13/03/2026",
+          "url": "https://world-iptv.club/xtream-codes-daily-lists-13-03-2026/",
+          "scraped_at": "2026-03-14 06:46:56",
+          "links_found": 270,
+          "extraction": "feed",
+          "inspection_count": 1,
+          "last_result": "ok"
+        },
+        "https://world-iptv.club/?p=9067": {
+          "title": "StbEmu codes Stalker Portal mac 13 March 2026",
+          "url": "https://world-iptv.club/stbemu-codes-stalker-portal-mac-13-march-2026/",
+          "scraped_at": "2026-03-14 06:46:56",
+          "links_found": 0,
+          "extraction": "article",
+          "inspection_count": 1,
+          "last_result": "no_links"
         }
       }
     },
