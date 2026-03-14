@@ -1,0 +1,158 @@
+name: Build EventUltra Streams
+
+on:
+  schedule:
+    - cron: "30 10 * * *"
+  workflow_dispatch:
+    inputs:
+      matches_url:
+        description: "Matches JSON URL"
+        required: false
+        default: "https://raw.githubusercontent.com/drnewske/areallybadideabuttidonthateitijusthateitsomuch/refs/heads/main/matches.json"
+      schedule_path:
+        description: "Weekly schedule path"
+        required: false
+        default: "aongewach/e104f869d64e3d41256d5398.json"
+      sleep:
+        description: "Seconds to wait per page load"
+        required: false
+        default: "4"
+      max_links:
+        description: "Limit links for debug (blank = no limit)"
+        required: false
+        default: ""
+      max_matches:
+        description: "Limit matches for debug (blank = no limit)"
+        required: false
+        default: ""
+
+jobs:
+  build-eventultra:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install selenium webdriver-manager fuzzywuzzy python-Levenshtein
+          if [ -f aongewach/requirements.txt ]; then pip install -r aongewach/requirements.txt; fi
+
+      - name: Download Chrome for Testing
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import pathlib
+          import urllib.request
+          import zipfile
+
+          url = "https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json"
+          data = json.load(urllib.request.urlopen(url))
+          ver = data["channels"]["Stable"]["version"]
+          downloads = data["channels"]["Stable"]["downloads"]
+
+          chrome_url = next(d["url"] for d in downloads["chrome"] if d["platform"] == "linux64")
+          driver_url = next(d["url"] for d in downloads["chromedriver"] if d["platform"] == "linux64")
+
+          base = pathlib.Path(".cft") / ver
+          base.mkdir(parents=True, exist_ok=True)
+
+          chrome_zip = base / "chrome-linux64.zip"
+          driver_zip = base / "chromedriver-linux64.zip"
+
+          def download(src, dst):
+              if dst.exists():
+                  return
+              with urllib.request.urlopen(src) as r, open(dst, "wb") as f:
+                  f.write(r.read())
+
+          download(chrome_url, chrome_zip)
+          download(driver_url, driver_zip)
+
+          zipfile.ZipFile(chrome_zip).extractall(base)
+          zipfile.ZipFile(driver_zip).extractall(base)
+
+          chrome_bin = base / "chrome-linux64" / "chrome"
+          driver_bin = base / "chromedriver-linux64" / "chromedriver"
+          os.chmod(chrome_bin, 0o755)
+          os.chmod(driver_bin, 0o755)
+
+          env_path = os.environ["GITHUB_ENV"]
+          with open(env_path, "a", encoding="utf-8") as f:
+              f.write(f"CHROME_BIN={chrome_bin}\n")
+              f.write(f"CHROMEDRIVER_BIN={driver_bin}\n")
+          PY
+
+      - name: Run channel tester
+        run: |
+          MATCHES_URL="${{ github.event.inputs.matches_url }}"
+          SCHEDULE_PATH="${{ github.event.inputs.schedule_path }}"
+          SLEEP="${{ github.event.inputs.sleep }}"
+          MAX_LINKS="${{ github.event.inputs.max_links }}"
+          MAX_MATCHES="${{ github.event.inputs.max_matches }}"
+
+          if [ -z "$MATCHES_URL" ]; then MATCHES_URL="https://raw.githubusercontent.com/drnewske/areallybadideabuttidonthateitijusthateitsomuch/refs/heads/main/matches.json"; fi
+          if [ -z "$SCHEDULE_PATH" ]; then SCHEDULE_PATH="aongewach/e104f869d64e3d41256d5398.json"; fi
+          if [ -z "$SLEEP" ]; then SLEEP="4"; fi
+
+          CMD=(python channel_tester.py
+            --matches "$MATCHES_URL"
+            --schedule "$SCHEDULE_PATH"
+            --sleep "$SLEEP"
+            --browser "$CHROME_BIN"
+            --driver "$CHROMEDRIVER_BIN"
+            --browser-type chrome)
+
+          if [ -n "$MAX_LINKS" ]; then CMD+=(--max-links "$MAX_LINKS"); fi
+          if [ -n "$MAX_MATCHES" ]; then CMD+=(--max-matches "$MAX_MATCHES"); fi
+
+          printf 'Running command:\n  '
+          printf '%q ' "${CMD[@]}"
+          echo
+          "${CMD[@]}"
+
+      - name: Commit and push eventultra.json
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          BRANCH="${GITHUB_REF_NAME:-main}"
+
+          if [ -f eventultra.json ]; then
+            git add eventultra.json
+          fi
+
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update eventultra.json [skip ci]"
+            for attempt in 1 2 3; do
+              if git push origin "HEAD:$BRANCH"; then
+                echo "Push succeeded on attempt $attempt"
+                break
+              fi
+              if [ "$attempt" -eq 3 ]; then
+                echo "Push failed after 3 attempts"
+                exit 1
+              fi
+              echo "Push rejected, rebasing and retrying..."
+              git fetch origin "$BRANCH"
+              git rebase "origin/$BRANCH" || {
+                git rebase --abort || true
+                git pull --rebase origin "$BRANCH"
+              }
+            done
+          fi
