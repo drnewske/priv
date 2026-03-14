@@ -51,6 +51,11 @@ jobs:
           pip install selenium webdriver-manager fuzzywuzzy python-Levenshtein
           if [ -f aongewach/requirements.txt ]; then pip install -r aongewach/requirements.txt; fi
           sudo apt-get update
+          if apt-cache show libasound2t64 >/dev/null 2>&1; then
+            ALSA_PKG="libasound2t64"
+          else
+            ALSA_PKG="libasound2"
+          fi
           sudo apt-get install -y \
             libnss3 \
             libatk-bridge2.0-0 \
@@ -62,7 +67,7 @@ jobs:
             libxfixes3 \
             libxrandr2 \
             libgbm1 \
-            libasound2 \
+            "$ALSA_PKG" \
             libdrm2 \
             libxshmfence1 \
             libgtk-3-0 \
