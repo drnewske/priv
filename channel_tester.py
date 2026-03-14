@@ -204,11 +204,22 @@ def create_driver(headful, browser_type=None, browser_binary=None, driver_binary
     if browser == "chrome":
         options = ChromeOptions()
         if not headful:
-            options.add_argument("--headless")
+            options.add_argument("--headless=new")
         options.add_argument("--disable-gpu")
+        options.add_argument("--window-size=1920,1080")
+        options.add_argument("--disable-extensions")
+        options.add_argument("--disable-default-apps")
+        options.add_argument("--disable-background-networking")
+        options.add_argument("--disable-sync")
+        options.add_argument("--metrics-recording-only")
+        options.add_argument("--no-first-run")
+        options.add_argument("--no-default-browser-check")
+        options.add_argument("--remote-debugging-port=9222")
         if sys.platform.startswith("linux"):
             options.add_argument("--no-sandbox")
             options.add_argument("--disable-dev-shm-usage")
+            options.add_argument("--disable-setuid-sandbox")
+            options.add_argument("--user-data-dir=/tmp/selenium")
         options.add_argument("--log-level=3")
         options.set_capability("goog:loggingPrefs", {"performance": "ALL"})
         if binary_path:
@@ -221,11 +232,22 @@ def create_driver(headful, browser_type=None, browser_binary=None, driver_binary
     else:
         options = EdgeOptions()
         if not headful:
-            options.add_argument("--headless")
+            options.add_argument("--headless=new")
         options.add_argument("--disable-gpu")
+        options.add_argument("--window-size=1920,1080")
+        options.add_argument("--disable-extensions")
+        options.add_argument("--disable-default-apps")
+        options.add_argument("--disable-background-networking")
+        options.add_argument("--disable-sync")
+        options.add_argument("--metrics-recording-only")
+        options.add_argument("--no-first-run")
+        options.add_argument("--no-default-browser-check")
+        options.add_argument("--remote-debugging-port=9222")
         if sys.platform.startswith("linux"):
             options.add_argument("--no-sandbox")
             options.add_argument("--disable-dev-shm-usage")
+            options.add_argument("--disable-setuid-sandbox")
+            options.add_argument("--user-data-dir=/tmp/selenium")
         options.add_argument("--log-level=3")
         options.set_capability("goog:loggingPrefs", {"performance": "ALL"})
         if binary_path:
